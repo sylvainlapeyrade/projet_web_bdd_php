@@ -1,4 +1,4 @@
-# Projet : Web -- BD -- PHP
+# Projet : Web - BD - PHP
 Autheurs : 
 - LABORDE Tonin
 - OLIVIER Thomas
@@ -6,5 +6,5 @@ Autheurs :
 - WATHOJE Emmanuel
 - ROBERT DE ST VINCENT Guillaume
 
-UPSSITECH -- Université Paul Sabatier
+UPSSITECH - Université Paul Sabatier
 Année 2018
