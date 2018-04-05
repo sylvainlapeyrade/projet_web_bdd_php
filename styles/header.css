@@ -1,0 +1,18 @@
+header {
+    background: #1b8ee2;
+    font-weight: bold;
+    text-transform:uppercase;
+}
+
+nav {
+    width: 1350px;
+}
+
+nav>ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+nav>ul>a {
+    padding: 15px;
+}
