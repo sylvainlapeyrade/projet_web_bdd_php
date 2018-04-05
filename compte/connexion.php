@@ -3,10 +3,30 @@
     include_once(dirname(__FILE__).'/../functions/variables.php');
     include_once(dirname(__FILE__).'/../functions/base.php');
     include_once(dirname(__FILE__).'/../database/connexion.php');
-    include_once(dirname(__FILE__).'/../functions/connexion.php');
+    include_once(dirname(__FILE__).'/../functions/compte.php');
 
     $info['head']['subTitle'] = "Connexion";
     $info['head']['stylesheets'] = ['connexion.css'];
+
+    if(is_connect()) {leave();}
+
+    /* Gestion du formulaire connexion */
+    if ( isset($_GET['connexion']) && $_GET['connexion'] == 'connexion' ) {
+        $formOk = verif_form($_GET);
+        $identify = $_GET['identifiant'];
+        $password = $_GET['motDePasse'];
+        if ( $formOk &&  isset($identify) && isset($password) ) {
+            $connexionOk = connexionCompte($db, $identify, $password);
+            if ( !$connexionOk ) {
+                $error = 'Votre identifiant ou votre mot de passe est incorrect.';
+            } else {
+                header('Location: /index.php');
+            }
+        } else {
+            $error = 'Le formulaire n\'est pas valide.';
+        }
+    }
+
 ?>
 
 <?php include_once(dirname(__FILE__).'/../head.php'); ?>
@@ -14,18 +34,22 @@
 
 <main class="flex flex-center">
     
-    <section class="flex">
-        <section class="flex flex-center flex-column">
-            <h1 class="t30 text-center">Connexion</h1>
-            <? if ( isset($erreur) ) { ?>
-            <p class="red"></p>
-            <? } ?>
-            <form class="flex flex-center flex-column" method="get" target="connexion.php">
-                <input class="input1" type="text" name="identifiant" placeholder="Identifiant">
-                <input class="input1" type="password" name="motDePasse" placeholder="Mot de passe">
-                <input class="button1" type="submit" name="connexion" value="connexion">
-            </form>
-        </section>
+    <section class="flex flex-center flex-column text-center">
+        <h1 class="t30">Connexion</h1>
+        <? if ( isset($error) ) { ?>
+        <!-- Message d'erreur du formulaire -->
+        <p class="red"><?php echo $error; ?></p>
+        <? } ?>
+        <? if ( isset($_GET['action']) && $_GET['action'] == 'inscription' ) { ?>
+        <!-- Message si l'utilisateur viens de s'inscrire -->
+        <p class="green">Votre compte a été crée.<br>Connectez-vous à votre compte !</p>
+        <? } ?>
+        <form class="flex flex-center flex-column" method="get">
+            <input class="input1" type="text" name="identifiant" placeholder="Identifiant"
+                   value="<?php if( isset($identify) ){ echo $identify; } ?>">
+            <input class="input1" type="password" name="motDePasse" placeholder="Mot de passe">
+            <input class="inputButton1" type="submit" name="connexion" value="connexion">
+        </form>
     </section>
     
 </main>
