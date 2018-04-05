@@ -1,3 +1,10 @@
-# projet_web_bdd_php
-L3 STRI
-rm
+# Projet : Web - BD - PHP
+Autheurs : 
+- LABORDE Tonin
+- OLIVIER Thomas
+- LAPEYRADE Sylvain
+- WATHOJE Emmanuel
+- ROBERT DE ST VINCENT Guillaume
+
+UPSSITECH - Université Paul Sabatier
+Année 2018
