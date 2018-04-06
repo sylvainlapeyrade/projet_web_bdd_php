@@ -1,5 +1,5 @@
 # Projet : Web - BD - PHP
-Autheurs : 
+Auteurs : 
 - LABORDE Tonin
 - OLIVIER Thomas
 - LAPEYRADE Sylvain
@@ -7,4 +7,4 @@ Autheurs :
 - ROBERT DE ST VINCENT Guillaume
 
 UPSSITECH - Université Paul Sabatier
-Année 2018
+L3 STRI - Année 2018
