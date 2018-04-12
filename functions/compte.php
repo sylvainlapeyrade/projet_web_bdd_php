@@ -11,7 +11,6 @@
  */
 
 function connectionAccount($db, $identify, $password) {
-    $password = hash_text($password, null);
     $res = getUser($db, $identify);
     if ( $res != null ) {
         $passOk = $password == $res['motdepasse'];
@@ -34,7 +33,6 @@ function registration($db, $identifiant, $motDePasse) {
 }
 
 function add_user($db, $identify, $password, $isAdmin) {
-    $password = hash_text($password, null);
     $req = $db->prepare("INSERT INTO Utilisateur(identifiant, motDePasse, statut)
         VALUES(:identifiant, :motDePasse, :estAdmin);");
     $req->bindParam(':identifiant', $identify, PDO::PARAM_STR);
@@ -45,7 +43,6 @@ function add_user($db, $identify, $password, $isAdmin) {
 }
 
 function modify_password_user($db, $identify, $password) {
-    $password = hash_text($password, null);
     $req = $db->prepare("UPDATE Utilisateur SET motDePasse=:password WHERE identifiant=:identifiant;");
     $req->bindParam(':identifiant', $identify, PDO::PARAM_STR);
     $req->bindParam(':password', $password, PDO::PARAM_STR);
@@ -84,13 +81,6 @@ function getUser($db, $identify) {
         return $res[0];
     }
     return null;
-}
-
-function hash_text($text, $salt) {
-    if ( empty($salt) ) {
-        $salt = "awectbu,o:?&é'(-è_çà)";
-    }
-    return crypt($text.$salt, $salt);
 }
 
 ?>

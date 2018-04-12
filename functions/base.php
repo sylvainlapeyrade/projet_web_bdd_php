@@ -46,7 +46,7 @@ function is_admin() {
 }
 
 /**
- * Fonction qui vérifie si un formulaire passé en paramètre est 
+ * Fonction qui vérifie si un formulaire passé en paramètre est
  * est valide ou non.
  * Un formulaire valide est définit par un formulaire non vide
  */
