@@ -17,7 +17,7 @@
         $password = $_GET['motDePasse'];
         $verification = $_GET['verification'];
         if ( $password == $verification ) {
-            
+
             if ( $_GET['estAdmin'] == 'estAdmin' ) {
                 $isAdmin = 1;
             } else {
@@ -60,7 +60,7 @@
             <!-- Message d'erreur du formulaire -->
             <p class="red"><?php echo $error; ?></p>
             <? } ?>
-            <form class="flex flex-center flex-column " action="./adminFormUser.php" method="get">
+            <form class="flex flex-center flex-column " action="./adminFormAddUser.php" method="get">
                 <input class="input1" type="text" name="identifiant" placeholder="Nom d'utilisateur">
                 <input class="input1" type="password" name="motDePasse" placeholder="Mot de passe">
                 <input class="input1" type="password" name="verification" placeholder="Vérification">
