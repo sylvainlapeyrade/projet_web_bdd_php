@@ -12,14 +12,17 @@
 
     /* Gestion du formulaire d'inscription */
     if ( isset($_GET['inscription']) && $_GET['inscription'] == 'inscription' ) {
-        $formOk = verif_form($_GET);
-        if ( $formOk ) {
-            if ( $_GET['motDePasse'] == $_GET['verification'] ) {
-                $inscriptionOk = inscription($db, $_GET['identifiant'], $_GET['motDePasse']);
-                if ( !inscriptionOk ) {
-                    $error = 'Ce non d\'utilisateur existe déjà';
-                } else {
+        $paramOk = check_param($_GET);
+        if ( $paramOk ) {
+            $identify = $_GET['identifiant'];
+            $password = $_GET['motDePasse'];
+            $verify = $_GET['verification'];
+            if ( $password == $verify ) {
+                $actionOk = inscription($db, $identify, $password, 0);
+                if ( actionOk ) {
                     header('Location: /compte/connexion.php?action=inscription');
+                } else {
+                    $error = 'Ce non d\'utilisateur existe déjà';
                 }
             } else {
                 $error = 'Les mots de passe ne sont pas identique.';

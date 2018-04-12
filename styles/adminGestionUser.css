@@ -1,0 +1,24 @@
+.width-100 {
+    width: 100px;
+}
+
+.width-350 {
+    width: 350px;
+}
+
+#tableauGestion {
+    margin: 0 auto;
+}
+
+.table-head {
+    color: white;
+    background: black;
+}
+
+.table-lign:nth-of-type(2n+1) {
+    background: #e6e6e6;
+}
+
+main>section {
+    margin: 0 auto;
+}
