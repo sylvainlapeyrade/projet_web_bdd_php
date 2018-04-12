@@ -129,7 +129,6 @@ CREATE TABLE Constituer(
 
 CREATE TABLE Definir(
   idMusiqueDe         INT              CONSTRAINT De_fk_iMDe  REFERENCES Musique(idMusique),
-  nomGenre            VARCHAR(45)      CONSTRAINT De_noGe_NN  NOT NULL,
-                                       CONSTRAINT De_noGe_UN  UNIQUE,
+  nomGenre            VARCHAR(45)      CONSTRAINT De_noGe_NU  NOT NULL UNIQUE,
                                        CONSTRAINT De_pk_Defi  PRIMARY KEY(idMusiqueDe, nomGenre)
 );
