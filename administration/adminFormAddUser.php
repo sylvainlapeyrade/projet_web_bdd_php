@@ -28,7 +28,7 @@
                 if ( !$userExiste ) {
                     $actionOk =  add_user($db, $identify, $password, $isAdmin);
                     if ( $actionOk ) {
-                        header('Location: ./adminGestionUser.php');
+                        header('Location: ./adminGestionUser.php?action=effectuer');
                     } else {
                         $error = 'L\'utilisateur n\'a pas pu être enregistré.';
                     }
