@@ -12,15 +12,15 @@
 
     /* Gestion du formulaire connexion */
     if ( isset($_GET['connexion']) && $_GET['connexion'] == 'connexion' ) {
-        $formOk = verif_form($_GET);
+        $paramOk = check_param($_GET);
         $identify = $_GET['identifiant'];
         $password = $_GET['motDePasse'];
-        if ( $formOk &&  isset($identify) && isset($password) ) {
-            $connexionOk = connexionCompte($db, $identify, $password);
-            if ( !$connexionOk ) {
-                $error = 'Votre identifiant ou votre mot de passe est incorrect.';
-            } else {
+        if ( $paramOk ) {
+            $actionOk = connectionAccount($db, $identify, $password);
+            if ( $actionOk ) {
                 header('Location: /index.php');
+            } else {
+                $error = 'Votre identifiant ou votre mot de passe est incorrect.';
             }
         } else {
             $error = 'Le formulaire n\'est pas valide.';
