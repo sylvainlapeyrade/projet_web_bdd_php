@@ -18,7 +18,7 @@
             $password = $_GET['motDePasse'];
             $verify = $_GET['verification'];
             if ( $password == $verify ) {
-                $actionOk = inscription($db, $identify, $password, 0);
+                $actionOk = registration($db, $identify, $password);
                 if ( actionOk ) {
                     header('Location: /compte/connexion.php?action=inscription');
                 } else {

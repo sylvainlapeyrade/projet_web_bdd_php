@@ -19,9 +19,9 @@
         if ( $password == $verification ) {
 
             if ( $_GET['estAdmin'] == 'estAdmin' ) {
-                $isAdmin = 1;
+                $isAdmin = true;
             } else {
-                $isAdmin = 0;
+                $isAdmin = false;
             }
             if ( $paramOk ) {
                 $userExist = getUser($db, $identify) != null;

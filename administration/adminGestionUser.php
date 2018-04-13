@@ -37,9 +37,9 @@
             $identifiant = $_GET['idUtilisateur'];
             if ( $identifiant != $_SESSION['idUtilisateur'] ) {
                 if ( $_GET['action'] == 'admin' ) {
-                    $statut = 1;
+                    $statut = true;
                 } else {
-                    $statut = 0;
+                    $statut = false;
                 }
                 $actionOk = modify_statut_user($db, $identifiant, $statut);
                 if ( $actionOk ) {
@@ -97,23 +97,23 @@
 
                 <?php foreach($listUser as $user) { ?>
                 <tr class="table-lign">
-                    <td><?php echo $user['idUtilisateur']; ?></td>
-                    <?php if ( $user['statut'] == 1 ) { ?>
+                    <td><?php echo $user['idutilisateur']; ?></td>
+                    <?php if ( $user['statut'] ) { ?>
                         <td>Admin</td>
                         <td class="button button-blue">
-                            <a href="?action=user&identifiant=<?php echo $user['idUtilisateur'] ?>">Devenir User</a>
+                            <a href="?action=user&idUtilisateur=<?php echo $user['idutilisateur'] ?>">Devenir User</a>
                         </td>
                     <?php } else { ?>
                         <td>User</td>
                         <td class="button button-green">
-                            <a href="?action=admin&identifiant=<?php echo $user['identifiant'] ?>">Devenir Admin</a>
+                            <a href="?action=admin&idUtilisateur=<?php echo $user['idutilisateur'] ?>">Devenir Admin</a>
                         </td>
                     <?php } ?>
                     <td class="button button-blue">
-                        <a href="./adminFormModifyUser.php?identifiant=<?php echo $user['identifiant'] ?>">Modifier mot de passe</a>
+                        <a href="./adminFormModifyUser.php?idUtilisateur=<?php echo $user['idutilisateur'] ?>">Modifier mot de passe</a>
                     </td>
                     <td class="button button-red">
-                        <a href="?action=supprimer&identifiant=<?php echo $user['identifiant'] ?>">Supprimer</a>
+                        <a href="?action=supprimer&idUtilisateur=<?php echo $user['idutilisateur'] ?>">Supprimer</a>
                     </td>
                 </tr>
             <?php } ?>

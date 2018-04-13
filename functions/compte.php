@@ -7,7 +7,6 @@
  *   - registration
  *   - add_user
  *   - get_user
- *   - hash_text
  */
 
 function connectionAccount($db, $identify, $password) {
@@ -15,7 +14,7 @@ function connectionAccount($db, $identify, $password) {
     if ( $res != null ) {
         $passOk = $password == $res['motdepasse'];
         if ( $passOk ) {
-            $_SESSION['idUtilisateur'] = $res['idUtilisateur'];
+            $_SESSION['idUtilisateur'] = $res['idutilisateur'];
             $_SESSION['statut'] = $res['statut'];
             return true;
         }
@@ -26,18 +25,18 @@ function connectionAccount($db, $identify, $password) {
 function registration($db, $identifiant, $motDePasse) {
     $user = getUser($db, $identify);
     if ( $user == null ) {
-        $inscriptionOk = add_user($db, $identifiant, $motDePasse);
+        $inscriptionOk = add_user($db, $identifiant, $motDePasse, false);
         return true;
     }
     return false;
 }
 
-function add_user($db, $identify, $password, $isAdmin) {
+function add_user($db, $identify, $password, $statut) {
     $req = $db->prepare("INSERT INTO Utilisateur(idUtilisateur, motDePasse, statut)
-        VALUES(:idUtilisateur, :motDePasse, :estAdmin);");
+        VALUES(:idUtilisateur, :motDePasse, :statut);");
     $req->bindParam(':idUtilisateur', $identify, PDO::PARAM_STR);
     $req->bindParam(':motDePasse', $password, PDO::PARAM_STR);
-    $req->bindParam(':estAdmin', $isAdmin, PDO::PARAM_INT);
+    $req->bindParam(':statut', $statut, PDO::PARAM_BOOL);
     $reqOk = $req->execute();
     return $reqOk;
 }
@@ -53,7 +52,7 @@ function modify_password_user($db, $identify, $password) {
 function modify_statut_user($db, $identify, $statut) {
     $req = $db->prepare("UPDATE Utilisateur SET statut=:statut WHERE idUtilisateur=:idUtilisateur;");
     $req->bindParam(':idUtilisateur', $identify, PDO::PARAM_STR);
-    $req->bindParam(':statut', $statut, PDO::PARAM_INT);
+    $req->bindParam(':statut', $statut, PDO::PARAM_BOOL);
     $reqOk = $req->execute();
     return $reqOk;
 }

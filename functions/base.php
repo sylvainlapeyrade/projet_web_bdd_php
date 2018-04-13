@@ -38,7 +38,7 @@ function is_connect() {
  */
 function is_admin() {
     if ( is_connect() ) {
-        if ( $_SESSION['statut'] == 1 ) {
+        if ( $_SESSION['statut'] ) {
             return true;
         }
     }
