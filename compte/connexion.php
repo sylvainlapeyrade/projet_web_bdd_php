@@ -13,7 +13,7 @@
     /* Gestion du formulaire connexion */
     if ( isset($_GET['connexion']) && $_GET['connexion'] == 'connexion' ) {
         $paramOk = check_param($_GET);
-        $identify = $_GET['identifiant'];
+        $identify = $_GET['idUtilisateur'];
         $password = $_GET['motDePasse'];
         if ( $paramOk ) {
             $actionOk = connectionAccount($db, $identify, $password);
@@ -33,7 +33,7 @@
 <?php include_once(dirname(__FILE__).'/../header.php'); ?>
 
 <main class="flex flex-center">
-    
+
     <section class="flex flex-center flex-column text-center">
         <h1 class="t30">Connexion</h1>
         <? if ( isset($error) ) { ?>
@@ -45,13 +45,13 @@
         <p class="green">Votre compte a été crée.<br>Connectez-vous à votre compte !</p>
         <? } ?>
         <form class="flex flex-center flex-column" method="get">
-            <input class="input1" type="text" name="identifiant" placeholder="Identifiant"
+            <input class="input1" type="text" name="idUtilisateur" placeholder="Identifiant"
                    value="<?php if( isset($identify) ){ echo $identify; } ?>">
             <input class="input1" type="password" name="motDePasse" placeholder="Mot de passe">
             <input class="inputButton1" type="submit" name="connexion" value="connexion">
         </form>
     </section>
-    
+
 </main>
 
 <?php include_once(dirname(__FILE__).'/../footer.php'); ?>

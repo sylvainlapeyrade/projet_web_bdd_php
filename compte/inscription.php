@@ -14,7 +14,7 @@
     if ( isset($_GET['inscription']) && $_GET['inscription'] == 'inscription' ) {
         $paramOk = check_param($_GET);
         if ( $paramOk ) {
-            $identify = $_GET['identifiant'];
+            $identify = $_GET['idUtilisateur'];
             $password = $_GET['motDePasse'];
             $verify = $_GET['verification'];
             if ( $password == $verify ) {
@@ -37,7 +37,7 @@
 <?php include_once(dirname(__FILE__).'/../header.php'); ?>
 
 <main class="flex flex-center">
-    
+
     <section class="flex flex-center flex-column text-center">
         <h1 class="t30">Inscription</h1>
         <? if ( isset($error) ) { ?>
@@ -45,7 +45,7 @@
         <p class="red"><?php echo $error; ?></p>
         <? } ?>
         <form class="flex flex-center flex-column" method="get">
-            <input class="input1" type="text" name="identifiant" placeholder="Identifiant">
+            <input class="input1" type="text" name="idUtilisateur" placeholder="Identifiant">
             <input class="input1" type="password" name="motDePasse" placeholder="Mot de passe">
             <input class="input1" type="password" name="verification" placeholder="Vérification">
             <input class="inputButton1" type="submit" name="inscription" value="inscription">

@@ -26,7 +26,7 @@ function is_connect() {
     if ( !session_active() ) {
         return false;
     }
-    if ( isset($_SESSION['identifiant'] ) ) {
+    if ( isset($_SESSION['idUtilisateur'] ) ) {
         return true;
     }
     return false;

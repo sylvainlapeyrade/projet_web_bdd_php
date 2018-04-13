@@ -10,7 +10,7 @@
 
     if(!is_connect() || !is_admin()) {leave();}
 
-    $identify = $_GET['identifiant'];
+    $identify = $_GET['idUtilisateur'];
 
     if ( isset($_GET['action']) && $_GET['action'] == 'Modifier mot de passe' ) {
         $paramOk = check_param($_GET);
@@ -50,7 +50,7 @@
             <p class="red"><?php echo $error; ?></p>
             <? } ?>
             <form class="flex flex-center flex-column " action="./adminFormModifyUser.php" method="get">
-                <input class="input1" type="hidden" name="identifiant" value="<?php echo $identify; ?>">
+                <input class="input1" type="hidden" name="idUtilisateur" value="<?php echo $identify; ?>">
                 <input class="input1" type="password" name="motDePasse" placeholder="Mot de passe">
                 <input class="input1" type="password" name="verification" placeholder="Vérification">
                 <input class="inputButton1" type="submit" name="action" value="Modifier mot de passe">

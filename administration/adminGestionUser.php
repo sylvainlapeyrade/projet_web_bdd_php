@@ -14,8 +14,8 @@
     if ( isset($_GET['action']) && $_GET['action'] == 'supprimer' ) {
         $paramOk = check_param($_GET);
         if ( $paramOk ) {
-            $identifiant = $_GET['identifiant'];
-            if ( $identifiant != $_SESSION['identifiant'] ) {
+            $identifiant = $_GET['idUtilisateur'];
+            if ( $identifiant != $_SESSION['idUtilisateur'] ) {
                 $actionOk = delete_user($db, $identifiant);
                 if ( $actionOk ) {
                     header('Location: ./adminGestionUser.php?action=effectuer');
@@ -34,8 +34,8 @@
     if ( isset($_GET['action']) && ($_GET['action'] == 'admin' || $_GET['action'] == 'user') ) {
         $paramOk = check_param($_GET);
         if ( $paramOk ) {
-            $identifiant = $_GET['identifiant'];
-            if ( $identifiant != $_SESSION['identifiant'] ) {
+            $identifiant = $_GET['idUtilisateur'];
+            if ( $identifiant != $_SESSION['idUtilisateur'] ) {
                 if ( $_GET['action'] == 'admin' ) {
                     $statut = 1;
                 } else {
@@ -94,14 +94,14 @@
                     <th class="width-100"></th>
                     <th class="width-100"></th>
                 </tr>
-                
+
                 <?php foreach($listUser as $user) { ?>
                 <tr class="table-lign">
-                    <td><?php echo $user['identifiant']; ?></td>
+                    <td><?php echo $user['idUtilisateur']; ?></td>
                     <?php if ( $user['statut'] == 1 ) { ?>
                         <td>Admin</td>
                         <td class="button button-blue">
-                            <a href="?action=user&identifiant=<?php echo $user['identifiant'] ?>">Devenir User</a>
+                            <a href="?action=user&identifiant=<?php echo $user['idUtilisateur'] ?>">Devenir User</a>
                         </td>
                     <?php } else { ?>
                         <td>User</td>
@@ -117,7 +117,7 @@
                     </td>
                 </tr>
             <?php } ?>
-                
+
             </table>
         </section>
     </main>

@@ -13,7 +13,7 @@
     /* Gestion du formulaire */
     if ( isset($_GET['action']) && $_GET['action'] == 'Ajouter' ) {
         $paramOk = check_param($_GET);
-        $identify = $_GET['identifiant'];
+        $identify = $_GET['idUtilisateur'];
         $password = $_GET['motDePasse'];
         $verification = $_GET['verification'];
         if ( $password == $verification ) {
@@ -61,7 +61,7 @@
             <p class="red"><?php echo $error; ?></p>
             <? } ?>
             <form class="flex flex-center flex-column " action="./adminFormAddUser.php" method="get">
-                <input class="input1" type="text" name="identifiant" placeholder="Nom d'utilisateur">
+                <input class="input1" type="text" name="idUtilisateur" placeholder="Nom d'utilisateur">
                 <input class="input1" type="password" name="motDePasse" placeholder="Mot de passe">
                 <input class="input1" type="password" name="verification" placeholder="Vérification">
                 <label for="admin">
