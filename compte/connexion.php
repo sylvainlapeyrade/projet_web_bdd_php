@@ -32,26 +32,24 @@
 <?php include_once(dirname(__FILE__).'/../head.php'); ?>
 <?php include_once(dirname(__FILE__).'/../header.php'); ?>
 
-<main class="flex flex-center">
-
-    <section class="flex flex-center flex-column text-center">
-        <h1 class="t30">Connexion</h1>
-        <? if ( isset($error) ) { ?>
-        <!-- Message d'erreur du formulaire -->
-        <p class="red"><?php echo $error; ?></p>
-        <? } ?>
-        <? if ( isset($_GET['action']) && $_GET['action'] == 'inscription' ) { ?>
-        <!-- Message si l'utilisateur viens de s'inscrire -->
-        <p class="green">Votre compte a été crée.<br>Connectez-vous à votre compte !</p>
-        <? } ?>
-        <form class="flex flex-center flex-column" method="get">
-            <input class="input1" type="text" name="idUtilisateur" placeholder="Identifiant"
-                   value="<?php if( isset($identify) ){ echo $identify; } ?>">
-            <input class="input1" type="password" name="motDePasse" placeholder="Mot de passe">
-            <input class="inputButton1" type="submit" name="connexion" value="connexion">
-        </form>
-    </section>
-
+<main>
+  <section>
+    <h1 class="t30 text-center">Connexion</h1>
+    <? if ( isset($error) ) { ?>
+    <!-- Message d'erreur du formulaire -->
+    <p class="red"><?php echo $error; ?></p>
+    <? } ?>
+    <? if ( isset($_GET['action']) && $_GET['action'] == 'inscription' ) { ?>
+    <!-- Message si l'utilisateur viens de s'inscrire -->
+    <p class="green">Votre compte a été crée.<br>Connectez-vous à votre compte !</p>
+    <? } ?>
+    <form class="flex flex-center flex-column" method="get">
+      <input class="input1" type="text" name="idUtilisateur" placeholder="Identifiant"
+             value="<?php if( isset($identify) ){ echo $identify; } ?>">
+      <input class="input1" type="password" name="motDePasse" placeholder="Mot de passe">
+      <input class="inputButton1" type="submit" name="connexion" value="connexion">
+    </form>
+  </section>
 </main>
 
 <?php include_once(dirname(__FILE__).'/../footer.php'); ?>

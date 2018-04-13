@@ -13,6 +13,8 @@
 <?php include_once(dirname(__FILE__).'/header.php'); ?>
 
     <main>
+      <section>
+      </section>
     </main>
 
 <?php include_once(dirname(__FILE__).'/footer.php'); ?>

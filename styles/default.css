@@ -7,6 +7,7 @@ body {
 
 main>section {
     width: 80%;
+    margin: 0 auto;
 }
 
 a { text-decoration: none; color: black; }
@@ -47,6 +48,15 @@ li { list-style: none; }
 .background-blue { background: blue; }
 .background-green { background: green; }
 .background-cyan { background: #21efe7; }
+
+.width-100 { width: 100px; }
+.width-150 { width: 150px; }
+.width-200 { width: 200px; }
+.width-250 { width: 250px; }
+.width-300 { width: 300px; }
+.width-350 { width: 350px; }
+.width-400 { width: 400px; }
+.width-450 { width: 450px; }
 
 .button {
     padding: 10px;

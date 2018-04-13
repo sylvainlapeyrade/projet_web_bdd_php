@@ -48,27 +48,28 @@
 
 <?php include_once(dirname(__FILE__).'/../header.php'); ?>
 
-    <main class="flex flex-center flex-column">
-        <a href="./index.php">
-            <h1>Panneau d'adminsitration</h1>
-        </a>
-        <section class="text-center">
-            <a href="./adminGestionUser.php">
-                <h2>Gestion des utilisateurs</h2>
-            </a>
-            <? if ( isset($error) ) { ?>
-            <!-- Message d'erreur du formulaire -->
-            <p class="red"><?php echo $error; ?></p>
-            <? } ?>
-            <form class="flex flex-center flex-column " action="./adminFormAddUser.php" method="get">
-                <input class="input1" type="text" name="idUtilisateur" placeholder="Nom d'utilisateur">
-                <input class="input1" type="password" name="motDePasse" placeholder="Mot de passe">
-                <input class="input1" type="password" name="verification" placeholder="Vérification">
-                <label for="admin">
-                    <input id="admin" type="checkbox" name="estAdmin" value="estAdmin">
-                    Utilisateur adminstrateur
-                </label>
-                <input class="inputButton1" type="submit" name="action" value="Ajouter">
-            </form>
-        </section>
-    </main>
+<main class="flex flex-center flex-column">
+  <section>
+    <h1>
+      <a href="./index.php">Panneau d'adminsitration</a>
+    </h1>
+    <section class="text-center">
+    <a href="./adminGestionUser.php">
+      <h2>Gestion des utilisateurs</h2>
+    </a>
+    <? if ( isset($error) ) { ?>
+    <!-- Message d'erreur du formulaire -->
+    <p class="red"><?php echo $error; ?></p>
+    <? } ?>
+    <form class="flex flex-center flex-column " action="./adminFormAddUser.php" method="get">
+      <input class="input1" type="text" name="idUtilisateur" placeholder="Nom d'utilisateur">
+      <input class="input1" type="password" name="motDePasse" placeholder="Mot de passe">
+      <input class="input1" type="password" name="verification" placeholder="Vérification">
+      <label for="admin">
+        <input id="admin" type="checkbox" name="estAdmin" value="estAdmin">
+        Utilisateur adminstrateur
+      </label>
+      <input class="inputButton1" type="submit" name="action" value="Ajouter">
+    </form>
+  </section>
+</main>

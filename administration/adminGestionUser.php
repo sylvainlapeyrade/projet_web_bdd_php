@@ -67,57 +67,59 @@
 
 <?php include_once(dirname(__FILE__).'/../header.php'); ?>
 
-    <main class="flex flex-center flex-column">
-        <a href="./index.php">
-            <h1>Panneau d'adminsitration</h1>
-        </a>
-        <section class="text-center">
-            <a href="./adminGestionUser.php">
-                <h2>Gestion des utilisateurs</h2>
-            </a>
-            <p>
-                <a href="adminFormAddUser.php" class="button button-blue">Ajouter un utilisateur</a>
-            </p>
-            <? if ( isset($error) ) { ?>
-            <!-- Message d'erreur du formulaire -->
-            <p class="red"><?php echo $error; ?></p>
-            <? } ?>
-            <? if ( isset($message) ) { ?>
-            <!-- Message du formulaire -->
-            <p class="green"><?php echo $message; ?></p>
-            <? } ?>
-            <table id="tableauGestion">
-                <tr class="table-head">
-                    <th class="width-350">Nom d'utilisateur</th>
-                    <th class="width-350">Status utilisateur</th>
-                    <th class="width-100"></th>
-                    <th class="width-100"></th>
-                    <th class="width-100"></th>
-                </tr>
+<main>
+  <section>
+    <h1>
+      <a href="./index.php">Panneau d'adminsitration</a>
+    </h1>
+    <section class="text-center">
+      <a href="./adminGestionUser.php">
+        <h2>Gestion des utilisateurs</h2>
+      </a>
+      <p>
+        <a href="adminFormAddUser.php" class="button button-blue">Ajouter un utilisateur</a>
+      </p>
+      <? if ( isset($error) ) { ?>
+      <!-- Message d'erreur du formulaire -->
+      <p class="red"><?php echo $error; ?></p>
+      <? } ?>
+      <? if ( isset($message) ) { ?>
+      <!-- Message du formulaire -->
+      <p class="green"><?php echo $message; ?></p>
+      <? } ?>
+      <table id="tableauGestion">
+        <tr class="table-head">
+          <th class="width-350">Nom d'utilisateur</th>
+          <th class="width-350">Status utilisateur</th>
+          <th class="width-100"></th>
+          <th class="width-100"></th>
+          <th class="width-100"></th>
+        </tr>
 
-                <?php foreach($listUser as $user) { ?>
-                <tr class="table-lign">
-                    <td><?php echo $user['idutilisateur']; ?></td>
-                    <?php if ( $user['statut'] ) { ?>
-                        <td>Admin</td>
-                        <td class="button button-blue">
-                            <a href="?action=user&idUtilisateur=<?php echo $user['idutilisateur'] ?>">Devenir User</a>
-                        </td>
-                    <?php } else { ?>
-                        <td>User</td>
-                        <td class="button button-green">
-                            <a href="?action=admin&idUtilisateur=<?php echo $user['idutilisateur'] ?>">Devenir Admin</a>
-                        </td>
-                    <?php } ?>
-                    <td class="button button-blue">
-                        <a href="./adminFormModifyUser.php?idUtilisateur=<?php echo $user['idutilisateur'] ?>">Modifier mot de passe</a>
-                    </td>
-                    <td class="button button-red">
-                        <a href="?action=supprimer&idUtilisateur=<?php echo $user['idutilisateur'] ?>">Supprimer</a>
-                    </td>
-                </tr>
-            <?php } ?>
+        <?php foreach($listUser as $user) { ?>
+        <tr class="table-lign">
+          <td><?php echo $user['idutilisateur']; ?></td>
+          <?php if ( $user['statut'] ) { ?>
+          <td>Admin</td>
+          <td class="button button-blue">
+            <a href="?action=user&idUtilisateur=<?php echo $user['idutilisateur'] ?>">Devenir User</a>
+          </td>
+          <?php } else { ?>
+          <td>User</td>
+          <td class="button button-green">
+            <a href="?action=admin&idUtilisateur=<?php echo $user['idutilisateur'] ?>">Devenir Admin</a>
+          </td>
+          <?php } ?>
+          <td class="button button-blue">
+            <a href="./adminFormModifyUser.php?idUtilisateur=<?php echo $user['idutilisateur'] ?>">Modifier mot de passe</a>
+          </td>
+          <td class="button button-red">
+            <a href="?action=supprimer&idUtilisateur=<?php echo $user['idutilisateur'] ?>">Supprimer</a>
+          </td>
+        </tr>
+        <?php } ?>
 
-            </table>
-        </section>
-    </main>
+      </table>
+    </section>
+  </section>
+</main>
