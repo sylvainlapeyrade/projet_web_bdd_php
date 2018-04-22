@@ -45,21 +45,4 @@ function is_admin() {
     return false;
 }
 
-/**
- * Fonction qui vérifie si un formulaire passé en paramètre est
- * est valide ou non.
- * Un formulaire valide est définit par un formulaire non vide
- */
-function check_param($form) {
-    if ( empty($form) ) {
-        return false;
-    }
-    foreach($form as $var) {
-        if ( empty($var) ) {
-            return false;
-        }
-    }
-    return true;
-}
-
 ?>
