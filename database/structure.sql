@@ -19,7 +19,7 @@ DROP TABLE IF EXISTS Definir          CASCADE;
 
 /* Créations des tables de la bdd */
 CREATE TABLE Album(
-  idAlbum               INT           CONSTRAINT Al_pk_idAl  SERIAL PRIMARY KEY,
+  idAlbum               SERIAL        CONSTRAINT Al_pk_idAl  PRIMARY KEY,
   nomAlbum              VARCHAR(45)   CONSTRAINT Al_noAl_nn  NOT NULL,
   dateAlbum             DATE          CONSTRAINT Al_daAl_nn  NOT NULL,
   urlPochetteAlbum      TEXT,
@@ -28,18 +28,18 @@ CREATE TABLE Album(
 
 
 CREATE TABLE Artiste(
-  idArtiste             INT           CONSTRAINT Ar_pk_idAr  SERIAL PRIMARY KEY,
+  idArtiste             SERIAL        CONSTRAINT Ar_pk_idAr  PRIMARY KEY,
   nomArtiste            VARCHAR(45)   CONSTRAINT Ar_noAr_nn  NOT NULL,
   prenomArtiste         VARCHAR(45)   CONSTRAINT Ar_prAr_nn  NOT NULL,
   nomScene              VARCHAR(45),
-  dateNaissanceArtiste  DATETIME,
+  dateNaissanceArtiste  DATE,
   descriptionArtiste    TEXT,
   urlImageArtiste       TEXT
 );
 
 
 CREATE TABLE Recompense(
-  idRecompense 	        INT   		  CONSTRAINT Re_pk_idRe  SERIAL PRIMARY KEY,
+  idRecompense 	        SERIAL 		  CONSTRAINT Re_pk_idRe  PRIMARY KEY,
   nomRecompense 	    VARCHAR(45)   CONSTRAINT Re_noRc_NN  NOT NULL,
   dateRecompense        DATE          CONSTRAINT Re_daRc_NN  NOT NULL,
   descriptionRecompense TEXT
@@ -47,7 +47,7 @@ CREATE TABLE Recompense(
 
 
 CREATE TABLE Musique(
-  idMusique             INT		      CONSTRAINT Mu_pk_idMu  SERIAL PRIMARY KEY,
+  idMusique             SERIAL        CONSTRAINT Mu_pk_idMu  PRIMARY KEY,
   titreMusique	        VARCHAR(45)   CONSTRAINT Mu_tiMu_NN  NOT NULL,
   dureeMusique	        INT           CONSTRAINT Mu_duMu_NN  NOT NULL,
   dateMusique	   	    DATE          CONSTRAINT Mu_daMu_NN  NOT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE Musique(
 
 
 CREATE TABLE Groupe(
-  idGroupe              INT            CONSTRAINT Gr_pk_idGr  SERIAL PRIMARY KEY,
+  idGroupe              SERIAL         CONSTRAINT Gr_pk_idGr  PRIMARY KEY,
   nomGroupe	            VARCHAR(45)    CONSTRAINT Gr_noGr_nn  NOT NULL,
   dateGroupe	        DATE,
   descriptionGroupe     TEXT,
