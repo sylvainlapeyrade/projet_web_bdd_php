@@ -46,7 +46,7 @@
           </tr>
         
           <?php foreach($listArtiste as $artiste) { /* INFORMATION POUR CHAQUE ARTISTES AVEC ACTION */ ?>
-          <tr>
+          <tr class="table-lign">
             <td>
               <?php echo $artiste['nomartiste']; ?>
             </td>
