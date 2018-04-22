@@ -6,7 +6,7 @@
     include_once(dirname(__FILE__).'/../database/connexion.php');
 
     $info['head']['subTitle'] = "Gestion utilisateur";
-    $info['head']['stylesheets'] = ['adminGestionUser.css'];
+    $info['head']['stylesheets'] = ['adminGestion.css'];
 
     if(!is_connect() || !is_admin()) {leave();}
 
@@ -37,25 +37,19 @@
 
 <?php include_once(dirname(__FILE__).'/../header.php'); ?>
 
-<main class="flex flex-center flex-column">
+<main>
   <section>
-    <h1>
-      <a href="./index.php">Panneau d'adminsitration</a>
-    </h1>
-    <section class="text-center">
-      <a href="./adminGestionUser.php">
-        <h2>Gestion des utilisateurs</h2>
-      </a>
-      <? if ( isset($error) ) { ?>
-      <!-- Message d'erreur du formulaire -->
-      <p class="red"><?php echo $error; ?></p>
-      <? } ?>
-      <form class="flex flex-center flex-column " action="./adminFormModifyUser.php" method="get">
-        <input class="input1" type="hidden" name="idUtilisateur" value="<?php echo $identify; ?>">
-        <input class="input1" type="password" name="motDePasse" placeholder="Mot de passe">
-        <input class="input1" type="password" name="verification" placeholder="Vérification">
-        <input class="inputButton1" type="submit" name="action" value="Modifier mot de passe">
-      </form>
-    </section>
+    <?php include_once(dirname(__FILE__).'/adminHeader.php'); ?>
+    <div>
+      <?php include_once(dirname(__FILE__).'/adminHeaderUser.php'); ?>
+      <div>
+        <form class="flex flex-center flex-column " action="./adminFormModifyUser.php" method="get">
+          <input class="input-text" type="hidden" name="idUtilisateur" value="<?php echo $identify; ?>">
+          <input class="input-text" type="password" name="motDePasse" placeholder="Mot de passe">
+          <input class="input-text" type="password" name="verification" placeholder="Vérification">
+          <input class="inputButton1" type="submit" name="action" value="Modifier mot de passe">
+        </form>
+      </div>
+    </div>
   </section>
 </main>
