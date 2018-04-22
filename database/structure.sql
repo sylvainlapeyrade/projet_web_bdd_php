@@ -48,7 +48,7 @@ CREATE TABLE Recompense(
 
 CREATE TABLE Musique(
   idMusique             SERIAL        CONSTRAINT Mu_pk_idMu  PRIMARY KEY,
-  titreMusique	        VARCHAR(45)   CONSTRAINT Mu_tiMu_NN  NOT NULL,
+  titreMusique          VARCHAR(45)   CONSTRAINT Mu_tiMu_NN  NOT NULL,
   dureeMusique	        INT           CONSTRAINT Mu_duMu_NN  NOT NULL,
   dateMusique	   	    DATE          CONSTRAINT Mu_daMu_NN  NOT NULL,
   descriptionMusique    TEXT
@@ -77,7 +77,7 @@ CREATE TABLE Evaluer_Album(
   noteEvAl              INT            CONSTRAINT Ea_noEa_nn  NOT NULL,
                                        CONSTRAINT Ea_noEa_ch  CHECK (noteEvAl BETWEEN 0 AND 5),
   commentaireEvAl       TEXT,
-  						               CONSTRAINT Ea_pk_evAl  PRIMARY KEY (idUtilisateurEvAl, idAlbumEval)
+                                       CONSTRAINT Ea_pk_evAl  PRIMARY KEY (idUtilisateurEvAl, idAlbumEval)
 );
 
 
