@@ -1,4 +1,13 @@
 <?php
+  /*
+   * FICHIER AdminActionArtite.php
+   * Fichier d'exécution des actions suivant les paramètre demandé.
+   * 3 cas :
+   *    1: ajouter un artiste
+   *    2: modifier un artiste
+   *    3: supprimer un artiste
+   * Date modification : 22/04/2018
+   */
 
 switch($_GET['action']) {
   case "ajouterArtiste":
