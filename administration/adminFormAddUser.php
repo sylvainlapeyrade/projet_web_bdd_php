@@ -25,7 +25,7 @@
       if ( isset() ) {
         $userExist = getUser($db, $identify) != null;
         if ( !$userExiste ) {
-          $actionOk =  add_user($db, $identify, $password, $isAdmin);
+          $actionOk =  ajouter_utilisateur($db, $identify, $password, $isAdmin);
           if ( $actionOk ) {
             header('Location: ./adminGestionUser.php?action=effectuer');
           } else {

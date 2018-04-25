@@ -21,7 +21,7 @@ function connexion_account($db, $identify, $password) {
 function inscription($db, $identifiant, $motDePasse) {
   $user = getUser($db, $identify);
   if ( $user == null ) {
-    $inscriptionOk = add_user($db, $identifiant, $motDePasse, false);
+    $inscriptionOk = ajouter_utilisateur($db, $identifiant, $motDePasse, false);
     return true;
   }
   return false;
@@ -45,7 +45,7 @@ function getUser($db, $identify) {
   return null;
 }
 
-function add_user($db, $identify, $password, $statut) {
+function ajouter_utilisateur($db, $identify, $password, $statut) {
   $req = $db->prepare("INSERT INTO Utilisateur(idUtilisateur, motDePasse, statut)
       VALUES(:idUtilisateur, :motDePasse, :statut);");
   $req->bindParam(':idUtilisateur', $identify, PDO::PARAM_STR);
