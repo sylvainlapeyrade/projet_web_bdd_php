@@ -19,7 +19,6 @@
    * 1: cas modifier
    * 2: cas ajouter
    */
-
   if ( isset($_GET['idArtiste']) ) {
     $idArtiste = $_GET['idArtiste'];
     $artiste = recupere_artiste($db, $idArtiste);
@@ -33,18 +32,13 @@
     }
   }
 
-  if ( isset($_GET['nomArtiste']) )
-    $nomArtiste = $_GET['nomArtiste'];
-  if ( isset($_GET['prenomArtiste']) )
-    $prenomArtiste = $_GET['prenomArtiste'];
-  if ( isset($_GET['nomScene']) )
-    $nomScene = $_GET['nomScene'];
-  if ( isset($_GET['dateNaissanceArtiste']) )
-    $dateNaissanceArtiste = $_GET['dateNaissanceArtiste'];
-  if ( isset($_GET['urlImageArtiste']) )
-    $urlImageArtiste = $_GET['urlImageArtiste'];
-  if ( isset($_GET['descriptionArtiste']) )
-    $descriptionArtiste = $_GET['descriptionArtiste'];
+  $action = $_GET['action'];
+  $nomArtiste = $_GET['nomArtiste'];
+  $prenomArtiste = $_GET['prenomArtiste'];
+  $nomScene = $_GET['nomScene'];
+  $dateNaissanceArtiste = $_GET['dateNaissanceArtiste'];
+  $urlImageArtiste = $_GET['urlImageArtiste'];
+  $descriptionArtiste = $_GET['descriptionArtiste'];
 
   /* Fichier de fonction exécuter suivant deux cas :
    * 1: ajouter un artiste avec action = ajouterArtiste
