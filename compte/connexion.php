@@ -16,7 +16,7 @@
     $password = $_GET['motDePasse'];
     if ( isset($identify) && isset($password) ) {
       if ( !empty($identify) && !empty($password) ) {
-        $actionOk = connectionAccount($db, $identify, $password);
+        $actionOk = connexion_account($db, $identify, $password);
         if ( $actionOk ) {
           header('Location: /index.php');
         } else {

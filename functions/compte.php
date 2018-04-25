@@ -5,7 +5,7 @@
  * Fichier des fonctions de gestion du compte
  */
 
-function connectionAccount($db, $identify, $password) {
+function connexion_account($db, $identify, $password) {
   $res = getUser($db, $identify);
   if ( $res != null ) {
     $passOk = $password == $res['motdepasse'];
