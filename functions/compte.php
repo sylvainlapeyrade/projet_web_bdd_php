@@ -102,7 +102,7 @@ function modifier_motdepasse_utilisateur($db, $identify, $password) {
  * Modifie le statut de l'utilisateur dans la base de données.
  * Renvoie si l'opération de modification c'est bien exécutée.
  */
-function modification_statut_utilisateur($db, $identify, $statut) {
+function modifier_statut_utilisateur($db, $identify, $statut) {
   $req = $db->prepare("UPDATE Utilisateur SET statut=:statut WHERE idUtilisateur=:idUtilisateur;");
   $req->bindParam(':idUtilisateur', $identify, PDO::PARAM_STR);
   $req->bindParam(':statut', $statut, PDO::PARAM_BOOL);
