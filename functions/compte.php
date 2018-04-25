@@ -55,7 +55,7 @@ function ajouter_utilisateur($db, $identify, $password, $statut) {
   return $reqOk;
 }
 
-function modify_password_user($db, $identify, $password) {
+function modifier_motdepasse_utilisateur($db, $identify, $password) {
   $req = $db->prepare("UPDATE Utilisateur SET motDePasse=:password WHERE idUtilisateur=:idUtilisateur;");
   $req->bindParam(':idUtilisateur', $identify, PDO::PARAM_STR);
   $req->bindParam(':password', $password, PDO::PARAM_STR);

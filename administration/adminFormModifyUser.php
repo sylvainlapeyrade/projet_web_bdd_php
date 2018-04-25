@@ -18,7 +18,7 @@
             $password = $_GET['motDePasse'];
             $verification = $_GET['verification'];
             if ( $password == $verification ) {
-                $actionOk = modify_password_user($db, $identify, $password);
+                $actionOk = modifier_motdepasse_utilisateur($db, $identify, $password);
                 if ( $actionOk ) {
                     header('Location: ./adminGestionUser.php?action=effectuer');
                 } else {
