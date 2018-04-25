@@ -10,39 +10,21 @@
 
   if(!is_connect() || !is_admin()) {leave();}
 
-  /* Gestion du formulaire */
-  if ( isset($_GET['action']) && $_GET['action'] == 'Ajouter' ) {
-    $identify = $_GET['idUtilisateur'];
-    $password = $_GET['motDePasse'];
-    $verification = $_GET['verification'];
-    $estAdmin = $_GET['estAdmin'];
-    if ( $password == $verification ) {
-      if ( $estAdmin == 'estAdmin' ) {
-        $isAdmin = true;
-      } else {
-        $isAdmin = false;
-      }
-      if ( isset() ) {
-        $userExist = recuperer_utilisateur($db, $identify) != null;
-        if ( !$userExiste ) {
-          $actionOk =  ajouter_utilisateur($db, $identify, $password, $isAdmin);
-          if ( $actionOk ) {
-            header('Location: ./adminGestionUser.php?action=effectuer');
-          } else {
-            $error = 'L\'utilisateur n\'a pas pu être enregistré.';
-          }
-        } else {
-        $error = 'Un utilisateur portant ce nom existe déjà';
-        }
-      } else {
-      $error = 'Le formulaire n\'est pas valide.';
-      }
-    } else {
-    $error = 'Les deux mots de passe sont différents.';
-    }
-  }
+  $action = $_GET['action'];
+  $idUtilisateur = $_GET['idUtilisateur'];
+  $motDePasse = $_GET['motDePasse'];
+  $verification = $_GET['verification'];
+  $statut = $_GET['statut'];
 
-    include_once(dirname(__FILE__).'/../head.php');
+  /* Fichier de fonction exécuter suivant le cas suivant :
+   * ajouter un utilisateur avec action = ajouterUtilisateur
+   */
+  include_once(dirname(__FILE__).'/adminActionUser.php');
+
+  /* Récupére dans un tableau toute la liste des utilsateur de la base de donnée. */
+  $listUser = recuperer_utilisateur_tous($db);
+
+  include_once(dirname(__FILE__).'/../head.php');
 ?>
 
 <?php include_once(dirname(__FILE__).'/../header.php'); ?>
@@ -59,10 +41,11 @@
           <input class="input-text" type="password" name="motDePasse" placeholder="Mot de passe">
           <input class="input-text" type="password" name="verification" placeholder="Vérification">
           <label for="admin" class="text-center">
-            <input id="admin" type="checkbox" name="estAdmin" value="estAdmin">
+            <input id="admin" type="checkbox" name="statut" value="1">
             Adminstrateur
           </label>
-          <input class="inputButton1" type="submit" name="action" value="Ajouter">
+          <input type="hidden" name="action" value="ajouterUtilisateur">
+          <input class="inputButton1" type="submit" value="Ajouter">
         </form>
       </div>
     </div>

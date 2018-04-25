@@ -1,63 +1,31 @@
 <?php
-    session_start();
-    include_once(dirname(__FILE__).'/../functions/variables.php');
-    include_once(dirname(__FILE__).'/../functions/base.php');
-    include_once(dirname(__FILE__).'/../functions/compte.php');
-    include_once(dirname(__FILE__).'/../database/connexion.php');
+  session_start();
+  include_once(dirname(__FILE__).'/../functions/variables.php');
+  include_once(dirname(__FILE__).'/../functions/base.php');
+  include_once(dirname(__FILE__).'/../functions/compte.php');
+  include_once(dirname(__FILE__).'/../database/connexion.php');
 
-    $info['head']['subTitle'] = "Gestion utilisateur";
-    $info['head']['stylesheets'] = ['adminGestion.css'];
+  $info['head']['subTitle'] = "Gestion utilisateur";
+  $info['head']['stylesheets'] = ['adminGestion.css'];
 
-    if(!is_connect() || !is_admin()) {leave();}
+  if(!is_connect() || !is_admin()) {leave();}
 
-    /* Action supprimer */
-    if ( isset($_GET['action']) && $_GET['action'] == 'supprimer' ) {
-        $paramOk = check_param($_GET);
-        if ( $paramOk ) {
-            $identifiant = $_GET['idUtilisateur'];
-            if ( $identifiant != $_SESSION['idUtilisateur'] ) {
-                $actionOk = supprimer_utilisateur($db, $identifiant);
-                if ( $actionOk ) {
-                    header('Location: ./adminGestionUser.php?action=effectuer');
-                } else {
-                    $error = 'L\'action ne c\'est pas effectué.';
-                }
-            } else {
-                $error = 'Vous ne pouvez pas supprimer votre compte.';
-            }
-        } else {
-            $error = 'Les paramètres demandés ne sont pas valide.';
-        }
-    }
+  $action = $_GET['action'];
+  $idUtilisateur = $_GET['idUtilisateur'];
+  $motDePasse = $_GET['motDePasse'];
+  $verification = $_GET['verification'];
+  $statut = $_GET['statut'];
 
-    /* Action devenir Administrateur ou Utilisateur */
-    if ( isset($_GET['action']) && ($_GET['action'] == 'admin' || $_GET['action'] == 'user') ) {
-        $paramOk = check_param($_GET);
-        if ( $paramOk ) {
-            $identifiant = $_GET['idUtilisateur'];
-            if ( $identifiant != $_SESSION['idUtilisateur'] ) {
-                if ( $_GET['action'] == 'admin' ) {
-                    $statut = true;
-                } else {
-                    $statut = false;
-                }
-                $actionOk = modification_statut_utilisateur($db, $identifiant, $statut);
-                if ( $actionOk ) {
-                    header('Location: ./adminGestionUser.php?action=effectuer');
-                } else {
-                    $error = 'L\'action ne c\'est pas effectué.';
-                }
-            } else {
-                $error = 'Vous ne pouvez pas devenir utilisateur.';
-            }
-        } else {
-            $error = 'Les paramètres demandés ne sont pas valide.';
-        }
-    }
+  /* Fichier de fonction exécuter suivant le cas suivant :
+   * modifier le statut d'un utilisateur avec action = modifierStatutUtilisateur
+   * supprimer un utilisateur avec action = supprimerUtilisateur
+   */
+  include_once(dirname(__FILE__).'/adminActionUser.php');
 
-    $listUser = recuperer_utilisateur_tous($db);
+  /* Récupére dans un tableau toute la liste des utilsateur de la base de donnée. */
+  $listUser = recuperer_utilisateur_tous($db);
 
-    include_once(dirname(__FILE__).'/../head.php');
+  include_once(dirname(__FILE__).'/../head.php');
 ?>
 
 <?php include_once(dirname(__FILE__).'/../header.php'); ?>
@@ -83,19 +51,19 @@
             <?php if ( $user['statut'] ) { ?>
             <td>Admin</td>
             <td class="button button-blue">
-              <a href="?action=user&idUtilisateur=<?php echo $user['idutilisateur'] ?>">Devenir User</a>
+              <a href="?action=modifierStatutUtilisateur&idUtilisateur=<?php echo $user['idutilisateur'] ?>&statut=0">Devenir User</a>
             </td>
             <?php } else { ?>
             <td>User</td>
             <td class="button button-green">
-              <a href="?action=admin&idUtilisateur=<?php echo $user['idutilisateur'] ?>">Devenir Admin</a>
+              <a href="?action=modifierStatutUtilisateur&idUtilisateur=<?php echo $user['idutilisateur'] ?>&statut=1">Devenir Admin</a>
             </td>
             <?php } ?>
             <td class="button button-blue">
               <a href="./adminFormModifyUser.php?idUtilisateur=<?php echo $user['idutilisateur'] ?>">Modifier mot de passe</a>
             </td>
             <td class="button button-red">
-              <a href="?action=supprimer&idUtilisateur=<?php echo $user['idutilisateur'] ?>">Supprimer</a>
+              <a href="?action=supprimerUtilisateur&idUtilisateur=<?php echo $user['idutilisateur'] ?>">Supprimer</a>
             </td>
           </tr>
           <?php } ?>
