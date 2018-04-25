@@ -71,7 +71,7 @@ function modification_statut_utilisateur($db, $identify, $statut) {
   return $reqOk;
 }
 
-function delete_user($db, $identify) {
+function supprimer_utilisateur($db, $identify) {
   $req = $db->prepare("DELETE FROM Utilisateur WHERE idUtilisateur=:idUtilisateur;");
   $req->bindParam(':idUtilisateur', $identify, PDO::PARAM_STR);
   $reqOk = $req->execute();

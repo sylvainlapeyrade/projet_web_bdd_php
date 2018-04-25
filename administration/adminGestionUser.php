@@ -16,7 +16,7 @@
         if ( $paramOk ) {
             $identifiant = $_GET['idUtilisateur'];
             if ( $identifiant != $_SESSION['idUtilisateur'] ) {
-                $actionOk = delete_user($db, $identifiant);
+                $actionOk = supprimer_utilisateur($db, $identifiant);
                 if ( $actionOk ) {
                     header('Location: ./adminGestionUser.php?action=effectuer');
                 } else {
