@@ -6,7 +6,7 @@
  */
 
 function connexion_account($db, $identify, $password) {
-  $res = getUser($db, $identify);
+  $res = recuperer_utilisateur($db, $identify);
   if ( $res != null ) {
     $passOk = $password == $res['motdepasse'];
     if ( $passOk ) {
@@ -19,7 +19,7 @@ function connexion_account($db, $identify, $password) {
 }
 
 function inscription($db, $identifiant, $motDePasse) {
-  $user = getUser($db, $identify);
+  $user = recuperer_utilisateur($db, $identify);
   if ( $user == null ) {
     $inscriptionOk = ajouter_utilisateur($db, $identifiant, $motDePasse, false);
     return true;
@@ -34,7 +34,7 @@ function recuperer_utilisateur_tous($db) {
   return $res;
 }
 
-function getUser($db, $identify) {
+function recuperer_utilisateur($db, $identify) {
   $req = $db->prepare("SELECT * FROM Utilisateur WHERE idUtilisateur=:idUtilisateur");
   $req->bindParam(':idUtilisateur', $identify);
   $req->execute();

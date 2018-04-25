@@ -23,7 +23,7 @@
         $isAdmin = false;
       }
       if ( isset() ) {
-        $userExist = getUser($db, $identify) != null;
+        $userExist = recuperer_utilisateur($db, $identify) != null;
         if ( !$userExiste ) {
           $actionOk =  ajouter_utilisateur($db, $identify, $password, $isAdmin);
           if ( $actionOk ) {
