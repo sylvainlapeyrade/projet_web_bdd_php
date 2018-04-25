@@ -18,7 +18,7 @@ function connexion_account($db, $identify, $password) {
   return false;
 }
 
-function registration($db, $identifiant, $motDePasse) {
+function inscription($db, $identifiant, $motDePasse) {
   $user = getUser($db, $identify);
   if ( $user == null ) {
     $inscriptionOk = add_user($db, $identifiant, $motDePasse, false);

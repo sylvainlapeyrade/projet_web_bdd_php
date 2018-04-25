@@ -18,7 +18,7 @@
     if ( isset($identify) && isset($password) && isset($verify) ) {
       if ( !empty($identify) && !empty($password) && !empty($verify) ) {
         if ( $password == $verify ) {
-          $actionOk = registration($db, $identify, $password);
+          $actionOk = inscription($db, $identify, $password);
           if ( actionOk ) {
             header('Location: /compte/connexion.php?action=inscription');
           } else {
