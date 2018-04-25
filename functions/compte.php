@@ -63,7 +63,7 @@ function modifier_motdepasse_utilisateur($db, $identify, $password) {
   return $reqOk;
 }
 
-function modify_statut_user($db, $identify, $statut) {
+function modification_statut_utilisateur($db, $identify, $statut) {
   $req = $db->prepare("UPDATE Utilisateur SET statut=:statut WHERE idUtilisateur=:idUtilisateur;");
   $req->bindParam(':idUtilisateur', $identify, PDO::PARAM_STR);
   $req->bindParam(':statut', $statut, PDO::PARAM_BOOL);

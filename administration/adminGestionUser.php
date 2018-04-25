@@ -41,7 +41,7 @@
                 } else {
                     $statut = false;
                 }
-                $actionOk = modify_statut_user($db, $identifiant, $statut);
+                $actionOk = modification_statut_utilisateur($db, $identifiant, $statut);
                 if ( $actionOk ) {
                     header('Location: ./adminGestionUser.php?action=effectuer');
                 } else {
