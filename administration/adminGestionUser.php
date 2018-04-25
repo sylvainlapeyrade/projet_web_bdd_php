@@ -55,7 +55,7 @@
         }
     }
 
-    $listUser = getAllUser($db);
+    $listUser = recuperer_utilisateur_tous($db);
 
     include_once(dirname(__FILE__).'/../head.php');
 ?>

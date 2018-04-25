@@ -27,7 +27,7 @@ function inscription($db, $identifiant, $motDePasse) {
   return false;
 }
 
-function getAllUser($db) {
+function recuperer_utilisateur_tous($db) {
   $req = $db->prepare("SELECT * FROM Utilisateur ORDER BY idUtilisateur ASC");
   $req->execute();
   $res = $req->fetchAll();
