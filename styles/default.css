@@ -49,6 +49,7 @@ li { list-style: none; }
 .background-green { background: green; }
 .background-cyan { background: #21efe7; }
 
+.width-50 { width: 50px; }
 .width-100 { width: 100px; }
 .width-150 { width: 150px; }
 .width-200 { width: 200px; }
@@ -57,6 +58,10 @@ li { list-style: none; }
 .width-350 { width: 350px; }
 .width-400 { width: 400px; }
 .width-450 { width: 450px; }
+.width-500 { width: 500px; }
+.width-550 { width: 550px; }
+.width-600 { width: 600px; }
+.width-650 { width: 650px; }
 
 .button {
     padding: 10px;
