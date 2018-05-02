@@ -22,7 +22,7 @@
         </title>
         
         <!-- Affichage des STYLESHEETS -->
-        <link rel="stylesheet" href="/styles/default.css">
+        <link rel="stylesheet" href="/styles/defaut.css">
         <link rel="stylesheet" href="/styles/header.css">
         <link rel="stylesheet" href="/styles/footer.css">
         <?php foreach($info['head']['stylesheets'] as $style) { ?>

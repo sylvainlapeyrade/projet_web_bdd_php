@@ -5,14 +5,14 @@
  * extension=php_pgsql.so
  * Redémarer ensuite le serveur apache2
  */
-    include_once(dirname(__FILE__).'/../functions/variables.php');
-    include_once(dirname(__FILE__).'/../database/connexion.php');
+    include_once(dirname(__FILE__) . '/../fonctions/variables.php');
+    include_once(dirname(__FILE__) . '/../bdd/connexion.php');
 
     if ( !isset($db) ) {
-        $db_name = $info['database']['postgres']['db_name'];
-        $db_host = $info['database']['postgres']['db_host'];
-        $db_user = $info['database']['postgres']['db_user'];
-        $db_pwd = $info['database']['postgres']['db_pwd'];
+        $db_name = $info['bdd']['postgres']['db_name'];
+        $db_host = $info['bdd']['postgres']['db_host'];
+        $db_user = $info['bdd']['postgres']['db_user'];
+        $db_pwd = $info['bdd']['postgres']['db_pwd'];
         
         try {
             $db = new PDO("pgsql:dbname=$db_name;host=$db_host", $db_user, $db_pwd); 
