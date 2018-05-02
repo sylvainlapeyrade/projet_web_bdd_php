@@ -2,7 +2,7 @@
 
 include_once(dirname(__FILE__).'/connexion.php');
 
-$db->exec(file_get_contents('./structure.sql'));
-$db->exec(file_get_contents('./population.sql'));
+var_dump($db->exec(file_get_contents('./structure.sql')));
+var_dump($db->exec(file_get_contents('./population.sql')));
 
 ?>
