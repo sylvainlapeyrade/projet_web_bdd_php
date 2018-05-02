@@ -40,9 +40,6 @@
           <tr class="table-head">
             <th class="width-350">Nom d'utilisateur</th>
             <th class="width-350">Status utilisateur</th>
-            <th class="width-100"></th>
-            <th class="width-100"></th>
-            <th class="width-100"></th>
           </tr>
 
           <?php foreach($listUser as $user) { ?>

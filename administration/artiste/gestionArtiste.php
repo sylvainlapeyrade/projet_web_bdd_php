@@ -41,8 +41,6 @@
             <th class="width-350">Nom de l'artiste</th>
             <th class="width-350">Prénom</th>
             <th class="width-350">Nom de scène</th>
-            <th class="width-100"></th>
-            <th class="width-100"></th>
           </tr>
         
           <?php foreach($listArtiste as $artiste) { /* INFORMATION POUR CHAQUE ARTISTES AVEC ACTION */ ?>

@@ -1,4 +1,4 @@
-<div id="adminHeaderUser" class="flex flex-row">
+<div id="headerGestion" class="flex flex-row">
   <div class="t24">
     <a href="./gestionArtiste.php">Gestion des artistes</a>
   </div>
