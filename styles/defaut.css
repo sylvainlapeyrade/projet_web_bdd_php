@@ -19,6 +19,7 @@ li { list-style: none; }
 .flex-center { justify-content: center; }
 .flex-arround { justify-content: space-around; }
 .flex-between { justify-content: space-between; }
+.flex-wrap { flex-wrap: wrap; align-content: flex-start; }
 
 .white { color: white; }
 .green { color: green; }
@@ -62,6 +63,9 @@ li { list-style: none; }
 .width-550 { width: 550px; }
 .width-600 { width: 600px; }
 .width-650 { width: 650px; }
+.width-700 { width: 700px; }
+.width-750 { width: 750px; }
+.width-800 { width: 800px; }
 
 .table-head {
     color: white;
@@ -130,6 +134,7 @@ li { list-style: none; }
     font-size: 15px;
     text-align: center;
     padding: 15px;
+    margin: 10px auto;
 }
 
 .input-area {
@@ -138,4 +143,9 @@ li { list-style: none; }
     font-size: 15px;
     text-align: center;
     padding: 15px;
+    margin: 10px;
+}
+
+.item-checkbox {
+  padding-right: 15px;
 }
