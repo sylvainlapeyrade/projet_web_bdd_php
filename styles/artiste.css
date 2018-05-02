@@ -1,0 +1,21 @@
+#description-artiste {
+  border-right: 1px black solid;
+  margin-right: 50px;
+  padding-right: 10px;
+  margin-top: 25px;
+}
+
+#imageArtiste {
+  margin: 10px;
+  margin-top: 25px;
+  border: 1px black solid;
+  height: 300px;
+}
+
+#liste-album {
+  margin-bottom: 25px
+}
+
+#liste-musique {
+  margin-top: 25px;
+}
