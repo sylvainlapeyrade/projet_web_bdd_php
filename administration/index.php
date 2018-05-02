@@ -18,10 +18,10 @@
       <a href="./index.php">Panneau d'adminsitration</a>
     </h1>
     <section class="">
-        <a class="button button-blue" href="./adminGestionUser.php">
+        <a class="button button-blue" href="./utilisateur/adminGestionUser.php">
           Gestion des utilisateur
         </a><br><br>
-        <a class="button button-blue" href="./adminGestionArtiste.php">
+        <a class="button button-blue" href="./artiste/adminGestionArtiste.php">
           Gestion des artistes
         </a>
     </section>
