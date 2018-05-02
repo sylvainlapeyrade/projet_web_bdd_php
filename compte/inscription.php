@@ -3,7 +3,7 @@
   include_once(dirname(__FILE__) . '/../fonctions/variables.php');
   include_once(dirname(__FILE__) . '/../fonctions/base.php');
   include_once(dirname(__FILE__) . '/../bdd/connexion.php');
-  include_once(dirname(__FILE__) . '/../fonctions/compte.php');
+  include_once(dirname(__FILE__) . '/../fonctions/fonction_compte.php');
 
   $info['head']['subTitle'] = "Inscription";
   $info['head']['stylesheets'] = ['inscription.css'];
