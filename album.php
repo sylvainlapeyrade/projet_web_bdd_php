@@ -1,7 +1,7 @@
 <?php
     session_start();
     include_once(dirname(__FILE__) . '/fonctions/variables.php');
-    include_once(dirname(__FILE__) . '/fonctions/base.php');
+    include_once(dirname(__FILE__) . '/fonctions/fonction_compte.php');
     include_once(dirname(__FILE__) . '/fonctions/fonction_album.php');
     include_once(dirname(__FILE__) . '/bdd/connexion.php');
 
@@ -16,13 +16,13 @@
 
 <main>
     <section>
-        <!-- Présentation de l'artiste -->
+        <!-- Présentation de l'album -->
         <div class="flex">
             <div id="description-artiste" class="flex-around">
                 <div>
-                    <h1>Artiste Blabla</h1>
+                    <h1>Nom_Album</h1>
                     <p>
-                        Ceci est la description de l'artiste<br>
+                        Ceci est la description de l'album<br>
                         A peep at some distant orb has power to raise and purify our thoughts like a strain of sacred music, or a noble picture, or a passage from the grander poets. It always does one good.<br>
                     </p>
                     <p>
@@ -112,9 +112,6 @@
         </div>
     </section>
 </main>
-
-
-
 
 <?php include_once(dirname(__FILE__).'/footer.php'); ?>
 
