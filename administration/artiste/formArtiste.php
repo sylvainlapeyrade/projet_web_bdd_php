@@ -6,7 +6,7 @@
    */
   session_start();
   include_once(dirname(__FILE__) . '/../../fonctions/variables.php');
-  include_once(dirname(__FILE__) . '/../../fonctions/base.php');
+  include_once(dirname(__FILE__) . '/../../fonctions/fonction_compte.php');
   include_once(dirname(__FILE__) . '/../../fonctions/fonction_artiste.php');
   include_once(dirname(__FILE__) . '/../../bdd/connexion.php');
 
@@ -44,7 +44,7 @@
    * 1: ajouter un artiste avec action = ajouterArtiste
    * 2: modifier un artiste avec action = modifierArtiste
    */
-  include_once(dirname(__FILE__).'/adminActionArtiste.php');
+  include_once(dirname(__FILE__).'/actionArtiste.php');
 
   $artiste = recupere_artiste($db, $idArtiste);
   $nomArtiste = $artiste['nomartiste'];
@@ -63,7 +63,7 @@
   <section>
     <?php include_once(dirname(__FILE__).'/../adminHeader.php'); ?>
     <div>
-      <?php include_once(dirname(__FILE__).'/adminHeaderArtiste.php'); ?>
+      <?php include_once(dirname(__FILE__).'/headerArtiste.php'); ?>
       <div class="text-center">
         <h1>Formulaire Artiste</h1>
         

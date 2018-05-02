@@ -1,9 +1,8 @@
 <?php
   session_start();
   include_once(dirname(__FILE__) . '/../fonctions/variables.php');
-  include_once(dirname(__FILE__) . '/../fonctions/base.php');
-  include_once(dirname(__FILE__) . '/../bdd/connexion.php');
   include_once(dirname(__FILE__) . '/../fonctions/fonction_compte.php');
+  include_once(dirname(__FILE__) . '/../bdd/connexion.php');
 
   $info['head']['subTitle'] = "Inscription";
   $info['head']['stylesheets'] = ['inscription.css'];
@@ -40,8 +39,8 @@
 <?php include_once(dirname(__FILE__).'/../header.php'); ?>
 
 <main>
-  <section>
-    <h1 class="t30 text-center">Inscription</h1>
+  <section class="text-center">
+    <h1 class="t30">Inscription</h1>
     <? if ( isset($erreur) ) { ?>
     <!-- Message d'erreur du formulaire -->
     <p class="red"><?php echo $erreur; ?></p>

@@ -2,16 +2,7 @@
     margin: 0 auto;
 }
 
-.table-head {
-    color: white;
-    background: black;
-}
-
-.table-lign:nth-of-type(2n+1) {
-    background: #e6e6e6;
-}
-
-#adminHeaderUser {
+#headerGestion {
   margin-bottom: 40px;
 }
 

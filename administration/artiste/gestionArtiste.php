@@ -1,7 +1,7 @@
 <?php
   session_start();
   include_once(dirname(__FILE__) . '/../../fonctions/variables.php');
-  include_once(dirname(__FILE__) . '/../../fonctions/base.php');
+  include_once(dirname(__FILE__) . '/../../fonctions/fonction_compte.php');
   include_once(dirname(__FILE__) . '/../../fonctions/fonction_artiste.php');
   include_once(dirname(__FILE__) . '/../../bdd/connexion.php');
 
@@ -18,7 +18,7 @@
   /* Fichier de fonction exécuter suivant le cas suivant :
    * supprimer un artiste avec action = supprimerArtiste
    */
-  include_once(dirname(__FILE__).'/adminActionArtiste.php');
+  include_once(dirname(__FILE__).'/actionArtiste.php');
 
   /* On récupère tout les artiste de la base de données. */
   $listArtiste = recuperer_artiste_tous($db);
@@ -32,7 +32,7 @@
   <section>
     <?php include_once(dirname(__FILE__).'/../adminHeader.php'); ?>
     <div>
-      <?php include_once(dirname(__FILE__).'/adminHeaderArtiste.php'); ?>
+      <?php include_once(dirname(__FILE__).'/headerArtiste.php'); ?>
       <div>
         
         <!-- TABLEAU DES ARTISTES -->
@@ -41,8 +41,6 @@
             <th class="width-350">Nom de l'artiste</th>
             <th class="width-350">Prénom</th>
             <th class="width-350">Nom de scène</th>
-            <th class="width-100"></th>
-            <th class="width-100"></th>
           </tr>
         
           <?php foreach($listArtiste as $artiste) { /* INFORMATION POUR CHAQUE ARTISTES AVEC ACTION */ ?>

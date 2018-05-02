@@ -22,7 +22,7 @@ switch($_GET['action']) {
         $operationOk = ajouter_artiste($db, $nomArtiste, $prenomArtiste, $nomScene,
                                        $dateNaissanceArtiste,  $urlImageArtiste, $descriptionArtiste);
         if ( $operationOk ) {
-          header('Location: ./adminGestionArtiste.php?operation=ok');
+          header('Location: ./gestionArtiste.php?operation=ok');
         } else {
           $erreur = "L'opération n'a pas pu être exécuté.";
         }
@@ -46,7 +46,7 @@ switch($_GET['action']) {
         $operationOk = modifier_artiste($db, $idArtiste, $nomArtiste, $prenomArtiste, $nomScene,
                                        $dateNaissanceArtiste,  $urlImageArtiste, $descriptionArtiste);
         if ( $operationOk ) {
-          header('Location: ./adminGestionArtiste.php?operation=ok');
+          header('Location: ./gestionArtiste.php?operation=ok');
         } else {
           $erreur = "L'opération n'a pas pu être exécuté.";
         }
@@ -67,7 +67,7 @@ switch($_GET['action']) {
       if ( !empty($idArtiste) ) {
         $operationOk = supprimer_artiste($db, $idArtiste);
         if ( operationOk ) {
-          header('Location: ./adminGestionArtiste.php?operation=ok');
+          header('Location: ./gestionArtiste.php?operation=ok');
         } else {
           $erreur = "L'opération n'a pas pu être exécuté.";
         }

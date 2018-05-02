@@ -1,9 +1,9 @@
-<div id="adminHeaderUser" class="flex flex-row">
+<div id="headerGestion" class="flex flex-row">
   <div class="t24">
-    <a href="./adminGestionUser.php">Gestion des utilisateurs</a>
+    <a href="./gestionRecompense.php">Gestion des artistes</a>
   </div>
   <div>
-    <a href="adminFormAddUser.php" class="button button-blue t12 button-header">Ajouter un utilisateur</a>
+    <a href="formRecompense.php" class="button button-blue t12 button-header">Ajouter une récompense</a>
   </div>
   
   <!-- Message d'erreur du formulaire -->

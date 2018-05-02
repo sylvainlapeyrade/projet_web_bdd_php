@@ -15,7 +15,7 @@
         $db_pwd = $info['bdd']['postgres']['db_pwd'];
         
         try {
-            $db = new PDO("pgsql:dbname=$db_name;host=$db_host", $db_user, $db_pwd); 
+            $db = new PDO("pgsql:dbname=$db_name;host=$db_host", $db_user, $db_pwd);
         }
         catch(Exception $e)  {
             die('Une erreur c\'est produit avec la base de données.<br>Merci de contacter un administrateur.');

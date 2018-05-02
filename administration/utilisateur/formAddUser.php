@@ -1,7 +1,6 @@
 <?php
   session_start();
   include_once(dirname(__FILE__) . '/../../fonctions/variables.php');
-  include_once(dirname(__FILE__) . '/../../fonctions/base.php');
   include_once(dirname(__FILE__) . '/../../fonctions/fonction_compte.php');
   include_once(dirname(__FILE__) . '/../../bdd/connexion.php');
 
@@ -19,7 +18,7 @@
   /* Fichier de fonction exécuter suivant le cas suivant :
    * ajouter un utilisateur avec action = ajouterUtilisateur
    */
-  include_once(dirname(__FILE__).'/adminActionUser.php');
+  include_once(dirname(__FILE__).'/actionUser.php');
 
   /* Récupére dans un tableau toute la liste des utilsateur de la base de donnée. */
   $listUser = recuperer_utilisateur_tous($db);
@@ -33,7 +32,7 @@
   <section>
     <?php include_once(dirname(__FILE__).'/../adminHeader.php'); ?>
     <div>
-      <?php include_once(dirname(__FILE__).'/adminHeaderUser.php'); ?>
+      <?php include_once(dirname(__FILE__).'/headerUser.php'); ?>
       <div class="text-center">
         <h1>Formulaire Utilisateur</h1>
         <form class="flex flex-center flex-column " action="./adminFormAddUser.php" method="get">

@@ -1,7 +1,6 @@
 <?php
   session_start();
   include_once(dirname(__FILE__) . '/../../fonctions/variables.php');
-  include_once(dirname(__FILE__) . '/../../fonctions/base.php');
   include_once(dirname(__FILE__) . '/../../fonctions/fonction_compte.php');
   include_once(dirname(__FILE__) . '/../../bdd/connexion.php');
 
@@ -19,7 +18,7 @@
   /* Fichier de fonction exécuter suivant le cas suivant :
    * modifier le mot de passe d'un utilisateur avec action = modifierMotDePasseUtilisateur
    */
-  include_once(dirname(__FILE__).'/adminActionUser.php');
+  include_once(dirname(__FILE__).'/actionUser.php');
 
   $utilisateur = recuperer_utilisateur($db, $idUtilisateur);
 
@@ -32,7 +31,7 @@
   <section>
     <?php include_once(dirname(__FILE__).'/../adminHeader.php'); ?>
     <div>
-      <?php include_once(dirname(__FILE__).'/adminHeaderUser.php'); ?>
+      <?php include_once(dirname(__FILE__).'/headerUser.php'); ?>
       <div class="text-center">
         
         <h1>Modification mot de passe</h1>
