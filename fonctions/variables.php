@@ -4,7 +4,7 @@
         'head' => [
             'title' => "Mon projet"
         ],
-        'database' => [
+        'bdd' => [
             'postgres' => [
                 'db_name' => 'bd_web',
                 'db_host' => 'localhost',

@@ -1,8 +1,8 @@
 <?php
     session_start();
-    include_once(dirname(__FILE__).'/functions/variables.php');
-    include_once(dirname(__FILE__).'/functions/base.php');
-    include_once(dirname(__FILE__).'/database/connexion.php');
+    include_once(dirname(__FILE__) . '/fonctions/variables.php');
+    include_once(dirname(__FILE__) . '/fonctions/base.php');
+    include_once(dirname(__FILE__) . '/bdd/connexion.php');
 
     $info['head']['subTitle'] = "Page d'accueil";
     $info['head']['stylesheets'] = ['accueil.css'];

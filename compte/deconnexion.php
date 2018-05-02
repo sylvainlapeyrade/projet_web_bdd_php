@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once(dirname(__FILE__).'/../functions/base.php');
+    include_once(dirname(__FILE__) . '/../fonctions/base.php');
 
     if( !is_connect() ) {leave();}
 

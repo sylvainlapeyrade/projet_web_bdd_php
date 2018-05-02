@@ -1,9 +1,9 @@
 <?php
   session_start();
-  include_once(dirname(__FILE__).'/../functions/variables.php');
-  include_once(dirname(__FILE__).'/../functions/base.php');
-  include_once(dirname(__FILE__).'/../database/connexion.php');
-  include_once(dirname(__FILE__).'/../functions/compte.php');
+  include_once(dirname(__FILE__) . '/../fonctions/variables.php');
+  include_once(dirname(__FILE__) . '/../fonctions/base.php');
+  include_once(dirname(__FILE__) . '/../bdd/connexion.php');
+  include_once(dirname(__FILE__) . '/../fonctions/compte.php');
 
   $info['head']['subTitle'] = "Inscription";
   $info['head']['stylesheets'] = ['inscription.css'];
