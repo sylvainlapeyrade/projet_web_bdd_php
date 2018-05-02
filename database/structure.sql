@@ -40,7 +40,7 @@ CREATE TABLE Artiste(
 
 CREATE TABLE Recompense(
   idRecompense 	        SERIAL 		    CONSTRAINT Re_pk_idRe  PRIMARY KEY,
-  nomRecompense 	    VARCHAR(45)     CONSTRAINT Re_noRc_NN  NOT NULL,
+  nomRecompense 	      VARCHAR(45)   CONSTRAINT Re_noRc_NN  NOT NULL,
   dateRecompense        DATE          CONSTRAINT Re_daRc_NN  NOT NULL,
   descriptionRecompense TEXT
 );
@@ -58,7 +58,7 @@ CREATE TABLE Musique(
 CREATE TABLE Groupe(
   idGroupe              SERIAL        CONSTRAINT Gr_pk_idGr  PRIMARY KEY,
   nomGroupe	            VARCHAR(45)   CONSTRAINT Gr_noGr_nn  NOT NULL,
-  dateGroupe	        DATE,
+  dateGroupe	          DATE,
   descriptionGroupe     TEXT,
   urlImageGroupe        TEXT
 );
@@ -94,7 +94,7 @@ CREATE TABLE Evaluer_Musique(
 CREATE TABLE Composer_Album(
   idAlbumCoAl           INT           CONSTRAINT Ca_fk_ilCo  REFERENCES Album(idAlbum),
   idArtisteCoAl         INT           CONSTRAINT Ca_fk_irCo  REFERENCES Artiste(idArtiste),
-							          CONSTRAINT Ca_pk_coAl  PRIMARY KEY (idAlbumCoAl, idArtisteCoAl)
+							                        CONSTRAINT Ca_pk_coAl  PRIMARY KEY (idAlbumCoAl, idArtisteCoAl)
 );
 
 
@@ -108,7 +108,7 @@ CREATE TABLE Composer_Musique(
 CREATE TABLE Obtenir_Artiste(
   idRecompenseOa        INT           CONSTRAINT Oa_fk_iROa  REFERENCES Recompense(idRecompense),
   idArtisteOa           INT           CONSTRAINT Oa_fk_iAOa  REFERENCES Artiste(idArtiste),
-							          CONSTRAINT Oa_pk_obAr  PRIMARY KEY (idRecompenseOa, idArtisteOa)
+							                        CONSTRAINT Oa_pk_obAr  PRIMARY KEY (idRecompenseOa, idArtisteOa)
 );
 
 
