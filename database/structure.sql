@@ -39,8 +39,8 @@ CREATE TABLE Artiste(
 
 
 CREATE TABLE Recompense(
-  idRecompense 	        SERIAL 		  CONSTRAINT Re_pk_idRe  PRIMARY KEY,
-  nomRecompense 	    VARCHAR(45)   CONSTRAINT Re_noRc_NN  NOT NULL,
+  idRecompense 	        SERIAL 		    CONSTRAINT Re_pk_idRe  PRIMARY KEY,
+  nomRecompense 	    VARCHAR(45)     CONSTRAINT Re_noRc_NN  NOT NULL,
   dateRecompense        DATE          CONSTRAINT Re_daRc_NN  NOT NULL,
   descriptionRecompense TEXT
 );
@@ -50,14 +50,14 @@ CREATE TABLE Musique(
   idMusique             SERIAL        CONSTRAINT Mu_pk_idMu  PRIMARY KEY,
   titreMusique          VARCHAR(45)   CONSTRAINT Mu_tiMu_NN  NOT NULL,
   dureeMusique	        INT           CONSTRAINT Mu_duMu_NN  NOT NULL,
-  dateMusique	   	    DATE          CONSTRAINT Mu_daMu_NN  NOT NULL,
+  dateMusique	   	      DATE          CONSTRAINT Mu_daMu_NN  NOT NULL,
   descriptionMusique    TEXT
 );
 
 
 CREATE TABLE Groupe(
-  idGroupe              SERIAL         CONSTRAINT Gr_pk_idGr  PRIMARY KEY,
-  nomGroupe	            VARCHAR(45)    CONSTRAINT Gr_noGr_nn  NOT NULL,
+  idGroupe              SERIAL        CONSTRAINT Gr_pk_idGr  PRIMARY KEY,
+  nomGroupe	            VARCHAR(45)   CONSTRAINT Gr_noGr_nn  NOT NULL,
   dateGroupe	        DATE,
   descriptionGroupe     TEXT,
   urlImageGroupe        TEXT
@@ -65,29 +65,29 @@ CREATE TABLE Groupe(
 
 
 CREATE TABLE Utilisateur(
-  idUtilisateur         VARCHAR(45)    CONSTRAINT Ut_pk_idUt  PRIMARY KEY,
-  motDePasse            VARCHAR(45)    CONSTRAINT Ut_moUt_nn  NOT NULL,
-  statut                BOOLEAN        CONSTRAINT Ut_stUt_nn  NOT NULL
+  idUtilisateur         VARCHAR(45)   CONSTRAINT Ut_pk_idUt  PRIMARY KEY,
+  motDePasse            VARCHAR(45)   CONSTRAINT Ut_moUt_nn  NOT NULL,
+  statut                BOOLEAN       CONSTRAINT Ut_stUt_nn  NOT NULL
 );
 
 
 CREATE TABLE Evaluer_Album(
-  idUtilisateurEvAl     VARCHAR(45)    CONSTRAINT Ea_fk_iUEa  REFERENCES Utilisateur(idUtilisateur),
-  idAlbumEvAl           INT            CONSTRAINT Ea_fk_iAEa  REFERENCES Album(idAlbum),
-  noteEvAl              INT            CONSTRAINT Ea_noEa_nn  NOT NULL,
-                                       CONSTRAINT Ea_noEa_ch  CHECK (noteEvAl BETWEEN 0 AND 5),
+  idUtilisateurEvAl     VARCHAR(45)   CONSTRAINT Ea_fk_iUEa  REFERENCES Utilisateur(idUtilisateur),
+  idAlbumEvAl           INT           CONSTRAINT Ea_fk_iAEa  REFERENCES Album(idAlbum),
+  noteEvAl              INT           CONSTRAINT Ea_noEa_nn  NOT NULL,
+                                      CONSTRAINT Ea_noEa_ch  CHECK (noteEvAl BETWEEN 0 AND 5),
   commentaireEvAl       TEXT,
-                                       CONSTRAINT Ea_pk_evAl  PRIMARY KEY (idUtilisateurEvAl, idAlbumEval)
+                                      CONSTRAINT Ea_pk_evAl  PRIMARY KEY (idUtilisateurEvAl, idAlbumEval)
 );
 
 
 CREATE TABLE Evaluer_Musique(
-  idUtilisateurEvMu     VARCHAR(45)    CONSTRAINT Em_fk_iUEm  REFERENCES Utilisateur(idUtilisateur),
-  idMusiqueEvMu         INT            CONSTRAINT Em_fk_iMEm  REFERENCES Musique(idMusique),
-  noteEvMu              INT            CONSTRAINT Em_noEm_NN  NOT NULL,
-                                       CONSTRAINT Em_noEm_CH  CHECK (noteEvMu BETWEEN 0 AND 5),
+  idUtilisateurEvMu     VARCHAR(45)   CONSTRAINT Em_fk_iUEm  REFERENCES Utilisateur(idUtilisateur),
+  idMusiqueEvMu         INT           CONSTRAINT Em_fk_iMEm  REFERENCES Musique(idMusique),
+  noteEvMu              INT           CONSTRAINT Em_noEm_NN  NOT NULL,
+                                      CONSTRAINT Em_noEm_CH  CHECK (noteEvMu BETWEEN 0 AND 5),
   commentaireEvMu       TEXT,
-                                       CONSTRAINT Em_pk_evMu  PRIMARY KEY (idUtilisateurEvMu, idMusiqueEvMu)
+                                      CONSTRAINT Em_pk_evMu  PRIMARY KEY (idUtilisateurEvMu, idMusiqueEvMu)
 );
 
 
@@ -99,9 +99,9 @@ CREATE TABLE Composer_Album(
 
 
 CREATE TABLE Composer_Musique(
-  idMusiqueCoAl         INT           CONSTRAINT Cm_fk_iMCo  REFERENCES Album(idAlbum),
-  idArtisteCoAl         INT           CONSTRAINT Cm_fk_iACo  REFERENCES Artiste(idArtiste),
-                                      CONSTRAINT Cm_pk_coMu  PRIMARY KEY (idMusiqueCoAl, idArtisteCoAl)
+  idMusiqueCoMu         INT           CONSTRAINT Cm_fk_iMCo  REFERENCES Album(idAlbum),
+  idArtisteCoMu         INT           CONSTRAINT Cm_fk_iACo  REFERENCES Artiste(idArtiste),
+                                      CONSTRAINT Cm_pk_coMu  PRIMARY KEY (idMusiqueCoMu, idArtisteCoMu)
 );
 
 
