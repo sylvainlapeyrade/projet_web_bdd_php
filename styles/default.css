@@ -63,6 +63,15 @@ li { list-style: none; }
 .width-600 { width: 600px; }
 .width-650 { width: 650px; }
 
+.table-head {
+    color: white;
+    background: black;
+}
+
+.table-lign:nth-of-type(2n+1) {
+    background: #e6e6e6;
+}
+
 .button {
     padding: 10px;
     border: none;

@@ -20,7 +20,7 @@
    * modifier le statut d'un utilisateur avec action = modifierStatutUtilisateur
    * supprimer un utilisateur avec action = supprimerUtilisateur
    */
-  include_once(dirname(__FILE__).'/adminActionUser.php');
+  include_once(dirname(__FILE__).'/actionUser.php');
 
   /* Récupére dans un tableau toute la liste des utilsateur de la base de donnée. */
   $listUser = recuperer_utilisateur_tous($db);
@@ -34,7 +34,7 @@
   <section>
     <?php include_once(dirname(__FILE__).'/../adminHeader.php'); ?>
     <section class="text-center">
-      <?php include_once(dirname(__FILE__).'/adminHeaderUser.php'); ?>
+      <?php include_once(dirname(__FILE__).'/headerUser.php'); ?>
       <div>
         <table id="tableauGestion">
           <tr class="table-head">

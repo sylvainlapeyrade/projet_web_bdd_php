@@ -18,7 +18,7 @@
   /* Fichier de fonction exécuter suivant le cas suivant :
    * supprimer un artiste avec action = supprimerArtiste
    */
-  include_once(dirname(__FILE__).'/adminActionArtiste.php');
+  include_once(dirname(__FILE__).'/actionArtiste.php');
 
   /* On récupère tout les artiste de la base de données. */
   $listArtiste = recuperer_artiste_tous($db);
@@ -32,7 +32,7 @@
   <section>
     <?php include_once(dirname(__FILE__).'/../adminHeader.php'); ?>
     <div>
-      <?php include_once(dirname(__FILE__).'/adminHeaderArtiste.php'); ?>
+      <?php include_once(dirname(__FILE__).'/headerArtiste.php'); ?>
       <div>
         
         <!-- TABLEAU DES ARTISTES -->

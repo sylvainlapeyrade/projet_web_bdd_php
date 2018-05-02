@@ -24,7 +24,7 @@ switch($action) {
           $estAdmin = false;
         $operationOk = ajouter_utilisateur($db, $idUtilisateur, $motDePasse, $estAdmin);
         if ( $operationOk ) {
-          header('Location: ./adminGestionUser.php?operation=ok');
+          header('Location: ./gestionUser.php?operation=ok');
         } else {
           $erreur = "L'opération n'a pas pu être exécuté.";
         }
@@ -46,7 +46,7 @@ switch($action) {
         if ( $motDePasse == $verification ) {
           $operationOk = modifier_motdepasse_utilisateur($db, $idUtilisateur, $motDePasse);
           if ( $operationOk ) {
-            header('Location: ./adminGestionUser.php?operation=ok');
+            header('Location: ./gestionUser.php?operation=ok');
           } else {
             $erreur = "L'opération n'a pas pu être exécuté.";
           }
@@ -75,7 +75,7 @@ switch($action) {
         if ( $idUtilisateur != $_SESSION['idUtilisateur'] ) {
           $operationOk = modifier_statut_utilisateur($db, $idUtilisateur, $estAdmin);
           if ( $operationOk ) {
-            header('Location: ./adminGestionUser.php?operation=ok');
+            header('Location: ./gestionUser.php?operation=ok');
           } else {
             $erreur = "L'opération n'a pas pu être exécuté.";
           }
@@ -100,7 +100,7 @@ switch($action) {
         if ( $idUtilisateur != $_SESSION['idUtilisateur'] ) {
           $operationOk = supprimer_utilisateur($db, $idUtilisateur);
           if ( $operationOk ) {
-            header('Location: ./adminGestionUser.php?operation=ok');
+            header('Location: ./gestionUser.php?operation=ok');
           } else {
             $erreur = "L'opération n'a pas pu être exécuté.";
           }

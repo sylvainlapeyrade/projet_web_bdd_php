@@ -40,8 +40,8 @@
 <?php include_once(dirname(__FILE__).'/../header.php'); ?>
 
 <main>
-  <section>
-    <h1 class="t30 text-center">Inscription</h1>
+  <section class="text-center">
+    <h1 class="t30">Inscription</h1>
     <? if ( isset($erreur) ) { ?>
     <!-- Message d'erreur du formulaire -->
     <p class="red"><?php echo $erreur; ?></p>
