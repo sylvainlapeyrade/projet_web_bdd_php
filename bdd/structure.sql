@@ -41,7 +41,7 @@ CREATE TABLE Artiste(
 CREATE TABLE Recompense(
   idRecompense 	        SERIAL 		    CONSTRAINT Re_pk_idRe  PRIMARY KEY,
   nomRecompense 	      VARCHAR(45)   CONSTRAINT Re_noRc_NN  NOT NULL,
-  dateRecompense        DATE          CONSTRAINT Re_daRc_NN  NOT NULL,
+  dateRecompense        DATE,
   descriptionRecompense TEXT
 );
 

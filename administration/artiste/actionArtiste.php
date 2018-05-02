@@ -6,8 +6,17 @@
    *    1: ajouter un artiste
    *    2: modifier un artiste
    *    3: supprimer un artiste
-   * Date modification : 22/04/2018
    */
+
+$action = $_GET['action'];
+if ( isset($action) && !empty($action) ) {
+  $nomArtiste = $_GET['nomArtiste'];
+  $prenomArtiste = $_GET['prenomArtiste'];
+  $nomScene = $_GET['nomScene'];
+  $dateNaissanceArtiste = $_GET['dateNaissanceArtiste'];
+  $urlImageArtiste = $_GET['urlImageArtiste'];
+  $descriptionArtiste = $_GET['descriptionArtiste'];
+}
 
 switch($_GET['action']) {
   case "ajouterArtiste":

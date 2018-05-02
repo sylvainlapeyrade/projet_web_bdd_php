@@ -32,27 +32,11 @@
     }
   }
 
-  $action = $_GET['action'];
-  $nomArtiste = $_GET['nomArtiste'];
-  $prenomArtiste = $_GET['prenomArtiste'];
-  $nomScene = $_GET['nomScene'];
-  $dateNaissanceArtiste = $_GET['dateNaissanceArtiste'];
-  $urlImageArtiste = $_GET['urlImageArtiste'];
-  $descriptionArtiste = $_GET['descriptionArtiste'];
-
   /* Fichier de fonction exécuter suivant deux cas :
    * 1: ajouter un artiste avec action = ajouterArtiste
    * 2: modifier un artiste avec action = modifierArtiste
    */
   include_once(dirname(__FILE__).'/actionArtiste.php');
-
-  $artiste = recupere_artiste($db, $idArtiste);
-  $nomArtiste = $artiste['nomartiste'];
-  $prenomArtiste = $artiste['prenomartiste'];
-  $nomScene = $artiste['nomscene'];
-  $dateNaissanceArtiste = $artiste['datenaissanceartiste'];
-  $urlImageArtiste = $artiste['urlimageartiste'];
-  $descriptionArtiste = $artiste['descriptionartiste'];
 
   include_once(dirname(__FILE__).'/../../head.php');
 ?>
@@ -68,7 +52,7 @@
         <h1>Formulaire Artiste</h1>
         
         <!-- FORMULAIRE D'UN ARTISTE -->
-        <form class="flex flex-center flex-column " action="./adminFormArtiste.php" method="get">
+        <form class="flex flex-center flex-column" action="./formArtiste.php" method="get">
           <input type="text" 
                  class="input-text" 
                  name="nomArtiste" 

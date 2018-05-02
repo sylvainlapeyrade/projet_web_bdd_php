@@ -55,10 +55,10 @@
               <?php echo $artiste['nomscene']; ?>
             </td>
             <td class="button button-blue">
-              <a href="./adminFormArtiste.php?idArtiste=<?php echo $artiste['idartiste'] ?>">Modifier</a>
+              <a href="./formArtiste.php?idArtiste=<?php echo $artiste['idartiste'] ?>">Modifier</a>
             </td>
             <td class="button button-red">
-              <a href="./adminGestionArtiste.php?action=supprimerArtiste&idArtiste=<?php echo $artiste['idartiste'] ?>">Supprimer</a>
+              <a href="./gestionArtiste.php?action=supprimerArtiste&idArtiste=<?php echo $artiste['idartiste'] ?>">Supprimer</a>
             </td>
           </tr>
           <?php } ?>
