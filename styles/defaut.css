@@ -13,6 +13,8 @@ main>section {
 a { text-decoration: none; color: black; }
 li { list-style: none; }
 
+.margin-center { margin: 0 auto; }
+
 .flex { display: flex; }
 .flex-row { flex-direction: row; }
 .flex-column { flex-direction:column; }
@@ -90,7 +92,7 @@ li { list-style: none; }
 
 .button-cyan {
     color: white;
-    background: #21efe7;
+    background: #004ee2;
 }
 
 
@@ -147,5 +149,5 @@ li { list-style: none; }
 }
 
 .item-checkbox {
-  padding-right: 15px;
+    padding-right: 15px;
 }
