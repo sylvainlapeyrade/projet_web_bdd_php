@@ -20,7 +20,7 @@
         <div class="flex">
             <div id="description-album" class="flex-around">
                 <div>
-                    <h1><a>Nom_Album</a>     <a>Date_sortie</h1>
+                    <h1><a>Nom_Album</a> - <a>Date_sortie</a></h1>
                     <p>
                         Ceci est la description de l'album<br>
                         Player est le deuxième album du chanteur français M. Pokora sorti le 26 janvier 2006 en France. À sa sortie, l'album se classera à la première place du classement des ventes d'albums avec 31 000 exemplaires. <br>
