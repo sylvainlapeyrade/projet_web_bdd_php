@@ -9,3 +9,10 @@
 .button-header {
   margin: 0 25px;
 }
+
+#box-item-checkbox {
+  background: rgba(0,0,0,0.2);
+  overflow-y: scroll;
+  padding: 25px;
+  margin: 0 25px;
+}
