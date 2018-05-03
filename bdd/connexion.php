@@ -5,8 +5,8 @@
  * extension=php_pgsql.so
  * Redémarer ensuite le serveur apache2
  */
-    include_once(dirname(__FILE__) . '/../fonctions/variables.php');
-    include_once(dirname(__FILE__) . '/../bdd/connexion.php');
+    include_once(dirname(__FILE__).'/../fonctions/variables.php');
+    include_once(dirname(__FILE__).'/../bdd/connexion.php');
 
     if ( !isset($db) ) {
         $db_name = $info['bdd']['postgres']['db_name'];

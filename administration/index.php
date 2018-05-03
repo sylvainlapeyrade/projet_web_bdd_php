@@ -1,7 +1,7 @@
 <?php
     session_start();
-    include_once(dirname(__FILE__) . '/../fonctions/variables.php');
-    include_once(dirname(__FILE__) . '/../fonctions/fonction_compte.php');
+    include_once(dirname(__FILE__).'/../fonctions/variables.php');
+    include_once(dirname(__FILE__).'/../fonctions/fonctionCompte.php');
 
 
     $info['head']['subTitle'] = "Administration";
@@ -26,6 +26,9 @@
         </a><br><br>
         <a class="button button-blue" href="./recompense/gestionRecompense.php">
           Gestion des récompense
+        </a><br><br>
+        <a class="button button-blue" href="./groupe/gestionGroupe.php">
+          Gestion des groupes
         </a>
     </section>
   </section>

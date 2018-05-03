@@ -1,11 +1,11 @@
 <div id="headerGestion" class="flex flex-row">
   <div class="t24">
-    <a href="./gestionArtiste.php">Gestion des artistes</a>
+    <a href="./gestionGroupe.php">Gestion des groupes</a>
   </div>
   <div>
-    <a href="formArtiste.php" class="button button-blue t12 button-header">Ajouter un artiste</a>
+    <a href="formGroupe.php" class="button button-blue t12 button-header">Ajouter un groupe</a>
   </div>
   
   <?php include_once(dirname(__FILE__).'/../headerMessage.php'); ?>
-  
+
 </div>

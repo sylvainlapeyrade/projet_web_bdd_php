@@ -1,9 +1,9 @@
 <?php
     session_start();
-    include_once(dirname(__FILE__) . '/fonctions/variables.php');
-    include_once(dirname(__FILE__) . '/fonctions/fonction_compte.php');
-    include_once(dirname(__FILE__) . '/fonctions/fonction_album.php');
-    include_once(dirname(__FILE__) . '/bdd/connexion.php');
+    include_once(dirname(__FILE__).'/fonctions/variables.php');
+    include_once(dirname(__FILE__).'/fonctions/fonctionCompte.php');
+    include_once(dirname(__FILE__).'/fonctions/fonctionAlbum.php');
+    include_once(dirname(__FILE__).'/bdd/connexion.php');
 
     $info['head']['subTitle'] = "Page album";
     $info['head']['stylesheets'] = ['album.css'];

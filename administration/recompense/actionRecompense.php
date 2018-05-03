@@ -25,7 +25,7 @@ switch($action) {
      * Si ce dernier échoue, on supprime la récompense crée.
      */
     if ( isset($nomRecompense, $dateRecompense, $descriptionRecompense) ) {
-      if ( !empty($nomRecompense) && !empty($descriptionRecompense) ) {
+      if ( !empty($nomRecompense) ) {
         if ( isset($listeIdArtiste[0]) && !empty($listeIdArtiste[0]) ) {
           $idRecompenseOa = ajouter_recompense($db, $nomRecompense, $dateRecompense, $descriptionRecompense);
           if ( $idRecompenseOa != null ) {
@@ -66,7 +66,7 @@ switch($action) {
      * On ajoute les nouveau liens entre les deux entités.
      */
     if ( isset($idRecompense, $nomRecompense, $dateRecompense, $descriptionRecompense) ) {
-      if ( !empty($idRecompense) && !empty($nomRecompense) && !empty($descriptionRecompense) ) {
+      if ( !empty($idRecompense) && !empty($nomRecompense) ) {
         if ( isset($listeIdArtiste[0]) && !empty($listeIdArtiste[0]) ) {
           $operationOk = modifier_recompense($db, $idRecompense, $nomRecompense, $dateRecompense, $descriptionRecompense);
           if ( $operationOk ) {
@@ -82,7 +82,7 @@ switch($action) {
                 header('Location: ./gestionRecompense.php?operation=ok');
               } else {
                 supprimer_recompense($db, $idRecompenseOa);
-                $erreur = "L'opération 2 n'a pas pu être exécuté.";
+                $erreur = "L'opération 3 n'a pas pu être exécuté.";
               }
             } else {
               $erreur = "L'opération 2 n'a pas pu être exécuté.";
