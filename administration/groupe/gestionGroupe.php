@@ -13,7 +13,7 @@
   /* Récupération des variables importantes pour le cas suivant :
    * cas supprimer
    */
-  $idRecompense = $_GET['idGroupe'];
+  $idGroupe = $_GET['idGroupe'];
 
   /* Fichier de fonction exécuter suivant le cas suivant :
    * supprimer un groupe avec action = supprimerGroupe
