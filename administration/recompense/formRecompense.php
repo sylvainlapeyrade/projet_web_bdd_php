@@ -1,10 +1,10 @@
 <?php
   session_start();
-  include_once(dirname(__FILE__) . '/../../fonctions/variables.php');
-  include_once(dirname(__FILE__) . '/../../fonctions/fonctionCompte.php');
-  include_once(dirname(__FILE__) . '/../../fonctions/fonctionArtiste.php');
-  include_once(dirname(__FILE__) . '/../../fonctions/fonctionRecompense.php');
-  include_once(dirname(__FILE__) . '/../../bdd/connexion.php');
+  include_once(dirname(__FILE__).'/../../fonctions/variables.php');
+  include_once(dirname(__FILE__).'/../../fonctions/fonctionCompte.php');
+  include_once(dirname(__FILE__).'/../../fonctions/fonctionArtiste.php');
+  include_once(dirname(__FILE__).'/../../fonctions/fonctionRecompense.php');
+  include_once(dirname(__FILE__).'/../../bdd/connexion.php');
 
   $info['head']['subTitle'] = "Gestion récompense";
   $info['head']['stylesheets'] = ['adminGestion.css'];

@@ -1,7 +1,7 @@
 <?php
     session_start();
-    include_once(dirname(__FILE__) . '/../fonctions/variables.php');
-    include_once(dirname(__FILE__) . '/../fonctions/fonctionCompte.php');
+    include_once(dirname(__FILE__).'/../fonctions/variables.php');
+    include_once(dirname(__FILE__).'/../fonctions/fonctionCompte.php');
 
 
     $info['head']['subTitle'] = "Administration";
