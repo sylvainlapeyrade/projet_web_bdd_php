@@ -74,7 +74,7 @@
                         placeholder="Description de la récompense"><?php echo $descriptionRecompense; ?></textarea>
             </div>
 
-            <div class="width-800 liste-checkbox flex flex-center flex-wrap">
+            <div id="box-item-checkbox" class="width-800 liste-checkbox flex flex-center flex-wrap">
               <?php
               foreach($artistes as $artiste) {
               ?>

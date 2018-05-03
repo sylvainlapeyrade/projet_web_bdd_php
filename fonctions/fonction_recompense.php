@@ -58,7 +58,6 @@ function recuperer_obtenir_recompense($db, $idRecompense) {
 }
 
 function ajouter_obtenir_recompense($db, $idRecompense, $idArtiste) {
-  //echo "On ajoute : $idRecompense avec $idArtiste ";
   $req = $db->prepare("INSERT INTO Obtenir_Artiste(idRecompenseOa, idArtisteOa)
       VALUES(:idRecompenseOa, :idArtisteOa);");
   $req->bindParam(':idRecompenseOa', $idRecompense, PDO::PARAM_INT);
