@@ -18,7 +18,7 @@
     <section>
         <!-- Présentation de l'album -->
         <div class="flex">
-            <div id="description-artiste" class="flex-around">
+            <div id="description-album" class="flex-around">
                 <div>
                     <h1><a>Nom_Album</a>     <a>Date_sortie</h1>
                     <p>
@@ -27,17 +27,17 @@
                         <br>
                     </p>
                     <p>
-                        Il a été composé par l'artiste : <a>Nom_Artiste</a>
+                        Il a été composé par: <a>Nom_Artiste OU Nom_Groupe</a>
                     </p>
                 </div>
-                <div id="liste-musique" class="flex flex-arround">
+                <div id="liste-musiques" class="flex text-center flex-arround">
                     <div>
                         <h4>Morceaux de l'album:</h4>
-                        <table>
+                        <table class="text-center">
                             <tr>
-                                <th class="table-head width-250">Nom</th>
-                                <th class="table-head width-250">Année</th>
-                                <th class="table-head width-250">Durée</th>
+                                <th class="table-head width-200">Numéro de piste</th>
+                                <th class="table-head width-600">Titre</th>
+                                <th class="table-head width-150">Durée</th>
                             </tr>
                             <tr class="table-lign">
                                 <td>Piste n°1</td>
@@ -46,7 +46,7 @@
                             </tr>
                             <tr class="table-lign">
                                 <td>Piste n°2</td>
-                                <td><a>Player</a></td>
+                                <td><a>Player</ a></td>
                                 <td>2:50</td>
                             </tr>
                             <tr class="table-lign">
@@ -99,7 +99,7 @@
                 </div>
             </div>
             <div>
-                <img id="imageArtiste" src="styles/mpokora.htm">
+                <img id="imageAlbum" src="styles/mpokora.htm">
             </div>
         </div>
     </section>

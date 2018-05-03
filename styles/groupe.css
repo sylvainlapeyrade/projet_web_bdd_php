@@ -1,0 +1,18 @@
+#description-groupe {
+    border-right: 1px black solid;
+    margin-right: 50px;
+    padding-right: 10px;
+    margin-top: 25px;
+}
+
+#imageGroupe {
+    margin: 10px;
+    margin-top: 25px;
+    border: 1px black solid;
+    height: 300px;
+}
+
+#liste-musiques {
+    margin-top: 25px;
+}
+
