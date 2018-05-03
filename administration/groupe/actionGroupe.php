@@ -21,7 +21,7 @@ switch($action) {
   case "ajouterGroupe":
     /*
      * Champs présent : nomGroupe, dateGroupe, descriptionGroupe, urlPochetteGroupe ,listeIdArtiste
-     * Champs obligatoire : nomGroupe, dateGroupe, idArtiste1
+     * Champs obligatoire : nomGroupe, dateGroupe, idArtiste1, idArtist2
      * On vérifie tout les champs
      */
     if ( isset($nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe) ) {
@@ -45,7 +45,7 @@ switch($action) {
             $erreur = "L'opération 1 n'a pas pu être exécuté.";
           }
         } else {
-          $erreur = "Il faut au minimum deux artiste sélectionné.";
+          $erreur = "Il faut au minimum deux artistes sélectionné.";
         }
       } else {
         $erreur = "Certains champs du formulaire sont vide.";
@@ -87,7 +87,7 @@ switch($action) {
             $erreur = "L'opération 1  n'a pas pu être éxécuté.";
           }
         } else {
-          $erreur = "Il faut au minimum deux artiste sélectionné.";
+          $erreur = "Il faut au minimum deux artistes sélectionné.";
         }
       } else {
         $erreur = "Certains champs du formulaire sont vide.";
@@ -107,7 +107,6 @@ switch($action) {
       if ( !empty($idGroupe) ) {
         $operationOk = supprimer_constituer_groupe_tous($db, $idGroupe);
         if ( operationOk ) {
-          echo $idGroupe;
           $operationOk = supprimer_groupe($db, $idGroupe);
           if ( $operationOk ) {
             header('Location: ./gestionGroupe.php?operation=ok');
@@ -118,7 +117,7 @@ switch($action) {
           $erreur = "L'opération 1 n'a pas pu être exécuté.";
         }
       } else {
-        $erreur = "L'identifiant de la récompense doit être renseingé.";
+        $erreur = "L'identifiant de la récompense doit être renseigné.";
       }
     } else {
       $erreur = "Le formulaire est incomplet.";

@@ -81,7 +81,7 @@ switch($_GET['action']) {
           $erreur = "L'opération n'a pas pu être exécuté.";
         }
       } else {
-        $erreur = "L'identifiant de l'artiste doit être renseingé.";
+        $erreur = "L'identifiant de l'artiste doit être renseigné.";
       }
     } else {
       $erreur = "Le formulaire est incomplet.";

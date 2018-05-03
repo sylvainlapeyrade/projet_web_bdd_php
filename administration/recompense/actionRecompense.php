@@ -123,7 +123,7 @@ switch($action) {
           $erreur = "L'opération 1 n'a pas pu être exécuté.";
         }
       } else {
-        $erreur = "L'identifiant de la récompense doit être renseingé.";
+        $erreur = "L'identifiant de la récompense doit être renseigné.";
       }
     } else {
       $erreur = "Le formulaire est incomplet.";

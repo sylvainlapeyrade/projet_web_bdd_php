@@ -29,6 +29,9 @@
         </a><br><br>
         <a class="button button-blue" href="./groupe/gestionGroupe.php">
           Gestion des groupes
+        </a><br><br>
+        <a class="button button-blue" href="./album/gestionAlbum.php">
+          Gestion des albums
         </a>
     </section>
   </section>

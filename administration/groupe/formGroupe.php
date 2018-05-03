@@ -58,7 +58,7 @@
                      value="<?php echo $nomGroupe; ?>"
                      />
 
-              <label for="dateRecompense" class="text-center">
+              <label for="dateGroupe" class="text-center">
                 Date de la création du groupe :
                 <input type="date"
                        class="input-date"
@@ -75,7 +75,7 @@
                      />
               <br><br>
 
-              <!-- DESRIPTION DE LA RECOMPENSE -->
+              <!-- DESRIPTION DU GROUPE -->
               <textarea class="input-area" 
                         name="descriptionGroupe" 
                         rows="5"
@@ -121,7 +121,7 @@
                    value="ajouter"
                    />
           <?php } ?>
-        <!-- FIN FORMULAIRE d'UN ARTISTE -->
+        <!-- FIN FORMULAIRE d'UN GROUPE -->
         
       </div>
     </div>
