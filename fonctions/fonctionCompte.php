@@ -56,8 +56,8 @@ function is_admin() {
  * Renvoie la valeur true si la connexion à été effectuer,
  * Renvoie false sinon.
  */
-function connexion_account($db, $identify, $password) {
-  $res = recuperer_utilisateur($db, $identify);
+function connexion_account($db, $identifiant, $password) {
+  $res = recuperer_utilisateur($db, $identifiant);
   if ( $res != null ) {
     $passOk = $password == $res['motdepasse'];
     if ( $passOk ) {
@@ -78,7 +78,7 @@ function connexion_account($db, $identify, $password) {
  * Renvoie false sinon.
  */
 function inscription($db, $identifiant, $motDePasse) {
-  $user = recuperer_utilisateur($db, $identify);
+  $user = recuperer_utilisateur($db, $identifiant);
   if ( $user == null ) {
     $inscriptionOk = ajouter_utilisateur($db, $identifiant, $motDePasse, false);
     return $inscriptionOk;
