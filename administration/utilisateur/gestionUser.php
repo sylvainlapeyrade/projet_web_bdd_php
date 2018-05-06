@@ -9,11 +9,16 @@
 
   if(!is_connect() || !is_admin()) {leave();}
 
-  $action = $_GET['action'];
-  $idUtilisateur = $_GET['idUtilisateur'];
-  $motDePasse = $_GET['motDePasse'];
-  $verification = $_GET['verification'];
-  $statut = $_GET['statut'];
+  if ( isset($_GET['action']) && !empty($_GET['action']) )
+    $action = $_GET['action'];
+  if ( isset($_GET['idUtilisateur']) && !empty($_GET['idUtilisateur']) )
+    $idUtilisateur = $_GET['idUtilisateur'];
+  if ( isset($_GET['motDePasse']) && !empty($_GET['motDePasse']) )
+    $motDePasse = $_GET['motDePasse'];
+  if ( isset($_GET['verification']) && !empty($_GET['verification']) )
+    $verification = $_GET['verification'];
+  if ( isset($_GET['statut']) && !empty($_GET['statut']) )
+    $statut = $_GET['statut'];
 
   /* Fichier de fonction exécuter suivant le cas suivant :
    * modifier le statut d'un utilisateur avec action = modifierStatutUtilisateur
