@@ -56,7 +56,7 @@
             </td>
             <?php } ?>
             <td class="button button-blue">
-              <a href="./adminFormModifyUser.php?idUtilisateur=<?php echo $user['idutilisateur'] ?>">Modifier mot de passe</a>
+              <a href="./formModifyUser.php?idUtilisateur=<?php echo $user['idutilisateur'] ?>">Modifier mot de passe</a>
             </td>
             <td class="button button-red">
               <a href="?action=supprimerUtilisateur&idUtilisateur=<?php echo $user['idutilisateur'] ?>">Supprimer</a>
