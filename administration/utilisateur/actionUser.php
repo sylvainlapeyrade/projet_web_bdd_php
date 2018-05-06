@@ -10,6 +10,9 @@
    * Date modification : 25/04/2018
    */
 
+if ( !isset($action) )
+  $action = 'null';
+
 switch($action) {
   case 'ajouterUtilisateur':
     /*
