@@ -11,6 +11,8 @@
 
   if ( isset($_GET['action']) && !empty($_GET['action']) )
     $action = $_GET['action'];
+  else
+    $action = null;
   if ( isset($_GET['idUtilisateur']) && !empty($_GET['idUtilisateur']) )
     $idUtilisateur = $_GET['idUtilisateur'];
   if ( isset($_GET['motDePasse']) && !empty($_GET['motDePasse']) )
