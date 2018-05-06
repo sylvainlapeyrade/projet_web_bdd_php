@@ -32,6 +32,9 @@
         </a><br><br>
         <a class="button button-blue" href="./album/gestionAlbum.php">
           Gestion des albums
+        </a><br><br>
+        <a class="button button-blue" href="./musique/gestionMusique.php">
+          Gestion des musiques
         </a>
     </section>
   </section>

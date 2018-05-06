@@ -130,6 +130,16 @@ li { list-style: none; }
     width: 250px;
 }
 
+.input-number {
+    background: white;
+    border: none;
+    font-size: 15px;
+    text-align: center;
+    padding: 15px;
+    margin: 10px auto;
+    width: 100px;
+}
+
 .input-date {
     background: white;
     border: none;
