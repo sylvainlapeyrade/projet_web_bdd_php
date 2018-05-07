@@ -19,10 +19,10 @@ function recupere_recompense($db, $idRecompense) {
 }
 
 function ajouter_recompense($db, $nomRecompense, $dateRecompense, $descriptionRecompense) {
-  $req = $db->prepare("INSERT INTO Recompense(nomRecompense, descriptionRecompense)
-      VALUES(:nomRecompense, :descriptionRecompense);");
+  $req = $db->prepare("INSERT INTO Recompense(nomRecompense, dateRecompense, descriptionRecompense)
+      VALUES(:nomRecompense, :dateRecompense, :descriptionRecompense);");
   $req->bindParam(':nomRecompense', $nomRecompense, PDO::PARAM_STR);
-  //$req->bindParam(':dateNaissanceArtiste', date('Y-m-d H:i:s', strtotime($dateNaissanceArtiste)));
+  $req->bindParam(':dateRecompense', date('Y-m-d H:i:s', strtotime($dateRecompense)));
   $req->bindParam(':descriptionRecompense', $descriptionRecompense, PDO::PARAM_STR);
   $reqOk = $req->execute();
   if ( $reqOk ) {
@@ -50,7 +50,7 @@ function supprimer_recompense($db, $idRecompense) {
 }
 
 function recuperer_obtenir_recompense($db, $idRecompense) {
-  $req = $db->prepare("SELECT idArtisteOa FROM Obtenir_Artiste WHERE idRecompenseOa=:idRecompense");
+  $req = $db->prepare("SELECT * FROM Obtenir_Artiste WHERE idRecompenseOa=:idRecompense");
   $req->bindParam(':idRecompense', $idRecompense);
   $req->execute();
   $res = $req->fetchAll();
