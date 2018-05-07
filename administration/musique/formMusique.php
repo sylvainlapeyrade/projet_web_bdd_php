@@ -50,7 +50,7 @@
         <!-- FORMULAIRE D'UN ALBUM -->
         <form class="flex flex-center flex-column" action="./formMusique.php" method="get">
           <div class="flex">
-            <div class="margin-center flex flex-column">
+            <div class="width-500 margin-center flex flex-column">
               <input type="text" 
                      class="input-text"
                      name="titreMusique"
@@ -76,28 +76,6 @@
                        />
               </label>
 
-              <label for="dateMusique" class="text-center">
-                Date de création :
-                <input type="date"
-                       class="input-date"
-                       name="dateMusique"
-                       value="<?php echo $dateMusique; ?>"
-                       />
-              </label>
-              
-              <h4>Genres :</h4>
-              <div id="box-item-checkbox" class="width-300 liste-checkbox flex flex-center flex-wrap">
-                <div class="item-checkbox"><input type="checkbox" name="idGenre" value="Jazz" />Hip-Hop</div>
-                <div class="item-checkbox"><input type="checkbox" name="idGenre" value="Hip-Hop" />Hip-Hop</div>
-                <div class="item-checkbox"><input type="checkbox" name="idGenre" value="Rock" />Rock</div>
-                <div class="item-checkbox"><input type="checkbox" name="idGenre" value="Dance" />Dance</div>
-                <div class="item-checkbox"><input type="checkbox" name="idGenre" value="Dark-Métal" />Dark-Métal</div>
-                <div class="item-checkbox"><input type="checkbox" name="idGenre" value="Pop" />Pop</div>
-                <div class="item-checkbox"><input type="checkbox" name="idGenre" value="Electro" />Electro</div>
-                <div class="item-checkbox"><input type="checkbox" name="idGenre" value="House" />House</div>
-                <div class="item-checkbox"><input type="checkbox" name="idGenre" value="Mambo" />Mambo</div>
-              </div>
-
               <!-- DESRIPTION DE L'ALBUM -->
               <textarea class="input-area" 
                         name="descriptionMusique" 
@@ -106,30 +84,29 @@
             </div>
             
             <div>
-              <div>
-                <h4>Artistes :</h4>
-                <div id="box-item-checkbox" class="width-500 liste-checkbox flex flex-center flex-wrap">
-                  <?php foreach($artistes as $artiste) { ?>
-                  <div class="item-checkbox">
-                    <input type="checkbox"
-                      name="idArtiste<?php echo $artiste['idartiste']; ?>"
-                      value="<?php echo $artiste['idartiste'] ?>"
-                      <?php if ( isset($listeArtisteGroupe) && in_array($artiste['idartiste'], $listeArtisteGroupe) ) { echo "checked"; } ?>
-                      /><?php echo $artiste['nomartiste'].' '.$artiste['prenomartiste']; ?>
-                  </div>
-                  <?php } ?>
-                </div>
-              </div>
-              <h4>Albums :</h4>
+              <h4>Genres :</h4>
               <div id="box-item-checkbox" class="width-500 liste-checkbox flex flex-center flex-wrap">
-                <?php foreach($albums as $album) { ?>
-                    <div class="item-checkbox">
-                      <input type="checkbox"
-                        name="idArtiste<?php echo $album['nomalbum']; ?>"
-                        value="<?php echo $album['nomalbum'] ?>"
-                        <?php if ( isset($listeAlbum) && in_array($album['nomalbum'], $listeAlbum) ) { echo "checked"; } ?>
-                        /><?php echo $album['nomalbum']; ?>
-                    </div>
+                <div class="item-checkbox"><input type="checkbox" name="idGenreJazz" value="Jazz" />Jazz</div>
+                <div class="item-checkbox"><input type="checkbox" name="idGenreHip-Hop" value="Hip-Hop" />Hip-Hop</div>
+                <div class="item-checkbox"><input type="checkbox" name="idGenreRock" value="Rock" />Rock</div>
+                <div class="item-checkbox"><input type="checkbox" name="idGenreDance" value="Dance" />Dance</div>
+                <div class="item-checkbox"><input type="checkbox" name="idGenreDark-métal" value="Dark-Métal" />Dark-Métal</div>
+                <div class="item-checkbox"><input type="checkbox" name="idGenrePop" value="Pop" />Pop</div>
+                <div class="item-checkbox"><input type="checkbox" name="idGenreElectro" value="Electro" />Electro</div>
+                <div class="item-checkbox"><input type="checkbox" name="idGenreHouse" value="House" />House</div>
+                <div class="item-checkbox"><input type="checkbox" name="idGenreMambo" value="Mambo" />Mambo</div>
+              </div>
+              
+              <h4>Artistes :</h4>
+              <div id="box-item-checkbox" class="width-500 liste-checkbox flex flex-center flex-wrap">
+                <?php foreach($artistes as $artiste) { ?>
+                <div class="item-checkbox">
+                  <input type="checkbox"
+                    name="idArtiste<?php echo $artiste['idartiste']; ?>"
+                    value="<?php echo $artiste['idartiste'] ?>"
+                    <?php if ( isset($listeArtisteMusique) && in_array($artiste['idartiste'], $listeArtisteMusique) ) { echo "checked"; } ?>
+                    /><?php echo $artiste['nomartiste'].' '.$artiste['prenomartiste']; ?>
+                </div>
                 <?php } ?>
               </div>
             </div>

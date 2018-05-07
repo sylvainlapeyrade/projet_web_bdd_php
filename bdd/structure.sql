@@ -21,7 +21,7 @@ DROP TABLE IF EXISTS Definir          CASCADE;
 CREATE TABLE Album(
   idAlbum               SERIAL        CONSTRAINT Al_pk_idAl  PRIMARY KEY,
   nomAlbum              VARCHAR(45)   CONSTRAINT Al_noAl_nn  NOT NULL,
-  dateAlbum             DATE          CONSTRAINT Al_daAl_nn  NOT NULL,
+  dateAlbum             DATE,
   urlPochetteAlbum      TEXT,
   descriptionAlbum      TEXT
 );
@@ -50,7 +50,7 @@ CREATE TABLE Musique(
   idMusique             SERIAL        CONSTRAINT Mu_pk_idMu  PRIMARY KEY,
   titreMusique          VARCHAR(45)   CONSTRAINT Mu_tiMu_NN  NOT NULL,
   dureeMusique	        INT           CONSTRAINT Mu_duMu_NN  NOT NULL,
-  dateMusique	   	      DATE          CONSTRAINT Mu_daMu_NN  NOT NULL,
+  dateMusique	   	      DATE,
   descriptionMusique    TEXT
 );
 
@@ -129,6 +129,6 @@ CREATE TABLE Constituer(
 
 CREATE TABLE Definir(
   idMusiqueDe           INT           CONSTRAINT De_fk_iMDe  REFERENCES Musique(idMusique),
-  nomGenre              VARCHAR(45)   CONSTRAINT De_noGe_NU  NOT NULL UNIQUE,
+  nomGenre              VARCHAR(45)   CONSTRAINT De_noGe_NU  NOT NULL,
                                       CONSTRAINT De_pk_Defi  PRIMARY KEY(idMusiqueDe, nomGenre)
 );
