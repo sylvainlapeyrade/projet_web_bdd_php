@@ -53,7 +53,7 @@ function supprimer_album($db, $idAlbum) {
 
 function recuperer_composer_album($db, $idAlbumCoAl) {
   $req = $db->prepare("SELECT * FROM Composer_Album WHERE idAlbumCoAl=:idAlbumCoAl");
-  $req->bindParam(':idAlbumCoAl', $idAlbumCoAl);
+  $req->bindParam(':idAlbumCoAl', $idAlbumCoAl, PDO::PARAM_INT);
   $req->execute();
   $res = $req->fetchAll();
   return $res;

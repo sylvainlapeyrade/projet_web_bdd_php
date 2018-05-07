@@ -54,7 +54,7 @@ function supprimer_groupe($db, $idGroupe) {
 
 function recuperer_constituer_groupe($db, $idGroupeCo) {
   $req = $db->prepare("SELECT * FROM Constituer WHERE idGroupeCo=:idGroupeCo");
-  $req->bindParam(':idGroupeCo', $idGroupeCo);
+  $req->bindParam(':idGroupeCo', $idGroupeCo, PDO::PARAM_INT);
   $req->execute();
   $res = $req->fetchAll();
   return $res;

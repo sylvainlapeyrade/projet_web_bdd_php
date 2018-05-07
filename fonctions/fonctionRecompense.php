@@ -51,7 +51,7 @@ function supprimer_recompense($db, $idRecompense) {
 
 function recuperer_obtenir_recompense($db, $idRecompense) {
   $req = $db->prepare("SELECT * FROM Obtenir_Artiste WHERE idRecompenseOa=:idRecompense");
-  $req->bindParam(':idRecompense', $idRecompense);
+  $req->bindParam(':idRecompense', $idRecompense, PDO::PARAM_INT);
   $req->execute();
   $res = $req->fetchAll();
   return $res;
