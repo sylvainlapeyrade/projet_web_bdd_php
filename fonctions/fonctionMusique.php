@@ -26,7 +26,11 @@ function ajouter_musique($db, $titreMusique, $dureeMusique, $dateMusique, $descr
   //$req->bindParam(':dateNaissanceArtiste', date('Y-m-d H:i:s', strtotime($dateNaissanceArtiste)));
   $req->bindParam(':descriptionMusique', $descriptionMusique, PDO::PARAM_STR);
   $reqOk = $req->execute();
-  return $reqOk;
+  if ( $reqOk ) {
+    $idMusique = $db->lastInsertId();
+    return $idMusique;
+  }
+  return null;
 }
 
 function modifier_musique($db, $idMusique, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique) {

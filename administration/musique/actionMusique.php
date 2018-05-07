@@ -7,6 +7,11 @@ if ( isset($action) && !empty($action) ) {
   $dureeMusique = $_GET['dureeMusique'];
   $dateMusique = $_GET['dateMusique'];
   $descriptionMusique = $_GET['descriptionMusique'];
+  foreach($_GET as $key => $value) {
+    if ( strstr($key, 'idArtiste') ) {
+      $listeIdArtiste[] = (int) $value;
+    }
+  }
 }
 
 if (isset($db)){
@@ -17,21 +22,30 @@ switch($action) {
   case "ajouterMusique":
     /*
      * Champs présent : titreMusique, dureeMusique, dateMusique, descriptionMusique
-     * Champs obligatoire : titreMusique, dureeMusique, dateMusique
+     * Champs obligatoire : titreMusique, dureeMusique, dateMusique, idArtiste1
      */
     if ( isset($db, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique) ) {
       if ( !empty($titreMusique) && !empty($dureeMusique) ) {
-        $operationOk = ajouter_musique($db, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique);
-        
-        
-        
-        
-        
-        
-        if ( $operationOk ) {
-          header('Location: ./gestionMusique.php?operation=ok');
+        if ( isset($listeIdArtiste[0]) && !empty($listeIdArtiste[0]) ) {
+          $idMusique = ajouter_musique($db, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique);
+          if ( $idMusique != null ) {
+            $indiceListe = 0;
+            do {
+              $idArtisteCoMu = (int) $listeIdArtiste[$indiceListe];
+              $operationOk = ajouter_composer_musique($db, $idMusique, $idArtisteCoMu);
+              $indiceListe++;
+            } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
+            if ( $operationOk ) {
+              //header('Location: ./gestionMusique.php?operation=ok');
+            } else {
+              supprimer_musique($db, $idMusique);
+              $erreur = "L'opération 2 n'a pas pu être exécuté.";
+            }
+          } else {
+            $erreur = "L'opération 1 n'a pas pu être exécuté.";
+          }
         } else {
-          $erreur = "L'opération 1 n'a pas pu être exécuté.";
+          $erreur = "Il faut au minimum un artiste sélectionné.";
         }
       } else {
         $erreur = "Certains champs du formulaire sont vide.";
