@@ -86,7 +86,7 @@ switch($action) {
         $operation1Ok = supprimer_assembler_album_tous($db, $idMusique);
         $operation2Ok = supprimer_composer_musique_tous($db, $idMusique);
         $operation3Ok = supprimer_musique($db, $idMusique);
-        if ( operation1Ok && $operation2Ok && $operation3Ok ) {
+        if ( $operation1Ok && $operation2Ok && $operation3Ok ) {
             header('Location: ./gestionMusique.php?operation=ok');
         } else {
           $erreur = "L'opération n'a pas pu être exécuté.";

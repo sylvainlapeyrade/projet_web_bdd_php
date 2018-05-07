@@ -21,7 +21,7 @@ function recuperer_album_tous($db) {
  * Récupère un album de la base de données
  * spécifié par l'identifiant 'idAlbum'.
  * @param $db PDO Instance PDO de connexion à la BDD
- * @param $idAlbum String Identifiant utilisateur
+ * @param $idAlbum int Identifiant utilisateur
  * @return array L'utilisateur correspondant a l'id | Null sinon
  */
 function recuperer_album($db, $idAlbum) {
