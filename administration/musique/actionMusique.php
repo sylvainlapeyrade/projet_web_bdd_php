@@ -9,7 +9,9 @@ if ( isset($action) && !empty($action) ) {
   $descriptionMusique = $_GET['descriptionMusique'];
 }
 
-$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
+if (isset($db)){
+    $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
+}
 
 switch($action) {
   case "ajouterMusique":
@@ -18,7 +20,7 @@ switch($action) {
      * Champs obligatoire : titreMusique, dureeMusique, dateMusique
      * On vérifie tout les champs
      */
-    if ( isset($titreMusique, $dureeMusique, $dateMusique, $descriptionMusique) ) {
+    if ( isset($db, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique) ) {
       if ( !empty($titreMusique) && !empty($dureeMusique) ) {
         $operationOk = ajouter_musique($db, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique);
         if ( $operationOk ) {
@@ -39,7 +41,7 @@ switch($action) {
      * Champs présent : idMusique, titreMusique, dureeMusique, dateMusique, descriptionMusique,
      * Champs obligatoire : idMusique, titreMusique, dureeMusique
      */
-    if ( isset($idMusique, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique) ) {
+    if ( isset($db, $idMusique, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique) ) {
       if ( !empty($idMusique) && !empty($titreMusique) && !empty($dureeMusique) ) {
         $operationOk = modifier_musique($db, $idMusique, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique);
         if ( $operationOk ) {
@@ -61,10 +63,10 @@ switch($action) {
      * Champs obligatoire : idMusique
      * On vérifie tout les champs
      */
-    if ( isset($idMusique) ) {
+    if ( isset($db, $idMusique) ) {
       if ( !empty($idMusique) ) {
         $operationOk = supprimer_musique($db, $idMusique);
-        if ( operationOk ) {
+        if ( $operationOk ) {
             header('Location: ./gestionMusique.php?operation=ok');
         } else {
           $erreur = "L'opération 1 n'a pas pu être exécuté.";
