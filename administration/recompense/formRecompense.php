@@ -61,6 +61,8 @@ include_once(dirname(__FILE__).'/../../head.php');
                             <label for="dateRecompense" class="text-center">
                                 Date de la récompense :
                                 <input type="date"
+                                       placeholder="01-01-2018"
+                                       required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
                                        class="input-date"
                                        name="dateRecompense"
                                        value="<?php echo $dateRecompense; ?>"
@@ -115,8 +117,9 @@ include_once(dirname(__FILE__).'/../../head.php');
                                value="ajouter"
                         />
                     <?php } ?>
-                    <!-- FIN FORMULAIRE d'UN ARTISTE -->
 
+                    <!-- FIN FORMULAIRE d'UN ARTISTE -->
+                </form>
             </div>
         </div>
     </section>
