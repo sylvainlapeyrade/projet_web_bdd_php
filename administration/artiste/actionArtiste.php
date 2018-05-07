@@ -75,7 +75,7 @@ switch($_GET['action']) {
     if ( isset($idArtiste) ) {
       if ( !empty($idArtiste) ) {
         $operationOk = supprimer_artiste($db, $idArtiste);
-        if ( operationOk ) {
+        if ( $operationOk ) {
           header('Location: ./gestionArtiste.php?operation=ok');
         } else {
           $erreur = "L'opération n'a pas pu être exécuté.";

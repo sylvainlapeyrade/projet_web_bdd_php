@@ -19,13 +19,13 @@
         if ( $actionOk ) {
           header('Location: /index.php');
         } else {
-          $error = "Votre identifiant ou votre mot de passe est incorrect.";
+          $erreur = "Votre identifiant ou votre mot de passe est incorrect.";
         }
       } else {
         $erreur = "Les champs du formualaire ne doivent pas être vide.";
       }
     } else {
-      $error = "Le formulaire n'est pas valide.";
+      $erreur = "Le formulaire n'est pas valide.";
     }
   }
 

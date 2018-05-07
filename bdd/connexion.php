@@ -13,7 +13,7 @@
         $db_host = $info['bdd']['postgres']['db_host'];
         $db_user = $info['bdd']['postgres']['db_user'];
         $db_pwd = $info['bdd']['postgres']['db_pwd'];
-        
+
         try {
             $db = new PDO("pgsql:dbname=$db_name;host=$db_host", $db_user, $db_pwd);
         }
@@ -21,5 +21,3 @@
             die('Une erreur c\'est produit avec la base de données.<br>Merci de contacter un administrateur.');
         } 
     }
-
-?>

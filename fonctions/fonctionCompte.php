@@ -5,29 +5,20 @@
  */
 
 /**
- * Fonction qui permet de rediriger l'utilisateur
- * vers la page d'accueil.
- * Est utilisé pour la sécurité de l'application
+ * Redirige l'utilisateur vers la page d'accueil.
+ * Est utilisé pour la sécurité de l'application.
  */
 function leave() {
     header('Location: /index.php');
     exit();
 }
 
-function session_active() {
-    if ( session_status() == PHP_SESSION_DISABLED ) {
-        return false;
-    }
-    return true;
-}
-
 /**
- * Fonction qui vérifie si l'utilisateur est bien connecter
- * Renvoie true si l'utilisateur est connecter.
- * Renvoie false sinon.
+ * Vérifie si l'utilisateur est bien connecté
+ * @return True si l'utilisateur est connecté | False sinon
  */
 function is_connect() {
-    if ( !session_active() ) {
+    if ( session_status() == PHP_SESSION_DISABLED  ) {
         return false;
     }
     if ( isset($_SESSION['idUtilisateur'] ) ) {
@@ -36,9 +27,10 @@ function is_connect() {
     return false;
 }
 
+
 /**
- * Fonction qui vérifie si l'utilisateur est connecter
- * et s'il à le statut d'administrateur
+ * Vérifie si l'utilisateur est connecté et s'il est administrateur
+ * @return True si l'utilisateur est connecté et administrateur | False sinon
  */
 function is_admin() {
     if ( is_connect() ) {
@@ -49,17 +41,19 @@ function is_admin() {
     return false;
 }
 
-/*
- * Fonction de connexion d'un utilisateur à l'aide d'un identifiant et d'un mot de passe
- * Vérifie dans la base de données si une entrée correspond à un identifiant et un mot de passe.
- * Ouvre une session avec l'identifiant de l'utilisateur ainsi que son statut.
- * Renvoie la valeur true si la connexion à été effectuer,
- * Renvoie false sinon.
+/**
+ * Connexion d'un utilisateur avec id et mdp
+ * Vérifie dans la BDD si une entrée correspond à l'id et au mdp
+ * Ouvre une session avec l'id de l'utilisateur et son statut.
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $identifiant String à vérifier
+ * @param $motDePasse String à vérifier
+ * @return True si la connexion a été effectuée | False sinon.
  */
-function connexion_account($db, $identifiant, $password) {
+function connexion_account($db, $identifiant, $motDePasse) {
   $res = recuperer_utilisateur($db, $identifiant);
   if ( $res != null ) {
-    $passOk = $password == $res['motdepasse'];
+    $passOk = $motDePasse == $res['motdepasse'];
     if ( $passOk ) {
       $_SESSION['idUtilisateur'] = $res['idutilisateur'];
       $_SESSION['statut'] = $res['statut'];
@@ -69,13 +63,15 @@ function connexion_account($db, $identifiant, $password) {
   return false;
 }
 
-/*
- * Permet d'inscrire une nouvelle personne dans la base de données.
- * Vérifie dans la base de données s'il n'y a pas déjà une entrée.
- * Enregistre un utilisateur avec un identifiant, un mot de passe.
+/**
+ * Inscrit un nouveau utilisateur dans la BDD.
+ * Vérifie dans la BDD s'il n'y a pas déjà une entrée correspondant au
+ * couple id/mdp et le cas echeant enregistre le nouvel utilisateur.
  * Le nouveau compte crée est par défaut non administrateur.
- * Renvoie la valeur true, si l'enregistrement dans la base de données à été effectué.
- * Renvoie false sinon.
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $identifiant String à vérifier
+ * @param $motDePasse String à vérifier
+ * @return True si l'enregistrement dans la BDD a été effectué | False sinon.
  */
 function inscription($db, $identifiant, $motDePasse) {
   $user = recuperer_utilisateur($db, $identifiant);
@@ -86,10 +82,11 @@ function inscription($db, $identifiant, $motDePasse) {
   return false;
 }
 
-/*
- * Récupère tout les utilisateurs de la base de données
- * en les triant par ordre alphabétique de leur identifiant
- * Renvoie le réusltat.
+/**
+ * Récupère tout les utilisateurs de la BDD en les
+ * triant par ordre alphabétique de leur identifiant
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @return array Les utilisateurs de la base de données
  */
 function recuperer_utilisateur_tous($db) {
   $req = $db->prepare("SELECT * FROM Utilisateur ORDER BY idUtilisateur ASC");
@@ -98,15 +95,18 @@ function recuperer_utilisateur_tous($db) {
   return $res;
 }
 
-/*
+/**
  * Récupère un utilisateur de la base de données
  * spécifié par l'identifiant 'idUtilisateur'.
  * Renvoie le résultat, il est unique.
  * Sinon renvoie la valeur null.
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param  $identifiant String Identifiant utilisateur
+ * @return array L'utilisateur correspondant a l'id | Null sinon
  */
-function recuperer_utilisateur($db, $identify) {
+function recuperer_utilisateur($db, $identifiant) {
   $req = $db->prepare("SELECT * FROM Utilisateur WHERE idUtilisateur=:idUtilisateur");
-  $req->bindParam(':idUtilisateur', $identify);
+  $req->bindParam(':idUtilisateur', $identifiant);
   $req->execute();
   $res = $req->fetchAll();
   if ( sizeof($res) == 1) {
@@ -115,55 +115,65 @@ function recuperer_utilisateur($db, $identify) {
   return null;
 }
 
-/*
- * Ajoute un nouvel utilisateur dans la base de données
- * avec un identifiant, un mot de passe ainsi que le statut de l'utilisateur
- * Renvoie si l'opération d'ajout c'est bien exécutée.
+/**
+ * Ajoute un nouvel utilisateur dans la BDD
+ * avec un id, un mdp et un statut
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param  $identifiant String Identifiant utilisateur
+ * @param $motDePasse String MDP utilisateur
+ * @param $statut String Statut utilisateur
+ * @return True si l'opération d'ajout s'est bien exécutée | False sinon.
  */
-function ajouter_utilisateur($db, $identify, $password, $statut) {
+function ajouter_utilisateur($db, $identifiant, $motDePasse, $statut) {
   $req = $db->prepare("INSERT INTO Utilisateur(idUtilisateur, motDePasse, statut)
       VALUES(:idUtilisateur, :motDePasse, :statut);");
-  $req->bindParam(':idUtilisateur', $identify, PDO::PARAM_STR);
-  $req->bindParam(':motDePasse', $password, PDO::PARAM_STR);
+  $req->bindParam(':idUtilisateur', $identifiant, PDO::PARAM_STR);
+  $req->bindParam(':motDePasse', $motDePasse, PDO::PARAM_STR);
   $req->bindParam(':statut', $statut, PDO::PARAM_BOOL);
   $reqOk = $req->execute();
   return $reqOk;
 }
 
-/*
- * Modifie le mot de passe d'un utilisateur dans la base de données.
- * Renvoie si l'opération de modification c'est bien exécutée.
+/**
+ * Modifie le mot de passe d'un utilisateur dans la BDD.
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $identifiant String Identifiant utilisateur
+ * @param $motDePasse String MDP utilisateur
+ * @return True si l'opération de modification s'est bien exécutée | False Sinon.
  */
-function modifier_motdepasse_utilisateur($db, $identify, $password) {
-  $req = $db->prepare("UPDATE Utilisateur SET motDePasse=:password WHERE idUtilisateur=:idUtilisateur;");
-  $req->bindParam(':idUtilisateur', $identify, PDO::PARAM_STR);
-  $req->bindParam(':password', $password, PDO::PARAM_STR);
+function modifier_motdepasse_utilisateur($db, $identifiant, $motDePasse) {
+  $req = $db->prepare("UPDATE Utilisateur SET motDePasse=:motDePasse WHERE idUtilisateur=:idUtilisateur;");
+  $req->bindParam(':idUtilisateur', $identifiant, PDO::PARAM_STR);
+  $req->bindParam(':motDePasse', $motDePasse, PDO::PARAM_STR);
   $reqOk = $req->execute();
   return $reqOk;
 }
 
-/*
- * Modifie le statut de l'utilisateur dans la base de données.
- * Renvoie si l'opération de modification c'est bien exécutée.
+/**
+ * Modifie le statut de l'utilisateur dans la BDD.
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $identifiant String Identifiant utilisateur
+ * @param $statut String Statut utilisateur
+ * @return True si l'opération de modification s'est bien exécutée | False Sinon.
  */
-function modifier_statut_utilisateur($db, $identify, $statut) {
+function modifier_statut_utilisateur($db, $identifiant, $statut) {
   $req = $db->prepare("UPDATE Utilisateur SET statut=:statut WHERE idUtilisateur=:idUtilisateur;");
-  $req->bindParam(':idUtilisateur', $identify, PDO::PARAM_STR);
+  $req->bindParam(':idUtilisateur', $identifiant, PDO::PARAM_STR);
   $req->bindParam(':statut', $statut, PDO::PARAM_BOOL);
   $reqOk = $req->execute();
   return $reqOk;
 }
 
-/*
+/**
  * Supprime un utilisateur de la base de données
  * spécifié par l'identifiant 'idUtilisateur'.
- * Renvoie si l'opération de suppression c'est bien exécutée.
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $identifiant String Identifiant utilisateur
+ * @return True si l'opération de suppression s'est bien exécutée | False Sinon.
  */
-function supprimer_utilisateur($db, $identify) {
+function supprimer_utilisateur($db, $identifiant) {
   $req = $db->prepare("DELETE FROM Utilisateur WHERE idUtilisateur=:idUtilisateur;");
-  $req->bindParam(':idUtilisateur', $identify, PDO::PARAM_STR);
+  $req->bindParam(':idUtilisateur', $identifiant, PDO::PARAM_STR);
   $reqOk = $req->execute();
   return $reqOk;
 }
-
-?>

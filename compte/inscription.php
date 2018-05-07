@@ -16,9 +16,9 @@
     $verify = $_GET['verification'];
     if ( isset($identify) && isset($password) && isset($verify) ) {
       if ( !empty($identify) && !empty($password) && !empty($verify) ) {
-        if ( $password == $verify ) {
+        if ( isset($db) && $password == $verify ) {
           $actionOk = inscription($db, $identify, $password);
-          if ( actionOk ) {
+          if ( $actionOk ) {
             header('Location: /compte/connexion.php?action=inscription');
           } else {
             $erreur = "Ce non d'utilisateur existe déjà";
