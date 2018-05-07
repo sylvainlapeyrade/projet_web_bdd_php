@@ -16,7 +16,7 @@ switch($action) {
      * Champs présent : idUtilisateur, motDePasse, statut
      * Champs obligatoire : idUtilisateur, motDePasse
      */
-    if( isset($idUtilisateur, $motDePasse) ) {
+    if( isset($db, $idUtilisateur, $motDePasse) ) {
       if ( !empty($idUtilisateur) && !empty($motDePasse) ) {
         if ( $statut == 1 )
           $estAdmin = true;
@@ -24,7 +24,7 @@ switch($action) {
           $estAdmin = false;
         $operationOk = ajouter_utilisateur($db, $idUtilisateur, $motDePasse, $estAdmin);
         if ( $operationOk ) {
-          header('Location: ./gestionUser.php?operation=ok');
+          header('Location: ./gestionUtilisateur.php?operation=ok');
         } else {
           $erreur = "L'opération n'a pas pu être exécuté.";
         }
@@ -41,12 +41,12 @@ switch($action) {
      * Champs présent : idUtilisateur, motDePasse, verification
      * Champs obligatoire : idUtilisateur, motDePasse, verification
      */
-    if ( isset($idUtilisateur, $motDePasse, $verification) ) {
+    if ( isset($db, $idUtilisateur, $motDePasse, $verification) ) {
       if ( !empty($idUtilisateur) && !empty($motDePasse) && !empty($verification) ) {
         if ( $motDePasse == $verification ) {
           $operationOk = modifier_motdepasse_utilisateur($db, $idUtilisateur, $motDePasse);
           if ( $operationOk ) {
-            header('Location: ./gestionUser.php?operation=ok');
+            header('Location: ./gestionUtilisateur.php?operation=ok');
           } else {
             $erreur = "L'opération n'a pas pu être exécuté.";
           }
@@ -66,7 +66,7 @@ switch($action) {
      * Champs présent : idUtilisateur, statut
      * Champs obligatoire : idUtilisateur
      */
-    if ( isset($idUtilisateur, $statut) ) {
+    if ( isset($db, $idUtilisateur, $statut) ) {
       if ( !empty($idUtilisateur) ) {
         if ( $statut == 1 )
           $estAdmin = true;
@@ -75,7 +75,7 @@ switch($action) {
         if ( $idUtilisateur != $_SESSION['idUtilisateur'] ) {
           $operationOk = modifier_statut_utilisateur($db, $idUtilisateur, $estAdmin);
           if ( $operationOk ) {
-            header('Location: ./gestionUser.php?operation=ok');
+            header('Location: ./gestionUtilisateur.php?operation=ok');
           } else {
             $erreur = "L'opération n'a pas pu être exécuté.";
           }
@@ -95,12 +95,12 @@ switch($action) {
      * Champs présent : idUtilisateur
      * Champs obligatoire : idUtilisateur
      */
-    if ( isset($idUtilisateur) ) {
+    if ( isset($db, $idUtilisateur) ) {
       if ( !empty($idUtilisateur) ) {
         if ( $idUtilisateur != $_SESSION['idUtilisateur'] ) {
           $operationOk = supprimer_utilisateur($db, $idUtilisateur);
           if ( $operationOk ) {
-            header('Location: ./gestionUser.php?operation=ok');
+            header('Location: ./gestionUtilisateur.php?operation=ok');
           } else {
             $erreur = "L'opération n'a pas pu être exécuté.";
           }
