@@ -20,7 +20,9 @@
    */
   include_once(dirname(__FILE__).'/actionRecompense.php');
 
-  $listeRecompense = recuperer_recompense_tous($db);
+  if (isset($db)){
+      $listeRecompense = recuperer_recompense_tous($db);
+  }
 
   include_once(dirname(__FILE__).'/../../head.php');
 ?>
