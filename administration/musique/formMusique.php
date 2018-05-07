@@ -13,7 +13,7 @@
   if(!is_connect() || !is_admin()) {leave();}
 
   $idMusique = $_GET['idMusique'];
-  if ( isset($idMusique) && !empty($idMusique) ) {
+  if ( isset($db, $idMusique) && !empty($idMusique) ) {
     $musique = recuperer_musique($db, $idMusique);
     if ( $musique != null ) {
       $titreMusique = $musique['titremusique'];
@@ -29,9 +29,11 @@
 
   include_once(dirname(__FILE__).'/actionMusique.php');
 
-  $artistes = recuperer_artiste_tous($db);
-  $albums = recuperer_album_tous($db);
-  
+  if (isset($db)){
+    $artistes = recuperer_artiste_tous($db);
+    $albums = recuperer_album_tous($db);
+  }
+
   include_once(dirname(__FILE__).'/../../head.php');
 ?>
 
@@ -159,7 +161,7 @@
                    />
           <?php } ?>
         <!-- FIN FORMULAIRE d'UN ALBUM -->
-        
+        </form>
       </div>
     </div>
   </section>

@@ -9,7 +9,9 @@ if ( isset($action) && !empty($action) ) {
   $descriptionMusique = $_GET['descriptionMusique'];
 }
 
-$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
+if (isset($db)){
+    $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
+}
 
 switch($action) {
   case "ajouterMusique":
@@ -17,7 +19,7 @@ switch($action) {
      * Champs présent : titreMusique, dureeMusique, dateMusique, descriptionMusique
      * Champs obligatoire : titreMusique, dureeMusique, dateMusique
      */
-    if ( isset($titreMusique, $dureeMusique, $dateMusique, $descriptionMusique) ) {
+    if ( isset($db, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique) ) {
       if ( !empty($titreMusique) && !empty($dureeMusique) ) {
         $operationOk = ajouter_musique($db, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique);
         
@@ -44,7 +46,7 @@ switch($action) {
      * Champs présent : idMusique, titreMusique, dureeMusique, dateMusique, descriptionMusique,
      * Champs obligatoire : idMusique, titreMusique, dureeMusique
      */
-    if ( isset($idMusique, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique) ) {
+    if ( isset($db, $idMusique, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique) ) {
       if ( !empty($idMusique) && !empty($titreMusique) && !empty($dureeMusique) ) {
         $operationOk = modifier_musique($db, $idMusique, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique);
         if ( $operationOk ) {
@@ -65,7 +67,7 @@ switch($action) {
      * Champs présent : idMusique
      * Champs obligatoire : idMusique
      */
-    if ( isset($idMusique) ) {
+    if ( isset($db, $idMusique) ) {
       if ( !empty($idMusique) ) {
         $operation1Ok = supprimer_assembler_album_tous($db, $idMusique);
         $operation2Ok = supprimer_composer_musique_tous($db, $idMusique);

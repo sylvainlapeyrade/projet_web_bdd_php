@@ -14,8 +14,9 @@ if ( isset($action) && !empty($action) ) {
     }
   }
 }
-
-$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
+if (isset($db)){
+    $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
+}
 
 switch($action) {
   case "ajouterGroupe":
@@ -24,7 +25,7 @@ switch($action) {
      * Champs obligatoire : nomGroupe, dateGroupe, idArtiste1, idArtist2
      * On vérifie tout les champs
      */
-    if ( isset($nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe) ) {
+    if ( isset($db, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe) ) {
       if ( !empty($nomGroupe) ) {
         if ( isset($listeIdArtiste[0], $listeIdArtiste[1]) && !empty($listeIdArtiste[0]) && !empty($listeIdArtiste[1]) ) {
           $idGroupeCo = ajouter_groupe($db, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe);
@@ -61,7 +62,7 @@ switch($action) {
      * urlImageGroupe, listeIdArtiste
      * Champs obligatoire : idGroupe, nomGroupe, dateGroupe, idArtiste1
      */
-    if ( isset($idGroupe, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe) ) {
+    if ( isset($db, $idGroupe, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe) ) {
       if ( !empty($idGroupe) && !empty($nomGroupe) ) {
         if ( isset($listeIdArtiste[0], $listeIdArtiste[1]) && !empty($listeIdArtiste[0]) && !empty($listeIdArtiste[1]) ) {
           $operationOk = modifier_groupe($db, $idGroupe, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe);
@@ -77,7 +78,7 @@ switch($action) {
               if ( $operationOk ) {
                 header('Location: ./gestionGroupe.php?operation=ok');
               } else {
-                supprimer_groupe($db, $iGroupe);
+                supprimer_groupe($db, $idGroupe);
                 $erreur = "L'opération 3 n'a pas pu être exécuté.";
               }
             } else {
@@ -103,10 +104,10 @@ switch($action) {
      * Champs obligatoire : idGroupe
      * On vérifie tout les champs
      */
-    if ( isset($idGroupe) ) {
+    if ( isset($db, $idGroupe) ) {
       if ( !empty($idGroupe) ) {
         $operationOk = supprimer_constituer_groupe_tous($db, $idGroupe);
-        if ( operationOk ) {
+        if ( $operationOk ) {
           $operationOk = supprimer_groupe($db, $idGroupe);
           if ( $operationOk ) {
             header('Location: ./gestionGroupe.php?operation=ok');

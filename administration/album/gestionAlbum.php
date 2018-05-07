@@ -20,7 +20,9 @@
    */
   include_once(dirname(__FILE__).'/actionAlbum.php');
 
-  $listeAlbums = recuperer_album_tous($db);
+  if (isset($db)){
+      $listeAlbums = recuperer_album_tous($db);
+  }
 
   include_once(dirname(__FILE__).'/../../head.php');
 ?>

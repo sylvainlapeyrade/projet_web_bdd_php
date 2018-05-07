@@ -20,7 +20,9 @@
    */
   include_once(dirname(__FILE__).'/actionGroupe.php');
 
-  $listeGroupe = recuperer_groupe_tous($db);
+  if (isset($db)){
+      $listeGroupe = recuperer_groupe_tous($db);
+  }
 
   include_once(dirname(__FILE__).'/../../head.php');
 ?>

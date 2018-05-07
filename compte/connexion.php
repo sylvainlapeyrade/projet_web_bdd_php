@@ -11,11 +11,11 @@
 
   /* Gestion du formulaire connexion */
   if ( isset($_GET['connexion']) && $_GET['connexion'] == 'connexion' ) {
-    $identify = $_GET['idUtilisateur'];
-    $password = $_GET['motDePasse'];
-    if ( isset($identify) && isset($password) ) {
-      if ( !empty($identify) && !empty($password) ) {
-        $actionOk = connexion_account($db, $identify, $password);
+    $identifiant = $_GET['idUtilisateur'];
+    $motDePasse = $_GET['motDePasse'];
+    if ( isset($db) && isset($identifiant) && isset($motDePasse) ) {
+      if ( !empty($identifiant) && !empty($motDePasse) ) {
+        $actionOk = connexion_account($db, $identifiant, $motDePasse);
         if ( $actionOk ) {
           header('Location: /index.php');
         } else {
@@ -47,7 +47,7 @@
     <? } ?>
     <form class="flex flex-center flex-column" method="get">
       <input class="input-text" type="text" name="idUtilisateur" placeholder="Identifiant"
-             value="<?php if( isset($identify) ){ echo $identify; } ?>">
+             value="<?php if( isset($identifiant) ){ echo $identifiant; } ?>">
       <input class="input-text" type="password" name="motDePasse" placeholder="Mot de passe">
       <input class="inputButton1" type="submit" name="connexion" value="connexion">
     </form>

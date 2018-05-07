@@ -12,7 +12,7 @@
   if(!is_connect() || !is_admin()) {leave();}
 
   $idGroupe = $_GET['idGroupe'];
-  if ( isset($idGroupe) && !empty($idGroupe) ) {
+  if ( isset($db, $idGroupe) && !empty($idGroupe) ) {
     $groupe = recuperer_groupe($db, $idGroupe);
     if ( $groupe != null ) {
       $nomGroupe = $groupe['nomgroupe'];
@@ -32,8 +32,10 @@
    */
   include_once(dirname(__FILE__).'/actionGroupe.php');
 
-  $artistes = recuperer_artiste_tous($db);
-  
+  if (isset($db)){
+      $artistes = recuperer_artiste_tous($db);
+  }
+
   include_once(dirname(__FILE__).'/../../head.php');
 ?>
 
@@ -88,6 +90,7 @@
               ?>
               <div class="item-checkbox">
                 <input type="checkbox"
+                       title="idArtiste<?php echo $artiste['idartiste']; ?>"
                        name="idArtiste<?php echo $artiste['idartiste']; ?>"
                        value="<?php echo $artiste['idartiste'] ?>"
                        <?php if ( isset($listeArtisteGroupe) && in_array($artiste['idartiste'], $listeArtisteGroupe) ) { echo "checked"; } ?>

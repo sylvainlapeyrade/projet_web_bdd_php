@@ -24,7 +24,7 @@ switch($action) {
      * On ajoute les liens entre les entités Recompense et Artiste.
      * Si ce dernier échoue, on supprime la récompense crée.
      */
-    if ( isset($nomRecompense, $dateRecompense, $descriptionRecompense) ) {
+    if ( isset($db, $nomRecompense, $dateRecompense, $descriptionRecompense) ) {
       if ( !empty($nomRecompense) ) {
         if ( isset($listeIdArtiste[0]) && !empty($listeIdArtiste[0]) ) {
           $idRecompenseOa = ajouter_recompense($db, $nomRecompense, $dateRecompense, $descriptionRecompense);
@@ -65,7 +65,7 @@ switch($action) {
      * On supprime tout les liens entre Récompense et Artiste
      * On ajoute les nouveau liens entre les deux entités.
      */
-    if ( isset($idRecompense, $nomRecompense, $dateRecompense, $descriptionRecompense) ) {
+    if ( isset($db, $idRecompense, $nomRecompense, $dateRecompense, $descriptionRecompense) ) {
       if ( !empty($idRecompense) && !empty($nomRecompense) ) {
         if ( isset($listeIdArtiste[0]) && !empty($listeIdArtiste[0]) ) {
           $operationOk = modifier_recompense($db, $idRecompense, $nomRecompense, $dateRecompense, $descriptionRecompense);
@@ -81,7 +81,7 @@ switch($action) {
               if ( $operationOk ) {
                 header('Location: ./gestionRecompense.php?operation=ok');
               } else {
-                supprimer_recompense($db, $idRecompenseOa);
+                supprimer_recompense($db, $idRecompense);
                 $erreur = "L'opération 3 n'a pas pu être exécuté.";
               }
             } else {
@@ -109,10 +109,10 @@ switch($action) {
      * On supprime tout les liens entre les entités.
      * On supprime la récompense.
      */
-    if ( isset($idRecompense) ) {
+    if ( isset($db, $idRecompense) ) {
       if ( !empty($idRecompense) ) {
         $operationOk = supprimer_obtenir_recompense_tous($db, $idRecompense);
-        if ( operationOk ) {
+        if ( $operationOk ) {
           $operationOk = supprimer_recompense($db, $idRecompense);
           if ( $operationOk ) {
             header('Location: ./gestionRecompense.php?operation=ok');

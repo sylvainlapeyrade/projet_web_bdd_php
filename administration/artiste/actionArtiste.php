@@ -27,7 +27,7 @@ switch($_GET['action']) {
      */
     if ( isset($nomArtiste, $prenomArtiste, $nomScene, $dateNaissanceArtiste, 
                $urlImageArtiste, $descriptionArtiste) ) {
-      if ( !empty($nomArtiste) && !empty($prenomArtiste) ) {
+      if ( isset($db) && !empty($nomArtiste) && !empty($prenomArtiste) ) {
         $operationOk = ajouter_artiste($db, $nomArtiste, $prenomArtiste, $nomScene,
                                        $dateNaissanceArtiste,  $urlImageArtiste, $descriptionArtiste);
         if ( $operationOk ) {
@@ -51,7 +51,7 @@ switch($_GET['action']) {
      */
     if ( isset($idArtiste, $nomArtiste, $prenomArtiste, $nomScene, $dateNaissanceArtiste, 
                $urlImageArtiste, $descriptionArtiste) ) {
-      if ( !empty($idArtiste) && !empty($nomArtiste) && !empty($prenomArtiste) ) {
+      if ( isset($db) && !empty($idArtiste) && !empty($nomArtiste) && !empty($prenomArtiste) ) {
         $operationOk = modifier_artiste($db, $idArtiste, $nomArtiste, $prenomArtiste, $nomScene,
                                        $dateNaissanceArtiste,  $urlImageArtiste, $descriptionArtiste);
         if ( $operationOk ) {
@@ -72,7 +72,7 @@ switch($_GET['action']) {
      * Champs présent : idArtiste
      * Champs obligatoire : idArtiste
      */
-    if ( isset($idArtiste) ) {
+    if ( isset($db) && isset($idArtiste) ) {
       if ( !empty($idArtiste) ) {
         $operationOk = supprimer_artiste($db, $idArtiste);
         if ( $operationOk ) {

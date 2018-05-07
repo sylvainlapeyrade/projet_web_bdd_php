@@ -14,7 +14,7 @@
    * 1: cas modifier
    * 2: cas ajouter
    */
-  if ( isset($_GET['idArtiste']) ) {
+  if ( isset($db) && isset($_GET['idArtiste']) ) {
     $idArtiste = $_GET['idArtiste'];
     $artiste = recupere_artiste($db, $idArtiste);
     if ( $artiste != null ) {
