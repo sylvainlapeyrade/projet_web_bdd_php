@@ -20,8 +20,10 @@
    */
   include_once(dirname(__FILE__).'/actionArtiste.php');
 
-  /* On récupère tout les artiste de la base de données. */
-  $listArtiste = recuperer_artiste_tous($db);
+  if (isset($db)){
+      /* On récupère tout les artiste de la base de données. */
+      $listArtiste = recuperer_artiste_tous($db);
+  }
 
   include_once(dirname(__FILE__).'/../../head.php');
 ?>
