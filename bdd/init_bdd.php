@@ -6,3 +6,5 @@ if ( isset($db)){
     var_dump($db->exec(file_get_contents('./structure.sql')));
     var_dump($db->exec(file_get_contents('./population.sql')));
 }
+
+?>
