@@ -99,7 +99,7 @@ CREATE TABLE Composer_Album(
 
 
 CREATE TABLE Composer_Musique(
-  idMusiqueCoMu         INT           CONSTRAINT Cm_fk_iMCo  REFERENCES Album(idAlbum),
+  idMusiqueCoMu         INT           CONSTRAINT Cm_fk_iMCo  REFERENCES Musique(idMusique),
   idArtisteCoMu         INT           CONSTRAINT Cm_fk_iACo  REFERENCES Artiste(idArtiste),
                                       CONSTRAINT Cm_pk_coMu  PRIMARY KEY (idMusiqueCoMu, idArtisteCoMu)
 );
