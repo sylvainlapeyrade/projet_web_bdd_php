@@ -16,11 +16,16 @@ switch($action) {
     /*
      * Champs présent : titreMusique, dureeMusique, dateMusique, descriptionMusique
      * Champs obligatoire : titreMusique, dureeMusique, dateMusique
-     * On vérifie tout les champs
      */
     if ( isset($titreMusique, $dureeMusique, $dateMusique, $descriptionMusique) ) {
       if ( !empty($titreMusique) && !empty($dureeMusique) ) {
         $operationOk = ajouter_musique($db, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique);
+        
+        
+        
+        
+        
+        
         if ( $operationOk ) {
           header('Location: ./gestionMusique.php?operation=ok');
         } else {
@@ -59,15 +64,16 @@ switch($action) {
     /*
      * Champs présent : idMusique
      * Champs obligatoire : idMusique
-     * On vérifie tout les champs
      */
     if ( isset($idMusique) ) {
       if ( !empty($idMusique) ) {
-        $operationOk = supprimer_musique($db, $idMusique);
-        if ( operationOk ) {
+        $operation1Ok = supprimer_assembler_album_tous($db, $idMusique);
+        $operation2Ok = supprimer_composer_musique_tous($db, $idMusique);
+        $operation3Ok = supprimer_musique($db, $idMusique);
+        if ( operation1Ok && $operation2Ok && $operation3Ok ) {
             header('Location: ./gestionMusique.php?operation=ok');
         } else {
-          $erreur = "L'opération 1 n'a pas pu être exécuté.";
+          $erreur = "L'opération n'a pas pu être exécuté.";
         }
       } else {
         $erreur = "L'identifiant de de la musique doit être renseigné.";
