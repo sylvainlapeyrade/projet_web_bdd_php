@@ -22,7 +22,8 @@ function ajouter_recompense($db, $nomRecompense, $dateRecompense, $descriptionRe
   $req = $db->prepare("INSERT INTO Recompense(nomRecompense, dateRecompense, descriptionRecompense)
       VALUES(:nomRecompense, :dateRecompense, :descriptionRecompense);");
   $req->bindParam(':nomRecompense', $nomRecompense, PDO::PARAM_STR);
-  $req->bindParam(':dateRecompense', date('Y-m-d H:i:s', strtotime($dateRecompense)));
+  $req->bindParam(':dateRecompense', date("d.m.Y", strtotime($dateRecompense)));
+  //$req->bindParam(':dateRecompense', date("d.m.y", strtotime($dateRecompense)));
   $req->bindParam(':descriptionRecompense', $descriptionRecompense, PDO::PARAM_STR);
   $reqOk = $req->execute();
   if ( $reqOk ) {
