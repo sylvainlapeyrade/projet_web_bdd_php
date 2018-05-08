@@ -12,7 +12,7 @@ $info['head']['stylesheets'] = ['adminGestion.css'];
 if(!is_connect() || !is_admin()) {leave();}
 
 $idAlbum = $_GET['idAlbum'];
-if ( isset($db) && isset($idAlbum) && !empty($idAlbum) ) {
+if ( isset($db, $idAlbum) && !empty($idAlbum) ) {
     $album = recuperer_album($db, $idAlbum);
     if ( $album != null ) {
         $nomAlbum = $album['nomalbum'];
@@ -23,16 +23,19 @@ if ( isset($db) && isset($idAlbum) && !empty($idAlbum) ) {
         foreach($constituerAlbum as $idArtisteCoAl) {
             $listeArtisteAlbum[] = $idArtisteCoAl['idartistecoal'];
         }
-
-        /* Fichier de fonction exécuter suivant deux cas :
-         * 1: ajouter un album avec action = ajouterAlbum
-         * 2: modifier un album avec action = modifierAlbum
-         */
-        include_once(dirname(__FILE__).'/actionAlbum.php');
-
-        $artistes = recuperer_artiste_tous($db);
     }
 }
+
+if ( isset($db) ) {
+    /* Fichier de fonction exécuter suivant deux cas :
+     * 1: ajouter un album avec action = ajouterAlbum
+     * 2: modifier un album avec action = modifierAlbum
+     */
+    include_once(dirname(__FILE__).'/actionAlbum.php');
+    
+    $artistes = recuperer_artiste_tous($db);
+}
+
 include_once(dirname(__FILE__).'/../../head.php');
 
 include_once(dirname(__FILE__).'/../../header.php');
@@ -66,11 +69,11 @@ include_once(dirname(__FILE__).'/../../header.php');
                             <label for="dateRecompense" class="text-center">
                                 Date de création:
                                 <input type="date"
-                                       placeholder="01-01-2018"
+                                       placeholder="<?php echo format_date(date("d-m-Y")); ?>"
                                        required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
                                        class="input-date"
                                        name="dateAlbum"
-                                       value="<?php echo $dateAlbum; ?>"
+                                       value="<?php echo format_date($dateAlbum); ?>"
                                 />
                             </label>
 

@@ -47,11 +47,10 @@ function recuperer_album($db, $idAlbum) {
  * @return int L'id de la recompense si la requete s'est bien exécutée | Null sinon
  */
 function ajouter_album($db, $nomAlbum, $dateAlbum, $descriptionAlbum, $urlPochetteAlbum) {
-  $req = $db->prepare("INSERT INTO Album(nomAlbum, descriptionAlbum, urlPochetteAlbum)
-      VALUES(:nomAlbum, :descriptionAlbum, :urlPochetteAlbum);");
+  $req = $db->prepare("INSERT INTO Album(nomAlbum, dateAlbum, descriptionAlbum, urlPochetteAlbum) VALUES(:nomAlbum, :dateAlbum, :descriptionAlbum, :urlPochetteAlbum);");
   $req->bindParam(':nomAlbum', $nomAlbum, PDO::PARAM_STR);
   $req->bindParam(':dateAlbum', $dateAlbum, PDO::PARAM_STR);
-  //$req->bindParam(':dateAlbum', date('Y-m-d H:i:s', strtotime($dateNaissanceArtiste)));
+  $req->bindParam(':dateAlbum', format_date($dateAlbum));
   $req->bindParam(':descriptionAlbum', $descriptionAlbum, PDO::PARAM_STR);
   $req->bindParam(':urlPochetteAlbum', $urlPochetteAlbum, PDO::PARAM_STR);
   $reqOk = $req->execute();
@@ -73,10 +72,10 @@ function ajouter_album($db, $nomAlbum, $dateAlbum, $descriptionAlbum, $urlPochet
  * @return True si la requete s'est bien exécutée | False sinon
  */
 function modifier_album($db, $idAlbum, $nomAlbum, $dateAlbum, $descriptionAlbum, $urlPochetteAlbum) {
-  $req = $db->prepare("UPDATE Album SET nomAlbum=:nomAlbum, descriptionAlbum=:descriptionAlbum, urlPochetteAlbum=:urlPochetteAlbum WHERE idAlbum=:idAlbum;");
+  $req = $db->prepare("UPDATE Album SET nomAlbum=:nomAlbum, dateAlbum=:dateAlbum, descriptionAlbum=:descriptionAlbum, urlPochetteAlbum=:urlPochetteAlbum WHERE idAlbum=:idAlbum;");
   $req->bindParam(':idAlbum', $idAlbum, PDO::PARAM_INT);
   $req->bindParam(':nomAlbum', $nomAlbum, PDO::PARAM_STR);
-  $req->bindParam(':dateAlbum', $dateAlbum, PDO::PARAM_STR);
+  $req->bindParam(':dateAlbum', format_date($dateAlbum));
   $req->bindParam(':descriptionAlbum', $descriptionAlbum, PDO::PARAM_STR);
   $req->bindParam(':urlPochetteAlbum', $urlPochetteAlbum, PDO::PARAM_STR);
   $reqOk = $req->execute();

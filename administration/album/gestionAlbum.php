@@ -45,7 +45,7 @@
           <?php foreach($listeAlbums as $album) { /* INFORMATION POUR CHAQUE ALBUM AVEC ACTION */ ?>
           <tr class="table-lign">
             <td><?php echo $album['nomalbum']; ?></td>
-            <td><?php echo $album['datealbum']; ?></td>
+            <td><?php echo format_date($album['datealbum']); ?></td>
             <td><?php echo $album['descriptionalbum']; ?></td>
             <td class="button button-blue">
               <a href="./formAlbum.php?idAlbum=<?php echo $album['idalbum']; ?>">Modifier</a>
