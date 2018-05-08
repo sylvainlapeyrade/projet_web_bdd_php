@@ -45,7 +45,7 @@
           <?php foreach($listeRecompense as $recompense) { /* INFORMATION POUR CHAQUE ARTISTES AVEC ACTION */ ?>
           <tr class="table-lign">
             <td><?php echo $recompense['nomrecompense']; ?></td>
-            <td><?php echo $recompense['daterecompense']; ?></td>
+            <td><?php echo date("d-m-Y", strtotime($recompense['daterecompense'])); ?></td>
             <td><?php echo $recompense['descriptionrecompense']; ?></td>
             <td class="button button-blue">
               <a href="./formRecompense.php?idRecompense=<?php echo $recompense['idrecompense']; ?>">Modifier</a>

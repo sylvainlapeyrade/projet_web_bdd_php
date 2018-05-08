@@ -27,8 +27,7 @@ function ajouter_recompense($db, $nomRecompense, $dateRecompense, $descriptionRe
   $req = $db->prepare("INSERT INTO Recompense(nomRecompense, dateRecompense, descriptionRecompense)
       VALUES(:nomRecompense, :dateRecompense, :descriptionRecompense);");
   $req->bindParam(':nomRecompense', $nomRecompense, PDO::PARAM_STR);
-  $req->bindParam(':dateRecompense', date("d.m.Y", strtotime($dateRecompense)));
-  //$req->bindParam(':dateRecompense', date("d.m.y", strtotime($dateRecompense)));
+  $req->bindParam(':dateRecompense', format_date($dateRecompense));
   $req->bindParam(':descriptionRecompense', $descriptionRecompense, PDO::PARAM_STR);
   $reqOk = $req->execute();
   if ( $reqOk ) {
@@ -39,10 +38,10 @@ function ajouter_recompense($db, $nomRecompense, $dateRecompense, $descriptionRe
 }
 
 function modifier_recompense($db, $idRecompense, $nomRecompense, $dateRecompense, $descriptionRecompense) {
-  $req = $db->prepare("UPDATE Recompense SET nomRecompense=:nomRecompense, descriptionRecompense=:descriptionRecompense WHERE idRecompense=:idRecompense;");
+  $req = $db->prepare("UPDATE Recompense SET nomRecompense=:nomRecompense, dateRecompense=:dateRecompense, descriptionRecompense=:descriptionRecompense WHERE idRecompense=:idRecompense;");
   $req->bindParam(':idRecompense', $idRecompense, PDO::PARAM_INT);
   $req->bindParam(':nomRecompense', $nomRecompense, PDO::PARAM_STR);
-  //$req->bindParam(':dateRecompense', $dateRecompense, PDO::PARAM_DATE);
+  $req->bindParam(':dateRecompense', format_date($dateRecompense));
   $req->bindParam(':descriptionRecompense', $descriptionRecompense, PDO::PARAM_STR);
   $reqOk = $req->execute();
   return $reqOk;

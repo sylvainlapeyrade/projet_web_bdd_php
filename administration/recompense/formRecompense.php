@@ -66,11 +66,11 @@ include_once(dirname(__FILE__).'/../../head.php');
                             <label for="dateRecompense" class="text-center">
                                 Date de la récompense :
                                 <input type="date"
-                                       placeholder="01-01-2018"
+                                       placeholder="<?php echo format_date(date("d-m-Y")); ?>"
                                        required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
                                        class="input-date"
                                        name="dateRecompense"
-                                       value="<?php echo $dateRecompense; ?>"
+                                       value="<?php echo format_date($dateRecompense); ?>"
                                 />
                             </label>
 
@@ -80,19 +80,22 @@ include_once(dirname(__FILE__).'/../../head.php');
                                       placeholder="Description de la récompense"><?php echo $descriptionRecompense; ?></textarea>
                         </div>
 
-                        <div id="box-item-checkbox" class="width-800 liste-checkbox flex flex-center flex-wrap">
-                            <?php
-                            foreach($artistes as $artiste) {
-                                ?>
-                                <div class="item-checkbox">
-                                    <input type="checkbox"
-                                           title="idArtiste<?php echo $artiste['idartiste']; ?>"
-                                           name="idArtiste<?php echo $artiste['idartiste']; ?>"
-                                           value="<?php echo $artiste['idartiste'] ?>"
-                                        <?php if ( isset($listeArtisteRecompense) && in_array($artiste['idartiste'], $listeArtisteRecompense) ) { echo "checked"; } ?>
-                                    /><?php echo $artiste['nomartiste'].' '.$artiste['prenomartiste']; ?>
-                                </div>
-                            <?php } ?>
+                        <div>
+                            <h4>Artistes :</h4>
+                            <div id="box-item-checkbox" class="width-800 liste-checkbox flex flex-center flex-wrap">
+                                <?php
+                                foreach($artistes as $artiste) {
+                                    ?>
+                                    <div class="item-checkbox">
+                                        <input type="checkbox"
+                                               title="idArtiste<?php echo $artiste['idartiste']; ?>"
+                                               name="idArtiste<?php echo $artiste['idartiste']; ?>"
+                                               value="<?php echo $artiste['idartiste'] ?>"
+                                            <?php if ( isset($listeArtisteRecompense) && in_array($artiste['idartiste'], $listeArtisteRecompense) ) { echo "checked"; } ?>
+                                        /><?php echo $artiste['nomartiste'].' '.$artiste['prenomartiste']; ?>
+                                    </div>
+                                <?php } ?>
+                            </div>
                         </div>
                     </div>
 
