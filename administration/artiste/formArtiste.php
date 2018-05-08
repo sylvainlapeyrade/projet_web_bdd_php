@@ -79,11 +79,11 @@
           <label for="dateRecompense" class="text-center">
             Date de naissance :
             <input type="date"
-                   placeholder="01-01-2018"
+                   placeholder="<?php echo format_date(date("d-m-Y")); ?>"
                    required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
                    class="input-date"
                    name="dateNaissanceArtiste"
-                   value="<?php echo $dateNaissanceArtiste; ?>"
+                   value="<?php echo format_date($dateNaissanceArtiste); ?>"
              />
           </label>
         

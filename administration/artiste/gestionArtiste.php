@@ -43,6 +43,7 @@
             <th class="width-350">Nom de l'artiste</th>
             <th class="width-350">Prénom</th>
             <th class="width-350">Nom de scène</th>
+            <th class="width-350">Date naissance</th>
           </tr>
         
           <?php foreach($listArtiste as $artiste) { /* INFORMATION POUR CHAQUE ARTISTES AVEC ACTION */ ?>
@@ -55,6 +56,9 @@
             </td>
             <td>
               <?php echo $artiste['nomscene']; ?>
+            </td>
+            <td>
+              <?php echo format_date($artiste['datenaissanceartiste']); ?>
             </td>
             <td class="button button-blue">
               <a href="./formArtiste.php?idArtiste=<?php echo $artiste['idartiste'] ?>">Modifier</a>

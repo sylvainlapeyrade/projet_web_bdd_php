@@ -50,13 +50,11 @@ function recupere_artiste($db, $idArtiste) {
  * @return True si la requete s'est bien exécutée | False Sinon
  */
 function ajouter_artiste($db, $nomArtiste, $prenomArtiste, $nomScene, $dateNaissanceArtiste,  $urlImageArtiste, $descriptionArtiste) {
-    $req = $db->prepare("INSERT INTO Artiste(nomArtiste, prenomArtiste, nomScene, urlImageArtiste, descriptionArtiste)
-      VALUES(:nomArtiste, :prenomArtiste, :nomScene, :urlImageArtiste, :descriptionArtiste);");
+    $req = $db->prepare("INSERT INTO Artiste(nomArtiste, prenomArtiste, nomScene, dateNaissanceArtiste, urlImageArtiste, descriptionArtiste) VALUES(:nomArtiste, :prenomArtiste, :nomScene, :dateNaissanceArtiste, :urlImageArtiste, :descriptionArtiste);");
     $req->bindParam(':nomArtiste', $nomArtiste, PDO::PARAM_STR);
     $req->bindParam(':prenomArtiste', $prenomArtiste, PDO::PARAM_STR);
     $req->bindParam(':nomScene', $nomScene, PDO::PARAM_STR);
-    $req->bindParam(':dateNaissanceArtiste', date('Y-m-d H:i:s', strtotime($dateNaissanceArtiste)));
-    //$req->bindParam(':dateNaissanceArtiste', date('Y-m-d H:i:s', strtotime($dateNaissanceArtiste)));
+    $req->bindParam(':dateNaissanceArtiste', format_date($dateNaissanceArtiste));
     $req->bindParam(':urlImageArtiste', $urlImageArtiste, PDO::PARAM_STR);
     $req->bindParam(':descriptionArtiste', $descriptionArtiste, PDO::PARAM_STR);
     $reqOk = $req->execute();
@@ -78,14 +76,12 @@ function ajouter_artiste($db, $nomArtiste, $prenomArtiste, $nomScene, $dateNaiss
  * @return True si la requete s'est bien exécutée | False Sinon
  */
 function modifier_artiste($db, $idArtiste, $nomArtiste, $prenomArtiste, $nomScene, $dateNaissanceArtiste,  $urlImageArtiste, $descriptionArtiste) {
-    $req = $db->prepare("UPDATE Artiste SET nomArtiste=:nomArtiste, prenomArtiste=:prenomArtiste, nomScene=:nomScene,
-  urlImageArtiste=:urlImageArtiste, descriptionArtiste=:descriptionArtiste WHERE idArtiste=:idArtiste;");
+    $req = $db->prepare("UPDATE Artiste SET nomArtiste=:nomArtiste, prenomArtiste=:prenomArtiste, nomScene=:nomScene, dateNaissanceArtiste=:dateNaissanceArtiste, urlImageArtiste=:urlImageArtiste, descriptionArtiste=:descriptionArtiste WHERE idArtiste=:idArtiste;");
     $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
     $req->bindParam(':nomArtiste', $nomArtiste, PDO::PARAM_STR);
     $req->bindParam(':prenomArtiste', $prenomArtiste, PDO::PARAM_STR);
     $req->bindParam(':nomScene', $nomScene, PDO::PARAM_STR);
-    $req->bindParam(':dateNaissanceArtiste', date('Y-m-d H:i:s', strtotime($dateNaissanceArtiste)));
-    //$req->bindParam(':dateNaissanceArtiste', $dateNaissanceArtiste, PDO::PARAM_STR);
+    $req->bindParam(':dateNaissanceArtiste', format_date($dateNaissanceArtiste));
     $req->bindParam(':urlImageArtiste', $urlImageArtiste, PDO::PARAM_STR);
     $req->bindParam(':descriptionArtiste', $descriptionArtiste, PDO::PARAM_STR);
     $reqOk = $req->execute();
