@@ -1,5 +1,12 @@
 <?php
 
+function format_date($date) {
+    if ( isset($date) && !empty($date) ) {
+        return date("d-m-Y", strtotime($date));
+    }
+    return null;
+}
+
     $info = [
         'head' => [
             'title' => "Mon projet"
