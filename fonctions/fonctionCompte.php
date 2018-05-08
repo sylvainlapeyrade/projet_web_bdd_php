@@ -1,4 +1,5 @@
 <?php
+
 /**
  * FICHIER : FUNCTIONS -> fonctionCompte.PHP
  * Fichier des fonctions de gestion du compte
