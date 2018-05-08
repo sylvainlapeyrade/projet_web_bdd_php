@@ -25,14 +25,13 @@ if ( isset($db, $idAlbum) && !empty($idAlbum) ) {
         }
     }
 }
+/* Fichier de fonction exécuter suivant deux cas :
+ * 1: ajouter un album avec action = ajouterAlbum
+ * 2: modifier un album avec action = modifierAlbum
+ */
+include_once(dirname(__FILE__).'/actionAlbum.php');
 
 if ( isset($db) ) {
-    /* Fichier de fonction exécuter suivant deux cas :
-     * 1: ajouter un album avec action = ajouterAlbum
-     * 2: modifier un album avec action = modifierAlbum
-     */
-    include_once(dirname(__FILE__).'/actionAlbum.php');
-    
     $artistes = recuperer_artiste_tous($db);
 }
 
