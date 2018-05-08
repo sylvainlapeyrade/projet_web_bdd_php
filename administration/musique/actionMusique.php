@@ -106,33 +106,6 @@ switch($action) {
     } else {
       $erreur = "Le formulaire n'est pas valide.";
     }
-          
-          
-          /*
-          $operation2Ok = supprimer_genre_tous($db, $idMusique);
-          $operation3Ok = supprimer_composer_musique_tous($db, $idMusique);
-          if ( $operation2Ok && $operation3Ok ) {
-            $indiceListe = 0;
-            do {
-              $idArtisteCoMu = (int) $listeIdArtiste[$indiceListe];
-              $operationArtisteOk = ajouter_composer_musique($db, $idMusique, $idArtisteCoMu);
-              $indiceListe++;
-            } while ( $operationArtisteOk && $indiceListe < sizeof($listeIdArtiste) );
-            if ( isset($listeNomGenre) && !empty($listeNomGenre) ) {
-              $indiceListe = 0;
-              do {
-                $nomGenre = $listeNomGenre[$indiceListe];
-                $operationGenreOk = ajouter_genre($db, $idMusique, $nomGenre);
-                $indiceListe++;
-              } while ( $operationGenreOk && $indiceListe < sizeof($listeNomGenre) );
-            }
-            if ( $operationArtisteOk && $operationGenreOk ) {
-              //header('Location: ./gestionMusique.php?operation=ok');
-            } else {
-              supprimer_musique($db, $idMusique);
-              $erreur = "L'opération 2 n'a pas pu être exécuté.";
-            }
-            */
     break;
     
   case "supprimerMusique":

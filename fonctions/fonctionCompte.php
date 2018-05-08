@@ -1,6 +1,6 @@
 <?php
 /**
- * FICHIER : FUNCTIONS -> COMPTE.PHP
+ * FICHIER : FUNCTIONS -> fonctionCompte.PHP
  * Fichier des fonctions de gestion du compte
  */
 
@@ -98,8 +98,6 @@ function recuperer_utilisateur_tous($db) {
 /**
  * Récupère un utilisateur de la base de données
  * spécifié par l'identifiant 'idUtilisateur'.
- * Renvoie le résultat, il est unique.
- * Sinon renvoie la valeur null.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param  $identifiant String Identifiant utilisateur
  * @return array L'utilisateur correspondant a l'id | Null sinon
@@ -165,7 +163,7 @@ function modifier_statut_utilisateur($db, $identifiant, $statut) {
 }
 
 /**
- * Supprime un utilisateur de la base de données
+ * Supprime un utilisateur de la BDD
  * spécifié par l'identifiant 'idUtilisateur'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $identifiant String Identifiant utilisateur
