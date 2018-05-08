@@ -14,14 +14,15 @@ if ( isset($db) && isset($idUtilisateur) && !empty($idUtilisateur) ) {
     $utilisateur = recuperer_utilisateur($db, $idUtilisateur);
     if ( $utilisateur != null ) {
         $idUtilisateur = $utilisateur['idutilisateur'];
-
-        /* Fichier de fonction exécuter suivant deux cas :
-         * 1: ajouter un utilisateur avec action = ajouterUtilisateur
-         * 2: modifier un utilisateur avec action = modifierUtilisateur
-         */
-        include_once(dirname(__FILE__).'/actionUtilisateur.php');
     }
 }
+
+/* Fichier de fonction exécuter suivant deux cas :
+ * 1: ajouter un utilisateur avec action = ajouterUtilisateur
+ * 2: modifier un utilisateur avec action = modifierUtilisateur
+ */
+include_once(dirname(__FILE__).'/actionUtilisateur.php');
+
 include_once(dirname(__FILE__).'/../../head.php');
 
 include_once(dirname(__FILE__).'/../../header.php');
