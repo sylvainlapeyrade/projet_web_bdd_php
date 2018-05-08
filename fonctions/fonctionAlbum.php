@@ -127,10 +127,10 @@ function ajouter_composer_album($db, $idAlbumCoAl, $idArtisteCoAl) {
 }
 
 /**
- * Supprime toutes les association de la BDD
+ * Supprime toutes les association de la table Composer_Album
  * spécifié par l'identifiant 'idAlbumCoAl'.
  * @param $db PDO Instance PDO de connexion à la BDD
- * @param $idAlbumCoAl Int Identifiant album dans Composer_album
+ * @param $idAlbumCoAl Int Identifiant album dans Composer_Album
  * @return True si la requete s'est bien exécutée | False sinon
  */
 function supprimer_composer_album_tous($db, $idAlbumCoAl) {
