@@ -69,11 +69,11 @@
               <label for="dateRecompense" class="text-center">
                 Date de création :
                   <input type="date"
-                         placeholder="01-01-2018"
+                         placeholder="<?php echo format_date(date("d-m-Y")); ?>"
                          required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
                          class="input-date"
                          name="dateGroupe"
-                         value="<?php echo $dateGroupe; ?>"
+                         value="<?php echo format_date($dateGroupe); ?>"
                     />
                 </label>
               
@@ -91,20 +91,23 @@
                         placeholder="Description du groupe"><?php echo $descriptionGroupe; ?></textarea>
             </div>
 
-            <div id="box-item-checkbox" class="width-800 liste-checkbox flex flex-center flex-wrap">
-              <?php
-              foreach($artistes as $artiste) {
-              ?>
-              <div class="item-checkbox">
-                <input type="checkbox"
-                       title="idArtiste<?php echo $artiste['idartiste']; ?>"
-                       name="idArtiste<?php echo $artiste['idartiste']; ?>"
-                       value="<?php echo $artiste['idartiste'] ?>"
-                       <?php if ( isset($listeArtisteGroupe) && in_array($artiste['idartiste'], $listeArtisteGroupe) ) { echo "checked"; } ?>
-                       /><?php echo $artiste['nomartiste'].' '.$artiste['prenomartiste']; ?>
+            <div class="width-800">
+                <h4>Artistes :</h4>
+                <div id="box-item-checkbox" class="liste-checkbox flex flex-center flex-wrap">
+                  <?php
+                  foreach($artistes as $artiste) {
+                  ?>
+                  <div class="item-checkbox">
+                    <input type="checkbox"
+                           title="idArtiste<?php echo $artiste['idartiste']; ?>"
+                           name="idArtiste<?php echo $artiste['idartiste']; ?>"
+                           value="<?php echo $artiste['idartiste'] ?>"
+                           <?php if ( isset($listeArtisteGroupe) && in_array($artiste['idartiste'], $listeArtisteGroupe) ) { echo "checked"; } ?>
+                           /><?php echo $artiste['nomartiste'].' '.$artiste['prenomartiste']; ?>
+                  </div>
+                  <?php } ?>
+                </div>
               </div>
-              <?php } ?>
-            </div>
           </div>
         
           <!-- BOUTON AJOUTER/MODIFIER AVEC CHAMPS CACHES -->

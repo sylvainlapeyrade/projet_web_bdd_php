@@ -24,10 +24,10 @@ function recuperer_groupe($db, $idGroupe) {
 }
 
 function ajouter_groupe($db, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe) {
-  $req = $db->prepare("INSERT INTO Groupe(nomGroupe, descriptionGroupe, urlImageGroupe)
-      VALUES(:nomGroupe, :descriptionGroupe, :urlImageGroupe);");
+  $req = $db->prepare("INSERT INTO Groupe(nomGroupe, dateGroupe, descriptionGroupe, urlImageGroupe)
+      VALUES(:nomGroupe, :dateGroupe, :descriptionGroupe, :urlImageGroupe);");
   $req->bindParam(':nomGroupe', $nomGroupe, PDO::PARAM_STR);
-  //$req->bindParam(':dateNaissanceArtiste', date('Y-m-d H:i:s', strtotime($dateNaissanceArtiste)));
+  $req->bindParam(':dateGroupe', format_date($dateGroupe));
   $req->bindParam(':descriptionGroupe', $descriptionGroupe, PDO::PARAM_STR);
   $req->bindParam(':urlImageGroupe', $urlImageGroupe, PDO::PARAM_STR);
   $reqOk = $req->execute();
@@ -39,10 +39,10 @@ function ajouter_groupe($db, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlIm
 }
 
 function modifier_groupe($db, $idGroupe, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe) {
-  $req = $db->prepare("UPDATE Groupe SET nomGroupe=:nomGroupe, descriptionGroupe=:descriptionGroupe, urlImageGroupe=:urlImageGroupe WHERE idGroupe=:idGroupe;");
+  $req = $db->prepare("UPDATE Groupe SET nomGroupe=:nomGroupe, dateGroupe=:dateGroupe, descriptionGroupe=:descriptionGroupe, urlImageGroupe=:urlImageGroupe WHERE idGroupe=:idGroupe;");
   $req->bindParam(':idGroupe', $idGroupe, PDO::PARAM_INT);
   $req->bindParam(':nomGroupe', $nomGroupe, PDO::PARAM_STR);
-  //$req->bindParam(':dateRecompense', $dateRecompense, PDO::PARAM_DATE);
+  $req->bindParam(':dateGroupe', format_date($dateGroupe));
   $req->bindParam(':descriptionGroupe', $descriptionGroupe, PDO::PARAM_STR);
   $req->bindParam(':urlImageGroupe', $urlImageGroupe, PDO::PARAM_STR);
   $reqOk = $req->execute();
@@ -50,7 +50,6 @@ function modifier_groupe($db, $idGroupe, $nomGroupe, $dateGroupe, $descriptionGr
 }
 
 function supprimer_groupe($db, $idGroupe) {
-  echo $idGroupe;
   $req = $db->prepare("DELETE FROM Groupe WHERE idGroupe=:idGroupe;");
   $req->bindParam(':idGroupe', $idGroupe, PDO::PARAM_INT);
   $reqOk = $req->execute();

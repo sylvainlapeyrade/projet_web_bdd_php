@@ -45,7 +45,7 @@
           <?php foreach($listeGroupe as $groupe) { /* INFORMATION POUR CHAQUE ARTISTES AVEC ACTION */ ?>
           <tr class="table-lign">
             <td><?php echo $groupe['nomgroupe']; ?></td>
-            <td><?php echo $groupe['dategroupe']; ?></td>
+            <td><?php echo format_date($groupe['dategroupe']); ?></td>
             <td><?php echo $groupe['descriptiongroupe']; ?></td>
             <td class="button button-blue">
               <a href="./formGroupe.php?idGroupe=<?php echo $groupe['idgroupe']; ?>">Modifier</a>
