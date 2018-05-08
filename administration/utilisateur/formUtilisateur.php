@@ -36,7 +36,11 @@ include_once(dirname(__FILE__).'/../../header.php');
             <div class="text-center">
                 <h1>Formulaire Utilisateur</h1>
 
-                <!-- FORMULAIRE D'UN ALBUM -->
+                <!-- FORMULAIRE :
+                     idUtilisateur : text
+                     motDePasse : password
+                     verification : password
+                -->
                 <form class="flex flex-center flex-column " action="./formUtilisateur.php" method="get">
                     <input class="input-text" 
                            type="text" 
@@ -59,8 +63,9 @@ include_once(dirname(__FILE__).'/../../header.php');
                            placeholder="Vérification" 
                            required
                            />
+                    
                     <!-- BOUTON AJOUTER/MODIFIER AVEC CHAMPS CACHES -->
-                    <?php  if ( isset($idUtilisateur) && !empty($idUtilisateur) ) { /** BOUTON POUR MODIFIER */ ?>
+                    <?php  if ( isset($idUtilisateur) && !empty($idUtilisateur) ) { /**** BOUTON POUR MODIFIER */ ?>
                         <input type="hidden"
                                name="idUtilisateur"
                                value="<?php echo $idUtilisateur ?>"
@@ -73,7 +78,7 @@ include_once(dirname(__FILE__).'/../../header.php');
                                type="submit"
                                value="modifier"
                         />
-                    <?php } else { /********************************* BOUTON POUR AJOUTER */ ?>
+                    <?php } else { /***************************************************** BOUTON POUR AJOUTER */ ?>
                         <input type="hidden"
                                name="action"
                                value="ajouterUtilisateur"
@@ -84,7 +89,7 @@ include_once(dirname(__FILE__).'/../../header.php');
                         />
                     <?php } ?>
                 </form>
-                <!-- FIN FORMULAIRE d'UN ALBUM -->
+                <!-- FIN FORMULAIRE -->
 
             </div>
         </div>

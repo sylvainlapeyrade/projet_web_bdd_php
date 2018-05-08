@@ -46,7 +46,13 @@ include_once(dirname(__FILE__).'/../../header.php');
             <div class="text-center">
                 <h1>Formulaire Album</h1>
 
-                <!-- FORMULAIRE D'UN ALBUM -->
+                <!-- FORMULAIRE :
+                     nomAlbum : text
+                     dateAlbum : date
+                     urlPochetteAlbum : text
+                     descriptionAlbum : textarea
+                     listeIdArtiste : multiple checkbox
+                -->
                 <form class="flex flex-center flex-column" action="./formAlbum.php" method="get">
                     <div class="flex">
                         <div class="flex flex-column width-800">
@@ -74,7 +80,6 @@ include_once(dirname(__FILE__).'/../../header.php');
                             />
                             <br><br>
 
-                            <!-- DESRIPTION DE L'ALBUM -->
                             <textarea class="input-area"
                                       name="descriptionAlbum"
                                       rows="5"
@@ -121,7 +126,7 @@ include_once(dirname(__FILE__).'/../../header.php');
                                value="ajouter"
                         />
                     <?php } ?>
-                    <!-- FIN FORMULAIRE d'UN ALBUM -->
+                    <!-- FIN FORMULAIRE -->
 
             </div>
         </div>

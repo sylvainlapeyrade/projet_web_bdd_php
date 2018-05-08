@@ -46,7 +46,14 @@
       <div class="text-center">
         <h1>Formulaire Artiste</h1>
         
-        <!-- FORMULAIRE D'UN ARTISTE -->
+        <!-- FORMULAIRE :
+             nomArtiste : text
+             prenomArtiste : text
+             nomScene : text
+             dateNaissanceArtiste : date
+             urlImageArtiste : text
+             descriptionArtiste : textarea
+        -->
         <form class="flex flex-center flex-column" action="./formArtiste.php" method="get">
           <input type="text" 
                  class="input-text" 
@@ -80,7 +87,6 @@
                  value="<?php echo $urlImageArtiste ?>" 
                  placeholder="URL de l'image de l'artiste"
                  />
-          <!-- DESRIPTION DE L'ARTISTE -->
           <textarea class="input-area" 
                     name="descriptionArtiste" 
                     rows="5" 
@@ -112,7 +118,7 @@
           <?php } ?>
           
         </form>
-        <!-- FIN FORMULAIRE d'UN ARTISTE -->
+        <!-- FIN FORMULAIRE -->
         
       </div>
     </div>

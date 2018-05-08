@@ -49,7 +49,13 @@
       <div class="text-center">
         <h1>Formulaire Groupe</h1>
         
-        <!-- FORMULAIRE D'UN ARTISTE -->
+        <!-- FORMULAIRE :
+             nomGroupe : text
+             dateGroupe : date
+             urlImageGroupe : text
+             descriptionGroupe : text
+             listeIdArtiste : multiple checkbox
+        -->
         <form class="flex flex-center flex-column" action="./formGroupe.php" method="get">
           <div class="flex">
             <div class="flex flex-column width-800">
@@ -77,7 +83,6 @@
                      />
               <br><br>
 
-              <!-- DESRIPTION DU GROUPE -->
               <textarea class="input-area" 
                         name="descriptionGroupe" 
                         rows="5"
@@ -124,7 +129,7 @@
                    value="ajouter"
                    />
           <?php } ?>
-        <!-- FIN FORMULAIRE d'UN GROUPE -->
+        <!-- FIN FORMULAIRE -->
         
       </div>
     </div>

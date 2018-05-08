@@ -47,7 +47,12 @@ include_once(dirname(__FILE__).'/../../head.php');
             <div class="text-center">
                 <h1>Formulaire Récompense</h1>
 
-                <!-- FORMULAIRE D'UN ARTISTE -->
+                <!-- FORMULAIRE :
+                     nomRecompense : text
+                     dateRecompenese : date
+                     descriptionRecompense : textearea
+                     listeIdArtiste : multiple checkbox
+                -->
                 <form class="flex flex-center flex-column" action="./formRecompense.php" method="get">
                     <div class="flex">
                         <div class="flex flex-column width-800">
@@ -68,9 +73,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                                        value="<?php echo $dateRecompense; ?>"
                                 />
                             </label>
-                            <br><br>
 
-                            <!-- DESRIPTION DE LA RECOMPENSE -->
                             <textarea class="input-area"
                                       name="descriptionRecompense"
                                       rows="5"
@@ -107,7 +110,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                                type="submit"
                                value="modifier"
                         />
-                    <?php } else { /********************************* BOUTON POUR AJOUTER */ ?>
+                    <?php } else { /* BOUTON POUR AJOUTER */ ?>
                         <input type="hidden"
                                name="action"
                                value="ajouterRecompense"
@@ -118,7 +121,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                         />
                     <?php } ?>
 
-                    <!-- FIN FORMULAIRE d'UN ARTISTE -->
+                    <!-- FIN FORMULAIRE -->
                 </form>
             </div>
         </div>

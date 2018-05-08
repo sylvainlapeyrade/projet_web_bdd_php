@@ -53,7 +53,14 @@
       <div class="text-center">
         <h1>Formulaire Musique</h1>
         
-        <!-- FORMULAIRE D'UN ALBUM -->
+        <!-- FORMULAIRE :
+             titreMusique : text
+             dureeMusique : number
+             dateMusique : date
+             descriptionMusique : textarea
+             listeGenreMusique : multiple checkbox
+             listeIdArtiste : multiple checkbox
+        -->
         <form class="flex flex-center flex-column" action="./formMusique.php" method="get">
           <div class="flex">
             <div class="width-500 margin-center flex flex-column">
@@ -82,7 +89,6 @@
                        />
               </label>
 
-              <!-- DESRIPTION DE L'ALBUM -->
               <textarea class="input-area" 
                         name="descriptionMusique" 
                         rows="5"
@@ -143,8 +149,9 @@
                    value="ajouter"
                    />
           <?php } ?>
-        <!-- FIN FORMULAIRE d'UN ALBUM -->
         </form>
+        <!-- FIN FORMULAIRE -->
+          
       </div>
     </div>
   </section>
