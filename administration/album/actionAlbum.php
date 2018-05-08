@@ -14,15 +14,13 @@ if ( isset($action) && !empty($action) ) {
         }
     }
 }
-if (isset($db)){
-    $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
 
+if ( isset($db) ) {
     switch($action) {
         case "ajouterAlbum":
             /*
              * Champs présent : nomAlbum, dateAlbum, descriptionAlbum, urlPochetteAlbum ,listeIdAlbum
              * Champs obligatoire : nomAlbum, dateAlbum, idArtiste1
-             * On vérifie tout les champs
              */
             if ( isset($nomAlbum, $dateAlbum, $descriptionAlbum, $urlPochetteAlbum) ) {
                 if ( !empty($nomAlbum) ) {
@@ -57,8 +55,7 @@ if (isset($db)){
 
         case "modifierAlbum":
             /*
-             * Champs présent : idAlbum, nomAlbum, dateAlbum, descriptionAlbum,
-             * urlImageAlbum, listeIdArtiste
+             * Champs présent : idAlbum, nomAlbum, dateAlbum, descriptionAlbum, urlImageAlbum, listeIdArtiste
              * Champs obligatoire : idAlbum, nomAlbum, dateAlbum, idArtiste1
              */
             if ( isset($idAlbum, $nomAlbum, $dateAlbum, $descriptionAlbum, $urlPochetteAlbum) ) {
@@ -101,7 +98,6 @@ if (isset($db)){
             /*
              * Champs présent : idAlbum
              * Champs obligatoire : idAlbum
-             * On vérifie tout les champs
              */
             if ( isset($idAlbum) ) {
                 if ( !empty($idAlbum) ) {

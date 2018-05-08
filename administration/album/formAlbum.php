@@ -24,7 +24,6 @@ if ( isset($db) && isset($idAlbum) && !empty($idAlbum) ) {
             $listeArtisteAlbum[] = $idArtisteCoAl['idartistecoal'];
         }
 
-
         /* Fichier de fonction exécuter suivant deux cas :
          * 1: ajouter un album avec action = ajouterAlbum
          * 2: modifier un album avec action = modifierAlbum
