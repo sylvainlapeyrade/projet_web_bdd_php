@@ -77,17 +77,18 @@
                        class="input-number"
                        name="dureeMusique"
                        value="<?php echo $dureeMusique; ?>"
+                       placeholder="0"
                        />
               </label>
 
               <label for="dateRecompense" class="text-center">
                 Date de création :
                   <input type="date"
-                         placeholder="01-01-2018"
+                         placeholder="<?php echo format_date(date("d-m-Y")); ?>"
                          required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
                          class="input-date"
                          name="dateMusique"
-                         value="<?php echo $dateMusique; ?>"
+                         value="<?php echo format_date($dateMusique); ?>"
                     />
                 </label>
 

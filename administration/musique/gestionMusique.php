@@ -24,7 +24,6 @@
   include_once(dirname(__FILE__).'/actionMusique.php');
 
   if (isset($db)){
-    /* On récupère tout les artiste de la base de données. */
     $listeMusique = recuperer_musique_tous($db);
   }
 
@@ -58,7 +57,7 @@
               <?php echo $musique['dureemusique']; ?>
             </td>
             <td>
-              <?php echo $musique['datemusique']; ?>
+              <?php echo format_date($musique['datemusique']); ?>
             </td>
             <td>
               <?php echo $musique['descriptionmusique']; ?>

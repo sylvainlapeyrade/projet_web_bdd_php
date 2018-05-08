@@ -24,11 +24,11 @@ function recuperer_musique($db, $idMusique) {
 }
 
 function ajouter_musique($db, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique) {
-  $req = $db->prepare("INSERT INTO Musique(titreMusique, dureeMusique, descriptionMusique)
-      VALUES(:titreMusique, :dureeMusique, :descriptionMusique);");
+  $req = $db->prepare("INSERT INTO Musique(titreMusique, dureeMusique, dateMusique, descriptionMusique)
+      VALUES(:titreMusique, :dureeMusique, :dateMusique, :descriptionMusique);");
   $req->bindParam(':titreMusique', $titreMusique, PDO::PARAM_STR);
   $req->bindParam(':dureeMusique', $dureeMusique, PDO::PARAM_INT);
-  //$req->bindParam(':dateNaissanceArtiste', date('Y-m-d H:i:s', strtotime($dateNaissanceArtiste)));
+  $req->bindParam(':dateMusique', format_date($dateMusique));
   $req->bindParam(':descriptionMusique', $descriptionMusique, PDO::PARAM_STR);
   $reqOk = $req->execute();
   if ( $reqOk ) {
@@ -39,11 +39,11 @@ function ajouter_musique($db, $titreMusique, $dureeMusique, $dateMusique, $descr
 }
 
 function modifier_musique($db, $idMusique, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique) {
-  $req = $db->prepare("UPDATE Musique SET titreMusique=:titreMusique, dureeMusique=:dureeMusique, descriptionMusique=:descriptionMusique WHERE idMusique=:idMusique;");
+  $req = $db->prepare("UPDATE Musique SET titreMusique=:titreMusique, dureeMusique=:dureeMusique, dateMusique=:dateMusique, descriptionMusique=:descriptionMusique WHERE idMusique=:idMusique;");
   $req->bindParam(':idMusique', $idMusique, PDO::PARAM_INT);
   $req->bindParam(':titreMusique', $titreMusique, PDO::PARAM_STR);
   $req->bindParam(':dureeMusique', $dureeMusique, PDO::PARAM_INT);
-  //$req->bindParam(':dateRecompense', $dateRecompense, PDO::PARAM_DATE);
+  $req->bindParam(':dateMusique', format_date($dateMusique));
   $req->bindParam(':descriptionMusique', $descriptionMusique, PDO::PARAM_STR);
   $reqOk = $req->execute();
   return $reqOk;
