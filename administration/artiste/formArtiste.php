@@ -75,10 +75,16 @@
                  value="<?php echo $nomScene ?>" 
                  placeholder="Nom de scène"
                  />
-          
-          <label for="dateNaissanceArtiste" class="text-center">
-            Date de naissance artiste :
-            <input id="dateNaissanceArtiste" type="date" class="input-date" name="dateNaissanceArtiste" value="<?php echo $dateNaissanceArtiste ?>">
+
+          <label for="dateRecompense" class="text-center">
+            Date de naissance :
+            <input type="date"
+                   placeholder="01-01-2018"
+                   required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
+                   class="input-date"
+                   name="dateNaissanceArtiste"
+                   value="<?php echo $dateNaissanceArtiste; ?>"
+             />
           </label>
         
           <input type="text" 

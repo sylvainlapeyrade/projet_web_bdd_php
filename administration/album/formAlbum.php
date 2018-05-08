@@ -63,9 +63,11 @@ include_once(dirname(__FILE__).'/../../header.php');
                                    value="<?php echo $nomAlbum; ?>"
                             />
 
-                            <label for="dateAlbum" class="text-center">
-                                Date de la création du groupe :
+                            <label for="dateRecompense" class="text-center">
+                                Date de création:
                                 <input type="date"
+                                       placeholder="01-01-2018"
+                                       required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
                                        class="input-date"
                                        name="dateAlbum"
                                        value="<?php echo $dateAlbum; ?>"

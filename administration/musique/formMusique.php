@@ -80,14 +80,16 @@
                        />
               </label>
 
-              <label for="dateMusique" class="text-center">
+              <label for="dateRecompense" class="text-center">
                 Date de création :
-                <input type="date"
-                       class="input-date"
-                       name="dateMusique"
-                       value="<?php echo $dateMusique; ?>"
-                       />
-              </label>
+                  <input type="date"
+                         placeholder="01-01-2018"
+                         required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
+                         class="input-date"
+                         name="dateMusique"
+                         value="<?php echo $dateMusique; ?>"
+                    />
+                </label>
 
               <textarea class="input-area" 
                         name="descriptionMusique" 

@@ -66,14 +66,16 @@
                      value="<?php echo $nomGroupe; ?>"
                      />
 
-              <label for="dateGroupe" class="text-center">
-                Date de la création du groupe :
-                <input type="date"
-                       class="input-date"
-                       name="dateGroupe"
-                       value="<?php echo $dateGroupe; ?>"
-                       />
-              </label>
+              <label for="dateRecompense" class="text-center">
+                Date de création :
+                  <input type="date"
+                         placeholder="01-01-2018"
+                         required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
+                         class="input-date"
+                         name="dateGroupe"
+                         value="<?php echo $dateGroupe; ?>"
+                    />
+                </label>
               
               <input type="text" 
                      class="input-text"
