@@ -59,7 +59,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                                 </td>
                             <?php } ?>
                             <td class="button button-blue">
-                                <a href="formModifierUtilisateur.php?idUtilisateur=<?php echo $user['idutilisateur'] ?>">Modifier mot de passe</a>
+                                <a href="formUtilisateur.php?idUtilisateur=<?php echo $user['idutilisateur'] ?>">Modifier mot de passe</a>
                             </td>
                             <td class="button button-red">
                                 <a href="?action=supprimerUtilisateur&idUtilisateur=<?php echo $user['idutilisateur'] ?>">Supprimer</a>

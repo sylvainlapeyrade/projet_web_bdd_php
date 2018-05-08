@@ -1,14 +1,12 @@
 <?php
-  /*
-   * FICHIER AdminActionUtilisateur.php
-   * Fichier d'exécution des actions suivant les paramètre demandé.
-   * 4 cas :
-   *    1: ajouter un utilisateur
-   *    2: modifier le mot de passe d'un utilisateur
-   *    3: modifier le statut d'un utilisateur
-   *    3: supprimer un utilisateur
-   * Date modification : 25/04/2018
-   */
+
+$action = $_GET['action'];
+if ( isset($action) && !empty($action) ) {
+  $idUtilisateur = $_GET['idUtilisateur'];
+  $motDePasse = $_GET['motDePasse'];
+  $verification = $_GET['verification'];
+  $statut = $_GET['statut'];
+}
 
 switch($action) {
   case 'ajouterUtilisateur':
