@@ -2,7 +2,7 @@
 
 /**
  * FICHIER : FUNCTIONS -> fonctionCompte.PHP
- * Fichier des fonctions de gestion du compte
+ * Fichier des fonctions de gestion du compte.
  */
 
 /**

@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * FICHIER : FUNCTIONS -> fonctionRecompense.PHP
+ * Fichier des fonctions de gestion des récompenses.
+ */
+
 function recuperer_recompense_tous($db) {
   $req = $db->prepare("SELECT * FROM Recompense ORDER BY nomRecompense ASC");
   $req->execute();

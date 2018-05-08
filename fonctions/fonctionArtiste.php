@@ -2,7 +2,7 @@
 
 /**
  * FICHIER : FUNCTIONS -> fonctionArtiste.PHP
- * Fichier des fonction de gestion des artistes
+ * Fichier des fonction de gestion des artistes.
  */
 
 /**

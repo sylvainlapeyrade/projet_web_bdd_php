@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * FICHIER : FUNCTIONS -> fonctionGroupe.PHP
+ * Fichier des fonctions de gestion des groupes.
+ */
+
 function recuperer_groupe_tous($db) {
   $req = $db->prepare("SELECT * FROM Groupe ORDER BY nomGroupe ASC");
   $req->execute();

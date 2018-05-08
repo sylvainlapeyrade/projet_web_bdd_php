@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * FICHIER : FUNCTIONS -> fonctionGenre.PHP
+ * Fichier des fonctions de gestion des genres.
+ */
+
 function recuperer_genre($db, $idMusiqueDe) {
   $req = $db->prepare("SELECT * FROM Definir WHERE idMusiqueDe=:idMusiqueDe");
   $req->bindParam(':idMusiqueDe', $idMusiqueDe);

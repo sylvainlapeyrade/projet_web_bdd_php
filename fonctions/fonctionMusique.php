@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * FICHIER : FUNCTIONS -> fonctionMusique.PHP
+ * Fichier des fonctions de gestion des musiques.
+ */
+
 function recuperer_musique_tous($db) {
   $req = $db->prepare("SELECT * FROM Musique ORDER BY titreMusique ASC");
   $req->execute();
