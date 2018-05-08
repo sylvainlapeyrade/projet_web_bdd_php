@@ -10,6 +10,8 @@ if ( isset($action) && !empty($action) ) {
   foreach($_GET as $key => $value) {
     if ( strstr($key, 'idArtiste') ) {
       $listeIdArtiste[] = (int) $value;
+    } elseif ( strstr($key, 'nomGenre') ) {
+      $listeNomGenre[] = $value;
     }
   }
 }
@@ -32,11 +34,19 @@ switch($action) {
             $indiceListe = 0;
             do {
               $idArtisteCoMu = (int) $listeIdArtiste[$indiceListe];
-              $operationOk = ajouter_composer_musique($db, $idMusique, $idArtisteCoMu);
+              $operationArtisteOk = ajouter_composer_musique($db, $idMusique, $idArtisteCoMu);
               $indiceListe++;
-            } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
-            if ( $operationOk ) {
-              //header('Location: ./gestionMusique.php?operation=ok');
+            } while ( $operationArtisteOk && $indiceListe < sizeof($listeIdArtiste) );
+            if ( isset($listeNomGenre) && !empty($listeNomGenre) ) {
+              $indiceListe = 0;
+              do {
+                $nomGenre = $listeNomGenre[$indiceListe];
+                $operationGenreOk = ajouter_genre($db, $idMusique, $nomGenre);
+                $indiceListe++;
+              } while ( $operationGenreOk && $indiceListe < sizeof($listeNomGenre) );
+            }
+            if ( $operationArtisteOk && $operationGenreOk ) {
+              header('Location: ./gestionMusique.php?operation=ok');
             } else {
               supprimer_musique($db, $idMusique);
               $erreur = "L'opération 2 n'a pas pu être exécuté.";
@@ -64,9 +74,31 @@ switch($action) {
       if ( !empty($idMusique) && !empty($titreMusique) && !empty($dureeMusique) ) {
         $operationOk = modifier_musique($db, $idMusique, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique);
         if ( $operationOk ) {
-          header('Location: ./gestionMusique.php?operation=ok');
+          $operation2Ok = supprimer_genre_tous($db, $idMusique);
+          $operation3Ok = supprimer_composer_musique_tous($db, $idMusique);
+          if ( $operation2Ok && $operation3Ok ) {
+            $indiceListe = 0;
+            do {
+              $idArtisteCoMu = (int) $listeIdArtiste[$indiceListe];
+              $operationArtisteOk = ajouter_composer_musique($db, $idMusique, $idArtisteCoMu);
+              $indiceListe++;
+            } while ( $operationArtisteOk && $indiceListe < sizeof($listeIdArtiste) );
+            $indiceListe = 0;
+            do {
+              $nomGenre = $listeNomGenre[$indiceListe];
+              $operationGenreOk = ajouter_genre($db, $idMusique, $nomGenre);
+              $indiceListe++;
+            } while ( $operationGenreOk && $indiceListe < sizeof($listeNomGenre) );
+            if ( $operationGenreOk && $operationGenreOk ) {
+              header('Location: ./gestionMusique.php?operation=ok');
+            } else {
+              $erreur = "L'opération 4 et 5 n'a pas pu être exécuté.";
+            }
+          } else {
+            $erreur = "L'opération 2 et 3 n'a pas pu être exécuté.";
+          }
         } else {
-          $erreur = "L'opération 1  n'a pas pu être éxécuté.";
+          $erreur = "L'opération 1 n'a pas pu être exécuté.";
         }
       } else {
         $erreur = "Certains champs du formulaire sont vide.";
@@ -74,6 +106,33 @@ switch($action) {
     } else {
       $erreur = "Le formulaire n'est pas valide.";
     }
+          
+          
+          /*
+          $operation2Ok = supprimer_genre_tous($db, $idMusique);
+          $operation3Ok = supprimer_composer_musique_tous($db, $idMusique);
+          if ( $operation2Ok && $operation3Ok ) {
+            $indiceListe = 0;
+            do {
+              $idArtisteCoMu = (int) $listeIdArtiste[$indiceListe];
+              $operationArtisteOk = ajouter_composer_musique($db, $idMusique, $idArtisteCoMu);
+              $indiceListe++;
+            } while ( $operationArtisteOk && $indiceListe < sizeof($listeIdArtiste) );
+            if ( isset($listeNomGenre) && !empty($listeNomGenre) ) {
+              $indiceListe = 0;
+              do {
+                $nomGenre = $listeNomGenre[$indiceListe];
+                $operationGenreOk = ajouter_genre($db, $idMusique, $nomGenre);
+                $indiceListe++;
+              } while ( $operationGenreOk && $indiceListe < sizeof($listeNomGenre) );
+            }
+            if ( $operationArtisteOk && $operationGenreOk ) {
+              //header('Location: ./gestionMusique.php?operation=ok');
+            } else {
+              supprimer_musique($db, $idMusique);
+              $erreur = "L'opération 2 n'a pas pu être exécuté.";
+            }
+            */
     break;
     
   case "supprimerMusique":
@@ -85,8 +144,9 @@ switch($action) {
       if ( !empty($idMusique) ) {
         $operation1Ok = supprimer_assembler_album_tous($db, $idMusique);
         $operation2Ok = supprimer_composer_musique_tous($db, $idMusique);
-        $operation3Ok = supprimer_musique($db, $idMusique);
-        if ( operation1Ok && $operation2Ok && $operation3Ok ) {
+        $operation3Ok = supprimer_genre_tous($db, $idMusique);
+        $operation4Ok = supprimer_musique($db, $idMusique);
+        if ( $operation1Ok && $operation2Ok && $operation3Ok && $operation4Ok ) {
             header('Location: ./gestionMusique.php?operation=ok');
         } else {
           $erreur = "L'opération n'a pas pu être exécuté.";
