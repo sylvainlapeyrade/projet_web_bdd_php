@@ -89,7 +89,7 @@ function modifier_artiste($db, $idArtiste, $nomArtiste, $prenomArtiste, $nomScen
 }
 
 /**
- * Supprime un artiste de la base de données
+ * Supprime un artiste de la BDD
  * spécifier par l'identifiant 'idArtiste'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idArtiste Int Identifiant de l'artiste
