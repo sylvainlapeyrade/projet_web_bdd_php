@@ -20,8 +20,8 @@ DROP TABLE IF EXISTS Definir          CASCADE;
 /* Créations des tables de la bdd */
 CREATE TABLE Album(
   idAlbum               SERIAL        CONSTRAINT Al_pk_idAl  PRIMARY KEY,
-  nomAlbum              VARCHAR(45)   CONSTRAINT Al_noAl_nn  NOT NULL,
-  dateAlbum             DATE,
+  nomAlbum              VARCHAR(45)   CONSTRAINT Al_noAl_NN  NOT NULL,
+  dateAlbum             DATE          CONSTRAINT AL_daAl_NN NOT NULL,
   urlPochetteAlbum      TEXT,
   descriptionAlbum      TEXT
 );
@@ -29,10 +29,10 @@ CREATE TABLE Album(
 
 CREATE TABLE Artiste(
   idArtiste             SERIAL        CONSTRAINT Ar_pk_idAr  PRIMARY KEY,
-  nomArtiste            VARCHAR(45)   CONSTRAINT Ar_noAr_nn  NOT NULL,
-  prenomArtiste         VARCHAR(45)   CONSTRAINT Ar_prAr_nn  NOT NULL,
+  nomArtiste            VARCHAR(45)   CONSTRAINT Ar_noAr_NN  NOT NULL,
+  prenomArtiste         VARCHAR(45)   CONSTRAINT Ar_prAr_NN  NOT NULL,
   nomScene              VARCHAR(45),
-  dateNaissanceArtiste  DATE,
+  dateNaissanceArtiste  DATE          CONSTRAINT Ar_daAr_NN NOT NULL,
   descriptionArtiste    TEXT,
   urlImageArtiste       TEXT
 );
@@ -40,8 +40,8 @@ CREATE TABLE Artiste(
 
 CREATE TABLE Recompense(
   idRecompense 	        SERIAL 		    CONSTRAINT Re_pk_idRe  PRIMARY KEY,
-  nomRecompense 	      VARCHAR(45)   CONSTRAINT Re_noRc_NN  NOT NULL,
-  dateRecompense        DATE,
+  nomRecompense 	      VARCHAR(45)   CONSTRAINT Re_noRe_NN  NOT NULL,
+  dateRecompense        DATE            CONSTRAINT Re_daRe_NN  NOT NULL,
   descriptionRecompense TEXT
 );
 
@@ -50,15 +50,15 @@ CREATE TABLE Musique(
   idMusique             SERIAL        CONSTRAINT Mu_pk_idMu  PRIMARY KEY,
   titreMusique          VARCHAR(45)   CONSTRAINT Mu_tiMu_NN  NOT NULL,
   dureeMusique	        INT           CONSTRAINT Mu_duMu_NN  NOT NULL,
-  dateMusique	   	      DATE,
+  dateMusique	   	      DATE        CONSTRAINT Mu_daMu_NN NOT NULL,
   descriptionMusique    TEXT
 );
 
 
 CREATE TABLE Groupe(
   idGroupe              SERIAL        CONSTRAINT Gr_pk_idGr  PRIMARY KEY,
-  nomGroupe	            VARCHAR(45)   CONSTRAINT Gr_noGr_nn  NOT NULL,
-  dateGroupe	          DATE,
+  nomGroupe	            VARCHAR(45)   CONSTRAINT Gr_noGr_NN  NOT NULL,
+  dateGroupe	          DATE        CONSTRAINT GR_daGr_NN NOT NULL,
   descriptionGroupe     TEXT,
   urlImageGroupe        TEXT
 );
@@ -66,8 +66,8 @@ CREATE TABLE Groupe(
 
 CREATE TABLE Utilisateur(
   idUtilisateur         VARCHAR(45)   CONSTRAINT Ut_pk_idUt  PRIMARY KEY,
-  motDePasse            VARCHAR(45)   CONSTRAINT Ut_moUt_nn  NOT NULL,
-  statut                BOOLEAN       CONSTRAINT Ut_stUt_nn  NOT NULL
+  motDePasse            VARCHAR(45)   CONSTRAINT Ut_moUt_NN  NOT NULL,
+  statut                BOOLEAN       CONSTRAINT Ut_stUt_NN  NOT NULL
 );
 
 
@@ -129,6 +129,6 @@ CREATE TABLE Constituer(
 
 CREATE TABLE Definir(
   idMusiqueDe           INT           CONSTRAINT De_fk_iMDe  REFERENCES Musique(idMusique),
-  nomGenre              VARCHAR(45)   CONSTRAINT De_noGe_NU  NOT NULL,
+  nomGenre              VARCHAR(45)   CONSTRAINT De_noGe_NN  NOT NULL,
                                       CONSTRAINT De_pk_Defi  PRIMARY KEY(idMusiqueDe, nomGenre)
 );
