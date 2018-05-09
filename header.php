@@ -7,7 +7,7 @@
             <a class="button" href="/index.php"><li>Accueil</li></a>
             <?php if ( is_connect() ) { ?>
                 <?php if ( is_admin() ) { ?>
-                    <a class="button button-blue" href="/administration/index.php"><li>Administration</li></a>
+                    <a class="button" href="/administration/index.php"><li>Administration</li></a>
                 <?php } ?>
                 <a class="button"><li>Compte</li></a>
                 <a class="button" href="/compte/deconnexion.php"><li>Déconnexion</li></a>
