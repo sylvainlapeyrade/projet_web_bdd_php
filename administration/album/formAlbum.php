@@ -138,4 +138,4 @@ include_once(dirname(__FILE__).'/../../header.php');
     </section>
 </main>
 
-<?php include_once(dirname(__FILE__).'/../footer.php'); ?>    
+<?php include_once(dirname(__FILE__).'/../../footer.php'); ?>    

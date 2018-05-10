@@ -160,4 +160,4 @@
   </section>
 </main>
 
-<?php include_once(dirname(__FILE__).'/../footer.php'); ?>
+<?php include_once(dirname(__FILE__).'/../../footer.php'); ?>
