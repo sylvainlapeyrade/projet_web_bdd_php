@@ -1,3 +1,23 @@
+#barre-recherche {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+#input-recherche {
+    padding: 10px;
+    padding-left: 25px;
+    margin-right: 10px;
+    margin-left: 25px;
+}
+
+#page-groupe {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 25px;
+    padding-top: 0px;
+}
+
 #description-groupe {
     border-right: 1px black solid;
     margin-right: 50px;
