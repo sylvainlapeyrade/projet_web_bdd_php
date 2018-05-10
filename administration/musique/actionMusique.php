@@ -45,9 +45,9 @@ if ( isset($db) ) {
                 $indiceListe = 0;
                 do {
                     $idArtisteCoMu = (int) $listeIdArtiste[$indiceListe];
-                    $operationArtisteOk = ajouter_composer_musique($db, $idMusique, $idArtisteCoMu);
+                    $operationOk = ajouter_composer_musique($db, $idMusique, $idArtisteCoMu);
                     $indiceListe++;
-                } while ( $operationArtisteOk && $indiceListe < sizeof($listeIdArtiste) );
+                } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
                 if ( !$operationOk ) {
                     $erreur = $messages['operation']['ko']. " (2)";
                     break;
@@ -111,9 +111,9 @@ if ( isset($db) ) {
                     $indiceListe = 0;
                     do {
                         $nomGenre = $listeNomGenre[$indiceListe];
-                        $operationGenreOk = ajouter_genre($db, $idMusique, $nomGenre);
+                        $operationOk = ajouter_genre($db, $idMusique, $nomGenre);
                         $indiceListe++;
-                    } while ( $operationGenreOk && $indiceListe < sizeof($listeNomGenre) );
+                    } while ( $operationOk && $indiceListe < sizeof($listeNomGenre) );
                     if ( !$operationOk ) {
                         $erreur = $messages['operation']['ko']. " (5)";
                         break;
@@ -142,17 +142,17 @@ if ( isset($db) ) {
                     $erreur = $messages['operation']['ko']. " (1)";
                     break;
                 }
-                $operation2Ok = supprimer_composer_musique_tous($db, $idMusique);
+                $operationOk = supprimer_composer_musique_tous($db, $idMusique);
                 if ( !$operationOk ) {
                     $erreur = $messages['operation']['ko']. " (2)";
                     break;
                 }
-                $operation3Ok = supprimer_genre_tous($db, $idMusique);
+                $operationOk = supprimer_genre_tous($db, $idMusique);
                 if ( !$operationOk ) {
                     $erreur = $messages['operation']['ko']. " (3)";
                     break;
                 }
-                $operation4Ok = supprimer_musique($db, $idMusique);
+                $operationOk = supprimer_musique($db, $idMusique);
                 if ( !$operationOk ) {
                     $erreur = $messages['operation']['ko']. " (4)";
                     break;
