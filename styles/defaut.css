@@ -2,8 +2,8 @@ body {
     margin: 0 auto;
     min-width: 1250px;
     font-family: hurme_no2-webfont, sans-serif;
-    background: #f2f2f2;
-    background: url('/images/background.jpg')
+    background-color: #f2f2f2;
+    background: url('/images/background.jpg');
 }
 
 @media only screen and (max-width: 1280px) {
@@ -34,8 +34,8 @@ li { list-style: none; }
 .white { color: white; }
 .green { color: green; }
 .red { color: red; }
-.grey { color: grey; }
 .red1 { color:#e8491d; }
+.grey { color: grey; }
 
 .t8 { font-size: 8px;}
 .t9 { font-size: 9px;}
@@ -54,6 +54,7 @@ li { list-style: none; }
 .t50 { font-size: 50px;}
 
 .text-center { text-align: center; }
+.souligner { text-decoration: underline; }
 
 .background-black { background: black; }
 .background-red { background: red; }
@@ -115,6 +116,11 @@ td {
 .button-red {
     color: white;
     background: red;
+}
+
+.button-red1 {
+    color: white;
+    background: #e8491d;
 }
 
 .button-green {

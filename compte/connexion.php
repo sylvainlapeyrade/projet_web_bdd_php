@@ -5,7 +5,7 @@
   include_once(dirname(__FILE__).'/../bdd/connexion.php');
 
   $info['head']['subTitle'] = "Connexion";
-  $info['head']['stylesheets'] = ['connexion.css'];
+  $info['head']['stylesheets'] = ['compte.css'];
 
   if(is_connect()) {leave();}
 
@@ -36,7 +36,7 @@
 
 <main>
   <section class="text-center">
-    <h1 class="t30">Connexion</h1>
+    <h1 class="t30 souligner">Connexion</h1>
     <? if ( isset($erreur) ) { ?>
     <!-- Message d'erreur du formulaire -->
     <p class="red"><?php echo $erreur; ?></p>
@@ -49,8 +49,10 @@
       <input class="input-text" type="text" name="idUtilisateur" placeholder="Identifiant"
              value="<?php if( isset($identifiant) ){ echo $identifiant; } ?>">
       <input class="input-text" type="password" name="motDePasse" placeholder="Mot de passe">
-      <input class="inputButton1" type="submit" name="connexion" value="connexion">
+      <input class="button button-red1" type="submit" name="connexion" value="connexion">
     </form>
+    <br>
+    <p class="message">Pas encore inscrit ? <br> Allez-y : <a class="souligner" href="/compte/inscription.php">s'inscrire</a></p>
   </section>
 </main>
 
