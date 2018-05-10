@@ -5,7 +5,7 @@
 
 
     $info['head']['subTitle'] = "Administration";
-    $info['head']['stylesheets'] = ['administration.css'];
+    $info['head']['stylesheets'] = ['adminGestion.css'];
 
     include_once(dirname(__FILE__).'/../head.php');
 ?>
