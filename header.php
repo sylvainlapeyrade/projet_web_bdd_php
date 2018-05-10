@@ -15,7 +15,7 @@
                 <a class="button flex item-center" href="/compte/connexion.php"><li>Connexion</li></a>
                 <a class="button flex item-center" href="/compte/inscription.php"><li>Inscription</li></a>
             <?php } ?>
-            <a class="button flex item-center" href="/index.php"><li>à propos de nous</li></a>
+            <a class="button flex item-center" href="/index.php"><li>à propos</li></a>
         </ul>
     </nav>
 </header>
