@@ -33,7 +33,7 @@ include_once(dirname(__FILE__).'/head.php');
             <div class="flex">
                 <div id="description-album" class="flex-around">
                     <div>
-                        <h1><a>Titre_Musique</a> - <a>Date_sortie</a> - <a>Nom_Auteur</a></h1>
+                        <h1 class="red1"><a>Titre_Musique</a> - <a>Date_sortie</a> - <a>Nom_Auteur</a></h1>
                         <p>
                             Ceci est la description de la musique<br>
                             Pas sans toi est le troisième single extrait de l'album M. Pokora du chanteur français M. Pokora.<br>

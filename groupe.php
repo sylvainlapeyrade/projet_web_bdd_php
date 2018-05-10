@@ -33,7 +33,7 @@ include_once(dirname(__FILE__).'/head.php');
             <div class="flex">
                 <div id="description-groupe" class="flex-around">
                     <div>
-                        <h1><a>Nom_Groupe</a> - <a>Date_de_formation_init</a></h1>
+                        <h1 class="red1"><a>Nom_Groupe</a> - <a>Date_de_formation_init</a></h1>
                         <p>
                             Ceci est la description du groupe<br>
                             Linkup est un boys band français, aujourd'hui dissous, vainqueur de la troisième saison de Popstars (intitulée Popstars, le duel), une émission de télé-réalité musicale diffusée sur M6, en 2003. Il est composé de Matthieu Tota, Lionel Tim et Otis, qui succèdent ainsi aux L5 et aux Whatfor.<br>
