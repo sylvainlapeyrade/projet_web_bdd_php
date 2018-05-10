@@ -1,0 +1,12 @@
+#content-recherche {
+    background: rgba(53, 66, 74, 0.8);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 50px 30px;
+    margin-top: 80px;
+    margin-bottom: 25px;
+}
+
+.input-recherche {
+    padding-left: 25px;
+    margin-right: 10px;
+}
