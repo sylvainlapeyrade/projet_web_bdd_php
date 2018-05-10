@@ -4,6 +4,16 @@ main section {
     padding: 25px;
 }
 
+#barre-recherche {
+    background: black;
+    padding: 20px 0px;
+}
+
+.input-recherche {
+    padding-left: 25px;
+    margin-right: 10px;
+}
+
 #description-artiste {
   border-right: 1px white solid;
   margin-right: 50px;

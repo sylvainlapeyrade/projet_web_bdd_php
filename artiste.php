@@ -16,6 +16,9 @@ include_once(dirname(__FILE__).'/head.php');
 <main>
     <section>
         <!-- Présentation de l'artiste -->
+            <div id="barre-recherche">
+                <?php include_once(dirname(__FILE__).'/formRecherche.php'); ?>
+            </div>
         <div class="flex">
             <div id="description-artiste" class="flex-around">
                 <div>
