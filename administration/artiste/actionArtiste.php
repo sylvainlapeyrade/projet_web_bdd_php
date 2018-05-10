@@ -22,15 +22,9 @@ if ( isset($db) ) {
                 $operationOk = ajouter_artiste($db, $nomArtiste, $prenomArtiste, $nomScene, $dateNaissanceArtiste,  $urlImageArtiste, $descriptionArtiste);
                 if ( $operationOk ) {
                     header('Location: ./gestionArtiste.php?operation=ok');
-                } else {
-                    $erreur = "L'opération n'a pas pu être exécuté.";
-                }
-            } else {
-                $erreur = "Le nom et le prénom de l'artiste est obligatoire.";
-            }
-        } else {
-            $erreur = "Le formulaire est incomplet.";
-        }
+                } else { $erreur = $messages['operation']['ko']; }
+            } else { $erreur = $messages['formulaire']['champs_vide']; }
+        } else { $erreur = $messages['formulaire']['invalide']; }
         break;
 
         case "modifierArtiste":
@@ -43,15 +37,9 @@ if ( isset($db) ) {
             $operationOk = modifier_artiste($db, $idArtiste, $nomArtiste, $prenomArtiste, $nomScene, $dateNaissanceArtiste,  $urlImageArtiste, $descriptionArtiste);
                 if ( $operationOk ) {
                     header('Location: ./gestionArtiste.php?operation=ok');
-                } else {
-                    $erreur = "L'opération n'a pas pu être exécuté.";
-                }
-            } else {
-                $erreur = "Le nom et le prénom de l'artiste est obligatoire.";
-            }
-        } else {
-            $erreur = "Le formulaire est incomplet.";
-        }
+                } else { $erreur = $erreur = $messages['operation']['ko']; }
+            } else { $erreur = $messages['formulaire']['champs_vide']; }
+        } else { $erreur = $messages['formulaire']['invalide']; }
         break;
 
         case "supprimerArtiste":
@@ -64,15 +52,9 @@ if ( isset($db) ) {
                 $operationOk = supprimer_artiste($db, $idArtiste);
                 if ( $operationOk ) {
                     header('Location: ./gestionArtiste.php?operation=ok');
-                } else {
-                    $erreur = "L'opération n'a pas pu être exécuté.";
-                }
-            } else {
-                $erreur = "L'identifiant de l'artiste doit être renseigné.";
-            }
-        } else {
-            $erreur = "Le formulaire est incomplet.";
-        }
+                } else { $erreur = $erreur = $erreur = $messages['operation']['ko']; }
+            } else { $erreur = $messages['formulaire']['champs_vide']; }
+        } else { $erreur = $messages['formulaire']['invalide']; }
         break;
     }
 }

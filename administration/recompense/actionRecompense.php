@@ -36,20 +36,12 @@ if ( isset($db) ) {
                             header('Location: ./gestionRecompense.php?operation=ok');
                         } else {
                             supprimer_recompense($db, $idRecompenseOa);
-                            $erreur = "L'opération 2 n'a pas pu être exécuté.";
+                            $erreur = $messages['operation']['ko'];
                         }
-                    } else {
-                        $erreur = "L'opération 1 n'a pas pu être exécuté.";
-                    }
-                } else {
-                    $erreur = "Il faut au minimum un artiste sélectionné.";
-                }
-            } else {
-                $erreur = "Certains champs du formulaire sont vide.";
-            }
-        } else {
-            $erreur = "Le formulaire n'est pas valide.";
-        }
+                    } else { $erreur = $messages['operation']['ko']; }
+                } else { $erreur = $messages['minimum1Artiste']; }
+            } else { $erreur = $messages['formulaire']['champs_vide']; }
+        } else { $erreur = $messages['formulaire']['invalide']; }
         break;
 
         case "modifierRecompense":
@@ -74,23 +66,13 @@ if ( isset($db) ) {
                                 header('Location: ./gestionRecompense.php?operation=ok');
                             } else {
                                 supprimer_recompense($db, $idRecompense);
-                                $erreur = "L'opération 3 n'a pas pu être exécuté.";
+                                $erreur = $messages['operation']['ko'];
                             }
-                        } else {
-                            $erreur = "L'opération 2 n'a pas pu être exécuté.";
-                        }
-                    } else {
-                        $erreur = "L'opération 1  n'a pas pu être éxécuté.";
-                    }
-                } else {
-                    $erreur = "Il faut au minimum un artiste sélectionné.";
-                }
-            } else {
-                $erreur = "Certains champs du formulaire sont vide.";
-            }
-        } else {
-            $erreur = "Le formulaire n'est pas valide.";
-        }
+                        } else { $erreur = $messages['operation']['ko']; }
+                    } else { $erreur = $messages['operation']['ko']; }
+                } else { $erreur = $messages['minimum1Artiste']; }
+            } else { $erreur = $messages['formulaire']['champs_vide']; }
+        } else { $erreur = $messages['formulaire']['invalide']; }
         break;
 
         case "supprimerRecompense":
@@ -105,18 +87,10 @@ if ( isset($db) ) {
                     $operationOk = supprimer_recompense($db, $idRecompense);
                     if ( $operationOk ) {
                         header('Location: ./gestionRecompense.php?operation=ok');
-                    } else {
-                        $erreur = "L'opération 2 n'a pas pu être exécuté.";
-                    }
-                } else {
-                    $erreur = "L'opération 1 n'a pas pu être exécuté.";
-                }
-            } else {
-                $erreur = "L'identifiant de la récompense doit être renseigné.";
-            }
-        } else {
-            $erreur = "Le formulaire est incomplet.";
-        }
+                    } else { $erreur = $erreur = $messages['operation']['ko']; }
+                } else { $erreur = $erreur = $messages['operation']['ko']; }
+            } else { $erreur = $messages['formulaire']['champs_vide']; }
+        } else { $erreur = $messages['formulaire']['invalide']; }
         break;
     }
 }

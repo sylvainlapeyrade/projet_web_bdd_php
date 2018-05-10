@@ -37,20 +37,12 @@ if ( isset($db) ) {
                             header('Location: ./gestionGroupe.php?operation=ok');
                         } else {
                             supprimer_groupe($db, $idGroupeCo);
-                            $erreur = "L'opération 2 n'a pas pu être exécuté.";
+                            $erreur = $messages['operation']['ko'];
                         }
-                    } else {
-                        $erreur = "L'opération 1 n'a pas pu être exécuté.";
-                    }
-                } else {
-                    $erreur = "Il faut au minimum deux artistes sélectionné.";
-                }
-            } else {
-                $erreur = "Certains champs du formulaire sont vide.";
-            }
-        } else {
-            $erreur = "Le formulaire n'est pas valide.";
-        }
+                    } else { $erreur = $messages['operation']['ko']; }
+                } else { $erreur = $messages['minimum2Artiste']; }
+            } else { $erreur = $messages['formulaire']['champs_vide']; }
+        } else { $erreur = $messages['formulaire']['invalide']; }
         break;
 
         case "modifierGroupe":
@@ -75,23 +67,13 @@ if ( isset($db) ) {
                                 header('Location: ./gestionGroupe.php?operation=ok');
                             } else {
                                 supprimer_groupe($db, $idGroupe);
-                                $erreur = "L'opération 3 n'a pas pu être exécuté.";
+                                $erreur = $messages['operation']['ko'];
                             }
-                        } else {
-                            $erreur = "L'opération 2 n'a pas pu être exécuté.";
-                        }
-                    } else {
-                        $erreur = "L'opération 1  n'a pas pu être éxécuté.";
-                    }
-                } else {
-                    $erreur = "Il faut au minimum deux artistes sélectionné.";
-                }
-            } else {
-                $erreur = "Certains champs du formulaire sont vide.";
-            }
-        } else {
-            $erreur = "Le formulaire n'est pas valide.";
-        }
+                        } else { $erreur = $messages['operation']['ko']; }
+                    } else { $erreur = $messages['operation']['ko']; }
+                } else { $erreur = $messages['minimum2Artiste']; }
+            } else { $erreur = $messages['formulaire']['champs_vide']; }
+        } else { $erreur = $messages['formulaire']['invalide']; }
         break;
 
         case "supprimerGroupe":
@@ -106,18 +88,10 @@ if ( isset($db) ) {
                     $operationOk = supprimer_groupe($db, $idGroupe);
                     if ( $operationOk ) {
                         header('Location: ./gestionGroupe.php?operation=ok');
-                    } else {
-                        $erreur = "L'opération 2 n'a pas pu être exécuté.";
-                    }
-                } else {
-                    $erreur = "L'opération 1 n'a pas pu être exécuté.";
-                }
-            } else {
-                $erreur = "L'identifiant de la récompense doit être renseigné.";
-            }
-        } else {
-            $erreur = "Le formulaire est incomplet.";
-        }
+                    } else { $messages['operation']['ko']; }
+                } else { $messages['operation']['ko']; }
+            } else { $erreur = $erreur = $messages['formulaire']['champs_vide']; }
+        } else { $erreur = $erreur = $messages['formulaire']['invalide']; }
         break;
     }
 }

@@ -34,4 +34,27 @@ $info = [
     ]
 ];
 
+$messages = [
+    'formulaire' => [
+        'champs_obligatoire' => "Certains champs du formulaire sont obligatoire.",
+        'champs_vide' => "Certains champs du formulaire sont vide.",
+        'invalide' => "Le formulaire est incomplet.",
+        'motDePasseDifferent' => "Les deux mot de passe ne sont pas identique.",
+        'erreurDevenirUtilisateur' => "Vous ne pouvez pas devenir utilisateur normal.",
+        'erreurSupprimerSonCompte' => "Vous ne pouvez pas supprimer votre propre compte."
+    ],
+    'connexion' => [
+        'incorrect' => "Votre identifiant ou votre mot de passe est incorrect.",  
+    ],
+    'inscription' => [
+        'utilisateurExistant' => "Ce nom d'utilisateur existe déjà.",
+    ],
+    'minimum1Artiste' => "Il faut au minimum un artiste sélectionné.",
+    'minimum2Artiste' => "Il faut au minimum deux artistes sélectionnés.",
+    'operation' => [
+        'ok' => "L'opération a été effectué.",
+        'ko' => "L'opération n'a pas pu être effectué."
+    ]
+]
+
 ?>

@@ -24,15 +24,9 @@ if ( isset($db) ) {
                 $operationOk = ajouter_utilisateur($db, $idUtilisateur, $motDePasse, $estAdmin);
                 if ( $operationOk ) {
                     header('Location: ./gestionUtilisateur.php?operation=ok');
-                } else {
-                    $erreur = "L'opération n'a pas pu être exécuté.";
-                }
-            } else {
-                $erreur = "L'identifiant, le mot de passe et le statut sont obligatoire.";
-            }
-        } else {
-            $erreur = "Le formulaire est incomplet.";
-        }
+                } else { $erreur = $messages['operation']['ko']; }
+            } else { $erreur = $messages['formulaire']['champs_vide']; }
+        } else { $erreur = $messages['formulaire']['invalide']; }
         break;
 
         case 'modifierMotDePasseUtilisateur':
@@ -46,18 +40,10 @@ if ( isset($db) ) {
                     $operationOk = modifier_motdepasse_utilisateur($db, $idUtilisateur, $motDePasse);
                     if ( $operationOk ) {
                         header('Location: ./gestionUtilisateur.php?operation=ok');
-                    } else {
-                        $erreur = "L'opération n'a pas pu être exécuté.";
-                    }
-                } else {
-                    $erreur = "Les deux mot de passe ne sont pas identique.";
-                }
-            } else {
-                $erreur = "L'identifiant, le mot de passe et la vérification sont obligatoire.";
-            }
-        } else {
-            $erreur = "Le formulaire est incomplet.";
-        }
+                    } else { $erreur = $erreur = $messages['operation']['ko']; }
+                } else { $erreur = $erreur = $messages['formulaire']['motDePasseDifferent']; }
+            } else { $erreur = $messages['formulaire']['champs_vide']; }
+        } else { $erreur = $messages['formulaire']['invalide']; }
         break;
 
         case 'modifierStatutUtilisateur':
@@ -75,18 +61,10 @@ if ( isset($db) ) {
                     $operationOk = modifier_statut_utilisateur($db, $idUtilisateur, $estAdmin);
                     if ( $operationOk ) {
                         header('Location: ./gestionUtilisateur.php?operation=ok');
-                    } else {
-                        $erreur = "L'opération n'a pas pu être exécuté.";
-                    }
-                } else {
-                    $erreur = "Vous ne pouvez pas devenir utilisateur normal.";
-                }
-            } else {
-                $erreur = "L'identifiant et le statut sont obligatoire.";
-            }
-        } else {
-            $erreur = "Le formulaire est incomplet.";
-        }
+                    } else { $erreur = $erreur = $messages['operation']['ko']; }
+                } else { $erreur = $erreur = $messages['formulaire']['erreurDevenirUtilisateur']; }
+            } else { $erreur = $messages['formulaire']['champs_vide']; }
+        } else { $erreur = $messages['formulaire']['invalide']; }
         break;
 
         case 'supprimerUtilisateur':
@@ -101,16 +79,16 @@ if ( isset($db) ) {
                     if ( $operationOk ) {
                         header('Location: ./gestionUtilisateur.php?operation=ok');
                     } else {
-                        $erreur = "L'opération n'a pas pu être exécuté.";
+                        $erreur = $erreur = $messages['operation']['ko'];
                     }
                 } else {
-                    $erreur = "Vous ne pouvez pas supprimer votre propre compte.";
+                    $erreur = $erreur = $messages['formulaire']['erreurSupprimerSonCompte'];
                 }
             } else {
-                $erreur = "L'identifiant est obligatoire.";
+                $erreur = $messages['formulaire']['champs_vide'];
             }
         } else {
-            $erreur = "Le formulaire est incomplet.";
+            $erreur = $messages['formulaire']['invalide'];
         }
         break;
     }

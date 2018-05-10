@@ -37,20 +37,12 @@ if ( isset($db) ) {
                                 header('Location: ./gestionAlbum.php?operation=ok');
                             } else {
                                 supprimer_album($db, $idAlbumCoAl);
-                                $erreur = "L'opération 2 n'a pas pu être exécuté.";
+                                $erreur = $messages['operation']['ko'];
                             }
-                        } else {
-                            $erreur = "L'opération 1 n'a pas pu être exécuté.";
-                        }
-                    } else {
-                        $erreur = "Il faut au minimum un artiste sélectionné.";
-                    }
-                } else {
-                    $erreur = "Certains champs du formulaire sont vide.";
-                }
-            } else {
-                $erreur = "Le formulaire n'est pas valide.";
-            }
+                        } else { $erreur = $messages['operation']['ko']; }
+                    } else { $erreur = $messages['minimum1Artiste']; }
+                } else { $erreur = $messages['formulaire']['champs_vide']; }
+            } else { $erreur = $messages['formulaire']['invalide']; }
             break;
 
         case "modifierAlbum":
@@ -75,23 +67,13 @@ if ( isset($db) ) {
                                     header('Location: ./gestionAlbum.php?operation=ok');
                                 } else {
                                     supprimer_album($db, $idAlbum);
-                                    $erreur = "L'opération 3 n'a pas pu être exécuté.";
+                                    $erreur = $messages['operation']['ko'];
                                 }
-                            } else {
-                                $erreur = "L'opération 2 n'a pas pu être exécuté.";
-                            }
-                        } else {
-                            $erreur = "L'opération 1  n'a pas pu être éxécuté.";
-                        }
-                    } else {
-                        $erreur = "Il faut au minimum un artiste sélectionné.";
-                    }
-                } else {
-                    $erreur = "Certains champs du formulaire sont vide.";
-                }
-            } else {
-                $erreur = "Le formulaire n'est pas valide.";
-            }
+                            } else { $erreur = $messages['operation']['ko']; }
+                        } else { $erreur = $messages['operation']['ko']; }
+                    } else { $erreur = $messages['minimum1Artiste']; }
+                } else { $erreur = $messages['formulaire']['champs_vide']; }
+            } else { $erreur = $messages['formulaire']['invalide']; }
             break;
 
         case "supprimerAlbum":
@@ -106,18 +88,10 @@ if ( isset($db) ) {
                         $operationOk = supprimer_album($db, $idAlbum);
                         if ( $operationOk ) {
                             header('Location: ./gestionAlbum.php?operation=ok');
-                        } else {
-                            $erreur = "L'opération 2 n'a pas pu être exécuté.";
-                        }
-                    } else {
-                        $erreur = "L'opération 1 n'a pas pu être exécuté.";
-                    }
-                } else {
-                    $erreur = "L'identifiant de l'album doit être renseigné.";
-                }
-            } else {
-                $erreur = "Le formulaire est incomplet.";
-            }
+                        } else { $erreur = $erreur = $messages['operation']['ko']; }
+                    } else { $erreur = $erreur = $messages['operation']['ko']; }
+                } else { $erreur = $messages['formulaire']['champs_vide']; }
+            } else { $erreur = $messages['formulaire']['invalide']; }
             break;
     }
 }

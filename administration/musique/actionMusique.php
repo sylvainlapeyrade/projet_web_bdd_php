@@ -47,20 +47,12 @@ if ( isset($db) ) {
                             header('Location: ./gestionMusique.php?operation=ok');
                         } else {
                             supprimer_musique($db, $idMusique);
-                            $erreur = "L'opération 2 n'a pas pu être exécuté.";
+                            $erreur = $messages['operation']['ko'];
                         }
-                    } else {
-                    $erreur = "L'opération 1 n'a pas pu être exécuté.";
-                    }
-                } else {
-                $erreur = "Il faut au minimum un artiste sélectionné.";
-                }
-            } else {
-            $erreur = "Certains champs du formulaire sont vide.";
-            }
-        } else {
-            $erreur = "Le formulaire n'est pas valide.";
-        }
+                    } else { $erreur = $messages['operation']['ko']; }
+                } else { $erreur = $messages['minimum1Artiste']; }
+            } else { $erreur = $messages['formulaire']['champs_vide']; }
+        } else { $erreur = $messages['formulaire']['invalide']; }
         break;
 
         case "modifierMusique":
@@ -93,20 +85,12 @@ if ( isset($db) ) {
                             header('Location: ./gestionMusique.php?operation=ok');
                         } else {
                             supprimer_musique($db, $idMusique);
-                            $erreur = "L'opération 4 et 5 n'a pas pu être exécuté.";
+                            $erreur = $messages['operation']['ko'];
                         }
-                    } else {
-                        $erreur = "L'opération 2 et 3 n'a pas pu être exécuté.";
-                    }
-                } else {
-                    $erreur = "L'opération 1 n'a pas pu être exécuté.";
-                }
-            } else {
-                $erreur = "Certains champs du formulaire sont vide.";
-            }
-        } else {
-            $erreur = "Le formulaire n'est pas valide.";
-        }
+                    } else { $erreur = $messages['operation']['ko']; }
+                } else { $erreur = $messages['operation']['ko']; }
+            } else { $erreur = $messages['formulaire']['champs_vide']; }
+        } else { $erreur = $messages['formulaire']['invalide']; }
         break;
 
         case "supprimerMusique":
@@ -122,15 +106,9 @@ if ( isset($db) ) {
                 $operation4Ok = supprimer_musique($db, $idMusique);
                 if ( $operation1Ok && $operation2Ok && $operation3Ok && $operation4Ok ) {
                     header('Location: ./gestionMusique.php?operation=ok');
-                } else {
-                    $erreur = "L'opération n'a pas pu être exécuté.";
-                }
-            } else {
-                $erreur = "L'identifiant de de la musique doit être renseigné.";
-            }
-        } else {
-            $erreur = "Le formulaire est incomplet.";
-        }
+                } else { $erreur = $messages['operation']['ko']; }
+            } else { $erreur = $messages['formulaire']['champs_vide']; }
+        } else { $erreur = $messages['formulaire']['invalide']; }
         break;
     }
 }
