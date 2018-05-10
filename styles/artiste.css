@@ -1,5 +1,11 @@
+main section {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 25px;
+}
+
 #description-artiste {
-  border-right: 1px black solid;
+  border-right: 1px white solid;
   margin-right: 50px;
   padding-right: 10px;
   margin-top: 25px;
