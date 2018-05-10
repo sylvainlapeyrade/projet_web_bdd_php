@@ -49,7 +49,7 @@
       <input class="input-text" type="text" name="idUtilisateur" placeholder="Identifiant">
       <input class="input-text" type="password" name="motDePasse" placeholder="Mot de passe">
       <input class="input-text" type="password" name="verification" placeholder="Vérification">
-      <input class="button button-red1" type="submit" name="inscription" value="inscription">
+      <input class="button button-red1 margin-center" type="submit" name="inscription" value="inscription">
     </form>
     <br>
     <p class="message">Déjà inscrit ? <br> Connectez-vous : <a class="souligner" href="/compte/connexion.php">se connecter</a></p>
