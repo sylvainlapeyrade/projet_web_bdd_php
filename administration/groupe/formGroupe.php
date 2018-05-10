@@ -134,9 +134,12 @@
                    value="ajouter"
                    />
           <?php } ?>
+        </form>
         <!-- FIN FORMULAIRE -->
-        
+          
       </div>
     </div>
   </section>
 </main>
+
+<?php include_once(dirname(__FILE__).'/../footer.php'); ?>

@@ -130,9 +130,12 @@ include_once(dirname(__FILE__).'/../../header.php');
                                value="ajouter"
                         />
                     <?php } ?>
-                    <!-- FIN FORMULAIRE -->
+                </form>
+                <!-- FIN FORMULAIRE -->
 
             </div>
         </div>
     </section>
 </main>
+
+<?php include_once(dirname(__FILE__).'/../footer.php'); ?>    

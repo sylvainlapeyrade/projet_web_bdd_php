@@ -72,3 +72,6 @@ include_once(dirname(__FILE__).'/../../head.php');
         </section>
     </section>
 </main>
+
+<?php include_once(dirname(__FILE__).'/../footer.php'); ?>
+

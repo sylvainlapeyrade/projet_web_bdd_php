@@ -95,3 +95,6 @@ include_once(dirname(__FILE__).'/../../header.php');
         </div>
     </section>
 </main>
+
+<?php include_once(dirname(__FILE__).'/../footer.php'); ?>
+
