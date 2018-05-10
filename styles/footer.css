@@ -1,9 +1,13 @@
 footer {
-    position: relative;
-    margin-top: 25px;
+    position: fixed;
     width: 100%;
     padding: 10px 0px;
     bottom: 0;
+    left: 0;
     color: white;
     background: black;
+}
+
+body {
+    margin-bottom: 55px;
 }
