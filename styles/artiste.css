@@ -1,17 +1,23 @@
-main section {
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 25px;
-}
+
 
 #barre-recherche {
-    background: rgba(0, 0, 0, 0.75);
-    padding: 20px 0px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    margin-top: 35px;
+    margin-bottom: 15px;
 }
 
-.input-recherche {
+#input-recherche {
+    padding: 10px;
     padding-left: 25px;
     margin-right: 10px;
+    margin-left: 25px;
+}
+
+#page-artiste {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 25px;
+    padding-top: 0px;
 }
 
 #description-artiste {
