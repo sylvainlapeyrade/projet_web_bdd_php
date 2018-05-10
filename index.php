@@ -15,14 +15,7 @@
     <main>
       <section id="content-recherche">
           <h1 class="white t35 text-center">Critiquez vos albums et musiques préférées</h1>
-          <form class="flex flex-center">
-              <input type="text"
-                     class="input-recherche width-500"
-                     name="recherche"
-                     placeholder="Artiste, groupe, album ou musique"
-                     />
-              <input class="button" type="submit" value="Rechercher" />
-          </form>
+          <?php include_once(dirname(__FILE__).'/formRecherche.php'); ?>
       </section>
     </main>
 
