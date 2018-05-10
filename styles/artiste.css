@@ -5,7 +5,7 @@ main section {
 }
 
 #barre-recherche {
-    background: black;
+    background: rgba(0, 0, 0, 0.75);
     padding: 20px 0px;
 }
 
