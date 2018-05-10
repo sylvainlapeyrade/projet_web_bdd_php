@@ -5,8 +5,8 @@ footer {
     bottom: 0;
     left: 0;
     color: white;
-    background: #35424a;
-    border-top: 1px #e8491d solid;
+    background: #e8491d;
+    /* border-top: 1px #e8491d solid; */
 }
 
 body {
