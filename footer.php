@@ -1,3 +1,5 @@
-<footer class="t10 flex flex-center">
-    Application web © <?php echo date('Y'); ?>
+<footer class="t10 flex flex-center text-center">
+    OLIVIER - LAPEYRADE - LABORDE - ROBERT DE ST VINCENT - WATHOJE
+    <br>
+    Critique musical © <?php echo date('Y'); ?>
 </footer>
