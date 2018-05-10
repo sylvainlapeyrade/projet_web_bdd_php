@@ -49,7 +49,7 @@
       <input class="input-text" type="text" name="idUtilisateur" placeholder="Identifiant"
              value="<?php if( isset($identifiant) ){ echo $identifiant; } ?>">
       <input class="input-text" type="password" name="motDePasse" placeholder="Mot de passe">
-      <input class="button button-red1 margin-center" type="submit" name="connexion" value="connexion">
+      <input id="button" class="button button-red1 margin-center" type="submit" name="connexion" value="connexion">
     </form>
     <br>
     <p class="message">Pas encore inscrit ? <br> Allez-y : <a class="souligner" href="/compte/inscription.php">s'inscrire</a></p>
