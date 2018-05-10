@@ -77,7 +77,7 @@ if ( isset($db) ) {
                 $erreur = $messages['formulaire']['invalide'];
                 break;
             }
-            if ( !empty($idMusique) && !empty($titreMusique) && !empty($dureeMusique) ) {
+            if ( empty($idMusique) || empty($titreMusique) || empty($dureeMusique) ) {
                 $erreur = $messages['formulaire']['champs_vide'];
                 break;
             }
