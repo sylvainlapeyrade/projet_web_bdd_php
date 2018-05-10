@@ -7,6 +7,41 @@ function format_date($date) {
     return null;
 }
 
+function verification_date ($date) {
+	//verification format
+	$pattern = '/^[0-9]{2}-[0-9]{2}-[0-9]{4}/';
+	if ( !preg_match($pattern, $date) )
+		return false;
+	
+	//date actuelle
+	$jour = intval(date('j'));
+	$mois = intval(date('m'));
+	$annee = intval(date('Y'));
+
+    //date en paramètre
+	$j_verif = intval($date[0].$date[1]);
+	$m_verif = intval($date[3].$date[4]);
+	$y_verif = intval($date[6].$date[7].$date[8].$date[9]);
+	
+	//Verification
+	if ( $y_verif < $annee )
+		return true;
+	else if ( $y_verif > $annee )
+		return false;
+	else if ( $y_verif == $annee ) {
+		if ( $m_verif < $mois )
+			return true;
+		else if ( $m_verif > $mois )
+			return false;
+		else if ( $m_verif == $mois ) {
+			if ( $j_verif <= $jour ) 
+				return true;
+			else
+				return false;
+		}
+	}			
+}
+
 function format_duree($secondes) {
 	$minutes = intdiv($secondes,60);
 	$secondes = $secondes % 60;

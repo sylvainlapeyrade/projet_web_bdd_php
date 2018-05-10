@@ -18,81 +18,108 @@ if ( isset($action) && !empty($action) ) {
 if ( isset($db) ) {
     switch($action) {
         case "ajouterGroupe":
-        /*
-         * Champs présent : nomGroupe, dateGroupe, descriptionGroupe, urlPochetteGroupe ,listeIdArtiste
-         * Champs obligatoire : nomGroupe, dateGroupe, idArtiste1, idArtist2
-         */
-        if ( isset($db, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe) ) {
-            if ( !empty($nomGroupe) ) {
-                if ( isset($listeIdArtiste[0], $listeIdArtiste[1]) && !empty($listeIdArtiste[0]) && !empty($listeIdArtiste[1]) ) {
-                    $idGroupeCo = ajouter_groupe($db, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe);
-                    if ( $idGroupeCo != null ) {
-                        $indiceListe = 0;
-                        do {
-                            $idArtisteCo = (int) $listeIdArtiste[$indiceListe];
-                            $operationOk = ajouter_constituer_groupe($db, $idGroupeCo, $idArtisteCo);
-                            $indiceListe++;
-                        } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
-                        if ( $operationOk ) {
-                            header('Location: ./gestionGroupe.php?operation=ok');
-                        } else {
-                            supprimer_groupe($db, $idGroupeCo);
-                            $erreur = $messages['operation']['ko'];
-                        }
-                    } else { $erreur = $messages['operation']['ko']; }
-                } else { $erreur = $messages['minimum2Artiste']; }
-            } else { $erreur = $messages['formulaire']['champs_vide']; }
-        } else { $erreur = $messages['formulaire']['invalide']; }
-        break;
+            /*
+             * Champs présent : nomGroupe, dateGroupe, descriptionGroupe, urlPochetteGroupe ,listeIdArtiste
+             * Champs obligatoire : nomGroupe, dateGroupe, idArtiste1, idArtist2
+             */
+            if ( !isset($nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe) ) {
+                $erreur = $messages['formulaire']['invalide'];
+                break;
+            }
+            if ( empty($nomGroupe) ) {
+                $erreur = $messages['formulaire']['champs_vide'];
+                break;
+            }
+            if ( !isset($listeIdArtiste[0], $listeIdArtiste[1]) || empty($listeIdArtiste[0]) || empty($listeIdArtiste[1]) ) {
+                $erreur = $messages['minimum2Artiste'];
+                break;
+            }
+            if ( isset($db) ) {
+                $idGroupeCo = ajouter_groupe($db, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe);
+                if ( $idGroupeCo == null ) {
+                    $erreur = $messages['operation']['ko']." (1)";
+                    break;
+                }
+                $indiceListe = 0;
+                do {
+                    $idArtisteCo = (int) $listeIdArtiste[$indiceListe];
+                    $operationOk = ajouter_constituer_groupe($db, $idGroupeCo, $idArtisteCo);
+                    $indiceListe++;
+                } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
+                if ( !$operationOk ) {
+                    $erreur = $messages['operation']['ko']." (2)";
+                    break;
+                }
+                header('Location: ./gestionGroupe.php?operation=ok');
+            }
+            break;
 
         case "modifierGroupe":
-        /*
-         * Champs présent : idGroupe, nomGroupe, dateGroupe, descriptionGroupe, urlImageGroupe, listeIdArtiste
-         * Champs obligatoire : idGroupe, nomGroupe, dateGroupe, idArtiste1
-         */
-        if ( isset($db, $idGroupe, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe) ) {
-            if ( !empty($idGroupe) && !empty($nomGroupe) ) {
-                if ( isset($listeIdArtiste[0], $listeIdArtiste[1]) && !empty($listeIdArtiste[0]) && !empty($listeIdArtiste[1]) ) {
-                    $operationOk = modifier_groupe($db, $idGroupe, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe);
-                    if ( $operationOk ) {
-                        $operationOk = supprimer_constituer_groupe_tous($db, $idGroupe);
-                        if ( $operationOk ) {
-                            $indiceListe = 0;
-                            do {
-                                $idArtiste = (int) $listeIdArtiste[$indiceListe];
-                                $operationOk = ajouter_constituer_groupe($db, $idGroupe, $idArtiste);
-                                $indiceListe++;
-                            } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
-                            if ( $operationOk ) {
-                                header('Location: ./gestionGroupe.php?operation=ok');
-                            } else {
-                                supprimer_groupe($db, $idGroupe);
-                                $erreur = $messages['operation']['ko'];
-                            }
-                        } else { $erreur = $messages['operation']['ko']; }
-                    } else { $erreur = $messages['operation']['ko']; }
-                } else { $erreur = $messages['minimum2Artiste']; }
-            } else { $erreur = $messages['formulaire']['champs_vide']; }
-        } else { $erreur = $messages['formulaire']['invalide']; }
-        break;
+            /*
+             * Champs présent : idGroupe, nomGroupe, dateGroupe, descriptionGroupe, urlImageGroupe, listeIdArtiste
+             * Champs obligatoire : idGroupe, nomGroupe, dateGroupe, idArtiste1
+             */
+            if ( !isset($idGroupe, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe) ) {
+                $erreur = $messages['formulaire']['invalide'];
+                break;
+            }
+            if ( empty($idGroupe) || empty($nomGroupe) ) {
+                $erreur = $messages['formulaire']['champs_vide'];
+                break;
+            }
+            if ( !isset($listeIdArtiste[0], $listeIdArtiste[1]) || empty($listeIdArtiste[0]) || empty($listeIdArtiste[1]) ) {
+                $erreur = $messages['minimum2Artiste'];
+                break;
+            }
+            if ( isset($db) ) {
+                $operationOk = modifier_groupe($db, $idGroupe, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe);
+                if ( !$operationOk ) {
+                    $erreur = $messages['operation']['ko']." (1)";
+                    break;
+                }
+                $operationOk = supprimer_constituer_groupe_tous($db, $idGroupe);
+                if ( !$operationOk ) {
+                    $erreur = $messages['operation']['ko']." (2)";
+                    break;
+                }
+                $indiceListe = 0;
+                do {
+                    $idArtiste = (int) $listeIdArtiste[$indiceListe];
+                    $operationOk = ajouter_constituer_groupe($db, $idGroupe, $idArtiste);
+                    $indiceListe++;
+                } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
+                if ( !$operationOk ) {
+                    $erreur = $messages['operation']['ko']." (3)";
+                    break;
+                }
+                header('Location: ./gestionGroupe.php?operation=ok');
+            }
+            break;
 
         case "supprimerGroupe":
-        /*
-         * Champs présent : idGroupe
-         * Champs obligatoire : idGroupe
-         */
-        if ( isset($db, $idGroupe) ) {
-            if ( !empty($idGroupe) ) {
+            /*
+             * Champs présent : idGroupe
+             * Champs obligatoire : idGroupe
+             */
+            if ( !isset($db, $idGroupe) ) {
+                $erreur = $messages['formulaire']['invalide'];
+                break;
+            }
+            if ( empty($idGroupe) ) {
+                $erreur = $messages['formulaire']['champs_vide'];
+                break;
+            }
+            if ( isset($db) ) {
                 $operationOk = supprimer_constituer_groupe_tous($db, $idGroupe);
-                if ( $operationOk ) {
-                    $operationOk = supprimer_groupe($db, $idGroupe);
-                    if ( $operationOk ) {
-                        header('Location: ./gestionGroupe.php?operation=ok');
-                    } else { $messages['operation']['ko']; }
-                } else { $messages['operation']['ko']; }
-            } else { $erreur = $erreur = $messages['formulaire']['champs_vide']; }
-        } else { $erreur = $erreur = $messages['formulaire']['invalide']; }
-        break;
+                if ( !$operationOk ) {
+                    $erreur = $messages['operation']['ko']." (1)";
+                }
+                $operationOk = supprimer_groupe($db, $idGroupe);
+                if ( !$operationOk ) {
+                    $erreur = $messages['operation']['ko']." (2)";
+                }
+                header('Location: ./gestionGroupe.php?operation=ok');
+            }
     }
 }
 
