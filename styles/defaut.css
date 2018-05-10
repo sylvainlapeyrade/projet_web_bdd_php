@@ -3,7 +3,13 @@ body {
     min-width: 1250px;
     font-family: hurme_no2-webfont, sans-serif;
     background: #f2f2f2;
-    /*background-color:#f4f4f4;*/
+    background: url('/images/background.jpg')
+}
+
+@media only screen and (max-width: 1280px) {
+    body {
+        min-width: 800px;
+    }
 }
 
 main>section {
@@ -11,7 +17,7 @@ main>section {
     margin: 0 auto;
 }
 
-a { text-decoration: none; color: black; }
+a { text-decoration: none; color: white; }
 li { list-style: none; }
 
 .margin-center { margin: 0 auto; }
@@ -77,8 +83,15 @@ li { list-style: none; }
     background: black;
 }
 
+.table-lign:nth-of-type(2n) {
+    background: #4e616c;
+}
 .table-lign:nth-of-type(2n+1) {
-    background: #e6e6e6;
+    background: #617987;
+}
+
+td {
+    padding-left: 15px;
 }
 
 .button {
