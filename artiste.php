@@ -32,7 +32,7 @@ include_once(dirname(__FILE__).'/head.php');
             <div class="flex">
                 <div id="description-artiste" class="flex-around">
                     <div>
-                        <h1>Nom_Artiste</h1>
+                        <h1 class="red1">Nom_Artiste</h1>
                         <p>
                             Ceci est la description de l'artiste<br>
                             Matthieu Tota dit M. Pokora ou Matt Pokora, né le 26 septembre 1985 à Strasbourg, est un chanteur français.<br>
