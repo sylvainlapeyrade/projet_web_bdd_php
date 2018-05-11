@@ -70,8 +70,8 @@ include_once(dirname(__FILE__).'/../../header.php');
                             <label for="dateRecompense" class="text-center">
                                 Date de création:
                                 <input type="date"
-                                       placeholder="<?php echo format_date(date("d-m-Y")); ?>"
-                                       pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
+                                       placeholder="<?php echo format_date(format_date(date("Y/m/d"))); ?>"
+                                       pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
                                        class="input-date"
                                        name="dateAlbum"
                                        value="<?php echo format_date($dateAlbum); ?>"

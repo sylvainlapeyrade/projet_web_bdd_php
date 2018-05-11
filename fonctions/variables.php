@@ -2,15 +2,15 @@
 
 function format_date($date) {
     if ( isset($date) && !empty($date) ) {
-        return date("d-m-Y", strtotime($date));
+        return date("Y/m/d", strtotime($date));
     }
     return null;
 }
 
 function date_valide($date) {
 	//verification format
-	$pattern1 = '/^[0-9]{2}-[0-9]{2}-[0-9]{4}/';
-	$pattern2 = '/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}/';
+	$pattern1 = '/^[0-9]{4}-[0-9]{2}-[0-9]{2}/';
+	$pattern2 = '/^[0-9]{4}\/[0-9]{2}\/[0-9]{2}/';
 	if ( !preg_match($pattern1, $date) && !preg_match($pattern2, $date) )
 		return false;
 	
@@ -20,9 +20,9 @@ function date_valide($date) {
 	$annee = intval(date('Y'));
 
     //date en paramètre
-	$j_verif = intval($date[0].$date[1]);
-	$m_verif = intval($date[3].$date[4]);
-	$y_verif = intval($date[6].$date[7].$date[8].$date[9]);
+	$j_verif = intval($date[8].$date[9]);
+	$m_verif = intval($date[5].$date[6]);
+	$y_verif = intval($date[0].$date[1].$date[2].$date[3]);
 	
 	//Verification
 	if ( $y_verif < $annee )
