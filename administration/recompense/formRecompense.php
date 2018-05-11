@@ -13,15 +13,16 @@ if(!is_connect() || !is_admin()) {leave();}
 
 $idRecompense = $_GET['idRecompense'];
 if ( isset($db, $idRecompense) && !empty($idRecompense) ) {
-    $recompense = recupere_recompense($db, $idRecompense);
-    if ( $recompense != null ) {
-        $nomRecompense = $recompense['nomrecompense'];
-        $dateRecompense = $recompense['daterecompense'];
-        $descriptionRecompense = $recompense['descriptionrecompense'];
-        $optenirRecompense = recuperer_obtenir_recompense($db, $idRecompense);
-        foreach($optenirRecompense as $idArtisteOa) {
-            $listeArtisteRecompense[] = $idArtisteOa['idartisteoa'];
-        }
+    $recompense = recupere_recompense($db, $idRecompense)[0];
+    if ( empty($recompense) ) {
+        header('Location: ./gestionRecompense.php');
+    }
+    $nomRecompense = $recompense['nomrecompense'];
+    $dateRecompense = $recompense['daterecompense'];
+    $descriptionRecompense = $recompense['descriptionrecompense'];
+    $optenirRecompense = recuperer_obtenir_recompense($db, $idRecompense);
+    foreach($optenirRecompense as $idArtisteOa) {
+        $listeArtisteRecompense[] = $idArtisteOa['idartisteoa'];
     }
 }
 

@@ -17,10 +17,7 @@ function recupere_recompense($db, $idRecompense) {
   $req->bindParam(':idRecompense', $idRecompense);
   $req->execute();
   $res = $req->fetchAll();
-  if ( sizeof($res) == 1) {
-    return $res[0];
-  }
-  return null;
+    return $res;
 }
 
 function ajouter_recompense($db, $nomRecompense, $dateRecompense, $descriptionRecompense) {
