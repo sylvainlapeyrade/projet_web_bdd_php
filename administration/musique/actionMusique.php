@@ -5,7 +5,7 @@ if ( isset($action) && !empty($action) ) {
     $idMusique = $_GET['idMusique'];
     $titreMusique = $_GET['titreMusique'];
     $dureeMusique = $_GET['dureeMusique'];
-    $dateMusique = $_GET['dateMusique'];
+    $dateMusique = format_date($_GET['dateMusique']);
     $descriptionMusique = $_GET['descriptionMusique'];
     
     foreach($_GET as $key => $value) {

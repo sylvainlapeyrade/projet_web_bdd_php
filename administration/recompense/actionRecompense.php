@@ -4,7 +4,7 @@ $action = $_GET['action'];
 if ( isset($action) && !empty($action) ) {
     $idRecompense = $_GET['idRecompense'];
     $nomRecompense = $_GET['nomRecompense'];
-    $dateRecompense = $_GET['dateRecompense'];
+    $dateRecompense = format_date($_GET['dateRecompense']);
     $descriptionRecompense = $_GET['descriptionRecompense'];
 
     foreach($_GET as $key => $value) {

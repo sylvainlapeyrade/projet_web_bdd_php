@@ -4,7 +4,7 @@ $action = $_GET['action'];
 if ( isset($action) && !empty($action) ) {
     $idAlbum = $_GET['idAlbum'];
     $nomAlbum = $_GET['nomAlbum'];
-    $dateAlbum = $_GET['dateAlbum'];
+    $dateAlbum = format_date($_GET['dateAlbum']);
     $descriptionAlbum = $_GET['descriptionAlbum'];
     $urlPochetteAlbum = $_GET['urlPochetteAlbum'];
 

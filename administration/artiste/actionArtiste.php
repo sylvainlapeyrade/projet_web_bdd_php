@@ -6,7 +6,7 @@ if ( isset($action) && !empty($action) ) {
     $nomArtiste = $_GET['nomArtiste'];
     $prenomArtiste = $_GET['prenomArtiste'];
     $nomScene = $_GET['nomScene'];
-    $dateNaissanceArtiste = $_GET['dateNaissanceArtiste'];
+    $dateNaissanceArtiste = format_date($_GET['dateNaissanceArtiste']);
     $urlImageArtiste = $_GET['urlImageArtiste'];
     $descriptionArtiste = $_GET['descriptionArtiste'];
 }
