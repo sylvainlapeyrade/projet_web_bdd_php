@@ -124,6 +124,7 @@ include_once(dirname(__FILE__).'/../../head.php');
 
                     <!-- FIN FORMULAIRE -->
                 </form>
+                
             </div>
         </div>
     </section>
