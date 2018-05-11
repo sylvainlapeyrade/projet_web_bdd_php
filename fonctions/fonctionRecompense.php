@@ -5,74 +5,81 @@
  * Fichier des fonctions de gestion des récompenses.
  */
 
+/**
+ * Récupère toutes les récompenses de la BDD en les triant
+ * par ordre alphabétique par leur nom
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @return array Toutes les récompenses dans la BDD.
+ */
 function recuperer_recompense_tous($db) {
-  $req = $db->prepare("SELECT * FROM Recompense ORDER BY nomRecompense ASC");
-  $req->execute();
-  $res = $req->fetchAll();
-  return $res;
+    $req = $db->prepare("SELECT * FROM Recompense ORDER BY nomRecompense ASC");
+    $req->execute();
+    $res = $req->fetchAll();
+    return $res;
 }
 
 function recupere_recompense($db, $idRecompense) {
-  $req = $db->prepare("SELECT * FROM Recompense WHERE idRecompense=:idRecompense");
-  $req->bindParam(':idRecompense', $idRecompense);
-  $req->execute();
-  $res = $req->fetchAll();
+    $req = $db->prepare("SELECT * FROM Recompense WHERE idRecompense=:idRecompense");
+    $req->bindParam(':idRecompense', $idRecompense);
+    $req->execute();
+    $res = $req->fetchAll();
     return $res;
 }
 
 function ajouter_recompense($db, $nomRecompense, $dateRecompense, $descriptionRecompense) {
-  $req = $db->prepare("INSERT INTO Recompense(nomRecompense, dateRecompense, descriptionRecompense)
+    $req = $db->prepare("INSERT INTO Recompense(nomRecompense, dateRecompense, descriptionRecompense)
       VALUES(:nomRecompense, :dateRecompense, :descriptionRecompense);");
-  $req->bindParam(':nomRecompense', $nomRecompense, PDO::PARAM_STR);
-  $req->bindParam(':dateRecompense', format_date($dateRecompense));
-  $req->bindParam(':descriptionRecompense', $descriptionRecompense, PDO::PARAM_STR);
-  $reqOk = $req->execute();
-  if ( $reqOk ) {
-    $idRecompense = $db->lastInsertId();
-    return $idRecompense;
-  }
-  return null;
+    $req->bindParam(':nomRecompense', $nomRecompense, PDO::PARAM_STR);
+    $req->bindParam(':dateRecompense', format_date($dateRecompense));
+    $req->bindParam(':descriptionRecompense', $descriptionRecompense, PDO::PARAM_STR);
+    $reqOk = $req->execute();
+    if ( $reqOk ) {
+        $idRecompense = $db->lastInsertId();
+        return $idRecompense;
+    }
+    return null;
 }
 
 function modifier_recompense($db, $idRecompense, $nomRecompense, $dateRecompense, $descriptionRecompense) {
-  $req = $db->prepare("UPDATE Recompense SET nomRecompense=:nomRecompense, dateRecompense=:dateRecompense, descriptionRecompense=:descriptionRecompense WHERE idRecompense=:idRecompense;");
-  $req->bindParam(':idRecompense', $idRecompense, PDO::PARAM_INT);
-  $req->bindParam(':nomRecompense', $nomRecompense, PDO::PARAM_STR);
-  $req->bindParam(':dateRecompense', format_date($dateRecompense));
-  $req->bindParam(':descriptionRecompense', $descriptionRecompense, PDO::PARAM_STR);
-  $reqOk = $req->execute();
-  return $reqOk;
+    $req = $db->prepare("UPDATE Recompense SET nomRecompense=:nomRecompense, dateRecompense=:dateRecompense,
+ descriptionRecompense=:descriptionRecompense WHERE idRecompense=:idRecompense;");
+    $req->bindParam(':idRecompense', $idRecompense, PDO::PARAM_INT);
+    $req->bindParam(':nomRecompense', $nomRecompense, PDO::PARAM_STR);
+    $req->bindParam(':dateRecompense', format_date($dateRecompense));
+    $req->bindParam(':descriptionRecompense', $descriptionRecompense, PDO::PARAM_STR);
+    $reqOk = $req->execute();
+    return $reqOk;
 }
 
 function supprimer_recompense($db, $idRecompense) {
-  $req = $db->prepare("DELETE FROM Recompense WHERE idRecompense=:idRecompense;");
-  $req->bindParam(':idRecompense', $idRecompense, PDO::PARAM_INT);
-  $reqOk = $req->execute();
-  return $reqOk;
+    $req = $db->prepare("DELETE FROM Recompense WHERE idRecompense=:idRecompense;");
+    $req->bindParam(':idRecompense', $idRecompense, PDO::PARAM_INT);
+    $reqOk = $req->execute();
+    return $reqOk;
 }
 
 function recuperer_obtenir_recompense($db, $idRecompense) {
-  $req = $db->prepare("SELECT * FROM Obtenir_Artiste WHERE idRecompenseOa=:idRecompense");
-  $req->bindParam(':idRecompense', $idRecompense, PDO::PARAM_INT);
-  $req->execute();
-  $res = $req->fetchAll();
-  return $res;
+    $req = $db->prepare("SELECT * FROM Obtenir_Artiste WHERE idRecompenseOa=:idRecompense");
+    $req->bindParam(':idRecompense', $idRecompense, PDO::PARAM_INT);
+    $req->execute();
+    $res = $req->fetchAll();
+    return $res;
 }
 
 function ajouter_obtenir_recompense($db, $idRecompense, $idArtiste) {
-  $req = $db->prepare("INSERT INTO Obtenir_Artiste(idRecompenseOa, idArtisteOa)
+    $req = $db->prepare("INSERT INTO Obtenir_Artiste(idRecompenseOa, idArtisteOa)
       VALUES(:idRecompenseOa, :idArtisteOa);");
-  $req->bindParam(':idRecompenseOa', $idRecompense, PDO::PARAM_INT);
-  $req->bindParam(':idArtisteOa', $idArtiste, PDO::PARAM_INT);
-  $reqOk = $req->execute();
-  return $reqOk;
+    $req->bindParam(':idRecompenseOa', $idRecompense, PDO::PARAM_INT);
+    $req->bindParam(':idArtisteOa', $idArtiste, PDO::PARAM_INT);
+    $reqOk = $req->execute();
+    return $reqOk;
 }
 
 function supprimer_obtenir_recompense_tous($db, $idRecompense) {
-  $req = $db->prepare("DELETE FROM Obtenir_Artiste WHERE idRecompenseOa=:idRecompense;");
-  $req->bindParam(':idRecompense', $idRecompense, PDO::PARAM_INT);
-  $reqOk = $req->execute();
-  return $reqOk;
+    $req = $db->prepare("DELETE FROM Obtenir_Artiste WHERE idRecompenseOa=:idRecompense;");
+    $req->bindParam(':idRecompense', $idRecompense, PDO::PARAM_INT);
+    $reqOk = $req->execute();
+    return $reqOk;
 }
 
 ?>

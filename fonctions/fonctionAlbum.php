@@ -51,7 +51,7 @@ function recuperer_album_tous($db) {
  * spécifié par l'identifiant 'idAlbum'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idAlbum int Identifiant utilisateur
- * @return array L'utilisateur correspondant a l'id | Null sinon
+ * @return array L'utilisateur correspondant a l'id
  */
 function recuperer_album($db, $idAlbum) {
   $req = $db->prepare("SELECT * FROM Album WHERE idAlbum=:idAlbum");
