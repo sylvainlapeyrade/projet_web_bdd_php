@@ -11,14 +11,6 @@ $info['head']['stylesheets'] = ['adminGestion.css'];
 
 if(!is_connect() || !is_admin()) {leave();}
 
-/* Récupération des variables importantes pour le cas suivant :
-* cas supprimer
-*/
-$idAlbum = $_GET['idAlbum'];
-
-/* Fichier de fonction exécuter suivant le cas suivant :
-* supprimer un groupe avec action = supprimerGroupe
-*/
 include_once(dirname(__FILE__).'/actionAlbum.php');
 
 if ( isset($db) ){

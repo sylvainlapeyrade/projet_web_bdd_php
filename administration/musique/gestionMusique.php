@@ -13,8 +13,6 @@ $info['head']['stylesheets'] = ['adminGestion.css'];
 
 if(!is_connect() || !is_admin()) {leave();}
 
-$idMusique = $_GET['idMusique'];
-
 include_once(dirname(__FILE__).'/actionMusique.php');
 
 if (isset($db)){

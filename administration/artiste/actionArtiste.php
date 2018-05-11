@@ -2,6 +2,7 @@
 
 $action = $_GET['action'];
 if ( isset($action) && !empty($action) ) {
+    $idArtiste = $_GET['idArtiste'];
     $nomArtiste = $_GET['nomArtiste'];
     $prenomArtiste = $_GET['prenomArtiste'];
     $nomScene = $_GET['nomScene'];

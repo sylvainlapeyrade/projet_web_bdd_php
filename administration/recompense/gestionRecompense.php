@@ -11,8 +11,6 @@ $info['head']['stylesheets'] = ['adminGestion.css'];
 
 if(!is_connect() || !is_admin()) {leave();}
 
-$idRecompense = $_GET['idRecompense'];
-
 include_once(dirname(__FILE__).'/actionRecompense.php');
 
 if ( isset($db) ) {

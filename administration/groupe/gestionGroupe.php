@@ -11,8 +11,6 @@ $info['head']['stylesheets'] = ['adminGestion.css'];
 
 if(!is_connect() || !is_admin()) {leave();}
 
-$idGroupe = $_GET['idGroupe'];
-
 include_once(dirname(__FILE__).'/actionGroupe.php');
 
 if (isset($db)){
