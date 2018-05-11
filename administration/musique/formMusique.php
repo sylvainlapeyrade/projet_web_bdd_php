@@ -16,20 +16,21 @@ if(!is_connect() || !is_admin()) {leave();}
 
 $idMusique = $_GET['idMusique'];
 if ( isset($db, $idMusique) && !empty($idMusique) ) {
-    $musique = recuperer_musique($db, $idMusique);
-    if ( $musique != null ) {
-        $titreMusique = $musique['titremusique'];
-        $dureeMusique = $musique['dureemusique'];
-        $dateMusique = $musique['datemusique'];
-        $descriptionMusique = $musique['descriptionmusique'];
-        $composerMusique = recuperer_composer_musique($db, $idMusique);
-        foreach($composerMusique as $idArtisteCoMu) {
-            $listeArtisteMusique[] = $idArtisteCoMu['idartistecomu'];
-        }
-        $definirMusique = recuperer_genre($db, $idMusique);
-        foreach($definirMusique as $nomGenre) {
-            $listeGenreMusique[] = $nomGenre['nomgenre'];
-        }
+    $musique = recuperer_musique($db, $idMusique)[0];
+    if ( empty($musique) ) {
+        header('Location: ./gestionMusique.php');
+    }
+    $titreMusique = $musique['titremusique'];
+    $dureeMusique = $musique['dureemusique'];
+    $dateMusique = $musique['datemusique'];
+    $descriptionMusique = $musique['descriptionmusique'];
+    $composerMusique = recuperer_composer_musique($db, $idMusique);
+    foreach($composerMusique as $idArtisteCoMu) {
+        $listeArtisteMusique[] = $idArtisteCoMu['idartistecomu'];
+    }
+    $definirMusique = recuperer_genre($db, $idMusique);
+    foreach($definirMusique as $nomGenre) {
+        $listeGenreMusique[] = $nomGenre['nomgenre'];
     }
 }
 

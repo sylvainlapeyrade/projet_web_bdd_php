@@ -15,7 +15,7 @@ if(!is_connect() || !is_admin()) {leave();}
 
 include_once(dirname(__FILE__).'/actionMusique.php');
 
-if (isset($db)){
+if ( isset($db) ) {
     $listeMusique = recuperer_musique_tous($db);
 }
 

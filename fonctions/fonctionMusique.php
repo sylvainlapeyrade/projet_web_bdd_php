@@ -30,10 +30,7 @@ function recuperer_musique($db, $idMusique) {
   $req->bindParam(':idMusique', $idMusique);
   $req->execute();
   $res = $req->fetchAll();
-  if ( sizeof($res) == 1) {
-    return $res[0];
-  }
-  return null;
+    return $res;
 }
 
 /**
