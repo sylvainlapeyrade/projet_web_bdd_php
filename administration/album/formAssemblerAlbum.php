@@ -25,8 +25,26 @@ include_once(dirname(__FILE__).'/actionAssemblerAlbum.php');
 
 if ( isset($db) ) {
     $album = recuperer_album($db, $idAlbum);
-    if ( $album != null ) {
-        $listeMusiqueArtiste = recuperer_musique_artiste($db, $album['idalbum']);
+    if ( empty($album) ) {
+        header('Location: ./gestionAssemblerAlbum.php?idAlbum='.$idAlbum);
+    }
+    if ( isset($idMusique) ) {
+        $assemblerAlbum = recuperer_assembler_album($db, $idAlbum, $idMusique)[0];
+        if ( empty($assemblerAlbum) ) {
+            header('Location: ./formAssemblerAlbum.php?idAlbum='.$idAlbum);
+        }
+        $numeroPiste = $assemblerAlbum['numeropiste'];
+    }
+    $listeArtisteAlbum = recuperer_artiste_album($db, $idAlbum);
+    foreach($listeArtisteAlbum as $artiste) {
+        $listeMusiqueArtiste = recuperer_musique_artiste($db, $artiste['idartiste']);
+        foreach($listeMusiqueArtiste as $musiquesArtiste) {
+            $musiques[] = $musiquesArtiste;
+        }
+    }
+    $listeMusiqueAlbum = recuperer_musique_album($db, $idAlbum);
+    foreach($listeMusiqueAlbum as $musiqueAlbum) {
+        $musiquesAssemblee[] = $musiqueAlbum['idmusique'];
     }
 }
 
@@ -48,48 +66,52 @@ include_once(dirname(__FILE__).'/../../head.php');
                     numeroPiste : number
                     listeIdMusique : multiple checkbox
                 -->
-                <form class="flex flex-center flex-column" action="./formMusique.php" method="get">
+                <form class="flex flex-center flex-column" action="./formAssemblerAlbum.php" method="get">
                     
                     <div class="flex flex-column">
+                        <?php if ( !isset($idMusique) ) { ?>
                         <div class="margin-center">
                             <h4>Morceau de musique :</h4>
                             <div id="box-item-checkbox" class="width-500 liste-checkbox flex flex-center flex-wrap">
-                                <?php foreach($listeMusiqueArtiste as $musique) { ?>
+                                <?php foreach($musiques as $musique) {
+                                        if ( empty($musiquesAssemblee) || ( !empty($musiquesAssemblee) && !in_array($musique['idmusique'], $musiquesAssemblee) ) ) { ?>
                                 <div class="item-checkbox">
                                     <input type="checkbox"
                                            name="idMusique<?php echo $musique['idmusique']; ?>"
-                                           value="<?php echo $musique['idMusique'] ?>"
+                                           value="<?php echo $musique['idmusique'] ?>"
                                            />
                                     <?php echo $musique['titremusique']; ?>
                                 </div>
-                                <?php } ?>
+                                <?php } } ?>
                             </div>
                         </div>
+                        <?php }?>
 
                         <label for="dureeMusique" class="text-center"> Numéro de piste :
                             <input type="number"
                                    class="input-number"
                                    name="numeroPiste"
-                                   value="<?php echo $numeroPiste; ?>"
+                                   value="<?php echo $numeroPiste ?>"
                                    placeholder="1"
                                    required
                                    />
                         </label>
                     </div>
-
-                    <!-- BOUTON AJOUTER/MODIFIER AVEC CHAMPS CACHES -->
-                    <?php  if ( isset($idMusique) && !empty($idMusique) ) { /** BOUTON POUR MODIFIER */ ?>
+                    
                     <input type="hidden" 
                            name="idAlbum" 
                            value="<?php echo $idAlbum ?>"
                            />
+
+                    <!-- BOUTON AJOUTER/MODIFIER AVEC CHAMPS CACHES -->
+                    <?php  if ( isset($idMusique) && !empty($idMusique) ) { /** BOUTON POUR MODIFIER */ ?>
                     <input type="hidden" 
                            name="idMusique" 
                            value="<?php echo $idMusique ?>"
                            />
                     <input type="hidden"
                            name="action" 
-                           value="modifierMusique"
+                           value="modifierAssemblerAlbum"
                            />
                     <input class="inputButton1" 
                            type="submit" 
@@ -98,11 +120,11 @@ include_once(dirname(__FILE__).'/../../head.php');
                     <?php } else { /********************************* BOUTON POUR AJOUTER */ ?>
                     <input type="hidden" 
                            name="action" 
-                           value="ajouterMusique"
+                           value="ajouterAssemblerAlbum"
                            />
                     <input class="inputButton1" 
                            type="submit" 
-                           value="ajouter"
+                           value="Ajouter"
                            />
                     <?php } ?>
                     

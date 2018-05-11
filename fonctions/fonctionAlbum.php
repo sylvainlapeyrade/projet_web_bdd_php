@@ -11,8 +11,22 @@
  * @param $idAlbum Int Identifiant album dans Assembler_Album
  * @return array Association des albums et de leur compositeur
  */
+function recuperer_artiste_album($db, $idAlbum) {
+  $req = $db->prepare("SELECT * FROM Composer_Album, Artiste WHERE Composer_Album.idAlbumCoAl=:idAlbum AND Composer_Album.idArtisteCoAl = Artiste.idArtiste;");
+  $req->bindParam(':idAlbum', $idAlbum, PDO::PARAM_INT);
+  $req->execute();
+  $res = $req->fetchAll();
+  return $res;
+}
+
+/**
+ * Recupere les artiste d'un album
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idAlbum Int Identifiant album dans Assembler_Album
+ * @return array Association des albums et de leur compositeur
+ */
 function recuperer_musique_album($db, $idAlbum) {
-  $req = $db->prepare("SELECT * FROM Assembler_Album, Musique WHERE Assembler_Album.idAlbumAa=:idAlbum AND Assembler_Album.idMusiqueAa = Musique.idMusique;");
+  $req = $db->prepare("SELECT * FROM Assembler_Album, Musique WHERE Assembler_Album.idAlbumAa=:idAlbum AND Assembler_Album.idMusiqueAa = Musique.idMusique ORDER BY numeroPiste ASC, titreMusique ASC;");
   $req->bindParam(':idAlbum', $idAlbum, PDO::PARAM_INT);
   $req->execute();
   $res = $req->fetchAll();
@@ -129,8 +143,7 @@ function recuperer_composer_album($db, $idAlbumCoAl) {
  * @return True si la requete s'est bien exécutée | False sinon
  */
 function ajouter_composer_album($db, $idAlbumCoAl, $idArtisteCoAl) {
-  $req = $db->prepare("INSERT INTO Composer_Album(idAlbumCoAl, idArtisteCoAl)
-      VALUES(:idAlbumCoAl, :idArtisteCoAl);");
+  $req = $db->prepare("INSERT INTO Composer_Album(idAlbumCoAl, idArtisteCoAl) VALUES(:idAlbumCoAl, :idArtisteCoAl);");
   $req->bindParam(':idAlbumCoAl', $idAlbumCoAl, PDO::PARAM_INT);
   $req->bindParam(':idArtisteCoAl', $idArtisteCoAl, PDO::PARAM_INT);
   $reqOk = $req->execute();
@@ -147,6 +160,86 @@ function ajouter_composer_album($db, $idAlbumCoAl, $idArtisteCoAl) {
 function supprimer_composer_album_tous($db, $idAlbumCoAl) {
   $req = $db->prepare("DELETE FROM Composer_Album WHERE idAlbumCoAl=:idAlbumCoAl;");
   $req->bindParam(':idAlbumCoAl', $idAlbumCoAl, PDO::PARAM_INT);
+  $reqOk = $req->execute();
+  return $reqOk;
+}
+
+/**
+ * Recupere une associations de musiques et album
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idAlbumAa Int Identifiant album dans Assembler_Album
+ * @param $idMusiqueAa Int Identifiant musique dans Assembler_Album
+ * @return array Association des musiques et album
+ */
+function recuperer_assembler_album($db, $idAlbumAa, $idMusiqueAa) {
+  $req = $db->prepare("SELECT * FROM Assembler_Album WHERE idAlbumAa=:idAlbumAa AND idMusiqueAa=:idMusiqueAa");
+  $req->bindParam(':idMusiqueAa', $idMusiqueAa, PDO::PARAM_INT);
+  $req->bindParam(':idAlbumAa', $idAlbumAa, PDO::PARAM_INT);
+  $req->execute();
+  $res = $req->fetchAll();
+  return $res;
+}
+
+/**
+ * Ajoute une association entre une musique et un album
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idMusiqueAa Int Identifiant musique dans Assembler_Album
+ * @param $idAlbumAa Int Identifiant album dans Assembler_Album
+ * @param $numeroPiste Int Numero de la musique dans l'album
+ * @return True si la requete s'est bien exécutée | False sinon
+ */
+function ajouter_assembler_album($db, $idAlbumAa, $idMusiqueAa, $numeroPiste) {
+  $req = $db->prepare("INSERT INTO Assembler_Album(idMusiqueAa, idAlbumAa, numeroPiste)
+      VALUES(:idMusiqueAa, :idAlbumAa, :numeroPiste);");
+  $req->bindParam(':idMusiqueAa', $idMusiqueAa, PDO::PARAM_INT);
+  $req->bindParam(':idAlbumAa', $idAlbumAa, PDO::PARAM_INT);
+  $req->bindParam(':numeroPiste', $numeroPiste, PDO::PARAM_INT);
+  $reqOk = $req->execute();
+  return $reqOk;
+}
+
+/**
+ * Modifie une association entre une musique et un album
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idMusiqueAa Int Identifiant musique dans Assembler_Album
+ * @param $idAlbumAa Int Identifiant album dans Assembler_Album
+ * @param $numeroPiste Int Numero de la musique dans l'album
+ * @return True si la requete s'est bien exécutée | False sinon
+ */
+function modifier_assembler_album($db, $idAlbumAa, $idMusiqueAa, $numeroPiste) {
+  $req = $db->prepare("UPDATE Assembler_Album SET numeroPiste=:numeroPiste WHERE idAlbumAa=:idAlbumAa AND idMusiqueAa=:idMusiqueAa;");
+  $req->bindParam(':numeroPiste', $numeroPiste, PDO::PARAM_INT);
+  $req->bindParam(':idAlbumAa', $idAlbumAa, PDO::PARAM_INT);
+  $req->bindParam(':idMusiqueAa', $idMusiqueAa, PDO::PARAM_INT);
+  $reqOk = $req->execute();
+  return $reqOk;
+}
+
+/**
+ * Supprime toutes une association de la table Assembler_Album
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idMusiqueAa Int Identifiant musique dans Assembler_Album
+ * @param $idAlbumAa Int Identifiant album dans Assembler_Album
+ * @return True si la requete s'est bien exécutée | False sinon
+ */
+function supprimer_assembler_album($db, $idAlbumAa, $idMusiqueAa) {
+  $req = $db->prepare("DELETE FROM Assembler_Album WHERE idAlbumAa=:idAlbumAa AND idMusiqueAa=:idMusiqueAa;");
+  $req->bindParam(':idAlbumAa', $idAlbumAa, PDO::PARAM_INT);
+  $req->bindParam(':idMusiqueAa', $idMusiqueAa, PDO::PARAM_INT);
+  $reqOk = $req->execute();
+  return $reqOk;
+}
+
+/**
+ * Supprime toutes les association de la table Assembler_Album
+ * spécifié par l'identifiant 'idAlbumAa'.
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idAlbumAa Int Identifiant album dans Assembler_Album
+ * @return True si la requete s'est bien exécutée | False sinon
+ */
+function supprimer_assembler_album_tous($db, $idAlbumAa) {
+  $req = $db->prepare("DELETE FROM Assembler_Album WHERE idAlbumAa=:idAlbumAa;");
+  $req->bindParam(':idAlbumAa', $idAlbumAa, PDO::PARAM_INT);
   $reqOk = $req->execute();
   return $reqOk;
 }

@@ -77,7 +77,8 @@ $messages = [
         'dateInvalide' => "La date n'est pas valide (dd-mm-yyy).",
         'motDePasseDifferent' => "Les deux mot de passe ne sont pas identique.",
         'erreurDevenirUtilisateur' => "Vous ne pouvez pas devenir utilisateur normal.",
-        'erreurSupprimerSonCompte' => "Vous ne pouvez pas supprimer votre propre compte."
+        'erreurSupprimerSonCompte' => "Vous ne pouvez pas supprimer votre propre compte.",
+        'valeurNegative' => "La valeur renseigné doit être positive."
     ],
     'connexion' => [
         'incorrect' => "Votre identifiant ou votre mot de passe est incorrect.",  
@@ -87,6 +88,7 @@ $messages = [
     ],
     'minimum1Artiste' => "Il faut au minimum un artiste sélectionné.",
     'minimum2Artiste' => "Il faut au minimum deux artistes sélectionnés.",
+    '1titreMusique' => "Il faut seulement un titre de musique sélectionner.",
     'operation' => [
         'ok' => "L'opération a été effectué.",
         'ko' => "L'opération n'a pas pu être effectué."
