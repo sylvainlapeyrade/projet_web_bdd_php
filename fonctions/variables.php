@@ -23,24 +23,19 @@ function date_valide($date) {
 	$j_verif = intval($date[8].$date[9]);
 	$m_verif = intval($date[5].$date[6]);
 	$y_verif = intval($date[0].$date[1].$date[2].$date[3]);
-	
-	//Verification
-	if ( $y_verif < $annee )
-		return true;
-	else if ( $y_verif > $annee )
-		return false;
-	else if ( $y_verif == $annee ) {
-		if ( $m_verif < $mois )
-			return true;
-		else if ( $m_verif > $mois )
-			return false;
-		else if ( $m_verif == $mois ) {
-			if ( $j_verif <= $jour ) 
-				return true;
-			else
-				return false;
-		}
-	}			
+    
+    if ( $y_verif < $annee ) {
+        return true;
+    } else if ( $y_verif == $annee ) {
+        if ( $m_verif < $mois ) {
+            return true;
+        } else if ( $m_verif == $mois ) {
+            if ( $j_verif <= $jour ) {
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
 function format_duree($secondes) {
