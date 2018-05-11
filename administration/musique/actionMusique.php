@@ -73,11 +73,11 @@ if ( isset($db) ) {
              * Champs présent : idMusique, titreMusique, dureeMusique, dateMusique, descriptionMusique,
              * Champs obligatoire : idMusique, titreMusique, dureeMusique
              */
-            if ( isset($idMusique, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique) ) {
+            if ( !isset($idMusique, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique) ) {
                 $erreur = $messages['formulaire']['invalide'];
                 break;
             }
-            if ( empty($idMusique) || empty($titreMusique) || empty($dureeMusique) ) {
+            if ( empty($idMusique) || empty($titreMusique) || empty($dureeMusique) ) {
                 $erreur = $messages['formulaire']['champs_vide'];
                 break;
             }
