@@ -9,8 +9,9 @@ function format_date($date) {
 
 function date_valide($date) {
 	//verification format
-	$pattern = '/^[0-9]{2}-[0-9]{2}-[0-9]{4}/';
-	if ( !preg_match($pattern, $date) )
+	$pattern1 = '/^[0-9]{2}-[0-9]{2}-[0-9]{4}/';
+	$pattern2 = '/^[0-9]{2}/[0-9]{2}/[0-9]{4}/';
+	if ( !preg_match($pattern1, $date) && !preg_match($pattern2, $date) )
 		return false;
 	
 	//date actuelle
