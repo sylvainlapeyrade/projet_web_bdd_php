@@ -34,7 +34,9 @@ include_once(dirname(__FILE__).'/../../head.php');
             <?php include_once(dirname(__FILE__).'/headerMusique.php'); ?>
             <div>
 
-                <!-- TABLEAU -->
+                <!-- TABLEAU
+                    Titre Musique - Durée - Date - Description
+                -->
                 <table id="tableauGestion">
                     
                     <tr class="table-head">

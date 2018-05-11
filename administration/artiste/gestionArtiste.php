@@ -32,7 +32,9 @@ include_once(dirname(__FILE__).'/../../head.php');
             <?php include_once(dirname(__FILE__).'/headerArtiste.php'); ?>
             <div>
 
-                <!-- TABLEAU -->
+                <!-- TABLEAU
+                    Nom Artiste - Prénom - Nom de scène - Date naissance
+                -->
                 <table id="tableauGestion">
 
                     <tr class="table-head">
@@ -42,6 +44,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                         <th class="width-350">Date naissance</th>
                     </tr>
 
+                    <!-- Liste Artiste -->
                     <?php foreach($listArtiste as $artiste) { ?>
                     <tr class="table-lign">
                         <td> <?php echo $artiste['nomartiste']; ?> </td>

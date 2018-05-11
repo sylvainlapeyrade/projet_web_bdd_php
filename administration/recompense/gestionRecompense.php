@@ -32,7 +32,9 @@ include_once(dirname(__FILE__).'/../../head.php');
             <?php include_once(dirname(__FILE__).'/headerRecompense.php'); ?>
             <div>
                 
-                <!-- TABLEAU -->
+                <!-- TABLEAU
+                    Nom Récompense - Date - Description
+                -->
                 <table id="tableauGestion">
                     
                 <tr class="table-head">
