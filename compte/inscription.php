@@ -10,22 +10,42 @@ $info['head']['stylesheets'] = ['compte.css'];
 
 if(is_connect()) {leave();}
 
-/* Gestion du formulaire d'inscription */
-if ( isset($_GET['inscription']) && $_GET['inscription'] == 'inscription' ) {
-    $idUtilisateur = $_GET['idUtilisateur'];
+$action = $_GET['action'];
+if ( isset($action) && !empty($action) ) {
+    $identifiant = $_GET['idUtilisateur'];
     $motDePasse = $_GET['motDePasse'];
     $verification = $_GET['verification'];
-    if ( isset($db, $idUtilisateur, $motDePasse, $verification) ) {
-        if ( !empty($idUtilisateur) && !empty($motDePasse) && !empty($verification) ) {
-            if ( $motDePasse == $verification ) {
-                $actionOk = inscription($db, $idUtilisateur, $motDePasse);
-                if ( $actionOk ) {
-                    header('Location: /compte/connexion.php?action=inscription');
-                } else { $erreur = $messages['formulaire']['utilisateurExistant']; }
-            } else { $erreur = $messages['formulaire']['motDePasseDifferent']; }
-        } else { $erreur = $messages['formulaire']['champs_vide']; }
-    } else { $erreur = $messages['formulaire']['invalide']; }
 }
+
+if ( isset($db) ) {
+    switch($action) {
+        case 'inscription':
+            /*
+             * Champs présent : identifiant, motDePasse, verification
+             * Champs obligatoire : identifiant, motDePasse, verification
+             */
+            if ( !isset($identifiant, $motDePasse, $verification) ) {
+                $erreur = $messages['formulaire']['invalide'];
+                break;
+            }
+            if ( empty($identifiant) || empty($motDePasse) || empty($verification) ) {
+                $erreur = $messages['formulaire']['champs_vide'];
+                break;
+            }
+            if ( $motDePasse != $verification ) {
+                $erreur = $messages['formulaire']['motDePasseDifferent'];
+                break;
+            }
+            $operationOk = inscription($db, $idUtilisateur, $motDePasse);
+            if ( !$operationOk ) {
+                $erreur = $messages['formulaire']['utilisateurExistant'];
+                break;
+            }
+            header('Location: /index.php');
+            break;
+    }
+}
+
 ?>
 
 <?php include_once(dirname(__FILE__).'/../head.php'); ?>

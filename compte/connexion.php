@@ -10,23 +10,41 @@ $info['head']['stylesheets'] = ['compte.css'];
 
 if(is_connect()) {leave();}
 
-/* Gestion du formulaire connexion */
-if ( isset($_GET['connexion']) && $_GET['connexion'] == 'connexion' ) {
+$action = $_GET['action'];
+if ( isset($action) && !empty($action) ) {
     $identifiant = $_GET['idUtilisateur'];
     $motDePasse = $_GET['motDePasse'];
-    if ( isset($db) && isset($identifiant) && isset($motDePasse) ) {
-        if ( !empty($identifiant) && !empty($motDePasse) ) {
-            $actionOk = connexion_compte($db, $identifiant, $motDePasse);
-            if ( $actionOk ) {
-                header('Location: /index.php');
-            } else { $erreur = $messages['connexion']['incorrect']; }
-        } else { $erreur = $messages['formulaire']['champs_vide']; }
-    } else { $erreur = $messages['formulaire']['invalide']; }
+}
+
+if ( isset($db) ) {
+    switch($action) {
+        case 'connexion':
+            /*
+             * Champs présent : identifiant, motDePasse
+             * Champs obligatoire : identifiant, motDePasse
+             */
+            if ( !isset($identifiant, $motDePasse) ) {
+                $erreur = $messages['formulaire']['invalide'];
+                break;
+            }
+            if ( empty($identifiant) || empty($motDePasse) ) {
+                $erreur = $messages['formulaire']['champs_vide'];
+                break;
+            }
+            $operationOk = connexion_compte($db, $identifiant, $motDePasse);
+            if ( !$operationOk ) {
+                $erreur = $messages['connexion']['incorrect'];
+                break;
+            }
+            header('Location: /index.php');
+            break;
+    }
 }
 
 ?>
 
 <?php include_once(dirname(__FILE__).'/../head.php'); ?>
+
 <?php include_once(dirname(__FILE__).'/../header.php'); ?>
 
 <main>
@@ -64,7 +82,7 @@ if ( isset($_GET['connexion']) && $_GET['connexion'] == 'connexion' ) {
         <input id="button" 
                class="button button-red1 margin-center" 
                type="submit" 
-               name="connexion" 
+               name="action" 
                value="connexion"
                />
         </form>

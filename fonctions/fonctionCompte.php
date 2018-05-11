@@ -42,6 +42,7 @@ function is_admin() {
     return false;
 }
 
+
 /**
  * Connexion d'un utilisateur avec id et mdp
  * Vérifie dans la BDD si une entrée correspond à l'id et au mdp
@@ -52,8 +53,8 @@ function is_admin() {
  * @return True si la connexion a été effectuée | False sinon.
  */
 function connexion_compte($db, $identifiant, $motDePasse) {
-  $res = recuperer_utilisateur($db, $identifiant);
-  if ( $res != null ) {
+  $res = recuperer_utilisateur($db, $identifiant)[0];
+  if ( !empty($res) ) {
     $passOk = $motDePasse == $res['motdepasse'];
     if ( $passOk ) {
       $_SESSION['idUtilisateur'] = $res['idutilisateur'];
