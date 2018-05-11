@@ -2,7 +2,7 @@
 
 function format_date($date) {
     if ( isset($date) && !empty($date) ) {
-        return date("Y/m/d", strtotime($date));
+        return date("Y-m-d", strtotime($date));
     }
     return null;
 }
