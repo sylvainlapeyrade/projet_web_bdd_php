@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 include_once(dirname(__FILE__).'/../../fonctions/variables.php');
 include_once(dirname(__FILE__).'/../../fonctions/fonctionCompte.php');
@@ -25,10 +26,7 @@ if ( isset($db, $idAlbum) && !empty($idAlbum) ) {
         }
     }
 }
-/* Fichier de fonction exécuter suivant deux cas :
- * 1: ajouter un album avec action = ajouterAlbum
- * 2: modifier un album avec action = modifierAlbum
- */
+
 include_once(dirname(__FILE__).'/actionAlbum.php');
 
 if ( isset($db) ) {
@@ -38,6 +36,7 @@ if ( isset($db) ) {
 include_once(dirname(__FILE__).'/../../head.php');
 
 include_once(dirname(__FILE__).'/../../header.php');
+
 ?>
 
 <main>
@@ -56,6 +55,7 @@ include_once(dirname(__FILE__).'/../../header.php');
                      listeIdArtiste : multiple checkbox
                 -->
                 <form class="flex flex-center flex-column" action="./formAlbum.php" method="get">
+                    
                     <div class="flex">
                         <div class="flex flex-column width-800">
                             <input type="text"
@@ -108,8 +108,8 @@ include_once(dirname(__FILE__).'/../../header.php');
                         </div>
                     </div>
 
-                    <!-- BOUTON AJOUTER/MODIFIER AVEC CHAMPS CACHES -->
-                    <?php  if ( isset($idAlbum) && !empty($idAlbum) ) { /** BOUTON POUR MODIFIER */ ?>
+                    <!-- BOUTON MODIFIER/AJOUTER AVEC CHAMPS CACHES -->
+                    <?php  if ( isset($idAlbum) && !empty($idAlbum) ) { /* BOUTON POUR MODIFIER */ ?>
                         <input type="hidden"
                                name="idAlbum"
                                value="<?php echo $idAlbum ?>"
@@ -122,7 +122,7 @@ include_once(dirname(__FILE__).'/../../header.php');
                                type="submit"
                                value="modifier"
                         />
-                    <?php } else { /********************************* BOUTON POUR AJOUTER */ ?>
+                    <?php } else { /* BOUTON POUR AJOUTER */ ?>
                         <input type="hidden"
                                name="action"
                                value="ajouterAlbum"

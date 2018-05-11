@@ -25,10 +25,6 @@ if ( isset($db, $idRecompense) && !empty($idRecompense) ) {
     }
 }
 
-/* Fichier de fonction exécuter suivant deux cas :
- * 1: ajouter une récompense avec action = ajouterRecompense
- * 2: modifier une récompense avec action = modifierRecompense
- */
 include_once(dirname(__FILE__).'/actionRecompense.php');
 if (isset($db)){
     $artistes = recuperer_artiste_tous($db);
@@ -101,8 +97,8 @@ include_once(dirname(__FILE__).'/../../head.php');
                         </div>
                     </div>
 
-                    <!-- BOUTON AJOUTER/MODIFIER AVEC CHAMPS CACHES -->
-                    <?php  if ( isset($idRecompense) && !empty($idRecompense) ) { /** BOUTON POUR MODIFIER */ ?>
+                    <!-- BOUTON MODIFIER/AJOUTER AVEC CHAMPS CACHES -->
+                    <?php  if ( isset($idRecompense) && !empty($idRecompense) ) { /* BOUTON POUR MODIFIER */ ?>
                         <input type="hidden"
                                name="idRecompense"
                                value="<?php echo $idRecompense ?>"
