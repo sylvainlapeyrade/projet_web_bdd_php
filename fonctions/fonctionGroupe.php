@@ -17,10 +17,7 @@ function recuperer_groupe($db, $idGroupe) {
   $req->bindParam(':idGroupe', $idGroupe);
   $req->execute();
   $res = $req->fetchAll();
-  if ( sizeof($res) == 1) {
-    return $res[0];
-  }
-  return null;
+    return $res;
 }
 
 function ajouter_groupe($db, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe) {

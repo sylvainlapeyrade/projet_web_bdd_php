@@ -14,16 +14,17 @@ if(!is_connect() || !is_admin()) {leave();}
 
 $idGroupe = $_GET['idGroupe'];
 if ( isset($db, $idGroupe) && !empty($idGroupe) ) {
-    $groupe = recuperer_groupe($db, $idGroupe);
-    if ( $groupe != null ) {
-        $nomGroupe = $groupe['nomgroupe'];
-        $dateGroupe = $groupe['dategroupe'];
-        $descriptionGroupe = $groupe['descriptiongroupe'];
-        $urlImageGroupe = $groupe['urlimagegroupe'];
-        $constituerGroupe = recuperer_constituer_groupe($db, $idGroupe);
-        foreach($constituerGroupe as $idArtisteCo) {
-            $listeArtisteGroupe[] = $idArtisteCo['idartisteco'];
-        }
+    $groupe = recuperer_groupe($db, $idGroupe)[0];
+    if ( empty($groupe) ) {
+        header('Location: ./gestionGroupe.php');
+    }
+    $nomGroupe = $groupe['nomgroupe'];
+    $dateGroupe = $groupe['dategroupe'];
+    $descriptionGroupe = $groupe['descriptiongroupe'];
+    $urlImageGroupe = $groupe['urlimagegroupe'];
+    $constituerGroupe = recuperer_constituer_groupe($db, $idGroupe);
+    foreach($constituerGroupe as $idArtisteCo) {
+        $listeArtisteGroupe[] = $idArtisteCo['idartisteco'];
     }
 }
 
