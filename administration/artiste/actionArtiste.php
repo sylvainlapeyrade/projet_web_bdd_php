@@ -25,6 +25,10 @@ if ( isset($db) ) {
                 $erreur = $messages['formulaire']['champs_vide'];
                 break;
             }
+            if ( !date_valide($dateNaissanceArtiste) ) {
+                $erreur = $messages['formulaire']['dateInvalide'];
+                break;
+            }
             if ( isset($db) ) {
                 $operationOk = ajouter_artiste($db, $nomArtiste, $prenomArtiste, $nomScene, $dateNaissanceArtiste,  $urlImageArtiste, $descriptionArtiste);
                 if ( !$operationOk ) {
@@ -46,6 +50,10 @@ if ( isset($db) ) {
             }
             if (  empty($idArtiste) || empty($nomArtiste) || empty($prenomArtiste) ) {
                 $erreur = $messages['formulaire']['champs_vide'];
+                break;
+            }
+            if ( !date_valide($dateNaissanceArtiste) ) {
+                $erreur = $messages['formulaire']['dateInvalide'];
                 break;
             }
             if ( isset($db) ) {

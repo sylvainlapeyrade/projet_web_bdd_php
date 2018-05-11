@@ -32,6 +32,10 @@ if ( isset($db) ) {
                 $erreur = $messages['formulaire']['champs_vide'];
                 break;
             }
+            if ( !date_valide($dateMusique) ) {
+                $erreur = $messages['formulaire']['dateInvalide'];
+                break;
+            }
             if ( !isset($listeIdArtiste[0]) || empty($listeIdArtiste[0]) ) {
                 $erreur = $messages['minimum1Artiste'];
                 break;
@@ -79,6 +83,10 @@ if ( isset($db) ) {
             }
             if ( empty($idMusique) || empty($titreMusique) || empty($dureeMusique) ) {
                 $erreur = $messages['formulaire']['champs_vide'];
+                break;
+            }
+            if ( !date_valide($dateMusique) ) {
+                $erreur = $messages['formulaire']['dateInvalide'];
                 break;
             }
             if ( isset($db) ) {

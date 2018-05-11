@@ -7,7 +7,7 @@ function format_date($date) {
     return null;
 }
 
-function verification_date ($date) {
+function date_valide($date) {
 	//verification format
 	$pattern = '/^[0-9]{2}-[0-9]{2}-[0-9]{4}/';
 	if ( !preg_match($pattern, $date) )
@@ -74,6 +74,7 @@ $messages = [
         'champs_obligatoire' => "Certains champs du formulaire sont obligatoire.",
         'champs_vide' => "Certains champs du formulaire sont vide.",
         'invalide' => "Le formulaire est incomplet.",
+        'dateInvalide' => "La date n'est pas valide (dd-mm-yyy).",
         'motDePasseDifferent' => "Les deux mot de passe ne sont pas identique.",
         'erreurDevenirUtilisateur' => "Vous ne pouvez pas devenir utilisateur normal.",
         'erreurSupprimerSonCompte' => "Vous ne pouvez pas supprimer votre propre compte."

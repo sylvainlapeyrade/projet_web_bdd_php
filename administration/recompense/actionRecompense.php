@@ -29,6 +29,10 @@ if ( isset($db) ) {
                 $erreur = $messages['formulaire']['champs_vide'];
                 break;
             }
+            if ( !date_valide($dateRecompense) ) {
+                $erreur = $messages['formulaire']['dateInvalide'];
+                break;
+            }
             if ( !isset($listeIdArtiste[0]) || empty($listeIdArtiste[0]) ) {
                 $erreur = $messages['minimum1Artiste'];
                 break;
@@ -64,6 +68,10 @@ if ( isset($db) ) {
             }
             if ( empty($idRecompense) || empty($nomRecompense) ) {
                 $erreur = $messages['formulaire']['champs_vide'];
+                break;
+            }
+            if ( !date_valide($dateRecompense) ) {
+                $erreur = $messages['formulaire']['dateInvalide'];
                 break;
             }
             if ( !isset($listeIdArtiste[0]) || empty($listeIdArtiste[0]) ) {
