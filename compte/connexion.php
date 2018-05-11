@@ -16,7 +16,7 @@ if ( isset($_GET['connexion']) && $_GET['connexion'] == 'connexion' ) {
     $motDePasse = $_GET['motDePasse'];
     if ( isset($db) && isset($identifiant) && isset($motDePasse) ) {
         if ( !empty($identifiant) && !empty($motDePasse) ) {
-            $actionOk = connexion_account($db, $identifiant, $motDePasse);
+            $actionOk = connexion_compte($db, $identifiant, $motDePasse);
             if ( $actionOk ) {
                 header('Location: /index.php');
             } else { $erreur = $messages['connexion']['incorrect']; }
