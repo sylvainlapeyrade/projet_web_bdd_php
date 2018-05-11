@@ -64,16 +64,18 @@
                      name="nomGroupe"
                      placeholder="Nom groupe"
                      value="<?php echo $nomGroupe; ?>"
+                     required
                      />
 
               <label for="dateRecompense" class="text-center">
                 Date de création :
                   <input type="date"
                          placeholder="<?php echo format_date(date("d-m-Y")); ?>"
-                         required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
+                         pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
                          class="input-date"
                          name="dateGroupe"
                          value="<?php echo format_date($dateGroupe); ?>"
+                         required
                     />
                 </label>
               

@@ -60,6 +60,7 @@
                  name="nomArtiste" 
                  value="<?php echo $nomArtiste ?>" 
                  placeholder="Nom de l'artiste"
+                 required
                  />
           
           <input type="text" 
@@ -67,6 +68,7 @@
                  name="prenomArtiste" 
                  value="<?php echo $prenomArtiste ?>" 
                  placeholder="Prénom de l'artiste"
+                 required
                  />
           
           <input type="text" 
@@ -80,10 +82,11 @@
             Date de naissance :
             <input type="date"
                    placeholder="<?php echo format_date(date("d-m-Y")); ?>"
-                   required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
+                   pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
                    class="input-date"
                    name="dateNaissanceArtiste"
                    value="<?php echo format_date($dateNaissanceArtiste); ?>"
+                   required
              />
           </label>
         

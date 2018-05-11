@@ -69,6 +69,7 @@
                      name="titreMusique"
                      placeholder="Titre musique"
                      value="<?php echo $titreMusique; ?>"
+                     required
                      />
               
               <label for="dureeMusique" class="text-center">
@@ -78,6 +79,7 @@
                        name="dureeMusique"
                        value="<?php echo $dureeMusique; ?>"
                        placeholder="0"
+                       required
                        />
               </label>
 
@@ -85,10 +87,11 @@
                 Date de création :
                   <input type="date"
                          placeholder="<?php echo format_date(date("d-m-Y")); ?>"
-                         required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
+                         pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
                          class="input-date"
                          name="dateMusique"
                          value="<?php echo format_date($dateMusique); ?>"
+                         required
                     />
                 </label>
 

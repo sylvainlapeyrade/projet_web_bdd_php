@@ -61,16 +61,18 @@ include_once(dirname(__FILE__).'/../../head.php');
                                    name="nomRecompense"
                                    placeholder="Nom récompense"
                                    value="<?php echo $nomRecompense; ?>"
+                                   required
                             />
 
                             <label for="dateRecompense" class="text-center">
                                 Date de la récompense :
                                 <input type="date"
                                        placeholder="<?php echo format_date(date("d-m-Y")); ?>"
-                                       required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
+                                       pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
                                        class="input-date"
                                        name="dateRecompense"
                                        value="<?php echo format_date($dateRecompense); ?>"
+                                       required
                                 />
                             </label>
 

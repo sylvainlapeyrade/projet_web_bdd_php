@@ -48,6 +48,7 @@ include_once(dirname(__FILE__).'/../../header.php');
                            placeholder="Identifiant"
                            value="<?php echo $idUtilisateur ?>" 
                            <?php if ( isset($idUtilisateur) && !empty($idUtilisateur) ) { echo "disabled"; } else { echo 'name="idUtilisateur"'; } ?>
+                           required
                            />
                   
                     <input class="input-text" 

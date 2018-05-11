@@ -63,16 +63,18 @@ include_once(dirname(__FILE__).'/../../header.php');
                                    name="nomAlbum"
                                    placeholder="Nom album"
                                    value="<?php echo $nomAlbum; ?>"
+                                   required
                             />
 
                             <label for="dateRecompense" class="text-center">
                                 Date de création:
                                 <input type="date"
                                        placeholder="<?php echo format_date(date("d-m-Y")); ?>"
-                                       required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
+                                       pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
                                        class="input-date"
                                        name="dateAlbum"
                                        value="<?php echo format_date($dateAlbum); ?>"
+                                       required
                                 />
                             </label>
 
