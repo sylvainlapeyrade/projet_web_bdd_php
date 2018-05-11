@@ -1,11 +1,18 @@
 #content-recherche {
     background: rgba(0, 0, 0, 0.5);
     padding: 50px 30px;
-    margin-top: 80px;
+    margin-top: 250px;
     margin-bottom: 25px;
 }
 
 #input-recherche {
     padding-left: 25px;
     margin-right: 10px;
+}
+
+@media only screen and (max-width: 1280px) {
+    #content-recherche {
+        margin-top: 80px;
+        margin-bottom: 25px;
+    }
 }
