@@ -13,15 +13,16 @@ if(!is_connect() || !is_admin()) {leave();}
 
 if ( isset($db) && isset($_GET['idArtiste']) ) {
     $idArtiste = $_GET['idArtiste'];
-    $artiste = recupere_artiste($db, $idArtiste);
-    if ( $artiste != null ) {
-        $nomArtiste = $artiste['nomartiste'];
-        $prenomArtiste = $artiste['prenomartiste'];
-        $nomScene = $artiste['nomscene'];
-        $dateNaissanceArtiste = $artiste['datenaissanceartiste'];
-        $urlImageArtiste = $artiste['urlimageartiste'];
-        $descriptionArtiste = $artiste['descriptionartiste'];
+    $artiste = recupere_artiste($db, $idArtiste)[0];
+    if ( empty($artiste) ) {
+        header('Location: ./gestionArtiste.php');
     }
+    $nomArtiste = $artiste['nomartiste'];
+    $prenomArtiste = $artiste['prenomartiste'];
+    $nomScene = $artiste['nomscene'];
+    $dateNaissanceArtiste = $artiste['datenaissanceartiste'];
+    $urlImageArtiste = $artiste['urlimageartiste'];
+    $descriptionArtiste = $artiste['descriptionartiste'];
 }
 
 include_once(dirname(__FILE__).'/actionArtiste.php');
