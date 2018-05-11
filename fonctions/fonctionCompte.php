@@ -108,10 +108,7 @@ function recuperer_utilisateur($db, $identifiant) {
   $req->bindParam(':idUtilisateur', $identifiant);
   $req->execute();
   $res = $req->fetchAll();
-  if ( sizeof($res) == 1) {
-    return $res[0];
-  }
-  return null;
+    return $res;
 }
 
 /**

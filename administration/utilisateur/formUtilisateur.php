@@ -10,17 +10,14 @@ $info['head']['stylesheets'] = ['adminGestion.css'];
 if(!is_connect() || !is_admin()) {leave();}
 
 $idUtilisateur = $_GET['idUtilisateur'];
-if ( isset($db) && isset($idUtilisateur) && !empty($idUtilisateur) ) {
-    $utilisateur = recuperer_utilisateur($db, $idUtilisateur);
-    if ( $utilisateur != null ) {
-        $idUtilisateur = $utilisateur['idutilisateur'];
+if ( isset($db, $idUtilisateur) ) {
+    $utilisateur = recuperer_utilisateur($db, $idUtilisateur)[0];
+    if ( empty($utilisateur) ) {
+        header('Location: ./gestionUtilisateur.php');
     }
+    $idUtilisateur = $utilisateur['idutilisateur'];
 }
 
-/* Fichier de fonction exécuter suivant deux cas :
- * 1: ajouter un utilisateur avec action = ajouterUtilisateur
- * 2: modifier un utilisateur avec action = modifierUtilisateur
- */
 include_once(dirname(__FILE__).'/actionUtilisateur.php');
 
 include_once(dirname(__FILE__).'/../../head.php');

@@ -44,10 +44,7 @@ function recuperer_album($db, $idAlbum) {
   $req->bindParam(':idAlbum', $idAlbum);
   $req->execute();
   $res = $req->fetchAll();
-  if ( sizeof($res) == 1) {
-    return $res[0];
-  }
-  return null;
+    return $res;
 }
 
 /**

@@ -15,7 +15,7 @@ $info['head']['stylesheets'] = ['adminGestion.css'];
 if(!is_connect() || !is_admin()) {leave();}
 
 $idMusique = $_GET['idMusique'];
-if ( isset($db, $idMusique) && !empty($idMusique) ) {
+if ( isset($db, $idMusique) ) {
     $musique = recuperer_musique($db, $idMusique)[0];
     if ( empty($musique) ) {
         header('Location: ./gestionMusique.php');

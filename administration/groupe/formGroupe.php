@@ -13,7 +13,7 @@ $info['head']['stylesheets'] = ['adminGestion.css'];
 if(!is_connect() || !is_admin()) {leave();}
 
 $idGroupe = $_GET['idGroupe'];
-if ( isset($db, $idGroupe) && !empty($idGroupe) ) {
+if ( isset($db, $idGroupe) ) {
     $groupe = recuperer_groupe($db, $idGroupe)[0];
     if ( empty($groupe) ) {
         header('Location: ./gestionGroupe.php');

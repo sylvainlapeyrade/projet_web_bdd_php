@@ -12,7 +12,7 @@ $info['head']['stylesheets'] = ['adminGestion.css'];
 if(!is_connect() || !is_admin()) {leave();}
 
 $idRecompense = $_GET['idRecompense'];
-if ( isset($db, $idRecompense) && !empty($idRecompense) ) {
+if ( isset($db, $idRecompense) ) {
     $recompense = recupere_recompense($db, $idRecompense)[0];
     if ( empty($recompense) ) {
         header('Location: ./gestionRecompense.php');
@@ -27,6 +27,7 @@ if ( isset($db, $idRecompense) && !empty($idRecompense) ) {
 }
 
 include_once(dirname(__FILE__).'/actionRecompense.php');
+
 if (isset($db)){
     $artistes = recuperer_artiste_tous($db);
 }

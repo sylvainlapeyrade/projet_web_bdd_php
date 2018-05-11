@@ -13,17 +13,18 @@ $info['head']['stylesheets'] = ['adminGestion.css'];
 if(!is_connect() || !is_admin()) {leave();}
 
 $idAlbum = $_GET['idAlbum'];
-if ( isset($db, $idAlbum) && !empty($idAlbum) ) {
-    $album = recuperer_album($db, $idAlbum);
-    if ( $album != null ) {
-        $nomAlbum = $album['nomalbum'];
-        $dateAlbum = $album['datealbum'];
-        $descriptionAlbum = $album['descriptionalbum'];
-        $urlPochetteAlbum = $album['urlpochettealbum'];
-        $constituerAlbum = recuperer_composer_album($db, $idAlbum);
-        foreach($constituerAlbum as $idArtisteCoAl) {
-            $listeArtisteAlbum[] = $idArtisteCoAl['idartistecoal'];
-        }
+if ( isset($db, $idAlbum) ) {
+    $album = recuperer_album($db, $idAlbum)[0];
+    if ( empty($album) ) {
+        header('Location: ./gestionAlbum.php');
+    }
+    $nomAlbum = $album['nomalbum'];
+    $dateAlbum = $album['datealbum'];
+    $descriptionAlbum = $album['descriptionalbum'];
+    $urlPochetteAlbum = $album['urlpochettealbum'];
+    $constituerAlbum = recuperer_composer_album($db, $idAlbum);
+    foreach($constituerAlbum as $idArtisteCoAl) {
+        $listeArtisteAlbum[] = $idArtisteCoAl['idartistecoal'];
     }
 }
 
