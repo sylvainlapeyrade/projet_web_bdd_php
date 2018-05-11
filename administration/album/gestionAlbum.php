@@ -50,6 +50,9 @@ include_once(dirname(__FILE__).'/../../head.php');
                         <td class="button button-blue">
                             <a href="./formAlbum.php?idAlbum=<?php echo $album['idalbum']; ?>">Modifier</a>
                         </td>
+                        <td class="button">
+                            <a href="./gestionAssemblerAlbum.php?idAlbum=<?php echo $album['idalbum']; ?>">Gestion musique</a>
+                        </td>
                         <td class="button button-red">
                             <a href="?action=supprimerAlbum&idAlbum=<?php echo $album['idalbum']; ?>">Supprimer</a>
                         </td>
