@@ -6,6 +6,20 @@
  */
 
 /**
+ * Recupere les musiques d'un album avec leur numero de piste
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idAlbum Int Identifiant album dans Assembler_Album
+ * @return array Association des albums et de leur compositeur
+ */
+function recuperer_musique_album($db, $idAlbum) {
+  $req = $db->prepare("SELECT * FROM Assembler_Album, Musique WHERE Assembler_Album.idAlbumAa=:idAlbum AND Assembler_Album.idMusiqueAa = Musique.idMusique;");
+  $req->bindParam(':idAlbum', $idAlbum, PDO::PARAM_INT);
+  $req->execute();
+  $res = $req->fetchAll();
+  return $res;
+}
+
+/**
  * Récupère tout les albums de la BDD en les
  * triant par ordre alphabétique de leur noms
  * @param $db PDO Instance PDO de connexion à la BDD
