@@ -62,6 +62,7 @@ function ajouter_groupe($db, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlIm
  * Modifier un groupe existant dans la BDD avec un nom, une date de création,
  * une description et l'URL de la jaquette du groupe
  * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idGroupe Int Identifiant du groupe
  * @param $nomGroupe String Nom du groupe
  * @param $dateGroupe DateTime Date de création du groupe
  * @param $descriptionGroupe String Description du groupe
