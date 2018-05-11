@@ -35,7 +35,7 @@ if ( isset($db, $idMusique) && !empty($idMusique) ) {
 
 include_once(dirname(__FILE__).'/actionMusique.php');
 
-if (isset($db)){
+if ( isset($db) ) {
     $artistes = recuperer_artiste_tous($db);
     $albums = recuperer_album_tous($db);
     $genres = ['Jazz', 'Hip-Hop', 'Rock', 'Dance', 'Dark-Métal', 'Pop', 'Electro', 'House', 'Mambo'];
