@@ -12,8 +12,6 @@ if ( isset($action) && !empty($action) ) {
     $numeroPiste = $_GET['numeroPiste'];
 }
 
-$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
-
 if ( isset($db) ) {
     switch($action) {
         case 'ajouterAssemblerAlbum':
