@@ -51,7 +51,7 @@ function is_admin() {
  * @param $motDePasse String à vérifier
  * @return True si la connexion a été effectuée | False sinon.
  */
-function connexion_account($db, $identifiant, $motDePasse) {
+function connexion_compte($db, $identifiant, $motDePasse) {
   $res = recuperer_utilisateur($db, $identifiant);
   if ( $res != null ) {
     $passOk = $motDePasse == $res['motdepasse'];
