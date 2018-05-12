@@ -107,6 +107,18 @@ function modifier_artiste($db, $idArtiste, $nomArtiste, $prenomArtiste, $nomScen
  * @return True si la suppression s'est bien exécutée | False Sinon
  */
 function supprimer_artiste($db, $idArtiste) {
+    $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
+
+    $req = $db->prepare("DELETE FROM Composer_Musique WHERE idArtisteCoMu=:idArtiste;");
+    $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
+    $reqOk = $req->execute();
+    $req = $db->prepare("DELETE FROM Composer_Album WHERE idArtisteCoAl=:idArtiste;");
+    $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
+    $reqOk = $req->execute();
+    $req = $db->prepare("DELETE FROM Obtenir_Artiste WHERE idArtisteOa=:idArtiste;");
+    $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
+    $reqOk = $req->execute();
+    
     $req = $db->prepare("DELETE FROM Artiste WHERE idArtiste=:idArtiste;");
     $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
     $reqOk = $req->execute();
