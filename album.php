@@ -12,6 +12,9 @@ $info['head']['stylesheets'] = ['album.css'];
 $idAlbum = $_GET['idAlbum'];
 if ( isset($db, $idAlbum) ) {
     $album = recuperer_album($db, $idAlbum)[0];
+    if ( empty($album) ) {
+        header('Location: /index.php');
+    }
     $listeArtistesAlbum = recuperer_artiste_album($db, $idAlbum);
     $listeMusiquesAlbum = recuperer_musique_album($db, $idAlbum);
 }
