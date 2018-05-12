@@ -23,7 +23,7 @@ function recuperer_musique_tous($db) {
  * spécifier par l'identifiant 'idMusique'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusique Int Identifiant de la musique
- * @return array La musique, elle est unique | Null sinon
+ * @return array La musique correspondant à l'id
  */
 function recuperer_musique($db, $idMusique) {
   $req = $db->prepare("SELECT * FROM Musique WHERE idMusique=:idMusique");
@@ -123,6 +123,7 @@ function ajouter_composer_musique($db, $idMusiqueCoMu, $idArtisteCoMu) {
   $reqOk = $req->execute();
   return $reqOk;
 }
+
 /**
  * Supprime toutes les association de la table Composer_Musique
  * spécifié par l'identifiant 'idAlbumCoAl'.

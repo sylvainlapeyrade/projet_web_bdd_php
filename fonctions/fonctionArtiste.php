@@ -37,7 +37,7 @@ function recuperer_artiste_tous($db) {
  * spécifier par l'identifiant 'idArtiste'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idArtiste Int Identifiant de l'artiste
- * @return array L'artiste, il est unique | Null sinon
+ * @return array L'artiste correspondant à l'id
  */
 function recupere_artiste($db, $idArtiste) {
     $req = $db->prepare("SELECT * FROM Artiste WHERE idArtiste=:idArtiste");
