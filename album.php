@@ -115,6 +115,9 @@
                     <img id="imageAlbum" src="styles/mpokora.htm">
                 </div>
             </div>
+            
+            <?php include_once(dirname(__FILE__).'/commentaireAlbum.php'); ?>
+            
         </div>
     </section>
 </main>
