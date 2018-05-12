@@ -92,15 +92,15 @@ CREATE TABLE Evaluer_Musique(
 
 
 CREATE TABLE Composer_Album(
-  idAlbumCoAl           INT           CONSTRAINT Ca_fk_ilCo  REFERENCES Album(idAlbum),
-  idArtisteCoAl         INT           CONSTRAINT Ca_fk_irCo  REFERENCES Artiste(idArtiste),
-							                        CONSTRAINT Ca_pk_coAl  PRIMARY KEY (idAlbumCoAl, idArtisteCoAl)
+  idAlbumCoAl           INT           CONSTRAINT Ca_fk_ilCo  REFERENCES Album(idAlbum) ON DELETE CASCADE,
+  idArtisteCoAl         INT           CONSTRAINT Ca_fk_irCo  REFERENCES Artiste(idArtiste) ON DELETE RESTRICT,
+							          CONSTRAINT Ca_pk_coAl  PRIMARY KEY (idAlbumCoAl, idArtisteCoAl)
 );
 
 
 CREATE TABLE Composer_Musique(
-  idMusiqueCoMu         INT           CONSTRAINT Cm_fk_iMCo  REFERENCES Musique(idMusique),
-  idArtisteCoMu         INT           CONSTRAINT Cm_fk_iACo  REFERENCES Artiste(idArtiste),
+  idMusiqueCoMu         INT           CONSTRAINT Cm_fk_iMCo  REFERENCES Musique(idMusique) ON DELETE CASCADE,
+  idArtisteCoMu         INT           CONSTRAINT Cm_fk_iACo  REFERENCES Artiste(idArtiste) ON DELETE RESTRICT,
                                       CONSTRAINT Cm_pk_coMu  PRIMARY KEY (idMusiqueCoMu, idArtisteCoMu)
 );
 
@@ -108,13 +108,13 @@ CREATE TABLE Composer_Musique(
 CREATE TABLE Obtenir_Artiste(
   idRecompenseOa        INT           CONSTRAINT Oa_fk_iROa  REFERENCES Recompense(idRecompense),
   idArtisteOa           INT           CONSTRAINT Oa_fk_iAOa  REFERENCES Artiste(idArtiste),
-							                        CONSTRAINT Oa_pk_obAr  PRIMARY KEY (idRecompenseOa, idArtisteOa)
+							          CONSTRAINT Oa_pk_obAr  PRIMARY KEY (idRecompenseOa, idArtisteOa)
 );
 
 
 CREATE TABLE Assembler_Album(
-  idAlbumAa             INT           CONSTRAINT Aa_fk_ilAa  REFERENCES Album(idAlbum),
-  idMusiqueAa           INT           CONSTRAINT Aa_fk_iMAa  REFERENCES Musique(idMusique),
+  idAlbumAa             INT           CONSTRAINT Aa_fk_ilAa  REFERENCES Album(idAlbum) ON DELETE CASCADE,
+  idMusiqueAa           INT           CONSTRAINT Aa_fk_iMAa  REFERENCES Musique(idMusique) ON DELETE RESTRICT,
   numeroPiste           INT           CONSTRAINT Aa_nuPi_NN  NOT NULL,
                                       CONSTRAINT Aa_pk_AsAl  PRIMARY KEY (idAlbumAa, idMusiqueAa)
 );
