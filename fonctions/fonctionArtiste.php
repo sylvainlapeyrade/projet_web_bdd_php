@@ -39,7 +39,7 @@ function recuperer_artiste_tous($db) {
  * @param $idArtiste Int Identifiant de l'artiste
  * @return array L'artiste correspondant à l'id
  */
-function recupere_artiste($db, $idArtiste) {
+function recuperer_artiste($db, $idArtiste) {
     $req = $db->prepare("SELECT * FROM Artiste WHERE idArtiste=:idArtiste");
     $req->bindParam(':idArtiste', $idArtiste);
     $req->execute();

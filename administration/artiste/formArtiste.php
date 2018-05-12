@@ -13,7 +13,7 @@ if(!is_connect() || !is_admin()) {leave();}
 
 $idArtiste = $_GET['idArtiste'];
 if ( isset($db, $idArtiste) ) {
-    $artiste = recupere_artiste($db, $idArtiste)[0];
+    $artiste = recuperer_artiste($db, $idArtiste)[0];
     if ( empty($artiste) ) {
         header('Location: ./gestionArtiste.php');
     }
