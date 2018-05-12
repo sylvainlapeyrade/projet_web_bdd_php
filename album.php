@@ -55,7 +55,7 @@ include_once(dirname(__FILE__).'/head.php');
                         <p>
                             Il a été composé par:
                             <?php foreach($listeArtistesAlbum as $key => $artiste) { ?>
-                            <a class="souligner" href="/artiste.php?idArtiste<?php echo $artiste['idartiste']; ?>">
+                            <a class="souligner" href="/artiste.php?idArtiste=<?php echo $artiste['idartiste']; ?>">
                                 <?php if ( !empty($artiste['nomscene']) ) {
                                     echo $artiste['nomscene'];
                                 } else {
