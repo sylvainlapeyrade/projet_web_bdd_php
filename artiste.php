@@ -20,10 +20,6 @@ if ( isset($db, $idArtiste) ) {
     $listeMusiquesArtiste = recuperer_musique_album_artiste($db, $idArtiste);
 }
 
-echo '<pre>';
-//var_dump($listeRecompensesArtiste);
-echo '</pre>';
-
 include_once(dirname(__FILE__).'/head.php');
 
 ?>
