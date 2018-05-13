@@ -79,8 +79,8 @@ if ( isset($db) ) {
                placeholder="Mot de passe"
                />
             
-        <input id="button" 
-               class="button button-red1 margin-center" 
+        <input id="bouton" 
+               class="bouton bouton-red1 margin-center" 
                type="submit" 
                name="action" 
                value="connexion"

@@ -49,10 +49,10 @@ include_once(dirname(__FILE__).'/../../head.php');
                         <td> <?php echo $artiste['prenomartiste']; ?> </td>
                         <td> <?php echo $artiste['nomscene']; ?> </td>
                         <td> <?php echo format_date($artiste['datenaissanceartiste']); ?> </td>
-                        <td class="button button-blue">
+                        <td class="bouton bouton-blue">
                             <a href="./formArtiste.php?idArtiste=<?php echo $artiste['idartiste'] ?>">Modifier</a>
                         </td>
-                        <td class="button button-red">
+                        <td class="bouton bouton-red">
                             <a href="./gestionArtiste.php?action=supprimerArtiste&idArtiste=<?php echo $artiste['idartiste'] ?>">Supprimer</a>
                         </td>
                     </tr>

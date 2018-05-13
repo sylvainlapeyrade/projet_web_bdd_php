@@ -1,11 +1,11 @@
 <div id="headerGestion" class="flex flex-row">
 
     <div class="t24">
-        <a href="./gestionRecompense.php" class="button">Gestion des récompenses</a>
+        <a href="./gestionRecompense.php" class="bouton">Gestion des récompenses</a>
     </div>
 
     <div>
-        <a href="formRecompense.php" class="button button-blue t12 button-header">Ajouter une récompense</a>
+        <a href="formRecompense.php" class="bouton bouton-blue t12 bouton-header">Ajouter une récompense</a>
     </div>
 
     <?php include_once(dirname(__FILE__).'/../headerMessage.php'); ?>

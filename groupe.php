@@ -39,7 +39,7 @@ include_once(dirname(__FILE__).'/head.php');
                        name="recherche"
                        placeholder="Artiste, groupe, album ou musique"
                        />
-                <input class="button" type="submit" value="Rechercher" />
+                <input class="bouton" type="submit" value="Rechercher" />
             </form>
         </div>
         <div id="page-groupe">

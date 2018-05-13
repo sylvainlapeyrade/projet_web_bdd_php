@@ -99,35 +99,35 @@ td {
     padding-left: 15px;
 }
 
-.button {
+.bouton {
     padding: 10px;
     border: none;
     cursor: pointer;
     text-transform: uppercase;
 }
 
-.button-blue {
+.bouton-blue {
     color: white;
     background: #1b8ee2;
 }
 
-.button-cyan {
+.bouton-cyan {
     color: white;
     background: #004ee2;
 }
 
 
-.button-red {
+.bouton-red {
     color: white;
     background: red;
 }
 
-.button-red1 {
+.bouton-red1 {
     color: white;
     background: #e8491d;
 }
 
-.button-green {
+.bouton-green {
     color: white;
     background: green;
 }
