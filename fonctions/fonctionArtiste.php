@@ -104,7 +104,7 @@ function recuperer_artiste($db, $idArtiste) {
  * @param $nomArtiste String nom de l'artiste
  * @param $prenomArtiste String prenom de l'artiste
  * @param $nomScene String Nom de scene de l'artiste
- * @param $dateNaissanceArtiste DateTime Date de naissance de l'artiste
+ * @param $dateNaissanceArtiste String Date de naissance de l'artiste
  * @param $urlImageArtiste String URL dune image de l'artiste
  * @param $descriptionArtiste String Description de l'artiste
  * @return True si la requête s'est bien exécutée | False Sinon
@@ -131,7 +131,7 @@ VALUES(:nomArtiste, :prenomArtiste, :nomScene, :dateNaissanceArtiste, :urlImageA
  * @param $nomArtiste String nom de l'artiste
  * @param $prenomArtiste String prenom de l'artiste
  * @param $nomScene String Nom de scene de l'artiste
- * @param $dateNaissanceArtiste DateTime Date de naissance de l'artiste
+ * @param $dateNaissanceArtiste String Date de naissance de l'artiste
  * @param $urlImageArtiste String URL dune image de l'artiste
  * @param $descriptionArtiste String Description de l'artiste
  * @return True si la requête s'est bien exécutée | False Sinon

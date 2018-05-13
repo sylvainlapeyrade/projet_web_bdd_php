@@ -66,7 +66,7 @@ function recuperer_album($db, $idAlbum) {
  * avec un id, un mdp et un statut
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $nomAlbum String Nom de l'album
- * @param $dateAlbum DateTime Date de sortie de l'album
+ * @param $dateAlbum String Date de sortie de l'album
  * @param $descriptionAlbum String Desciption de l'album
  * @param $urlPochetteAlbum String URL de la jaquette de l'album
  * @return int L'id de la recompense si la requête s'est bien exécutée | Null sinon
@@ -92,7 +92,7 @@ function ajouter_album($db, $nomAlbum, $dateAlbum, $descriptionAlbum, $urlPochet
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idAlbum Int Identifiant de l'album
  * @param $nomAlbum String Nom de l'album
- * @param $dateAlbum DateTime Date de sortie de l'album
+ * @param $dateAlbum String Date de sortie de l'album
  * @param $descriptionAlbum String Desciption de l'album
  * @param $urlPochetteAlbum String URL de la jaquette de l'album
  * @return True si la requête s'est bien exécutée | False sinon

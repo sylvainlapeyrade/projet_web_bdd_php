@@ -38,7 +38,7 @@ function recupere_recompense($db, $idRecompense) {
  * date d'attribution, et une description de la récompense
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $nomRecompense String Nom de la récompense
- * @param $dateRecompense DateTime Date d'attribution de la récompense
+ * @param $dateRecompense String Date d'attribution de la récompense
  * @param $descriptionRecompense String Description de la récompense
  * @return Int idRecompense si la requête s'est bien exécutée | Null Sinon
  */
@@ -62,7 +62,7 @@ function ajouter_recompense($db, $nomRecompense, $dateRecompense, $descriptionRe
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idRecompense Int Identifiant de la récompense
  * @param $nomRecompense String Nom de la récompense
- * @param $dateRecompense DateTime Date d'attribution de la récompense
+ * @param $dateRecompense String Date d'attribution de la récompense
  * @param $descriptionRecompense String Description de la récompense
  * @return True si la requête s'est bien exécutée | False Sinon
  */

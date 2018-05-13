@@ -54,7 +54,7 @@ function recuperer_musique($db, $idMusique) {
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $titreMusique String titre de la musique
  * @param $dureeMusique Int duree de la musique
- * @param $dateMusique DateTime Date de sorite de la musique
+ * @param $dateMusique String Date de sorite de la musique
  * @param $descriptionMusique String Description de la musique
  * @return Int idMusique si la requête s'est bien exécutée | Null Sinon
  */
@@ -80,7 +80,7 @@ function ajouter_musique($db, $titreMusique, $dureeMusique, $dateMusique, $descr
  * @param $idMusique Int Identifiant de la musique
  * @param $titreMusique String titre de la musique
  * @param $dureeMusique Int duree de la musique
- * @param $dateMusique DateTime Date de sorite de la musique
+ * @param $dateMusique String Date de sorite de la musique
  * @param $descriptionMusique String Description de la musique
  * @return True si la requête s'est bien exécutée | False Sinon
  */

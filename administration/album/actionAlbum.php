@@ -50,7 +50,7 @@ if ( isset($db) ) {
                     $operationOk = ajouter_composer_album($db, $idAlbumCoAl, $idArtisteCoAl);
                     $indiceListe++;
                 } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
-                if ( !operationOk ) {
+                if ( !$operationOk ) {
                     $erreur = $messages['operation']['ko']." (2)";
                     break;
                 }
@@ -81,7 +81,7 @@ if ( isset($db) ) {
             }
             if ( isset($db) ) {
                 $operationOk = modifier_album($db, $idAlbum, $nomAlbum, $dateAlbum, $descriptionAlbum, $urlPochetteAlbum);
-                if ( !operationOk ) {
+                if ( !$operationOk ) {
                     $erreur = $messages['operation']['ko']." (1)";
                     break;
                 }

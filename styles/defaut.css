@@ -3,7 +3,7 @@ body {
     min-width: 1250px;
     font-family: hurme_no2-webfont, sans-serif;
     background: url('/images/background.jpg');
-    background-position: 0px -370px;
+    background-position: 0 -370px;
     background-repeat: no-repeat;
     background-color: black;
     color: white;
@@ -12,7 +12,7 @@ body {
 @media only screen and (max-width: 1280px) {
     body {
         min-width: 800px;
-        background-position: 0px -350px;
+        background-position: 0 -350px;
     }
 }
 

@@ -7,7 +7,7 @@ if ( isset($action) && !empty($action) ) {
     $dureeMusique = $_GET['dureeMusique'];
     $dateMusique = format_date($_GET['dateMusique']);
     $descriptionMusique = $_GET['descriptionMusique'];
-    
+
     foreach($_GET as $key => $value) {
         if ( strstr($key, 'idArtiste') ) {
             $listeIdArtiste[] = (int) $value;
@@ -91,26 +91,29 @@ if ( isset($db) ) {
             }
             if ( isset($db) ) {
                 $operationOk = modifier_musique($db, $idMusique, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique);
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']. " (1)";
+                if (!$operationOk) {
+                    $erreur = $messages['operation']['ko'] . " (1)";
                     break;
                 }
                 $operationOk = supprimer_genre_tous($db, $idMusique);
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']. " (2)";
+                if (!$operationOk) {
+                    $erreur = $messages['operation']['ko'] . " (2)";
                     break;
                 }
                 $operationOk = supprimer_composer_musique_tous($db, $idMusique);
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']. " (3)";
+                if (!$operationOk) {
+                    $erreur = $messages['operation']['ko'] . " (3)";
                     break;
                 }
                 $indiceListe = 0;
-                do {
-                    $idArtisteCoMu = (int) $listeIdArtiste[$indiceListe];
-                    $operationOk = ajouter_composer_musique($db, $idMusique, $idArtisteCoMu);
-                    $indiceListe++;
-                } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
+                if (isset($listeIdArtiste)) {
+                    do {
+                        $idArtisteCoMu = (int)$listeIdArtiste[$indiceListe];
+                        $operationOk = ajouter_composer_musique($db, $idMusique, $idArtisteCoMu);
+                        $indiceListe++;
+                    }
+                    while ($operationOk && $indiceListe < sizeof($listeIdArtiste)) ;
+                }
                 if ( !$operationOk ) {
                     $erreur = $messages['operation']['ko']. " (4)";
                     break;
@@ -129,7 +132,7 @@ if ( isset($db) ) {
                 }
                 header('Location: ./gestionMusique.php?operation=ok');
             }
-        break;
+            break;
 
         case "supprimerMusique":
             /*

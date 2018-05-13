@@ -38,7 +38,7 @@ function recuperer_groupe($db, $idGroupe) {
  * une description et l'URL de la jaquette du groupe
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $nomGroupe String Nom du groupe
- * @param $dateGroupe DateTime Date de création du groupe
+ * @param $dateGroupe String Date de création du groupe
  * @param $descriptionGroupe String Description du groupe
  * @param $urlImageGroupe String URL de la jaquette du groupe
  * @return Int idGroupe si la requête s'est bien exécutée | Null Sinon
@@ -64,7 +64,7 @@ function ajouter_groupe($db, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlIm
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idGroupe Int Identifiant du groupe
  * @param $nomGroupe String Nom du groupe
- * @param $dateGroupe DateTime Date de création du groupe
+ * @param $dateGroupe String Date de création du groupe
  * @param $descriptionGroupe String Description du groupe
  * @param $urlImageGroupe String URL de la jaquette du groupe
  * @return True si la requête s'est bien exécutée | False Sinon
