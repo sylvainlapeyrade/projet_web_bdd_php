@@ -78,11 +78,13 @@ include_once(dirname(__FILE__).'/head.php');
                                     <th class="table-head width-150">Durée</th>
                                 </tr>
                                 <?php if ( !empty($listeMusiquesAlbum) ) { ?>
-                                    <tr class="table-lign">
-                                        <td>Piste n°1</td>
-                                        <td><a>De retour</a></td>
-                                        <td>3:30</td>
-                                    </tr>
+                                    <?php foreach($listeMusiquesAlbum as $musique) { ?>
+                                        <tr class="table-lign">
+                                            <td> Piste n°<?php echo $musique['numeropiste']; ?> </td>
+                                            <td><a class="souligner" href="/musique.php?idMusique=<?php echo $musique['idmusique']; ?>"> <?php echo $musique['titremusique']; ?> </a></td>
+                                            <td> <?php echo format_duree($musique['dureemusique']); ?> </td>
+                                        </tr>
+                                    <?php } ?>
                                 <?php } ?>
                             </table>
                             
