@@ -12,11 +12,12 @@
  * @return array Association des musique et de leur compositeur
  */
 function recuperer_musique_artiste($db, $idArtiste) {
-  $req = $db->prepare("SELECT * FROM Composer_Musique, Musique WHERE Composer_Musique.idArtisteCoMu=:idArtiste AND Composer_Musique.idMusiqueCoMu = Musique.idMusique;");
-  $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
-  $req->execute();
-  $res = $req->fetchAll();
-  return $res;
+    $req = $db->prepare("SELECT * FROM Composer_Musique, Musique WHERE Composer_Musique.idArtisteCoMu=:idArtiste 
+AND Composer_Musique.idMusiqueCoMu = Musique.idMusique;");
+    $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
+    $req->execute();
+    $res = $req->fetchAll();
+    return $res;
 }
 
 /**
@@ -26,11 +27,12 @@ function recuperer_musique_artiste($db, $idArtiste) {
  * @return array Association des albums et de leur compositeur
  */
 function recuperer_groupe_artiste($db, $idArtiste) {
-  $req = $db->prepare("SELECT * FROM Constituer, Groupe WHERE Constituer.idArtisteCo=:idArtiste AND Groupe.idGroupe=Constituer.idGroupeCo;");
-  $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
-  $req->execute();
-  $res = $req->fetchAll();
-  return $res;
+    $req = $db->prepare("SELECT * FROM Constituer, Groupe WHERE Constituer.idArtisteCo=:idArtiste 
+AND Groupe.idGroupe=Constituer.idGroupeCo;");
+    $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
+    $req->execute();
+    $res = $req->fetchAll();
+    return $res;
 }
 
 /**
@@ -40,11 +42,12 @@ function recuperer_groupe_artiste($db, $idArtiste) {
  * @return array Association des récompense et de leur artistes
  */
 function recuperer_recompense_artiste($db, $idArtiste) {
-  $req = $db->prepare("SELECT * FROM Obtenir_Artiste, Recompense WHERE Obtenir_Artiste.idArtisteOa=:idArtiste AND Obtenir_Artiste.idRecompenseOa=recompense.idRecompense;");
-  $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
-  $req->execute();
-  $res = $req->fetchAll();
-  return $res;
+    $req = $db->prepare("SELECT * FROM Obtenir_Artiste, Recompense WHERE Obtenir_Artiste.idArtisteOa=:idArtiste 
+AND Obtenir_Artiste.idRecompenseOa=recompense.idRecompense;");
+    $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
+    $req->execute();
+    $res = $req->fetchAll();
+    return $res;
 }
 
 /**
@@ -54,15 +57,15 @@ function recuperer_recompense_artiste($db, $idArtiste) {
  * @return array Association des musique et de leur artistes et des albums
  */
 function recuperer_musique_album_artiste($db, $idArtiste) {
-  $req = $db->prepare("SELECT * FROM Musique, Composer_Musique, Assembler_Album, Album
+    $req = $db->prepare("SELECT * FROM Musique, Composer_Musique, Assembler_Album, Album
 	WHERE Composer_Musique.idArtisteCoMu=:idArtiste
 	AND Composer_Musique.idMusiqueCoMu = Musique.idMusique
 	AND Assembler_Album.idMusiqueAa = Musique.idMusique
 	AND Assembler_Album.idAlbumAa = Album.idAlbum;");
-  $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
-  $req->execute();
-  $res = $req->fetchAll();
-  return $res;
+    $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
+    $req->execute();
+    $res = $req->fetchAll();
+    return $res;
 }
 
 /**
@@ -104,10 +107,11 @@ function recuperer_artiste($db, $idArtiste) {
  * @param $dateNaissanceArtiste DateTime Date de naissance de l'artiste
  * @param $urlImageArtiste String URL dune image de l'artiste
  * @param $descriptionArtiste String Description de l'artiste
- * @return True si la requete s'est bien exécutée | False Sinon
+ * @return True si la requête s'est bien exécutée | False Sinon
  */
 function ajouter_artiste($db, $nomArtiste, $prenomArtiste, $nomScene, $dateNaissanceArtiste,  $urlImageArtiste, $descriptionArtiste) {
-    $req = $db->prepare("INSERT INTO Artiste(nomArtiste, prenomArtiste, nomScene, dateNaissanceArtiste, urlImageArtiste, descriptionArtiste) VALUES(:nomArtiste, :prenomArtiste, :nomScene, :dateNaissanceArtiste, :urlImageArtiste, :descriptionArtiste);");
+    $req = $db->prepare("INSERT INTO Artiste(nomArtiste, prenomArtiste, nomScene, dateNaissanceArtiste, urlImageArtiste, descriptionArtiste) 
+VALUES(:nomArtiste, :prenomArtiste, :nomScene, :dateNaissanceArtiste, :urlImageArtiste, :descriptionArtiste);");
     $req->bindParam(':nomArtiste', $nomArtiste, PDO::PARAM_STR);
     $req->bindParam(':prenomArtiste', $prenomArtiste, PDO::PARAM_STR);
     $req->bindParam(':nomScene', $nomScene, PDO::PARAM_STR);
@@ -119,7 +123,7 @@ function ajouter_artiste($db, $nomArtiste, $prenomArtiste, $nomScene, $dateNaiss
 }
 
 /**
- * Modifier un artiste existant dans la BDD avec un
+ * Modifie un artiste existant dans la BDD avec un
  * nom, prénom, nom de scéne, date de naissance, url d'une image
  * et une description de l'artiste.
  * @param $db PDO Instance PDO de connexion à la BDD
@@ -130,10 +134,12 @@ function ajouter_artiste($db, $nomArtiste, $prenomArtiste, $nomScene, $dateNaiss
  * @param $dateNaissanceArtiste DateTime Date de naissance de l'artiste
  * @param $urlImageArtiste String URL dune image de l'artiste
  * @param $descriptionArtiste String Description de l'artiste
- * @return True si la requete s'est bien exécutée | False Sinon
+ * @return True si la requête s'est bien exécutée | False Sinon
  */
 function modifier_artiste($db, $idArtiste, $nomArtiste, $prenomArtiste, $nomScene, $dateNaissanceArtiste,  $urlImageArtiste, $descriptionArtiste) {
-    $req = $db->prepare("UPDATE Artiste SET nomArtiste=:nomArtiste, prenomArtiste=:prenomArtiste, nomScene=:nomScene, dateNaissanceArtiste=:dateNaissanceArtiste, urlImageArtiste=:urlImageArtiste, descriptionArtiste=:descriptionArtiste WHERE idArtiste=:idArtiste;");
+    $req = $db->prepare("UPDATE Artiste SET nomArtiste=:nomArtiste, prenomArtiste=:prenomArtiste, 
+nomScene=:nomScene, dateNaissanceArtiste=:dateNaissanceArtiste, urlImageArtiste=:urlImageArtiste, 
+descriptionArtiste=:descriptionArtiste WHERE idArtiste=:idArtiste;");
     $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
     $req->bindParam(':nomArtiste', $nomArtiste, PDO::PARAM_STR);
     $req->bindParam(':prenomArtiste', $prenomArtiste, PDO::PARAM_STR);
@@ -147,27 +153,33 @@ function modifier_artiste($db, $idArtiste, $nomArtiste, $prenomArtiste, $nomScen
 
 /**
  * Supprime un artiste de la BDD
- * spécifier par l'identifiant 'idArtiste'.
+ * spécifié par l'identifiant 'idArtiste'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idArtiste Int Identifiant de l'artiste
- * @return True si la suppression s'est bien exécutée | False Sinon
+ * @return True si toutes les suppression se sont bien exécutées | False Sinon
  */
 function supprimer_artiste($db, $idArtiste) {
-    $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
-
     $req = $db->prepare("DELETE FROM Composer_Musique WHERE idArtisteCoMu=:idArtiste;");
     $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
     $reqOk = $req->execute();
+
     $req = $db->prepare("DELETE FROM Composer_Album WHERE idArtisteCoAl=:idArtiste;");
     $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
-    $reqOk = $req->execute();
+    if($reqOk != False){
+        $reqOk = $req->execute();
+    }
+
     $req = $db->prepare("DELETE FROM Obtenir_Artiste WHERE idArtisteOa=:idArtiste;");
     $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
-    $reqOk = $req->execute();
-    
+    if($reqOk != False){
+        $reqOk = $req->execute();
+    }
+
     $req = $db->prepare("DELETE FROM Artiste WHERE idArtiste=:idArtiste;");
     $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
-    $reqOk = $req->execute();
+    if($reqOk != False){
+        $reqOk = $req->execute();
+    }
     return $reqOk;
 }
 

@@ -18,6 +18,13 @@ function recuperer_recompense_tous($db) {
     return $res;
 }
 
+/***
+ * Récupère une récompense de la BDD
+ * spécifier par l'identifiant 'idRecompense'.
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idRecompense Int Identifiant de la récompense
+ * @return array La récompense correspondant à l'id
+ */
 function recupere_recompense($db, $idRecompense) {
     $req = $db->prepare("SELECT * FROM Recompense WHERE idRecompense=:idRecompense");
     $req->bindParam(':idRecompense', $idRecompense);
@@ -26,6 +33,15 @@ function recupere_recompense($db, $idRecompense) {
     return $res;
 }
 
+/**
+ * Ajoute une nouvelle récompense à la BDD avec un nom, une
+ * date d'attribution, et une description de la récompense
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $nomRecompense String Nom de la récompense
+ * @param $dateRecompense DateTime Date d'attribution de la récompense
+ * @param $descriptionRecompense String Description de la récompense
+ * @return Int idRecompense si la requête s'est bien exécutée | Null Sinon
+ */
 function ajouter_recompense($db, $nomRecompense, $dateRecompense, $descriptionRecompense) {
     $req = $db->prepare("INSERT INTO Recompense(nomRecompense, dateRecompense, descriptionRecompense)
       VALUES(:nomRecompense, :dateRecompense, :descriptionRecompense);");
@@ -40,6 +56,16 @@ function ajouter_recompense($db, $nomRecompense, $dateRecompense, $descriptionRe
     return null;
 }
 
+/**
+ * Modifie une récompense existante dans la BDD avec un nom, une
+ * date d'attribution, et une description de la récompense
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idRecompense Int Identifiant de la récompense
+ * @param $nomRecompense String Nom de la récompense
+ * @param $dateRecompense DateTime Date d'attribution de la récompense
+ * @param $descriptionRecompense String Description de la récompense
+ * @return True si la requête s'est bien exécutée | False Sinon
+ */
 function modifier_recompense($db, $idRecompense, $nomRecompense, $dateRecompense, $descriptionRecompense) {
     $req = $db->prepare("UPDATE Recompense SET nomRecompense=:nomRecompense, dateRecompense=:dateRecompense,
  descriptionRecompense=:descriptionRecompense WHERE idRecompense=:idRecompense;");
@@ -51,6 +77,13 @@ function modifier_recompense($db, $idRecompense, $nomRecompense, $dateRecompense
     return $reqOk;
 }
 
+/**
+ * Supprime une récompense de la BDD
+ * spécifier par l'identifiant 'idRecompense'.
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idRecompense Int Identifiant de la récompense
+ * @return True si la suppression s'est bien exécutée | False Sinon
+ */
 function supprimer_recompense($db, $idRecompense) {
     $req = $db->prepare("DELETE FROM Recompense WHERE idRecompense=:idRecompense;");
     $req->bindParam(':idRecompense', $idRecompense, PDO::PARAM_INT);
@@ -58,26 +91,46 @@ function supprimer_recompense($db, $idRecompense) {
     return $reqOk;
 }
 
-function recuperer_obtenir_recompense($db, $idRecompense) {
-    $req = $db->prepare("SELECT * FROM Obtenir_Artiste WHERE idRecompenseOa=:idRecompense");
-    $req->bindParam(':idRecompense', $idRecompense, PDO::PARAM_INT);
+/**
+ * Récupère les associations d'artistes et d'une récompense
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idRecompenseOa Int Identifiant de la récompense dans Obtenir_Artiste
+ * @return array Association d'artistes et d'une récompense
+ */
+function recuperer_obtenir_recompense($db, $idRecompenseOa) {
+    $req = $db->prepare("SELECT * FROM Obtenir_Artiste WHERE idRecompenseOa=:idRecompenseOa");
+    $req->bindParam(':idRecompenseOa', $idRecompenseOa, PDO::PARAM_INT);
     $req->execute();
     $res = $req->fetchAll();
     return $res;
 }
 
-function ajouter_obtenir_recompense($db, $idRecompense, $idArtiste) {
+/**
+ * Ajoute une association entre un artiste et une récompense
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idRecompenseOa Int Identifiant de la récompense dans Obtenir_Artiste
+ * @param $idArtisteOa Int Identifiant artiste dans Obtenir_Artiste
+ * @return True si la requête s'est bien exécutée | False sinon
+ */
+function ajouter_obtenir_recompense($db, $idRecompenseOa, $idArtisteOa) {
     $req = $db->prepare("INSERT INTO Obtenir_Artiste(idRecompenseOa, idArtisteOa)
       VALUES(:idRecompenseOa, :idArtisteOa);");
-    $req->bindParam(':idRecompenseOa', $idRecompense, PDO::PARAM_INT);
-    $req->bindParam(':idArtisteOa', $idArtiste, PDO::PARAM_INT);
+    $req->bindParam(':idRecompenseOa', $idRecompenseOa, PDO::PARAM_INT);
+    $req->bindParam(':idArtisteOa', $idArtisteOa, PDO::PARAM_INT);
     $reqOk = $req->execute();
     return $reqOk;
 }
 
-function supprimer_obtenir_recompense_tous($db, $idRecompense) {
-    $req = $db->prepare("DELETE FROM Obtenir_Artiste WHERE idRecompenseOa=:idRecompense;");
-    $req->bindParam(':idRecompense', $idRecompense, PDO::PARAM_INT);
+/**
+ * Supprime tous les artistes associées à une récompense
+ * spécifié par l'identifiant "idRecompense"
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idRecompenseOa Int Identifiant de la récompense dans Obtenir_Artiste
+ * @return True si la requête s'est bien exécutée | False sinon
+ */
+function supprimer_obtenir_recompense_tous($db, $idRecompenseOa) {
+    $req = $db->prepare("DELETE FROM Obtenir_Artiste WHERE idRecompenseOa=:idRecompenseOa;");
+    $req->bindParam(':idRecompenseOa', $idRecompenseOa, PDO::PARAM_INT);
     $reqOk = $req->execute();
     return $reqOk;
 }

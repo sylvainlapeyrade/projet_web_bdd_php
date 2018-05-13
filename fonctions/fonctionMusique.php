@@ -56,7 +56,7 @@ function recuperer_musique($db, $idMusique) {
  * @param $dureeMusique Int duree de la musique
  * @param $dateMusique DateTime Date de sorite de la musique
  * @param $descriptionMusique String Description de la musique
- * @return Int idMusique si la requete s'est bien exécutée | Null Sinon
+ * @return Int idMusique si la requête s'est bien exécutée | Null Sinon
  */
 function ajouter_musique($db, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique) {
   $req = $db->prepare("INSERT INTO Musique(titreMusique, dureeMusique, dateMusique, descriptionMusique)
@@ -74,7 +74,7 @@ function ajouter_musique($db, $titreMusique, $dureeMusique, $dateMusique, $descr
 }
 
 /**
- * Modifier une musique existante dans la BDD avec un titre, duree,
+ * Modifie une musique existante dans la BDD avec un titre, duree,
  * date de sortie et une description de la musique.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusique Int Identifiant de la musique
@@ -82,7 +82,7 @@ function ajouter_musique($db, $titreMusique, $dureeMusique, $dateMusique, $descr
  * @param $dureeMusique Int duree de la musique
  * @param $dateMusique DateTime Date de sorite de la musique
  * @param $descriptionMusique String Description de la musique
- * @return True si la requete s'est bien exécutée | False Sinon
+ * @return True si la requête s'est bien exécutée | False Sinon
  */
 function modifier_musique($db, $idMusique, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique) {
   $req = $db->prepare("UPDATE Musique SET titreMusique=:titreMusique, dureeMusique=:dureeMusique, dateMusique=:dateMusique, descriptionMusique=:descriptionMusique WHERE idMusique=:idMusique;");
@@ -97,7 +97,7 @@ function modifier_musique($db, $idMusique, $titreMusique, $dureeMusique, $dateMu
 
 /**
  * Supprime une musique de la BDD
- * spécifier par l'identifiant 'idMusique'.
+ * spécifiée par l'identifiant 'idMusique'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusique Int Identifiant de la musique
  * @return True si la suppression s'est bien exécutée | False Sinon
@@ -128,7 +128,7 @@ function recuperer_composer_musique($db, $idMusiqueCoMu) {
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusiqueCoMu Int Identifiant musique dans Composer_Musique
  * @param $idArtisteCoMu Int Identifiant artiste dans Composer_Musique
- * @return True si la requete s'est bien exécutée | False sinon
+ * @return True si la requête s'est bien exécutée | False sinon
  */
 function ajouter_composer_musique($db, $idMusiqueCoMu, $idArtisteCoMu) {
   $req = $db->prepare("INSERT INTO Composer_Musique(idMusiqueCoMu, idArtisteCoMu)
@@ -144,7 +144,7 @@ function ajouter_composer_musique($db, $idMusiqueCoMu, $idArtisteCoMu) {
  * spécifié par l'identifiant 'idAlbumCoAl'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusiqueCoMu Int Identifiant album dans Composer_Musique
- * @return True si la requete s'est bien exécutée | False sinon
+ * @return True si la requête s'est bien exécutée | False sinon
  */
 function supprimer_composer_musique_tous($db, $idMusiqueCoMu) {
   $req = $db->prepare("DELETE FROM Composer_Musique WHERE idMusiqueCoMu=:idMusiqueCoMu;");

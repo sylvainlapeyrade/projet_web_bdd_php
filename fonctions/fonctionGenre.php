@@ -6,8 +6,8 @@
  */
 
 /***
- * Récupère les genre d'une musique
- * spécifier par l'identifiant 'idMusiqueDe'.
+ * Récupère les genres d'une musique
+ * spécifiés par l'identifiant 'idMusiqueDe'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusiqueDe Int Identifiant de la musique
  * @return array L'ensemble des genres de la musique
@@ -26,7 +26,7 @@ function recuperer_genre($db, $idMusiqueDe) {
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusique Int Identifiant de la musique
  * @param $nomGenre String Nom du genre
- * @return Int idMusique si la requete s'est bien exécutée | Null Sinon
+ * @return Int idMusique si la requête s'est bien exécutée | Null Sinon
  */
 function ajouter_genre($db, $idMusique, $nomGenre) {
   $req = $db->prepare("INSERT INTO Definir(idMusiqueDe, nomGenre)
@@ -42,7 +42,7 @@ function ajouter_genre($db, $idMusique, $nomGenre) {
  * spécifié par l'identifiant 'idMusiqueDe'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusiqueDe Int Identifiant musique dans Definir
- * @return True si la requete s'est bien exécutée | False sinon
+ * @return True si la requête s'est bien exécutée | False sinon
  */
 function supprimer_genre_tous($db, $idMusiqueDe) {
   $req = $db->prepare("DELETE FROM Definir WHERE idMusiqueDe=:idMusiqueDe;");

@@ -41,7 +41,7 @@ function recuperer_groupe($db, $idGroupe) {
  * @param $dateGroupe DateTime Date de création du groupe
  * @param $descriptionGroupe String Description du groupe
  * @param $urlImageGroupe String URL de la jaquette du groupe
- * @return Int idRecompense si la requete s'est bien exécutée | Null Sinon
+ * @return Int idGroupe si la requête s'est bien exécutée | Null Sinon
  */
 function ajouter_groupe($db, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe) {
     $req = $db->prepare("INSERT INTO Groupe(nomGroupe, dateGroupe, descriptionGroupe, urlImageGroupe)
@@ -52,14 +52,14 @@ function ajouter_groupe($db, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlIm
     $req->bindParam(':urlImageGroupe', $urlImageGroupe, PDO::PARAM_STR);
     $reqOk = $req->execute();
     if ( $reqOk ) {
-        $idRecompense = $db->lastInsertId();
-        return $idRecompense;
+        $idGroupe = $db->lastInsertId();
+        return $idGroupe;
     }
     return null;
 }
 
 /**
- * Modifier un groupe existant dans la BDD avec un nom, une date de création,
+ * Modifie un groupe existant dans la BDD avec un nom, une date de création,
  * une description et l'URL de la jaquette du groupe
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idGroupe Int Identifiant du groupe
@@ -67,7 +67,7 @@ function ajouter_groupe($db, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlIm
  * @param $dateGroupe DateTime Date de création du groupe
  * @param $descriptionGroupe String Description du groupe
  * @param $urlImageGroupe String URL de la jaquette du groupe
- * @return True si la requete s'est bien exécutée | False Sinon
+ * @return True si la requête s'est bien exécutée | False Sinon
  */
 function modifier_groupe($db, $idGroupe, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe) {
     $req = $db->prepare("UPDATE Groupe SET nomGroupe=:nomGroupe, dateGroupe=:dateGroupe, 
@@ -83,7 +83,7 @@ descriptionGroupe=:descriptionGroupe, urlImageGroupe=:urlImageGroupe WHERE idGro
 
 /**
  * Supprime un groupe de la BDD
- * spécifier par l'identifiant 'idGroupe'.
+ * spécifié par l'identifiant 'idGroupe'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idGroupe Int Identifiant du groupe
  * @return True si la suppression s'est bien exécutée | False Sinon
@@ -114,7 +114,7 @@ function recuperer_constituer_groupe($db, $idGroupeCo) {
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idGroupeCo Int Identifiant groupe dans Constituer
  * @param $idArtisteCo Int Identifiant artiste dans Constituer
- * @return True si la requete s'est bien exécutée | False sinon
+ * @return True si la requête s'est bien exécutée | False sinon
  */
 function ajouter_constituer_groupe($db, $idGroupeCo, $idArtisteCo) {
     $req = $db->prepare("INSERT INTO Constituer(idGroupeCo, idArtisteCo)
@@ -130,7 +130,7 @@ function ajouter_constituer_groupe($db, $idGroupeCo, $idArtisteCo) {
  * l'identifiant "idGroupeCo"
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idGroupeCo Int Identifiant groupe dans Constituer
- * @return True si la requete s'est bien exécutée | False sinon
+ * @return True si la requête s'est bien exécutée | False sinon
  */
 function supprimer_constituer_groupe_tous($db, $idGroupeCo) {
     $req = $db->prepare("DELETE FROM Constituer WHERE idGroupeCo=:idGroupeCo;");
