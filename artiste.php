@@ -124,11 +124,11 @@ include_once(dirname(__FILE__).'/head.php');
                         <?php if ( !empty($listeMusiquesArtiste) ) { ?>
                             <?php foreach($listeMusiquesArtiste as $musique) { ?>
                                 <tr class="table-lign">
-                                    <td class=""><a> <?php echo $musique['titremusique']; ?> </a></td>
+                                    <td><a class="souligner" href="/musique.php?idMusique=<?php echo $musique['idmusique']; ?>"> <?php echo $musique['titremusique']; ?> </a></td>
                                     <td> <?php echo format_duree($musique['dureemusique']); ?> </td>
                                     <td> <?php echo $musique['datemusique']; ?></td>
                                     <td> - </td>
-                                    <td><a> <?php echo $musique['nomalbum']; ?> </a></td>
+                                    <td><a class="souligner" href="/album.php?idAlbum=<?php echo $musique['idalbum']; ?>"> <?php echo $musique['nomalbum']; ?> </a></td>
                                     <td> <?php echo $musique['descriptionmusique']; ?> </td>
                                 </tr>
                             <?php } ?>
