@@ -44,7 +44,7 @@ include_once(dirname(__FILE__).'/head.php');
         </div>
         <div id="page-artiste">
             <!-- Présentation de l'artiste -->
-            <div class="flex">
+            <div class="flex flex-between">
                 <div id="description-artiste" class="flex-around">
                     <div>
                         <h1 class="red1">
@@ -70,7 +70,7 @@ include_once(dirname(__FILE__).'/head.php');
                                     <a class="souligner" href="/groupe.php?idGroupe=<?php echo $groupe['idgroupe']; ?>">
                                         <?php echo $groupe['nomgroupe']; ?>
                                     </a>
-                                    <?php if ( $key <= sizeof($listeArtistesAlbum) ) { echo ' - '; } ?>
+                                    <?php if ( sizeof($listeGroupesArtiste) > 1 && sizeof($listeGroupesArtiste)-1 > $key ) { echo '&nbsp-&nbsp'; } ?>
                                 <?php } ?>
                             <?php } ?>
                         </p>

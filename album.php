@@ -45,7 +45,7 @@ include_once(dirname(__FILE__).'/head.php');
         
         <!-- Présentation de l'album -->
         <div id="page-album">
-            <div class="flex">
+            <div class="flex flex-between">
                 <div id="description-album" class="flex-around">
                     
                     <div>
@@ -57,14 +57,14 @@ include_once(dirname(__FILE__).'/head.php');
                         <p>
                             Il a été composé par:
                             <?php foreach($listeArtistesAlbum as $key => $artiste) { ?>
-                            <a class="souligner" href="/artiste.php?idArtiste=<?php echo $artiste['idartiste']; ?>">
-                                <?php if ( !empty($artiste['nomscene']) ) {
-                                    echo $artiste['nomscene'];
-                                } else {
-                                    echo $artiste['nomartiste'].' '.$artiste['prenomartiste'];
-                                } ?>
-                            </a>
-                            <?php if ( sizeof($listeArtistesAlbum) > 1 && sizeof($listeArtistesAlbum)-1 > $key ) { echo ' - '; } ?>
+                                <a class="souligner" href="/artiste.php?idArtiste=<?php echo $artiste['idartiste']; ?>">
+                                    <?php if ( !empty($artiste['nomscene']) ) {
+                                        echo $artiste['nomscene'];
+                                    } else {
+                                        echo $artiste['nomartiste'].' '.$artiste['prenomartiste'];
+                                    } ?>
+                                </a>
+                                <?php if ( sizeof($listeArtistesAlbum) > 1 && sizeof($listeArtistesAlbum)-1 > $key ) { echo '&nbsp-&nbsp'; } ?>
                             <?php } ?>
                         </p>
                     </div>

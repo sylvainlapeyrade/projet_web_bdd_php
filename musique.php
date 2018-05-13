@@ -20,7 +20,6 @@ if ( isset($db, $idMusique) ) {
     header('Location: /index.php');
 }
 
-
 include_once(dirname(__FILE__).'/head.php');
 
 ?>
@@ -45,7 +44,7 @@ include_once(dirname(__FILE__).'/head.php');
         
         <!-- Présentation de la musique -->
         <div id="page-musique">
-            <div class="flex">
+            <div class="flex flex-between">
                 <div id="description-album" class="flex-around">
                     <div>
                         <h1 class="red1"><?php echo $musique['titremusique']; ?> - <?php echo $musique['datemusique']; ?></h1>
@@ -67,7 +66,7 @@ include_once(dirname(__FILE__).'/head.php');
                                             echo $artiste['nomartiste'].' '.$artiste['prenomartiste'];
                                         } ?>
                                     </a>
-                                    <?php if ( sizeof($listeArtistesMusique) > 1 && sizeof($listeArtistesMusique)-1 > $key ) { echo ' - '; } ?>
+                                    <?php if ( sizeof($listeArtistesMusique) > 1 && sizeof($listeArtistesMusique)-1 > $key ) { echo '&nbsp-&nbsp'; } ?>
                                 <?php } ?>
                             <?php } ?>
                         </div>
