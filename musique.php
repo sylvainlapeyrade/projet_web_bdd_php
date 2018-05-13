@@ -16,6 +16,8 @@ if ( isset($db, $idMusique) ) {
         header('Location: /index.php');
     }
     $listeArtistesMusique = recuperer_artiste_musique($db, $idMusique);
+} else {
+    header('Location: /index.php');
 }
 
 

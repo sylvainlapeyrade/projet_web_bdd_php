@@ -17,6 +17,8 @@ if ( isset($db, $idAlbum) ) {
     }
     $listeArtistesAlbum = recuperer_artiste_album($db, $idAlbum);
     $listeMusiquesAlbum = recuperer_musique_album($db, $idAlbum);
+} else {
+    header('Location: /index.php');
 }
 
 include_once(dirname(__FILE__).'/head.php');

@@ -18,6 +18,8 @@ if ( isset($db, $idArtiste) ) {
     $listeGroupesArtiste = recuperer_groupe_artiste($db, $idArtiste);
     $listeRecompensesArtiste = recuperer_recompense_artiste($db, $idArtiste);
     $listeMusiquesArtiste = recuperer_musique_album_artiste($db, $idArtiste);
+} else {
+    header('Location: /index.php');
 }
 
 include_once(dirname(__FILE__).'/head.php');
