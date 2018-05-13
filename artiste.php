@@ -30,8 +30,9 @@ include_once(dirname(__FILE__).'/head.php');
 
 <main>
     <section>
+        
         <div id="barre-recherche">
-            <form class="flex flex-center item-center">
+            <form class="flex flex-center item-center" action="/recherche.php" method="get">
                 <span class="t20">Nouvelle recherche : </span>
                 <input id="input-recherche"
                        type="text"
@@ -42,6 +43,7 @@ include_once(dirname(__FILE__).'/head.php');
                 <input class="bouton" type="submit" value="Rechercher" />
             </form>
         </div>
+        
         <div id="page-artiste">
             <!-- Présentation de l'artiste -->
             <div class="flex flex-between">
@@ -139,7 +141,9 @@ include_once(dirname(__FILE__).'/head.php');
                     
                 </div>
             </div>
+            
         </div>
+        
     </section>
 </main>
 

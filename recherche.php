@@ -27,6 +27,21 @@ include_once(dirname(__FILE__).'/head.php');
 
 <main>
     <section>
+        
+        <div id="barre-recherche">
+            <form class="flex flex-center item-center" action="/recherche.php" method="get">
+                <span class="t20">Nouvelle recherche : </span>
+                <input id="input-recherche"
+                       type="text"
+                       class="width-500"
+                       name="recherche"
+                       placeholder="Artiste, groupe, album ou musique"
+                       value="<?php echo $recherche; ?>"
+                       />
+                <input class="bouton" type="submit" value="Rechercher" />
+            </form>
+        </div>
+        
         <div id="page-resultat-recherche">
             <?php if ( !empty($listeArtistesRecherche) ) { ?>
                 <div>
@@ -106,10 +121,8 @@ include_once(dirname(__FILE__).'/head.php');
                 </div>
                 <hr color="white" size="2">
             <?php } ?>
-            
-            
-            
         </div>
+
     </section>
 </main>
 
