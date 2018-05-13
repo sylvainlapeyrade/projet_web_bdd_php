@@ -62,7 +62,7 @@ include_once(dirname(__FILE__).'/head.php');
                                     echo $artiste['nomartiste'].' '.$artiste['prenomartiste'];
                                 } ?>
                             </a>
-                            <?php if ( $key != sizeof($listeArtistesAlbum)-1 ) { echo ' - '; } ?>
+                            <?php if ( sizeof($listeArtistesAlbum) > 1 && sizeof($listeArtistesAlbum)-1 > $key ) { echo ' - '; } ?>
                             <?php } ?>
                         </p>
                     </div>
