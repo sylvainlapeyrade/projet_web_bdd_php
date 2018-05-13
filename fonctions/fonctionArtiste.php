@@ -9,10 +9,56 @@
  * Recupere les musiques d'un artiste avec leur numero de piste
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idArtiste Int Identifiant artiste dans Assembler_Album
- * @return array Association des albums et de leur compositeur
+ * @return array Association des musique et de leur compositeur
  */
 function recuperer_musique_artiste($db, $idArtiste) {
   $req = $db->prepare("SELECT * FROM Composer_Musique, Musique WHERE Composer_Musique.idArtisteCoMu=:idArtiste AND Composer_Musique.idMusiqueCoMu = Musique.idMusique;");
+  $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
+  $req->execute();
+  $res = $req->fetchAll();
+  return $res;
+}
+
+/**
+ * Recupere les groupes d'un artiste
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idArtiste Int Identifiant artiste dans Assembler_Album
+ * @return array Association des albums et de leur compositeur
+ */
+function recuperer_groupe_artiste($db, $idArtiste) {
+  $req = $db->prepare("SELECT * FROM Constituer, Groupe WHERE Constituer.idArtisteCo=:idArtiste AND Groupe.idGroupe=Constituer.idGroupeCo;");
+  $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
+  $req->execute();
+  $res = $req->fetchAll();
+  return $res;
+}
+
+/**
+ * Recupere les recompense d'un artiste
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idArtiste Int Identifiant artiste dans Assembler_Album
+ * @return array Association des récompense et de leur artistes
+ */
+function recuperer_recompense_artiste($db, $idArtiste) {
+  $req = $db->prepare("SELECT * FROM Obtenir_Artiste, Recompense WHERE Obtenir_Artiste.idArtisteOa=:idArtiste AND Obtenir_Artiste.idRecompenseOa=recompense.idRecompense;");
+  $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
+  $req->execute();
+  $res = $req->fetchAll();
+  return $res;
+}
+
+/**
+ * Recupere les musique d'un artiste ainsi que les albums associés
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idArtiste Int Identifiant artiste dans Assembler_Album
+ * @return array Association des musique et de leur artistes et des albums
+ */
+function recuperer_musique_album_artiste($db, $idArtiste) {
+  $req = $db->prepare("SELECT * FROM Musique, Composer_Musique, Assembler_Album, Album
+	WHERE Composer_Musique.idArtisteCoMu=:idArtiste
+	AND Composer_Musique.idMusiqueCoMu = Musique.idMusique
+	AND Assembler_Album.idMusiqueAa = Musique.idMusique
+	AND Assembler_Album.idAlbumAa = Album.idAlbum;");
   $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
   $req->execute();
   $res = $req->fetchAll();
