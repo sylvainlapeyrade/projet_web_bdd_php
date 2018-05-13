@@ -19,7 +19,6 @@
 }
 
 #description-groupe {
-    border-right: 1px black solid;
     margin-right: 50px;
     padding-right: 10px;
     margin-top: 25px;
@@ -29,7 +28,15 @@
     margin: 10px;
     margin-top: 25px;
     border: 1px black solid;
-    height: 300px;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+@media only screen and (max-width: 1280px) {
+    #imageArtiste {
+        max-width: 200px;
+        max-height: 200px;
+    }
 }
 
 #liste-musiques {

@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 include_once(dirname(__FILE__).'/fonctions/variables.php');
 include_once(dirname(__FILE__).'/fonctions/fonctionCompte.php');
@@ -8,7 +9,20 @@ include_once(dirname(__FILE__).'/bdd/connexion.php');
 $info['head']['subTitle'] = "Page groupe";
 $info['head']['stylesheets'] = ['groupe.css'];
 
+$idGroupe = $_GET['idGroupe'];
+if ( isset($db, $idGroupe) ) {
+    $groupe = recuperer_groupe($db, $idGroupe)[0];
+    if ( empty($groupe) ) {
+        header('Location: /index.php');
+    }
+    $listeArtistesGroupe = recuperer_artiste_groupe($db, $idGroupe);
+    //$listeMusiqueGroupe = recuperer_musique_groupe($db, $idGroupe);
+} else {
+    header('Location: /index.php');
+}
+
 include_once(dirname(__FILE__).'/head.php');
+
 ?>
 
 <?php include_once(dirname(__FILE__).'/header.php'); ?>
@@ -30,41 +44,37 @@ include_once(dirname(__FILE__).'/head.php');
         </div>
         <div id="page-groupe">
             <!-- Présentation du groupe -->
-            <div class="flex">
+            <div class="flex flex-between">
                 <div id="description-groupe" class="flex-around">
                     <div>
-                        <h1 class="red1"><a>Nom_Groupe</a> - <a>Date_de_formation_init</a></h1>
+                        <h1 class="red1"><?php echo $groupe['nomgroupe']; ?> - <?php echo $groupe['dategroupe']; ?></h1>
                         <p>
-                            Ceci est la description du groupe<br>
-                            Linkup est un boys band français, aujourd'hui dissous, vainqueur de la troisième saison de Popstars (intitulée Popstars, le duel), une émission de télé-réalité musicale diffusée sur M6, en 2003. Il est composé de Matthieu Tota, Lionel Tim et Otis, qui succèdent ainsi aux L5 et aux Whatfor.<br>
-                            L'un des trois membres, Matthieu Tota, poursuit aujourd'hui une carrière solo sous le nom de M. Pokora.<br>
-                            <br>
+                            <?php echo $groupe['descriptiongroupe']; ?>
                         </p>
                     </div>
                     <div id="liste-membre" class="text-center flex flex-arround">
-                        <div>
-                            <h4>Composition du groupe</h4>
-                            <table class="text-center">
-                                <tr>
-                                    <th class="table-head width-250">Artiste</th>
-                                </tr>
-                                <tr class="table-lign">
-                                    <td><a>M.Pokora</a></td>
-                                </tr>
-                                <tr class="table-lign">
-                                    <td><a>Lionel Tim</ a></td>
-                                </tr>
-                                <tr class="table-lign">
-                                    <td><a>Ostis</a></td>
-                                </tr>
-                            </table>
-                        </div>
+                        Membres du groupe : 
+                        <?php foreach($listeArtistesGroupe as $key => $artiste) { ?>
+                            <a class="souligner" href="/artiste.php?idArtiste=<?php echo $artiste['idartiste']; ?>">
+                                <?php if ( !empty($artiste['nomscene']) ) {
+                                    echo $artiste['nomscene'];
+                                } else {
+                                    echo $artiste['nomartiste'].' '.$artiste['prenomartiste'];
+                                } ?>
+                            </a>
+                            <?php if ( sizeof($listeArtistesGroupe) > 1 && sizeof($listeArtistesGroupe)-1 > $key ) { echo '&nbsp-&nbsp'; } ?>
+                        <?php } ?>
                     </div>
                 </div>
-                <div>
-                    <img id="imageGroupe" src="styles/mpokora.htm">
-                </div>
+                
+                <?php if ( !empty($groupe['urlimagegroupe']) ) { ?>
+                    <div>
+                        <img id="imageGroupe" src="<?php echo $groupe['urlimagegroupe']; ?>">
+                    </div>
+                <?php } ?>
+                
             </div>
+            
             <!-- Musiques de l'artiste -->
             <div>
                 <hr>
