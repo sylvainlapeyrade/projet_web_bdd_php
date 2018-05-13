@@ -6,6 +6,21 @@
  */
 
 /**
+ * Récupère les artiste d'une musique
+ * spécifier par l'identifiant 'idMusique'.
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idMusique Int Identifiant de la musique
+ * @return array Artistes de la musique
+ */
+function recuperer_artiste_musique($db, $idMusique) {
+  $req = $db->prepare("SELECT * FROM Composer_Musique, Artiste WHERE Composer_Musique.idMusiqueCoMu=:idMusique AND Composer_Musique.idArtisteCoMu=Artiste.idArtiste;");
+  $req->bindParam(':idMusique', $idMusique);
+  $req->execute();
+  $res = $req->fetchAll();
+  return $res;
+}
+
+/**
  * Récupère tout les musiques de la BDD en les triant
  * par ordre alphabétique par leur titre
  * @param $db PDO Instance PDO de connexion à la BDD
@@ -18,7 +33,7 @@ function recuperer_musique_tous($db) {
   return $res;
 }
 
-/***
+/**
  * Récupère une musique de la BDD
  * spécifier par l'identifiant 'idMusique'.
  * @param $db PDO Instance PDO de connexion à la BDD
