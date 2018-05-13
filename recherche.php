@@ -66,12 +66,12 @@ include_once(dirname(__FILE__).'/head.php');
                 <div>
                     <h3>GROUPES correspondants à votre recherche "<?php echo $recherche ?>"</h3>
                     <hr color="white" size="1">
-                    <?php foreach($listeGroupesRecherche as $groupes) { ?>
+                    <?php foreach($listeGroupesRecherche as $groupe) { ?>
                         <div class="flex">
-                            <img class="image-recherche" src="<?php echo $groupes['urlimagegroupe']; ?>" />
+                            <img class="image-recherche" src="<?php echo $groupe['urlimagegroupe']; ?>" />
                             <div class="information-recherche">
                                 <?php echo $groupe['nomgroupe']; ?>
-                                <a id="bouton-voir-plus" class="bouton bouton-red1" href="/groupe.php?idGroupe=<?php echo $groupes['idgroupe']; ?>">Voir les détails</a>
+                                <a id="bouton-voir-plus" class="bouton bouton-red1" href="/groupe.php?idGroupe=<?php echo $groupe['idgroupe']; ?>">Voir les détails</a>
                             </div>
                         </div>
                         <hr color="white" size="1">
