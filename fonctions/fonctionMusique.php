@@ -13,11 +13,12 @@
  * @return array Artistes de la musique
  */
 function recuperer_artiste_musique($db, $idMusique) {
-  $req = $db->prepare("SELECT * FROM Composer_Musique, Artiste WHERE Composer_Musique.idMusiqueCoMu=:idMusique AND Composer_Musique.idArtisteCoMu=Artiste.idArtiste;");
-  $req->bindParam(':idMusique', $idMusique);
-  $req->execute();
-  $res = $req->fetchAll();
-  return $res;
+    $req = $db->prepare("SELECT * FROM Composer_Musique, Artiste 
+WHERE Composer_Musique.idMusiqueCoMu=:idMusique AND Composer_Musique.idArtisteCoMu=Artiste.idArtiste;");
+    $req->bindParam(':idMusique', $idMusique);
+    $req->execute();
+    $res = $req->fetchAll();
+    return $res;
 }
 
 /**
@@ -27,10 +28,10 @@ function recuperer_artiste_musique($db, $idMusique) {
  * @return array Toutes les musiques dans la BDD.
  */
 function recuperer_musique_tous($db) {
-  $req = $db->prepare("SELECT * FROM Musique ORDER BY titreMusique ASC");
-  $req->execute();
-  $res = $req->fetchAll();
-  return $res;
+    $req = $db->prepare("SELECT * FROM Musique ORDER BY titreMusique ASC");
+    $req->execute();
+    $res = $req->fetchAll();
+    return $res;
 }
 
 /**
@@ -41,10 +42,10 @@ function recuperer_musique_tous($db) {
  * @return array La musique correspondant à l'id
  */
 function recuperer_musique($db, $idMusique) {
-  $req = $db->prepare("SELECT * FROM Musique WHERE idMusique=:idMusique");
-  $req->bindParam(':idMusique', $idMusique);
-  $req->execute();
-  $res = $req->fetchAll();
+    $req = $db->prepare("SELECT * FROM Musique WHERE idMusique=:idMusique");
+    $req->bindParam(':idMusique', $idMusique);
+    $req->execute();
+    $res = $req->fetchAll();
     return $res;
 }
 
@@ -59,18 +60,18 @@ function recuperer_musique($db, $idMusique) {
  * @return Int idMusique si la requête s'est bien exécutée | Null Sinon
  */
 function ajouter_musique($db, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique) {
-  $req = $db->prepare("INSERT INTO Musique(titreMusique, dureeMusique, dateMusique, descriptionMusique)
+    $req = $db->prepare("INSERT INTO Musique(titreMusique, dureeMusique, dateMusique, descriptionMusique)
       VALUES(:titreMusique, :dureeMusique, :dateMusique, :descriptionMusique);");
-  $req->bindParam(':titreMusique', $titreMusique, PDO::PARAM_STR);
-  $req->bindParam(':dureeMusique', $dureeMusique, PDO::PARAM_INT);
-  $req->bindParam(':dateMusique', format_date($dateMusique));
-  $req->bindParam(':descriptionMusique', $descriptionMusique, PDO::PARAM_STR);
-  $reqOk = $req->execute();
-  if ( $reqOk ) {
-    $idMusique = $db->lastInsertId();
-    return $idMusique;
-  }
-  return null;
+    $req->bindParam(':titreMusique', $titreMusique, PDO::PARAM_STR);
+    $req->bindParam(':dureeMusique', $dureeMusique, PDO::PARAM_INT);
+    $req->bindParam(':dateMusique', format_date($dateMusique));
+    $req->bindParam(':descriptionMusique', $descriptionMusique, PDO::PARAM_STR);
+    $reqOk = $req->execute();
+    if ( $reqOk ) {
+        $idMusique = $db->lastInsertId();
+        return $idMusique;
+    }
+    return null;
 }
 
 /**
@@ -85,14 +86,15 @@ function ajouter_musique($db, $titreMusique, $dureeMusique, $dateMusique, $descr
  * @return True si la requête s'est bien exécutée | False Sinon
  */
 function modifier_musique($db, $idMusique, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique) {
-  $req = $db->prepare("UPDATE Musique SET titreMusique=:titreMusique, dureeMusique=:dureeMusique, dateMusique=:dateMusique, descriptionMusique=:descriptionMusique WHERE idMusique=:idMusique;");
-  $req->bindParam(':idMusique', $idMusique, PDO::PARAM_INT);
-  $req->bindParam(':titreMusique', $titreMusique, PDO::PARAM_STR);
-  $req->bindParam(':dureeMusique', $dureeMusique, PDO::PARAM_INT);
-  $req->bindParam(':dateMusique', format_date($dateMusique));
-  $req->bindParam(':descriptionMusique', $descriptionMusique, PDO::PARAM_STR);
-  $reqOk = $req->execute();
-  return $reqOk;
+    $req = $db->prepare("UPDATE Musique SET titreMusique=:titreMusique, dureeMusique=:dureeMusique, 
+dateMusique=:dateMusique, descriptionMusique=:descriptionMusique WHERE idMusique=:idMusique;");
+    $req->bindParam(':idMusique', $idMusique, PDO::PARAM_INT);
+    $req->bindParam(':titreMusique', $titreMusique, PDO::PARAM_STR);
+    $req->bindParam(':dureeMusique', $dureeMusique, PDO::PARAM_INT);
+    $req->bindParam(':dateMusique', format_date($dateMusique));
+    $req->bindParam(':descriptionMusique', $descriptionMusique, PDO::PARAM_STR);
+    $reqOk = $req->execute();
+    return $reqOk;
 }
 
 /**
@@ -103,10 +105,10 @@ function modifier_musique($db, $idMusique, $titreMusique, $dureeMusique, $dateMu
  * @return True si la suppression s'est bien exécutée | False Sinon
  */
 function supprimer_musique($db, $idMusique) {
-  $req = $db->prepare("DELETE FROM Musique WHERE idMusique=:idMusique;");
-  $req->bindParam(':idMusique', $idMusique, PDO::PARAM_INT);
-  $reqOk = $req->execute();
-  return $reqOk;
+    $req = $db->prepare("DELETE FROM Musique WHERE idMusique=:idMusique;");
+    $req->bindParam(':idMusique', $idMusique, PDO::PARAM_INT);
+    $reqOk = $req->execute();
+    return $reqOk;
 }
 
 /**
@@ -116,11 +118,11 @@ function supprimer_musique($db, $idMusique) {
  * @return array Association des musiques et de leur compositeur
  */
 function recuperer_composer_musique($db, $idMusiqueCoMu) {
-  $req = $db->prepare("SELECT * FROM Composer_Musique WHERE idMusiqueCoMu=:idMusiqueCoMu");
-  $req->bindParam(':idMusiqueCoMu', $idMusiqueCoMu, PDO::PARAM_INT);
-  $req->execute();
-  $res = $req->fetchAll();
-  return $res;
+    $req = $db->prepare("SELECT * FROM Composer_Musique WHERE idMusiqueCoMu=:idMusiqueCoMu");
+    $req->bindParam(':idMusiqueCoMu', $idMusiqueCoMu, PDO::PARAM_INT);
+    $req->execute();
+    $res = $req->fetchAll();
+    return $res;
 }
 
 /**
@@ -131,12 +133,12 @@ function recuperer_composer_musique($db, $idMusiqueCoMu) {
  * @return True si la requête s'est bien exécutée | False sinon
  */
 function ajouter_composer_musique($db, $idMusiqueCoMu, $idArtisteCoMu) {
-  $req = $db->prepare("INSERT INTO Composer_Musique(idMusiqueCoMu, idArtisteCoMu)
+    $req = $db->prepare("INSERT INTO Composer_Musique(idMusiqueCoMu, idArtisteCoMu)
       VALUES(:idMusiqueCoMu, :idArtisteCoMu);");
-  $req->bindParam(':idMusiqueCoMu', $idMusiqueCoMu, PDO::PARAM_INT);
-  $req->bindParam(':idArtisteCoMu', $idArtisteCoMu, PDO::PARAM_INT);
-  $reqOk = $req->execute();
-  return $reqOk;
+    $req->bindParam(':idMusiqueCoMu', $idMusiqueCoMu, PDO::PARAM_INT);
+    $req->bindParam(':idArtisteCoMu', $idArtisteCoMu, PDO::PARAM_INT);
+    $reqOk = $req->execute();
+    return $reqOk;
 }
 
 /**
@@ -147,10 +149,10 @@ function ajouter_composer_musique($db, $idMusiqueCoMu, $idArtisteCoMu) {
  * @return True si la requête s'est bien exécutée | False sinon
  */
 function supprimer_composer_musique_tous($db, $idMusiqueCoMu) {
-  $req = $db->prepare("DELETE FROM Composer_Musique WHERE idMusiqueCoMu=:idMusiqueCoMu;");
-  $req->bindParam(':idMusiqueCoMu', $idMusiqueCoMu, PDO::PARAM_INT);
-  $reqOk = $req->execute();
-  return $reqOk;
+    $req = $db->prepare("DELETE FROM Composer_Musique WHERE idMusiqueCoMu=:idMusiqueCoMu;");
+    $req->bindParam(':idMusiqueCoMu', $idMusiqueCoMu, PDO::PARAM_INT);
+    $reqOk = $req->execute();
+    return $reqOk;
 }
 
 ?>

@@ -62,7 +62,8 @@ function rechercher_album($db, $recherche) {
  */
 function rechercher_musique($db, $recherche) {
     $recherche = "%$recherche%";
-    $req = $db->prepare("SELECT * FROM Musique, Composer_Musique, Artiste WHERE titreMusique LIKE :recherche AND Musique.idMusique=Composer_Musique.idMusiqueCoMu AND Composer_Musique.idArtisteCoMu=Artiste.idArtiste;");
+    $req = $db->prepare("SELECT * FROM Musique, Composer_Musique, Artiste WHERE titreMusique 
+LIKE :recherche AND Musique.idMusique=Composer_Musique.idMusiqueCoMu AND Composer_Musique.idArtisteCoMu=Artiste.idArtiste;");
     $req->bindParam(':recherche', $recherche);
     $req->execute();
     $res = $req->fetchAll();
