@@ -29,8 +29,7 @@ function recuperer_genre($db, $idMusiqueDe) {
  * @return Int idMusique si la requête s'est bien exécutée | Null Sinon
  */
 function ajouter_genre($db, $idMusique, $nomGenre) {
-  $req = $db->prepare("INSERT INTO Definir(idMusiqueDe, nomGenre)
-      VALUES(:idMusiqueDe, :nomGenre);");
+  $req = $db->prepare("INSERT INTO Definir(idMusiqueDe, nomGenre) VALUES(:idMusiqueDe, :nomGenre);");
   $req->bindParam(':idMusiqueDe', $idMusique, PDO::PARAM_INT);
   $req->bindParam(':nomGenre', $nomGenre, PDO::PARAM_STR);
   $reqOk = $req->execute();
