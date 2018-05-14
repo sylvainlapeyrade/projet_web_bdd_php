@@ -7,7 +7,7 @@ include_once(dirname(__FILE__).'/fonctions/fonctionRecherche.php');
 include_once(dirname(__FILE__).'/bdd/connexion.php');
 
 $info['head']['subTitle'] = "Resultat de recherche";
-$info['head']['stylesheets'] = ['recherche.css'];
+$info['head']['stylesheets'] = ['barreRecherche.css', 'recherche.css'];
 
 $recherche = $_GET['recherche'];
 if ( isset($db, $recherche) ) {

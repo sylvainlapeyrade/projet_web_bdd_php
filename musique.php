@@ -7,7 +7,7 @@ include_once(dirname(__FILE__).'/fonctions/fonctionMusique.php');
 include_once(dirname(__FILE__).'/bdd/connexion.php');
 
 $info['head']['subTitle'] = "Page musique";
-$info['head']['stylesheets'] = ['musique.css'];
+$info['head']['stylesheets'] = ['barreRecherche.css', 'musique.css'];
 
 $idMusique = $_GET['idMusique'];
 if ( isset($db, $idMusique) ) {

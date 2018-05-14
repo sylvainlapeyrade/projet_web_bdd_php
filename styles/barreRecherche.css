@@ -1,0 +1,13 @@
+#barre-recherche {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+#input-recherche {
+    padding: 10px;
+    padding-left: 25px;
+    margin-right: 10px;
+    margin-left: 25px;
+}

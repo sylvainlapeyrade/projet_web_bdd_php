@@ -7,7 +7,7 @@ include_once(dirname(__FILE__).'/fonctions/fonctionGroupe.php');
 include_once(dirname(__FILE__).'/bdd/connexion.php');
 
 $info['head']['subTitle'] = "Page groupe";
-$info['head']['stylesheets'] = ['groupe.css'];
+$info['head']['stylesheets'] = ['barreRecherche.css', 'groupe.css'];
 
 $idGroupe = $_GET['idGroupe'];
 if ( isset($db, $idGroupe) ) {

@@ -7,7 +7,7 @@ include_once(dirname(__FILE__).'/fonctions/fonctionAlbum.php');
 include_once(dirname(__FILE__).'/bdd/connexion.php');
 
 $info['head']['subTitle'] = "Page album";
-$info['head']['stylesheets'] = ['album.css'];
+$info['head']['stylesheets'] = ['barreRecherche.css', 'album.css'];
 
 $idAlbum = $_GET['idAlbum'];
 if ( isset($db, $idAlbum) ) {
