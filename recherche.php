@@ -76,7 +76,9 @@ include_once(dirname(__FILE__).'/head.php');
                         <div class="flex">
                             <img class="image-recherche" src="<?php echo $album['urlpochettealbum']; ?>" />
                             <div class="information-recherche">
-                                <?php echo $album['nomalbum']; ?>
+                                "<?php echo $album['nomalbum']; ?>"
+                                de
+                                <?php echo $album['nomartiste']; ?>
                                 <br>
                                 <a id="bouton-voir-plus" class="bouton bouton-forme2 bouton-red1" href="/album.php?idAlbum=<?php echo $album['idalbum']; ?>">Voir les détails</a>
                             </div>
