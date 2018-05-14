@@ -23,10 +23,10 @@ function recuperer_evaluation_musique_tous($db, $idMusiqueEvMu) {
 
 function ajouter_evaluation_album($db, $idUtilisateurEvAl, $idAlbumEvAl, $noteEvAl, $commentaireEvAl) {
     $req = $db->prepare("INSERT INTO Evaluer_Album(idUtilisateurEvAl, idAlbumEvAl, noteEvAl, commentaireEvAl) VALUES(:idUtilisateurEvAl, :idAlbumEvAl, :noteEvAl, :commentaireEvAl);");
-    $req->bindParam(':idUtilisateurEvAl', $idMusique, PDO::PARAM_INT);
-    $req->bindParam(':idAlbumEvAl', $idMusique, PDO::PARAM_INT);
-    $req->bindParam(':noteEvAl', $idMusique, PDO::PARAM_INT);
-    $req->bindParam(':commentaireEvAl', $nomGenre, PDO::PARAM_STR);
+    $req->bindParam(':idUtilisateurEvAl', $idUtilisateurEvAl, PDO::PARAM_INT);
+    $req->bindParam(':idAlbumEvAl', $idAlbumEvAl, PDO::PARAM_INT);
+    $req->bindParam(':noteEvAl', $noteEvAl, PDO::PARAM_INT);
+    $req->bindParam(':commentaireEvAl', $commentaireEvAl, PDO::PARAM_STR);
     $reqOk = $req->execute();
     return $reqOk;
 }
