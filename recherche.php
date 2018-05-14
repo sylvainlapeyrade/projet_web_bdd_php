@@ -95,8 +95,8 @@ include_once(dirname(__FILE__).'/head.php');
                         <div class="information-recherche">
                             Musique : 
                             <?php echo $musique['titremusique']; ?>
-                            <br>
-                            Autheur : 
+                            ,
+                            Interprète : 
                             <?php if ( !empty($musique['nomscene']) ) {
                                 echo $musique['nomscene'];
                             } else {
