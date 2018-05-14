@@ -72,8 +72,8 @@ CREATE TABLE Utilisateur(
 
 
 CREATE TABLE Evaluer_Album(
-  idUtilisateurEvAl     VARCHAR(45)   CONSTRAINT Ea_fk_iUEa  REFERENCES Utilisateur(idUtilisateur),
-  idAlbumEvAl           INT           CONSTRAINT Ea_fk_iAEa  REFERENCES Album(idAlbum),
+  idUtilisateurEvAl     VARCHAR(45)   CONSTRAINT Ea_fk_iUEa  REFERENCES Utilisateur(idUtilisateur) ON DELETE CASCADE,
+  idAlbumEvAl           INT           CONSTRAINT Ea_fk_iAEa  REFERENCES Album(idAlbum) ON DELETE CASCADE,
   noteEvAl              INT           CONSTRAINT Ea_noEa_nn  NOT NULL,
                                       CONSTRAINT Ea_noEa_ch  CHECK (noteEvAl BETWEEN 0 AND 5),
   commentaireEvAl       TEXT,
@@ -82,8 +82,8 @@ CREATE TABLE Evaluer_Album(
 
 
 CREATE TABLE Evaluer_Musique(
-  idUtilisateurEvMu     VARCHAR(45)   CONSTRAINT Em_fk_iUEm  REFERENCES Utilisateur(idUtilisateur),
-  idMusiqueEvMu         INT           CONSTRAINT Em_fk_iMEm  REFERENCES Musique(idMusique),
+  idUtilisateurEvMu     VARCHAR(45)   CONSTRAINT Em_fk_iUEm  REFERENCES Utilisateur(idUtilisateur) ON DELETE CASCADE,
+  idMusiqueEvMu         INT           CONSTRAINT Em_fk_iMEm  REFERENCES Musique(idMusique) ON DELETE CASCADE,
   noteEvMu              INT           CONSTRAINT Em_noEm_NN  NOT NULL,
                                       CONSTRAINT Em_noEm_CH  CHECK (noteEvMu BETWEEN 0 AND 5),
   commentaireEvMu       TEXT,
