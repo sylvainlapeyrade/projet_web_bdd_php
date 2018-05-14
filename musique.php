@@ -135,7 +135,7 @@ include_once(dirname(__FILE__).'/head.php');
                         <?php foreach($listeEvaluations as $evaluation) { ?>
                             <div>
                                 <p>
-                                    <b><?php echo $evaluation['idutilisateurevmu']; ?></b>&nbsp; &nbsp;Notes : <?php echo $evaluation['noteevmu']; ?>
+                                    <b><?php echo $evaluation['idutilisateurevmu']; ?></b>&nbsp; &nbsp;Note: <?php echo $evaluation['noteevmu']; ?>/5
                                     <?php if ( is_admin() || $_SESSION['idUtilisateur'] == $evaluation['idutilisateurevmu'] ) { ?> 
                                         <a class="bouton bouton-forme2 bouton-red1" href="/musique.php?action=supprimerEvaluation&idMusique=<?php echo $idMusique; ?>&idUtilisateur=<?php echo $evaluation['idutilisateurevmu']; ?>">Supprimer</a>
                                     <?php } ?>
