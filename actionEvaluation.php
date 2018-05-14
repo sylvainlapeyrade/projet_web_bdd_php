@@ -2,9 +2,11 @@
 
 $action = $_GET['action'];
 if ( isset($action) ) {
+    $idUtilisateur = $_GET['idUtilisateur'];
     $note = $_GET['note'];
     $commentaire = $_GET['commentaire'];
 }
+    $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
 
 if ( isset($db, $action) ) {
     switch($action) {
@@ -31,18 +33,51 @@ if ( isset($db, $action) ) {
                     $erreur = "Vous avez déjà évaluer cette album.";
                     break;
                 }
-                header('Location: /album.php?idAlbum='.$idAlbum.'&operation=Ok');
+                header('Location: /album.php?idAlbum='.$idAlbum.'&operation=ok');
             } elseif ( isset($idMusique) ) {
                 $operationOk = ajouter_evaluation_musique($db, $_SESSION['idUtilisateur'], $idMusique, $note, $commentaire);
                 if ( !$operationOk ) {
                     $erreur = "Vous avez déjà évaluer cette musique.";
                     break;
                 }
-                header('Location: /musique.php?idMusique='.$idMusique.'&operation=Ok');
+                header('Location: /musique.php?idMusique='.$idMusique.'&operation=ok');
             }
             break;
             
         case 'supprimerEvaluation':
+            /*
+             * Champs présent : idAlbum ou idMusique, $idUtilisateur
+             * Champs obligatoire : idAlbum ou idMusique, $idUtilisateur
+             */
+            if ( !(isset($idAlbum) || isset($idMusique)) ) {
+                $erreur = "Erreur...";
+                break;
+            }
+            if ( (empty($idAlbum) && empty($idMusique)) ) {
+                $erreur = "Erreur vide...";
+                break;
+            }
+            if ( !is_admin() ) {
+                if ($idUtilisateur != $_SESSION['idUtilisateur'] ) {
+                    $erreur = "Vous n'avez pas l'autorisation de supprimer ce commentaire.";
+                    break;
+                }
+            }
+            if ( isset($idAlbum) ) {
+                $operationOk = supprimer_evalution_album($db, $idUtilisateur, $idAlbum);
+                if ( !$operationOk ) {
+                    $erreur = "Une erreur c'est produite....";
+                    break;
+                }
+                header('Location: /album.php?idAlbum='.$idAlbum.'&operation=ok');
+            } elseif ( isset($idMusique) ) {
+                $operationOk = supprimer_evaluation_musique($db, $idUtilisateur, $idMusique);
+                if ( !$operationOk ) {
+                    $erreur = "Une erreur c'est produite....";
+                    break;
+                }
+                //header('Location: /musique.php?idMusique='.$idMusique.'&operation=ok');
+            }
             break;
     }
 }

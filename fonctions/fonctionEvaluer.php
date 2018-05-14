@@ -49,10 +49,10 @@ function supprimer_evalution_album($db, $idUtilisateurEvAl, $idAlbumEvAl) {
     return $reqOk;
 }
 
-function supprimer_evaluation_musique($db, $idUtilisateurEvMu, $idAlbumEvMu) {
-    $req = $db->prepare("DELETE FROM Evaluer_Musique WHERE idUtilisateurEvMu=:idUtilisateurEvMu AND idAlbumEvMu=:idAlbumEvMu;");
+function supprimer_evaluation_musique($db, $idUtilisateurEvMu, $idMusiqueEvMu) {
+    $req = $db->prepare("DELETE FROM Evaluer_Musique WHERE idUtilisateurEvMu=:idUtilisateurEvMu AND idMusiqueEvMu=:idMusiqueEvMu;");
     $req->bindParam(':idUtilisateurEvMu', $idUtilisateurEvMu, PDO::PARAM_INT);
-    $req->bindParam(':idAlbumEvMu', $idAlbumEvMu, PDO::PARAM_INT);
+    $req->bindParam(':idMusiqueEvMu', $idMusiqueEvMu, PDO::PARAM_INT);
     $reqOk = $req->execute();
     return $reqOk;
 }

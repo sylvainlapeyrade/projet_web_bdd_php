@@ -143,7 +143,7 @@ include_once(dirname(__FILE__).'/head.php');
                                   <?php if ( !isset($note) || empty($note) ) { echo 'disabled'; } ?>
                                   placeholder="Votre commentaire ici..."
                                   required ><?php echo $commentaire ?></textarea>
-                        <a class="bouton bouton-forme1 bouton-red1" href="album.php?idAlbum=<?php echo $idAlbum; ?>#form">Réinitialiser</a>
+                        <a class="bouton bouton-forme1 bouton-red1" href="/album.php?idAlbum=<?php echo $idAlbum; ?>#form">Réinitialiser</a>
                         <input class="bouton bouton-forme1 bouton-red1" type="submit" value="Envoyer">
                     </form>
                 <?php } else { ?>
@@ -158,7 +158,9 @@ include_once(dirname(__FILE__).'/head.php');
                             <div>
                                 <p>
                                     <b><?php echo $evaluation['idutilisateureval']; ?></b>&nbsp; &nbsp;Notes : <?php echo $evaluation['noteeval']; ?>
-                                    <?php if ( is_admin() || $_SESSION['idUtilisateur'] == $evaluation['idutilisateureval'] ) { ?> <a class="bouton bouton-forme2 bouton-red1">Supprimer</a> <?php } ?>
+                                    <?php if ( is_admin() || $_SESSION['idUtilisateur'] == $evaluation['idutilisateureval'] ) { ?>
+                                        <a class="bouton bouton-forme2 bouton-red1" href="/album.php?action=supprimerEvaluation&idAlbum=<?php echo $idAlbum; ?>&idUtilisateur=<?php echo $evaluation['idutilisateureval']; ?>">Supprimer</a>
+                                    <?php } ?>
                                 </p>
                                 <p><?php echo $evaluation['commentaireeval'] ?></p>
                                 <hr size="1" color=#e8491d>

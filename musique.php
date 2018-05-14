@@ -4,6 +4,7 @@ session_start();
 include_once(dirname(__FILE__).'/fonctions/variables.php');
 include_once(dirname(__FILE__).'/fonctions/fonctionCompte.php');
 include_once(dirname(__FILE__).'/fonctions/fonctionMusique.php');
+include_once(dirname(__FILE__).'/fonctions/fonctionEvaluer.php');
 include_once(dirname(__FILE__).'/bdd/connexion.php');
 
 $info['head']['subTitle'] = "Page musique";
@@ -25,6 +26,7 @@ if ( isset($db, $idMusique) ) {
         header('Location: /index.php');
     }
     $listeArtistesMusique = recuperer_artiste_musique($db, $idMusique);
+    $listeEvaluations = recuperer_evaluation_musique_tous($db, $idMusique);
 } else {
     header('Location: /index.php');
 }
@@ -96,14 +98,14 @@ include_once(dirname(__FILE__).'/head.php');
                 <?php } ?>
 
                 <?php if ( is_connect() ) { ?>
-                    <form id="form" action="/album.php" method="get">
+                    <form id="form" action="/musique.php" method="get">
                         <div>
                             <p id="stars"> Donnez une note à cette musique :
-                                <a class="<?php if ($note>0) echo 'red' ?>" href="?idAlbum=<?php echo $idAlbum; ?>&star=1#stars">★</a>
-                                <a class="<?php if ($note>1) echo 'red' ?>" href="?idAlbum=<?php echo $idAlbum; ?>&star=2#stars">★</a>
-                                <a class="<?php if ($note>2) echo 'red' ?>" href="?idAlbum=<?php echo $idAlbum; ?>&star=3#stars">★</a>
-                                <a class="<?php if ($note>3) echo 'red' ?>" href="?idAlbum=<?php echo $idAlbum; ?>&star=4#stars">★</a>
-                                <a class="<?php if ($note>4) echo 'red' ?>" href="?idAlbum=<?php echo $idAlbum; ?>&star=5#stars">★</a>
+                                <a class="<?php if ($note>0) echo 'red' ?>" href="?idMusique=<?php echo $idMusique; ?>&star=1#stars">★</a>
+                                <a class="<?php if ($note>1) echo 'red' ?>" href="?idMusique=<?php echo $idMusique; ?>&star=2#stars">★</a>
+                                <a class="<?php if ($note>2) echo 'red' ?>" href="?idMusique=<?php echo $idMusique; ?>&star=3#stars">★</a>
+                                <a class="<?php if ($note>3) echo 'red' ?>" href="?idMusique=<?php echo $idMusique; ?>&star=4#stars">★</a>
+                                <a class="<?php if ($note>4) echo 'red' ?>" href="?idMusique=<?php echo $idMusique; ?>&star=5#stars">★</a>
                             </p>
                         </div>
                         <?php if ( isset($idAlbum) ) { ?>
@@ -120,7 +122,7 @@ include_once(dirname(__FILE__).'/head.php');
                                   <?php if ( !isset($note) || empty($note) ) { echo 'disabled'; } ?>
                                   placeholder="Votre commentaire ici..."
                                   required ><?php echo $commentaire ?></textarea>
-                        <a class="bouton bouton-forme1 bouton-red1" href="album.php?idAlbum=<?php echo $idAlbum; ?>#form">Réinitialiser</a>
+                        <a class="bouton bouton-forme1 bouton-red1" href="/musique.php?idMusique=<?php echo $idMusique; ?>#form">Réinitialiser</a>
                         <input class="bouton bouton-forme1 bouton-red1" type="submit" value="Envoyer">
                     </form>
                 <?php } else { ?>
@@ -134,10 +136,12 @@ include_once(dirname(__FILE__).'/head.php');
                         <?php foreach($listeEvaluations as $evaluation) { ?>
                             <div>
                                 <p>
-                                    <b><?php echo $evaluation['idutilisateureval']; ?></b>&nbsp; &nbsp;Notes : <?php echo $evaluation['noteeval']; ?>
-                                    <?php if ( is_admin() || $_SESSION['idUtilisateur'] == $evaluation['idutilisateureval'] ) { ?> <a class="bouton bouton-forme2 bouton-red1">Supprimer</a> <?php } ?>
+                                    <b><?php echo $evaluation['idutilisateurevmu']; ?></b>&nbsp; &nbsp;Notes : <?php echo $evaluation['noteevmu']; ?>
+                                    <?php if ( is_admin() || $_SESSION['idUtilisateur'] == $evaluation['idutilisateurevmu'] ) { ?> 
+                                        <a class="bouton bouton-forme2 bouton-red1" href="/musique.php?action=supprimerEvaluation&idMusique=<?php echo $idMusique; ?>&idUtilisateur=<?php echo $evaluation['idutilisateurevmu']; ?>">Supprimer</a>
+                                    <?php } ?>
                                 </p>
-                                <p><?php echo $evaluation['commentaireeval'] ?></p>
+                                <p><?php echo $evaluation['commentaireevmu'] ?></p>
                                 <hr size="1" color=#e8491d>
                             </div>
                         <?php } ?>
