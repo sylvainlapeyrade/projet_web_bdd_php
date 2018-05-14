@@ -115,7 +115,7 @@ include_once(dirname(__FILE__).'/head.php');
                         <?php } ?>
                         <input type="hidden" name="action" value="ajouterEvaluation" />
                         <input type="hidden" name="note" value="<?php echo $note ?>" />
-                        <textarea "margin-left: 5px" class="input-area"
+                        <textarea class="input-area"
                                   name="commentaire"
                                   cols="50"
                                   rows="5"
