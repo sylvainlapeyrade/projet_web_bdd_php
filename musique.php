@@ -122,7 +122,6 @@ include_once(dirname(__FILE__).'/head.php');
                                   <?php if ( !isset($note) || empty($note) ) { echo 'disabled'; } ?>
                                   placeholder="Votre commentaire ici..."
                                   required ><?php echo $commentaire ?></textarea>
-                        <a class="bouton bouton-forme1 bouton-red1" href="/musique.php?idMusique=<?php echo $idMusique; ?>#form">Réinitialiser</a>
                         <input class="bouton bouton-forme1 bouton-red1" type="submit" value="Envoyer">
                     </form>
                 <?php } else { ?>
