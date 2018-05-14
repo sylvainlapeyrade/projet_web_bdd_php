@@ -78,7 +78,7 @@ include_once(dirname(__FILE__).'/head.php');
                             <div class="information-recherche">
                                 "<?php echo $album['nomalbum']; ?>"
                                 de
-                                <?php echo $album['nomartiste']; ?>
+                                <?php echo $album['listeIdArtiste']; ?>
                                 <br>
                                 <a id="bouton-voir-plus" class="bouton bouton-forme2 bouton-red1" href="/album.php?idAlbum=<?php echo $album['idalbum']; ?>">Voir les détails</a>
                             </div>
