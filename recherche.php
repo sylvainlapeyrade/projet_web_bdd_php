@@ -93,10 +93,9 @@ include_once(dirname(__FILE__).'/head.php');
                     <hr color="white" size="1">
                     <?php foreach($listeMusiquesRecherche as $musique) { ?>
                         <div class="information-recherche">
-                            Musique : 
+                            " 
                             <?php echo $musique['titremusique']; ?>
-                            ,
-                            Interprète : 
+                            " interprété par  
                             <?php if ( !empty($musique['nomscene']) ) {
                                 echo $musique['nomscene'];
                             } else {
