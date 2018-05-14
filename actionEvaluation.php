@@ -6,7 +6,6 @@ if ( isset($action) ) {
     $note = $_GET['note'];
     $commentaire = $_GET['commentaire'];
 }
-    $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
 
 if ( isset($db, $action) ) {
     switch($action) {
