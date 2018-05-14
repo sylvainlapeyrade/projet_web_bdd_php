@@ -108,7 +108,7 @@ include_once(dirname(__FILE__).'/head.php');
                             <th class="table-head width-150">Date</th>
                             <th class="table-head width-200">Genre</th>
                             <th class="table-head width-300">Album</th>
-                            <th class="table-head width-700">Descritpion</th>
+                            <th class="table-head width-700">Description</th>
                         </tr>
                         <?php if ( !empty($listeMusiquesArtiste) ) { ?>
                             <?php foreach($listeMusiquesArtiste as $musique) { ?>
