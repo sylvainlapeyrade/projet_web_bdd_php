@@ -102,7 +102,7 @@ include_once(dirname(__FILE__).'/head.php');
                             } else {
                                 echo $musique['nomartiste'].' '.$musique['prenomartiste'];
                             } ?>
-                            <a id="bouton-voir-plus" class="bouton bouton-forme2 bouton-red1" href="/artiste.php?idArtiste=<?php echo $musique['idartiste']; ?>">Voir les détails</a>
+                            <a id="bouton-voir-plus" class="bouton bouton-forme2 bouton-red1" href="/musique.php?idMusique=<?php echo $musique['idmusique']; ?>">Voir les détails</a>
                         </div>
                         <hr color="white" size="1">
                     <?php } ?>
