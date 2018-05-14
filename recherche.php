@@ -77,8 +77,6 @@ include_once(dirname(__FILE__).'/head.php');
                             <img class="image-recherche" src="<?php echo $album['urlpochettealbum']; ?>" />
                             <div class="information-recherche">
                                 "<?php echo $album['nomalbum']; ?>"
-                                de
-                                <?php echo $album['listeIdArtiste']; ?>
                                 sorti le
                                 <?php echo $album['datealbum']; ?>
                                 <br>
