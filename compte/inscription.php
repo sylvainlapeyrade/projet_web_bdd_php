@@ -54,7 +54,7 @@ if ( isset($db) ) {
 <main>
     <section class="text-center">
         
-        <h1 class="t30 souligner">Inscription</h1>
+        <!-- <h1 class="t30 souligner">Inscription</h1> -->
         
         <? if ( isset($erreur) ) { ?>
         <!-- Message d'erreur du formulaire -->
