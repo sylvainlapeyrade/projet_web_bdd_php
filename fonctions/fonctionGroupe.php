@@ -1,7 +1,7 @@
 <?php
 
 /**
- * FICHIER : FUNCTIONS -> fonctionGroupe.PHP
+ * FICHIER : FUNCTIONS -> fonctionGroupe.php
  * Fichier des fonctions de gestion des groupes.
  */
 

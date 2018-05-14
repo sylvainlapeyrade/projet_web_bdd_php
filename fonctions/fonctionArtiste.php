@@ -1,7 +1,7 @@
 <?php
 
 /**
- * FICHIER : FUNCTIONS -> fonctionArtiste.PHP
+ * FICHIER : FUNCTIONS -> fonctionArtiste.php
  * Fichier des fonction de gestion des artistes.
  */
 

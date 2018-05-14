@@ -1,7 +1,7 @@
 <?php
 
 /**
- * FICHIER : FUNCTIONS -> fonctionMusique.PHP
+ * FICHIER : FUNCTIONS -> fonctionMusique.php
  * Fichier des fonctions de gestion des musiques.
  */
 

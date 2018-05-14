@@ -1,11 +1,11 @@
 <?php
 
 /**
- * FICHIER : FUNCTIONS -> fonctionGenre.PHP
+ * FICHIER : FUNCTIONS -> fonctionGenre.php
  * Fichier des fonctions de gestion des genres.
  */
 
-/***
+/**
  * Récupère les genres d'une musique
  * spécifiés par l'identifiant 'idMusiqueDe'.
  * @param $db PDO Instance PDO de connexion à la BDD
@@ -13,11 +13,11 @@
  * @return array L'ensemble des genres de la musique
  */
 function recuperer_genre($db, $idMusiqueDe) {
-  $req = $db->prepare("SELECT * FROM Definir WHERE idMusiqueDe=:idMusiqueDe");
-  $req->bindParam(':idMusiqueDe', $idMusiqueDe);
-  $req->execute();
-  $res = $req->fetchAll();
-  return $res;
+    $req = $db->prepare("SELECT * FROM Definir WHERE idMusiqueDe=:idMusiqueDe");
+    $req->bindParam(':idMusiqueDe', $idMusiqueDe);
+    $req->execute();
+    $res = $req->fetchAll();
+    return $res;
 }
 
 /**
@@ -29,11 +29,11 @@ function recuperer_genre($db, $idMusiqueDe) {
  * @return Int idMusique si la requête s'est bien exécutée | Null Sinon
  */
 function ajouter_genre($db, $idMusique, $nomGenre) {
-  $req = $db->prepare("INSERT INTO Definir(idMusiqueDe, nomGenre) VALUES(:idMusiqueDe, :nomGenre);");
-  $req->bindParam(':idMusiqueDe', $idMusique, PDO::PARAM_INT);
-  $req->bindParam(':nomGenre', $nomGenre, PDO::PARAM_STR);
-  $reqOk = $req->execute();
-  return $reqOk;
+    $req = $db->prepare("INSERT INTO Definir(idMusiqueDe, nomGenre) VALUES(:idMusiqueDe, :nomGenre);");
+    $req->bindParam(':idMusiqueDe', $idMusique, PDO::PARAM_INT);
+    $req->bindParam(':nomGenre', $nomGenre, PDO::PARAM_STR);
+    $reqOk = $req->execute();
+    return $reqOk;
 }
 
 /**
@@ -44,10 +44,10 @@ function ajouter_genre($db, $idMusique, $nomGenre) {
  * @return True si la requête s'est bien exécutée | False sinon
  */
 function supprimer_genre_tous($db, $idMusiqueDe) {
-  $req = $db->prepare("DELETE FROM Definir WHERE idMusiqueDe=:idMusiqueDe;");
-  $req->bindParam(':idMusiqueDe', $idMusiqueDe, PDO::PARAM_INT);
-  $reqOk = $req->execute();
-return $reqOk;
+    $req = $db->prepare("DELETE FROM Definir WHERE idMusiqueDe=:idMusiqueDe;");
+    $req->bindParam(':idMusiqueDe', $idMusiqueDe, PDO::PARAM_INT);
+    $reqOk = $req->execute();
+    return $reqOk;
 }
 
 ?>

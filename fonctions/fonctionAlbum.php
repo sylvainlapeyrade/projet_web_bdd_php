@@ -1,7 +1,7 @@
 <?php
 
 /**
- * FICHIER : FUNCTIONS -> fonctionAlbum.PHP
+ * FICHIER : FUNCTIONS -> fonctionAlbum.php
  * Fichier des fonctions de gestion d'album.
  */
 

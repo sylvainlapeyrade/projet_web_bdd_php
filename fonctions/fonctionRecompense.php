@@ -1,7 +1,7 @@
 <?php
 
 /**
- * FICHIER : FUNCTIONS -> fonctionRecompense.PHP
+ * FICHIER : FUNCTIONS -> fonctionRecompense.php
  * Fichier des fonctions de gestion des récompenses.
  */
 
@@ -18,7 +18,7 @@ function recuperer_recompense_tous($db) {
     return $res;
 }
 
-/***
+/**
  * Récupère une récompense de la BDD
  * spécifier par l'identifiant 'idRecompense'.
  * @param $db PDO Instance PDO de connexion à la BDD
