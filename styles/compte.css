@@ -2,7 +2,8 @@ main section {
     background: #35424a;
     width: 300px;
     padding: 50px 30px;
-    margin-top: 50px;
+    margin-top: 25px;
+    padding-top : 25px;
     margin-bottom: 25px;
     color: white;
 }
