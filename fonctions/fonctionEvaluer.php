@@ -5,7 +5,7 @@
  * Fichier des fonctions de gestion des évalutations.
  */
 
-function recuperer_evalutation_album_tous($db, $idAlbumEvAl) {
+function recuperer_evaluation_album_tous($db, $idAlbumEvAl) {
     $req = $db->prepare("SELECT * FROM Evaluer_Album WHERE idAlbumEvAl=:idAlbumEvAl");
     $req->bindParam(':idAlbumEvAl', $idAlbumEvAl);
     $req->execute();
