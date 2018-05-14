@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * FICHIER : FUNCTIONS -> fonctionRecherche.php
+ * Fichier des fonctions de recherche dans la BDD.
+ */
+
+/**
  * Renvoie les artistes à partir de leur nom, prénom ou nom de scène
  * On utilise les joker % avant d'utiliser bindParam
  * @param $db PDO Instance PDO de connexion à la BDD
