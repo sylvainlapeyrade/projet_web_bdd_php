@@ -1,0 +1,14 @@
+Liste des tâches restantes 
+--------------------------------------------------
+
+- Page "Compte" modification mot de passe
+- Rendre plus performante la barre de recherche
+- Fonction recherche des albums/musiques d'un groupe
+- Remplir la base de données du mieux qu'on peut
+- Dynamiser la connexion : retour à la page d'avant après connexion
+- Intégrer la page "A propos"
+- Réaliser le cahier des charges
+- Réaliser le dossier de conception
+- Nettoyer le code
+- Commentaires : retour à la ligne lors de l'affichage + limite de caractère + 
+		 "Note : ?/5" au lieu de "Notes : ?"
