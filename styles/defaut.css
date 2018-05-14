@@ -100,10 +100,19 @@ td {
 }
 
 .bouton {
-    padding: 10px;
     border: none;
     cursor: pointer;
     text-transform: uppercase;
+}
+
+.bouton-forme1 {
+    padding: 10px;
+}
+
+.bouton-forme2 {
+    margin: 10px;
+    font-size: 12px;
+    padding: 3px 10px;
 }
 
 .bouton-blue {

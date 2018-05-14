@@ -7,6 +7,6 @@
                name="recherche"
                placeholder="Artiste, groupe, album ou musique"
                />
-        <input class="bouton bouton-red1" type="submit" value="Rechercher" />
+        <input class="bouton bouton-forme1 bouton-red1" type="submit" value="Rechercher" />
     </form>
 </div>

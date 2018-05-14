@@ -41,7 +41,7 @@ include_once(dirname(__FILE__).'/head.php');
                             <div class="information-recherche">
                                 <?php echo $artiste['nomartiste'].' '.$artiste['prenomartiste'] ?>
                                 <?php if ( !empty($artiste['nomscene']) ) { echo '('.$artiste['nomscene'].')'; } ?>
-                                <a id="bouton-voir-plus" class="bouton bouton-red1" href="/artiste.php?idArtiste=<?php echo $artiste['idartiste']; ?>">Voir les détails</a>
+                                <a id="bouton-voir-plus" class="bouton bouton-forme2 bouton-red1" href="/artiste.php?idArtiste=<?php echo $artiste['idartiste']; ?>">Voir les détails</a>
                             </div>
                         </div>
                         <hr color="white" size="1">
@@ -59,7 +59,7 @@ include_once(dirname(__FILE__).'/head.php');
                             <img class="image-recherche" src="<?php echo $groupe['urlimagegroupe']; ?>" />
                             <div class="information-recherche">
                                 <?php echo $groupe['nomgroupe']; ?>
-                                <a id="bouton-voir-plus" class="bouton bouton-red1" href="/groupe.php?idGroupe=<?php echo $groupe['idgroupe']; ?>">Voir les détails</a>
+                                <a id="bouton-voir-plus" class="bouton bouton-forme2 bouton-red1" href="/groupe.php?idGroupe=<?php echo $groupe['idgroupe']; ?>">Voir les détails</a>
                             </div>
                         </div>
                         <hr color="white" size="1">
@@ -78,7 +78,7 @@ include_once(dirname(__FILE__).'/head.php');
                             <div class="information-recherche">
                                 <?php echo $album['nomalbum']; ?>
                                 <br>
-                                <a id="bouton-voir-plus" class="bouton bouton-red1" href="/album.php?idAlbum=<?php echo $album['idalbum']; ?>">Voir les détails</a>
+                                <a id="bouton-voir-plus" class="bouton bouton-forme2 bouton-red1" href="/album.php?idAlbum=<?php echo $album['idalbum']; ?>">Voir les détails</a>
                             </div>
                         </div>
                         <hr color="white" size="1">
@@ -102,7 +102,7 @@ include_once(dirname(__FILE__).'/head.php');
                             } else {
                                 echo $musique['nomartiste'].' '.$musique['prenomartiste'];
                             } ?>
-                            <a id="bouton-voir-plus" class="bouton bouton-red1" href="/artiste.php?idArtiste=<?php echo $musique['idartiste']; ?>">Voir les détails</a>
+                            <a id="bouton-voir-plus" class="bouton bouton-forme2 bouton-red1" href="/artiste.php?idArtiste=<?php echo $musique['idartiste']; ?>">Voir les détails</a>
                         </div>
                         <hr color="white" size="1">
                     <?php } ?>
