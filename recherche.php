@@ -79,6 +79,8 @@ include_once(dirname(__FILE__).'/head.php');
                                 "<?php echo $album['nomalbum']; ?>"
                                 de
                                 <?php echo $album['listeIdArtiste']; ?>
+                                sorti le
+                                <?php echo $album['datealbum']; ?>
                                 <br>
                                 <a id="bouton-voir-plus" class="bouton bouton-forme2 bouton-red1" href="/album.php?idAlbum=<?php echo $album['idalbum']; ?>">Voir les détails</a>
                             </div>
