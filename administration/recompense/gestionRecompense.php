@@ -46,10 +46,10 @@ include_once(dirname(__FILE__).'/../../head.php');
                     <td> <?php echo $recompense['nomrecompense']; ?> </td>
                     <td> <?php echo format_date($recompense['daterecompense']); ?> </td>
                     <td> <?php echo $recompense['descriptionrecompense']; ?> </td>
-                    <td class="bouton bouton-blue">
+                    <td class="bouton bouton-forme1 bouton-bleu">
                         <a href="./formRecompense.php?idRecompense=<?php echo $recompense['idrecompense']; ?>">Modifier</a>
                     </td>
-                    <td class="bouton bouton-red">
+                    <td class="bouton bouton-forme1 bouton-red">
                         <a href="?action=supprimerRecompense&idRecompense=<?php echo $recompense['idrecompense']; ?>">Supprimer</a>
                     </td>
                 </tr>

@@ -44,19 +44,19 @@ include_once(dirname(__FILE__).'/../../head.php');
                     <td> <?php echo $user['idutilisateur']; ?> </td>
                     <?php if ( $user['statut'] ) { ?>
                         <td>Admin</td>
-                        <td class="bouton bouton-blue">
+                        <td class="bouton bouton-forme1 bouton-bleu">
                             <a href="?action=modifierStatutUtilisateur&idUtilisateur=<?php echo $user['idutilisateur'] ?>&statut=0">Devenir User</a>
                         </td>
                     <?php } else { ?>
                         <td>User</td>
-                        <td class="bouton bouton-green">
+                        <td class="bouton bouton-forme1 bouton-green">
                             <a href="?action=modifierStatutUtilisateur&idUtilisateur=<?php echo $user['idutilisateur'] ?>&statut=1">Devenir Admin</a>
                         </td>
                     <?php } ?>
-                    <td class="bouton bouton-blue">
+                    <td class="bouton bouton-forme1 bouton-bleu">
                         <a href="formUtilisateur.php?idUtilisateur=<?php echo $user['idutilisateur'] ?>">Modifier mot de passe</a>
                     </td>
-                    <td class="bouton bouton-red">
+                    <td class="bouton bouton-forme1 bouton-red">
                         <a href="?action=supprimerUtilisateur&idUtilisateur=<?php echo $user['idutilisateur'] ?>">Supprimer</a>
                     </td>
                 </tr>

@@ -53,10 +53,10 @@ include_once(dirname(__FILE__).'/../../head.php');
                         <td> <?php echo $musique['numeropiste']; ?> </td>
                         <td> <?php echo $musique['titremusique']; ?> </td>
                         <td> <?php echo $musique['dureemusique']; ?> </td>
-                        <td class="bouton bouton-blue">
+                        <td class="bouton bouton-forme1 bouton-bleu">
                             <a href="./formAssemblerAlbum.php?idAlbum=<?php echo $idAlbum ?>&idMusique=<?php echo $musique['idmusique'] ?>">Modifier</a>
                         </td>
-                        <td class="bouton bouton-red">
+                        <td class="bouton bouton-forme1 bouton-red">
                             <a href="./gestionAssemblerAlbum.php?action=supprimerAssemblerAlbum&idAlbum=<?php echo $idAlbum ?>&idMusique=<?php echo $musique['idmusique'] ?>">Supprimer</a>
                         </td>
                     </tr>

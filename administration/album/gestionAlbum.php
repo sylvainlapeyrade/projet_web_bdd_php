@@ -47,13 +47,13 @@ include_once(dirname(__FILE__).'/../../head.php');
                         <td> <?php echo $album['nomalbum']; ?> </td>
                         <td> <?php echo format_date($album['datealbum']); ?> </td>
                         <td> <?php echo $album['descriptionalbum']; ?> </td>
-                        <td class="bouton bouton-blue">
+                        <td class="bouton bouton-forme1 bouton-bleu">
                             <a href="./formAlbum.php?idAlbum=<?php echo $album['idalbum']; ?>">Modifier</a>
                         </td>
-                        <td class="bouton">
+                        <td class="bouton bouton-forme1 bouton-cyan">
                             <a href="./gestionAssemblerAlbum.php?idAlbum=<?php echo $album['idalbum']; ?>">Gestion musique</a>
                         </td>
-                        <td class="bouton bouton-red">
+                        <td class="bouton bouton-forme1 bouton-red">
                             <a href="?action=supprimerAlbum&idAlbum=<?php echo $album['idalbum']; ?>">Supprimer</a>
                         </td>
                     </tr>

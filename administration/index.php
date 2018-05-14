@@ -18,22 +18,22 @@
       <a href="./index.php">Panneau d'adminsitration</a>
     </h1>
     <section>
-        <a class="bouton bouton-blue" href="utilisateur/gestionUtilisateur.php">
+        <a class="bouton bouton-forme1 bouton-red1" href="utilisateur/gestionUtilisateur.php">
           Gestion des utilisateur
         </a><br><br>
-        <a class="bouton bouton-blue" href="./artiste/gestionArtiste.php">
+        <a class="bouton bouton-forme1 bouton-red1" href="./artiste/gestionArtiste.php">
           Gestion des artistes
         </a><br><br>
-        <a class="bouton bouton-blue" href="./recompense/gestionRecompense.php">
+        <a class="bouton bouton-forme1 bouton-red1" href="./recompense/gestionRecompense.php">
           Gestion des récompense
         </a><br><br>
-        <a class="bouton bouton-blue" href="./groupe/gestionGroupe.php">
+        <a class="bouton bouton-forme1 bouton-red1" href="./groupe/gestionGroupe.php">
           Gestion des groupes
         </a><br><br>
-        <a class="bouton bouton-blue" href="./album/gestionAlbum.php">
+        <a class="bouton bouton-forme1 bouton-red1" href="./album/gestionAlbum.php">
           Gestion des albums
         </a><br><br>
-        <a class="bouton bouton-blue" href="./musique/gestionMusique.php">
+        <a class="bouton bouton-forme1 bouton-red1" href="./musique/gestionMusique.php">
           Gestion des musiques
         </a>
     </section>

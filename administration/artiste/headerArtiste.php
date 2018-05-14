@@ -5,7 +5,7 @@
     </div>
     
     <div>
-        <a href="./formArtiste.php" class="bouton bouton-blue t12 bouton-header">Ajouter un artiste</a>
+        <a href="./formArtiste.php" class="bouton bouton-forme1 bouton-red1 t12 bouton-header">Ajouter un artiste</a>
     </div>
 
     <?php include_once(dirname(__FILE__).'/../headerMessage.php'); ?>

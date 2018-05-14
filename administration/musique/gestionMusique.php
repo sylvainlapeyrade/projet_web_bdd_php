@@ -50,10 +50,10 @@ include_once(dirname(__FILE__).'/../../head.php');
                         <td> <?php echo $musique['dureemusique']; ?> </td>
                         <td> <?php echo format_date($musique['datemusique']); ?> </td>
                         <td> <?php echo $musique['descriptionmusique']; ?> </td>
-                        <td class="bouton bouton-blue">
+                        <td class="bouton bouton-forme1 bouton-bleu">
                             <a href="./formMusique.php?idMusique=<?php echo $musique['idmusique'] ?>">Modifier</a>
                         </td>
-                        <td class="bouton bouton-red">
+                        <td class="bouton bouton-forme1 bouton-red">
                             <a href="./gestionMusique.php?action=supprimerMusique&idMusique=<?php echo $musique['idmusique'] ?>">Supprimer</a>
                         </td>
                     </tr>
