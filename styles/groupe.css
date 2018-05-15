@@ -1,7 +1,6 @@
 #page-groupe {
     background: rgba(0, 0, 0, 0.7);
-    padding: 25px;
-    padding-top: 0;
+    padding: 0 25px 25px;
 }
 
 #description-groupe {
@@ -12,8 +11,7 @@
 
 #imageGroupe {
     background-color: white;
-    margin: 10px;
-    margin-top: 25px;
+    margin: 25px 10px 10px;
     border: 1px black solid;
     max-width: 400px;
     max-height: 400px;

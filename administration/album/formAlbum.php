@@ -62,8 +62,8 @@ include_once(dirname(__FILE__).'/../../header.php');
                             <input type="text"
                                    class="input-text"
                                    name="nomAlbum"
-                                   placeholder="Nom album"
-                                   value="<?php echo $nomAlbum; ?>"
+                                   placeholder="Titre album"
+                                   value="<?php if(isset($nomAlbum)){echo $nomAlbum;} ?>"
                                    required
                             />
 
@@ -74,7 +74,7 @@ include_once(dirname(__FILE__).'/../../header.php');
                                        pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
                                        class="input-date"
                                        name="dateAlbum"
-                                       value="<?php echo format_date($dateAlbum); ?>"
+                                       value="<?php if(isset($dateAlbum)){echo format_date($dateAlbum);} ?>"
                                        required
                                 />
                             </label>
@@ -82,15 +82,15 @@ include_once(dirname(__FILE__).'/../../header.php');
                             <input type="text"
                                    class="input-text"
                                    name="urlPochetteAlbum"
-                                   placeholder="Url album"
-                                   value="<?php echo $urlPochetteAlbum; ?>"
+                                   placeholder="Url pochette album"
+                                   value="<?php if(isset($urlPochetteAlbum)){echo $urlPochetteAlbum;} ?>"
                             />
                             <br><br>
 
                             <textarea class="input-area"
                                       name="descriptionAlbum"
                                       rows="5"
-                                      placeholder="Description de l'album"><?php echo $descriptionAlbum; ?></textarea>
+                                      placeholder="Description de l'album"><?php if(isset($descriptionAlbum)){echo $descriptionAlbum;} ?></textarea>
                         </div>
 
                         <div id="box-item-checkbox" class="width-800 liste-checkbox flex flex-center flex-wrap">

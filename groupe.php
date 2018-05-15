@@ -30,7 +30,7 @@ include_once(dirname(__FILE__).'/head.php');
 
 <main>
     <section>
-        
+
         <?php include_once(dirname(__FILE__).'/barreRecherche.php'); ?>
 
         <div id="page-groupe">
@@ -38,13 +38,14 @@ include_once(dirname(__FILE__).'/head.php');
             <div class="flex flex-between">
                 <div id="description-groupe" class="flex-around">
                     <div>
-                        <h1 class="red1"><?php echo $groupe['nomgroupe']; ?> - <?php echo $groupe['dategroupe']; ?></h1>
+                        <h1 class="red1"><?php if(isset($groupe)){echo $groupe['nomgroupe'];} ?> -
+                            <?php if(isset($groupe)){echo $groupe['dategroupe'];} ?></h1>
                         <p>
-                            <?php echo $groupe['descriptiongroupe']; ?>
+                            <?php if(isset($groupe)){echo $groupe['descriptiongroupe'];} ?>
                         </p>
                     </div>
                     <div id="liste-membre" class="text-center flex flex-arround">
-                        Membres du groupe : 
+                        Membres du groupe :
                         <?php foreach($listeArtistesGroupe as $key => $artiste) { ?>
                             <a class="souligner" href="/artiste.php?idArtiste=<?php echo $artiste['idartiste']; ?>">
                                 <?php if ( !empty($artiste['nomscene']) ) {
@@ -57,15 +58,15 @@ include_once(dirname(__FILE__).'/head.php');
                         <?php } ?>
                     </div>
                 </div>
-                
+
                 <?php if ( !empty($groupe['urlimagegroupe']) ) { ?>
                     <div>
                         <img id="imageGroupe" src="<?php echo $groupe['urlimagegroupe']; ?>">
                     </div>
                 <?php } ?>
-                
+
             </div>
-            
+
             <!-- Musiques de l'artiste -->
             <div>
                 <hr>
@@ -115,9 +116,9 @@ include_once(dirname(__FILE__).'/head.php');
                     </table>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </section>
 </main>
 

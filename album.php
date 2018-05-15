@@ -41,18 +41,19 @@ include_once(dirname(__FILE__).'/head.php');
 
 <main>
     <section>
-        
+
         <?php include_once(dirname(__FILE__).'/barreRecherche.php'); ?>
-        
+
         <!-- PRESENTATION -->
         <div id="page-album">
             <div class="flex flex-between">
                 <div id="description-album" class="flex-around">
-                    
+
                     <div>
-                        <h1 class="red1"><a><?php echo $album['nomalbum']; ?></a> - <a><?php echo $album['datealbum']; ?></a></h1>
+                        <h1 class="red1"><a><?php if(isset($album)) {echo $album['nomalbum'];} ?></a> -
+                            <a><?php if(isset($album)) {echo $album['datealbum'];} ?></a></h1>
                         <p>
-                            <?php echo $album['descriptionalbum']; ?>
+                            <?php if(isset($album)) {echo $album['descriptionalbum'];} ?>
                             <br>
                         </p>
                         <p>
@@ -69,11 +70,11 @@ include_once(dirname(__FILE__).'/head.php');
                             <?php } ?>
                         </p>
                     </div>
-                    
+
                     <div id="liste-musiques" class="flex text-center flex-arround">
                         <div>
                             <h4>Morceaux de l'album:</h4>
-                            
+
                             <table class="text-center">
                                 <tr>
                                     <th class="table-head width-200">Numéro de piste</th>
@@ -90,30 +91,30 @@ include_once(dirname(__FILE__).'/head.php');
                                     <?php } ?>
                                 <?php } ?>
                             </table>
-                            
+
                             <?php if ( empty($listeMusiquesAlbum) ) { ?>
                                 <h3>Cette album ne contient pas encore de musique </h3>
                             <?php } ?>
-                            
+
                         </div>
                     </div>
                 </div>
-                
+
                 <div>
-                    <img id="imageAlbum" src="<?php echo $album['urlpochettealbum']; ?>">
+                    <img id="imageAlbum" src="<?php if(isset($album)) {echo $album['urlpochettealbum'];} ?>">
                 </div>
-                
+
             </div>
             <!-- FIN PRESENTATION -->
-            
+
             <!-- COMMENTAIRE -->
             <div id="liste-commentaire">
                 <hr size="1" color=#e8491d>
-                
+
                 <?php if ( isset($_GET['operation']) && $_GET['operation'] == 'ok' ) { ?>
                     <div class="green">L'opération a été effectué.</div>
                 <?php } ?>
-                
+
                 <?php if ( isset($erreur) ) { ?>
                     <div class="red"><?php echo $erreur; ?></div>
                 <?php } ?>
@@ -140,9 +141,9 @@ include_once(dirname(__FILE__).'/head.php');
                                   name="commentaire"
                                   cols="50"
                                   rows="5"
-                                  <?php if ( !isset($note) || empty($note) ) { echo 'disabled'; } ?>
+                            <?php if ( !isset($note) || empty($note) ) { echo 'disabled'; } ?>
                                   placeholder="Votre commentaire ici..."
-                                  required ><?php echo $commentaire ?></textarea>
+                                  required ><?php if(isset($commentaire)) {echo $commentaire;} ?></textarea>
                         <input class="bouton bouton-forme1 bouton-red1" type="submit" value="Envoyer">
                     </form>
                 <?php } else { ?>
@@ -172,9 +173,9 @@ include_once(dirname(__FILE__).'/head.php');
                 </div>
             </div>
             <!-- FIN COMMENTAIRE -->
-            
+
         </div>
-        
+
     </section>
 </main>
 

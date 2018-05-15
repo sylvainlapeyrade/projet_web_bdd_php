@@ -48,7 +48,8 @@ include_once(dirname(__FILE__).'/head.php');
             <div class="flex flex-between">
                 <div id="description-album" class="flex-around">
                     <div>
-                        <h1 class="red1"><?php echo $musique['titremusique']; ?> - <?php echo $musique['datemusique']; ?></h1>
+                        <h1 class="red1"><?php if(isset($musique)){echo $musique['titremusique'];} ?> -
+                            <?php if(isset($musique)){echo $musique['datemusique'];} ?></h1>
                         <div>
                             <?php if ( !empty($musique['descriptionmusique']) ) {
                                     echo $musique['descriptionmusique'];
@@ -109,9 +110,9 @@ include_once(dirname(__FILE__).'/head.php');
                             </p>
                         </div>
                         <?php if ( isset($idAlbum) ) { ?>
-                            <input type="hidden" name="idAlbum" value="<?php echo $idAlbum ?>" />
+                            <input type="hidden" name="idAlbum" value="<?php echo $idAlbum; ?>" />
                         <?php } elseif ( isset($idMusique) ) { ?>
-                            <input type="hidden" name="idMusique" value="<?php echo $idMusique ?>" />
+                            <input type="hidden" name="idMusique" value="<?php echo $idMusique; ?>" />
                         <?php } ?>
                         <input type="hidden" name="action" value="ajouterEvaluation" />
                         <input type="hidden" name="note" value="<?php echo $note ?>" />
@@ -121,7 +122,7 @@ include_once(dirname(__FILE__).'/head.php');
                                   rows="5"
                                   <?php if ( !isset($note) || empty($note) ) { echo 'disabled'; } ?>
                                   placeholder="Votre commentaire ici..."
-                                  required ><?php echo $commentaire ?></textarea>
+                                  required ><?php if(isset($commentaire)){echo $commentaire;} ?></textarea>
                         <input class="bouton bouton-forme1 bouton-red1" type="submit" value="Envoyer">
                     </form>
                 <?php } else { ?>
@@ -137,10 +138,11 @@ include_once(dirname(__FILE__).'/head.php');
                                 <p>
                                     <b><?php echo $evaluation['idutilisateurevmu']; ?></b>&nbsp; &nbsp;Note: <?php echo $evaluation['noteevmu']; ?>/5
                                     <?php if ( is_admin() || $_SESSION['idUtilisateur'] == $evaluation['idutilisateurevmu'] ) { ?> 
-                                        <a class="bouton bouton-forme2 bouton-red1" href="/musique.php?action=supprimerEvaluation&idMusique=<?php echo $idMusique; ?>&idUtilisateur=<?php echo $evaluation['idutilisateurevmu']; ?>">Supprimer</a>
+                                        <a class="bouton bouton-forme2 bouton-red1" href="/musique.php?action=supprimerEvaluation&idMusique=
+                                        <?php echo $idMusique; ?>&idUtilisateur=<?php echo $evaluation['idutilisateurevmu']; ?>">Supprimer</a>
                                     <?php } ?>
                                 </p>
-                                <p><?php echo $evaluation['commentaireevmu'] ?></p>
+                                <p><?php echo $evaluation['commentaireevmu']; ?></p>
                                 <hr size="1" color=#e8491d>
                             </div>
                         <?php } ?>

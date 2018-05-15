@@ -72,7 +72,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                                    class="input-text"
                                    name="titreMusique"
                                    placeholder="Titre musique"
-                                   value="<?php echo $titreMusique; ?>"
+                                   value="<?php if(isset($titreMusique)){echo $titreMusique;} ?>"
                                    required
                                    />
 
@@ -80,7 +80,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                                 <input type="number"
                                        class="input-number"
                                        name="dureeMusique"
-                                       value="<?php echo $dureeMusique; ?>"
+                                       value="<?php if(isset($dureeMusique)){echo $dureeMusique;} ?>"
                                        placeholder="0"
                                        required
                                        />
@@ -92,7 +92,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                                    pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
                                    class="input-date"
                                    name="dateMusique"
-                                   value="<?php echo format_date($dateMusique); ?>"
+                                   value="<?php if(isset($dateMusique)){echo format_date($dateMusique);} ?>"
                                    required
                                    />
                             </label>
@@ -100,14 +100,14 @@ include_once(dirname(__FILE__).'/../../head.php');
                             <textarea class="input-area" 
                                       name="descriptionMusique" 
                                       rows="5"
-                                      placeholder="Description de la musique"><?php echo $descriptionMusique; ?></textarea>
+                                      placeholder="Description de la musique"><?php if(isset($descriptionMusique)){echo $descriptionMusique;} ?></textarea>
                         </div>
 
                         <div>
                             <h4>Genres :</h4>
                             <div id="box-item-checkbox" class="width-500 liste-checkbox flex flex-center flex-wrap">
                                 <?php foreach($genres as $genre) { ?>
-                                <div class="item-checkbox">
+                                <label class="item-checkbox">
                                     <input type="checkbox"
                                            name="nomGenre<?php echo $genre ?>"
                                            value="<?php echo $genre ?>"
@@ -115,14 +115,14 @@ include_once(dirname(__FILE__).'/../../head.php');
                                                echo "checked"; } ?>
                                            />
                                     <?php echo $genre ?>
-                                </div>
+                                </label>
                                 <?php } ?>
                             </div>
 
                             <h4>Artistes :</h4>
                             <div id="box-item-checkbox" class="width-500 liste-checkbox flex flex-center flex-wrap">
                                 <?php foreach($artistes as $artiste) { ?>
-                                <div class="item-checkbox">
+                                <label class="item-checkbox">
                                     <input type="checkbox"
                                            name="idArtiste<?php echo $artiste['idartiste']; ?>"
                                            value="<?php echo $artiste['idartiste'] ?>"
@@ -130,7 +130,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                                                echo "checked"; } ?>
                                            />
                                     <?php echo $artiste['nomartiste'].' '.$artiste['prenomartiste']; ?>
-                                </div>
+                                </label>
                                 <?php } ?>
                             </div>
                         </div>
