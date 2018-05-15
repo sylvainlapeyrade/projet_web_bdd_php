@@ -10,45 +10,12 @@ $info['head']['stylesheets'] = ['compte.css'];
 
 if(is_connect()) {leave();}
 
-$action = $_GET['action'];
-if ( isset($action) && !empty($action) ) {
-    $identifiant = $_GET['idUtilisateur'];
-    $motDePasse = $_GET['motDePasse'];
-    $verification = $_GET['verification'];
-}
-
-if ( isset($db) ) {
-    switch($action) {
-        case 'inscription':
-            /*
-             * Champs présent : identifiant, motDePasse, verification
-             * Champs obligatoire : identifiant, motDePasse, verification
-             */
-            if ( !isset($identifiant, $motDePasse, $verification) ) {
-                $erreur = $messages['formulaire']['invalide'];
-                break;
-            }
-            if ( empty($identifiant) || empty($motDePasse) || empty($verification) ) {
-                $erreur = $messages['formulaire']['champs_vide'];
-                break;
-            }
-            if ( $motDePasse != $verification ) {
-                $erreur = $messages['formulaire']['motDePasseDifferent'];
-                break;
-            }
-            $operationOk = inscription($db, $idUtilisateur, $motDePasse);
-            if ( !$operationOk ) {
-                $erreur = $messages['formulaire']['utilisateurExistant'];
-                break;
-            }
-            header('Location: /index.php');
-            break;
-    }
-}
+include_once(dirname(__FILE__).'/actionCompte.php');
 
 ?>
 
 <?php include_once(dirname(__FILE__).'/../head.php'); ?>
+
 <?php include_once(dirname(__FILE__).'/../header.php'); ?>
 
 <main>
@@ -56,10 +23,7 @@ if ( isset($db) ) {
         
         <!-- <h1 class="t30 souligner">Inscription</h1> -->
         
-        <? if ( isset($erreur) ) { ?>
-        <!-- Message d'erreur du formulaire -->
-        <p class="red"><?php echo $erreur; ?></p>
-        <? } ?>
+        <?php include_once(dirname(__FILE__).'/headerCompte.php'); ?>
         
         <!-- FORMULAIRE :
              idUtilisateur : text
@@ -89,7 +53,7 @@ if ( isset($db) ) {
             <input id="bouton" 
                    class="bouton bouton-forme1 bouton-red1 margin-center" 
                    type="submit" 
-                   name="inscription" 
+                   name="action" 
                    value="inscription"
                    />
         </form>

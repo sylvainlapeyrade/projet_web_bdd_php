@@ -81,6 +81,7 @@ $messages = [
     ],
     'inscription' => [
         'utilisateurExistant' => "Ce nom d'utilisateur existe déjà.",
+        'inscriptionOk' => "Le compte à été enregistré.",
     ],
     'minimum1Artiste' => "Il faut au minimum un artiste sélectionné.",
     'minimum2Artiste' => "Il faut au minimum deux artistes sélectionnés.",

@@ -10,36 +10,7 @@ $info['head']['stylesheets'] = ['compte.css'];
 
 if(is_connect()) {leave();}
 
-$action = $_GET['action'];
-if ( isset($action) && !empty($action) ) {
-    $identifiant = $_GET['idUtilisateur'];
-    $motDePasse = $_GET['motDePasse'];
-}
-
-if ( isset($db) ) {
-    switch($action) {
-        case 'connexion':
-            /*
-             * Champs présent : identifiant, motDePasse
-             * Champs obligatoire : identifiant, motDePasse
-             */
-            if ( !isset($identifiant, $motDePasse) ) {
-                $erreur = $messages['formulaire']['invalide'];
-                break;
-            }
-            if ( empty($identifiant) || empty($motDePasse) ) {
-                $erreur = $messages['formulaire']['champs_vide'];
-                break;
-            }
-            $operationOk = connexion_compte($db, $identifiant, $motDePasse);
-            if ( !$operationOk ) {
-                $erreur = $messages['connexion']['incorrect'];
-                break;
-            }
-            header('Location: /index.php');
-            break;
-    }
-}
+include_once(dirname(__FILE__).'/actionCompte.php');
 
 ?>
 
@@ -50,16 +21,9 @@ if ( isset($db) ) {
 <main>
     <section class="text-center">
         
-       <!-- <h1 class="t30 souligner">Connexion</h1> -->
-        
-        <? if ( isset($erreur) ) { ?>
-        <!-- Message d'erreur du formulaire -->
-        <p class="red"><?php echo $erreur; ?></p>
-        <? } ?>
-        <? if ( isset($_GET['action']) && $_GET['action'] == 'inscription' ) { ?>
-        <!-- Message si l'utilisateur viens de s'inscrire -->
-        <p class="green">Votre compte a été crée.<br>Connectez-vous à votre compte !</p>
-        <? } ?>
+        <!-- <h1 class="t30 souligner">Connexion</h1> -->
+
+        <?php include_once(dirname(__FILE__).'/headerCompte.php'); ?>
         
         <!-- FORMULAIRE :
              idUtilisateur : text
