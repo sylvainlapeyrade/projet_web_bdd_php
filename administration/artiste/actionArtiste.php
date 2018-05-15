@@ -11,8 +11,8 @@ if ( isset($action) && !empty($action) ) {
     $descriptionArtiste = $_GET['descriptionArtiste'];
 }
 
-if ( isset($db) ) {
-    switch($_GET['action']) {
+if ( isset($db, $action) ) {
+    switch($action) {
         case "ajouterArtiste":
             /*
              * Champs présent : nomArtiste, prenomArtiste, nomScene, dateNaissanceArtiste, urlImageArtiste, descriptionArtiste

@@ -12,7 +12,7 @@ if ( isset($action) && !empty($action) ) {
     $numeroPiste = $_GET['numeroPiste'];
 }
 
-if ( isset($db) ) {
+if ( isset($db, $action) ) {
     switch($action) {
         case 'ajouterAssemblerAlbum':
             /*

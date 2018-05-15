@@ -17,7 +17,7 @@ if ( isset($action) && !empty($action) ) {
     }
 }
 
-if ( isset($db) ) {
+if ( isset($db, $action) ) {
     switch($action) {
         case "ajouterMusique":
             /*
