@@ -63,7 +63,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                                    class="input-text"
                                    name="nomGroupe"
                                    placeholder="Nom groupe"
-                                   value="<?php echo $nomGroupe; ?>"
+                                   value="<?php if(isset($nomGroupe)){echo $nomGroupe;} ?>"
                                    required
                                    />
 
@@ -73,7 +73,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                                        pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
                                        class="input-date"
                                        name="dateGroupe"
-                                       value="<?php echo format_date($dateGroupe); ?>"
+                                       value="<?php if(isset($dateGroupe)){echo format_date($dateGroupe);} ?>"
                                        required
                                        />
                             </label>
@@ -82,14 +82,14 @@ include_once(dirname(__FILE__).'/../../head.php');
                                    class="input-text"
                                    name="urlImageGroupe"
                                    placeholder="Url image"
-                                   value="<?php echo $urlImageGroupe; ?>"
+                                   value="<?php if(isset($urlImageGroupe)){echo $urlImageGroupe;} ?>"
                                    />
                             <br><br>
 
                             <textarea class="input-area" 
                                       name="descriptionGroupe" 
                                       rows="5"
-                                      placeholder="Description du groupe"><?php echo $descriptionGroupe; ?></textarea>
+                                      placeholder="Description du groupe"><?php if(isset($descriptionGroupe)){echo $descriptionGroupe;} ?></textarea>
                         </div>
 
                         <div class="width-800">

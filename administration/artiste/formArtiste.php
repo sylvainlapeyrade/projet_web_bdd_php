@@ -54,7 +54,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                     <input type="text" 
                            class="input-text" 
                            name="nomArtiste" 
-                           value="<?php echo $nomArtiste ?>" 
+                           value="<?php if(isset($nomArtiste)){echo $nomArtiste;} ?>"
                            placeholder="Nom de l'artiste"
                            required
                            />
@@ -62,7 +62,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                     <input type="text" 
                            class="input-text" 
                            name="prenomArtiste" 
-                           value="<?php echo $prenomArtiste ?>" 
+                           value="<?php if(isset($prenomArtiste)){echo $prenomArtiste;} ?>"
                            placeholder="Prénom de l'artiste"
                            required
                            />
@@ -70,7 +70,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                     <input type="text" 
                            class="input-text" 
                            name="nomScene" 
-                           value="<?php echo $nomScene ?>" 
+                           value="<?php if(isset($nomScene)){echo $nomScene;} ?>"
                            placeholder="Nom de scène"
                            />
 
@@ -81,7 +81,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                                pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
                                class="input-date"
                                name="dateNaissanceArtiste"
-                               value="<?php echo format_date($dateNaissanceArtiste); ?>"
+                               value="<?php if(isset($dateNaissanceArtiste)){echo format_date($dateNaissanceArtiste);} ?>"
                                required
                                />
                     </label>
@@ -89,13 +89,13 @@ include_once(dirname(__FILE__).'/../../head.php');
                     <input type="text" 
                            class="input-text" 
                            name="urlImageArtiste" 
-                           value="<?php echo $urlImageArtiste ?>" 
+                           value="<?php if(isset($urlImageArtiste)){echo $urlImageArtiste;} ?>"
                            placeholder="URL de l'image de l'artiste"
                            />
                     <textarea class="input-area" 
                               name="descriptionArtiste" 
                               rows="5" 
-                              placeholder="Description de l'artiste"><?php echo $descriptionArtiste ?></textarea>
+                              placeholder="Description de l'artiste"><?php if(isset($descriptionArtiste)){echo $descriptionArtiste;} ?></textarea>
 
                     <!-- BOUTON MODIFIER/AJOUTER AVEC CHAMPS CACHES -->
                     <?php  if ( isset($idArtiste) ) { /* BOUTON POUR MODIFIER */ ?>

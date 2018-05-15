@@ -58,7 +58,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                                    class="input-text"
                                    name="nomRecompense"
                                    placeholder="Nom récompense"
-                                   value="<?php echo $nomRecompense; ?>"
+                                   value="<?php if(isset($nomRecompense)){echo $nomRecompense;} ?>"
                                    required
                             />
 
@@ -69,7 +69,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                                        pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
                                        class="input-date"
                                        name="dateRecompense"
-                                       value="<?php echo format_date($dateRecompense); ?>"
+                                       value="<?php if(isset($dateRecompense)){echo format_date($dateRecompense);} ?>"
                                        required
                                 />
                             </label>
@@ -77,7 +77,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                             <textarea class="input-area"
                                       name="descriptionRecompense"
                                       rows="5"
-                                      placeholder="Description de la récompense"><?php echo $descriptionRecompense; ?></textarea>
+                                      placeholder="Description de la récompense"><?php if(isset($descriptionRecompense)){echo $descriptionRecompense;} ?></textarea>
                         </div>
 
                         <div>

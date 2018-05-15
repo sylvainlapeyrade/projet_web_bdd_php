@@ -21,7 +21,7 @@ DROP TABLE IF EXISTS Definir          CASCADE;
 CREATE TABLE Album(
   idAlbum               SERIAL        CONSTRAINT Al_pk_idAl  PRIMARY KEY,
   nomAlbum              VARCHAR(45)   CONSTRAINT Al_noAl_NN  NOT NULL,
-  dateAlbum             DATE          CONSTRAINT AL_daAl_NN NOT NULL,
+  dateAlbum             DATE          CONSTRAINT AL_daAl_NN  NOT NULL,
   urlPochetteAlbum      TEXT,
   descriptionAlbum      TEXT
 );
@@ -32,7 +32,7 @@ CREATE TABLE Artiste(
   nomArtiste            VARCHAR(45)   CONSTRAINT Ar_noAr_NN  NOT NULL,
   prenomArtiste         VARCHAR(45)   CONSTRAINT Ar_prAr_NN  NOT NULL,
   nomScene              VARCHAR(45),
-  dateNaissanceArtiste  DATE          CONSTRAINT Ar_daAr_NN NOT NULL,
+  dateNaissanceArtiste  DATE          CONSTRAINT Ar_daAr_NN  NOT NULL,
   descriptionArtiste    TEXT,
   urlImageArtiste       TEXT
 );
@@ -41,7 +41,7 @@ CREATE TABLE Artiste(
 CREATE TABLE Recompense(
   idRecompense 	        SERIAL 		    CONSTRAINT Re_pk_idRe  PRIMARY KEY,
   nomRecompense 	      VARCHAR(45)   CONSTRAINT Re_noRe_NN  NOT NULL,
-  dateRecompense        DATE            CONSTRAINT Re_daRe_NN  NOT NULL,
+  dateRecompense        DATE          CONSTRAINT Re_daRe_NN  NOT NULL,
   descriptionRecompense TEXT
 );
 
@@ -50,7 +50,7 @@ CREATE TABLE Musique(
   idMusique             SERIAL        CONSTRAINT Mu_pk_idMu  PRIMARY KEY,
   titreMusique          VARCHAR(45)   CONSTRAINT Mu_tiMu_NN  NOT NULL,
   dureeMusique	        INT           CONSTRAINT Mu_duMu_NN  NOT NULL,
-  dateMusique	   	      DATE        CONSTRAINT Mu_daMu_NN NOT NULL,
+  dateMusique	   	      DATE          CONSTRAINT Mu_daMu_NN NOT NULL,
   descriptionMusique    TEXT
 );
 
@@ -58,7 +58,7 @@ CREATE TABLE Musique(
 CREATE TABLE Groupe(
   idGroupe              SERIAL        CONSTRAINT Gr_pk_idGr  PRIMARY KEY,
   nomGroupe	            VARCHAR(45)   CONSTRAINT Gr_noGr_NN  NOT NULL,
-  dateGroupe	          DATE        CONSTRAINT GR_daGr_NN NOT NULL,
+  dateGroupe	          DATE          CONSTRAINT GR_daGr_NN  NOT NULL,
   descriptionGroupe     TEXT,
   urlImageGroupe        TEXT
 );
@@ -87,14 +87,14 @@ CREATE TABLE Evaluer_Musique(
   noteEvMu              INT           CONSTRAINT Em_noEm_NN  NOT NULL,
                                       CONSTRAINT Em_noEm_CH  CHECK (noteEvMu BETWEEN 0 AND 5),
   commentaireEvMu       TEXT,
-                                      CONSTRAINT Em_pk_evMu  PRIMARY KEY (idUtilisateurEvMu, idMusiqueEvMu)
+  CONSTRAINT Em_pk_evMu  PRIMARY KEY (idUtilisateurEvMu, idMusiqueEvMu)
 );
 
 
 CREATE TABLE Composer_Album(
-  idAlbumCoAl           INT           CONSTRAINT Ca_fk_ilCo  REFERENCES Album(idAlbum) ON DELETE CASCADE,
+  idAlbumCoAl           INT           CONSTRAINT Ca_fk_ilCo  REFERENCES Album(idAlbum)     ON DELETE CASCADE,
   idArtisteCoAl         INT           CONSTRAINT Ca_fk_irCo  REFERENCES Artiste(idArtiste) ON DELETE RESTRICT,
-							          CONSTRAINT Ca_pk_coAl  PRIMARY KEY (idAlbumCoAl, idArtisteCoAl)
+                                      CONSTRAINT Ca_pk_coAl  PRIMARY KEY (idAlbumCoAl, idArtisteCoAl)
 );
 
 
@@ -108,12 +108,12 @@ CREATE TABLE Composer_Musique(
 CREATE TABLE Obtenir_Artiste(
   idRecompenseOa        INT           CONSTRAINT Oa_fk_iROa  REFERENCES Recompense(idRecompense),
   idArtisteOa           INT           CONSTRAINT Oa_fk_iAOa  REFERENCES Artiste(idArtiste),
-							          CONSTRAINT Oa_pk_obAr  PRIMARY KEY (idRecompenseOa, idArtisteOa)
+                                      CONSTRAINT Oa_pk_obAr  PRIMARY KEY (idRecompenseOa, idArtisteOa)
 );
 
 
 CREATE TABLE Assembler_Album(
-  idAlbumAa             INT           CONSTRAINT Aa_fk_ilAa  REFERENCES Album(idAlbum) ON DELETE CASCADE,
+  idAlbumAa             INT           CONSTRAINT Aa_fk_ilAa  REFERENCES Album(idAlbum)     ON DELETE CASCADE,
   idMusiqueAa           INT           CONSTRAINT Aa_fk_iMAa  REFERENCES Musique(idMusique) ON DELETE RESTRICT,
   numeroPiste           INT           CONSTRAINT Aa_nuPi_NN  NOT NULL,
                                       CONSTRAINT Aa_pk_AsAl  PRIMARY KEY (idAlbumAa, idMusiqueAa)

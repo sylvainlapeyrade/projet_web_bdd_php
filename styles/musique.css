@@ -1,13 +1,6 @@
 #page-musique {
     background: rgba(0, 0, 0, 0.7);
-    padding: 25px;
-    padding-top: 0;
-}
-
-#description-musique {
-    margin-right: 50px;
-    padding-right: 10px;
-    margin-top: 25px;
+    padding: 0 25px 25px;
 }
 
 #liste-commentaire {

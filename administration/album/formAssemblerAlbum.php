@@ -73,16 +73,16 @@ include_once(dirname(__FILE__).'/../../head.php');
                         <div class="margin-center">
                             <h4>Morceau de musique :</h4>
                             <div id="box-item-checkbox" class="width-500 liste-checkbox flex flex-center flex-wrap">
-                                <?php foreach($musiques as $musique) {
+                                <?php if(isset($musiques)) { foreach($musiques as $musique) {
                                         if ( empty($musiquesAssemblee) || ( !empty($musiquesAssemblee) && !in_array($musique['idmusique'], $musiquesAssemblee) ) ) { ?>
-                                <div class="item-checkbox">
+                                <label class="item-checkbox">
                                     <input type="checkbox"
                                            name="idMusique<?php echo $musique['idmusique']; ?>"
                                            value="<?php echo $musique['idmusique'] ?>"
                                            />
                                     <?php echo $musique['titremusique']; ?>
-                                </div>
-                                <?php } } ?>
+                                </label>
+                                <?php } } }?>
                             </div>
                         </div>
                         <?php }?>
@@ -91,7 +91,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                             <input type="number"
                                    class="input-number"
                                    name="numeroPiste"
-                                   value="<?php echo $numeroPiste ?>"
+                                   value="<?php if(isset($numeroPiste)) {echo $numeroPiste;} ?>"
                                    placeholder="1"
                                    required
                                    />

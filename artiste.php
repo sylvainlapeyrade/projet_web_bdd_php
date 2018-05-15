@@ -39,14 +39,14 @@ include_once(dirname(__FILE__).'/head.php');
                 <div id="description-artiste" class="flex-around">
                     <div>
                         <h1 class="red1">
-                            <?php
+                            <?php if(isset($artiste)){
                                 echo $artiste['nomartiste'].' '.$artiste['prenomartiste'];
                                 if ( !empty($artiste['nomscene']) )
-                                    echo ' - '.$artiste['nomscene'];
+                                    echo ' - '.$artiste['nomscene'];}
                             ?>
                         </h1>
                         <p>
-                            <?php echo $artiste['descriptionartiste']; ?>
+                            <?php if(isset($artiste)){echo $artiste['descriptionartiste'];} ?>
                         </p>
                         <p>
                             <?php if ( !empty($listeGroupesArtiste) ) {
@@ -92,7 +92,7 @@ include_once(dirname(__FILE__).'/head.php');
                 </div>
                 
                 <div>
-                    <img id="imageArtiste" src="<?php echo $artiste['urlimageartiste']; ?>">
+                    <img id="imageArtiste" src="<?php if(isset($artiste)){echo $artiste['urlimageartiste'];} ?>">
                 </div>
             </div>
 
