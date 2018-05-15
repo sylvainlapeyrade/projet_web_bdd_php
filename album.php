@@ -8,17 +8,11 @@ include_once(dirname(__FILE__).'/fonctions/fonctionEvaluer.php');
 include_once(dirname(__FILE__).'/bdd/connexion.php');
 
 $info['head']['subTitle'] = "Page album";
-$info['head']['stylesheets'] = ['barreRecherche.css', 'album.css'];
+$info['head']['stylesheets'] = ['barreRecherche.css', 'album.css', 'evaluation.css'];
 
 $idAlbum = $_GET['idAlbum'];
 
-include_once(dirname(__FILE__).'/actionEvaluation.php');
-
 $action = $_GET['action'];
-$note = $_GET['star'];
-if ( !isset($note) || empty($note) || $note < 0 ||$note > 5 ) {
-    $note = 0;
-}
 
 if ( isset($db, $idAlbum) ) {
     $album = recuperer_album($db, $idAlbum)[0];
@@ -27,7 +21,6 @@ if ( isset($db, $idAlbum) ) {
     }
     $listeArtistesAlbum = recuperer_artiste_album($db, $idAlbum);
     $listeMusiquesAlbum = recuperer_musique_album($db, $idAlbum);
-    $listeEvaluations = recuperer_evaluation_album_tous($db, $idAlbum);
 } else {
     header('Location: /index.php');
 }
