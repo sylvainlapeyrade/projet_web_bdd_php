@@ -1,14 +1,3 @@
-
-            
-        case "ajouterOk":
-            $messages['operation']['ok'];
-            break;
-        case "modifierOk":
-            $messages['operation']['ok'];
-            break;
-        case "supprimerOk":
-            $messages['operation']['ok'];
-            break;
 <?php
 
 $action = $_GET['action'];
@@ -48,24 +37,22 @@ if ( isset($db) ) {
                 $erreur = $messages['minimum1Artiste'];
                 break;
             }
-            if ( isset($db) ) {
-                $idRecompenseOa = ajouter_recompense($db, $nomRecompense, $dateRecompense, $descriptionRecompense);
-                if ( $idRecompenseOa == null ) {
-                    $erreur = $messages['operation']['ko']." (1)";
-                    break;
-                }
-                $indiceListe = 0;
-                do {
-                    $idArtisteOa = (int) $listeIdArtiste[$indiceListe];
-                    $operationOk = ajouter_obtenir_recompense($db, $idRecompenseOa, $idArtisteOa);
-                    $indiceListe++;
-                } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']. "(2)";
-                    break;
-                }
-                header('Location: ./gestionRecompense.php?action=ajouterOk');
+            $idRecompenseOa = ajouter_recompense($db, $nomRecompense, $dateRecompense, $descriptionRecompense);
+            if ( $idRecompenseOa == null ) {
+                $erreur = $messages['operation']['ko']." (1)";
+                break;
             }
+            $indiceListe = 0;
+            do {
+                $idArtisteOa = (int) $listeIdArtiste[$indiceListe];
+                $operationOk = ajouter_obtenir_recompense($db, $idRecompenseOa, $idArtisteOa);
+                $indiceListe++;
+            } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko']. "(2)";
+                break;
+            }
+            header('Location: ./gestionRecompense.php?action=ajouterOk');
             break;
 
         case "modifierRecompense":
@@ -89,29 +76,27 @@ if ( isset($db) ) {
                 $erreur = $messages['minimum1Artiste'];
                 break;
             }
-            if ( isset($db) ) {
-                $operationOk = modifier_recompense($db, $idRecompense, $nomRecompense, $dateRecompense, $descriptionRecompense);
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']." (1)";
-                    break;
-                }
-                $operationOk = supprimer_obtenir_recompense_tous($db, $idRecompense);
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']." (2)";
-                    break;
-                }
-                $indiceListe = 0;
-                do {
-                    $idArtiste = (int) $listeIdArtiste[$indiceListe];
-                    $operationOk = ajouter_obtenir_recompense($db, $idRecompense, $idArtiste);
-                    $indiceListe++;
-                } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']." (3)";
-                    break;
-                }
-                header('Location: ./gestionRecompense.php?action=modifierOk');
+            $operationOk = modifier_recompense($db, $idRecompense, $nomRecompense, $dateRecompense, $descriptionRecompense);
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko']." (1)";
+                break;
             }
+            $operationOk = supprimer_obtenir_recompense_tous($db, $idRecompense);
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko']." (2)";
+                break;
+            }
+            $indiceListe = 0;
+            do {
+                $idArtiste = (int) $listeIdArtiste[$indiceListe];
+                $operationOk = ajouter_obtenir_recompense($db, $idRecompense, $idArtiste);
+                $indiceListe++;
+            } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko']." (3)";
+                break;
+            }
+            header('Location: ./gestionRecompense.php?action=modifierOk');
             break;
 
         case "supprimerRecompense":
@@ -127,19 +112,17 @@ if ( isset($db) ) {
                 $erreur = $messages['formulaire']['champs_vide'];
                 break;
             }
-            if ( isset($db) ) {
-                $operationOk = supprimer_obtenir_recompense_tous($db, $idRecompense);
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']." (1)";
-                    break;
-                }
-                $operationOk = supprimer_recompense($db, $idRecompense);
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']." (2)";
-                    break;
-                }
-                header('Location: ./gestionRecompense.php?action=supprimerOk');
+            $operationOk = supprimer_obtenir_recompense_tous($db, $idRecompense);
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko']." (1)";
+                break;
             }
+            $operationOk = supprimer_recompense($db, $idRecompense);
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko']." (2)";
+                break;
+            }
+            header('Location: ./gestionRecompense.php?action=supprimerOk');
             break;
             
         case "ajouterOk":

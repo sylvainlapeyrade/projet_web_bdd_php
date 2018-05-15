@@ -40,36 +40,34 @@ if ( isset($db) ) {
                 $erreur = $messages['minimum1Artiste'];
                 break;
             }
-            if ( isset($db) ) {
-                $idMusique = ajouter_musique($db, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique);
-                if ( $idMusique == null ) {
-                    $erreur = $messages['operation']['ko']. " (1)";
-                    break;
-                }
+            $idMusique = ajouter_musique($db, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique);
+            if ( $idMusique == null ) {
+                $erreur = $messages['operation']['ko']. " (1)";
+                break;
+            }
+            $indiceListe = 0;
+            do {
+                $idArtisteCoMu = (int) $listeIdArtiste[$indiceListe];
+                $operationOk = ajouter_composer_musique($db, $idMusique, $idArtisteCoMu);
+                $indiceListe++;
+            } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko']. " (2)";
+                break;
+            }
+            if ( isset($listeNomGenre) && !empty($listeNomGenre) ) {
                 $indiceListe = 0;
                 do {
-                    $idArtisteCoMu = (int) $listeIdArtiste[$indiceListe];
-                    $operationOk = ajouter_composer_musique($db, $idMusique, $idArtisteCoMu);
+                    $nomGenre = $listeNomGenre[$indiceListe];
+                    $operationGenreOk = ajouter_genre($db, $idMusique, $nomGenre);
                     $indiceListe++;
-                } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
+                } while ( $operationGenreOk && $indiceListe < sizeof($listeNomGenre) );
                 if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']. " (2)";
+                    $erreur = $messages['operation']['ko']. " (3)";
                     break;
                 }
-                if ( isset($listeNomGenre) && !empty($listeNomGenre) ) {
-                    $indiceListe = 0;
-                    do {
-                        $nomGenre = $listeNomGenre[$indiceListe];
-                        $operationGenreOk = ajouter_genre($db, $idMusique, $nomGenre);
-                        $indiceListe++;
-                    } while ( $operationGenreOk && $indiceListe < sizeof($listeNomGenre) );
-                    if ( !$operationOk ) {
-                        $erreur = $messages['operation']['ko']. " (3)";
-                        break;
-                    }
-                }
-                header('Location: ./gestionMusique.php?action=ajouterOk');
             }
+            header('Location: ./gestionMusique.php?action=ajouterOk');
             break;
 
         case "modifierMusique":
@@ -89,49 +87,47 @@ if ( isset($db) ) {
                 $erreur = $messages['formulaire']['dateInvalide'];
                 break;
             }
-            if ( isset($db) ) {
-                $operationOk = modifier_musique($db, $idMusique, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique);
-                if (!$operationOk) {
-                    $erreur = $messages['operation']['ko'] . " (1)";
-                    break;
-                }
-                $operationOk = supprimer_genre_tous($db, $idMusique);
-                if (!$operationOk) {
-                    $erreur = $messages['operation']['ko'] . " (2)";
-                    break;
-                }
-                $operationOk = supprimer_composer_musique_tous($db, $idMusique);
-                if (!$operationOk) {
-                    $erreur = $messages['operation']['ko'] . " (3)";
-                    break;
-                }
-                $indiceListe = 0;
-                if (isset($listeIdArtiste)) {
-                    do {
-                        $idArtisteCoMu = (int)$listeIdArtiste[$indiceListe];
-                        $operationOk = ajouter_composer_musique($db, $idMusique, $idArtisteCoMu);
-                        $indiceListe++;
-                    }
-                    while ($operationOk && $indiceListe < sizeof($listeIdArtiste)) ;
-                }
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']. " (4)";
-                    break;
-                }
-                if ( isset($listeNomGenre) && !empty($listeNomGenre) ) {
-                    $indiceListe = 0;
-                    do {
-                        $nomGenre = $listeNomGenre[$indiceListe];
-                        $operationOk = ajouter_genre($db, $idMusique, $nomGenre);
-                        $indiceListe++;
-                    } while ( $operationOk && $indiceListe < sizeof($listeNomGenre) );
-                    if ( !$operationOk ) {
-                        $erreur = $messages['operation']['ko']. " (5)";
-                        break;
-                    }
-                }
-                header('Location: ./gestionMusique.php?action=modifierOk');
+            $operationOk = modifier_musique($db, $idMusique, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique);
+            if (!$operationOk) {
+                $erreur = $messages['operation']['ko'] . " (1)";
+                break;
             }
+            $operationOk = supprimer_genre_tous($db, $idMusique);
+            if (!$operationOk) {
+                $erreur = $messages['operation']['ko'] . " (2)";
+                break;
+            }
+            $operationOk = supprimer_composer_musique_tous($db, $idMusique);
+            if (!$operationOk) {
+                $erreur = $messages['operation']['ko'] . " (3)";
+                break;
+            }
+            $indiceListe = 0;
+            if (isset($listeIdArtiste)) {
+                do {
+                    $idArtisteCoMu = (int)$listeIdArtiste[$indiceListe];
+                    $operationOk = ajouter_composer_musique($db, $idMusique, $idArtisteCoMu);
+                    $indiceListe++;
+                }
+                while ($operationOk && $indiceListe < sizeof($listeIdArtiste)) ;
+            }
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko']. " (4)";
+                break;
+            }
+            if ( isset($listeNomGenre) && !empty($listeNomGenre) ) {
+                $indiceListe = 0;
+                do {
+                    $nomGenre = $listeNomGenre[$indiceListe];
+                    $operationOk = ajouter_genre($db, $idMusique, $nomGenre);
+                    $indiceListe++;
+                } while ( $operationOk && $indiceListe < sizeof($listeNomGenre) );
+                if ( !$operationOk ) {
+                    $erreur = $messages['operation']['ko']. " (5)";
+                    break;
+                }
+            }
+            header('Location: ./gestionMusique.php?action=modifierOk');
             break;
 
         case "supprimerMusique":
@@ -147,29 +143,27 @@ if ( isset($db) ) {
                 $erreur = $messages['formulaire']['champs_vide'];
                 break;
             }
-            if ( isset($db) ) {
-                $operationOk = supprimer_assembler_album_tous($db, $idMusique);
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']. " (1)";
-                    break;
-                }
-                $operationOk = supprimer_composer_musique_tous($db, $idMusique);
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']. " (2)";
-                    break;
-                }
-                $operationOk = supprimer_genre_tous($db, $idMusique);
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']. " (3)";
-                    break;
-                }
-                $operationOk = supprimer_musique($db, $idMusique);
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']. " (4)";
-                    break;
-                }
-                header('Location: ./gestionMusique.php?action=supprimerOk');
+            $operationOk = supprimer_assembler_album_tous($db, $idMusique);
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko']. " (1)";
+                break;
             }
+            $operationOk = supprimer_composer_musique_tous($db, $idMusique);
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko']. " (2)";
+                break;
+            }
+            $operationOk = supprimer_genre_tous($db, $idMusique);
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko']. " (3)";
+                break;
+            }
+            $operationOk = supprimer_musique($db, $idMusique);
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko']. " (4)";
+                break;
+            }
+            header('Location: ./gestionMusique.php?action=supprimerOk');
             break;
             
         case "ajouterOk":

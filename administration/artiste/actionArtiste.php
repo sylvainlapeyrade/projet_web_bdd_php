@@ -30,14 +30,12 @@ if ( isset($db) ) {
                 $erreur = $messages['formulaire']['dateInvalide'];
                 break;
             }
-            if ( isset($db) ) {
-                $operationOk = ajouter_artiste($db, $nomArtiste, $prenomArtiste, $nomScene, $dateNaissanceArtiste,  $urlImageArtiste, $descriptionArtiste);
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']." (1)";
-                    break;
-                }
-                header('Location: ./gestionArtiste.php?action=ajouterOk');
+            $operationOk = ajouter_artiste($db, $nomArtiste, $prenomArtiste, $nomScene, $dateNaissanceArtiste,  $urlImageArtiste, $descriptionArtiste);
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko']." (1)";
+                break;
             }
+            header('Location: ./gestionArtiste.php?action=ajouterOk');
             break;
 
         case "modifierArtiste":
@@ -57,14 +55,12 @@ if ( isset($db) ) {
                 $erreur = $messages['formulaire']['dateInvalide'];
                 break;
             }
-            if ( isset($db) ) {
-                $operationOk = modifier_artiste($db, $idArtiste, $nomArtiste, $prenomArtiste, $nomScene, $dateNaissanceArtiste,  $urlImageArtiste, $descriptionArtiste);
-                if ( !$operationOk ) {
-                    $erreur = $erreur = $messages['operation']['ko']." (1)";
-                    break;
-                }
-                header('Location: ./gestionArtiste.php?action=modifierOk');
+            $operationOk = modifier_artiste($db, $idArtiste, $nomArtiste, $prenomArtiste, $nomScene, $dateNaissanceArtiste,  $urlImageArtiste, $descriptionArtiste);
+            if ( !$operationOk ) {
+                $erreur = $erreur = $messages['operation']['ko']." (1)";
+                break;
             }
+            header('Location: ./gestionArtiste.php?action=modifierOk');
             break;
 
         case "supprimerArtiste":
@@ -80,14 +76,12 @@ if ( isset($db) ) {
                 $erreur = $messages['formulaire']['champs_vide'];
                 break;
             }
-            if ( isset($db) ) {
-                $operationOk = supprimer_artiste($db, $idArtiste);
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']." (1)";
-                    break;
-                }
-                header('Location: ./gestionArtiste.php?action=supprimerOk');
+            $operationOk = supprimer_artiste($db, $idArtiste);
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko']." (1)";
+                break;
             }
+            header('Location: ./gestionArtiste.php?action=supprimerOk');
             break;
             
         case "ajouterOk":

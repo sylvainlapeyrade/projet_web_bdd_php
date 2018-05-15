@@ -38,24 +38,22 @@ if ( isset($db) ) {
                 $erreur = $messages['minimum2Artiste'];
                 break;
             }
-            if ( isset($db) ) {
-                $idGroupeCo = ajouter_groupe($db, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe);
-                if ( $idGroupeCo == null ) {
-                    $erreur = $messages['operation']['ko']." (1)";
-                    break;
-                }
-                $indiceListe = 0;
-                do {
-                    $idArtisteCo = (int) $listeIdArtiste[$indiceListe];
-                    $operationOk = ajouter_constituer_groupe($db, $idGroupeCo, $idArtisteCo);
-                    $indiceListe++;
-                } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']." (2)";
-                    break;
-                }
-                header('Location: ./gestionGroupe.php?action=ajouterOk');
+            $idGroupeCo = ajouter_groupe($db, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe);
+            if ( $idGroupeCo == null ) {
+                $erreur = $messages['operation']['ko']." (1)";
+                break;
             }
+            $indiceListe = 0;
+            do {
+                $idArtisteCo = (int) $listeIdArtiste[$indiceListe];
+                $operationOk = ajouter_constituer_groupe($db, $idGroupeCo, $idArtisteCo);
+                $indiceListe++;
+            } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko']." (2)";
+                break;
+            }
+            header('Location: ./gestionGroupe.php?action=ajouterOk');
             break;
 
         case "modifierGroupe":
@@ -79,29 +77,27 @@ if ( isset($db) ) {
                 $erreur = $messages['minimum2Artiste'];
                 break;
             }
-            if ( isset($db) ) {
-                $operationOk = modifier_groupe($db, $idGroupe, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe);
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']." (1)";
-                    break;
-                }
-                $operationOk = supprimer_constituer_groupe_tous($db, $idGroupe);
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']." (2)";
-                    break;
-                }
-                $indiceListe = 0;
-                do {
-                    $idArtiste = (int) $listeIdArtiste[$indiceListe];
-                    $operationOk = ajouter_constituer_groupe($db, $idGroupe, $idArtiste);
-                    $indiceListe++;
-                } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']." (3)";
-                    break;
-                }
-                header('Location: ./gestionGroupe.php?action=modifierOk');
+            $operationOk = modifier_groupe($db, $idGroupe, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe);
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko']." (1)";
+                break;
             }
+            $operationOk = supprimer_constituer_groupe_tous($db, $idGroupe);
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko']." (2)";
+                break;
+            }
+            $indiceListe = 0;
+            do {
+                $idArtiste = (int) $listeIdArtiste[$indiceListe];
+                $operationOk = ajouter_constituer_groupe($db, $idGroupe, $idArtiste);
+                $indiceListe++;
+            } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko']." (3)";
+                break;
+            }
+            header('Location: ./gestionGroupe.php?action=modifierOk');
             break;
 
         case "supprimerGroupe":
@@ -117,17 +113,15 @@ if ( isset($db) ) {
                 $erreur = $messages['formulaire']['champs_vide'];
                 break;
             }
-            if ( isset($db) ) {
-                $operationOk = supprimer_constituer_groupe_tous($db, $idGroupe);
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']." (1)";
-                }
-                $operationOk = supprimer_groupe($db, $idGroupe);
-                if ( !$operationOk ) {
-                    $erreur = $messages['operation']['ko']." (2)";
-                }
-                header('Location: ./gestionGroupe.php?action=supprimerOk');
+            $operationOk = supprimer_constituer_groupe_tous($db, $idGroupe);
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko']." (1)";
             }
+            $operationOk = supprimer_groupe($db, $idGroupe);
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko']." (2)";
+            }
+            header('Location: ./gestionGroupe.php?action=supprimerOk');
             break;
             
         case "ajouterOk":
