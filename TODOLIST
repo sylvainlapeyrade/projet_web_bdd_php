@@ -1,6 +1,5 @@
 Liste des tâches restantes 
 --------------------------------------------------
-- L'inscription ne fonctionne pas
 - Page "Compte" modification mot de passe
 - Rendre plus performante la barre de recherche
 - Fonction recherche des albums/musiques d'un groupe
@@ -9,6 +8,5 @@ Liste des tâches restantes
 - Intégrer la page "A propos"
 - Réaliser le cahier des charges
 - Réaliser le dossier de conception
-- Nettoyer le code
 - Commentaires : retour à la ligne lors de l'affichage + limite de caractère
 - Sécuriser la saisi des valeurs des formulaires (une fonction à utiliser)

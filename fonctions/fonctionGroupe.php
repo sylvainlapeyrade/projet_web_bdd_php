@@ -6,8 +6,23 @@
  */
 
 /**
+ * Récupère les musiques d'un groupe
+ * spécifié par l'identifiant 'idGroupe'.
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idGroupe Int Identifiant du groupe
+ * @return array Les artistes qui compose le groupe
+ */
+function recuperer_musique_groupe($db, $idGroupe) {
+    $req = $db->prepare("SELECT * FROM Constituer, Artiste WHERE Constituer.idGroupeCo=:idGroupe AND Constituer.idArtisteCo=Artiste.idArtiste;");
+    $req->bindParam(':idGroupe', $idGroupe);
+    $req->execute();
+    $res = $req->fetchAll();
+    return $res;
+}
+
+/**
  * Récupère les artistes d'un groupe
- * spécifier par l'identifiant 'idGroupe'.
+ * spécifié par l'identifiant 'idGroupe'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idGroupe Int Identifiant du groupe
  * @return array Les artistes qui compose le groupe
@@ -35,7 +50,7 @@ function recuperer_groupe_tous($db) {
 
 /**
  * Récupère un groupe de la BDD
- * spécifier par l'identifiant 'idGroupe'.
+ * spécifié par l'identifiant 'idGroupe'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idGroupe Int Identifiant du groupe
  * @return array Le groupe correspondant à l'id

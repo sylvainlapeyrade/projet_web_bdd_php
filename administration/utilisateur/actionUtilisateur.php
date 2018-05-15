@@ -23,7 +23,7 @@ if ( isset($db) ) {
                 $erreur = $messages['formulaire']['champs_vide'];
                 break;
             }
-            if ( $status == 1 ) {
+            if ( $statut == 1 ) {
                 $estAdmin = true;
             } else {
                 $estAdmin = false;
@@ -54,7 +54,7 @@ if ( isset($db) ) {
                 break;
             }
             $operationOk = modifier_motdepasse_utilisateur($db, $idUtilisateur, $motDePasse);
-            if ( !operationOk ) {
+            if ( !$operationOk ) {
                 $erreur = $messages['operation']['ko'];
             }
             header('Location: ./gestionUtilisateur.php?action=modifierMdpOk');
@@ -73,7 +73,7 @@ if ( isset($db) ) {
                 $erreur = $messages['formulaire']['champs_vide'];
                 break;
             }
-            if ( $status == 1 ) {
+            if ( $statut == 1 ) {
                 $estAdmin = true;
             } else {
                 $estAdmin = false;

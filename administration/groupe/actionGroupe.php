@@ -128,6 +128,7 @@ if ( isset($db) ) {
                 }
                 header('Location: ./gestionGroupe.php?action=supprimerOk');
             }
+            break;
             
         case "ajouterOk":
             $messages['operation']['ok'];
