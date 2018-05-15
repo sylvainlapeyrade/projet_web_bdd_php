@@ -87,7 +87,7 @@ if ( isset($db) ) {
                    />
             
             <input id="bouton" 
-                   class="bouton bouton-red1 margin-center" 
+                   class="bouton bouton-forme1 bouton-red1 margin-center" 
                    type="submit" 
                    name="inscription" 
                    value="inscription"
