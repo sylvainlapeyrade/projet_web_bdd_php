@@ -36,7 +36,7 @@ if ( isset($db) ) {
                     $erreur = $messages['operation']['ko']." (1)";
                     break;
                 }
-                header('Location: ./gestionArtiste.php?operation=ok');
+                header('Location: ./gestionArtiste.php?action=ajouterOk');
             }
             break;
 
@@ -63,7 +63,7 @@ if ( isset($db) ) {
                     $erreur = $erreur = $messages['operation']['ko']." (1)";
                     break;
                 }
-                header('Location: ./gestionArtiste.php?operation=ok');
+                header('Location: ./gestionArtiste.php?action=modifierOk');
             }
             break;
 
@@ -86,8 +86,20 @@ if ( isset($db) ) {
                     $erreur = $messages['operation']['ko']." (1)";
                     break;
                 }
-                header('Location: ./gestionArtiste.php?operation=ok');
+                header('Location: ./gestionArtiste.php?action=supprimerOk');
             }
+            break;
+            
+        case "ajouterOk":
+            $messages['operation']['ok'];
+            break;
+            
+        case "modifierOk":
+            $messages['operation']['ok'];
+            break;
+            
+        case "supprimerOk":
+            $messages['operation']['ok'];
             break;
     }
 }

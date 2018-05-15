@@ -54,7 +54,7 @@ if ( isset($db) ) {
                     $erreur = $messages['operation']['ko']." (2)";
                     break;
                 }
-                header('Location: ./gestionAlbum.php?operation=ok');
+                header('Location: ./gestionAlbum.php?action=ajouterOk');
             }
             break;
 
@@ -100,7 +100,7 @@ if ( isset($db) ) {
                     $erreur = $messages['operation']['ko']." (3)";
                     break;
                 }
-                header('Location: ./gestionAlbum.php?operation=ok');
+                header('Location: ./gestionAlbum.php?action=modifierOk');
             }
             break;
 
@@ -128,9 +128,22 @@ if ( isset($db) ) {
                     $erreur = $erreur = $messages['operation']['ko']." (2)";
                     break;
                 }
-                header('Location: ./gestionAlbum.php?operation=ok');
+                header('Location: ./gestionAlbum.php?action=supprimerOk');
             }
             break;
+            
+        case "ajouterOk":
+            $messages['operation']['ok'];
+            break;
+            
+        case "modifierOk":
+            $messages['operation']['ok'];
+            break;
+            
+        case "supprimerOk":
+            $messages['operation']['ok'];
+            break;
+            
     }
 }
 

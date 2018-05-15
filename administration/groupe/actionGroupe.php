@@ -54,7 +54,7 @@ if ( isset($db) ) {
                     $erreur = $messages['operation']['ko']." (2)";
                     break;
                 }
-                header('Location: ./gestionGroupe.php?operation=ok');
+                header('Location: ./gestionGroupe.php?action=ajouterOk');
             }
             break;
 
@@ -100,7 +100,7 @@ if ( isset($db) ) {
                     $erreur = $messages['operation']['ko']." (3)";
                     break;
                 }
-                header('Location: ./gestionGroupe.php?operation=ok');
+                header('Location: ./gestionGroupe.php?action=modifierOk');
             }
             break;
 
@@ -126,8 +126,21 @@ if ( isset($db) ) {
                 if ( !$operationOk ) {
                     $erreur = $messages['operation']['ko']." (2)";
                 }
-                header('Location: ./gestionGroupe.php?operation=ok');
+                header('Location: ./gestionGroupe.php?action=supprimerOk');
             }
+            
+        case "ajouterOk":
+            $messages['operation']['ok'];
+            break;
+            
+        case "modifierOk":
+            $messages['operation']['ok'];
+            break;
+            
+        case "supprimerOk":
+            $messages['operation']['ok'];
+            break;
+            
     }
 }
 

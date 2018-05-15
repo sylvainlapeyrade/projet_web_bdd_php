@@ -40,7 +40,7 @@ if ( isset($db) ) {
                 $erreur = $messages['operation']['ko']." (1)";
                 break;
             }
-            header('Location: ./gestionAssemblerAlbum.php?idAlbum='.$idAlbum);
+            header('Location: ./gestionAssemblerAlbum.php?idAlbum='.$idAlbum.'&action=ajouterOk');
             break;
 
         case 'modifierAssemblerAlbum':
@@ -65,7 +65,7 @@ if ( isset($db) ) {
                 $erreur = $messages['operation']['ko']." (1)";
                 break;
             }
-            header('Location: ./gestionAssemblerAlbum.php?idAlbum='.$idAlbum);
+            header('Location: ./gestionAssemblerAlbum.php?idAlbum='.$idAlbum.'&action=modifierOk');
             break;
 
         case 'supprimerAssemblerAlbum':
@@ -86,8 +86,21 @@ if ( isset($db) ) {
                 $erreur = $messages['operation']['ko']." (1)";
                 break;
             }
-            header('Location: ./gestionAssemblerAlbum.php?idAlbum='.$idAlbum);
+            header('Location: ./gestionAssemblerAlbum.php?idAlbum='.$idAlbum.'&action=supprimerOk');
             break;
+            
+        case "ajouterOk":
+            $messages['operation']['ok'];
+            break;
+        
+        case "modifierOk":
+            $messages['operation']['ok'];
+            break;
+        
+        case "supprimerOk":
+            $messages['operation']['ok'];
+            break;
+            
     }
 }
 
