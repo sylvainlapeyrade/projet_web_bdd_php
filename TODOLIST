@@ -3,10 +3,10 @@ Liste des tâches restantes
 - Page "Compte" modification mot de passe
 - Rendre plus performante la barre de recherche
 - Fonction recherche des albums/musiques d'un groupe
-- Remplir la base de données du mieux qu'on peut
+- Remplir la base de données de façon conséquente
 - Dynamiser la connexion : retour à la page d'avant après connexion
-- Intégrer la page "A propos"
 - Réaliser le cahier des charges
 - Réaliser le dossier de conception
 - Commentaires : retour à la ligne lors de l'affichage + limite de caractère
 - Sécuriser la saisi des valeurs des formulaires (une fonction à utiliser)
+- Administration: affichage artiste/nom de scène
