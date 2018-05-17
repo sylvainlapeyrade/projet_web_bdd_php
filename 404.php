@@ -22,7 +22,7 @@ include_once(dirname(__FILE__).'/head.php');
         
         <div id="page-404" class="text-center">
             <h1 class="t35 red1">Page <span class="white">404</span> !</h1>
-            <p>La page demander est introuvable.</p>
+            <p>La page demandée est introuvable.</p>
             <p>Effectuer une autre recherche.</p>
         </div>
         
