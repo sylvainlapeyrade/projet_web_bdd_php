@@ -6,16 +6,19 @@ body {
     color: white;
 }
 
-@media only screen and (max-width: 1280px) {
-    body {
-        min-width: 800px;
-        background-position: 0 -350px;
-    }
-}
-
 main>section {
     width: 80%;
     margin: 0 auto;
+}
+
+@media only screen and (max-width: 1280px) {
+    body {
+        min-width: 1114px;
+        background-position: 0 -350px;
+    }
+    main>section {
+        width: 95%;
+    }
 }
 
 a { text-decoration: none; color: white; }
