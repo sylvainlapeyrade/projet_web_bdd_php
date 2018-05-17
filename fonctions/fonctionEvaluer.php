@@ -85,7 +85,7 @@ VALUES(:idUtilisateurEvMu, :idMusiqueEvMu, :noteEvMu, :commentaireEvMu);");
  * @param $idAlbumEvAl Int Identifiant de l'album
  * @return True si l'opération de suppression s'est bien exécutée | False Sinon.
  */
-function supprimer_evalution_album($db, $idUtilisateurEvAl, $idAlbumEvAl) {
+function supprimer_evaluation_album($db, $idUtilisateurEvAl, $idAlbumEvAl) {
     $req = $db->prepare("DELETE FROM Evaluer_Album WHERE idUtilisateurEvAl=:idUtilisateurEvAl AND idAlbumEvAl=:idAlbumEvAl;");
     $req->bindParam(':idUtilisateurEvAl', $idUtilisateurEvAl, PDO::PARAM_INT);
     $req->bindParam(':idAlbumEvAl', $idAlbumEvAl, PDO::PARAM_INT);

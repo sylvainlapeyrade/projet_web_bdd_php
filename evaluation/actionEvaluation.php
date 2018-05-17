@@ -82,7 +82,7 @@ if ( isset($db, $action) ) {
                     break;
                 }
             }
-            $operationOk = supprimer_evalution_album($db, $idUtilisateur, $idAlbum);
+            $operationOk = supprimer_evaluation_album($db, $idUtilisateur, $idAlbum);
             if ( !$operationOk ) {
                 $erreur = "Une erreur c'est produite....";
                 break;
@@ -109,7 +109,7 @@ if ( isset($db, $action) ) {
                     break;
                 }
             }
-            $operationOk = supprimer_evalution_musique($db, $idUtilisateur, $idAlbum);
+            $operationOk = supprimer_evaluation_musique($db, $idUtilisateur, $idMusique);
             if ( !$operationOk ) {
                 $erreur = "Une erreur c'est produite....";
                 break;

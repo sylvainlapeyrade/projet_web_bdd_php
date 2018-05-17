@@ -2,15 +2,17 @@
     
     <?php if ( is_connect() ) { ?>
         <!-- FORMULAIRE -->
-        <form id="form" action="/musique.php" method="get">
+        <form id="form" method="get">
             
             <div>
                 <p id="stars"> Donnez une note à cette musique :
-                    <a class="<?php if ($note>0) echo 'red' ?>" href="?idMusique=<?php echo $idMusique; ?>&star=1#stars">★</a>
-                    <a class="<?php if ($note>1) echo 'red' ?>" href="?idMusique=<?php echo $idMusique; ?>&star=2#stars">★</a>
-                    <a class="<?php if ($note>2) echo 'red' ?>" href="?idMusique=<?php echo $idMusique; ?>&star=3#stars">★</a>
-                    <a class="<?php if ($note>3) echo 'red' ?>" href="?idMusique=<?php echo $idMusique; ?>&star=4#stars">★</a>
-                    <a class="<?php if ($note>4) echo 'red' ?>" href="?idMusique=<?php echo $idMusique; ?>&star=5#stars">★</a>
+                    <?php for($i = 1; $i < 6; $i++ ) { ?>
+                        <?php if ( isset($idMusique) ) { ?>
+                            <a class="<?php if ($note>=$i) echo 'red' ?>" href="?idMusique=<?php echo $idMusique; ?>&star=<?php echo $i ?>#stars">★</a>
+                        <?php } elseif ( isset($idAlbum) ) { ?>
+                            <a class="<?php if ($note>=$i) echo 'red' ?>" href="?idAlbum=<?php echo $idAlbum; ?>&star=<?php echo $i ?>#stars">★</a>
+                        <?php } ?>
+                    <?php } ?>
                 </p>
             </div>
             
@@ -32,7 +34,7 @@
             
                 <input type="hidden"
                        name="action"
-                       value="ajouterEvaluationArtiste"
+                       value="ajouterEvaluationMusique"
                        />
             <?php } ?>
             
@@ -46,7 +48,7 @@
                       cols="50"
                       rows="5"
                       <?php if ( !isset($note) || empty($note) ) { echo 'disabled'; } ?>
-                      placeholder="Votre commentaire ici..."
+                      placeholder="Sélectionner une note et tapez votre commentaire ici"
                       required ><?php if(isset($commentaire)){echo $commentaire;} ?></textarea>
             
             <input class="bouton bouton-forme1 bouton-red1"

@@ -12,6 +12,8 @@ $info['head']['stylesheets'] = ['barreRecherche.css', 'musique.css', 'evaluation
 
 $idMusique = $_GET['idMusique'];
 
+include_once(dirname(__FILE__).'/evaluation/actionEvaluation.php');
+
 $action = $_GET['action'];
 
 if ( isset($db, $idMusique) ) {

@@ -1,5 +1,4 @@
 <?php
-    include_once(dirname(__FILE__).'/actionEvaluation.php');
 
 if ( isset($db) ) {
     if ( isset($idAlbum) ) {
@@ -27,19 +26,41 @@ if ( isset($db) ) {
         <?php if ( !empty($listeEvaluations) ) { ?>
             <?php foreach($listeEvaluations as $evaluation) { ?>
                 <div>
+                    
+                    <!-- BOUTON SUPPRIMER -->
                     <p>
-                        <b><?php echo $evaluation['idutilisateurevmu']; ?></b>&nbsp; &nbsp;Note: <?php echo $evaluation['noteevmu']; ?>/5
+                        <?php if ( isset($idAlbum) ) { ?>
+
+                            <b><?php echo $evaluation['idutilisateureval']; ?></b>&nbsp; &nbsp;Note: <?php echo $evaluation['noteeval']; ?>/5
+
+                            <?php if ( is_admin() || $_SESSION['idUtilisateur'] == $evaluation['idutilisateureval'] ) { ?> 
+                                <a class="bouton bouton-forme2 bouton-red1" 
+                                   href="/album.php?action=supprimerEvaluationAlbum&idAlbum=<?php echo $idAlbum; ?>&idUtilisateur=<?php echo $evaluation['idutilisateureval']; ?>"
+                                   >Supprimer</a>
+                            <?php } ?>
                         
-                        <?php if ( is_admin() || $_SESSION['idUtilisateur'] == $evaluation['idutilisateurevmu'] ) { ?> 
-                            <a class="bouton bouton-forme2 bouton-red1" 
-                               href="/musique.php?action=supprimerEvaluation&idMusique=<?php echo $idMusique; ?>&idUtilisateur=<?php echo $evaluation['idutilisateurevmu']; ?>"
-                               >Supprimer</a>
+                        <?php } elseif ( isset($idMusique) ) { ?>
+
+                            <b><?php echo $evaluation['idutilisateurevmu']; ?></b>&nbsp; &nbsp;Note: <?php echo $evaluation['noteevmu']; ?>/5
+
+                            <?php if ( is_admin() || $_SESSION['idUtilisateur'] == $evaluation['idutilisateurevmu'] ) { ?> 
+                                <a class="bouton bouton-forme2 bouton-red1" 
+                                   href="/musique.php?action=supprimerEvaluationMusique&idMusique=<?php echo $idMusique; ?>&idUtilisateur=<?php echo $evaluation['idutilisateurevmu']; ?>"
+                                   >Supprimer</a>
+                            <?php } ?>
+                        
                         <?php } ?>
-                        
                     </p>
+                    
+                    <!-- COMMENTAIRE -->
                     <p>
-                        <?php echo $evaluation['commentaireevmu']; ?>
+                        <?php if ( isset($idAlbum) ) {
+                            echo $evaluation['commentaireeval'];
+                        } elseif ( isset($idMusique) ) {
+                            echo $evaluation['commentaireevmu'];
+                        } ?>
                     </p>
+                    
                     <hr size="1" color=#e8491d>
                 </div>
             <?php } ?>
