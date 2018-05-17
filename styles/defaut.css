@@ -13,7 +13,7 @@ main>section {
 
 @media only screen and (max-width: 1280px) {
     body {
-        min-width: 1114px;
+        min-width: 900px;
         background-position: 0 -350px;
     }
     main>section {
