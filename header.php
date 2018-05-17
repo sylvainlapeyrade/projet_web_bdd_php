@@ -16,14 +16,14 @@
                     <a class="bouton flex item-center" href="/administration/index.php"><li>Administration</li></a>
                 <?php } ?>
                 
-                <a class="bouton flex item-center"><li>Compte</li></a>
+                <a class="bouton flex item-center" href="/compte/index.php"><li>Compte</li></a>
                 <a class="bouton flex item-center" href="/compte/deconnexion.php"><li>Déconnexion</li></a>
             <?php } else { ?>
                 <a class="bouton flex item-center" href="/compte/connexion.php?redirect=<?php echo urlencode($_SERVER['HTTP_REFERER']); ?>"><li>Connexion</li></a>
                 <a class="bouton flex item-center" href="/compte/inscription.php"><li>Inscription</li></a>
             <?php } ?>
             
-            <a class="bouton flex item-center" href="/index.php"><li>à propos</li></a>
+            <a class="bouton flex item-center" href="/aPropos.php"><li>à propos</li></a>
         </ul>
     </nav>
     
