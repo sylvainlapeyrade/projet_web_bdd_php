@@ -19,11 +19,11 @@ $action = $_GET['action'];
 if ( isset($db, $idMusique) ) {
     $musique = recuperer_musique($db, $idMusique)[0];
     if ( empty($musique) ) {
-        header('Location: /index.php');
+        header('Location: /404.php');
     }
     $listeArtistesMusique = recuperer_artiste_musique($db, $idMusique);
 } else {
-    header('Location: /index.php');
+    header('Location: /404.php');
 }
 
 include_once(dirname(__FILE__).'/head.php');

@@ -16,7 +16,7 @@ if ( isset($db, $recherche) ) {
     $listeAlbumsRecherche = rechercher_album($db, $recherche);
     $listeMusiquesRecherche = rechercher_musique($db, $recherche);
 } else {
-    header('Location: /index.php');
+    header('Location: /404.php');
 }
 
 include_once(dirname(__FILE__).'/head.php');

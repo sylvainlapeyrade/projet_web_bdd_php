@@ -13,12 +13,12 @@ $idGroupe = $_GET['idGroupe'];
 if ( isset($db, $idGroupe) ) {
     $groupe = recuperer_groupe($db, $idGroupe)[0];
     if ( empty($groupe) ) {
-        header('Location: /index.php');
+        header('Location: /404.php');
     }
     $listeArtistesGroupe = recuperer_artiste_groupe($db, $idGroupe);
     //$listeMusiqueGroupe = recuperer_musique_groupe($db, $idGroupe);
 } else {
-    header('Location: /index.php');
+    header('Location: /404.php');
 }
 
 include_once(dirname(__FILE__).'/head.php');

@@ -13,13 +13,13 @@ $idArtiste = $_GET['idArtiste'];
 if ( isset($db, $idArtiste) ) {
     $artiste = recuperer_artiste($db, $idArtiste)[0];
     if ( empty($artiste) ) {
-        header('Location: /index.php');
+        header('Location: /404.php');
     }
     $listeGroupesArtiste = recuperer_groupe_artiste($db, $idArtiste);
     $listeRecompensesArtiste = recuperer_recompense_artiste($db, $idArtiste);
     $listeMusiquesArtiste = recuperer_musique_album_artiste($db, $idArtiste);
 } else {
-    header('Location: /index.php');
+    header('Location: /404.php');
 }
 
 include_once(dirname(__FILE__).'/head.php');

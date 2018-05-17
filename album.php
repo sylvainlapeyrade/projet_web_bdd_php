@@ -19,12 +19,12 @@ $action = $_GET['action'];
 if ( isset($db, $idAlbum) ) {
     $album = recuperer_album($db, $idAlbum)[0];
     if ( empty($album) ) {
-        header('Location: /index.php');
+        header('Location: /404.php');
     }
     $listeArtistesAlbum = recuperer_artiste_album($db, $idAlbum);
     $listeMusiquesAlbum = recuperer_musique_album($db, $idAlbum);
 } else {
-    header('Location: /index.php');
+    header('Location: /404.php');
 }
 
 include_once(dirname(__FILE__).'/head.php');
