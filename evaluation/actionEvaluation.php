@@ -27,12 +27,12 @@ if ( isset($db, $action) ) {
                 break;
             }
             if ( $note < 1 || $note > 5 ) {
-                $erreur = "La note doit être compris entre 1 et 5";
+                $erreur = $messages['formulaire']['noteIncorrect'];
                 break;
             }
             $operationOk = ajouter_evaluation_album($db, $_SESSION['idUtilisateur'], $idAlbum, $note, $commentaire);
             if ( !$operationOk ) {
-                $erreur = "Vous avez déjà évaluer cette album.";
+                $erreur = $messages['formulaire']['evaluationExistant'];
                 break;
             }
             header('Location: /album.php?idAlbum='.$idAlbum.'&action=ajouterOk');
@@ -52,12 +52,12 @@ if ( isset($db, $action) ) {
                 break;
             }
             if ( $note < 1 || $note > 5 ) {
-                $erreur = "La note doit être compris entre 1 et 5";
+                $erreur = $messages['formulaire']['noteIncorrect'];
                 break;
             }
             $operationOk = ajouter_evaluation_musique($db, $_SESSION['idUtilisateur'], $idMusique, $note, $commentaire);
             if ( !$operationOk ) {
-                $erreur = "Vous avez déjà évaluer cette album.";
+                $erreur = $messages['formulaire']['evaluationExistant'];
                 break;
             }
             header('Location: /musique.php?idMusique='.$idMusique.'&action=ajouterOk');
@@ -78,13 +78,13 @@ if ( isset($db, $action) ) {
             }
             if ( !is_admin() ) {
                 if ($idUtilisateur != $_SESSION['idUtilisateur'] ) {
-                    $erreur = "Vous n'avez pas l'autorisation de supprimer ce commentaire.";
+                    $erreur = $messages['formulaire']['nonAutoriser'];
                     break;
                 }
             }
             $operationOk = supprimer_evaluation_album($db, $idUtilisateur, $idAlbum);
             if ( !$operationOk ) {
-                $erreur = "Une erreur c'est produite....";
+                $erreur = $messages['operation']['ko'];
                 break;
             }
             header('Location: /album.php?idAlbum='.$idAlbum.'&action=supprimerOk');
@@ -105,13 +105,13 @@ if ( isset($db, $action) ) {
             }
             if ( !is_admin() ) {
                 if ($idUtilisateur != $_SESSION['idUtilisateur'] ) {
-                    $erreur = "Vous n'avez pas l'autorisation de supprimer ce commentaire.";
+                    $erreur = $messages['formulaire']['nonAutoriser'];
                     break;
                 }
             }
             $operationOk = supprimer_evaluation_musique($db, $idUtilisateur, $idMusique);
             if ( !$operationOk ) {
-                $erreur = "Une erreur c'est produite....";
+                $erreur = $messages['operation']['ko'];
                 break;
             }
             header('Location: /musique.php?idMusique='.$idMusique.'&action=supprimerOk');

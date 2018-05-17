@@ -74,7 +74,10 @@ $messages = [
         'motDePasseDifferent' => "Les deux mot de passe ne sont pas identique.",
         'erreurDevenirUtilisateur' => "Vous ne pouvez pas devenir utilisateur normal.",
         'erreurSupprimerSonCompte' => "Vous ne pouvez pas supprimer votre propre compte.",
-        'valeurNegative' => "La valeur renseigné doit être positive."
+        'valeurNegative' => "La valeur renseigné doit être positive.",
+        'noteIncorrecte' => "La note doit être compris entre 1 et 5",
+        'nonAutoriser' => "Vous n'avez pas l'autorisation d'effectuer cette action.",
+        'evaluationExistant' => "Vous avez déjà évaluer cette élément.",
     ],
     'connexion' => [
         'incorrect' => "Votre identifiant ou votre mot de passe est incorrect.",  
