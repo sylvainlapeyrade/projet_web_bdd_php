@@ -5,6 +5,7 @@ if ( isset($action) && !empty($action) ) {
     $idUtilisateur = $_GET['idUtilisateur'];
     $motDePasse = $_GET['motDePasse'];
     $verification = $_GET['verification'];
+    $redirect = $_GET['redirect'];
 }
 
 if ( isset($db, $action) ) {
@@ -27,7 +28,8 @@ if ( isset($db, $action) ) {
                 $erreur = $messages['connexion']['incorrect'];
                 break;
             }
-            header('Location: /index.php');
+            
+            header('Location: '.$redirect);
             break;
             
         case 'inscription':

@@ -61,7 +61,12 @@
     
     <?php } else { ?>
         <p>
-            <a class="souligner red1" href="/compte/connexion.php">Connectez-vous</a> pour poster une évaluation.
+            <?php if ( isset($idAlbum) ) {
+                $target = urlencode("/album.php?idAlbum=$idAlbum");
+            } elseif ( isset($idMusique) ) {
+                $target = urlencode("/album.php?idMusique=$idMusique");
+            } ?>
+            <a class="souligner red1" href="/compte/connexion.php?redirect=<?php echo $target; ?>">Connectez-vous</a> pour poster une évaluation.
         </p>
     <?php } ?>
     

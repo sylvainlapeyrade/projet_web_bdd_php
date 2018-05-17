@@ -8,7 +8,9 @@ include_once(dirname(__FILE__).'/../bdd/connexion.php');
 $info['head']['subTitle'] = "Connexion";
 $info['head']['stylesheets'] = ['compte.css'];
 
-if(is_connect()) {leave();}
+//if(is_connect()) {leave();}
+
+$redirect = $_GET['redirect'];
 
 include_once(dirname(__FILE__).'/actionCompte.php');
 
@@ -37,18 +39,25 @@ include_once(dirname(__FILE__).'/actionCompte.php');
                    value="<?php if( isset($identifiant) ){ echo $identifiant; } ?>"
                    />
             
-        <input class="input-text" 
-               type="password" 
-               name="motDePasse" 
-               placeholder="Mot de passe"
-               />
+            <input class="input-text" 
+                   type="password" 
+                   name="motDePasse" 
+                   placeholder="Mot de passe"
+                   />
             
-        <input id="bouton" 
-               class="bouton bouton-forme1 bouton-red1 margin-center" 
-               type="submit" 
-               name="action" 
-               value="connexion"
-               />
+            <?php if ( isset($redirect) ) { ?>
+                <input type="hidden"
+                       name="redirect"
+                       value="<?php echo $redirect; ?>"
+                       />
+            <?php } ?>
+            
+            <input id="bouton" 
+                   class="bouton bouton-forme1 bouton-red1 margin-center" 
+                   type="submit" 
+                   name="action" 
+                   value="connexion"
+                   />
         </form>
         <!-- FIN FORMULAIRE -->
         
