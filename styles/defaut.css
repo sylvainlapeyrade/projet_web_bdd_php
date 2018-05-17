@@ -40,6 +40,13 @@ li { list-style: none; }
 
 .t10 { font-size: 10px;}
 .t12 { font-size: 12px;}
+.t13 { font-size: 13px;}
+.t14 { font-size: 14px;}
+.t15 { font-size: 15px;}
+.t16 { font-size: 16px;}
+.t17 { font-size: 17px;}
+.t18 { font-size: 18px;}
+.t19 { font-size: 19px;}
 .t20 { font-size: 20px;}
 .t25 { font-size: 25px;}
 .t35 { font-size: 35px;}
@@ -62,7 +69,7 @@ li { list-style: none; }
 #page-groupe, #page-musique, #page-resultat-recherche,
 #page-404, #page-apropos {
     background: rgba(0, 0, 0, 0.7);
-    padding: 0 25px 25px;
+    padding: 25px;
 }
 
 .table-head {
