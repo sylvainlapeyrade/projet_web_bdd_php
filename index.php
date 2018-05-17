@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 include_once(dirname(__FILE__).'/fonctions/variables.php');
 include_once(dirname(__FILE__).'/fonctions/fonctionCompte.php');
@@ -8,6 +9,7 @@ $info['head']['subTitle'] = "Page d'accueil";
 $info['head']['stylesheets'] = ['accueil.css'];
 
 include_once(dirname(__FILE__).'/head.php');
+
 ?>
 
 <?php include_once(dirname(__FILE__).'/header.php'); ?>
