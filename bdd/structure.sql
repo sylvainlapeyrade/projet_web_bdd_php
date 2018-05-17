@@ -75,9 +75,9 @@ CREATE TABLE Evaluer_Album(
   idUtilisateurEvAl     VARCHAR(45)   CONSTRAINT Ea_fk_iUEa  REFERENCES Utilisateur(idUtilisateur) ON DELETE CASCADE,
   idAlbumEvAl           INT           CONSTRAINT Ea_fk_iAEa  REFERENCES Album(idAlbum) ON DELETE CASCADE,
   noteEvAl              INT           CONSTRAINT Ea_noEa_nn  NOT NULL,
-                                      CONSTRAINT Ea_noEa_ch  CHECK (noteEvAl BETWEEN 0 AND 5),
+  CONSTRAINT Ea_noEa_ch  CHECK (noteEvAl BETWEEN 0 AND 5),
   commentaireEvAl       TEXT,
-                                      CONSTRAINT Ea_pk_evAl  PRIMARY KEY (idUtilisateurEvAl, idAlbumEval)
+  CONSTRAINT Ea_pk_evAl  PRIMARY KEY (idUtilisateurEvAl, idAlbumEval)
 );
 
 
@@ -85,7 +85,7 @@ CREATE TABLE Evaluer_Musique(
   idUtilisateurEvMu     VARCHAR(45)   CONSTRAINT Em_fk_iUEm  REFERENCES Utilisateur(idUtilisateur) ON DELETE CASCADE,
   idMusiqueEvMu         INT           CONSTRAINT Em_fk_iMEm  REFERENCES Musique(idMusique) ON DELETE CASCADE,
   noteEvMu              INT           CONSTRAINT Em_noEm_NN  NOT NULL,
-                                      CONSTRAINT Em_noEm_CH  CHECK (noteEvMu BETWEEN 0 AND 5),
+  CONSTRAINT Em_noEm_CH  CHECK (noteEvMu BETWEEN 0 AND 5),
   commentaireEvMu       TEXT,
   CONSTRAINT Em_pk_evMu  PRIMARY KEY (idUtilisateurEvMu, idMusiqueEvMu)
 );
@@ -94,21 +94,35 @@ CREATE TABLE Evaluer_Musique(
 CREATE TABLE Composer_Album(
   idAlbumCoAl           INT           CONSTRAINT Ca_fk_ilCo  REFERENCES Album(idAlbum)     ON DELETE CASCADE,
   idArtisteCoAl         INT           CONSTRAINT Ca_fk_irCo  REFERENCES Artiste(idArtiste) ON DELETE RESTRICT,
-                                      CONSTRAINT Ca_pk_coAl  PRIMARY KEY (idAlbumCoAl, idArtisteCoAl)
+  CONSTRAINT Ca_pk_coAl  PRIMARY KEY (idAlbumCoAl, idArtisteCoAl)
 );
 
 
 CREATE TABLE Composer_Musique(
   idMusiqueCoMu         INT           CONSTRAINT Cm_fk_iMCo  REFERENCES Musique(idMusique) ON DELETE CASCADE,
   idArtisteCoMu         INT           CONSTRAINT Cm_fk_iACo  REFERENCES Artiste(idArtiste) ON DELETE RESTRICT,
-                                      CONSTRAINT Cm_pk_coMu  PRIMARY KEY (idMusiqueCoMu, idArtisteCoMu)
+  CONSTRAINT Cm_pk_coMu  PRIMARY KEY (idMusiqueCoMu, idArtisteCoMu)
+);
+
+
+CREATE TABLE Composer_AlbumGr(
+  idAlbumCoAr           INT           CONSTRAINT Cr_fk_ilCr  REFERENCES Album(idAlbum)     ON DELETE CASCADE,
+  idGroupeCoAr          INT           CONSTRAINT Cr_fk_irCr  REFERENCES Groupe(idGroupe)   ON DELETE RESTRICT,
+  CONSTRAINT Cr_pk_coAr  PRIMARY KEY (idAlbumCoAr, idGroupeCoAr)
+);
+
+
+CREATE TABLE Composer_MusiqueGr(
+  idMusiqueCoMr         INT           CONSTRAINT Cm_fk_iMCr  REFERENCES Musique(idMusique) ON DELETE CASCADE,
+  idGroupeCoMr          INT           CONSTRAINT Cm_fk_iACr  REFERENCES Groupe(idGroupe)   ON DELETE RESTRICT,
+  CONSTRAINT Cr_pk_coMr  PRIMARY KEY (idMusiqueCoMr, idGroupeCoMr)
 );
 
 
 CREATE TABLE Obtenir_Artiste(
   idRecompenseOa        INT           CONSTRAINT Oa_fk_iROa  REFERENCES Recompense(idRecompense),
   idArtisteOa           INT           CONSTRAINT Oa_fk_iAOa  REFERENCES Artiste(idArtiste),
-                                      CONSTRAINT Oa_pk_obAr  PRIMARY KEY (idRecompenseOa, idArtisteOa)
+  CONSTRAINT Oa_pk_obAr  PRIMARY KEY (idRecompenseOa, idArtisteOa)
 );
 
 
@@ -116,19 +130,19 @@ CREATE TABLE Assembler_Album(
   idAlbumAa             INT           CONSTRAINT Aa_fk_ilAa  REFERENCES Album(idAlbum)     ON DELETE CASCADE,
   idMusiqueAa           INT           CONSTRAINT Aa_fk_iMAa  REFERENCES Musique(idMusique) ON DELETE RESTRICT,
   numeroPiste           INT           CONSTRAINT Aa_nuPi_NN  NOT NULL,
-                                      CONSTRAINT Aa_pk_AsAl  PRIMARY KEY (idAlbumAa, idMusiqueAa)
+  CONSTRAINT Aa_pk_AsAl  PRIMARY KEY (idAlbumAa, idMusiqueAa)
 );
 
 
 CREATE TABLE Constituer(
   idGroupeCo            INT           CONSTRAINT Co_fk_iGCo  REFERENCES Groupe(idGroupe),
   idArtisteCo           INT           CONSTRAINT Co_fk_iACo  REFERENCES Artiste(idArtiste),
-                                      CONSTRAINT Co_pk_Cons  PRIMARY KEY(idGroupeCo, idArtisteCo)
+  CONSTRAINT Co_pk_Cons  PRIMARY KEY(idGroupeCo, idArtisteCo)
 );
 
 
 CREATE TABLE Definir(
   idMusiqueDe           INT           CONSTRAINT De_fk_iMDe  REFERENCES Musique(idMusique),
   nomGenre              VARCHAR(45)   CONSTRAINT De_noGe_NN  NOT NULL,
-                                      CONSTRAINT De_pk_Defi  PRIMARY KEY(idMusiqueDe, nomGenre)
+  CONSTRAINT De_pk_Defi  PRIMARY KEY(idMusiqueDe, nomGenre)
 );

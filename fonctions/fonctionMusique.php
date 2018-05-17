@@ -112,9 +112,9 @@ function supprimer_musique($db, $idMusique) {
 }
 
 /**
- * Recupere les associations de musiques et leur compositeur
+ * Recupere les associations de musiques et leur artiste
  * @param $db PDO Instance PDO de connexion à la BDD
- * @param $idMusiqueCoMu Int Identifiant musique dans Composer_album
+ * @param $idMusiqueCoMu Int Identifiant musique dans Composer_Musique
  * @return array Association des musiques et de leur compositeur
  */
 function recuperer_composer_musique($db, $idMusiqueCoMu) {
@@ -126,7 +126,7 @@ function recuperer_composer_musique($db, $idMusiqueCoMu) {
 }
 
 /**
- * Ajoute une association entre une musique et son compositeur
+ * Ajoute une association entre une musique et son artiste
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusiqueCoMu Int Identifiant musique dans Composer_Musique
  * @param $idArtisteCoMu Int Identifiant artiste dans Composer_Musique
@@ -143,7 +143,7 @@ function ajouter_composer_musique($db, $idMusiqueCoMu, $idArtisteCoMu) {
 
 /**
  * Supprime toutes les association de la table Composer_Musique
- * spécifié par l'identifiant 'idAlbumCoAl'.
+ * spécifié par l'identifiant 'idMusiqueCoMu'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusiqueCoMu Int Identifiant album dans Composer_Musique
  * @return True si la requête s'est bien exécutée | False sinon
@@ -151,6 +151,50 @@ function ajouter_composer_musique($db, $idMusiqueCoMu, $idArtisteCoMu) {
 function supprimer_composer_musique_tous($db, $idMusiqueCoMu) {
     $req = $db->prepare("DELETE FROM Composer_Musique WHERE idMusiqueCoMu=:idMusiqueCoMu;");
     $req->bindParam(':idMusiqueCoMu', $idMusiqueCoMu, PDO::PARAM_INT);
+    $reqOk = $req->execute();
+    return $reqOk;
+}
+
+/**
+ * Recupere les associations de musiques et leur groupe
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idMusiqueCoMr Int Identifiant groupe dans Composer_MusiqueGr
+ * @return array Association des musiques et de leur compositeur
+ */
+function recuperer_composer_musiqueGr($db, $idMusiqueCoMr) {
+    $req = $db->prepare("SELECT * FROM Composer_MusiqueGr WHERE idMusiqueCoMr=:idMusiqueCoMr");
+    $req->bindParam(':idMusiqueCoMr', $idMusiqueCoMr, PDO::PARAM_INT);
+    $req->execute();
+    $res = $req->fetchAll();
+    return $res;
+}
+
+/**
+ * Ajoute une association entre une musique et son groupe
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idMusiqueCoMr Int Identifiant musique dans Composer_MusiqueGr
+ * @param $idGroupeCoMr Int Identifiant groupe dans Composer_MusiqueGr
+ * @return True si la requête s'est bien exécutée | False sinon
+ */
+function ajouter_composer_musiqueGr($db, $idMusiqueCoMr, $idGroupeCoMr) {
+    $req = $db->prepare("INSERT INTO Composer_MusiqueGr(idMusiqueCoMr, idGroupeCoMr)
+      VALUES(:idMusiqueCoMu, :idArtisteCoMu);");
+    $req->bindParam(':idMusiqueCoMr', $idMusiqueCoMr, PDO::PARAM_INT);
+    $req->bindParam(':idGroupeCoMr', $idGroupeCoMr, PDO::PARAM_INT);
+    $reqOk = $req->execute();
+    return $reqOk;
+}
+
+/**
+ * Supprime toutes les association de la table Composer_MusiqueGr
+ * spécifié par l'identifiant 'idMusiqueCoMr'.
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idMusiqueCoMr Int Identifiant album dans Composer_MusiqueGr
+ * @return True si la requête s'est bien exécutée | False sinon
+ */
+function supprimer_composer_musique_tousGr($db, $idMusiqueCoMr) {
+    $req = $db->prepare("DELETE FROM Composer_MusiqueGr WHERE idMusiqueCoMr=:idMusiqueCoMr;");
+    $req->bindParam(':idMusiqueCoMr', $idMusiqueCoMr, PDO::PARAM_INT);
     $reqOk = $req->execute();
     return $reqOk;
 }

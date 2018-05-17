@@ -169,6 +169,49 @@ function supprimer_composer_album_tous($db, $idAlbumCoAl) {
 }
 
 /**
+ * Récupère les associations d'album et leur groupe
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idAlbumCoAr Int Identifiant album dans Composer_AlbumGr
+ * @return array Association des albums et de leur groupe
+ */
+function recuperer_composer_albumGr($db, $idAlbumCoAr) {
+    $req = $db->prepare("SELECT * FROM Composer_AlbumGr WHERE idAlbumCoAr=:idAlbumCoAr");
+    $req->bindParam(':idAlbumCoAr', $idAlbumCoAr, PDO::PARAM_INT);
+    $req->execute();
+    $res = $req->fetchAll();
+    return $res;
+}
+
+/**
+ * Ajoute une association entre un album et son groupe
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idAlbumCoAr Int Identifiant album dans Composer_AlbumGr
+ * @param $idGroupeCoAr Int Identifiant groupe dans Composer_AlbumGr
+ * @return True si la requête s'est bien exécutée | False sinon
+ */
+function ajouter_composer_albumGr($db, $idAlbumCoAr, $idGroupeCoAr) {
+    $req = $db->prepare("INSERT INTO Composer_AlbumGr(idAlbumCoAr, idGroupeCoAr) VALUES(:idAlbumCoAr, :idGroupeCoAr);");
+    $req->bindParam(':idAlbumCoAr', $idAlbumCoAr, PDO::PARAM_INT);
+    $req->bindParam(':idGroupeCoAr', $idGroupeCoAr, PDO::PARAM_INT);
+    $reqOk = $req->execute();
+    return $reqOk;
+}
+
+/**
+ * Supprime toutes les associations de la table Composer_AlbumGr
+ * spécifiées par l'identifiant 'idAlbumCoAr'.
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idAlbumCoAr Int Identifiant album dans Composer_AlbumGr
+ * @return True si la requête s'est bien exécutée | False sinon
+ */
+function supprimer_composer_albumGr_tous($db, $idAlbumCoAr) {
+    $req = $db->prepare("DELETE FROM Composer_Album WHERE $idAlbumCoAr=:idAlbumCoAr;");
+    $req->bindParam(':idAlbumCoAr', $idAlbumCoAr, PDO::PARAM_INT);
+    $reqOk = $req->execute();
+    return $reqOk;
+}
+
+/**
  * Récupère une associations de musiques et album
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idAlbumAa Int Identifiant album dans Assembler_Album
