@@ -8,7 +8,7 @@ include_once(dirname(__FILE__).'/../bdd/connexion.php');
 $info['head']['subTitle'] = "Connexion";
 $info['head']['stylesheets'] = ['compte.css'];
 
-//if(is_connect()) {leave();}
+if(is_connect()) {leave();}
 
 $redirect = $_GET['redirect'];
 
