@@ -1,8 +1,11 @@
 <header class="flex flex-center">
+    
     <nav class="flex flex-between">
+    
         <ul class="flex">
-            <a class="t25" href="/index.php"><li>Critique <span class="white">Musicale</span></li></a>
+            <a class="t25 white click-red1" href="/index.php"><li>Critique Musicale</li></a>
         </ul>
+        
         <ul class="flex">
             <a class="bouton flex item-center" href="/index.php"><li>Accueil</li></a>
             <?php if ( is_connect() ) { ?>
@@ -18,4 +21,5 @@
             <a class="bouton flex item-center" href="/index.php"><li>à propos</li></a>
         </ul>
     </nav>
+    
 </header>

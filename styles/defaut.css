@@ -20,6 +20,7 @@ main>section {
 
 a { text-decoration: none; color: white; }
 li { list-style: none; }
+.click-red1:hover { color: #e8491d; }
 
 .margin-center { margin: 0 auto; }
 
@@ -58,7 +59,8 @@ li { list-style: none; }
 .width-800 { width: 800px; }
 
 #page-accueil, #page-artiste, #page-album, 
-#page-groupe, #page-musique, #page-resultat-recherche {
+#page-groupe, #page-musique, #page-resultat-recherche,
+#page-404 {
     background: rgba(0, 0, 0, 0.7);
     padding: 0 25px 25px;
 }
