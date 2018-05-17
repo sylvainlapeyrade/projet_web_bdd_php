@@ -60,7 +60,7 @@ li { list-style: none; }
 
 #page-accueil, #page-artiste, #page-album, 
 #page-groupe, #page-musique, #page-resultat-recherche,
-#page-404 {
+#page-404, #page-apropos {
     background: rgba(0, 0, 0, 0.7);
     padding: 0 25px 25px;
 }
