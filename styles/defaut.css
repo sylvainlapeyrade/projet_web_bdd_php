@@ -57,6 +57,12 @@ li { list-style: none; }
 .width-700 { width: 700px; }
 .width-800 { width: 800px; }
 
+#page-accueil, #page-artiste, #page-album, 
+#page-groupe, #page-musique, #page-resultat-recherche {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0 25px 25px;
+}
+
 .table-head {
     color: white;
     background: black;

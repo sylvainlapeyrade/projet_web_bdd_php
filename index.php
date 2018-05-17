@@ -13,7 +13,7 @@ include_once(dirname(__FILE__).'/head.php');
 <?php include_once(dirname(__FILE__).'/header.php'); ?>
 
 <main>
-    <section id="content-recherche">
+    <section id="page-accueil">
         <h1 class="white t35 text-center">Critiquez vos albums et musiques préférées</h1>
         
         <form class="flex flex-center" action="/recherche.php" method="get">
