@@ -53,13 +53,13 @@ if ( isset($db) ) {
                     </p>
                     
                     <!-- COMMENTAIRE -->
-                    <p>
+                    <div class="evaluation-texte">
                         <?php if ( isset($idAlbum) ) {
                             echo $evaluation['commentaireeval'];
                         } elseif ( isset($idMusique) ) {
                             echo $evaluation['commentaireevmu'];
                         } ?>
-                    </p>
+                    </div>
                     
                     <hr size="1" color=#e8491d>
                 </div>
