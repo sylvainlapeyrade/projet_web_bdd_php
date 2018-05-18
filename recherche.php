@@ -40,8 +40,8 @@ include_once(dirname(__FILE__).'/head.php');
                         <div class="flex">
                             <img class="image-recherche" src="<?php echo $artiste['urlimageartiste']; ?>" />
                             <div class="information-recherche">
-                                <?php echo $artiste['nomartiste'].' '.$artiste['prenomartiste'] ?>
-                                <?php if ( !empty($artiste['nomscene']) ) { echo '('.$artiste['nomscene'].')'; } ?>
+                                <?php echo ucwords($artiste['nomartiste'].' '.$artiste['prenomartiste']); ?>
+                                <?php if ( !empty($artiste['nomscene']) ) { echo '('.ucwords($artiste['nomscene']).')'; } ?>
                                 <a id="bouton-voir-plus" class="bouton bouton-forme2 bouton-red1" href="/artiste.php?idArtiste=<?php echo $artiste['idartiste']; ?>">Voir les détails</a>
                             </div>
                         </div>
@@ -59,7 +59,7 @@ include_once(dirname(__FILE__).'/head.php');
                         <div class="flex">
                             <img class="image-recherche" src="<?php echo $groupe['urlimagegroupe']; ?>" />
                             <div class="information-recherche">
-                                <?php echo $groupe['nomgroupe']; ?>
+                                <?php echo ucwords($groupe['nomgroupe']); ?>
                                 <a id="bouton-voir-plus" class="bouton bouton-forme2 bouton-red1" href="/groupe.php?idGroupe=<?php echo $groupe['idgroupe']; ?>">Voir les détails</a>
                             </div>
                         </div>
@@ -77,7 +77,7 @@ include_once(dirname(__FILE__).'/head.php');
                         <div class="flex">
                             <img class="image-recherche" src="<?php echo $album['urlpochettealbum']; ?>" />
                             <div class="information-recherche">
-                                "<?php echo $album['nomalbum']; ?>"
+                                "<?php echo ucwords($album['nomalbum']); ?>"
                                 sorti le
                                 <?php echo $album['datealbum']; ?>
                                 <br>
@@ -96,12 +96,12 @@ include_once(dirname(__FILE__).'/head.php');
                     <hr class="red1" size="2">
                     <?php foreach($listeMusiquesRecherche as $musique) { ?>
                         <div class="information-recherche">
-                            "<?php echo $musique['titremusique']; ?>"
+                            "<?php echo ucwords($musique['titremusique']); ?>"
                             interprété par  
                             <?php if ( !empty($musique['nomscene']) ) {
-                                echo $musique['nomscene'];
+                                echo ucwords($musique['nomscene']);
                             } else {
-                                echo $musique['nomartiste'].' '.$musique['prenomartiste'];
+                                echo ucwords($musique['nomartiste'].' '.$musique['prenomartiste']);
                             } ?>
                             <a id="bouton-voir-plus" class="bouton bouton-forme2 bouton-red1" href="/musique.php?idMusique=<?php echo $musique['idmusique']; ?>">Voir les détails</a>
                         </div>

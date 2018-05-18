@@ -45,7 +45,7 @@ include_once(dirname(__FILE__).'/head.php');
                 <div id="description-album" class="flex-around">
 
                     <div>
-                        <h1 class="red1"><a><?php if(isset($album)) {echo $album['nomalbum'];} ?></a> - <a><?php if(isset($album)) {echo $album['datealbum'];} ?></a></h1>
+                        <h1 class="red1"><a><?php if(isset($album)) {echo ucwords($album['nomalbum']);} ?></a> - <a><?php if(isset($album)) {echo $album['datealbum'];} ?></a></h1>
                         
                         <p>
                             <?php if(isset($album)) {echo $album['descriptionalbum'];} ?>
@@ -58,9 +58,9 @@ include_once(dirname(__FILE__).'/head.php');
                                 <a class="souligner" href="/artiste.php?idArtiste=<?php echo $artiste['idartiste']; ?>">
                                     <!-- Affichage soit le nom de scène soit le nom/prénom -->
                                     <?php if ( !empty($artiste['nomscene']) ) {
-                                        echo $artiste['nomscene'];
+                                        echo ucwords($artiste['nomscene']);
                                     } else {
-                                        echo $artiste['nomartiste'].' '.$artiste['prenomartiste'];
+                                        echo ucwords($artiste['nomartiste'].' '.$artiste['prenomartiste']);
                                     } ?>
                                 </a>
                                 <?php if ( sizeof($listeArtistesAlbum) > 1 && sizeof($listeArtistesAlbum)-1 > $key ) { echo '&nbsp-&nbsp'; } ?>
@@ -82,7 +82,7 @@ include_once(dirname(__FILE__).'/head.php');
                                     <?php foreach($listeMusiquesAlbum as $musique) { ?>
                                         <tr class="table-lign">
                                             <td> Piste n°<?php echo $musique['numeropiste']; ?> </td>
-                                            <td><a class="souligner" href="/musique.php?idMusique=<?php echo $musique['idmusique']; ?>"> <?php echo $musique['titremusique']; ?> </a></td>
+                                            <td><a class="souligner" href="/musique.php?idMusique=<?php echo $musique['idmusique']; ?>"> <?php echo ucwords($musique['titremusique']); ?> </a></td>
                                             <td> <?php echo format_duree($musique['dureemusique']); ?> </td>
                                         </tr>
                                     <?php } ?>

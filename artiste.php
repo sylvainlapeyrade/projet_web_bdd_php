@@ -41,9 +41,9 @@ include_once(dirname(__FILE__).'/head.php');
                     <div>
                         <h1 class="red1">
                             <?php if(isset($artiste)){
-                                echo $artiste['nomartiste'].' '.$artiste['prenomartiste'];
+                                echo ucwords($artiste['nomartiste'].' '.$artiste['prenomartiste']);
                                 if ( !empty($artiste['nomscene']) )
-                                    echo ' - '.$artiste['nomscene'];}
+                                    echo ' - '.ucwords($artiste['nomscene']);}
                             ?>
                         </h1>
                         <p>
@@ -60,7 +60,7 @@ include_once(dirname(__FILE__).'/head.php');
                                 ?>
                                 <?php foreach($listeGroupesArtiste as $key => $groupe) { ?>
                                     <a class="souligner" href="/groupe.php?idGroupe=<?php echo $groupe['idgroupe']; ?>">
-                                        <?php echo $groupe['nomgroupe']; ?>
+                                        <?php echo ucwords($groupe['nomgroupe']); ?>
                                     </a>
                                     <?php if ( sizeof($listeGroupesArtiste) > 1 && sizeof($listeGroupesArtiste)-1 > $key ) { echo '&nbsp-&nbsp'; } ?>
                                 <?php } ?>
@@ -79,7 +79,7 @@ include_once(dirname(__FILE__).'/head.php');
                             <?php if ( !empty($listeRecompensesArtiste) ) { ?>
                                 <?php foreach($listeRecompensesArtiste as $recompense) { ?>
                                     <tr class="table-lign">
-                                        <td> <?php echo $recompense['nomrecompense']; ?> </td>
+                                        <td> <?php echo ucwords($recompense['nomrecompense']); ?> </td>
                                         <td> <?php echo $recompense['daterecompense']; ?> </td>
                                     </tr>
                                 <?php } ?>
@@ -117,7 +117,7 @@ include_once(dirname(__FILE__).'/head.php');
                                     if ( isset($db) ) { $listeGenresMusique = recuperer_genre_musique($db, $musique['idmusique']); }
                                 ?>
                                 <tr class="table-lign">
-                                    <td><a class="souligner" href="/musique.php?idMusique=<?php echo $musique['idmusique']; ?>"> <?php echo $musique['titremusique']; ?> </a></td>
+                                    <td><a class="souligner" href="/musique.php?idMusique=<?php echo $musique['idmusique']; ?>"> <?php echo ucwords($musique['titremusique']); ?> </a></td>
                                     <td> <?php echo format_duree($musique['dureemusique']); ?> </td>
                                     <td> <?php echo $musique['datemusique']; ?></td>
                                     <td>
@@ -128,7 +128,7 @@ include_once(dirname(__FILE__).'/head.php');
                                             }
                                         } ?>
                                     </td>
-                                    <td><a class="souligner" href="/album.php?idAlbum=<?php echo $musique['idalbum']; ?>"> <?php echo $musique['nomalbum']; ?> </a></td>
+                                    <td><a class="souligner" href="/album.php?idAlbum=<?php echo $musique['idalbum']; ?>"> <?php echo ucwords($musique['nomalbum']); ?> </a></td>
                                     <td> <?php echo $musique['descriptionmusique']; ?> </td>
                                 </tr>
                             <?php } ?>

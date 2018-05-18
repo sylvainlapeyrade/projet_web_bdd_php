@@ -51,7 +51,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                     <?php foreach($listeMusique as $musique) { ?>
                     <tr class="table-lign">
                         <td> <?php echo $musique['numeropiste']; ?> </td>
-                        <td> <?php echo $musique['titremusique']; ?> </td>
+                        <td> <?php echo ucwords($musique['titremusique']); ?> </td>
                         <td> <?php echo $musique['dureemusique']; ?> </td>
                         <td class="bouton bouton-forme1 bouton-bleu">
                             <a href="./formAssemblerAlbum.php?idAlbum=<?php echo $idAlbum ?>&idMusique=<?php echo $musique['idmusique'] ?>">Modifier</a>

@@ -39,16 +39,16 @@ include_once(dirname(__FILE__).'/head.php');
             <div class="flex flex-between">
                 <div id="description-groupe" class="flex-around">
                     
-                    <h1 class="red1"><?php if(isset($groupe)){echo $groupe['nomgroupe'];} ?> - <?php if(isset($groupe)){echo $groupe['dategroupe'];} ?></h1>
+                    <h1 class="red1"><?php if(isset($groupe)){echo ucwords($groupe['nomgroupe']);} ?> - <?php if(isset($groupe)){echo $groupe['dategroupe'];} ?></h1>
                     
                     <div id="liste-membre" class="text-center flex flex-arround">
                         <?php if ( sizeof($listeArtistesGroupe) > 1 ) { echo "Membres "; } else { echo "Membre "; } ?> du groupe : 
                         <?php foreach($listeArtistesGroupe as $key => $artiste) { ?>
                             <a class="souligner" href="/artiste.php?idArtiste=<?php echo $artiste['idartiste']; ?>">
                                 <?php if ( !empty($artiste['nomscene']) ) {
-                                    echo $artiste['nomscene'];
+                                    echo ucwords($artiste['nomscene']);
                                 } else {
-                                    echo $artiste['nomartiste'].' '.$artiste['prenomartiste'];
+                                    echo ucwords($artiste['nomartiste'].' '.$artiste['prenomartiste']);
                                 } ?>
                             </a>
                             <?php if ( sizeof($listeArtistesGroupe) > 1 && sizeof($listeArtistesGroupe)-1 > $key ) { echo '&nbsp-&nbsp'; } ?>
@@ -95,7 +95,7 @@ include_once(dirname(__FILE__).'/head.php');
                                     if ( isset($db) ) { $listeGenresMusique = recuperer_genre_musique($db, $musique['idmusique']); }
                                 ?>
                                 <tr class="table-lign">
-                                    <td><a class="souligner" href="/musique.php?idMusique=<?php echo $musique['idmusique']; ?>"> <?php echo $musique['titremusique']; ?> </a></td>
+                                    <td><a class="souligner" href="/musique.php?idMusique=<?php echo $musique['idmusique']; ?>"> <?php echo ucwords($musique['titremusique']); ?> </a></td>
                                     <td> <?php echo format_duree($musique['dureemusique']); ?> </td>
                                     <td> <?php echo $musique['datemusique']; ?></td>
                                     <td>
@@ -106,7 +106,7 @@ include_once(dirname(__FILE__).'/head.php');
                                             }
                                         } ?>
                                     </td>
-                                    <td><a class="souligner" href="/album.php?idAlbum=<?php echo $musique['idalbum']; ?>"> <?php echo $musique['nomalbum']; ?> </a></td>
+                                    <td><a class="souligner" href="/album.php?idAlbum=<?php echo $musique['idalbum']; ?>"> <?php echo ucwords($musique['nomalbum']); ?> </a></td>
                                     <td> <?php echo $musique['descriptionmusique']; ?> </td>
                                 </tr>
                             <?php } ?>

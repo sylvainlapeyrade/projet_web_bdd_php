@@ -45,7 +45,7 @@ include_once(dirname(__FILE__).'/head.php');
                 <div id="description-album" class="flex-around">
                     <div>
                         
-                        <h1 class="red1"><?php if(isset($musique)){echo $musique['titremusique'];} ?> - <?php if(isset($musique)){echo $musique['datemusique'];} ?></h1>
+                        <h1 class="red1"><?php if(isset($musique)){echo ucwords($musique['titremusique']);} ?> - <?php if(isset($musique)){echo $musique['datemusique'];} ?></h1>
                         
                         <div>
                             <?php if ( !empty($listeArtistesMusique) ) { ?>
@@ -54,9 +54,9 @@ include_once(dirname(__FILE__).'/head.php');
                                     <a class="souligner" href="/artiste.php?idArtiste=<?php echo $artiste['idartiste']; ?>">
                                         <!-- Affichage soit le nom de scène soit le nom/prénom -->
                                         <?php if ( !empty($artiste['nomscene']) ) {
-                                            echo $artiste['nomscene'];
+                                            echo ucwords($artiste['nomscene']);
                                         } else {
-                                            echo $artiste['nomartiste'].' '.$artiste['prenomartiste'];
+                                            echo ucwords($artiste['nomartiste'].' '.$artiste['prenomartiste']);
                                         } ?>
                                     </a>
                                     <?php if ( sizeof($listeArtistesMusique) > 1 && sizeof($listeArtistesMusique)-1 > $key ) { echo '&nbsp-&nbsp'; } ?>
