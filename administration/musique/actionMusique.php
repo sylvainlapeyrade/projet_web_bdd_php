@@ -19,8 +19,6 @@ if ( isset($action) && !empty($action) ) {
     }
 }
 
-$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
-
 if ( isset($db, $action) ) {
     switch($action) {
         case "ajouterMusique":
