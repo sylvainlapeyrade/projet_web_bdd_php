@@ -177,8 +177,7 @@ function recuperer_composer_musiqueGr($db, $idMusiqueCoMr) {
  * @return True si la requête s'est bien exécutée | False sinon
  */
 function ajouter_composer_musiqueGr($db, $idMusiqueCoMr, $idGroupeCoMr) {
-    $req = $db->prepare("INSERT INTO Composer_MusiqueGr(idMusiqueCoMr, idGroupeCoMr)
-      VALUES(:idMusiqueCoMu, :idArtisteCoMu);");
+    $req = $db->prepare("INSERT INTO Composer_MusiqueGr(idMusiqueCoMr, idGroupeCoMr) VALUES(:idMusiqueCoMr, :idGroupeCoMr);");
     $req->bindParam(':idMusiqueCoMr', $idMusiqueCoMr, PDO::PARAM_INT);
     $req->bindParam(':idGroupeCoMr', $idGroupeCoMr, PDO::PARAM_INT);
     $reqOk = $req->execute();
@@ -192,7 +191,7 @@ function ajouter_composer_musiqueGr($db, $idMusiqueCoMr, $idGroupeCoMr) {
  * @param $idMusiqueCoMr Int Identifiant album dans Composer_MusiqueGr
  * @return True si la requête s'est bien exécutée | False sinon
  */
-function supprimer_composer_musique_tousGr($db, $idMusiqueCoMr) {
+function supprimer_composer_musiqueGr_tous($db, $idMusiqueCoMr) {
     $req = $db->prepare("DELETE FROM Composer_MusiqueGr WHERE idMusiqueCoMr=:idMusiqueCoMr;");
     $req->bindParam(':idMusiqueCoMr', $idMusiqueCoMr, PDO::PARAM_INT);
     $reqOk = $req->execute();

@@ -4,6 +4,7 @@ session_start();
 include_once(dirname(__FILE__).'/../../fonctions/variables.php');
 include_once(dirname(__FILE__).'/../../fonctions/fonctionCompte.php');
 include_once(dirname(__FILE__).'/../../fonctions/fonctionArtiste.php');
+include_once(dirname(__FILE__).'/../../fonctions/fonctionGroupe.php');
 include_once(dirname(__FILE__).'/../../fonctions/fonctionAlbum.php');
 include_once(dirname(__FILE__).'/../../fonctions/fonctionGenre.php');
 include_once(dirname(__FILE__).'/../../fonctions/fonctionMusique.php');
@@ -28,6 +29,10 @@ if ( isset($db, $idMusique) ) {
     foreach($composerMusique as $idArtisteCoMu) {
         $listeArtisteMusique[] = $idArtisteCoMu['idartistecomu'];
     }
+    $composerMusiqueGr = recuperer_composer_musiqueGr($db, $idMusique);
+    foreach($composerMusiqueGr as $idGroupeCoMr) {
+        $listeGroupeMusique[] = $idGroupeCoMr['idgroupecomr'];
+    }
     $definirMusique = recuperer_genre($db, $idMusique);
     foreach($definirMusique as $nomGenre) {
         $listeGenreMusique[] = $nomGenre['nomgenre'];
@@ -38,6 +43,7 @@ include_once(dirname(__FILE__).'/actionMusique.php');
 
 if ( isset($db) ) {
     $artistes = recuperer_artiste_tous($db);
+    $groupes = recuperer_groupe_tous($db);
     $albums = recuperer_album_tous($db);
     $genres = ['Jazz', 'Hip-Hop', 'Rock', 'Dance', 'Dark-Métal', 'Pop', 'Electro', 'House', 'Mambo'];
 }
@@ -67,7 +73,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                 <form class="flex flex-center flex-column" action="./formMusique.php" method="get">
                     
                     <div class="flex">
-                        <div class="width-500 margin-center flex flex-column">
+                        <div class="width-700 margin-center flex flex-column">
                             <input type="text" 
                                    class="input-text"
                                    name="titreMusique"
@@ -121,7 +127,7 @@ include_once(dirname(__FILE__).'/../../head.php');
 
                             <!-- Liste de tous les artistes -->
                             <h4>Artistes :</h4>
-                            <div id="box-item-checkbox" class="width-500 liste-checkbox flex flex-center flex-wrap">
+                            <div id="box-item-checkbox" class="liste-checkbox flex flex-center flex-wrap">
                                 <?php foreach($artistes as $artiste) { ?>
                                     <label class="item-checkbox">
                                         <input type="checkbox"
@@ -135,6 +141,21 @@ include_once(dirname(__FILE__).'/../../head.php');
                                         } else {
                                             echo $artiste['nomartiste'].' '.$artiste['prenomartiste'];
                                         } ?>
+                                    </label>
+                                <?php } ?>
+                            </div>
+
+                            <!-- Liste de tous les groupes -->
+                            <h4>Groupes :</h4>
+                            <div id="box-item-checkbox" class="liste-checkbox flex flex-center flex-wrap">
+                                <?php foreach($groupes as $groupe) { ?>
+                                    <label class="item-checkbox">
+                                        <input type="checkbox"
+                                               name="idGroupe<?php echo $groupe['idgroupe']; ?>"
+                                               value="<?php echo $groupe['idgroupe'] ?>"
+                                               <?php if ( isset($listeGroupeMusique) && in_array($groupe['idgroupe'], $listeGroupeMusique) ) { echo "checked"; } ?>
+                                               />
+                                        <?php echo $groupe['nomgroupe']; ?>
                                     </label>
                                 <?php } ?>
                             </div>

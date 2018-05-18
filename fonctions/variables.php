@@ -87,6 +87,7 @@ $messages = [
         'inscriptionOk' => "Le compte à été enregistré.",
     ],
     'minimum1Artiste' => "Il faut au minimum un artiste sélectionné.",
+    'minimum1ArtisteOuGroupe' => "Il faut au minimum un artiste ou un groupe de sélectionné.",
     'minimum2Artiste' => "Il faut au minimum deux artistes sélectionnés.",
     '1titreMusique' => "Il faut seulement un titre de musique sélectionner.",
     'operation' => [
