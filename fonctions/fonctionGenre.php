@@ -6,15 +6,15 @@
  */
 
 /**
- * Récupère les genres d'une musique
- * spécifiés par l'identifiant 'idMusiqueDe'.
+ * Récupère les genre d'une musique
+ * spécifier par l'identifiant 'idMusique'.
  * @param $db PDO Instance PDO de connexion à la BDD
- * @param $idMusiqueDe Int Identifiant de la musique
- * @return array L'ensemble des genres de la musique
+ * @param $idMusique Int Identifiant de la musique
+ * @return array Genre de la musique
  */
-function recuperer_genre($db, $idMusiqueDe) {
-    $req = $db->prepare("SELECT * FROM Definir WHERE idMusiqueDe=:idMusiqueDe");
-    $req->bindParam(':idMusiqueDe', $idMusiqueDe);
+function recuperer_genre_musique($db, $idMusique) {
+    $req = $db->prepare("SELECT * FROM Definir WHERE idMusiqueDe=:idMusique ORDER BY Definir.nomGenre ASC");
+    $req->bindParam(':idMusique', $idMusique);
     $req->execute();
     $res = $req->fetchAll();
     return $res;

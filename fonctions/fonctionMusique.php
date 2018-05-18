@@ -21,21 +21,6 @@ function recuperer_artiste_musique($db, $idMusique) {
 }
 
 /**
- * Récupère les artiste d'une musique
- * spécifier par l'identifiant 'idMusique'.
- * @param $db PDO Instance PDO de connexion à la BDD
- * @param $idMusique Int Identifiant de la musique
- * @return array Artistes de la musique
- */
-function recuperer_genre_musique($db, $idMusique) {
-    $req = $db->prepare("SELECT * FROM Definir WHERE idMusiqueDe=:idMusique");
-    $req->bindParam(':idMusique', $idMusique);
-    $req->execute();
-    $res = $req->fetchAll();
-    return $res;
-}
-
-/**
  * Récupère tout les musiques de la BDD en les triant
  * par ordre alphabétique par leur titre
  * @param $db PDO Instance PDO de connexion à la BDD

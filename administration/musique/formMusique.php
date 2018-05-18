@@ -6,8 +6,8 @@ include_once(dirname(__FILE__).'/../../fonctions/fonctionCompte.php');
 include_once(dirname(__FILE__).'/../../fonctions/fonctionArtiste.php');
 include_once(dirname(__FILE__).'/../../fonctions/fonctionGroupe.php');
 include_once(dirname(__FILE__).'/../../fonctions/fonctionAlbum.php');
-include_once(dirname(__FILE__).'/../../fonctions/fonctionGenre.php');
 include_once(dirname(__FILE__).'/../../fonctions/fonctionMusique.php');
+include_once(dirname(__FILE__).'/../../fonctions/fonctionGenre.php');
 include_once(dirname(__FILE__).'/../../bdd/connexion.php');
 
 $info['head']['subTitle'] = "Gestion musique";
@@ -33,7 +33,7 @@ if ( isset($db, $idMusique) ) {
     foreach($composerMusiqueGr as $idGroupeCoMr) {
         $listeGroupeMusique[] = $idGroupeCoMr['idgroupecomr'];
     }
-    $definirMusique = recuperer_genre($db, $idMusique);
+    $definirMusique = recuperer_genre_musique($db, $idMusique);
     foreach($definirMusique as $nomGenre) {
         $listeGenreMusique[] = $nomGenre['nomgenre'];
     }
