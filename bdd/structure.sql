@@ -1,20 +1,22 @@
 /* Base de données du projet web-bdd-php */
 
 /* Destruction des tables si elles existent: */
-DROP TABLE IF EXISTS Album            CASCADE;
-DROP TABLE IF EXISTS Artiste          CASCADE;
-DROP TABLE IF EXISTS Recompense       CASCADE;
-DROP TABLE IF EXISTS Musique          CASCADE;
-DROP TABLE IF EXISTS Groupe           CASCADE;
-DROP TABLE IF EXISTS Utilisateur      CASCADE;
-DROP TABLE IF EXISTS Evaluer_Album    CASCADE;
-DROP TABLE IF EXISTS Evaluer_Musique  CASCADE;
-DROP TABLE IF EXISTS Composer_Album   CASCADE;
-DROP TABLE IF EXISTS Composer_Musique CASCADE;
-DROP TABLE IF EXISTS Obtenir_Artiste  CASCADE;
-DROP TABLE IF EXISTS Assembler_Album  CASCADE;
-DROP TABLE IF EXISTS Constituer       CASCADE;
-DROP TABLE IF EXISTS Definir          CASCADE;
+DROP TABLE IF EXISTS Album              CASCADE;
+DROP TABLE IF EXISTS Artiste            CASCADE;
+DROP TABLE IF EXISTS Recompense         CASCADE;
+DROP TABLE IF EXISTS Musique            CASCADE;
+DROP TABLE IF EXISTS Groupe             CASCADE;
+DROP TABLE IF EXISTS Utilisateur        CASCADE;
+DROP TABLE IF EXISTS Evaluer_Album      CASCADE;
+DROP TABLE IF EXISTS Evaluer_Musique    CASCADE;
+DROP TABLE IF EXISTS Composer_Album     CASCADE;
+DROP TABLE IF EXISTS Composer_Musique   CASCADE;
+DROP TABLE IF EXISTS Composer_AlbumGr   CASCADE;
+DROP TABLE IF EXISTS Composer_MusiqueGr CASCADE;
+DROP TABLE IF EXISTS Obtenir_Artiste    CASCADE;
+DROP TABLE IF EXISTS Assembler_Album    CASCADE;
+DROP TABLE IF EXISTS Constituer         CASCADE;
+DROP TABLE IF EXISTS Definir            CASCADE;
 
 
 /* Créations des tables de la bdd */
@@ -128,7 +130,7 @@ CREATE TABLE Obtenir_Artiste(
 
 CREATE TABLE Assembler_Album(
   idAlbumAa             INT           CONSTRAINT Aa_fk_ilAa  REFERENCES Album(idAlbum)     ON DELETE CASCADE,
-  idMusiqueAa           INT           CONSTRAINT Aa_fk_iMAa  REFERENCES Musique(idMusique) ON DELETE RESTRICT,
+  idMusiqueAa           INT           CONSTRAINT Aa_fk_iMAa  REFERENCES Musique(idMusique) ON DELETE CASCADE,
   numeroPiste           INT           CONSTRAINT Aa_nuPi_NN  NOT NULL,
   CONSTRAINT Aa_pk_AsAl  PRIMARY KEY (idAlbumAa, idMusiqueAa)
 );
@@ -142,7 +144,7 @@ CREATE TABLE Constituer(
 
 
 CREATE TABLE Definir(
-  idMusiqueDe           INT           CONSTRAINT De_fk_iMDe  REFERENCES Musique(idMusique),
+  idMusiqueDe           INT           CONSTRAINT De_fk_iMDe  REFERENCES Musique(idMusique) ON DELETE CASCADE,
   nomGenre              VARCHAR(45)   CONSTRAINT De_noGe_NN  NOT NULL,
   CONSTRAINT De_pk_Defi  PRIMARY KEY(idMusiqueDe, nomGenre)
 );
