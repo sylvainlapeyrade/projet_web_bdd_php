@@ -7,7 +7,7 @@ include_once(dirname(__FILE__).'/../bdd/connexion.php');
 $info['head']['subTitle'] = "Formulaire mot de passe";
 $info['head']['stylesheets'] = ['compte.css'];
 
-if(!is_connect() || !is_admin()) {leave();}
+if(!is_connect()) {leave();}
 
 $idUtilisateur = $_GET['idUtilisateur'];
 

@@ -8,6 +8,8 @@ include_once(dirname(__FILE__).'/../bdd/connexion.php');
 $info['head']['subTitle'] = "Gestion compte";
 $info['head']['stylesheets'] = ['compte.css'];
 
+if(!is_connect()) {leave();}
+
 include_once(dirname(__FILE__).'/../head.php');
 
 include_once(dirname(__FILE__).'/actionCompte.php');
