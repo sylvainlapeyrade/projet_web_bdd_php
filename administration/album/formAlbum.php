@@ -13,6 +13,8 @@ $info['head']['stylesheets'] = ['adminGestion.css'];
 
 if(!is_connect() || !is_admin()) {leave();}
 
+$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
+
 $idAlbum = $_GET['idAlbum'];
 if ( isset($db, $idAlbum) ) {
     $album = recuperer_album($db, $idAlbum)[0];

@@ -16,6 +16,7 @@ if ( isset($action) && !empty($action) ) {
         }
     }
 }
+    $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
 
 if ( isset($db, $action) ) {
     switch($action) {
@@ -41,8 +42,8 @@ if ( isset($db, $action) ) {
                 $erreur = $messages['minimum1ArtisteOuGroupe'];
                 break;
             }
-            $idAlbumCoAl = ajouter_album($db, $nomAlbum, $dateAlbum, $descriptionAlbum, $urlPochetteAlbum);
-            if ( $idAlbumCoAl == null ) {
+            $idAlbum = ajouter_album($db, $nomAlbum, $dateAlbum, $descriptionAlbum, $urlPochetteAlbum);
+            if ( $idAlbum == null ) {
                 $erreur = $messages['operation']['ko']." (1)";
                 break;
             }
