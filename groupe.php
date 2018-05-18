@@ -4,6 +4,7 @@ session_start();
 include_once(dirname(__FILE__).'/fonctions/variables.php');
 include_once(dirname(__FILE__).'/fonctions/fonctionCompte.php');
 include_once(dirname(__FILE__).'/fonctions/fonctionGroupe.php');
+include_once(dirname(__FILE__).'/fonctions/fonctionMusique.php');
 include_once(dirname(__FILE__).'/bdd/connexion.php');
 
 $info['head']['subTitle'] = "Page groupe";
@@ -16,7 +17,7 @@ if ( isset($db, $idGroupe) ) {
         header('Location: /404.php');
     }
     $listeArtistesGroupe = recuperer_artiste_groupe($db, $idGroupe);
-    $listeMusiqueGroupe = recuperer_musique_groupe($db, $idGroupe);
+    $listeMusiquesGroupe = recuperer_musique_album_groupe($db, $idGroupe);
 } else {
     header('Location: /404.php');
 }
@@ -112,7 +113,12 @@ include_once(dirname(__FILE__).'/head.php');
                         <?php } ?>
                         
                     </table>
+                            
+                    <?php if ( empty($listeMusiquesGroupe) ) { ?>
+                        <h3>Ce groupe n'a pas de musique.</h3>
+                    <?php } ?>
                 </div>
+                
             </div>
 
         </div>

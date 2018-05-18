@@ -36,6 +36,20 @@ function recuperer_artiste_groupe($db, $idGroupe) {
 }
 
 /**
+ * Recupere les musique d'un groupe ainsi que les albums associés
+ * @param $db PDO Instance PDO de connexion à la BDD
+ * @param $idArtiste Int Identifiant artiste dans Assembler_Album
+ * @return array Association des musique et de leur groupe et des albums
+ */
+function recuperer_musique_album_groupe($db, $idGroupe) {
+    $req = $db->prepare("SELECT * FROM Album, Musique, Composer_MusiqueGr, Assembler_Album WHERE Composer_MusiqueGr.idGroupeCoMr=:idGroupe AND Composer_MusiqueGr.idMusiqueCoMr=Musique.idMusique AND Assembler_Album.idMusiqueAa=Musique.idMusique AND Assembler_Album.idAlbumAa=Album.idAlbum;");
+    $req->bindParam(':idGroupe', $idGroupe, PDO::PARAM_INT);
+    $req->execute();
+    $res = $req->fetchAll();
+    return $res;
+}
+
+/**
  * Récupère tout les groupes de la BDD en les triant
  * par ordre alphabétique par leur nom de groupe
  * @param $db PDO Instance PDO de connexion à la BDD
