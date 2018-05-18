@@ -12,7 +12,7 @@
  * @return array Association des musique et de leur compositeur
  */
 function recuperer_musique_artiste($db, $idArtiste) {
-    $req = $db->prepare("SELECT * FROM Composer_Musique, Musique WHERE Composer_Musique.idArtisteCoMu=:idArtiste AND Composer_Musique.idMusiqueCoMu = Musique.idMusique;");
+    $req = $db->prepare("SELECT * FROM Composer_Musique, Musique WHERE Composer_Musique.idArtisteCoMu=:idArtiste AND Composer_Musique.idMusiqueCoMu = Musique.idMusique ORDER BY Musique.titreMusique ASC;");
     $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
     $req->execute();
     $res = $req->fetchAll();
@@ -26,7 +26,7 @@ function recuperer_musique_artiste($db, $idArtiste) {
  * @return array Association des albums et de leur compositeur
  */
 function recuperer_groupe_artiste($db, $idArtiste) {
-    $req = $db->prepare("SELECT * FROM Constituer, Groupe WHERE Constituer.idArtisteCo=:idArtiste AND Groupe.idGroupe=Constituer.idGroupeCo;");
+    $req = $db->prepare("SELECT * FROM Constituer, Groupe WHERE Constituer.idArtisteCo=:idArtiste AND Groupe.idGroupe=Constituer.idGroupeCo ORDER BY Groupe.nomGroupe ASC;");
     $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
     $req->execute();
     $res = $req->fetchAll();
@@ -40,7 +40,7 @@ function recuperer_groupe_artiste($db, $idArtiste) {
  * @return array Association des récompense et de leur artistes
  */
 function recuperer_recompense_artiste($db, $idArtiste) {
-    $req = $db->prepare("SELECT * FROM Obtenir_Artiste, Recompense WHERE Obtenir_Artiste.idArtisteOa=:idArtiste AND Obtenir_Artiste.idRecompenseOa=recompense.idRecompense;");
+    $req = $db->prepare("SELECT * FROM Obtenir_Artiste, Recompense WHERE Obtenir_Artiste.idArtisteOa=:idArtiste AND Obtenir_Artiste.idRecompenseOa=recompense.idRecompense ORDER BY Recompense.dateRecompense DESC;");
     $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
     $req->execute();
     $res = $req->fetchAll();

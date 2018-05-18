@@ -13,7 +13,7 @@
  * @return array Evaluations de l'album
  */
 function recuperer_evaluation_album_tous($db, $idAlbumEvAl) {
-    $req = $db->prepare("SELECT * FROM Evaluer_Album WHERE idAlbumEvAl=:idAlbumEvAl");
+    $req = $db->prepare("SELECT * FROM Evaluer_Album WHERE idAlbumEvAl=:idAlbumEvAl ORDER BY Evaluer_Album.noteEvAl DESC");
     $req->bindParam(':idAlbumEvAl', $idAlbumEvAl);
     $req->execute();
     $res = $req->fetchAll();
@@ -28,7 +28,7 @@ function recuperer_evaluation_album_tous($db, $idAlbumEvAl) {
  * @return array Evaluations de la musique
  */
 function recuperer_evaluation_musique_tous($db, $idMusiqueEvMu) {
-    $req = $db->prepare("SELECT * FROM Evaluer_Musique WHERE idMusiqueEvMu=:idMusiqueEvMu");
+    $req = $db->prepare("SELECT * FROM Evaluer_Musique WHERE idMusiqueEvMu=:idMusiqueEvMu ORDER BY Evaluer_Musique.noteEvMu DESC");
     $req->bindParam(':idMusiqueEvMu', $idMusiqueEvMu);
     $req->execute();
     $res = $req->fetchAll();
@@ -46,8 +46,7 @@ function recuperer_evaluation_musique_tous($db, $idMusiqueEvMu) {
  * @return True si la requête s'est bien exécutée | False sinon
  */
 function ajouter_evaluation_album($db, $idUtilisateurEvAl, $idAlbumEvAl, $noteEvAl, $commentaireEvAl) {
-    $req = $db->prepare("INSERT INTO Evaluer_Album(idUtilisateurEvAl, idAlbumEvAl, noteEvAl, commentaireEvAl) 
-VALUES(:idUtilisateurEvAl, :idAlbumEvAl, :noteEvAl, :commentaireEvAl);");
+    $req = $db->prepare("INSERT INTO Evaluer_Album(idUtilisateurEvAl, idAlbumEvAl, noteEvAl, commentaireEvAl) VALUES(:idUtilisateurEvAl, :idAlbumEvAl, :noteEvAl, :commentaireEvAl);");
     $req->bindParam(':idUtilisateurEvAl', $idUtilisateurEvAl, PDO::PARAM_INT);
     $req->bindParam(':idAlbumEvAl', $idAlbumEvAl, PDO::PARAM_INT);
     $req->bindParam(':noteEvAl', $noteEvAl, PDO::PARAM_INT);
@@ -67,8 +66,7 @@ VALUES(:idUtilisateurEvAl, :idAlbumEvAl, :noteEvAl, :commentaireEvAl);");
  * @return True si la requête s'est bien exécutée | False sinon
  */
 function ajouter_evaluation_musique($db, $idUtilisateurEvMu, $idMusiqueEvMu, $noteEvMu, $commentaireEvMu) {
-    $req = $db->prepare("INSERT INTO Evaluer_Musique(idUtilisateurEvMu, idMusiqueEvMu, noteEvMu, commentaireEvMu) 
-VALUES(:idUtilisateurEvMu, :idMusiqueEvMu, :noteEvMu, :commentaireEvMu);");
+    $req = $db->prepare("INSERT INTO Evaluer_Musique(idUtilisateurEvMu, idMusiqueEvMu, noteEvMu, commentaireEvMu) VALUES(:idUtilisateurEvMu, :idMusiqueEvMu, :noteEvMu, :commentaireEvMu);");
     $req->bindParam(':idUtilisateurEvMu', $idUtilisateurEvMu, PDO::PARAM_INT);
     $req->bindParam(':idMusiqueEvMu', $idMusiqueEvMu, PDO::PARAM_INT);
     $req->bindParam(':noteEvMu', $noteEvMu, PDO::PARAM_INT);

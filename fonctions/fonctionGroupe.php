@@ -13,7 +13,7 @@
  * @return array Les artistes qui compose le groupe
  */
 function recuperer_musique_groupe($db, $idGroupe) {
-    $req = $db->prepare("SELECT * FROM Composer_MusiqueGr, Musique WHERE Composer_MusiqueGr.idGroupeCoMr=:idGroupe AND Composer_MusiqueGr.idMusiqueCoMr=Musique.idMusique;");
+    $req = $db->prepare("SELECT * FROM Composer_MusiqueGr, Musique WHERE Composer_MusiqueGr.idGroupeCoMr=:idGroupe AND Composer_MusiqueGr.idMusiqueCoMr=Musique.idMusique ORDER BY Musique.titreMusique ASC;");
     $req->bindParam(':idGroupe', $idGroupe);
     $req->execute();
     $res = $req->fetchAll();
@@ -28,7 +28,7 @@ function recuperer_musique_groupe($db, $idGroupe) {
  * @return array Les artistes qui compose le groupe
  */
 function recuperer_artiste_groupe($db, $idGroupe) {
-    $req = $db->prepare("SELECT * FROM Constituer, Artiste WHERE Constituer.idGroupeCo=:idGroupe AND Constituer.idArtisteCo=Artiste.idArtiste;");
+    $req = $db->prepare("SELECT * FROM Constituer, Artiste WHERE Constituer.idGroupeCo=:idGroupe AND Constituer.idArtisteCo=Artiste.idArtiste ORDER BY Artiste.nomArtiste ASC, Artiste.prenomArtiste ASC;");
     $req->bindParam(':idGroupe', $idGroupe);
     $req->execute();
     $res = $req->fetchAll();
@@ -42,7 +42,7 @@ function recuperer_artiste_groupe($db, $idGroupe) {
  * @return array Association des musique et de leur groupe et des albums
  */
 function recuperer_musique_album_groupe($db, $idGroupe) {
-    $req = $db->prepare("SELECT * FROM Album, Musique, Composer_MusiqueGr, Assembler_Album WHERE Composer_MusiqueGr.idGroupeCoMr=:idGroupe AND Composer_MusiqueGr.idMusiqueCoMr=Musique.idMusique AND Assembler_Album.idMusiqueAa=Musique.idMusique AND Assembler_Album.idAlbumAa=Album.idAlbum;");
+    $req = $db->prepare("SELECT * FROM Album, Musique, Composer_MusiqueGr, Assembler_Album WHERE Composer_MusiqueGr.idGroupeCoMr=:idGroupe AND Composer_MusiqueGr.idMusiqueCoMr=Musique.idMusique AND Assembler_Album.idMusiqueAa=Musique.idMusique AND Assembler_Album.idAlbumAa=Album.idAlbum ORDER BY Musique.titreMusique ASC;");
     $req->bindParam(':idGroupe', $idGroupe, PDO::PARAM_INT);
     $req->execute();
     $res = $req->fetchAll();

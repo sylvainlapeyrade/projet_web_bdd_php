@@ -13,7 +13,7 @@
  * @return array Artistes de la musique
  */
 function recuperer_artiste_musique($db, $idMusique) {
-    $req = $db->prepare("SELECT * FROM Composer_Musique, Artiste WHERE Composer_Musique.idMusiqueCoMu=:idMusique AND Composer_Musique.idArtisteCoMu=Artiste.idArtiste;");
+    $req = $db->prepare("SELECT * FROM Composer_Musique, Artiste WHERE Composer_Musique.idMusiqueCoMu=:idMusique AND Composer_Musique.idArtisteCoMu=Artiste.idArtiste ORDER BY Artiste.nomArtiste ASC, Artiste.prenomArtiste ASC;");
     $req->bindParam(':idMusique', $idMusique);
     $req->execute();
     $res = $req->fetchAll();
@@ -85,8 +85,7 @@ function ajouter_musique($db, $titreMusique, $dureeMusique, $dateMusique, $descr
  * @return True si la requête s'est bien exécutée | False Sinon
  */
 function modifier_musique($db, $idMusique, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique) {
-    $req = $db->prepare("UPDATE Musique SET titreMusique=:titreMusique, dureeMusique=:dureeMusique, 
-dateMusique=:dateMusique, descriptionMusique=:descriptionMusique WHERE idMusique=:idMusique;");
+    $req = $db->prepare("UPDATE Musique SET titreMusique=:titreMusique, dureeMusique=:dureeMusique, dateMusique=:dateMusique, descriptionMusique=:descriptionMusique WHERE idMusique=:idMusique;");
     $req->bindParam(':idMusique', $idMusique, PDO::PARAM_INT);
     $req->bindParam(':titreMusique', $titreMusique, PDO::PARAM_STR);
     $req->bindParam(':dureeMusique', $dureeMusique, PDO::PARAM_INT);

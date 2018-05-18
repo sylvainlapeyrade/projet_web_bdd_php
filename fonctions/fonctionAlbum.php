@@ -12,7 +12,7 @@
  * @return array Association des albums et de leur compositeur artistes
  */
 function recuperer_artiste_album($db, $idAlbum) {
-    $req = $db->prepare("SELECT * FROM Composer_Album, Artiste WHERE Composer_Album.idAlbumCoAl=:idAlbum AND Composer_Album.idArtisteCoAl = Artiste.idArtiste;");
+    $req = $db->prepare("SELECT * FROM Composer_Album, Artiste WHERE Composer_Album.idAlbumCoAl=:idAlbum AND Composer_Album.idArtisteCoAl = Artiste.idArtiste ORDER BY Artiste.nomArtiste ASC, Artiste.prenomArtiste ASC;");
     $req->bindParam(':idAlbum', $idAlbum, PDO::PARAM_INT);
     $req->execute();
     $res = $req->fetchAll();
@@ -26,7 +26,7 @@ function recuperer_artiste_album($db, $idAlbum) {
  * @return array Association des albums et de leur compositeur groupe
  */
 function recuperer_groupe_album($db, $idAlbum) {
-    $req = $db->prepare("SELECT * FROM Composer_AlbumGr, Groupe WHERE Composer_AlbumGr.idAlbumCoAr=:idAlbum AND Composer_AlbumGr.idGroupeCoAr = Groupe.idGroupe;");
+    $req = $db->prepare("SELECT * FROM Composer_AlbumGr, Groupe WHERE Composer_AlbumGr.idAlbumCoAr=:idAlbum AND Composer_AlbumGr.idGroupeCoAr = Groupe.idGroupe ORDER BY Groupe.nomGroupe ASC;");
     $req->bindParam(':idAlbum', $idAlbum, PDO::PARAM_INT);
     $req->execute();
     $res = $req->fetchAll();

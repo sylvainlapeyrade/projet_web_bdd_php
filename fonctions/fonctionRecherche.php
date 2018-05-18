@@ -14,7 +14,7 @@
  */
 function rechercher_artiste($db, $recherche) {
     $recherche = "%$recherche%";
-    $req = $db->prepare("SELECT * FROM Artiste WHERE nomArtiste LIKE :recherche OR prenomArtiste LIKE :recherche OR nomScene LIKE :recherche;");
+    $req = $db->prepare("SELECT * FROM Artiste WHERE nomArtiste LIKE :recherche OR prenomArtiste LIKE :recherche OR nomScene LIKE :recherche ORDER BY nomArtiste ASC, prenomArtiste ASC;");
     $req->bindParam(':recherche', $recherche);
     $req->execute();
     $res = $req->fetchAll();
@@ -30,7 +30,7 @@ function rechercher_artiste($db, $recherche) {
  */
 function rechercher_groupe($db, $recherche) {
     $recherche = "%$recherche%";
-    $req = $db->prepare("SELECT * FROM Groupe WHERE nomGroupe LIKE :recherche;");
+    $req = $db->prepare("SELECT * FROM Groupe WHERE nomGroupe LIKE :recherche ORDER BY nomGroupe ASC;");
     $req->bindParam(':recherche', $recherche);
     $req->execute();
     $res = $req->fetchAll();
@@ -46,7 +46,7 @@ function rechercher_groupe($db, $recherche) {
  */
 function rechercher_album($db, $recherche) {
     $recherche = "%$recherche%";
-    $req = $db->prepare("SELECT * FROM Album WHERE nomAlbum LIKE :recherche;");
+    $req = $db->prepare("SELECT * FROM Album WHERE nomAlbum LIKE :recherche ORDER BY nomAlbum ASC;");
     $req->bindParam(':recherche', $recherche);
     $req->execute();
     $res = $req->fetchAll();
@@ -62,8 +62,7 @@ function rechercher_album($db, $recherche) {
  */
 function rechercher_musique($db, $recherche) {
     $recherche = "%$recherche%";
-    $req = $db->prepare("SELECT * FROM Musique, Composer_Musique, Artiste WHERE titreMusique 
-LIKE :recherche AND Musique.idMusique=Composer_Musique.idMusiqueCoMu AND Composer_Musique.idArtisteCoMu=Artiste.idArtiste;");
+    $req = $db->prepare("SELECT * FROM Musique, Composer_Musique, Artiste WHERE titreMusique LIKE :recherche AND Musique.idMusique=Composer_Musique.idMusiqueCoMu AND Composer_Musique.idArtisteCoMu=Artiste.idArtiste ORDER BY Musique.titreMusique ASC, Artiste.nomArtiste ASC, Artiste.prenomArtiste ASC;");
     $req->bindParam(':recherche', $recherche);
     $req->execute();
     $res = $req->fetchAll();
