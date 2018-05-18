@@ -57,6 +57,7 @@ include_once(dirname(__FILE__).'/head.php');
                                 <?php if ( sizeof($listeArtistesMusique) > 1 ) { echo "Artistes : "; } else { echo "Artiste : "; } ?>
                                 <?php foreach($listeArtistesMusique as $key => $artiste) { ?>
                                     <a class="souligner" href="/artiste.php?idArtiste=<?php echo $artiste['idartiste']; ?>">
+                                        <!-- Affichage soit le nom de scène soit le nom/prénom -->
                                         <?php if ( !empty($artiste['nomscene']) ) {
                                             echo $artiste['nomscene'];
                                         } else {
