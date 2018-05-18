@@ -3,7 +3,7 @@
 $action = $_GET['action'];
 if ( isset($action) && !empty($action) ) {
     $idRecompense = $_GET['idRecompense'];
-    $nomRecompense = $_GET['nomRecompense'];
+    $nomRecompense = strtolower($_GET['nomRecompense']);
     $dateRecompense = format_date($_GET['dateRecompense']);
     $descriptionRecompense = $_GET['descriptionRecompense'];
 

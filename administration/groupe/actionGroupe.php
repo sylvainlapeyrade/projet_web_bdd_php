@@ -3,7 +3,7 @@
 $action = $_GET['action'];
 if ( isset($action) && !empty($action) ) {
     $idGroupe = $_GET['idGroupe'];
-    $nomGroupe = $_GET['nomGroupe'];
+    $nomGroupe = strtolower($_GET['nomGroupe']);
     $dateGroupe = format_date($_GET['dateGroupe']);
     $descriptionGroupe = $_GET['descriptionGroupe'];
     $urlImageGroupe = $_GET['urlImageGroupe'];

@@ -3,7 +3,7 @@
 $action = $_GET['action'];
 if ( isset($action) && !empty($action) ) {
     $idMusique = $_GET['idMusique'];
-    $titreMusique = $_GET['titreMusique'];
+    $titreMusique = strtolower($_GET['titreMusique']);
     $dureeMusique = $_GET['dureeMusique'];
     $dateMusique = format_date($_GET['dateMusique']);
     $descriptionMusique = $_GET['descriptionMusique'];

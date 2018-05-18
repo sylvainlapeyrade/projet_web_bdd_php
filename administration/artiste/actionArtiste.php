@@ -3,9 +3,9 @@
 $action = $_GET['action'];
 if ( isset($action) && !empty($action) ) {
     $idArtiste = $_GET['idArtiste'];
-    $nomArtiste = $_GET['nomArtiste'];
-    $prenomArtiste = $_GET['prenomArtiste'];
-    $nomScene = $_GET['nomScene'];
+    $nomArtiste = strtolower($_GET['nomArtiste']);
+    $prenomArtiste = strtolower($_GET['prenomArtiste']);
+    $nomScene = strtolower($_GET['nomScene']);
     $dateNaissanceArtiste = format_date($_GET['dateNaissanceArtiste']);
     $urlImageArtiste = $_GET['urlImageArtiste'];
     $descriptionArtiste = $_GET['descriptionArtiste'];

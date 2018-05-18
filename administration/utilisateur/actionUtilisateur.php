@@ -104,7 +104,7 @@ if ( isset($db, $action) && is_connect() && is_admin() ) {
                 break;
             }
             if ( $idUtilisateur == $_SESSION['idUtilisateur'] ) {
-                $erreur = $messages['formualire']['erreurSupprimerSonCompte'];
+                $erreur = $messages['formulaire']['erreurSupprimerSonCompte'];
                 break;
             }
             $operationOk = supprimer_utilisateur($db, $idUtilisateur);
