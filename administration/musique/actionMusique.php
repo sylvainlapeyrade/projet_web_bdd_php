@@ -50,7 +50,7 @@ if ( isset($db, $action) ) {
                 $erreur = $messages['operation']['ko']. " (1)";
                 break;
             }
-            /* Ajout des artiste associés */
+            /* Ajout des artistes associés */
             if ( isset($listeIdArtiste) && !empty($listeIdArtiste) ) {
                 $indiceListe = 0;
                 do {
@@ -134,7 +134,7 @@ if ( isset($db, $action) ) {
                 $erreur = $messages['operation']['ko'] . " (4)";
                 break;
             }
-            /* Ajout des artiste associés */
+            /* Ajout des artistes associés */
             if ( isset($listeIdArtiste) && !empty($listeIdArtiste) ) {
                 $indiceListe = 0;
                 do {
