@@ -205,7 +205,7 @@ function ajouter_composer_albumGr($db, $idAlbumCoAr, $idGroupeCoAr) {
  * @return True si la requête s'est bien exécutée | False sinon
  */
 function supprimer_composer_albumGr_tous($db, $idAlbumCoAr) {
-    $req = $db->prepare("DELETE FROM Composer_Album WHERE $idAlbumCoAr=:idAlbumCoAr;");
+    $req = $db->prepare("DELETE FROM Composer_AlbumGr WHERE idAlbumCoAr=:idAlbumCoAr;");
     $req->bindParam(':idAlbumCoAr', $idAlbumCoAr, PDO::PARAM_INT);
     $reqOk = $req->execute();
     return $reqOk;
