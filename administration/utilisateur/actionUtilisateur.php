@@ -69,7 +69,7 @@ if ( isset($db, $action) && is_connect() && is_admin() ) {
                 $erreur = $messages['formulaire']['invalide'];
                 break;   
             }
-            if ( empty($idUtilisateur) || empty($statut) ) {
+            if ( empty($idUtilisateur) ) {
                 $erreur = $messages['formulaire']['champs_vide'];
                 break;
             }
