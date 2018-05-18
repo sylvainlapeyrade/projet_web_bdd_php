@@ -11,6 +11,7 @@ $info['head']['stylesheets'] = ['compte.css'];
 if(is_connect()) {leave();}
 
 $redirect = $_GET['redirect'];
+$idUtilisateur = $_GET['idUtilisateur'];
 
 include_once(dirname(__FILE__).'/actionCompte.php');
 
@@ -37,7 +38,7 @@ include_once(dirname(__FILE__).'/actionCompte.php');
                        type="text"
                        name="idUtilisateur" 
                        placeholder="Identifiant"
-                       value="<?php if( isset($identifiant) ){ echo $identifiant; } ?>"
+                       value="<?php if( isset($idUtilisateur) ){ echo $idUtilisateur; } ?>"
                        />
 
                 <input class="input-text" 

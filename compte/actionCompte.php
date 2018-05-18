@@ -74,7 +74,7 @@ if ( isset($db, $action) ) {
                 $erreur = $messages['formulaire']['motDePasseDifferent'];
                 break;
             }
-            $operationOk = modifier_motdepasse_utilisateur($db, $idUtilisateur, $motDePasse);
+            $operationOk = modifier_motdepasse_utilisateur($db, $_SESSION['idUtilisateur'], $motDePasse);
             if ( !$operationOk ) {
                 $erreur = $messages['operation']['ko'];
             }
