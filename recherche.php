@@ -9,7 +9,7 @@ include_once(dirname(__FILE__).'/bdd/connexion.php');
 $info['head']['subTitle'] = "Resultat de recherche";
 $info['head']['stylesheets'] = ['barreRecherche.css', 'recherche.css'];
 
-$recherche = $_GET['recherche'];
+$recherche = strtolower($_GET['recherche']);
 if ( isset($db, $recherche) ) {
     $listeArtistesRecherche = rechercher_artiste($db, $recherche);
     $listeGroupesRecherche = rechercher_groupe($db, $recherche);
