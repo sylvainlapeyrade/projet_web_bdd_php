@@ -110,6 +110,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                         </div>
 
                         <div class="width-800">
+                            
                             <!-- Liste des genres disponible -->
                             <h4>Genres :</h4>
                             <div id="box-item-checkbox" class="liste-checkbox flex flex-center flex-wrap">
@@ -159,6 +160,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                                     </label>
                                 <?php } ?>
                             </div>
+                            
                         </div>
 
                     </div>
