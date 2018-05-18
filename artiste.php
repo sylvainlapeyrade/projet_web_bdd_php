@@ -4,6 +4,7 @@ session_start();
 include_once(dirname(__FILE__).'/fonctions/variables.php');
 include_once(dirname(__FILE__).'/fonctions/fonctionCompte.php');
 include_once(dirname(__FILE__).'/fonctions/fonctionArtiste.php');
+include_once(dirname(__FILE__).'/fonctions/fonctionMusique.php');
 include_once(dirname(__FILE__).'/bdd/connexion.php');
 
 $info['head']['subTitle'] = "Page artiste";
@@ -112,11 +113,21 @@ include_once(dirname(__FILE__).'/head.php');
                         </tr>
                         <?php if ( !empty($listeMusiquesArtiste) ) { ?>
                             <?php foreach($listeMusiquesArtiste as $musique) { ?>
+                                <?php /* Recherche des genres de la musique */
+                                    if ( isset($db) ) { $listeGenresMusique = recuperer_genre_musique($db, $musique['idmusique']); }
+                                ?>
                                 <tr class="table-lign">
                                     <td><a class="souligner" href="/musique.php?idMusique=<?php echo $musique['idmusique']; ?>"> <?php echo $musique['titremusique']; ?> </a></td>
                                     <td> <?php echo format_duree($musique['dureemusique']); ?> </td>
                                     <td> <?php echo $musique['datemusique']; ?></td>
-                                    <td> - </td>
+                                    <td>
+                                        <?php if ( !empty($listeGenresMusique) ) {
+                                            foreach($listeGenresMusique as $key => $genre) {
+                                                echo $genre['nomgenre'];
+                                                if ( sizeof($listeGenresMusique) > 1 && sizeof($listeGenresMusique)-1 > $key ) { echo '&nbsp-&nbsp'; }
+                                            }
+                                        } ?>
+                                    </td>
                                     <td><a class="souligner" href="/album.php?idAlbum=<?php echo $musique['idalbum']; ?>"> <?php echo $musique['nomalbum']; ?> </a></td>
                                     <td> <?php echo $musique['descriptionmusique']; ?> </td>
                                 </tr>
