@@ -22,6 +22,7 @@ if ( isset($db, $idMusique) ) {
         header('Location: /404.php');
     }
     $listeArtistesMusique = recuperer_artiste_musique($db, $idMusique);
+    $listeGenresMusique = recuperer_genre_musique($db, $idMusique);
 } else {
     header('Location: /404.php');
 }
@@ -43,15 +44,9 @@ include_once(dirname(__FILE__).'/head.php');
             <div class="flex flex-between">
                 <div id="description-album" class="flex-around">
                     <div>
-                        <h1 class="red1"><?php if(isset($musique)){echo $musique['titremusique'];} ?> -
-                            <?php if(isset($musique)){echo $musique['datemusique'];} ?></h1>
-                        <div>
-                            <?php if ( !empty($musique['descriptionmusique']) ) {
-                                    echo $musique['descriptionmusique'];
-                                } else { ?>
-                                <p>Cette musique ne contient pas de description...</p>
-                                <?php } ?>
-                        </div>
+                        
+                        <h1 class="red1"><?php if(isset($musique)){echo $musique['titremusique'];} ?> - <?php if(isset($musique)){echo $musique['datemusique'];} ?></h1>
+                        
                         <div>
                             <?php if ( !empty($listeArtistesMusique) ) { ?>
                                 <?php if ( sizeof($listeArtistesMusique) > 1 ) { echo "Artistes : "; } else { echo "Artiste : "; } ?>
@@ -68,15 +63,25 @@ include_once(dirname(__FILE__).'/head.php');
                                 <?php } ?>
                             <?php } ?>
                         </div>
-                        <!--p>
-                            [Optionnel] Cette musique a été composé en collaboration avec <a>Nom_Artistes</a>
-                        </p>
-                        <p>
-                            C'est la piste numero <a>Numero_Piste</a> de l'album <a>Nom_Album1</a><br>
-                            C'est la piste numero <a>Numero_Piste</a> de l'album <a>Nom_Album2</a><br>
-                            [Ou]<br>
-                            Ce morceau est un single, il ne fait pas partie d'un album.
-                        </p-->
+
+                        <div>
+                            <?php if ( !empty($listeGenresMusique) ) {
+                                if ( sizeof($listeGenresMusique) > 1 ) { echo "Genres : "; } else { echo "Genre : "; }
+                                foreach($listeGenresMusique as $key => $genre) {
+                                    echo $genre['nomgenre'];
+                                    if ( sizeof($listeGenresMusique) > 1 && sizeof($listeGenresMusique)-1 > $key ) { echo '&nbsp-&nbsp'; }
+                                }
+                            } ?>
+                        </div>
+                        <br>
+                        <div>
+                            <?php if ( !empty($musique['descriptionmusique']) ) {
+                                    echo $musique['descriptionmusique'];
+                                } else { ?>
+                                <p>Cette musique ne contient pas de description...</p>
+                                <?php } ?>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
