@@ -38,18 +38,20 @@ if ( isset($db, $action) ) {
                 $erreur = $messages['minimum2Artiste'];
                 break;
             }
-            $idGroupeCo = ajouter_groupe($db, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe);
-            if ( $idGroupeCo == null ) {
+            $idGroupe = ajouter_groupe($db, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe);
+            if ( $idGroupe == null ) {
                 $erreur = $messages['operation']['ko']." (1)";
+                supprimer_groupe($db, $idGroupe);
                 break;
             }
             $indiceListe = 0;
             do {
                 $idArtisteCo = (int) $listeIdArtiste[$indiceListe];
-                $operationOk = ajouter_constituer_groupe($db, $idGroupeCo, $idArtisteCo);
+                $operationOk = ajouter_constituer_groupe($db, $idGroupe, $idArtisteCo);
                 $indiceListe++;
             } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
             if ( !$operationOk ) {
+                supprimer_groupe($db, $idGroupe);
                 $erreur = $messages['operation']['ko']." (2)";
                 break;
             }

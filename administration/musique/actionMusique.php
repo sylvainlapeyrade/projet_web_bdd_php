@@ -45,6 +45,7 @@ if ( isset($db, $action) ) {
             }
             $idMusique = ajouter_musique($db, $titreMusique, $dureeMusique, $dateMusique, $descriptionMusique);
             if ( $idMusique == null ) {
+                supprimer_musique($db, $idMusique);
                 $erreur = $messages['operation']['ko']. " (1)";
                 break;
             }
@@ -57,6 +58,7 @@ if ( isset($db, $action) ) {
                     $indiceListe++;
                 } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
                 if ( !$operationOk ) {
+                    supprimer_musique($db, $idMusique);
                     $erreur = $messages['operation']['ko']. " (2)";
                     break;
                 }
@@ -70,6 +72,7 @@ if ( isset($db, $action) ) {
                     $indiceListe++;
                 } while ( $operationOk && $indiceListe < sizeof($listeIdGroupe) );
                 if ( !$operationOk ) {
+                    supprimer_musique($db, $idMusique);
                     $erreur = $messages['operation']['ko']. " (3)";
                     break;
                 }

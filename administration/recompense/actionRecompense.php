@@ -37,20 +37,22 @@ if ( isset($db, $action) ) {
                 $erreur = $messages['minimum1Artiste'];
                 break;
             }
-            $idRecompenseOa = ajouter_recompense($db, $nomRecompense, $dateRecompense, $descriptionRecompense);
+            $idRecompense = ajouter_recompense($db, $nomRecompense, $dateRecompense, $descriptionRecompense);
             if ( $idRecompenseOa == null ) {
                 $erreur = $messages['operation']['ko']." (1)";
                 break;
             }
-            $indiceListe = 0;
-            do {
-                $idArtisteOa = (int) $listeIdArtiste[$indiceListe];
-                $operationOk = ajouter_obtenir_recompense($db, $idRecompenseOa, $idArtisteOa);
-                $indiceListe++;
-            } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
-            if ( !$operationOk ) {
-                $erreur = $messages['operation']['ko']. "(2)";
-                break;
+            if ( isset($listeIdArtiste) && !empty($listeIdArtiste) ) {
+                $indiceListe = 0;
+                do {
+                    $idArtisteOa = (int) $listeIdArtiste[$indiceListe];
+                    $operationOk = ajouter_obtenir_recompense($db, $idRecompense, $idArtisteOa);
+                    $indiceListe++;
+                } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
+                if ( !$operationOk ) {
+                    $erreur = $messages['operation']['ko']. "(2)";
+                    break;
+                }
             }
             header('Location: ./gestionRecompense.php?action=ajouterOk');
             break;
