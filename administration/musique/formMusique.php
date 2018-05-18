@@ -45,7 +45,7 @@ if ( isset($db) ) {
     $artistes = recuperer_artiste_tous($db);
     $groupes = recuperer_groupe_tous($db);
     $albums = recuperer_album_tous($db);
-    $genres = ['Jazz', 'Hip-Hop', 'Rock', 'Dance', 'Dark-Métal', 'Pop', 'Electro', 'House', 'Mambo'];
+    $genres = ['Jazz', 'Hip-Hop', 'Rock', 'Dance', 'Dark-Métal', 'Pop', 'Electro', 'House', 'Mambo', 'R&B', 'Soul', 'Funk'];
 }
 
 include_once(dirname(__FILE__).'/../../head.php');
