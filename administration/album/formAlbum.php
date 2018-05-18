@@ -103,8 +103,8 @@ include_once(dirname(__FILE__).'/../../header.php');
                                                title="idArtiste<?php echo $artiste['idartiste']; ?>"
                                                name="idArtiste<?php echo $artiste['idartiste']; ?>"
                                                value="<?php echo $artiste['idartiste'] ?>"
-                                            <?php if ( isset($listeArtisteAlbum) && in_array($artiste['idartiste'], $listeArtisteAlbum) ) { echo "checked"; } ?>
-                                        />
+                                               <?php if ( isset($listeArtisteAlbum) && in_array($artiste['idartiste'], $listeArtisteAlbum) ) { echo "checked"; } ?>
+                                               />
                                         <!-- Affichage soit le nom de scène soit le nom/prénom -->
                                         <?php if ( !empty($artiste['nomscene']) ) {
                                             echo $artiste['nomscene'];
