@@ -13,7 +13,7 @@
  * @return array Les artistes qui compose le groupe
  */
 function recuperer_musique_groupe($db, $idGroupe) {
-    $req = $db->prepare("SELECT * FROM Constituer, Artiste WHERE Constituer.idGroupeCo=:idGroupe AND Constituer.idArtisteCo=Artiste.idArtiste;");
+    $req = $db->prepare("SELECT * FROM Composer_MusiqueGr, Musique WHERE Composer_MusiqueGr.idGroupeCoMr=:idGroupe AND Composer_MusiqueGr.idMusiqueCoMr=Musique.idMusique;");
     $req->bindParam(':idGroupe', $idGroupe);
     $req->execute();
     $res = $req->fetchAll();
