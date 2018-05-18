@@ -44,6 +44,7 @@ if ( isset($db, $action) ) {
             }
             $idAlbum = ajouter_album($db, $nomAlbum, $dateAlbum, $descriptionAlbum, $urlPochetteAlbum);
             if ( $idAlbum == null ) {
+                supprimer_album($db, $idAlbum);
                 $erreur = $messages['operation']['ko']." (1)";
                 break;
             }
@@ -56,6 +57,7 @@ if ( isset($db, $action) ) {
                     $indiceListe++;
                 } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
                 if ( !$operationOk ) {
+                    supprimer_album($db, $idAlbum);
                     $erreur = $messages['operation']['ko']." (2)";
                     break;
                 }
@@ -69,6 +71,7 @@ if ( isset($db, $action) ) {
                     $indiceListe++;
                 } while ( $operationOk && $indiceListe < sizeof($listeIdGroupe) );
                 if ( !$operationOk ) {
+                    supprimer_album($db, $idAlbum);
                     $erreur = $messages['operation']['ko']. " (3)";
                     break;
                 }
