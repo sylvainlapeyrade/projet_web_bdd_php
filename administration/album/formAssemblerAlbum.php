@@ -56,10 +56,6 @@ if ( isset($db) ) {
     }
 }
 
-echo '<pre>';
-var_dump($musiques);
-echo '</pre>';
-
 include_once(dirname(__FILE__).'/../../head.php');
 
 ?>
