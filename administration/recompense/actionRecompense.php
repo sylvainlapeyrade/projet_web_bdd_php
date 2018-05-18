@@ -38,7 +38,7 @@ if ( isset($db, $action) && is_connect() && is_admin() ) {
                 break;
             }
             $idRecompense = ajouter_recompense($db, $nomRecompense, $dateRecompense, $descriptionRecompense);
-            if ( $idRecompenseOa == null ) {
+            if ( $idRecompense == null ) {
                 $erreur = $messages['operation']['ko']." (1)";
                 break;
             }
