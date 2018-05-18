@@ -16,7 +16,7 @@ if ( isset($db, $idGroupe) ) {
         header('Location: /404.php');
     }
     $listeArtistesGroupe = recuperer_artiste_groupe($db, $idGroupe);
-    //$listeMusiqueGroupe = recuperer_musique_groupe($db, $idGroupe);
+    $listeMusiqueGroupe = recuperer_musique_groupe($db, $idGroupe);
 } else {
     header('Location: /404.php');
 }
@@ -37,15 +37,11 @@ include_once(dirname(__FILE__).'/head.php');
             <!-- Présentation du groupe -->
             <div class="flex flex-between">
                 <div id="description-groupe" class="flex-around">
-                    <div>
-                        <h1 class="red1"><?php if(isset($groupe)){echo $groupe['nomgroupe'];} ?> -
-                            <?php if(isset($groupe)){echo $groupe['dategroupe'];} ?></h1>
-                        <p>
-                            <?php if(isset($groupe)){echo $groupe['descriptiongroupe'];} ?>
-                        </p>
-                    </div>
+                    
+                    <h1 class="red1"><?php if(isset($groupe)){echo $groupe['nomgroupe'];} ?> - <?php if(isset($groupe)){echo $groupe['dategroupe'];} ?></h1>
+                    
                     <div id="liste-membre" class="text-center flex flex-arround">
-                        Membres du groupe :
+                        <?php if ( sizeof($listeArtistesGroupe) > 1 ) { echo "Membres "; } else { echo "Membre "; } ?> du groupe : 
                         <?php foreach($listeArtistesGroupe as $key => $artiste) { ?>
                             <a class="souligner" href="/artiste.php?idArtiste=<?php echo $artiste['idartiste']; ?>">
                                 <?php if ( !empty($artiste['nomscene']) ) {
@@ -57,6 +53,11 @@ include_once(dirname(__FILE__).'/head.php');
                             <?php if ( sizeof($listeArtistesGroupe) > 1 && sizeof($listeArtistesGroupe)-1 > $key ) { echo '&nbsp-&nbsp'; } ?>
                         <?php } ?>
                     </div>
+                    
+                    <div>
+                        <?php if(isset($groupe)){echo $groupe['descriptiongroupe'];} ?>
+                    </div>
+                    
                 </div>
 
                 <?php if ( !empty($groupe['urlimagegroupe']) ) { ?>
@@ -67,12 +68,13 @@ include_once(dirname(__FILE__).'/head.php');
 
             </div>
 
-            <!-- Musiques de l'artiste -->
+            <!-- Musiques du groupe -->
             <div>
                 <hr>
                 <div id="liste-musiques" class="text-center">
-                    <h4>Musiques de l'artiste</h4>
+                    <h4>Musiques du groupe</h4>
                     <table class="text-center">
+                        
                         <tr>
                             <th class="table-head width-300">Titre</th>
                             <th class="table-head width-150">Durée</th>
@@ -81,38 +83,34 @@ include_once(dirname(__FILE__).'/head.php');
                             <th class="table-head width-300">Album</th>
                             <th class="table-head width-700">Descritpion</th>
                         </tr>
-                        <tr class="table-lign">
-                            <td class=""><a>Mon étoile</a></td>
-                            <td>2 minutes 34</td>
-                            <td>02/19/2003</td>
-                            <td>RnB</td>
-                            <td><a>Notre étoile</a></td>
-                            <td>Premier single Mon étoile se classe premier du Top 50 en 2003</td>
-                        </tr>
-                        <tr class="table-lign">
-                            <td class=""><a>Pas sans toi</a></td>
-                            <td>2 minutes 45</td>
-                            <td>02/04/2004</td>
-                            <td>RnB</td>
-                            <td><a>M. Pokora</a></td>
-                            <td>Pas sans toi est le troisième single extrait de l'album M. Pokora du chanteur français M. Pokora.</td>
-                        </tr>
-                        <tr  class="table-lign">
-                            <td class=""><a>Combien de temps</a></td>
-                            <td>3 minutes 43</td>
-                            <td>02/19/2004</td>
-                            <td>RnB</td>
-                            <td><a>Notre étoile</a></td>
-                            <td></td>
-                        </tr>
-                        <tr  class="table-lign">
-                            <td class=""><a>Beaucoup d'argent</a></td>
-                            <td>3 minutes 20</td>
-                            <td>02/19/2008</td>
-                            <td></td>
-                            <td><a></a></td>
-                            <td>3ème single de matthieu.</td>
-                        </tr>
+                        <?php if ( !empty($listeMusiquesGroupe) ) { ?>
+                            <?php foreach($listeMusiquesGroupe as $musique) { ?>
+                            <?php } ?>
+                        <?php } ?>
+                        
+                        <?php if ( !empty($listeMusiquesGroupe) ) { ?>
+                            <?php foreach($listeMusiquesGroupe as $musique) { ?>
+                                <?php /* Recherche des genres de la musique */
+                                    if ( isset($db) ) { $listeGenresMusique = recuperer_genre_musique($db, $musique['idmusique']); }
+                                ?>
+                                <tr class="table-lign">
+                                    <td><a class="souligner" href="/musique.php?idMusique=<?php echo $musique['idmusique']; ?>"> <?php echo $musique['titremusique']; ?> </a></td>
+                                    <td> <?php echo format_duree($musique['dureemusique']); ?> </td>
+                                    <td> <?php echo $musique['datemusique']; ?></td>
+                                    <td>
+                                        <?php if ( !empty($listeGenresMusique) ) {
+                                            foreach($listeGenresMusique as $key => $genre) {
+                                                echo $genre['nomgenre'];
+                                                if ( sizeof($listeGenresMusique) > 1 && sizeof($listeGenresMusique)-1 > $key ) { echo '&nbsp-&nbsp'; }
+                                            }
+                                        } ?>
+                                    </td>
+                                    <td><a class="souligner" href="/album.php?idAlbum=<?php echo $musique['idalbum']; ?>"> <?php echo $musique['nomalbum']; ?> </a></td>
+                                    <td> <?php echo $musique['descriptionmusique']; ?> </td>
+                                </tr>
+                            <?php } ?>
+                        <?php } ?>
+                        
                     </table>
                 </div>
             </div>
