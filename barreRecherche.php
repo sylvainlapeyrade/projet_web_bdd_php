@@ -6,6 +6,7 @@
                class="width-500"
                name="recherche"
                placeholder="Artiste, groupe, album ou musique"
+               value="<?php echo $recherche; ?>"
                />
         <input class="bouton bouton-forme1 bouton-red1" type="submit" value="Rechercher" />
     </form>
