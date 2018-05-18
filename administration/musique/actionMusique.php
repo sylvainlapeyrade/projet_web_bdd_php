@@ -19,7 +19,7 @@ if ( isset($action) && !empty($action) ) {
     }
 }
 
-if ( isset($db, $action) ) {
+if ( isset($db, $action) && is_connect() && is_admin() ) {
     switch($action) {
         case "ajouterMusique":
             /*

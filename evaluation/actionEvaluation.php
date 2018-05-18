@@ -11,7 +11,7 @@ if ( isset($action) ) {
     $commentaire = $_GET['commentaire'];
 }
 
-if ( isset($db, $action) ) {
+if ( isset($db, $action) && is_connect() ) {
     switch($action) {
         case 'ajouterEvaluationAlbum':
             /*

@@ -8,7 +8,7 @@ if ( isset($action) && !empty($action) ) {
     $statut = $_GET['statut'];
 }
 
-if ( isset($db, $action) ) {
+if ( isset($db, $action) && is_connect() && is_admin() ) {
     switch($action) {
         case 'ajouterUtilisateur':
             /*

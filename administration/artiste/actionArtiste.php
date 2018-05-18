@@ -11,7 +11,7 @@ if ( isset($action) && !empty($action) ) {
     $descriptionArtiste = $_GET['descriptionArtiste'];
 }
 
-if ( isset($db, $action) ) {
+if ( isset($db, $action) && is_connect() && is_admin() ) {
     switch($action) {
         case "ajouterArtiste":
             /*

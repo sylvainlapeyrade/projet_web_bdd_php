@@ -16,9 +16,8 @@ if ( isset($action) && !empty($action) ) {
         }
     }
 }
-    $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
 
-if ( isset($db, $action) ) {
+if ( isset($db, $action) && is_connect() && is_admin() ) {
     switch($action) {
         case "ajouterAlbum":
             /*
