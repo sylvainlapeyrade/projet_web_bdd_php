@@ -53,7 +53,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                 -->
                 <form class="flex flex-center flex-column" action="./formRecompense.php" method="get">
                     <div class="flex">
-                        <div class="flex flex-column width-800">
+                        <div class="width-500 margin-center flex flex-column">
                             <input type="text"
                                    class="input-text"
                                    name="nomRecompense"
@@ -80,9 +80,9 @@ include_once(dirname(__FILE__).'/../../head.php');
                                       placeholder="Description de la récompense"><?php if(isset($descriptionRecompense)){echo $descriptionRecompense;} ?></textarea>
                         </div>
 
-                        <div>
+                        <div class="width-800">
                             <h4>Artistes :</h4>
-                            <div id="box-item-checkbox" class="width-800 liste-checkbox flex flex-center flex-wrap">
+                            <div id="box-item-checkbox" class="liste-checkbox flex flex-center flex-wrap">
                                 <?php
                                 foreach($artistes as $artiste) {
                                     ?>

@@ -70,19 +70,22 @@ include_once(dirname(__FILE__).'/../../head.php');
                     
                     <div class="flex flex-column">
                         <?php if ( !isset($idMusique) ) { ?>
-                        <div class="margin-center">
+                        <div class="width-800 margin-center">
                             <h4>Morceau de musique :</h4>
-                            <div id="box-item-checkbox" class="width-500 liste-checkbox flex flex-center flex-wrap">
-                                <?php if(isset($musiques)) { foreach($musiques as $musique) {
-                                        if ( empty($musiquesAssemblee) || ( !empty($musiquesAssemblee) && !in_array($musique['idmusique'], $musiquesAssemblee) ) ) { ?>
-                                <label class="item-checkbox">
-                                    <input type="checkbox"
-                                           name="idMusique<?php echo $musique['idmusique']; ?>"
-                                           value="<?php echo $musique['idmusique'] ?>"
-                                           />
-                                    <?php echo $musique['titremusique']; ?>
-                                </label>
-                                <?php } } }?>
+                            <div id="box-item-checkbox" class="liste-checkbox flex flex-center flex-wrap">
+                                <?php if( !empty($musiques) ) { ?>
+                                    <?php foreach($musiques as $musique) { ?>
+                                        <?php if ( empty($musiquesAssemblee) || ( !empty($musiquesAssemblee) && !in_array($musique['idmusique'], $musiquesAssemblee) ) ) { ?>
+                                            <label class="item-checkbox">
+                                                <input type="checkbox"
+                                                       name="idMusique<?php echo $musique['idmusique']; ?>"
+                                                       value="<?php echo $musique['idmusique'] ?>"
+                                                       />
+                                                <?php echo $musique['titremusique']; ?>
+                                            </label>
+                                        <?php } ?>
+                                    <?php } ?>
+                                <?php } ?>
                             </div>
                         </div>
                         <?php }?>

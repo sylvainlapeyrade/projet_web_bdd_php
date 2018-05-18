@@ -103,9 +103,9 @@ include_once(dirname(__FILE__).'/../../head.php');
                                       placeholder="Description de la musique"><?php if(isset($descriptionMusique)){echo $descriptionMusique;} ?></textarea>
                         </div>
 
-                        <div>
+                        <div class="width-800">
                             <h4>Genres :</h4>
-                            <div id="box-item-checkbox" class="width-500 liste-checkbox flex flex-center flex-wrap">
+                            <div id="box-item-checkbox" class="liste-checkbox flex flex-center flex-wrap">
                                 <?php foreach($genres as $genre) { ?>
                                 <label class="item-checkbox">
                                     <input type="checkbox"

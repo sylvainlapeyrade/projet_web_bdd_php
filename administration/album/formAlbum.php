@@ -92,20 +92,23 @@ include_once(dirname(__FILE__).'/../../header.php');
                                       rows="5"
                                       placeholder="Description de l'album"><?php if(isset($descriptionAlbum)){echo $descriptionAlbum;} ?></textarea>
                         </div>
-
-                        <div id="box-item-checkbox" class="width-800 liste-checkbox flex flex-center flex-wrap">
-                            <?php
-                            foreach($artistes as $artiste) {
-                                ?>
-                                <div class="item-checkbox">
-                                    <input type="checkbox"
-                                           title="idArtiste<?php echo $artiste['idartiste']; ?>"
-                                           name="idArtiste<?php echo $artiste['idartiste']; ?>"
-                                           value="<?php echo $artiste['idartiste'] ?>"
-                                        <?php if ( isset($listeArtisteAlbum) && in_array($artiste['idartiste'], $listeArtisteAlbum) ) { echo "checked"; } ?>
-                                    /><?php echo $artiste['nomartiste'].' '.$artiste['prenomartiste']; ?>
-                                </div>
-                            <?php } ?>
+                        
+                        <div class="width-800">
+                            <h4>Artistes : </h4>
+                            <div id="box-item-checkbox" class="liste-checkbox flex flex-center flex-wrap">
+                                <?php
+                                foreach($artistes as $artiste) {
+                                    ?>
+                                    <div class="item-checkbox">
+                                        <input type="checkbox"
+                                               title="idArtiste<?php echo $artiste['idartiste']; ?>"
+                                               name="idArtiste<?php echo $artiste['idartiste']; ?>"
+                                               value="<?php echo $artiste['idartiste'] ?>"
+                                            <?php if ( isset($listeArtisteAlbum) && in_array($artiste['idartiste'], $listeArtisteAlbum) ) { echo "checked"; } ?>
+                                        /><?php echo $artiste['nomartiste'].' '.$artiste['prenomartiste']; ?>
+                                    </div>
+                                <?php } ?>
+                            </div>
                         </div>
                     </div>
 
