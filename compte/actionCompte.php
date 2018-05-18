@@ -57,8 +57,36 @@ if ( isset($db, $action) ) {
             header('Location: ./connexion.php?action=inscriptionOk');
             break;
             
+        case 'modifierMotDePasse':
+            /*
+             * Champs présent : motDePasse, verification
+             * Champs obligatoire : motDePasse, verification
+             */
+            if ( !isset($motDePasse, $verification) ) {
+                $erreur = $messages['formulaire']['champs_vide'];
+                break;
+            }
+            if ( empty($motDePasse) || empty($verification) ) {
+                $erreur = $messages['formulaire']['champs_vide'];
+                break;
+            }
+            if ( $motDePasse != $verification ) {
+                $erreur = $messages['formulaire']['motDePasseDifferent'];
+                break;
+            }
+            $operationOk = modifier_motdepasse_utilisateur($db, $idUtilisateur, $motDePasse);
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko'];
+            }
+            header('Location: ./index.php?action=modifierMdpOk');
+            break;
+            
         case 'inscriptionOk':
             $message = $messages['inscription']['inscriptionOk'];
+            break;
+            
+        case 'modifierMdpOk':
+            $message = $messages['operation']['ok'];
             break;
     }
 }

@@ -1,12 +1,14 @@
-main section {
+#page-connexion, #page-inscription, #page-compte-form {
     background: #35424a;
     width: 300px;
-    padding: 50px 30px;
     margin-top: 25px;
-    margin-bottom: 25px;
-    color: white;
+    padding: 25px;
 }
 
-#bouton {
+form>.bouton {
     margin-top: 25px;
+}
+
+#page-compte {
+    margin-top: 75px;
 }
