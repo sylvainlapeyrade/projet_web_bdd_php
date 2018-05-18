@@ -40,7 +40,7 @@ if ( isset($db) ) {
     foreach($listeArtisteAlbum as $artiste) {
         $listeMusiqueArtiste = recuperer_musique_artiste($db, $artiste['idartiste']);
         foreach($listeMusiqueArtiste as $musiquesArtiste) {
-            $musiques[] = $musiqueArtiste;
+            $musiques[] = $musiquesArtiste;
         }
     }
     $listeGroupeAlbum = recuperer_groupe_album($db, $idAlbum);
