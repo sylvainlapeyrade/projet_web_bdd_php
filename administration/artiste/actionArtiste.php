@@ -85,15 +85,15 @@ if ( isset($db, $action) ) {
             break;
             
         case "ajouterOk":
-            $messages['operation']['ok'];
+            $message = $messages['operation']['ok'];
             break;
             
         case "modifierOk":
-            $messages['operation']['ok'];
+            $message = $messages['operation']['ok'];
             break;
             
         case "supprimerOk":
-            $messages['operation']['ok'];
+            $message = $messages['operation']['ok'];
             break;
     }
 }

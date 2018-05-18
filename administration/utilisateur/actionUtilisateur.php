@@ -116,19 +116,19 @@ if ( isset($db, $action) ) {
             break;
             
         case 'ajouterOk':
-            $messages['operation']['ok'];
+            $message = $messages['operation']['ok'];
             break;
             
         case 'modifierMdpOk':
-            $messages['operation']['ok'];
+            $message = $messages['operation']['ok'];
             break;
         
         case 'modifierStatutOk':
-            $messages['operation']['ok'];
+            $message = $messages['operation']['ok'];
             break;
         
         case 'supprimerOk':
-            $messages['operation']['ok'];
+            $message = $messages['operation']['ok'];
             break;
     
     }
