@@ -54,7 +54,7 @@ function recuperer_recompense_artiste($db, $idArtiste) {
  * @return array Association des musique et de leur artistes et des albums
  */
 function recuperer_musique_album_artiste($db, $idArtiste) {
-    $req = $db->prepare("SELECT * FROM Musique, Composer_Musique, Assembler_Album, Album WHERE Composer_Musique.idArtisteCoMu=:idArtiste AND Composer_Musique.idMusiqueCoMu = Musique.idMusique AND Assembler_Album.idMusiqueAa = Musique.idMusique AND Assembler_Album.idAlbumAa = Album.idAlbum;");
+    $req = $db->prepare("SELECT * FROM Musique, Composer_Musique, Assembler_Album, Album WHERE Composer_Musique.idArtisteCoMu=:idArtiste AND Composer_Musique.idMusiqueCoMu=Musique.idMusique AND Assembler_Album.idMusiqueAa=Musique.idMusique AND Assembler_Album.idAlbumAa=Album.idAlbum;");
     $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
     $req->execute();
     $res = $req->fetchAll();
