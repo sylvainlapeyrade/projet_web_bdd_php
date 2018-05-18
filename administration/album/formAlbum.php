@@ -4,6 +4,7 @@ session_start();
 include_once(dirname(__FILE__).'/../../fonctions/variables.php');
 include_once(dirname(__FILE__).'/../../fonctions/fonctionCompte.php');
 include_once(dirname(__FILE__).'/../../fonctions/fonctionArtiste.php');
+include_once(dirname(__FILE__).'/../../fonctions/fonctionGroupe.php');
 include_once(dirname(__FILE__).'/../../fonctions/fonctionAlbum.php');
 include_once(dirname(__FILE__).'/../../bdd/connexion.php');
 
@@ -26,12 +27,17 @@ if ( isset($db, $idAlbum) ) {
     foreach($constituerAlbum as $idArtisteCoAl) {
         $listeArtisteAlbum[] = $idArtisteCoAl['idartistecoal'];
     }
+    $composerAlbumGr = recuperer_composer_albumGr($db, $idAlbum);
+    foreach($composerAlbumGr as $idGroupeCoAr) {
+        $listeGroupeAlbum[] = $idGroupeCoAr['idgroupecoar'];
+    }
 }
 
 include_once(dirname(__FILE__).'/actionAlbum.php');
 
 if ( isset($db) ) {
     $artistes = recuperer_artiste_tous($db);
+    $groupes = recuperer_groupe_tous($db);
 }
 
 include_once(dirname(__FILE__).'/../../head.php');
@@ -94,6 +100,7 @@ include_once(dirname(__FILE__).'/../../header.php');
                         </div>
                         
                         <div class="width-800">
+                            
                             <!-- Liste de tous les artistes -->
                             <h4>Artistes : </h4>
                             <div id="box-item-checkbox" class="liste-checkbox flex flex-center flex-wrap">
@@ -114,6 +121,22 @@ include_once(dirname(__FILE__).'/../../header.php');
                                     </div>
                                 <?php } ?>
                             </div>
+                            
+                            <!-- Liste de tous les groupes -->
+                            <h4>Groupes :</h4>
+                            <div id="box-item-checkbox" class="liste-checkbox flex flex-center flex-wrap">
+                                <?php foreach($groupes as $groupe) { ?>
+                                    <label class="item-checkbox">
+                                        <input type="checkbox"
+                                               name="idGroupe<?php echo $groupe['idgroupe']; ?>"
+                                               value="<?php echo $groupe['idgroupe'] ?>"
+                                               <?php if ( isset($listeGroupeAlbum) && in_array($groupe['idgroupe'], $listeGroupeAlbum) ) { echo "checked"; } ?>
+                                               />
+                                        <?php echo $groupe['nomgroupe']; ?>
+                                    </label>
+                                <?php } ?>
+                            </div>
+                            
                         </div>
                     </div>
 

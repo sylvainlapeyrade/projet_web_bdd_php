@@ -11,9 +11,13 @@ if ( isset($action) && !empty($action) ) {
     foreach($_GET as $key => $value) {
         if ( strstr($key, 'idArtiste') ) {
             $listeIdArtiste[] = (int) $value;
+        } elseif ( strstr($key, 'idGroupe') ) {
+            $listeIdGroupe[] = (int) $value;
         }
     }
 }
+
+$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
 
 if ( isset($db, $action) ) {
     switch($action) {
@@ -34,8 +38,9 @@ if ( isset($db, $action) ) {
                 $erreur = $messages['formulaire']['dateInvalide'];
                 break;
             }
-            if ( !isset($listeIdArtiste[0]) || empty($listeIdArtiste[0]) ) {
-                $erreur = $messages['minimum1Artiste'];
+            /* Il faut au minimum 1 artiste ou 1 groupe */
+            if ( (!isset($listeIdArtiste[0]) || empty($listeIdArtiste[0])) && (!isset($listeIdGroupe[0]) || empty($listeIdGroupe[0])) ) {
+                $erreur = $messages['minimum1ArtisteOuGroupe'];
                 break;
             }
             $idAlbumCoAl = ajouter_album($db, $nomAlbum, $dateAlbum, $descriptionAlbum, $urlPochetteAlbum);
@@ -43,15 +48,31 @@ if ( isset($db, $action) ) {
                 $erreur = $messages['operation']['ko']." (1)";
                 break;
             }
-            $indiceListe = 0;
-            do {
-                $idArtisteCoAl = (int) $listeIdArtiste[$indiceListe];
-                $operationOk = ajouter_composer_album($db, $idAlbumCoAl, $idArtisteCoAl);
-                $indiceListe++;
-            } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
-            if ( !$operationOk ) {
-                $erreur = $messages['operation']['ko']." (2)";
-                break;
+            /* Ajout des artistes associés */
+            if ( isset($listeIdArtiste) && !empty($listeIdArtiste) ) {
+                $indiceListe = 0;
+                do {
+                    $idArtisteCoAl = (int) $listeIdArtiste[$indiceListe];
+                    $operationOk = ajouter_composer_album($db, $idAlbum, $idArtisteCoAl);
+                    $indiceListe++;
+                } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
+                if ( !$operationOk ) {
+                    $erreur = $messages['operation']['ko']." (2)";
+                    break;
+                }
+            }
+            /* Ajout des groupes associés */
+            if ( isset($listeIdGroupe) && !empty($listeIdGroupe) ) {
+                $indiceListe = 0;
+                do {
+                    $idGroupeCoAr = (int) $listeIdGroupe[$indiceListe];
+                    $operationOk = ajouter_composer_albumGr($db, $idAlbum, $idGroupeCoAr);
+                    $indiceListe++;
+                } while ( $operationOk && $indiceListe < sizeof($listeIdGroupe) );
+                if ( !$operationOk ) {
+                    $erreur = $messages['operation']['ko']. " (3)";
+                    break;
+                }
             }
             header('Location: ./gestionAlbum.php?action=ajouterOk');
             break;
@@ -73,8 +94,8 @@ if ( isset($db, $action) ) {
                 $erreur = $messages['formulaire']['dateInvalide'];
                 break;
             }
-            if ( !isset($listeIdArtiste[0]) || empty($listeIdArtiste[0]) ) {
-                $erreur = $messages['minimum1Artiste'];
+            if ( (!isset($listeIdArtiste[0]) || empty($listeIdArtiste[0])) && (!isset($listeIdGroupe[0]) || empty($listeIdGroupe[0])) ) {
+                $erreur = $messages['minimum1ArtisteOuGroupe'];
                 break;
             }
             $operationOk = modifier_album($db, $idAlbum, $nomAlbum, $dateAlbum, $descriptionAlbum, $urlPochetteAlbum);
@@ -87,15 +108,36 @@ if ( isset($db, $action) ) {
                 $erreur = $messages['operation']['ko']." (2)";
                 break;
             }
-            $indiceListe = 0;
-            do {
-                $idArtiste = (int) $listeIdArtiste[$indiceListe];
-                $operationOk = ajouter_composer_album($db, $idAlbum, $idArtiste);
-                $indiceListe++;
-            } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
+            $operationOk = supprimer_composer_albumGr_tous($db, $idAlbum);
             if ( !$operationOk ) {
                 $erreur = $messages['operation']['ko']." (3)";
                 break;
+            }
+            /* Ajout des artistes associés */
+            if ( isset($listeIdArtiste) && !empty($listeIdArtiste) ) {
+                $indiceListe = 0;
+                do {
+                    $idArtisteCoAl = (int) $listeIdArtiste[$indiceListe];
+                    $operationOk = ajouter_composer_album($db, $idAlbum, $idArtisteCoAl);
+                    $indiceListe++;
+                } while ( $operationOk && $indiceListe < sizeof($listeIdArtiste) );
+                if ( !$operationOk ) {
+                    $erreur = $messages['operation']['ko']." (4)";
+                    break;
+                }
+            }
+            /* Ajout des groupes associés */
+            if ( isset($listeIdGroupe) && !empty($listeIdGroupe) ) {
+                $indiceListe = 0;
+                do {
+                    $idGroupeCoAr = (int) $listeIdGroupe[$indiceListe];
+                    $operationOk = ajouter_composer_albumGr($db, $idAlbum, $idGroupeCoAr);
+                    $indiceListe++;
+                } while ( $operationOk && $indiceListe < sizeof($listeIdGroupe) );
+                if ( !$operationOk ) {
+                    $erreur = $messages['operation']['ko']. " (5)";
+                    break;
+                }
             }
             header('Location: ./gestionAlbum.php?action=modifierOk');
             break;
@@ -113,14 +155,9 @@ if ( isset($db, $action) ) {
                 $erreur = $messages['formulaire']['champs_vide'];
                 break;
             }
-            $operationOk = supprimer_composer_album_tous($db, $idAlbum);
-            if ( !$operationOk ) {
-                $erreur = $erreur = $messages['operation']['ko']." (1)";
-                break;
-            }
             $operationOk = supprimer_album($db, $idAlbum);
             if ( !$operationOk ) {
-                $erreur = $erreur = $messages['operation']['ko']." (2)";
+                $erreur = $erreur = $messages['operation']['ko']." (1)";
                 break;
             }
             header('Location: ./gestionAlbum.php?action=supprimerOk');
