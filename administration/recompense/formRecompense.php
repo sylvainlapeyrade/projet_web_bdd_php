@@ -81,18 +81,23 @@ include_once(dirname(__FILE__).'/../../head.php');
                         </div>
 
                         <div class="width-800">
+                            <!-- Liste de tous les artistes -->
                             <h4>Artistes :</h4>
                             <div id="box-item-checkbox" class="liste-checkbox flex flex-center flex-wrap">
-                                <?php
-                                foreach($artistes as $artiste) {
-                                    ?>
+                                <?php foreach($artistes as $artiste) { ?>
                                     <div class="item-checkbox">
                                         <input type="checkbox"
                                                title="idArtiste<?php echo $artiste['idartiste']; ?>"
                                                name="idArtiste<?php echo $artiste['idartiste']; ?>"
                                                value="<?php echo $artiste['idartiste'] ?>"
-                                            <?php if ( isset($listeArtisteRecompense) && in_array($artiste['idartiste'], $listeArtisteRecompense) ) { echo "checked"; } ?>
-                                        /><?php echo $artiste['nomartiste'].' '.$artiste['prenomartiste']; ?>
+                                               <?php if ( isset($listeArtisteRecompense) && in_array($artiste['idartiste'], $listeArtisteRecompense) ) { echo "checked"; } ?>
+                                               />
+                                        <!-- Affichage soit le nom de scène soit le nom/prénom -->
+                                        <?php if ( !empty($artiste['nomscene']) ) {
+                                            echo $artiste['nomscene'];
+                                        } else {
+                                            echo $artiste['nomartiste'].' '.$artiste['prenomartiste'];
+                                        } ?>
                                     </div>
                                 <?php } ?>
                             </div>

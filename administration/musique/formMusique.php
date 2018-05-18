@@ -104,33 +104,38 @@ include_once(dirname(__FILE__).'/../../head.php');
                         </div>
 
                         <div class="width-800">
+                            <!-- Liste des genres disponible -->
                             <h4>Genres :</h4>
                             <div id="box-item-checkbox" class="liste-checkbox flex flex-center flex-wrap">
                                 <?php foreach($genres as $genre) { ?>
-                                <label class="item-checkbox">
-                                    <input type="checkbox"
-                                           name="nomGenre<?php echo $genre ?>"
-                                           value="<?php echo $genre ?>"
-                                           <?php if ( isset($listeGenreMusique) && in_array($genre, $listeGenreMusique) ) {
-                                               echo "checked"; } ?>
-                                           />
-                                    <?php echo $genre ?>
-                                </label>
+                                    <label class="item-checkbox">
+                                        <input type="checkbox"
+                                               name="nomGenre<?php echo $genre ?>"
+                                               value="<?php echo $genre ?>"
+                                               <?php if ( isset($listeGenreMusique) && in_array($genre, $listeGenreMusique) ) { echo "checked"; } ?>
+                                               />
+                                        <?php echo $genre ?>
+                                    </label>
                                 <?php } ?>
                             </div>
 
+                            <!-- Liste de tous les artistes -->
                             <h4>Artistes :</h4>
                             <div id="box-item-checkbox" class="width-500 liste-checkbox flex flex-center flex-wrap">
                                 <?php foreach($artistes as $artiste) { ?>
-                                <label class="item-checkbox">
-                                    <input type="checkbox"
-                                           name="idArtiste<?php echo $artiste['idartiste']; ?>"
-                                           value="<?php echo $artiste['idartiste'] ?>"
-                                           <?php if ( isset($listeArtisteMusique) && in_array($artiste['idartiste'], $listeArtisteMusique) ) {
-                                               echo "checked"; } ?>
-                                           />
-                                    <?php echo $artiste['nomartiste'].' '.$artiste['prenomartiste']; ?>
-                                </label>
+                                    <label class="item-checkbox">
+                                        <input type="checkbox"
+                                               name="idArtiste<?php echo $artiste['idartiste']; ?>"
+                                               value="<?php echo $artiste['idartiste'] ?>"
+                                               <?php if ( isset($listeArtisteMusique) && in_array($artiste['idartiste'], $listeArtisteMusique) ) { echo "checked"; } ?>
+                                               />
+                                        <!-- Affichage soit le nom de scène soit le nom/prénom -->
+                                        <?php if ( !empty($artiste['nomscene']) ) {
+                                            echo $artiste['nomscene'];
+                                        } else {
+                                            echo $artiste['nomartiste'].' '.$artiste['prenomartiste'];
+                                        } ?>
+                                    </label>
                                 <?php } ?>
                             </div>
                         </div>
