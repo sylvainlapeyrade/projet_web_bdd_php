@@ -14,29 +14,47 @@
 
 <main>
   <section>
-    <h1>
-      <a href="./index.php">Panneau d'adminsitration</a>
-    </h1>
-    <section>
-        <a class="bouton bouton-forme1 bouton-red1" href="utilisateur/gestionUtilisateur.php">
-          Gestion des utilisateur
-        </a><br><br>
-        <a class="bouton bouton-forme1 bouton-red1" href="./artiste/gestionArtiste.php">
-          Gestion des artistes
-        </a><br><br>
-        <a class="bouton bouton-forme1 bouton-red1" href="./recompense/gestionRecompense.php">
-          Gestion des récompense
-        </a><br><br>
-        <a class="bouton bouton-forme1 bouton-red1" href="./groupe/gestionGroupe.php">
-          Gestion des groupes
-        </a><br><br>
-        <a class="bouton bouton-forme1 bouton-red1" href="./album/gestionAlbum.php">
-          Gestion des albums
-        </a><br><br>
-        <a class="bouton bouton-forme1 bouton-red1" href="./musique/gestionMusique.php">
-          Gestion des musiques
-        </a>
-    </section>
+    <div>
+        
+        <h1>
+          <a href="./index.php">Panneau d'adminsitration</a>
+        </h1>
+        
+        <div>
+            <p>
+                <a class="bouton bouton-forme1 bouton-red1" href="utilisateur/gestionUtilisateur.php">
+                  Gestion des utilisateur
+                </a>
+            </p>
+            <br>
+            <p>
+                <a class="bouton bouton-forme1 bouton-red1" href="./artiste/gestionArtiste.php">
+                  Gestion des artistes
+                </a>
+                &nbsp
+                <a class="bouton bouton-forme1 bouton-red1" href="./groupe/gestionGroupe.php">
+                  Gestion des groupes
+                </a>
+            </p>
+            <br>
+            <p>
+                <a class="bouton bouton-forme1 bouton-red1" href="./album/gestionAlbum.php">
+                  Gestion des albums
+                </a>
+                &nbsp
+                <a class="bouton bouton-forme1 bouton-red1" href="./musique/gestionMusique.php">
+                  Gestion des musiques
+                </a>
+            </p>
+            <br>
+            <p>
+                <a class="bouton bouton-forme1 bouton-red1" href="./recompense/gestionRecompense.php">
+                  Gestion des récompense
+                </a>
+            </p>
+        </div>
+        
+    </div>
   </section>
 </main>
 
