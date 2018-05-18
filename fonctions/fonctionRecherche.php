@@ -62,7 +62,16 @@ function rechercher_album($db, $recherche) {
  */
 function rechercher_musique($db, $recherche) {
     $recherche = "%$recherche%";
-    $req = $db->prepare("SELECT * FROM Musique, Composer_Musique, Artiste WHERE titreMusique LIKE :recherche AND Musique.idMusique=Composer_Musique.idMusiqueCoMu AND Composer_Musique.idArtisteCoMu=Artiste.idArtiste ORDER BY Musique.titreMusique ASC, Artiste.nomArtiste ASC, Artiste.prenomArtiste ASC;");
+    $req = $db->prepare("SELECT * FROM Musique, Composer_Musique, Artiste 
+	WHERE (titreMusique LIKE :recherche
+	OR Artiste.nomArtiste LIKE :recherche
+	OR Artiste.prenomArtiste LIKE :recherche
+	OR Artiste.nomScene LIKE :recherche) 
+	AND Musique.idMusique=Composer_Musique.idMusiqueCoMu 
+	AND Composer_Musique.idArtisteCoMu=Artiste.idArtiste 
+	ORDER BY Musique.titreMusique ASC, 
+		Artiste.nomArtiste ASC, 
+		Artiste.prenomArtiste ASC;");
     $req->bindParam(':recherche', $recherche);
     $req->execute();
     $res = $req->fetchAll();
