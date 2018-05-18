@@ -4,6 +4,7 @@ session_start();
 include_once(dirname(__FILE__).'/../../fonctions/variables.php');
 include_once(dirname(__FILE__).'/../../fonctions/fonctionCompte.php');
 include_once(dirname(__FILE__).'/../../fonctions/fonctionArtiste.php');
+include_once(dirname(__FILE__).'/../../fonctions/fonctionGroupe.php');
 include_once(dirname(__FILE__).'/../../fonctions/fonctionAlbum.php');
 include_once(dirname(__FILE__).'/../../fonctions/fonctionGenre.php');
 include_once(dirname(__FILE__).'/../../fonctions/fonctionMusique.php');
@@ -39,7 +40,14 @@ if ( isset($db) ) {
     foreach($listeArtisteAlbum as $artiste) {
         $listeMusiqueArtiste = recuperer_musique_artiste($db, $artiste['idartiste']);
         foreach($listeMusiqueArtiste as $musiquesArtiste) {
-            $musiques[] = $musiquesArtiste;
+            $musiques[] = $musiqueArtiste;
+        }
+    }
+    $listeGroupeAlbum = recuperer_groupe_album($db, $idAlbum);
+    foreach($listeGroupeAlbum as $groupe) {
+        $listeMusiqueGroupe = recuperer_musique_groupe($db, $groupe['idgroupe']);
+        foreach($listeMusiqueGroupe as $musiquesGroupe) {
+            $musiques[] = $musiquesGroupe;
         }
     }
     $listeMusiqueAlbum = recuperer_musique_album($db, $idAlbum);
@@ -47,6 +55,10 @@ if ( isset($db) ) {
         $musiquesAssemblee[] = $musiqueAlbum['idmusique'];
     }
 }
+
+echo '<pre>';
+var_dump($musiques);
+echo '</pre>';
 
 include_once(dirname(__FILE__).'/../../head.php');
 
