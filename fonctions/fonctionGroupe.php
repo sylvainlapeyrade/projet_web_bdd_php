@@ -74,8 +74,7 @@ function recuperer_groupe($db, $idGroupe) {
  * @return Int idGroupe si la requête s'est bien exécutée | Null Sinon
  */
 function ajouter_groupe($db, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe) {
-    $req = $db->prepare("INSERT INTO Groupe(nomGroupe, dateGroupe, descriptionGroupe, urlImageGroupe)
-      VALUES(:nomGroupe, :dateGroupe, :descriptionGroupe, :urlImageGroupe);");
+    $req = $db->prepare("INSERT INTO Groupe(nomGroupe, dateGroupe, descriptionGroupe, urlImageGroupe) VALUES(:nomGroupe, :dateGroupe, :descriptionGroupe, :urlImageGroupe);");
     $req->bindParam(':nomGroupe', $nomGroupe, PDO::PARAM_STR);
     $req->bindParam(':dateGroupe', format_date($dateGroupe));
     $req->bindParam(':descriptionGroupe', $descriptionGroupe, PDO::PARAM_STR);
@@ -100,8 +99,7 @@ function ajouter_groupe($db, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlIm
  * @return True si la requête s'est bien exécutée | False Sinon
  */
 function modifier_groupe($db, $idGroupe, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlImageGroupe) {
-    $req = $db->prepare("UPDATE Groupe SET nomGroupe=:nomGroupe, dateGroupe=:dateGroupe, 
-descriptionGroupe=:descriptionGroupe, urlImageGroupe=:urlImageGroupe WHERE idGroupe=:idGroupe;");
+    $req = $db->prepare("UPDATE Groupe SET nomGroupe=:nomGroupe, dateGroupe=:dateGroupe, descriptionGroupe=:descriptionGroupe, urlImageGroupe=:urlImageGroupe WHERE idGroupe=:idGroupe;");
     $req->bindParam(':idGroupe', $idGroupe, PDO::PARAM_INT);
     $req->bindParam(':nomGroupe', $nomGroupe, PDO::PARAM_STR);
     $req->bindParam(':dateGroupe', format_date($dateGroupe));
