@@ -33,8 +33,9 @@ include_once(dirname(__FILE__).'/head.php');
         <div id="page-resultat-recherche">
             <?php if ( !empty($listeArtistesRecherche) ) { ?>
                 <div>
-                    <h3>ARTISTES correspondants à votre recherche "<?php echo $recherche ?>"</h3>
-                    <hr color="white" size="1">
+                    <hr class="red1" size="2">
+                    <h3 class="text-center"><span class="red1">ARTISTES</span> correspondants à votre recherche "<?php echo $recherche ?>"</h3>
+                    <hr class="red1" size="2">
                     <?php foreach($listeArtistesRecherche as $artiste) { ?>
                         <div class="flex">
                             <img class="image-recherche" src="<?php echo $artiste['urlimageartiste']; ?>" />
@@ -47,13 +48,13 @@ include_once(dirname(__FILE__).'/head.php');
                         <hr color="white" size="1">
                     <?php } ?>
                 </div>
-                <hr color="white" size="2">
             <?php } ?>
             
             <?php if ( !empty($listeGroupesRecherche) ) { ?>
                 <div>
-                    <h3>GROUPES correspondants à votre recherche "<?php echo $recherche ?>"</h3>
-                    <hr color="white" size="1">
+                    <hr class="red1" size="2">
+                    <h3 class="text-center"><span class="red1">GROUPES</span> correspondants à votre recherche "<?php echo $recherche ?>"</h3>
+                    <hr class="red1" size="2">
                     <?php foreach($listeGroupesRecherche as $groupe) { ?>
                         <div class="flex">
                             <img class="image-recherche" src="<?php echo $groupe['urlimagegroupe']; ?>" />
@@ -65,13 +66,13 @@ include_once(dirname(__FILE__).'/head.php');
                         <hr color="white" size="1">
                     <?php } ?>
                 </div>
-                <hr color="white" size="2">
             <?php } ?>
             
             <?php if ( !empty($listeAlbumsRecherche) ) { ?>
                 <div>
-                    <h3>ALBUMS correspondants à votre recherche "<?php echo $recherche ?>"</h3>
-                    <hr color="white" size="1">
+                    <hr class="red1" size="2">
+                    <h3 class="text-center"><span class="red1">ALBUMS</span> correspondants à votre recherche "<?php echo $recherche ?>"</h3>
+                    <hr class="red1" size="2">
                     <?php foreach($listeAlbumsRecherche as $album) { ?>
                         <div class="flex">
                             <img class="image-recherche" src="<?php echo $album['urlpochettealbum']; ?>" />
@@ -86,13 +87,13 @@ include_once(dirname(__FILE__).'/head.php');
                         <hr color="white" size="1">
                     <?php } ?>
                 </div>
-                <hr color="white" size="2">
             <?php } ?>
             
             <?php if ( !empty($listeMusiquesRecherche) ) { ?>
                 <div>
-                    <h3>MUSIQUES correspondants à votre recherche "<?php echo $recherche ?>"</h3>
-                    <hr color="white" size="1">
+                    <hr class="red1" size="2">
+                    <h3 class="text-center"><span class="red1">MUSIQUES</span> correspondants à votre recherche "<?php echo $recherche ?>"</h3>
+                    <hr class="red1" size="2">
                     <?php foreach($listeMusiquesRecherche as $musique) { ?>
                         <div class="information-recherche">
                             "<?php echo $musique['titremusique']; ?>"
@@ -107,7 +108,10 @@ include_once(dirname(__FILE__).'/head.php');
                         <hr color="white" size="1">
                     <?php } ?>
                 </div>
-                <hr color="white" size="2">
+            <?php } ?>
+            
+            <?php if ( empty($listeArtistesRecherche) && empty($listeGroupesRecherche) && empty($listeAlbumsRecherche) && empty($listeMusiquesRecherche) ) { ?>
+                <div class="text-center"><h3>Aucun résultat pour votre recherche.</h3></div>
             <?php } ?>
             
         </div>
