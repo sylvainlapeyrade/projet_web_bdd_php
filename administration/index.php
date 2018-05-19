@@ -23,7 +23,7 @@
         <div>
             <p>
                 <a class="bouton bouton-forme1 bouton-red1" href="utilisateur/gestionUtilisateur.php">
-                  Gestion des utilisateur
+                  Gestion des utilisateurs
                 </a>
             </p>
             <br>
@@ -49,7 +49,7 @@
             <br>
             <p>
                 <a class="bouton bouton-forme1 bouton-red1" href="./recompense/gestionRecompense.php">
-                  Gestion des récompense
+                  Gestion des récompenses
                 </a>
             </p>
         </div>

@@ -22,7 +22,7 @@ include_once(dirname(__FILE__).'/head.php');
                 <h1 class="red1 t35">Le projet Web</h1>
                 <div>
                     Ce site est le produit d'un projet de la filière Systèmes de Télécommunications, Réseaux et Informatique. Notre groupe composé de 5 étudiants
-                    avait comme but de réaliser un site fonctionnel de critiques sur des oeuvres musicales. Ainsi, le site internet sur lequel vous naviguez en ce moment même
+                    avait pour but de réaliser un site fonctionnel de critiques sur des oeuvres musicales. Ainsi, le site internet sur lequel vous naviguez en ce moment même
                     est le résultat de semaines de travail sur les langages HTML, CSS, PHP ainsi que sur l'utilisation d'une base de données.
                 </div>
             </div>
