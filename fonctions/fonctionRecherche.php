@@ -47,7 +47,7 @@ function rechercher_groupe($db, $recherche) {
 function rechercher_album($db, $recherche) {
     $recherche = "%$recherche%";
     $req = $db->prepare("SELECT * FROM Album, Composer_Album, Artiste
-	WHERE (Album.nomAlbum LIKE :recherche OR Artiste.nomArtiste LIKE :recherche)
+	WHERE (Album.nomAlbum LIKE :recherche OR Artiste.nomArtiste LIKE :recherche OR Artiste.prenomArtiste LIKE :recherche OR Artiste.nomScene LIKE :recherche)
 	AND Album.idAlbum = Composer_Album.idAlbumCoAl
 	AND Composer_Album.idArtisteCoAl = Artiste.idArtiste 
 	ORDER BY nomAlbum ASC;");
