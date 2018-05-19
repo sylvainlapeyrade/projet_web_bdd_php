@@ -1,7 +1,7 @@
 #page-connexion, #page-inscription, #page-compte-form {
     background: #35424a;
     width: 300px;
-    margin-top: 200px;
+    margin-top: 25px;
     padding: 25px;
 }
 
@@ -10,5 +10,5 @@ form>.bouton {
 }
 
 #page-compte {
-    margin-top: 75px;
+    margin-top: 150px;
 }
