@@ -151,9 +151,7 @@ function modifier_artiste($db, $idArtiste, $nomArtiste, $prenomArtiste, $nomScen
 function supprimer_artiste($db, $idArtiste) {
     $req = $db->prepare("DELETE FROM Artiste WHERE idArtiste=:idArtiste;");
     $req->bindParam(':idArtiste', $idArtiste, PDO::PARAM_INT);
-    if($reqOk != False){
-        $reqOk = $req->execute();
-    }
+    $reqOk = $req->execute();
     return $reqOk;
 }
 
