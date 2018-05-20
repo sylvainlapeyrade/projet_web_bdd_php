@@ -39,7 +39,8 @@ function date_valide($date) {
 			else
 				return 0;
 		}
-	}	
+	}
+	return -1;
 }
 
 function format_duree($secondes) {
