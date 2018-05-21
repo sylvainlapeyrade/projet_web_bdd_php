@@ -1,4 +1,8 @@
 <?php
+/**
+ * Page evaluation.php
+ * Affiche les évaluations en permettant leur suppression
+ */
 
 if ( isset($db) ) {
     if ( isset($idAlbum) ) {

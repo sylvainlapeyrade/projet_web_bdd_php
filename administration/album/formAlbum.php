@@ -1,4 +1,8 @@
 <?php
+/**
+ * Page formAlbum.php
+ * Permet d'ajouter un album à la BBD
+ */
 
 session_start();
 include_once(dirname(__FILE__).'/../../fonctions/variables.php');
@@ -51,7 +55,7 @@ include_once(dirname(__FILE__).'/../../header.php');
 
 <main>
     <section>
-        <?php include_once(dirname(__FILE__).'/../adminHeader.php'); ?>
+        <?php include_once(dirname(__FILE__) . '/../headerAdmin.php'); ?>
         <div>
             <?php include_once(dirname(__FILE__).'/headerAlbum.php'); ?>
             <div class="text-center">

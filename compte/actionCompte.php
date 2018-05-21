@@ -1,4 +1,9 @@
 <?php
+/**
+ * Page actionCompte.php
+ * Répond dynamiquement selon l'action entreprise
+ * (Connexion, inscription, modification mdp)
+ */
 
 $action = $_GET['action'];
 if ( isset($action) && !empty($action) ) {

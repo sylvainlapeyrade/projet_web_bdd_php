@@ -1,3 +1,10 @@
+<?php
+/**
+ * Page headerMusique.php
+ * Inclut les caractéristiques du bouton Gestion des musique et Ajouter une musique
+ */
+?>
+
 <div id="headerGestion" class="flex flex-row">
 
     <div class="t24">

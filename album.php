@@ -1,4 +1,8 @@
 <?php
+/**
+ * Page album.php
+ * Présente un album avec ses caractéristiques
+ */
 
 session_start();
 include_once(dirname(__FILE__).'/fonctions/variables.php');

@@ -1,10 +1,10 @@
 Liste des tâches restantes 
 --------------------------------------------------
-- Remplir la base de données de façon conséquente
 - Réaliser le cahier des charges
 - Réaliser le dossier de conception
+
+- Remplir la base de données de façon conséquente
+
 - Gestion de redirection connexion à améliorer
 - Améliorer les boucles while dans les parties administration
-
-- Commentaire d'entête sur chaque page
-- Dynamiser tableau
+- Dynamiser tableau (JavaScript - Jquery) [Optionnel]

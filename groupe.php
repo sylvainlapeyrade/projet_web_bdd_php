@@ -1,4 +1,8 @@
 <?php
+/**
+ * Page groupe.php
+ * Présente un groupe avec ses caractéristiques
+ */
 
 session_start();
 include_once(dirname(__FILE__).'/fonctions/variables.php');

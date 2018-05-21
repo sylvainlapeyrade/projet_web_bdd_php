@@ -1,5 +1,4 @@
 <?php
-
 /**
  * FICHIER : FUNCTIONS -> fonctionEvaluer.php
  * Fichier des fonctions de gestion des évalutations.

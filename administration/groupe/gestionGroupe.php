@@ -1,4 +1,8 @@
 <?php
+/**
+ * Page gestionGroupe.php
+ * Affiche et propose de modifier et supprimer un groupe
+ */
 
 session_start();
 include_once(dirname(__FILE__).'/../../fonctions/variables.php');
@@ -25,7 +29,7 @@ include_once(dirname(__FILE__).'/../../head.php');
 
 <main>
     <section>
-        <?php include_once(dirname(__FILE__).'/../adminHeader.php'); ?>
+        <?php include_once(dirname(__FILE__) . '/../headerAdmin.php'); ?>
         <div>
             <?php include_once(dirname(__FILE__).'/headerGroupe.php'); ?>
             <div>

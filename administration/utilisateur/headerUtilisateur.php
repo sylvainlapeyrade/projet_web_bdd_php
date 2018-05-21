@@ -1,3 +1,10 @@
+<?php
+/**
+ * Page headerUtilisateur.php
+ * Inclut les caractéristiques du bouton Gestion des utilisateurs et Ajouter une utilisateur
+ */
+?>
+
 <div id="headerGestion" class="flex flex-row">
 
     <div class="t24">

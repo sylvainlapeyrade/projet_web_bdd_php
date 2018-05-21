@@ -1,5 +1,4 @@
 <?php
-
 /**
  * FICHIER : FUNCTIONS -> fonctionMusique.php
  * Fichier des fonctions de gestion des musiques.

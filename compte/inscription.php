@@ -1,4 +1,10 @@
 <?php
+/**
+ * Page inscription.php
+ * Fait le lien entre un formulaire d'inscrtiption et la BDD via actionCompte.php
+ * pour qu'un utilisateur puisse s'inscrire au site tout en vérifiant qu'il entre
+ * des informations conformes
+ */
 
 session_start();
 include_once(dirname(__FILE__).'/../fonctions/variables.php');

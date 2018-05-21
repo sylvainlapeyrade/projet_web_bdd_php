@@ -1,3 +1,10 @@
+<?php
+/**
+ * Page headerCompte.php
+ * Inclut des messages pour la partie compte
+ */
+?>
+
 <div>
 
     <? if ( isset($erreur) ) { ?>

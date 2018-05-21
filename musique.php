@@ -1,4 +1,8 @@
 <?php
+/**
+ * Page musique.php
+ * Présente ue musique avec ses caractéristiques
+ */
 
 session_start();
 include_once(dirname(__FILE__).'/fonctions/variables.php');

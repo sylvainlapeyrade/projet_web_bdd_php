@@ -1,4 +1,8 @@
 <?php
+/**
+ * Page aPropos.php
+ * Présente les auteurs, leur contact et le but du site
+ */
 
 session_start();
 include_once(dirname(__FILE__).'/fonctions/variables.php');
@@ -30,11 +34,11 @@ include_once(dirname(__FILE__).'/head.php');
             <div>
                 <h1 class="red1 t35"> L'équipe </h1>
                 <ul>
-                    <li> LABORDE Tonin </li>
-                    <li> LAPEYRADE Sylvain </li>
-                    <li> OLIVIER Thomas </li>
-                    <li> ROBERT DE ST VINCENT Guillaume </li>
-                    <li> WATHOJE Emmanuel </li>
+                    <li> LABORDE Tonin : tonin.laborde@univ-tlse3.fr</li>
+                    <li> LAPEYRADE Sylvain : sylvain.lapeyrade@univ-tlse3.fr</li>
+                    <li> OLIVIER Thomas : thomas.olivier@univ-tlse3.fr</li>
+                    <li> ROBERT DE ST VINCENT Guillaume : guillaume.robert-de-saint-vincent@univ-tlse3.fr</li>
+                    <li> WATHOJE Emmanuel : emmanuel.wathoje@univ-tlse3.fr</li>
                 </ul>
             </div>
         </div>

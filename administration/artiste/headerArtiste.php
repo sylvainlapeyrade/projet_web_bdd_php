@@ -1,3 +1,10 @@
+<?php
+/**
+ * Page headerArtiste.php
+ * Inclut les caractéristiques du bouton Gestion des artistes et Ajouter un artiste
+ */
+?>
+
 <div id="headerGestion" class="flex flex-row">
     
     <div class="t24">

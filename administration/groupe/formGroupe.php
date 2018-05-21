@@ -1,4 +1,8 @@
 <?php
+/**
+ * Page formGroupe.php
+ * Permet d'ajouter un groupe à la BBD
+ */
 
 session_start();
 include_once(dirname(__FILE__).'/../../fonctions/variables.php');
@@ -42,7 +46,7 @@ include_once(dirname(__FILE__).'/../../head.php');
 
 <main>
     <section>
-        <?php include_once(dirname(__FILE__).'/../adminHeader.php'); ?>
+        <?php include_once(dirname(__FILE__) . '/../headerAdmin.php'); ?>
         <div>
             <?php include_once(dirname(__FILE__).'/headerGroupe.php'); ?>
             <div class="text-center">

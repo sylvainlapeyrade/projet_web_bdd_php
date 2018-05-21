@@ -1,4 +1,9 @@
 <?php
+/**
+ * Fichier variables.php
+ * Contient des fonctions générales de formatage et d'affichage
+ * ainsi que des variables globales au site
+ */
 
 /**
  * Renvoie une date dans le format "Y-m-d" à partir

@@ -1,4 +1,9 @@
 <?php
+/**
+ * Page actionGroupe.php
+ * Fait le lien entre le formulaire groupe,
+ * la gestion des groupes et la BDD
+ */
 
 $action = $_GET['action'];
 if ( isset($action) && !empty($action) ) {

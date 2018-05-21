@@ -1,4 +1,9 @@
 <?php
+/**
+ * Page connexion.php
+ * Fait le lien entre un formulaire de connexion et la BDD via actionCompte.php
+ * pour qu'un utilisateur puisse se connecter au site.
+ */
 
 session_start();
 include_once(dirname(__FILE__).'/../fonctions/variables.php');

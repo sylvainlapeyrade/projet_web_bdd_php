@@ -1,4 +1,9 @@
 <?php
+/**
+ * Page actionMusique.php
+ * Fait le lien entre le formulaire musique,
+ * la gestion des musiques et la BDD
+ */
 
 $action = $_GET['action'];
 if ( isset($action) && !empty($action) ) {

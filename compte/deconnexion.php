@@ -1,4 +1,9 @@
 <?php
+/**
+ * Page deconnexion.php
+ * Ferme la session quand on active le bouton "Deconnexion"
+ */
+
     session_start();
     include_once(dirname(__FILE__).'/../fonctions/fonctionCompte.php');
 

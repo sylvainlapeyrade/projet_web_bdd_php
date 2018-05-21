@@ -1,4 +1,9 @@
 <?php
+/**
+ * Page actionAssemblerAlbum.php
+ * Fait le lien entre les fonctions assembler album,
+ * et la BDD
+ */
 
 $action = $_GET['action'];
 $idAlbum = $_GET['idAlbum'];
