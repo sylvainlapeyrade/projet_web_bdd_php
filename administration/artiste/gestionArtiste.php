@@ -48,7 +48,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                         <td> <?php echo ucwords($artiste['nomartiste']); ?> </td>
                         <td> <?php echo ucwords($artiste['prenomartiste']); ?> </td>
                         <td> <?php echo ucwords($artiste['nomscene']); ?> </td>
-                        <td> <?php echo format_date($artiste['datenaissanceartiste']); ?> </td>
+                        <td> <?php echo affichage_date($artiste['datenaissanceartiste']); ?> </td>
                         <td class="bouton bouton-forme1 bouton-bleu">
                             <a href="./formArtiste.php?idArtiste=<?php echo $artiste['idartiste'] ?>">Modifier</a>
                         </td>

@@ -44,7 +44,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                 <?php foreach($listeRecompense as $recompense) { ?>
                 <tr class="table-lign">
                     <td> <?php echo ucwords($recompense['nomrecompense']); ?> </td>
-                    <td> <?php echo format_date($recompense['daterecompense']); ?> </td>
+                    <td> <?php echo affichage_date($recompense['daterecompense']); ?> </td>
                     <td> <?php echo $recompense['descriptionrecompense']; ?> </td>
                     <td class="bouton bouton-forme1 bouton-bleu">
                         <a href="./formRecompense.php?idRecompense=<?php echo $recompense['idrecompense']; ?>">Modifier</a>

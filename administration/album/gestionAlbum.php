@@ -45,7 +45,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                     <?php foreach($listeAlbums as $album) { ?>
                     <tr class="table-lign">
                         <td> <?php echo ucwords($album['nomalbum']); ?> </td>
-                        <td> <?php echo format_date($album['datealbum']); ?> </td>
+                        <td> <?php echo affichage_date($album['datealbum']); ?> </td>
                         <td> <?php echo $album['descriptionalbum']; ?> </td>
                         <td class="bouton bouton-forme1 bouton-bleu">
                             <a href="./formAlbum.php?idAlbum=<?php echo $album['idalbum']; ?>">Modifier</a>

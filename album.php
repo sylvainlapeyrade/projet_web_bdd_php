@@ -45,13 +45,14 @@ include_once(dirname(__FILE__).'/head.php');
                 <div id="description-album" class="flex-around">
 
                     <div>
-                        <h1 class="red1"><a><?php if(isset($album)) {echo ucwords($album['nomalbum']);} ?></a> - <a><?php if(isset($album)) {echo $album['datealbum'];} ?></a></h1>
-                        
+                        <h1 class="red1"><a><?php if(isset($album)) {echo ucwords($album['nomalbum']);} ?></a> -
+                            <a><?php if(isset($album)) {echo affichage_date($album['datealbum']);} ?></a></h1>
+
                         <p>
                             <?php if(isset($album)) {echo $album['descriptionalbum'];} ?>
                             <br>
                         </p>
-                        
+
                         <p>
                             Il a été composé par:
                             <?php foreach($listeArtistesAlbum as $key => $artiste) { ?>
@@ -103,7 +104,7 @@ include_once(dirname(__FILE__).'/head.php');
 
             </div>
             <!-- FIN PRESENTATION -->
-            
+
             <?php include_once(dirname(__FILE__).'/evaluation/evaluation.php'); ?>
 
         </div>

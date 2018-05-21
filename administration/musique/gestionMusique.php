@@ -48,7 +48,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                     <tr class="table-lign">
                         <td> <?php echo ucwords($musique['titremusique']); ?> </td>
                         <td> <?php echo format_duree($musique['dureemusique']); ?> </td>
-                        <td> <?php echo format_date($musique['datemusique']); ?> </td>
+                        <td> <?php echo affichage_date($musique['datemusique']); ?> </td>
                         <td> <?php echo $musique['descriptionmusique']; ?> </td>
                         <td class="bouton bouton-forme1 bouton-bleu">
                             <a href="./formMusique.php?idMusique=<?php echo $musique['idmusique'] ?>">Modifier</a>

@@ -44,7 +44,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                     <?php foreach($listeGroupe as $groupe) { ?>
                     <tr class="table-lign">
                         <td> <?php echo ucwords($groupe['nomgroupe']); ?> </td>
-                        <td> <?php echo format_date($groupe['dategroupe']); ?> </td>
+                        <td> <?php echo affichage_date($groupe['dategroupe']); ?> </td>
                         <td> <?php echo $groupe['descriptiongroupe']; ?> </td>
                         <td class="bouton bouton-forme1 bouton-bleu">
                             <a href="./formGroupe.php?idGroupe=<?php echo $groupe['idgroupe']; ?>">Modifier</a>

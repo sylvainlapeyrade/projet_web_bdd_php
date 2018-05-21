@@ -67,7 +67,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                                    required
                                    />
 
-                            <label for="dateRecompense" class="text-center"> Date de création :
+                            <label for="dateGroupe" class="text-center"> Date de création :
                                 <input type="date"
                                        placeholder="<?php echo format_date(format_date(date("Y/m/d"))); ?>"
                                        pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"

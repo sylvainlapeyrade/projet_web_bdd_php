@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Renvoie une date dans le format "Y-m-d" à partir
+ * d'une chaine en paramètre.
+ * @param $date String Date à transformer
+ * @return String La date transformée | Null sinon
+ */
 function format_date($date) {
     if ( isset($date) && !empty($date) ) {
         return date("Y-m-d", strtotime($date));
@@ -7,6 +13,23 @@ function format_date($date) {
     return null;
 }
 
+/**
+ * Renvoie une date dans le format "d-m-Y" à partir
+ * d'une date en format "Y-m-d".
+ * @param $date String Date à transformer
+ * @return String La date transformée
+ */
+function affichage_date($date){
+    $date = explode("-", $date);
+    return $date[2].'-'.$date[1].'-'.$date[0];
+}
+
+/**
+ * Expression régulière vérifiant si une date est bien
+ * conforme à son format attendu
+ * @param $date String Date à vérifier
+ * @return false si la date est invalide | true sinon
+ */
 function date_valide($date) {
 	//verification format
 	$pattern1 = '/^[0-9]{4}-[0-9]{2}-[0-9]{2}/';
@@ -25,24 +48,30 @@ function date_valide($date) {
 	$y_verif = intval($date[0].$date[1].$date[2].$date[3]);
     
     if ($y_verif < $annee )
-		return 1;
+		return true;
 	else if ($y_verif > $annee)
-		return 0;
+		return false;
 	else if ($y_verif == $annee) {
 		if ($m_verif < $mois)
-			return 1;
+			return true;
 		else if ($m_verif > $mois)
-			return 0;
+			return false;
 		else if ($m_verif == $mois) {
 			if ($j_verif <= $jour) 
-				return 1;
+				return true;
 			else
-				return 0;
+				return false;
 		}
 	}
-	return -1;
+	return false;
 }
 
+/**
+ * Transforme une durée en secondes
+ * en durée en minutes secondes
+ * @param $secondes String Durée à convertir
+ * @return String durée convertie
+ */
 function format_duree($secondes) {
 	$minutes = intdiv($secondes,60);
 	$secondes = $secondes % 60;

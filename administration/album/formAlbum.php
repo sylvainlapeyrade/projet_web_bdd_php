@@ -76,7 +76,7 @@ include_once(dirname(__FILE__).'/../../header.php');
                                    required
                             />
 
-                            <label for="dateRecompense" class="text-center">
+                            <label for="dateAlbum" class="text-center">
                                 Date de création:
                                 <input type="date"
                                        placeholder="<?php echo format_date(format_date(date("Y/m/d"))); ?>"

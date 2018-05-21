@@ -74,7 +74,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                            placeholder="Nom de scène"
                            />
 
-                    <label for="dateRecompense" class="text-center">
+                    <label for="dateArtiste" class="text-center">
                         Date de naissance :
                         <input type="date"
                                placeholder="<?php echo format_date(format_date(date("Y/m/d"))); ?>"
