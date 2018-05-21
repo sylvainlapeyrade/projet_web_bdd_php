@@ -81,7 +81,7 @@ include_once(dirname(__FILE__).'/head.php');
                                 <?php foreach($listeRecompensesArtiste as $recompense) { ?>
                                     <tr class="table-lign">
                                         <td> <?php echo ucwords($recompense['nomrecompense']); ?> </td>
-                                        <td> <?php echo $recompense['daterecompense']; ?> </td>
+                                        <td> <?php echo affichage_date($recompense['daterecompense']); ?> </td>
                                     </tr>
                                 <?php } ?>
                             <?php } ?>
