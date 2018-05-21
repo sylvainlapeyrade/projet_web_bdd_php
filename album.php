@@ -91,7 +91,7 @@ include_once(dirname(__FILE__).'/head.php');
                             </table>
 
                             <?php if ( empty($listeMusiquesAlbum) ) { ?>
-                                <h3>Cette album ne contient pas encore de musique </h3>
+                                <h3>Cet album ne contient pas encore de musique</h3>
                             <?php } ?>
 
                         </div>

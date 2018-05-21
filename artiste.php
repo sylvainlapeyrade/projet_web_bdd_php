@@ -88,7 +88,7 @@ include_once(dirname(__FILE__).'/head.php');
                         </table>
                             
                         <?php if ( empty($listeRecompensesArtiste) ) { ?>
-                            <h3>Cette artiste n'a pas reçu de récompense.</h3>
+                            <h3>Cet artiste n'a pas reçu de récompense.</h3>
                         <?php } ?>
                     </div>
                 </div>
@@ -137,7 +137,7 @@ include_once(dirname(__FILE__).'/head.php');
                     </table>
                             
                     <?php if ( empty($listeMusiquesArtiste) ) { ?>
-                        <h3>Cette artiste n'a pas de musique.</h3>
+                        <h3>Cet artiste n'a pas de musique.</h3>
                     <?php } ?>
                     
                 </div>
