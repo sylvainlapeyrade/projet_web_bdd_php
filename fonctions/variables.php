@@ -106,17 +106,17 @@ $info = [
 
 $messages = [
     'formulaire' => [
-        'champs_obligatoire' => "Certains champs du formulaire sont obligatoire.",
+        'champs_obligatoire' => "Certains champs du formulaire sont obligatoires.",
         'champs_vide' => "Certains champs du formulaire sont vide.",
         'invalide' => "Le formulaire est incomplet.",
         'dateInvalide' => "La date n'est pas valide (aaaa-mm-jj).",
-        'motDePasseDifferent' => "Les deux mot de passe ne sont pas identique.",
+        'motDePasseDifferent' => "Les deux mots de passe ne sont pas identiques.",
         'erreurDevenirUtilisateur' => "Vous ne pouvez pas devenir utilisateur normal.",
         'erreurSupprimerSonCompte' => "Vous ne pouvez pas supprimer votre propre compte.",
-        'valeurNegative' => "La valeur renseigné doit être positive.",
-        'noteIncorrecte' => "La note doit être compris entre 1 et 5",
+        'valeurNegative' => "La valeur renseignée doit être positive.",
+        'noteIncorrecte' => "La note doit être comprise entre 1 et 5",
         'nonAutoriser' => "Vous n'avez pas l'autorisation d'effectuer cette action.",
-        'evaluationExistant' => "Vous avez déjà évaluer cette élément.",
+        'evaluationExistant' => "Vous avez déjà évalué cet élément.",
     ],
     'connexion' => [
         'incorrect' => "Votre identifiant ou votre mot de passe est incorrect.",  
@@ -128,10 +128,10 @@ $messages = [
     'minimum1Artiste' => "Il faut au minimum un artiste sélectionné.",
     'minimum1ArtisteOuGroupe' => "Il faut au minimum un artiste ou un groupe de sélectionné.",
     'minimum2Artiste' => "Il faut au minimum deux artistes sélectionnés.",
-    '1titreMusique' => "Il faut seulement un titre de musique sélectionner.",
+    '1titreMusique' => "Il faut seulement un titre de musique sélectionné.",
     'operation' => [
-        'ok' => "L'opération a été effectué.",
-        'ko' => "L'opération n'a pas pu être effectué."
+        'ok' => "L'opération a été effectuée.",
+        'ko' => "L'opération n'a pas pu être effectuée."
     ]
 ]
 
