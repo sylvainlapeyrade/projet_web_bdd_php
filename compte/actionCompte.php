@@ -75,6 +75,10 @@ if ( isset($db, $action) ) {
                 $erreur = $messages['formulaire']['champs_vide'];
                 break;
             }
+            if ( !is_connect() ) {
+                $erreur = $messages['operation']['ko'];
+                break;
+            }
             if ( $motDePasse != $verification ) {
                 $erreur = $messages['formulaire']['motDePasseDifferent'];
                 break;
@@ -82,8 +86,26 @@ if ( isset($db, $action) ) {
             $operationOk = modifier_motdepasse_utilisateur($db, $_SESSION['idUtilisateur'], $motDePasse);
             if ( !$operationOk ) {
                 $erreur = $messages['operation']['ko'];
+                break;
             }
             header('Location: ./index.php?action=modifierMdpOk');
+            break;
+            
+        case 'supprimerCompte':
+            /*
+             * Champs présent : motDePasse, verification
+             * Champs obligatoire : motDePasse, verification
+             */
+            if ( !is_connect() ) {
+                $erreur = $messages['operation']['ko'];
+                break;
+            }
+            $operationOk = supprimer_utilisateur($db, $_SESSION['idUtilisateur']);
+            if ( !$operationOk ) {
+                $erreur = $messages['operation']['ko'];
+                break;
+            }
+            header('Location: ./deconnexion.php');
             break;
             
         case 'inscriptionOk':
@@ -92,6 +114,10 @@ if ( isset($db, $action) ) {
             
         case 'modifierMdpOk':
             $message = $messages['operation']['ok'];
+            break;
+            
+        case 'supprimerOk':
+            $message = "Votre compte a bien été supprimé.";
             break;
     }
 }

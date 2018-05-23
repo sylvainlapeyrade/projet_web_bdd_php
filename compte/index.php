@@ -15,9 +15,9 @@ $info['head']['stylesheets'] = ['compte.css'];
 
 if(!is_connect()) {leave();}
 
-include_once(dirname(__FILE__).'/../head.php');
-
 include_once(dirname(__FILE__).'/actionCompte.php');
+
+include_once(dirname(__FILE__).'/../head.php');
 
 ?>
 
@@ -37,9 +37,11 @@ include_once(dirname(__FILE__).'/actionCompte.php');
                     Nom d'utilisateur : <?php echo $_SESSION['idUtilisateur']; ?>
                 </p>
                 <br>
+                <p>
                 <a class="bouton bouton-forme1 bouton-red1" href="./formMotDePasse.php">Modifier son mot de passe</a>
-                <br>
-                <br>
+                </p><br><p>
+                <a class="bouton bouton-forme1 bouton-red" href="./index.php?action=supprimerCompte">Supprimer son compte</a>
+                </p>
             </div>
         
         </div>
