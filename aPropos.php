@@ -50,7 +50,6 @@ include_once(dirname(__FILE__).'/head.php');
                     Vous pouvez retrouver le code source du projet sur notre depôt :<br>
                     <span class="red1">Depôt GitHub</span> : <a href="https://github.com/SisGG/projet_web_bdd_php">https://github.com/SisGG/projet_web_bdd_php</a>
                 </div>
-
             </div>
         </div>
         
