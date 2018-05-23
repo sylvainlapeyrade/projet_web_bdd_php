@@ -23,7 +23,7 @@ if ( isset($db, $idArtiste) ) {
     }
     $listeGroupesArtiste = recuperer_groupe_artiste($db, $idArtiste);
     $listeRecompensesArtiste = recuperer_recompense_artiste($db, $idArtiste);
-    $listeMusiquesArtiste = recuperer_musique_album_artiste($db, $idArtiste);
+    $listeMusiquesArtiste = recuperer_musique_album_artiste($db, $idArtiste) + recuperer_musique_artiste($db, $idArtiste);
 } else {
     header('Location: /404.php');
 }
