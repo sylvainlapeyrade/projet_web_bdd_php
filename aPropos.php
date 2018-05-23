@@ -43,7 +43,7 @@ include_once(dirname(__FILE__).'/head.php');
                 
                 <div>
                     <h1 class="red1 t35"> Comment ça marche ? </h1>
-                    <p> Pour avoir un apreçu des fonctionnalités du site regardez cette vidéo de présentation : <a class="red1" href="https://www.youtube.com/watch?v=4C64b4QqI_E" target="_blank">cliquer ici</a></p>
+                    <p> Pour avoir un aperçu des fonctionnalités du site regardez cette vidéo de présentation : <a class="red1" href="https://www.youtube.com/watch?v=4C64b4QqI_E" target="_blank">cliquer ici</a></p>
                 </div>
                 
                 <div>
