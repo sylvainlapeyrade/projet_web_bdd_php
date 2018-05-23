@@ -44,7 +44,7 @@ include_once(dirname(__FILE__).'/head.php');
             <div class="flex flex-between">
                 <div id="description-groupe" class="flex-around">
                     
-                    <h1 class="red1"><?php if(isset($groupe)){echo ucwords($groupe['nomgroupe']);} ?> -
+                    <h1 class="red1"><?php if(isset($groupe)){echo ucwords($groupe['nomgroupe']);} ?>
                         <?php if(isset($groupe)){echo affichage_date($groupe['dategroupe']);} ?></h1>
                     
                     <div id="liste-membre">
