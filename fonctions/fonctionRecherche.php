@@ -14,7 +14,8 @@
  */
 function rechercher_artiste($db, $recherche) {
     $recherche = "%$recherche%";
-    $req = $db->prepare("SELECT * FROM Artiste WHERE nomArtiste LIKE :recherche OR prenomArtiste LIKE :recherche OR nomScene LIKE :recherche ORDER BY nomArtiste ASC, prenomArtiste ASC;");
+    $req = $db->prepare("SELECT * FROM Artiste WHERE nomArtiste LIKE :recherche OR prenomArtiste LIKE :recherche
+ OR nomScene LIKE :recherche ORDER BY nomArtiste ASC,nomScene ASC, prenomArtiste ASC;");
     $req->bindParam(':recherche', $recherche);
     $req->execute();
     $res = $req->fetchAll();

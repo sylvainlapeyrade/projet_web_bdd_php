@@ -1,4 +1,9 @@
 <?php
+/**
+ * Page actionArtiste.php
+ * Fait le lien entre le formulaire artiste,
+ * la gestion des artistes et la BDD
+ */
 
 $action = $_GET['action'];
 if ( isset($action) && !empty($action) ) {

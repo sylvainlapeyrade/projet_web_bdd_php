@@ -1,4 +1,8 @@
 <?php
+/**
+ * Page formAlbum.php
+ * Permet d'ajouter un album à la BBD
+ */
 
 session_start();
 include_once(dirname(__FILE__).'/../../fonctions/variables.php');
@@ -12,8 +16,9 @@ $info['head']['subTitle'] = "Gestion groupe";
 $info['head']['stylesheets'] = ['adminGestion.css'];
 
 if(!is_connect() || !is_admin()) {leave();}
-
-$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
+if(isset($db)){
+    $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
+}
 
 $idAlbum = $_GET['idAlbum'];
 if ( isset($db, $idAlbum) ) {
@@ -50,7 +55,7 @@ include_once(dirname(__FILE__).'/../../header.php');
 
 <main>
     <section>
-        <?php include_once(dirname(__FILE__).'/../adminHeader.php'); ?>
+        <?php include_once(dirname(__FILE__) . '/../headerAdmin.php'); ?>
         <div>
             <?php include_once(dirname(__FILE__).'/headerAlbum.php'); ?>
             <div class="text-center">
@@ -75,7 +80,7 @@ include_once(dirname(__FILE__).'/../../header.php');
                                    required
                             />
 
-                            <label for="dateRecompense" class="text-center">
+                            <label for="dateAlbum" class="text-center">
                                 Date de création:
                                 <input type="date"
                                        placeholder="<?php echo format_date(format_date(date("Y/m/d"))); ?>"

@@ -1,4 +1,8 @@
 <?php
+/**
+ * Page formArtiste.php
+ * Permet d'ajouter un artiste à la BBD
+ */
 
 session_start();
 include_once(dirname(__FILE__).'/../../fonctions/variables.php');
@@ -35,7 +39,7 @@ include_once(dirname(__FILE__).'/../../head.php');
 
 <main>
     <section>
-    <?php include_once(dirname(__FILE__).'/../adminHeader.php'); ?>
+    <?php include_once(dirname(__FILE__) . '/../headerAdmin.php'); ?>
         <div>
             <?php include_once(dirname(__FILE__).'/headerArtiste.php'); ?>
             <div class="text-center">
@@ -74,7 +78,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                            placeholder="Nom de scène"
                            />
 
-                    <label for="dateRecompense" class="text-center">
+                    <label for="dateArtiste" class="text-center">
                         Date de naissance :
                         <input type="date"
                                placeholder="<?php echo format_date(format_date(date("Y/m/d"))); ?>"

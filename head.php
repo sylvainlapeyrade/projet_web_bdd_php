@@ -1,3 +1,10 @@
+<?php
+/**
+ * Page head.php
+ * Inclut les caractéristiques de la tete de page
+ */
+?>
+
 <!DOCTYPE html>
 <html>
     <head>

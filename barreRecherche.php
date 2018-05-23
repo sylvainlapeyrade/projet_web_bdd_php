@@ -1,3 +1,9 @@
+<?php /**
+* Page recherche.php
+* Inclut les caractéristiques de la barre de recherche
+*/
+?>
+
 <div id="barre-recherche">
     <form class="flex flex-center item-center" action="/recherche.php" method="get">
         <span class="t20">Nouvelle recherche : </span>

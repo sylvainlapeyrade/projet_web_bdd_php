@@ -1,4 +1,9 @@
 <?php
+/**
+ * Page actionAlbum.php
+ * Fait le lien entre le formulaire album,
+ * la gestion des albums et la BDD
+ */
 
 $action = $_GET['action'];
 if ( isset($action) && !empty($action) ) {

@@ -1,4 +1,9 @@
 <?php
+/**
+ * Page gestionAssemblerAlbum.php
+ * Permet de modifier ou supprimer une association entre album et musique dans la BBD
+ */
+
 session_start();
 include_once(dirname(__FILE__).'/../../fonctions/variables.php');
 include_once(dirname(__FILE__).'/../../fonctions/fonctionCompte.php');
@@ -32,7 +37,7 @@ include_once(dirname(__FILE__).'/../../head.php');
 
 <main>
     <section>
-        <?php include_once(dirname(__FILE__).'/../adminHeader.php'); ?>
+        <?php include_once(dirname(__FILE__) . '/../headerAdmin.php'); ?>
         <div>
             <?php include_once(dirname(__FILE__).'/headerAssemblerAlbum.php'); ?>
             <div>

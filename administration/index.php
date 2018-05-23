@@ -1,4 +1,10 @@
 <?php
+/**
+ * Page index.php
+ * Page d'acceuil de la partie administration du site,
+ * présentant les différentes options de navigation dans la partie administration
+ */
+
     session_start();
     include_once(dirname(__FILE__).'/../fonctions/variables.php');
     include_once(dirname(__FILE__).'/../fonctions/fonctionCompte.php');

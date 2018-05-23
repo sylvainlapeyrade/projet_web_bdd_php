@@ -1,4 +1,10 @@
 <?php
+/**
+ * Page formMotDePasse.php
+ * Permet sous la forme d'un formulaire de modifier un mdp
+ * en vérifiant que le nouveau est bien conforme
+ */
+
 session_start();
 include_once(dirname(__FILE__).'/../fonctions/variables.php');
 include_once(dirname(__FILE__).'/../fonctions/fonctionCompte.php');

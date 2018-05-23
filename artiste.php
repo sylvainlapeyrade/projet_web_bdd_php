@@ -1,4 +1,8 @@
 <?php
+/**
+ * Page artiste.php
+ * Présente un artiste avec ses caractéristiques
+ */
 
 session_start();
 include_once(dirname(__FILE__).'/fonctions/variables.php');
@@ -54,9 +58,9 @@ include_once(dirname(__FILE__).'/head.php');
                             <?php if ( !empty($listeGroupesArtiste) ) {
     
                                     if ( sizeof($listeGroupesArtiste) > 1 ) {
-                                        echo 'Il fait parti des groupes : ';
+                                        echo 'Groupes : ';
                                     } else {
-                                        echo 'Il fait parti du groupe : ';
+                                        echo 'Groupe : ';
                                     }
                                 ?>
                                 <?php foreach($listeGroupesArtiste as $key => $groupe) { ?>
@@ -81,14 +85,14 @@ include_once(dirname(__FILE__).'/head.php');
                                 <?php foreach($listeRecompensesArtiste as $recompense) { ?>
                                     <tr class="table-lign">
                                         <td> <?php echo ucwords($recompense['nomrecompense']); ?> </td>
-                                        <td> <?php echo $recompense['daterecompense']; ?> </td>
+                                        <td> <?php echo affichage_date($recompense['daterecompense']); ?> </td>
                                     </tr>
                                 <?php } ?>
                             <?php } ?>
                         </table>
                             
                         <?php if ( empty($listeRecompensesArtiste) ) { ?>
-                            <h3>Cette artiste n'a pas reçu de récompense.</h3>
+                            <h3>Aucune récompense renseignée pour cet artiste.</h3>
                         <?php } ?>
                     </div>
                 </div>
@@ -120,7 +124,7 @@ include_once(dirname(__FILE__).'/head.php');
                                 <tr class="table-lign">
                                     <td><a class="souligner" href="/musique.php?idMusique=<?php echo $musique['idmusique']; ?>"> <?php echo ucwords($musique['titremusique']); ?> </a></td>
                                     <td> <?php echo format_duree($musique['dureemusique']); ?> </td>
-                                    <td> <?php echo $musique['datemusique']; ?></td>
+                                    <td> <?php echo affichage_date($musique['datemusique']); ?></td>
                                     <td>
                                         <?php if ( !empty($listeGenresMusique) ) {
                                             foreach($listeGenresMusique as $key => $genre) {
@@ -137,7 +141,7 @@ include_once(dirname(__FILE__).'/head.php');
                     </table>
                             
                     <?php if ( empty($listeMusiquesArtiste) ) { ?>
-                        <h3>Cette artiste n'a pas de musique.</h3>
+                        <h3>Cet artiste n'a pas de musique.</h3>
                     <?php } ?>
                     
                 </div>

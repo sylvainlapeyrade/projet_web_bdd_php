@@ -1,4 +1,9 @@
 <?php
+/**
+ * Page actionRecompense.php
+ * Fait le lien entre le formulaire recompense,
+ * la gestion des recompenses et la BDD
+ */
 
 $action = $_GET['action'];
 if ( isset($action) && !empty($action) ) {

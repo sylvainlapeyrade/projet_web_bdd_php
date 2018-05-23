@@ -1,4 +1,8 @@
 <?php
+/**
+ * Page formMusique.php
+ * Permet d'ajouter un musique à la BBD
+ */
 
 session_start();
 include_once(dirname(__FILE__).'/../../fonctions/variables.php');
@@ -56,7 +60,7 @@ include_once(dirname(__FILE__).'/../../head.php');
 
 <main>
     <section>
-        <?php include_once(dirname(__FILE__).'/../adminHeader.php'); ?>
+        <?php include_once(dirname(__FILE__) . '/../headerAdmin.php'); ?>
         <div>
             <?php include_once(dirname(__FILE__).'/headerMusique.php'); ?>
             <div class="text-center">
@@ -92,7 +96,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                                        />
                             </label>
 
-                            <label for="dateRecompense" class="text-center"> Date de création :
+                            <label for="dateMusique" class="text-center"> Date de création :
                             <input type="date"
                                    placeholder="<?php echo format_date(format_date(date("Y/m/d"))); ?>"
                                    pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"

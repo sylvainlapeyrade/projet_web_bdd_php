@@ -1,4 +1,9 @@
 <?php
+/**
+ * Page index.php
+ * Page d'acceuil par défaut du site,
+ * présentant les différentes options de navigation sur le site
+ */
 
 session_start();
 include_once(dirname(__FILE__).'/fonctions/variables.php');

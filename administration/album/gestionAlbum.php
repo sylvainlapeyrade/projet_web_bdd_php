@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Page gestionAlbum.php
+ * Affiche et propose de modifier et supprimer un album
+ */
+
 session_start();
 include_once(dirname(__FILE__).'/../../fonctions/variables.php');
 include_once(dirname(__FILE__).'/../../fonctions/fonctionCompte.php');
@@ -25,7 +30,7 @@ include_once(dirname(__FILE__).'/../../head.php');
 
 <main>
     <section>
-        <?php include_once(dirname(__FILE__).'/../adminHeader.php'); ?>
+        <?php include_once(dirname(__FILE__) . '/../headerAdmin.php'); ?>
         <div>
             <?php include_once(dirname(__FILE__).'/headerAlbum.php'); ?>
             <div>
@@ -45,7 +50,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                     <?php foreach($listeAlbums as $album) { ?>
                     <tr class="table-lign">
                         <td> <?php echo ucwords($album['nomalbum']); ?> </td>
-                        <td> <?php echo format_date($album['datealbum']); ?> </td>
+                        <td> <?php echo affichage_date($album['datealbum']); ?> </td>
                         <td> <?php echo $album['descriptionalbum']; ?> </td>
                         <td class="bouton bouton-forme1 bouton-bleu">
                             <a href="./formAlbum.php?idAlbum=<?php echo $album['idalbum']; ?>">Modifier</a>

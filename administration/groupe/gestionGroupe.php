@@ -1,4 +1,8 @@
 <?php
+/**
+ * Page gestionGroupe.php
+ * Affiche et propose de modifier et supprimer un groupe
+ */
 
 session_start();
 include_once(dirname(__FILE__).'/../../fonctions/variables.php');
@@ -25,7 +29,7 @@ include_once(dirname(__FILE__).'/../../head.php');
 
 <main>
     <section>
-        <?php include_once(dirname(__FILE__).'/../adminHeader.php'); ?>
+        <?php include_once(dirname(__FILE__) . '/../headerAdmin.php'); ?>
         <div>
             <?php include_once(dirname(__FILE__).'/headerGroupe.php'); ?>
             <div>
@@ -44,7 +48,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                     <?php foreach($listeGroupe as $groupe) { ?>
                     <tr class="table-lign">
                         <td> <?php echo ucwords($groupe['nomgroupe']); ?> </td>
-                        <td> <?php echo format_date($groupe['dategroupe']); ?> </td>
+                        <td> <?php echo affichage_date($groupe['dategroupe']); ?> </td>
                         <td> <?php echo $groupe['descriptiongroupe']; ?> </td>
                         <td class="bouton bouton-forme1 bouton-bleu">
                             <a href="./formGroupe.php?idGroupe=<?php echo $groupe['idgroupe']; ?>">Modifier</a>

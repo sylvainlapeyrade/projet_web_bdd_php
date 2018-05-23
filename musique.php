@@ -1,4 +1,8 @@
 <?php
+/**
+ * Page musique.php
+ * Présente ue musique avec ses caractéristiques
+ */
 
 session_start();
 include_once(dirname(__FILE__).'/fonctions/variables.php');
@@ -46,7 +50,8 @@ include_once(dirname(__FILE__).'/head.php');
                 <div id="description-album" class="flex-around">
                     <div>
                         
-                        <h1 class="red1"><?php if(isset($musique)){echo ucwords($musique['titremusique']);} ?> - <?php if(isset($musique)){echo $musique['datemusique'];} ?></h1>
+                        <h1 class="red1"><?php if(isset($musique)){echo ucwords($musique['titremusique']);} ?> -
+                            <?php if(isset($musique)){echo affichage_date($musique['datemusique']);} ?></h1>
                         
                         <div>
                             <?php if ( !empty($listeArtistesMusique) ) { ?>

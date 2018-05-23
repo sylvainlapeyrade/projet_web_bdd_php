@@ -1,4 +1,8 @@
 <?php
+/**
+ * Page 404.php
+ * Affiche une page 404 personnalisée en cas de demande non conforme
+ */
 
 session_start();
 include_once(dirname(__FILE__).'/fonctions/variables.php');

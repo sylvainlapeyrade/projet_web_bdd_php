@@ -1,9 +1,15 @@
 <?php
+/**
+ * Page connexion.php
+ * Connexion à la BDD via PDO
+ */
 
-/* Installer le paquet php7.0-pgsql
- * Puis activer en décommentant la ligne 
- * extension=php_pgsql.so
- * Redémarer ensuite le serveur apache2
+/* Instruction d'utilisation:
+ * - Installer le paquet php7.0-pgsql
+ * - Activer en décommentant la ligne :
+ *      extension=php_pgsql.so
+ * - Redémarer ensuite le serveur apache2 :
+ *      systemctl restart apache2
  */
     include_once(dirname(__FILE__).'/../fonctions/variables.php');
     include_once(dirname(__FILE__).'/../bdd/connexion.php');

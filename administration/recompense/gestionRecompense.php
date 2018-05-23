@@ -1,4 +1,8 @@
 <?php
+/**
+ * Page gestionRecompense.php
+ * Affiche et propose de modifier et supprimer une recompense
+ */
 
 session_start();
 include_once(dirname(__FILE__).'/../../fonctions/variables.php');
@@ -25,7 +29,7 @@ include_once(dirname(__FILE__).'/../../head.php');
 
 <main>
     <section>
-        <?php include_once(dirname(__FILE__).'/../adminHeader.php'); ?>
+        <?php include_once(dirname(__FILE__) . '/../headerAdmin.php'); ?>
         <div>
             <?php include_once(dirname(__FILE__).'/headerRecompense.php'); ?>
             <div>
@@ -44,7 +48,7 @@ include_once(dirname(__FILE__).'/../../head.php');
                 <?php foreach($listeRecompense as $recompense) { ?>
                 <tr class="table-lign">
                     <td> <?php echo ucwords($recompense['nomrecompense']); ?> </td>
-                    <td> <?php echo format_date($recompense['daterecompense']); ?> </td>
+                    <td> <?php echo affichage_date($recompense['daterecompense']); ?> </td>
                     <td> <?php echo $recompense['descriptionrecompense']; ?> </td>
                     <td class="bouton bouton-forme1 bouton-bleu">
                         <a href="./formRecompense.php?idRecompense=<?php echo $recompense['idrecompense']; ?>">Modifier</a>

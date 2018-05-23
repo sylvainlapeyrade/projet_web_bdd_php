@@ -1,5 +1,4 @@
 <?php
-
 /**
  * FICHIER : FUNCTIONS -> fonctionGenre.php
  * Fichier des fonctions de gestion des genres.

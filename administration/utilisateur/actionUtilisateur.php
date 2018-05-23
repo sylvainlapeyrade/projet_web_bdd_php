@@ -1,4 +1,9 @@
 <?php
+/**
+ * Page actionUtilisateur.php
+ * Fait le lien entre le formulaire utilisateur,
+ * la gestion des utilisateur et la BDD
+ */
 
 $action = $_GET['action'];
 if ( isset($action) && !empty($action) ) {

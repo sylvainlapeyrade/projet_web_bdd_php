@@ -1,5 +1,4 @@
 <?php
-
 /**
  * FICHIER : FUNCTIONS -> fonctionRecompense.php
  * Fichier des fonctions de gestion des récompenses.

@@ -1,3 +1,10 @@
+<?php
+/**
+ * Page headerGroupe.php
+ * Inclut les caractéristiques du bouton Gestion des groupes et Ajouter un groupe
+ */
+?>
+
 <div id="headerGestion" class="flex flex-row">
     
     <div class="t24">

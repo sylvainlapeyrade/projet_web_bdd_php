@@ -1,3 +1,10 @@
+<?php
+/**
+* Page formEvaluation.php
+* Permet d'ajouter une evaluation à la BBD
+*/
+?>
+
 <div id="form-evaluation">
     
     <?php if ( is_connect() ) { ?>
@@ -48,7 +55,7 @@
                       cols="50"
                       rows="5"
                       <?php if ( !isset($note) || empty($note) ) { echo 'disabled'; } ?>
-                      placeholder="Sélectionner une note et tapez votre commentaire ici"
+                      placeholder="Sélectionnez une note et entrez votre commentaire ici"
                       required ><?php if(isset($commentaire)){echo $commentaire;} ?></textarea>
             
             <input class="bouton bouton-forme1 bouton-red1"
