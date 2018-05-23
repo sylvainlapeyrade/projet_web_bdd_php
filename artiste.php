@@ -58,9 +58,9 @@ include_once(dirname(__FILE__).'/head.php');
                             <?php if ( !empty($listeGroupesArtiste) ) {
     
                                     if ( sizeof($listeGroupesArtiste) > 1 ) {
-                                        echo 'Il fait parti des groupes : ';
+                                        echo 'Groupes : ';
                                     } else {
-                                        echo 'Il fait parti du groupe : ';
+                                        echo 'Groupe : ';
                                     }
                                 ?>
                                 <?php foreach($listeGroupesArtiste as $key => $groupe) { ?>
