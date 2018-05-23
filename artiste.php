@@ -106,7 +106,7 @@ include_once(dirname(__FILE__).'/head.php');
             <div>
                 <hr>
                 <div id="liste-musiques" class="text-center">
-                    <h4>Musiques de l'artiste</h4>
+                    <h4>Musiques solo de l'artiste</h4>
                     <table class="text-center">
                         <tr>
                             <th class="table-head width-300">Titre</th>

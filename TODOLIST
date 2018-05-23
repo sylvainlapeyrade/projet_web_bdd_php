@@ -3,8 +3,9 @@ Liste des tâches restantes
 - Réaliser le cahier des charges
 - Réaliser le dossier de conception
 
-- Remplir la base de données de façon conséquente
 
-- Gestion de redirection connexion à améliorer
-- Améliorer les boucles while dans les parties administration
-- Dynamiser tableau (JavaScript - Jquery) [Optionnel]
+- Modifier "Fait partie du groupe": En Groupe:
+- Ajouter des groupes a la BDD
+- Ajouter bouton "Supprimer son compte"
+- Changer "Musiques de l'artiste" en "musique solo de l'artiste"
+
