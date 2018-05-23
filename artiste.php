@@ -92,7 +92,7 @@ include_once(dirname(__FILE__).'/head.php');
                         </table>
                             
                         <?php if ( empty($listeRecompensesArtiste) ) { ?>
-                            <h3>Aucune récompense n'a été renseignée pour cet artiste.</h3>
+                            <h3>Aucune récompense renseignée pour cet artiste.</h3>
                         <?php } ?>
                     </div>
                 </div>
