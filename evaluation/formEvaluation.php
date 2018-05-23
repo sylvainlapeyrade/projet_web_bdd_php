@@ -12,7 +12,7 @@
         <form id="form" method="get">
             
             <div>
-                <p id="stars"> Donnez une note à cette musique :
+                <p id="stars"> Donnez une note :
                     <?php for($i = 1; $i < 6; $i++ ) { ?>
                         <?php if ( isset($idMusique) ) { ?>
                             <a class="<?php if ($note>=$i) echo 'red' ?>" href="?idMusique=<?php echo $idMusique; ?>&star=<?php echo $i ?>#stars">★</a>
