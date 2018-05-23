@@ -141,7 +141,7 @@ include_once(dirname(__FILE__).'/head.php');
                     </table>
                             
                     <?php if ( empty($listeMusiquesArtiste) ) { ?>
-                        <h3>Cet artiste n'a pas de musique.</h3>
+                        <h3>Cet artiste n'a pas de musique solo.</h3>
                     <?php } ?>
                     
                 </div>
