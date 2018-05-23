@@ -40,6 +40,11 @@ include_once(dirname(__FILE__).'/head.php');
                     <li> ROBERT DE ST VINCENT Guillaume : guillaume.robert-de-saint-vincent@univ-tlse3.fr</li>
                     <li> WATHOJE Emmanuel : emmanuel.wathoje@univ-tlse3.fr</li>
                 </ul>
+                
+                <h1 class="red1 t35"> Comment ça marche ? </h1>
+                <p> Si vous ne comprenez pas comment fonctionne notre site, regardez une simple utilisation en <a href="https://www.youtube.com/watch?v=4C64b4QqI_E" target="_blank">cliquant ici</a></p>
+
+
             </div>
         </div>
         
