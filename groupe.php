@@ -22,7 +22,7 @@ if ( isset($db, $idGroupe) ) {
         header('Location: /404.php');
     }
     $listeArtistesGroupe = recuperer_artiste_groupe($db, $idGroupe);
-    $listeMusiquesGroupe = recuperer_musique_groupe($db, $idGroupe);
+    $listeMusiquesGroupe = recuperer_musique_groupe($db, $idGroupe) + recuperer_musique_album_groupe($db, $idGroupe);
 } else {
     header('Location: /404.php');
 }
