@@ -60,7 +60,7 @@ include_once(dirname(__FILE__).'/head.php');
                             <?php if ( sizeof($listeArtistesGroupe) > 1 && sizeof($listeArtistesGroupe)-1 > $key ) { echo '&nbsp-&nbsp'; } ?>
                         <?php } ?>
                     </div>
-                    
+                    <br>
                     <div>
                         <?php if(isset($groupe)){echo $groupe['descriptiongroupe'];} ?>
                     </div>
