@@ -1,0 +1,1061 @@
+
+{Introduction}
+
+	\begin{paragraphe}
+		Ce document aura pour but de décrire les aspects visuels et techniques de notre site. Ainsi, il présentera les différentes intéractions entre les différentes pages que nous avons conceptualisées. Il montrera également sous quelles dispositions pourront être retrouvé les différents éléments de notre site web et les moyens d'y accéder.
+	\end{paragraphe}
+
+\section{Charte graphique}
+
+	\begin{paragraphe}
+		Notre site aura pour charte graphique un fond beige entre deux bandeaux bleu azur. Ces bandeaux, en haut et en bas de notre age comprendront un bouton dirigeant vers l'accueil de notre site, ainsi qu'un bouton de connexion et d'inscription si l'on n'est pas connecté.
+	\end{paragraphe}
+
+	\begin{paragraphe}
+		Une barre de recherche sera également présente en dessous du bandeau du haut sur toutes les pages du site, à part celles de connexion, d'inscription et d'administration. Elle permettra de saisir des recherches d'artiste, d'album, de groupe ou de morceau de musique. Le bandeau du bas comprendra des liens légaux de notre site, ainsi que des coordonnées et liens pour nous contacter.
+	\end{paragraphe}
+
+	\begin{paragraphe}
+		Le style et la taille de la police des caractères normaux seront pour toutes les pages sera \og hurme\_no2-webfont >> et << sans-serif >>, taille par défaut. Les titres seront en gras et auront pour les pages en comportant le style << hurme\_no2-webfont >> et << sans-serif >> et la taille de police 15px.	
+	\end{paragraphe}
+
+	\begin{paragraphe}
+		Voici qules aperçus donnant une idée de la charte graphique.
+	\end{paragraphe}
+
+\newpage
+
+\section{Présentation}
+	\subsection{Disposition 1 (layout)}
+	
+		\begin{paragraphe}
+			Ceci est la première disposition où toutes les pages vont hériter. Ici c'est la disposition où l'utilisateur n'est pas connecté.
+		\end{paragraphe}
+
+		\begin{paragraphe}
+			Si clic sur le bouton << accueil >> \\
+			Alors redirection vers pageAccueil.php
+		\end{paragraphe}
+
+		\begin{paragraphe}
+			Si clic sur le bouton << connexion >> \\
+			Alors redirection vers pageConnexion.php
+		\end{paragraphe}
+		
+		\begin{paragraphe}
+			Si clic sur bouton << inscription >> \\
+			Alors redirection vers pageInscription.php
+		\end{paragraphe}
+
+		\image{0.35}{images/conception/page_type_1}{Mockup - Page disposition 1}
+
+	\subsection{Disposition 2 (layout)}
+	
+		\begin{paragraphe}
+			Ceci est la seconde disposition où toutes les pages vont hériter. Ici c'est la disposition où l'utilisateur normal est connecté.
+		\end{paragraphe}
+
+		\begin{paragraphe}
+			Si clic sur le bouton << accueil >> \\
+			Alors redirection vers pageAccueil.php
+		\end{paragraphe}
+
+		\begin{paragraphe}
+			Si clic sur le bouton << compte >> \\
+			Alors redirection vers pageCompte.php
+		\end{paragraphe}
+		
+		\begin{paragraphe}
+			Si clic sur bouton << déconnexion >> \\
+			Alors on déconnecte l'utilisateur de sa session courante.
+		\end{paragraphe}
+
+		\image{0.35}{images/conception/page_type_2}{Mockup - Page disposition 2}
+
+	\subsection{Disposition 3 (layout)}
+	
+		\begin{paragraphe}
+			Ceci est la troisième disposition où toutes les pages vont hériter. Ici c'est la disposition où l'utilisateur administrateur est connecté.
+		\end{paragraphe}
+
+		\begin{paragraphe}
+			Si clic sur le bouton << accueil >> \\
+			Alors redirection vers pageAccueil.php
+		\end{paragraphe}
+
+		\begin{paragraphe}
+			Si clic sur le bouton << administration >> \\
+			Alors redirection vers pageAdminAccueil.php
+		\end{paragraphe}
+
+		\begin{paragraphe}
+			Si clic sur le bouton << compte >> \\
+			Alors redirection vers pageCompte.php
+		\end{paragraphe}
+		
+		\begin{paragraphe}
+			Si clic sur bouton << déconnexion >> \\
+			Alors on déconnecte l'utilisateur de sa session courante.
+		\end{paragraphe}
+
+		\image{0.35}{images/conception/page_type_3}{Mockup - Page disposition 3}
+
+\newpage
+
+\section{Présentation cahier des charges}
+
+	\begin{paragraphe}
+		\begin{itemize}
+			\item pageAccueil.php : Page d'accueil de notre site web.
+			\item pageRésultatRecherche.php : Page des résultats des recherches entrée dans la barre de recherche par l'utilisateur.
+			\item pageArtisteGroupe.php : Page des informations d'un artiste ou d'un groupe ainsi que les albums et/ou singles du groupe ou de l'artiste.
+			\item pageAlbum.php : Page d'affichage des donénes d'un morceau de musique.
+		\end{itemize}
+	\end{paragraphe}
+
+	\begin{paragraphe}
+		\begin{itemize}
+			\item pageConnexion.php : Permet de se connecter au compte de l'utilisateur.
+			\item pageInscription.php : Permet de créer un compte utilisateur.
+			\item pageCompte.php : Permet d'afficher les informations de l'utilisateur et offre à l'utilisateur la possibilité de modifier son mot de passe.
+		\end{itemize}
+	\end{paragraphe}
+
+	\begin{paragraphe}
+		\begin{itemize}
+			\item adminAccueil.php : Permet de rediriger l'administrateur sur les différents panneaux de gestion de la base de données.
+			\item adminGestionArtiste.php : Permet de gérer les différents artistes, en ajoutant ou en modifiant leurs données. Ainsi que leur attribuer des récompenses.
+			\item adminGestionGroupe.php : Permet de gérer les différents groupes, en ajoutant ou en modifiant leurs données. Ainsi que de relier un ou plusieurs artistes à un groupe.
+			\item adminGestionAlbum.php : Permet de gérer les différents albums, en ajoutant ou en modifiant leurs données. Ainsi que de relier un ou plusieurs artistes à un album.
+			\item adminGestionMusique.php : Permet de gérer les différents morceaux de musique, en ajoutant ou en modifiant leurs données. Ainsi que de relier un ou plusieurs artistes à une musique, relier un ou plusieurs albums à un musique et de relier un ou plusieurs genres à une musique.
+			\item adminFormGenre.php : Permet d'ajouter ou de modifier un genre à un morceau de musique ou un single.
+			\item adminFormRecompense.php : Permet d'ajuter une récompense à un artiste.
+			\item adminGestionUtilisateur.php : Permet à un administrateur préalablement identifié d'ajouter un utilisateur et/ou de changer le statut d'un utilisateur (administrateur ou non).
+		\end{itemize}
+	\end{paragraphe}
+
+\newpage
+
+\section{Définition des pages}
+
+	\subsection{Pages publics}
+		\subsubsection{Page accueil}
+
+			\begin{paragraphe}
+				La barre de recherche se trouve également sur toutes les pages de notre site (sauf les pages pageConnexion.php et pageInscription.php et les pages d'administration) permet de rechercher un artiste, un album, une musique ou un groupe. En entrant la recherche, les résultats seront affichés directement et différents liens seront disponibles, il foudra alors cloquer sur celui qui correspond à notre recherche.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				En cliquant sur le résultat souhaité, l'utilisateur sera redirigé vers la page de l'artiste, du groupe, de l'album ou de la musique recherché où l'on trouvera des informations détaillées. On y trouvera aussi les phos de nouveaux artistes, où l'on pourra accéder à leurs informations en cliquant sur leur photo.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Enfin, on y trouvera les sorties de la semaine où l'on trouvera des albums récents avec photo de la pochette et le nom de l'album ainsi qu'une brève description. Pour accéder à des informations plus détaillées sur l'album, il faudra cliquer sur le cadre correspondant à celui-ci.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Service PHP :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Les services sont ici utilisés pour la recherche (qu'elle soit pour un album, un artiste, un groupe, un genre ou une musique). Lorsqu'un résultat est sélectionné, pour l'afficher il va falloir utiliser les fonctions :
+				\begin{itemize}
+					\item getAlbum(nomAlbum) si un album a été sélectionné.
+					\item getArtiste(nomArtiste) si un artiste a été sélectionné.
+					\item getGroupe(nomGroupe) si un groupe a été sélectionné.
+					\item getMusique(nomMusique) si un musique a été sélectionné.
+				\end{itemize}
+				Les mêmes fonctions seront utilisées lors d'un clic sur la photo d'un nouvel artiste : getArtiste(nomArtiste) et lors d'un clic d'un album sorti cette semaine : getAlbum(nomAlbum).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Conception IHM :}
+			\end{paragraphe}
+
+			\image{0.35}{images/conception/page_accueil}{Mockup - Page accueil}
+
+			\begin{paragraphe}
+				Si une recherche est entrée \\
+				Alors affichage des résultat correspondants sous forme de liens prévisionnels cliquables.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur un résultat \\
+				Alors redirection vers la page de la recherche souhaitée (exemple pageAlbum.php si un album a été sélectionné) en passant en paramètre le nom de l'album.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur une photo d'un nouvel artiste \\
+				Alors redirection vers pageArtiste.php en passant en paramètre le nom de l'artiste.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur une photo d'un album sorti cette semaine \\
+				Alors redirection vers pageAlbum.php en passant en paramètre le nom de l'album.
+			\end{paragraphe}
+
+		\subsubsection{Page résultat recherche}
+
+			\begin{paragraphe}
+				Cette page, fera des requêtes sur la base de données, sur les tables << Artiste >>, << Musique >>, << Groupe>> et << Album >>. en passant en paramètre la chaine de caractère entrée dans la barre de recherche.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Conception IHM :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Les résultats sous forme d'un tableau. Ce tableau contient 3 colonnes :
+				\begin{itemize}
+					\item Nom
+					\item Type
+					\item Date
+				\end{itemize}
+				La colonne << Nom >> contiendra le nom des albums, morceaux de musique, groupes ou artistes correspondants à la recherche entrée.\par
+				La colonne << Type >> indiquera de quel type est la recherche : album, morceau, groupe ou artiste.\par
+				La colonne << Date >> affichera, seon le cas, la date de sortie de la musique ou de l'album, la date de naissance de l'artiste ou la date de formation du groupe.
+			\end{paragraphe}
+
+			\image{0.26}{images/conception/page_resultat_recherche}{Mockup - Page résultat}
+
+			\begin{paragraphe}
+				Chaque résultat de la colonne << Nom >> sera cliquable, et sur clic, dirigera vers la page dédiée au résultat (i.e : la page de l'album, du morceau, du groupe ou de l'artiste correspondant).
+			\end{paragraphe}
+
+		\subsubsection{Page description artiste / groupe}
+
+			\begin{paragraphe}
+				\textbf{Conception IHM :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Initialement :\par
+				On affiche tous les albums et tous les singles de l'artiste.\par
+				Avec la fonction getAlbum(artiste), getSingle(Artiste).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur la pochette d'un album
+				Alors redirection vers la page pageAlbum.php en passant en paramètre le nom de l'album.
+			\end{paragraphe}
+
+			\image{0.3}{images/conception/page_artiste}{Mockup - Page artiste/groupe}
+
+		\subsubsection{Page description album d'un artiste}
+
+			\begin{paragraphe}
+				La page affichera le nom de l'album avec son descriptif, l'image de l'album, la liste des morceaux de musique représentée dans un tableau, les commentaires des utilisateurs et leurs notes associées à l'album. \par
+				Si l'utilisateur non connecté souhaite entrer un commentaire et donner une note à un album ou à un morceau de musique, il faudra qu'il se connecte d'abord. Il y a donc le << connectez-vous >>.
+			\end{paragraphe}
+
+			\image{0.25}{images/conception/page_album_non_connecter}{Mockup - Page album non connecté}
+
+			\begin{paragraphe}
+				Sur cette page, l'utilisateur pourra mettre un commentaire sur cet album dans le cadre consacré au commentaire. Dans ce cadre, il pourra aussi donner une note et cliquer sur le bouton << Evaluer >> afin que soit pris en compte son commentaire.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur sur une des 5 étoiles \\
+				Alors la note est définit par le numéro de l'étoile.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << evaluer >> \\
+				Alors envoi commentaire et la note à la base de données et affichage à l'écran du commentaire et de la note visible par tout utilisateur du site.
+			\end{paragraphe}
+
+			\image{0.25}{images/conception/page_album_connecter}{Mockup - Page album connecté}
+
+	\clearpage
+
+		\subsubsection{Page description morceau de musique}
+
+			\begin{paragraphe}
+				\textbf{Conception IHM :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Les mêmes services et actions sont appliqués à cette page.
+			\end{paragraphe}
+
+			\image{0.23}{images/conception/page_musique_connecter}{Mockup - Page musique connecté}
+
+			\image{0.23}{images/conception/page_musique_non_connecter}{Mockup - Page musique non connecté}
+
+	\clearpage
+
+	\subsection{Pages utilisateurs}
+		\subsubsection{Page de connexion}
+
+			\begin{paragraphe}
+				Cette page est accessible à toute personne non connectée à l'application web.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Service PHP :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Voici la liste des fonctions utilisée pour cette page php intéragissant avec la base de données :
+				\begin{itemize}
+					\item connexionUtilisateur(Utilisateur) : vérifie si un utilisateur correspondant existe dans la base de données.
+				\end{itemize}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Conception IHM :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si l'utilisateur est déjà connecté \\
+				Alors il est redirigé vers la page d'accueil.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si l'utilisateur n'est pas connecté \\
+				Alors initialement la page est constituée d'un simple formulaire non rempli avec deux champs, nom utilisateur et mot de passe, ainsi qu'un bouton pour se connecter.
+			\end{paragraphe}
+
+			\image{0.25}{images/conception/page_connexion}{Mockup - Page connexion}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << connexion >> \\
+				Alors effectue l'action connexionutilisateur(Utilisateur).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si l'action précédente a réussi \\
+				Alors l'utilisateur est ensuite redirigé vers la page principale de l'application web.
+				Sinon l'utilisateur reste sur la page avec un message d'erreur.
+			\end{paragraphe}
+
+		\subsubsection{Page d'inscription}
+
+			\begin{paragraphe}
+				Cette page est accessible à toutes personne non connectées à l'application web.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Service PHP :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Voici la liste des fonctions utilisées pour cette page php interagissant avec la base de données :
+				\begin{itemize}
+					\item ajouterUtilisateur(Utilisateur) : ajoute un utilisateur dans la base de données.
+				\end{itemize}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Conception IHM :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si l'utilisateur est déjà connecté \\
+				Alors il est redirigé vers la page d'accueil.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si l'utilisateur n'est pas connecté \\
+				Alors initialement la page est constituée d'u simple formulaire non rempli avec trois champs de saisi (nom utilisateur, mot de passe et vérification mot de passe), ainsi q'un bouton pour s'inscrire.
+			\end{paragraphe}
+
+			\image{0.3}{images/conception/page_inscription}{Mockup - Page inscription}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << inscription >> \\
+				Alors effectue l'action ajouterUtilisateur(Utilisateur).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si l'action précédente a réussi \\
+				Alors l'utilisateur est ensuite redirigé vers la page de connexion avec le message : (votre compte à bien été enregistré).
+				Sinon l'utilisateur reste sur la page avec un message d'erreur.
+			\end{paragraphe}
+
+		\subsubsection{Page de gestion compte utilisateur}
+
+			\begin{paragraphe}
+				Ce formulaire sera composé de 2 champs :
+				\begin{itemize}
+					\item Un champ pour entrer le nouveau mot de passe du compte.
+					\item Un champ pour confirmer le nouveau mot de passe du compte (et ainsi éviter les maladresses de saisie).
+				\end{itemize}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Après vérification par le biais d'une requête sur la base de données, la page affichera un message indiquant, si toutes les données entrée sont valides, que la modification à bien été effectuée. Ou, si certaines informations sont erronées, la nature de l'erreur et proposera de remplir à nouveau le formulaire avec de bonnes valeurs.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Service PHP :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Les services sont ici utilisés pour la vérification des deux mots de passes saisi.\par
+				Une fois cette vérification établie, la base de données est modifié par la nouvelle valeur correspondant au nom de compte connecté. 
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				On effectue ces vérifications dans la fonction :
+				\begin{itemize}
+					\item modofierMotDePasse(MotDePasse) : Change le mot de passe d'un utilisateur (celui connecté).
+				\end{itemize}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Conception IHM :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Initalement, le formulaire est vide.
+			\end{paragraphe}
+
+			\image{0.3}{images/conception/page_compte}{Page compte}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << Changer de mot de passe >> \\
+				Alors effectue l'action modifierMotDePasse(MotDePasse).
+			\end{paragraphe}
+
+	\clearpage
+
+	\subsection{Pages d'administration}
+		\subsubsection{Page d'administration accueil}
+
+			\begin{paragraphe}
+				\textbf{Service PHP :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Dans cette page, il n'y a pas de service PHP rendu. Il y a seulement des redirections vers d'autres pages.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Conception IHM :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Cette page hérite de la disposition n°3. \par
+				Initialement cette page contient sept boutons :
+				\begin{itemize}
+					\item Gestion artistes.
+					\item Gestion groupes.
+					\item Gestion albums.
+					\item Gestion musiques.
+					\item Gestion utilisateurs.
+					\item Ajouter un nouveau genre.
+					\item Ajouter une nouvelle récompense.
+				\end{itemize}
+			\end{paragraphe}
+
+			\image{0.35}{images/conception/page_admin_index}{Mockup - Page d'administration accueil}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << Gestion artistes >> \\
+				Alors redirection vers la page adminGestionArtiste.php.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << Gestion groupes >> \\
+				Alors redirection vers la page adminGestionGroupe.php.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << Gestion albums >> \\
+				Alors redirection vers la page admingGestionAlbum.php.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << Gestion musiques >> \\
+				Alors redirection vers la page adminGestionMusique.php.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << Gestion utilisateur >> \\
+				Alors redirection vers la page adminGestionutilisateur.php.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << Ajouter un nouveau genre >> \\
+				Alors redirection vers la page adminFormGenre.php.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << Ajouter une nouvelle récompense >> \\
+				Alors redirection vers la page adminFormRecompense.php.
+			\end{paragraphe}
+
+		\subsubsection{Page gestion artiste}
+
+			\begin{paragraphe}
+				Cette page est accesible seulement à un utilisateur disposant du statut d'administrateur.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Service PHP :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Voici la liste des fonctios utilisées pour cette page PHP interagissant avec la base de données :
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\begin{itemize}
+					\item getListeArtiste() : récupère dans la base de données, l'ensemble des artistes inscrit.
+					\item getArtiste(artiste) : récupère l'entrée dans la base de données d'un artiste en particulier.
+				\end{itemize}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\begin{itemize}
+					\item ajouterNouveauArtiste(artiste) : permet d'enregistrer un nouvel << artiste >> dans la base de donnée.
+					\item modifierArtiste(artiste) : permet de mettre à jour une entrée << artiste >> déjà existante dans la base de données.
+					\item suppressionArtiste(artiste) : permet de supprimer un artiste de la base de données.
+					\item ajoutRecmpense(artiste, recompense) : permets d'ajouter une récompense à un artiste. 
+				\end{itemize}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Conception IHM :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Cette page hérite de la disposition n°3. \par
+				Initialement les formulaires de cette page sont vides.\par
+				Le tableau est rempli à l'aide de l'action getListeArtiste().
+			\end{paragraphe}
+
+			\image{0.35}{images/conception/page_admin_artiste}{Mockup - Page gestion artistes}
+
+			\begin{paragraphe}
+				Il y a deux formulaires. Un premier qui permet de modifier les données d'un artiste, et le second pour ajouter des récompenses à l'utilisateur sélectionné.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Premier formulaire :
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le tableau d'artiste, le bouton << selectionner >> \\
+				Alors effectuer l'action getArtiste(artiste).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le tableau d'artiste, le bouton << supprimer >> \\
+				Alors effectue l'action supprimerArtiste(artiste). 
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << Ajouter >> du formualire \\
+				Alors effectue l'action ajouterNouveauArtiste(artiste).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton modifier du formulaire \\
+				Alors effectuer l'action modifierArtiste(artiste).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Le second formulaire :
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si aucun artiste n'est sélectionné \\
+				Alors ce formulaire n'existe pas \\
+				Sinon
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur la << comboBox >> récompense \\
+				Alors une liste déroulante permet de sélectionner les récompenses existantes.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << ajouter récompense >> \\
+				Alors effectuer l'action ajoutRecompense(artiste, recompense).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << ajouter ue nouvelle récompense >> \\
+				Alors on redirige l'administrateur sur la page adminFormRecompense.php
+			\end{paragraphe}
+
+			\begin{paragraphe}
+			\end{paragraphe}
+
+		\subsubsection{Page gestion groupe}
+
+			\begin{paragraphe}
+				Cette page est accessible seulement à un utilisateur disposant du statu administrateur.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Service PHP :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Voici la liste des fonctions utilisées pour cette page PHP interagissant avec la base de données :
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\begin{itemize}
+					\item getListGroupes() : récupère dans la base de données, l'ensemble des groupes inscrit.
+					\item getGroupe(groupe) : recupère l'entrée dans la base de données d'un groupe en particulier. Ainsi que les artistes associés.
+				\end{itemize}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Conception IHM :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Cette page hérite de la disposition n°3.\par
+				Initalement les formulaires de cette page sont vides.
+				Le tableau est rempli à l'aide de l'action getListeGroupes().
+			\end{paragraphe}
+
+			\image{0.3}{images/conception/page_admin_groupe}{Mockup - Page gestion groupe d'artiste}
+
+			\begin{paragraphe}
+				Il y a deux formulaires. Un premier qui permet de modifier les données d'un groupe, et le second pour ajouter des artistes au groupe selectionné.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Premier formulaire :
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le tableau de groupe, le bouton << sélectionner >> \\
+				Alors effectuer l'action getGroupe(groupe).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le tableau de groupe, le bouton << supprimer >> \\
+				Alors effectuer l'action suppressionGroupe(groupe). 
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << Ajouter >> du formulaire \\
+				Alors effectuer l'action ajouterNouveauGroupe(groupe).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic le bouton << Modifier >> du formulaire \\
+				Alors effectuer l'action modifierGroupe(groupe). 
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Le second formulaire :
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si aucun groupe n'est sélectionné \\
+				Alors ce formulaire n'existe pas. \\
+				Sinon
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur la << comboBox >> artites \\
+				Alors une liste déroulante permet de sélectionner les artistes existants.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << ajouter artiste >> \\
+				Alors effectuer l'action ajoutArtisteGroupe(groupe, artiste).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << ajouter un nouvel artiste >>
+				Alors on redirige l'administrateur sur la page adminGestionArtiste.php
+			\end{paragraphe}
+
+		\subsubsection{Page gestion album}
+
+			\begin{paragraphe}
+				Cette page est accessible seulement à un utilisateur disposant du statut administrateur.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Service PHP :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Voici la liste des fonctions utilisées pour cette page PHP interagissant avec la base de données :
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\begin{itemize}
+					\item getListeAlbum() : récupère dans la base de données l'ensemble des albums inscrit.
+					\item getAlbum(groupe) : récupère l'entrée dans la base de données d'un album en particulier. Ainsi que les artiste associés.
+					\item ajouterNouvelAlbum(album) : permet d'enregistrer un nouvel << album >> dans la base de données.
+					\item modifierAlbum(album) : permet de mettre à jour une entrée << album >> déjà existante dans la base de données.
+					\item suppressionAlbum(album) : permet de supprimer un album ainsi que l'association des artiste a l'album.
+					\item ajoutArtisteAlbum(album, artiste) : permet d'ajouter un artiste existant à un album.
+				\end{itemize}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Conception IHM :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Cette page hérite de la disposition n°3. \\
+				Initialement les formulaires de cette page sont vides. \\
+				Le tableau est rempli à l'aide de l'action getListeAlbum().
+			\end{paragraphe}
+
+			\image{0.3}{images/conception/page_admin_album}{Mockup - Page gestion album}
+
+			\begin{paragraphe}
+				Il y a deux formulaires. Un premier qui permet de modifier les données d'un album, et le second pour ajouter des artistes a l'album selectionné.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Premier formulaire :
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le tableau d'album, le bouton << sélectionner >> \\
+				Alors effectuer l'action getAlbum(album).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur la tableau d'album, le bouton << supprimer >> \\
+				Alors effectuer l'action suppressionAlbum(album).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << Ajouter >> du formulaire \\
+				Alors effectuer l'action ajouterNouvelAlbum(album).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << Modifier >> du formulaire \\
+				Alors effectuer l'action modifierAlbum(album).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Le second formulaire :
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si aucun album n'est sélectionné \\
+				Alors ce formulaire n'existe pas. \\
+				Sinon
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur la << comboBox >> artistes \\
+				Alors une liste déroulante permet de sélectionner les artistes existants.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << ajouter artiste >> \\
+				Alors effectuer l'action ajoutArtisteAlbum(album, artiste).
+			\end{paragraphe}
+
+		\subsubsection{Page gestion musique}
+
+			\begin{paragraphe}
+				Cette page est accessible seulement à un utilisateur disposant du statut administrateur.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Service PHP :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Voici la liste des fonctions utilisées pour cette page PHP interagissant avec la base de données :
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\begin{itemize}
+					\item getListeMusique() : récupère dans la base de données, l'ensemble des musiques inscrit.
+					\item getMusique(musique) : récupère l'entrée dans la base de données d'une musique en particulier. Ainsi qu les artistes associés, les albums associés et les genres associés.
+					\item ajouterNouvelleMusique(musique) : permet d'enregistrer une nouvelle << musique >> dans la base de données.
+					\item modifierMusique(musique) : permet de mettre à jour une entrée << musique >> déjà existante dans la base de données.
+					\item suppressionMusique(musique) : permet de supprimer une musique ainsi que l'association des artistes à la musique, l'album à la musique et l'association entre les genre et les musiques.
+					\item ajoutArtisteMusique(musique, artiste) : permet d'ajouter un artiste existant, à une musique.
+					\item ajoutAlbumMusique(musique, album) : permet d'ajouter un album existant, à une musique.
+					\item ajoutAGenreMusique(musique, genre) : permet d'ajouter un genre existant, à une musique.
+				\end{itemize}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Conception IHM :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Cette page hérite de la disposition n°3. \par
+				Initialement les formulaires de cette page sont vides. \par
+				Le tableau est rempli à l'aide de l'action getListeAlbum().
+			\end{paragraphe}
+
+			\image{0.35}{images/conception/page_admin_musique}{Mockup - Page gestion musique}
+
+			\begin{paragraphe}
+				Il y a quatre formulaires. Un premier qui permet de modifier les données d'un morceau de musique, le second pour ajouter des artistes à une msuique sélectionnée, un troisième pour ajouter la musique à un ou plusieurs albums. Le quatrième formulaire permet d'associé un ou plusieurs genres au morceau de musique. 
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Premier formualire :
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le tableau de musique, le bouton << sélecitionner >> \\
+				Alors effectuer l'action getMusique(musique).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le tableau de musique, le bouton << supprimer >> \\
+				Alors effectuer l'action suppressionMusique(musique).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << Ajouter >> du formulaire \\
+				Alors effectuer l'action ajouterNouvelleMusique(musique).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << Modifier >> du formulaire \\
+				Alors effectuer l'action modifierMusique(musique).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Le second formulaire :
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si aucune musique n'est sélectionnée \\
+				Alors ce formulaire n'existe pas. \\
+				Sinon
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur la << comboBox >> artiste \\
+				Alors une liste déroulante permet de sélectionner les artistes existants.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << ajouter artiste >> \\
+				Alors effectuer l'action ajoutArtisteMusique(musique, artiste).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << ajouter un nouvel artiste >> \\
+				Alors redirige l'utilisateur vers la page adminGestionArtiste.php.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Le troisième formulaire :
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si aucune musique n'est sélectionnée \\
+				Alors ce formulaire n'existe pas. \\
+				Sinon
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur la << comboBox >> album \\
+				Alors effectuer l'action ajoutAlbumMusique(musique, album).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << ajouter album >> \\
+				Alors effectuer l'acion ajoutAlbumMusique(musique, album).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << ajouter un nouvel album >> \\
+				Alors redirige l'utilisateur vers la page adminGestionAlbum.php
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Le quatrième formulaire :
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si aucune musique n'est sélectionnée \\
+				Alors ce formulaire n'existe pas. \\
+				Sinon
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur la << comboBox >> genre \\
+				Alors une liste déroulante permet de sélectionner les genres existants.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << ajouter genre >> \\
+				Alors effetuer l'action ajoutGenreMusique(musique, genre).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << créer un nouveau genre >> \\
+				Alors redirige l'utilisateur vers la page adminFormAlbum.php
+			\end{paragraphe}
+
+	\clearpage
+
+		\subsubsection{Page formulaire genre}
+
+			\begin{paragraphe}
+				Cette page est accessible seulement à un utilisateur disposant du statut administrateur.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Service PHP :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Voici la liste des fonctions utilisées pour cette page PHP interagissant avec la base de données :
+				\begin{itemize}
+					\item getGenre(musique, genre) : récupère le genre d'une musique en particulier.
+					\item ajouterGenre(musique, genre) : ajout un genre à un morceau de musique.
+					\item modifierGenre(musique, genre) : modifier un genre d'un morceau de musique.
+				\end{itemize}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Conception IHM :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Soit :
+				\begin{itemize}
+					\item La page reçoit en paramètre un identifiant d'un morceau << morceau de musique >> (seulement) et auquel cas il s'agit de créer un nouveau << genre >> pour une musique.
+					\item La page reçoit en paramètre un identifiant d'un << morceau de musique >> ainsi qu'un identifiant d'un << genre >> auquel cas il s'agit d'une modification de << genre >>.
+					\item la page reçoit aucun paramètre. Il s'agit d'une erreur, on retourne à la page précédente.
+				\end{itemize}
+			\end{paragraphe}
+
+			\image{0.3}{images/conception/page_admin_genre}{Mockup - Page formulaire genre}
+
+			\begin{paragraphe}
+				Si on est dans le premier cas \\
+				Alors on laisse le formulaire vide.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Sinon Si on est dans le second cas \\
+				Alors on récupère les données du formulaire à l'aide des identifiants (musique et genre) récupérés par la page et on effectue l'action getGenre(musique, genre).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << Ajouter >> \\
+				Alors effectuer l'action ajouterGenre(musique, genre), redirige ensuite l'utilisateur vers la page de musique précédente.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << Modifier >> \\
+				Alors effectuer l'action modifierGenre(musique, genre), redirige ensuite l'utilisateur vers la page de musique précédente.
+			\end{paragraphe}
+
+	\clearpage
+
+		\subsubsection{Page formulaire récompense}
+
+			\begin{paragraphe}
+				Cette page est accessible seulement à un utilisateur disposant du statut administrateur.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Service PHP :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Voici la liste des fonctions utilisées pour cette page PHP interagissant avec la base de données :
+				\begin{itemize}
+					\item getRecompense(artiste, recompense) : récupère toutes les informations d'une récompense paricuilère d'un artiste.
+					\item ajouterRecompense(artiste, recompense) : ajoute une récompense à un artiste en particulier.
+					\item modifierRecompense(artiste, recompense) : modifier une récompense à un artiste en particulier.
+				\end{itemize}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Conception IHM :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Soit :
+				\begin{itemize}
+					\item La page reçoit en paramètre un identifiant d'un << artiste >> (seulement), auquel cas il s'agit de créer une nouvelle << récompense >> pour l'artiste.
+					\item La page reçoit en paramètre un identifiant d'un << artiste >> ainsi qu'un identifiant d'une << récompense >>, auquel cas il s'agit d'une modification d'une << récompense >>.
+					\item La page ne reçoit aucun paramètre. Il s'agit d'une erreur, on retourne à la page précédente.
+				\end{itemize}
+			\end{paragraphe}
+
+			\image{0.3}{images/conception/page_admin_recompense}{Mockup - Page formulaire récompense}
+
+			\begin{paragraphe}
+				Si on est dans le premier cas \\
+				Alors formulaire reste vide.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si on est dans le second cas \\
+				Alors effectuer l'action getRecompense(artiste, recompense) à l'aide des deux identifiants passé en paramètre.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic le bouton << Ajouter >> \\
+				Alors effectuer l'action ajouterRecompense(artiste, recompense), redirige ensuite l'utilisateur vers la page de l'artiste précédent.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << Modifier >> \\
+				Alors effectuer l'action modifierRecompense(artiste, musique), redirige ensuite l'utilisateur vers la page de l'artiste précédent.
+			\end{paragraphe}
+
+		\subsubsection{Page gestion compte utilisateur}
+
+			\begin{paragraphe}
+				Cette page est accessible seulement à un utilisateur disposant du statut administrateur.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Service PHP :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Voici la liste des fonctions utilisées pour cette page PHP interagissant avec la base de données :
+				\begin{itemize}
+					\item ajouterUtilisateur() : ajoute un utilisateur à la base de données.
+					\item getListeUtilisateur() : récupère dans la base de données, l'ensemble des utilisateur inscrit.
+					\item getStatutUtilisateur() : récupère le statut d'un utilisateur.
+					\item changerStatutUtilisateur() : Modifie le statut d'un utilisateur.
+					\item afficherListeUtilisateur() : Affiche sous forme d'un tableau la liste des utilisateurs.
+				\end{itemize}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				\textbf{Conception IHM :}
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				La page de gestion des comptes utilisateurs récupère la liste de tous les utilisateurs déjà enregistrés dans la base de données, en affichant le nm de l'utilisateur et son statut (administrateur ou utilisateur normal).
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Il y aura un bouton permettant de changer le statut de l'utilisateur << Administrateur >> vers << Utilisateur normal >> et inversement << Utilisateur normal >> vers << Administrateur >>. Le tableau << Liste des utilisateurs >> est rempli par la fonction getListeUtilisateur().
+			\end{paragraphe}
+
+			\image{0.35}{images/conception/page_admin_compte}{Mockup - Page gestion compte utilisateur}
+
+			\begin{paragraphe}
+				La page a été découpée en deux :
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << Ajouter >> \\
+				Alors effectuer l'action ajouterUtilisateur() si les paramètres entrée dans le formulaire sont valides, recherge ensuite la page après avoir indiqué que l'utilisateur a bien été ajouté. \\
+				Sinon signal que les paramètres entrés sont invalides.
+			\end{paragraphe}
+
+			\begin{paragraphe}
+				Si clic sur le bouton << Changer Statut >> \\
+				Alors effectuer l'action changerStatutUtilisateur() si les paramètres entrés dans le formulaire sont valide, recherge ensuite la page après avoir indiqué que le statut a bien été changé.
+			\end{paragraphe}
+
