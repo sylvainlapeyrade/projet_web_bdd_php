@@ -11,6 +11,8 @@
 % ---- Police de caractères ---- %
 \usepackage{lmodern}
 
+\usepackage{here}
+
 % ---- MISE EN PAGE ---- %
 \usepackage[a4paper]{geometry}
 \geometry{vmargin={2.2cm,2.2cm}}
@@ -55,7 +57,7 @@
 
 % ---- MACROS ---- %
 \newenvironment{paragraphe}{ \noindent\color{black} }{ \normalcolor\vspace{1em} }
-\newcommand{\image}[3]{\begin{figure}[ht]\begin{center}\includegraphics[scale=#1]{images/#2}\caption{#3}\end{center}\end{figure} }
+\newcommand{\image}[3]{\begin{figure}[!h]\begin{center}\includegraphics[scale=#1]{images/#2}\caption{#3}\end{center}\end{figure} }
 
 % ---- DESCRIPTION ---- %
 
