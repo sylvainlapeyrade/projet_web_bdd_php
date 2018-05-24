@@ -1,0 +1,43 @@
+\hypertarget{recherche_8php}{}\section{Référence du fichier recherche.\+php}
+\label{recherche_8php}\index{recherche.\+php@{recherche.\+php}}
+
+
+Effectue un lien entre la barre de recherche et la B\+DD pour afficher les résultats de recherches sur le site.  
+
+
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{recherche_8php_a024f87f9bf4f3b33710e2e7ff8f60823}\label{recherche_8php_a024f87f9bf4f3b33710e2e7ff8f60823}} 
+{\bfseries \$info} \mbox{[}\textquotesingle{}head\textquotesingle{}\mbox{]}\mbox{[}\textquotesingle{}sub\+Title\textquotesingle{}\mbox{]} = \char`\"{}Resultat de recherche\char`\"{}
+\item 
+\mbox{\Hypertarget{recherche_8php_af6044c8bf78ebc8c58057e14d7738bbd}\label{recherche_8php_af6044c8bf78ebc8c58057e14d7738bbd}} 
+{\bfseries \$info} \mbox{[}\textquotesingle{}head\textquotesingle{}\mbox{]}\mbox{[}\textquotesingle{}stylesheets\textquotesingle{}\mbox{]} = \mbox{[}\textquotesingle{}barre\+Recherche.\+css\textquotesingle{}, \textquotesingle{}recherche.\+css\textquotesingle{}\mbox{]}
+\item 
+\mbox{\Hypertarget{recherche_8php_abf987b642f3fa7f12bf8fcbcbbd43d99}\label{recherche_8php_abf987b642f3fa7f12bf8fcbcbbd43d99}} 
+{\bfseries \$recherche} = strtolower(\$\+\_\+\+G\+ET\mbox{[}\textquotesingle{}recherche\textquotesingle{}\mbox{]})
+\item 
+if(isset(\$db, \$recherche)) {\bfseries else}
+\item 
+\mbox{\Hypertarget{recherche_8php_a5f354a5d808c208f9c63f0dc363f535a}\label{recherche_8php_a5f354a5d808c208f9c63f0dc363f535a}} 
+if(!empty(\$liste\+Artistes\+Recherche)) if(!empty(\$liste\+Groupes\+Recherche)) if(!empty(\$liste\+Albums\+Recherche)) if(!empty(\$liste\+Musiques\+Recherche)) {\bfseries if} (empty( \$liste\+Artistes\+Recherche) \&\&empty( \$liste\+Groupes\+Recherche) \&\&empty( \$liste\+Albums\+Recherche) \&\&empty( \$liste\+Musiques\+Recherche))
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Effectue un lien entre la barre de recherche et la B\+DD pour afficher les résultats de recherches sur le site. 
+
+
+
+\subsection{Documentation des variables}
+\mbox{\Hypertarget{recherche_8php_aae62501ff78988f2486e1c1ba9157b61}\label{recherche_8php_aae62501ff78988f2486e1c1ba9157b61}} 
+\index{recherche.\+php@{recherche.\+php}!else@{else}}
+\index{else@{else}!recherche.\+php@{recherche.\+php}}
+\subsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily if (isset( \$db, \$recherche)) else}
+
+{\bfseries Valeur initiale \+:}
+\begin{DoxyCode}
+\{
+    header(\textcolor{stringliteral}{'Location: /404.php'})
+\end{DoxyCode}

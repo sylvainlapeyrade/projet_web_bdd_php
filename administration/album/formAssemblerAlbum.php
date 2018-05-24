@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page formAssemblerAlbum.php
- * Permet d'ajouter une association entre album et musique à la BBD
+ * @file formAssemblerAlbum.php
+ * @brief Permet d'ajouter une association entre album et musique à la BBD
  */
 
 session_start();

@@ -1,8 +1,10 @@
 <?php
+
 /**
- * Page headerCompte.php
- * Inclut des messages pour la partie compte
+ * @file compte/headerCompte.php
+ * @bref Inclut des messages pour la partie compte
  */
+
 ?>
 
 <div>

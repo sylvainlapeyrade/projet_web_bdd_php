@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page formUtilisateur.php
- * Permet d'ajouter un utilisateur à la BBD
+ * @file formUtilisateur.php
+ * @brief Permet d'ajouter un utilisateur à la BBD
  */
 
 session_start();

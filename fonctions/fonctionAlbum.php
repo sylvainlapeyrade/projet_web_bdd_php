@@ -1,11 +1,12 @@
 <?php
+
 /**
- * FICHIER : FUNCTIONS -> fonctionAlbum.php
- * Fichier des fonctions de gestion d'album.
+ * @file fonctions/fonctionAlbum.php
+ * @brief Fichier des fonctions de gestion d'album.
  */
 
 /**
- * Recupere les artistes d'un album
+ * @brief Recupere les artistes d'un album
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idAlbum Int Identifiant album dans Assembler_Album
  * @return array Association des albums et de leur compositeur artistes
@@ -19,7 +20,7 @@ function recuperer_artiste_album($db, $idAlbum) {
 }
 
 /**
- * Recupere les groupes d'un album
+ * @brief Recupere les groupes d'un album
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idAlbum Int Identifiant album dans Assembler_Album
  * @return array Association des albums et de leur compositeur groupe
@@ -33,7 +34,7 @@ function recuperer_groupe_album($db, $idAlbum) {
 }
 
 /**
- * Recupere les artiste d'un album
+ * @brief Recupere les artiste d'un album
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idAlbum Int Identifiant album dans Assembler_Album
  * @return array Association des albums et de leur compositeur
@@ -47,8 +48,7 @@ function recuperer_musique_album($db, $idAlbum) {
 }
 
 /**
- * Récupère tout les albums de la BDD en les
- * triant par ordre alphabétique de leur noms
+ * @brief Récupère tout les albums de la BDD en les triant par ordre alphabétique de leur noms
  * @param $db PDO Instance PDO de connexion à la BDD
  * @return array Les albums de la base de données
  */
@@ -60,8 +60,7 @@ function recuperer_album_tous($db) {
 }
 
 /**
- * Récupère un album de la base de données
- * spécifié par l'identifiant 'idAlbum'.
+ * @brief Récupère un album de la base de données spécifié par l'identifiant 'idAlbum'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idAlbum int Identifiant utilisateur
  * @return array L'utilisateur correspondant a l'id
@@ -75,8 +74,7 @@ function recuperer_album($db, $idAlbum) {
 }
 
 /**
- * Ajoute un nouvel utilisateur dans la BDD
- * avec un id, un mdp et un statut
+ * @brief Ajoute un nouvel utilisateur dans la BD avec un id, un mdp et un statut
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $nomAlbum String Nom de l'album
  * @param $dateAlbum String Date de sortie de l'album
@@ -100,7 +98,7 @@ function ajouter_album($db, $nomAlbum, $dateAlbum, $descriptionAlbum, $urlPochet
 }
 
 /**
- * Modifie un album dans la BDD.
+ * @brief Modifie un album dans la BDD.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idAlbum Int Identifiant de l'album
  * @param $nomAlbum String Nom de l'album
@@ -121,8 +119,7 @@ function modifier_album($db, $idAlbum, $nomAlbum, $dateAlbum, $descriptionAlbum,
 }
 
 /**
- * Supprime un album de la BDD
- * spécifié par l'identifiant 'idAlbum'.
+ * @brief Supprime un album de la BDD spécifié par l'identifiant 'idAlbum'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idAlbum Int Identifiant de l'album
  * @return True si l'opération de suppression s'est bien exécutée | False Sinon.
@@ -135,7 +132,7 @@ function supprimer_album($db, $idAlbum) {
 }
 
 /**
- * Récupère les associations d'album et leur compositeur
+ * @brief Récupère les associations d'album et leur compositeur
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idAlbumCoAl Int Identifiant album dans Composer_album
  * @return array Association des albums et de leur compositeur
@@ -149,7 +146,7 @@ function recuperer_composer_album($db, $idAlbumCoAl) {
 }
 
 /**
- * Ajoute une association entre un album et son compositeur
+ * @brief Ajoute une association entre un album et son compositeur
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idAlbumCoAl Int Identifiant album dans Composer_album
  * @param $idArtisteCoAl Int Identifiant artiste dans Composer_album
@@ -164,8 +161,7 @@ function ajouter_composer_album($db, $idAlbumCoAl, $idArtisteCoAl) {
 }
 
 /**
- * Supprime toutes les associations de la table Composer_Album
- * spécifiées par l'identifiant 'idAlbumCoAl'.
+ * @brief Supprime toutes les associations de la table Composer_Album spécifiées par l'identifiant 'idAlbumCoAl'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idAlbumCoAl Int Identifiant album dans Composer_Album
  * @return True si la requête s'est bien exécutée | False sinon
@@ -178,7 +174,7 @@ function supprimer_composer_album_tous($db, $idAlbumCoAl) {
 }
 
 /**
- * Récupère les associations d'album et leur groupe
+ * @brief Récupère les associations d'album et leur groupe
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idAlbumCoAr Int Identifiant album dans Composer_AlbumGr
  * @return array Association des albums et de leur groupe
@@ -192,7 +188,7 @@ function recuperer_composer_albumGr($db, $idAlbumCoAr) {
 }
 
 /**
- * Ajoute une association entre un album et son groupe
+ * @brief Ajoute une association entre un album et son groupe
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idAlbumCoAr Int Identifiant album dans Composer_AlbumGr
  * @param $idGroupeCoAr Int Identifiant groupe dans Composer_AlbumGr
@@ -207,8 +203,7 @@ function ajouter_composer_albumGr($db, $idAlbumCoAr, $idGroupeCoAr) {
 }
 
 /**
- * Supprime toutes les associations de la table Composer_AlbumGr
- * spécifiées par l'identifiant 'idAlbumCoAr'.
+ * @brief Supprime toutes les associations de la table Composer_AlbumGr spécifiées par l'identifiant 'idAlbumCoAr'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idAlbumCoAr Int Identifiant album dans Composer_AlbumGr
  * @return True si la requête s'est bien exécutée | False sinon
@@ -221,7 +216,7 @@ function supprimer_composer_albumGr_tous($db, $idAlbumCoAr) {
 }
 
 /**
- * Récupère une associations de musiques et album
+ * @brief Récupère une associations de musiques et album
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idAlbumAa Int Identifiant album dans Assembler_Album
  * @param $idMusiqueAa Int Identifiant musique dans Assembler_Album
@@ -237,7 +232,7 @@ function recuperer_assembler_album($db, $idAlbumAa, $idMusiqueAa) {
 }
 
 /**
- * Ajoute une association entre une musique et un album
+ * @brief Ajoute une association entre une musique et un album
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusiqueAa Int Identifiant musique dans Assembler_Album
  * @param $idAlbumAa Int Identifiant album dans Assembler_Album
@@ -254,7 +249,7 @@ function ajouter_assembler_album($db, $idAlbumAa, $idMusiqueAa, $numeroPiste) {
 }
 
 /**
- * Modifie une association entre une musique et un album
+ * @brief Modifie une association entre une musique et un album
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusiqueAa Int Identifiant musique dans Assembler_Album
  * @param $idAlbumAa Int Identifiant album dans Assembler_Album
@@ -271,7 +266,7 @@ function modifier_assembler_album($db, $idAlbumAa, $idMusiqueAa, $numeroPiste) {
 }
 
 /**
- * Supprime toutes les associations de la table Assembler_Album
+ * @brief Supprime toutes les associations de la table Assembler_Album
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusiqueAa Int Identifiant musique dans Assembler_Album
  * @param $idAlbumAa Int Identifiant album dans Assembler_Album
@@ -286,8 +281,7 @@ function supprimer_assembler_album($db, $idAlbumAa, $idMusiqueAa) {
 }
 
 /**
- * Supprime toutes les associations de la table Assembler_Album
- * spécifié par l'identifiant 'idAlbumAa'.
+ * @brief Supprime toutes les associations de la table Assembler_Album spécifié par l'identifiant 'idAlbumAa'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idAlbumAa Int Identifiant album dans Assembler_Album
  * @return True si la requête s'est bien exécutée | False sinon

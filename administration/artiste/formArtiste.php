@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page formArtiste.php
- * Permet d'ajouter un artiste à la BBD
+ * @file formArtiste.php
+ * @brief Permet d'ajouter un artiste à la BBD
  */
 
 session_start();

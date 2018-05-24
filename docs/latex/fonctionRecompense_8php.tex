@@ -1,0 +1,204 @@
+\hypertarget{fonctionRecompense_8php}{}\section{Référence du fichier fonctions/fonction\+Recompense.php}
+\label{fonctionRecompense_8php}\index{fonctions/fonction\+Recompense.\+php@{fonctions/fonction\+Recompense.\+php}}
+
+
+Fichier des fonctions de gestion des récompenses.  
+
+
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{fonctionRecompense_8php_a6c6e61a81a44c39645205f2699c030c2}{recuperer\+\_\+recompense\+\_\+tous} (\$db)
+\begin{DoxyCompactList}\small\item\em Récupère toutes les récompenses de la B\+DD en les triant par ordre alphabétique par leur nom. \end{DoxyCompactList}\item 
+\hyperlink{fonctionRecompense_8php_aa58dea1ab39ee8897ef07d8ee8d9771c}{recupere\+\_\+recompense} (\$db, \$id\+Recompense)
+\begin{DoxyCompactList}\small\item\em Récupère une récompense de la B\+DD spécifier par l\textquotesingle{}identifiant \textquotesingle{}id\+Recompense\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{fonctionRecompense_8php_adf758bb280917409577ecdee329926dc}{ajouter\+\_\+recompense} (\$db, \$nom\+Recompense, \$date\+Recompense, \$description\+Recompense)
+\begin{DoxyCompactList}\small\item\em Ajoute une nouvelle récompense à la B\+DD avec un nom, une date d\textquotesingle{}attribution, et une description de la récompense. \end{DoxyCompactList}\item 
+\hyperlink{fonctionRecompense_8php_a9ae2d354d32f27b9f774b95d97e5564e}{modifier\+\_\+recompense} (\$db, \$id\+Recompense, \$nom\+Recompense, \$date\+Recompense, \$description\+Recompense)
+\begin{DoxyCompactList}\small\item\em Modifie une récompense existante dans la B\+DD avec un nom, une date d\textquotesingle{}attribution, et une description de la récompense. \end{DoxyCompactList}\item 
+\hyperlink{fonctionRecompense_8php_a270bb87b64f754522b50f646626646f8}{supprimer\+\_\+recompense} (\$db, \$id\+Recompense)
+\begin{DoxyCompactList}\small\item\em Supprime une récompense de la B\+DD spécifier par l\textquotesingle{}identifiant \textquotesingle{}id\+Recompense\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{fonctionRecompense_8php_acb5a37e96fc52d069192a568ae4eefd9}{recuperer\+\_\+obtenir\+\_\+recompense} (\$db, \$id\+Recompense\+Oa)
+\begin{DoxyCompactList}\small\item\em Récupère les associations d\textquotesingle{}artistes et d\textquotesingle{}une récompense. \end{DoxyCompactList}\item 
+\hyperlink{fonctionRecompense_8php_a030fb46b402a99682a4850a53c8674f0}{ajouter\+\_\+obtenir\+\_\+recompense} (\$db, \$id\+Recompense\+Oa, \$id\+Artiste\+Oa)
+\begin{DoxyCompactList}\small\item\em Ajoute une association entre un artiste et une récompense. \end{DoxyCompactList}\item 
+\hyperlink{fonctionRecompense_8php_a16ae3dcef74e4658db290ad2c4c53eed}{supprimer\+\_\+obtenir\+\_\+recompense\+\_\+tous} (\$db, \$id\+Recompense\+Oa)
+\begin{DoxyCompactList}\small\item\em Supprime tous les artistes associées à une récompense spécifié par l\textquotesingle{}identifiant \char`\"{}id\+Recompense\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Fichier des fonctions de gestion des récompenses. 
+
+
+
+\subsection{Documentation des fonctions}
+\mbox{\Hypertarget{fonctionRecompense_8php_a030fb46b402a99682a4850a53c8674f0}\label{fonctionRecompense_8php_a030fb46b402a99682a4850a53c8674f0}} 
+\index{fonction\+Recompense.\+php@{fonction\+Recompense.\+php}!ajouter\+\_\+obtenir\+\_\+recompense@{ajouter\+\_\+obtenir\+\_\+recompense}}
+\index{ajouter\+\_\+obtenir\+\_\+recompense@{ajouter\+\_\+obtenir\+\_\+recompense}!fonction\+Recompense.\+php@{fonction\+Recompense.\+php}}
+\subsubsection{\texorpdfstring{ajouter\+\_\+obtenir\+\_\+recompense()}{ajouter\_obtenir\_recompense()}}
+{\footnotesize\ttfamily ajouter\+\_\+obtenir\+\_\+recompense (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Recompense\+Oa,  }\item[{}]{\$id\+Artiste\+Oa }\end{DoxyParamCaption})}
+
+
+
+Ajoute une association entre un artiste et une récompense. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Recompense\+Oa} & Int Identifiant de la récompense dans Obtenir\+\_\+\+Artiste \\
+\hline
+{\em \$id\+Artiste\+Oa} & Int Identifiant artiste dans Obtenir\+\_\+\+Artiste \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionRecompense_8php_adf758bb280917409577ecdee329926dc}\label{fonctionRecompense_8php_adf758bb280917409577ecdee329926dc}} 
+\index{fonction\+Recompense.\+php@{fonction\+Recompense.\+php}!ajouter\+\_\+recompense@{ajouter\+\_\+recompense}}
+\index{ajouter\+\_\+recompense@{ajouter\+\_\+recompense}!fonction\+Recompense.\+php@{fonction\+Recompense.\+php}}
+\subsubsection{\texorpdfstring{ajouter\+\_\+recompense()}{ajouter\_recompense()}}
+{\footnotesize\ttfamily ajouter\+\_\+recompense (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$nom\+Recompense,  }\item[{}]{\$date\+Recompense,  }\item[{}]{\$description\+Recompense }\end{DoxyParamCaption})}
+
+
+
+Ajoute une nouvelle récompense à la B\+DD avec un nom, une date d\textquotesingle{}attribution, et une description de la récompense. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$nom\+Recompense} & String Nom de la récompense \\
+\hline
+{\em \$date\+Recompense} & String Date d\textquotesingle{}attribution de la récompense \\
+\hline
+{\em \$description\+Recompense} & String Description de la récompense \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Int id\+Recompense si la requête s\textquotesingle{}est bien exécutée $\vert$ Null Sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionRecompense_8php_a9ae2d354d32f27b9f774b95d97e5564e}\label{fonctionRecompense_8php_a9ae2d354d32f27b9f774b95d97e5564e}} 
+\index{fonction\+Recompense.\+php@{fonction\+Recompense.\+php}!modifier\+\_\+recompense@{modifier\+\_\+recompense}}
+\index{modifier\+\_\+recompense@{modifier\+\_\+recompense}!fonction\+Recompense.\+php@{fonction\+Recompense.\+php}}
+\subsubsection{\texorpdfstring{modifier\+\_\+recompense()}{modifier\_recompense()}}
+{\footnotesize\ttfamily modifier\+\_\+recompense (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Recompense,  }\item[{}]{\$nom\+Recompense,  }\item[{}]{\$date\+Recompense,  }\item[{}]{\$description\+Recompense }\end{DoxyParamCaption})}
+
+
+
+Modifie une récompense existante dans la B\+DD avec un nom, une date d\textquotesingle{}attribution, et une description de la récompense. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Recompense} & Int Identifiant de la récompense \\
+\hline
+{\em \$nom\+Recompense} & String Nom de la récompense \\
+\hline
+{\em \$date\+Recompense} & String Date d\textquotesingle{}attribution de la récompense \\
+\hline
+{\em \$description\+Recompense} & String Description de la récompense \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False Sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionRecompense_8php_aa58dea1ab39ee8897ef07d8ee8d9771c}\label{fonctionRecompense_8php_aa58dea1ab39ee8897ef07d8ee8d9771c}} 
+\index{fonction\+Recompense.\+php@{fonction\+Recompense.\+php}!recupere\+\_\+recompense@{recupere\+\_\+recompense}}
+\index{recupere\+\_\+recompense@{recupere\+\_\+recompense}!fonction\+Recompense.\+php@{fonction\+Recompense.\+php}}
+\subsubsection{\texorpdfstring{recupere\+\_\+recompense()}{recupere\_recompense()}}
+{\footnotesize\ttfamily recupere\+\_\+recompense (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Recompense }\end{DoxyParamCaption})}
+
+
+
+Récupère une récompense de la B\+DD spécifier par l\textquotesingle{}identifiant \textquotesingle{}id\+Recompense\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Recompense} & Int Identifiant de la récompense \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array La récompense correspondant à l\textquotesingle{}id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionRecompense_8php_acb5a37e96fc52d069192a568ae4eefd9}\label{fonctionRecompense_8php_acb5a37e96fc52d069192a568ae4eefd9}} 
+\index{fonction\+Recompense.\+php@{fonction\+Recompense.\+php}!recuperer\+\_\+obtenir\+\_\+recompense@{recuperer\+\_\+obtenir\+\_\+recompense}}
+\index{recuperer\+\_\+obtenir\+\_\+recompense@{recuperer\+\_\+obtenir\+\_\+recompense}!fonction\+Recompense.\+php@{fonction\+Recompense.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+obtenir\+\_\+recompense()}{recuperer\_obtenir\_recompense()}}
+{\footnotesize\ttfamily recuperer\+\_\+obtenir\+\_\+recompense (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Recompense\+Oa }\end{DoxyParamCaption})}
+
+
+
+Récupère les associations d\textquotesingle{}artistes et d\textquotesingle{}une récompense. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Recompense\+Oa} & Int Identifiant de la récompense dans Obtenir\+\_\+\+Artiste \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Association d\textquotesingle{}artistes et d\textquotesingle{}une récompense 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionRecompense_8php_a6c6e61a81a44c39645205f2699c030c2}\label{fonctionRecompense_8php_a6c6e61a81a44c39645205f2699c030c2}} 
+\index{fonction\+Recompense.\+php@{fonction\+Recompense.\+php}!recuperer\+\_\+recompense\+\_\+tous@{recuperer\+\_\+recompense\+\_\+tous}}
+\index{recuperer\+\_\+recompense\+\_\+tous@{recuperer\+\_\+recompense\+\_\+tous}!fonction\+Recompense.\+php@{fonction\+Recompense.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+recompense\+\_\+tous()}{recuperer\_recompense\_tous()}}
+{\footnotesize\ttfamily recuperer\+\_\+recompense\+\_\+tous (\begin{DoxyParamCaption}\item[{}]{\$db }\end{DoxyParamCaption})}
+
+
+
+Récupère toutes les récompenses de la B\+DD en les triant par ordre alphabétique par leur nom. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Toutes les récompenses dans la B\+DD. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionRecompense_8php_a16ae3dcef74e4658db290ad2c4c53eed}\label{fonctionRecompense_8php_a16ae3dcef74e4658db290ad2c4c53eed}} 
+\index{fonction\+Recompense.\+php@{fonction\+Recompense.\+php}!supprimer\+\_\+obtenir\+\_\+recompense\+\_\+tous@{supprimer\+\_\+obtenir\+\_\+recompense\+\_\+tous}}
+\index{supprimer\+\_\+obtenir\+\_\+recompense\+\_\+tous@{supprimer\+\_\+obtenir\+\_\+recompense\+\_\+tous}!fonction\+Recompense.\+php@{fonction\+Recompense.\+php}}
+\subsubsection{\texorpdfstring{supprimer\+\_\+obtenir\+\_\+recompense\+\_\+tous()}{supprimer\_obtenir\_recompense\_tous()}}
+{\footnotesize\ttfamily supprimer\+\_\+obtenir\+\_\+recompense\+\_\+tous (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Recompense\+Oa }\end{DoxyParamCaption})}
+
+
+
+Supprime tous les artistes associées à une récompense spécifié par l\textquotesingle{}identifiant \char`\"{}id\+Recompense\char`\"{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Recompense\+Oa} & Int Identifiant de la récompense dans Obtenir\+\_\+\+Artiste \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionRecompense_8php_a270bb87b64f754522b50f646626646f8}\label{fonctionRecompense_8php_a270bb87b64f754522b50f646626646f8}} 
+\index{fonction\+Recompense.\+php@{fonction\+Recompense.\+php}!supprimer\+\_\+recompense@{supprimer\+\_\+recompense}}
+\index{supprimer\+\_\+recompense@{supprimer\+\_\+recompense}!fonction\+Recompense.\+php@{fonction\+Recompense.\+php}}
+\subsubsection{\texorpdfstring{supprimer\+\_\+recompense()}{supprimer\_recompense()}}
+{\footnotesize\ttfamily supprimer\+\_\+recompense (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Recompense }\end{DoxyParamCaption})}
+
+
+
+Supprime une récompense de la B\+DD spécifier par l\textquotesingle{}identifiant \textquotesingle{}id\+Recompense\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Recompense} & Int Identifiant de la récompense \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la suppression s\textquotesingle{}est bien exécutée $\vert$ False Sinon 
+\end{DoxyReturn}

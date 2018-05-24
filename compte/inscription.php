@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page inscription.php
- * Fait le lien entre un formulaire d'inscrtiption et la BDD via actionCompte.php
+ * @file compte/inscription.php
+ * @brief Fait le lien entre un formulaire d'inscrtiption et la BDD via actionCompte.php
  * pour qu'un utilisateur puisse s'inscrire au site tout en vérifiant qu'il entre
  * des informations conformes
  */

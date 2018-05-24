@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page connexion.php
- * Fait le lien entre un formulaire de connexion et la BDD via actionCompte.php
+ * @file compte/connexion.php
+ * @brief Fait le lien entre un formulaire de connexion et la BDD via actionCompte.php
  * pour qu'un utilisateur puisse se connecter au site.
  */
 

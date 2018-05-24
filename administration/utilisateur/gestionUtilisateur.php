@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page gestionUtilisateur.php
- * Affiche et propose de modifier et supprimer un utilisateur
+ * @file gestionUtilisateur.php
+ * @brief Affiche et propose de modifier et supprimer un utilisateur
  */
 
 session_start();

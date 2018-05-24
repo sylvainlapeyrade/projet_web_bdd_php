@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page recherche.php
- * Effectue un lien entre la barre de recherche et la BDD
+ * @file recherche.php
+ * @brief Effectue un lien entre la barre de recherche et la BDD
  * pour afficher les résultats de recherches sur le site
  */
 

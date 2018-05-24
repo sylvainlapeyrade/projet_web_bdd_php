@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page gestionMusique.php
- * Affiche et propose de modifier et supprimer une musique
+ * @file gestionMusique.php
+ * @brief Affiche et propose de modifier et supprimer une musique
  */
 
 session_start();

@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page aPropos.php
- * Présente les auteurs, leur contact et le but du site
+ * @file aPropos.php
+ * @brief Présente les auteurs, leur contact et le but du site
  */
 
 session_start();

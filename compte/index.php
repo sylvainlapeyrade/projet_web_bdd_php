@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page index.php
- * Page d'acceuil de la partie compte du site,
+ * @file compte/index.php
+ * @brief Page d'acceuil de la partie compte du site,
  * présentant les différentes options de navigation dans la partie compte
  */
 

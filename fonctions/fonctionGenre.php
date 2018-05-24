@@ -1,11 +1,12 @@
 <?php
+
 /**
- * FICHIER : FUNCTIONS -> fonctionGenre.php
- * Fichier des fonctions de gestion des genres.
+ * @file fonctions/fonctionGenre.php
+ * @brief Fichier des fonctions de gestion des genres.
  */
 
 /**
- * Récupère les genre d'une musique
+ * @brief Récupère les genre d'une musique
  * spécifier par l'identifiant 'idMusique'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusique Int Identifiant de la musique
@@ -20,7 +21,7 @@ function recuperer_genre_musique($db, $idMusique) {
 }
 
 /**
- * Ajoute une nouveau genre à la BDD avec un id musique
+ * @brief Ajoute une nouveau genre à la BDD avec un id musique
  * et un nom de genre.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusique Int Identifiant de la musique
@@ -36,7 +37,7 @@ function ajouter_genre($db, $idMusique, $nomGenre) {
 }
 
 /**
- * Supprime toutes les genres d'une musique
+ * @brief Supprime toutes les genres d'une musique
  * spécifié par l'identifiant 'idMusiqueDe'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusiqueDe Int Identifiant musique dans Definir

@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page actionEvaluation.php
- * Fait le lien entre le formulaire evaluation et la BDD
+ * @file evaluation/actionEvaluation.php
+ * @brief Fait le lien entre le formulaire evaluation et la BDD
  */
 
 $action = $_GET['action'];

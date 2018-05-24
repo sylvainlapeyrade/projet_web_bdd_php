@@ -1,7 +1,10 @@
-<?php /**
-* Page recherche.php
-* Inclut les caractéristiques de la barre de recherche
-*/
+<?php
+
+/**
+ * @file barreRecherche.php
+ * @brief Inclut les caractéristiques de la barre de recherche
+ */
+
 ?>
 
 <div id="barre-recherche">

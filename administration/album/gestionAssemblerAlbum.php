@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page gestionAssemblerAlbum.php
- * Permet de modifier ou supprimer une association entre album et musique dans la BBD
+ * @file gestionAssemblerAlbum.php
+ * @brief Permet de modifier ou supprimer une association entre album et musique dans la BBD
  */
 
 session_start();

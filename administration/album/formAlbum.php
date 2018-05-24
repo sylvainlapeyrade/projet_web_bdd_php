@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page formAlbum.php
- * Permet d'ajouter un album à la BBD
+ * @file formAlbum.php
+ * @brief Permet d'ajouter un album à la BBD
  */
 
 session_start();

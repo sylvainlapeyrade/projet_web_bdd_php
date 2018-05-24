@@ -1,0 +1,30 @@
+\hypertarget{formAlbum_8php}{}\section{Référence du fichier administration/album/form\+Album.php}
+\label{formAlbum_8php}\index{administration/album/form\+Album.\+php@{administration/album/form\+Album.\+php}}
+
+
+Permet d\textquotesingle{}ajouter un album à la B\+BD.  
+
+
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{formAlbum_8php_a024f87f9bf4f3b33710e2e7ff8f60823}\label{formAlbum_8php_a024f87f9bf4f3b33710e2e7ff8f60823}} 
+{\bfseries \$info} \mbox{[}\textquotesingle{}head\textquotesingle{}\mbox{]}\mbox{[}\textquotesingle{}sub\+Title\textquotesingle{}\mbox{]} = \char`\"{}Gestion groupe\char`\"{}
+\item 
+\mbox{\Hypertarget{formAlbum_8php_af6044c8bf78ebc8c58057e14d7738bbd}\label{formAlbum_8php_af6044c8bf78ebc8c58057e14d7738bbd}} 
+{\bfseries \$info} \mbox{[}\textquotesingle{}head\textquotesingle{}\mbox{]}\mbox{[}\textquotesingle{}stylesheets\textquotesingle{}\mbox{]} = \mbox{[}\textquotesingle{}admin\+Gestion.\+css\textquotesingle{}\mbox{]}
+\item 
+\mbox{\Hypertarget{formAlbum_8php_a21da4200f0b046e795a16fdb62497b8e}\label{formAlbum_8php_a21da4200f0b046e795a16fdb62497b8e}} 
+if(!\hyperlink{fonctionCompte_8php_a2fe594e0482307b8729ea37780d6f74b}{is\+\_\+connect}()$\vert$$\vert$!\hyperlink{fonctionCompte_8php_a0b327581800dba50ad70720e23ae2ed2}{is\+\_\+admin}()) if(isset(\$db)) {\bfseries \$id\+Album} = \$\+\_\+\+G\+ET\mbox{[}\textquotesingle{}id\+Album\textquotesingle{}\mbox{]}
+\item 
+\mbox{\Hypertarget{formAlbum_8php_a2b2bb17b85ece548c13dc4cfd49e064f}\label{formAlbum_8php_a2b2bb17b85ece548c13dc4cfd49e064f}} 
+{\bfseries if} (isset( \$db, \$id\+Album)) \{ echo \char`\"{}Membre \char`\"{}
+\item 
+\mbox{\Hypertarget{formAlbum_8php_af3b63517e631e466b1127fdb60b7b57f}\label{formAlbum_8php_af3b63517e631e466b1127fdb60b7b57f}} 
+if(isset(\$date\+Album)) if(isset(\$url\+Pochette\+Album)) if(isset(\$description\+Album)) foreach(\$artistes as \$artiste) foreach(\$groupes as \$groupe) if(isset(\$id\+Album) \&\&!empty(\$id\+Album)) {\bfseries else} \{
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Permet d\textquotesingle{}ajouter un album à la B\+BD. 
+

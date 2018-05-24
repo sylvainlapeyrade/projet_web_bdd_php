@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page gestionArtiste.php
- * Affiche et propose de modifier et supprimer un artiste
+ * @file gestionArtiste.php
+ * @brief Affiche et propose de modifier et supprimer un artiste
  */
 
 session_start();

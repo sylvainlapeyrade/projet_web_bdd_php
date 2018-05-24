@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page init_bdd.php
- * Initialisation de la BBD en utilisation la page connexion.php et structure.sql
+ * @file bdd/init_bdd.php
+ * @brief Initialisation de la BBD en utilisation la page connexion.php et structure.sql
  */
 
 include_once(dirname(__FILE__).'/connexion.php');
