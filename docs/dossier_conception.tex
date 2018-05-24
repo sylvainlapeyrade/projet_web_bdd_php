@@ -99,20 +99,19 @@
 			Ceci est la seconde disposition dont toutes les pages vont hériter dans le cas où un utilisateur normal est connecté.
 		\end{paragraphe}
 
-		\begin{paragraphe}
-			Si clic sur le bouton << accueil >> \\
-			Alors redirection vers \underline{pageAccueil.php}.
-		\end{paragraphe}
-
-		\begin{paragraphe}
-			Si clic sur le bouton << compte >> \\
-			Alors redirection vers \underline{pageCompte.php}.
-		\end{paragraphe}
-
-		\begin{paragraphe}
-			Si clic sur bouton << déconnexion >> \\
-			Alors on déconnecte l'utilisateur de sa session courante.
-		\end{paragraphe}
+        \begin{center}
+            \begin{tabular}{l c | c l}
+                Si clic sur le bouton << accueil >> & & & Si clic sur le bouton << compte >> \\
+                Alors redirection vers \underline{pageAccueil.php}. & & & Alors redirection vers \underline{pageCompte.php}.
+            \end{tabular}
+        \end{center}
+        
+        \begin{center}
+            \begin{tabular}{l}
+                Si clic sur bouton << déconnexion >> \\
+                Alors on déconnecte l'utilisateur de sa session courante.
+            \end{tabular}
+        \end{center}
 
 		\image{0.35}{images/conception/page_type_2}{Mockup - Layout 2}
 
@@ -132,25 +131,14 @@
             Ceci est la troisième disposition dont toutes les pages vont hériter dans le cas où un utilisateur administrateur est connecté.
 		\end{paragraphe}
 
-		\begin{paragraphe}
-			Si clic sur le bouton << accueil >> \\
-			Alors redirection vers \underline{pageAccueil.php}.
-		\end{paragraphe}
-
-		\begin{paragraphe}
-			Si clic sur le bouton << administration >> \\
-			Alors redirection vers \underline{pageAdminAccueil.php}.
-		\end{paragraphe}
-
-		\begin{paragraphe}
-			Si clic sur le bouton << compte >> \\
-			Alors redirection vers \underline{pageCompte.php}.
-		\end{paragraphe}
-
-		\begin{paragraphe}
-			Si clic sur bouton << déconnexion >> \\
-			Alors on déconnecte l'utilisateur de sa session courante.
-		\end{paragraphe}
+        \begin{center}
+            \begin{tabular}{l c | c l}
+                Si clic sur le bouton << accueil >> & & & Si clic sur le bouton << administration >> \\
+                Alors redirection vers \underline{pageAccueil.php}. & & & Alors redirection vers \underline{pageAdminAccueil.php}. \\ \\
+                Si clic sur le bouton << compte >> & & & Si clic sur bouton << déconnexion >> \\
+                Alors redirection vers \underline{pageCompte.php}. & & & Alors déconnexion de l'utilisateur de la session.
+            \end{tabular}
+        \end{center}
 
 		\image{0.35}{images/conception/page_type_3}{Mockup - Layout 3}
 
