@@ -1,14 +1,13 @@
 \section{Présentation}
 
   \begin{paragraphe}
-  	Le projet que nous réalisons est un site de revues participatives d’albums
-    musicaux.\par
-    Il met à disposition une large base de données comportant de nombreux artistes
+  	Le projet que nous réalisons est un site de critique de musique.\par
+    Il met à disposition un large catalogue comportant de nombreux artistes
     pour lesquels on retrouve une brève description ainsi que leur discographie.
     Pour chaque album on donne les chansons présentes et quelques informations
-    supplémentaires (durée, date de parution, artistes, label, genre, etc). \par
+    supplémentaires (durée, date de parution, artistes, genre, etc). \par
     Il est également possible de s’identifier afin de pouvoir rédiger des
-    commentaires et des évaluations pour chaque album présent sur le site.
+    commentaires et des évaluations pour chaque album ou titres présent sur le site.
   \end{paragraphe}
 
   \begin{paragraphe}
@@ -34,16 +33,14 @@
   \subsection{Profils et rôles utilisateurs}
 
   \begin{paragraphe}
-    Nous utilisons deux profils d’acteurs à travers ce projet, le profil
-    administrateur et le profil utilisateur.\par
+    Nous utilisons trois profils d’acteurs à travers ce projet: le profil
+    anonyme, le profil administrateur et le profil utilisateur.\par
     En tant que créateurs du site, nous sommes les administrateurs de celui-ci
     et avons donc la charge de mettre le site en place, de le rendre
-    fonctionnel et de remplir la base de données (saisir les artistes, les
+    fonctionnel et de remplir le catalogue d'artistes (saisir les artistes, les
     albums, les pistes ainsi que les informations pour chaque).\par
-    Une fois le site fonctionnel et rempli, les utilisateurs (à qui on demande
-    une identification, authentification) peuvent consulter les artistes et les
-    albums disponibles et peuvent proposer des évaluations pour les albums de
-    leur choix.
+    Une fois le site fonctionnel et rempli, tous les profils sur le site pourront consulter les pages.
+    Les profils utilisateurs (à qui on demande une identification et une authentification) pourront eux rédiger des évaluations et accéder à des paramètres relatifs à leur compte.
   \end{paragraphe}
 
   \subsection{Contraintes}
@@ -51,9 +48,7 @@
   \begin{paragraphe}
     Les difficultés de ce projet sont le temps disponible ainsi que le volume
     de la base de données à fournir avant de pouvoir déclarer le site comme
-    fonctionnel. De plus, il faut réfléchir à beaucoup d’éléments pour ne pas
-    que l’ajout des évaluations sature ou déstabilise la mise en page déjà
-    effectuée.
+    fonctionnel. De plus, il faut effectuer une phase de conception approfondie et la plus complète possible afin de ne pas avoir de soucis lors de l'implémentation.
   \end{paragraphe}
 
 \section{Fonctionnalités}
@@ -61,43 +56,49 @@
   \subsection{Terminologie}
 
     \begin{paragraphe}
-      Tout d'abord on va spécifier quelques termes utilisés dans ce cachier des
+      Nous allons tout d'abord spécifier quelques termes utilisés dans ce cahier des
       charges.
       \begin{itemize}
-        \item \textbf{Artiste :} Définit le compositeur d'un album, d'un
-          morceau de musique ou ayant participer à un album ou un morceau de
-          musique.
-        \item \textbf{Album :} Est un receuil de morceaux de musique d'un ou
+        \item \textbf{Artiste :} Définit le compositeur de morceaux de musiques, en solo ou au sein d'un groupe.
+        \item \textbf{Album :} Est un recueil de morceaux de musique d'un ou
           plusieurs artistes.
-        \item \textbf{Morceau de musique :} Est une musique faisant partie d'un
-          album d'une artiste.
+        \item \textbf{Morceau de musique :} (Ou titre) Est une musique faisant partie d'un
+          album ou d'un single.
         \item \textbf{Single :} Est une musique ne faisant pas partie d'un album
           mais directement relié à un artiste.
-        \item \textbf{Métadonnées :} Ensemble d'éléments caractérisant un
-          artiste, un album ou un morceau de musique.
-        \item \textbf{Label :} Communément appelée \emph{maison de disques}
-          elle produit, distribue les enregistrements d'un artiste.
+        \item \textbf{Groupe :} Regroupement d'au moins deux artistes ayant composé ensemble des morceaux de musique.
+        \item \textbf{Genre :} Caractéristique pouvant être associée à un morceau de musique.
+        \item \textbf{Récompense :} Récompense décernée à un artiste ou groupe.
+        \item \textbf{Métadonnées :} Ensemble d'éléments caractérisant un artiste, un groupe, un album, une récompense ou un morceau de musique.
+        \begin{itemize}
+            \item \textbf{Artiste :} Nom, Prénom, Nom de scène, Date de naissance, description et url d'une photo.
+            \item \textbf{Groupe :} Nom du groupe, Date de formation, description et url d'une photo.
+            \item \textbf{Album :} Nom de l'album, Date de sortie, description et url de la pochette.
+            \item \textbf{Titre :} Titre, durée, date de sortie et description.
+            \item \textbf{Recompense :} Intitulé, date de remise et description.
+        \end{itemize}
       \end{itemize}
     \end{paragraphe}
 
   \subsection{Parties de l'application}
 
     \begin{paragraphe}
-      Il existe deux parties dans l'application. Une partie publique et une partie
-      privée.
+      Il existe deux parties dans l'application. Une partie publique accessible à tout utilisateur du site et une partie
+      privée réservée aux utilisateurs administrateurs.
     \end{paragraphe}
 
     \begin{paragraphe}
       \textbf{La partie public} est la vitrine de l'application. C'est ici que l'on
       va retrouver les différentes fonctionnalités citées plus bas. On peut
-      ainsi consulter des artistes, les albums d'un artiste et ou des chansons.
-      De plus on peut effectuer des recherches plus ou moins précises.
-      Ainsi que ajouter des commentaires avec ou sans notation.
+      ainsi rechercher et consulter les pages artistes, albums, groupes ou titres.
+      Dans cette partie, on retrouvera deux sous parties qui seront selon le profil de l'utilisateur.
+      Si ce dernier est identifié et connecté il aura également accès au système d'évaluation.
 
-      \textbf{La partie privée} est réservée au modérateur de l'application web.
+      \textbf{La partie privée} est réservée au modérateur de l'application web, c'est-à-dire aux profils administrateurs.
       Elle permet entre autre de gérer toute la base de données des artistes,
-      album, single et métadonnées de ces derniers. On peut ajouter, modifier
+      album, groupes, single et métadonnées de ces derniers. On peut ajouter, modifier
       ou supprimer une entrée dans la base de données.
+      Elle offre également un accès de gestion des comptes.
     \end{paragraphe}
 
   \subsection{Description des fonctionnalités}
@@ -112,23 +113,24 @@
     \end{paragraphe}
 
     \begin{paragraphe}
-      \begin{itemize}
-        \item Effectuer une recherche d'un artiste, d'un album ou d'un single
-          par son nom, sa date, son genre.
-        \item Consulter la description d'un artiste. On retrouve son nom, sa
-          date de naissance, une brève description et une discographie.
-        \item Consulter la description d'un album. On retrouve son nom,
-          l'artiste compositeur et une liste d'artiste ayant participée. De
-          même que son année de parution et la liste des morceaux de musique
-          dont il le compose.
-        \item Consulter les métadonnées d'un morceau de musique. On retrouve
-          le nom, l'album rattaché ainsi que son autheur. L'année de composition
-          et son genre.
-      \end{itemize}
+      Les fonctionnalités suivantes sont disponibles pour n'importe quel utilisateur du site.
     \end{paragraphe}
 
     \begin{paragraphe}
       \begin{itemize}
+        \item Effectuer une recherche d'un artiste, d'un groupe, d'un album ou d'un single
+          par son nom.
+        \item Consulter la description d'un artiste. On retrouve son prénom, son nom, sa
+          date de naissance, une brève description et sa discographie. Si l'on
+          recherche un groupe, sa description sera adaptée et l'on retrouvera,
+          en plus des informations classiques, les différents artistes qui
+          composent le groupe.
+        \item Consulter la description d'un album. On retrouve son titre,
+          l'artiste ou groupe qui l'a composé, son année de parution, la liste des morceaux de musique
+          qu'il compte ainsi qu'une description et une photo de sa couverture.
+        \item Consulter les métadonnées d'un morceau de musique. On retrouve
+          le nom, l'album et l'artiste ou groupe rattaché, sa durée, l'année de composition
+          et son genre s'il est renseigné.
         \item Créer un compte utilisateur.
         \item Se connecter à un compte enregistré.
         \item Modifier son mot de passe.
@@ -137,10 +139,14 @@
     \end{paragraphe}
 
     \begin{paragraphe}
+      Pour les utilisateurs identifiés et connectés, les fonctionnalités suivantes sont également disponibles.
+    \end{paragraphe}
+
+    \begin{paragraphe}
       \begin{itemize}
-        \item Déposer une critique sur une page d'un artiste, d'un album ou
-          d'une musique. Avec une note ou non.
-        \item Modifier une critique dont on est l'autheur.
+        \item Déposer une critique sur la page d'un album ou
+          d'une musique sous la forme d'une note entière sur 5 pouvant être accompagnée d'un commentaire.
+        \item Supprimer une critique dont on est l'auteur.
       \end{itemize}
     \end{paragraphe}
 
@@ -151,22 +157,27 @@
 
     \begin{paragraphe}
       \begin{itemize}
-        \item Ajouter un artiste avec toutes ces métadonnées.
+        \item Créer un artiste avec toutes ses métadonnées.
+        \item Créer un album avec ses titres et ses métadonnées.
+        \item Créer un morceau de musique avec toutes ses métadonnées.
+        \item Créer un groupe avec ses artistes et toutes ses métadonnées.
+        \item Créer une récompense à un artiste avec toutes ses métadonnées.
         \item Modifier les métadonnées d'un artiste.
-        \item Supprimer un artistes, supprime aussi ces albums et les titres de
-          musique
-        \item Ajouter un album à un artiste.
-        \item Modifier un album d'un artiste.
-        \item Supprime un album d'un artiste, ainsi que les morceaux de musique
-          associé.
-        \item Ajouter un morceau de musique à un album d'un artiste avec toutes
-          ces métadonnées.
-        \item Ajouter un single à un artiste avec toutes ces métadonnées.
-        \item Modifier les métadonnées d'un morceau de musique à un album
-          d'un artiste.
-        \item Modifier les métadonnées d'un single d'un artiste.
-        \item Supprimer un morceau de musique à un album d'un artiste.
-        \item Supprimer un single à un artiste.
+        \item Modifier les métadonnées d'un album.
+        \item Modifier les métadonnées d'un morceau de musique.
+        \item Modifier les métadonnées d'une récompense.
+        \item Modifier les métadonnées d'un groupe.
+        \item Supprimer un artiste (supprime aussi ses albums et les titres de
+          musique qu'il a composé).
+        \item Supprimer un album d'un artiste (supprime aussi les titres qui le composent).
+        \item Supprimer un morceau de musique d'un album.
+        \item Supprimer une récompense d'un artiste.
+        \item Supprimer un groupe (ne supprime pas les artistes qui le composent).
+        \item Supprimer un compte utilisateur.
+        \item Créer un compte utilisateur.
+        \item Modifier les mots de passe d'autres comptes utilisateurs.
+        \item Accorder ou retirer les droits d'administration à un compte utilisateur classique.
+        On notera que les comptes administrateurs ne peuvent pas se retirer les droits d'administration à eux-même ni se supprimer mutuellement depuis le panneau prévu à cet effet.
       \end{itemize}
     \end{paragraphe}
 
@@ -181,32 +192,31 @@
     \textbf{Scénario 1 :}
     Un utilisateur cherche le nom d'une musique pour obtenir des informations
     sur ce titre, comme l'album auquel il appartient, des informations sur les
-    auteurs de ce morceau, la date de parution, etc Il regarde également l'avis
-    des internautes en commentaire pour savoir ce qu'ils en ont pensé.
+    auteurs de ce morceau, la date de parution, etc. Il regarde également les évaluations
+    des internautes dans la section commentaire pour se faire un avis général.
   \end{paragraphe}
 
   \begin{paragraphe}
     \textbf{Scénario 2 :}
-    Pour l'anniversaire de sa fille Sophie, Teresa veut lui offrir un album
-    musique. Teresa n'est cependant pas très familier avec les artistes
-    d'aujourd'hui. Elle va donc consulter l'application en cherchant les
-    artistes les plus populaires du moment. Elle trouve ainsi l'artiste
-    M. Pokora qui a sorti son dernier album, lis la description et les
-    commentaires très positive de l'album. Elle est donc convaincu et ira
+    Pour l'anniversaire de sa fille Sophie, Teresa veut lui offrir un album de
+    musique. Teresa n'est cependant pas très familière avec les artistes
+    d'aujourd'hui. Elle va donc consulter l'application en cherchant des
+    artistes plus populaires du moment en se basant sur les évaluations ainsi que les dates de parution d'album. Elle trouve ainsi l'artiste
+    M. Pokora qui a sorti un album récemment. Elle est donc convaincue et ira
     acheter l'album pour sa fille.
   \end{paragraphe}
 
   \begin{paragraphe}
     \textbf{Scénario 3 :}
     Ludovic est un fan de Ed sheeran et souhaite mettre un commentaire sur le
-    site crée. \par
+    site.
     Il met un commentaire sur la chanson "Casltle on the Hill" qui fait partie
-    du 3ème single 2017 de l'artiste.
+    du 3ème album de l'artiste.
   \end{paragraphe}
 
   \begin{paragraphe}
     \textbf{Scénario 4 :}
-    Un utilisateur ayant un compte et s'étant connecté, cherche un album qu'il
+    Un utilisateur possédant un compte et s'étant connecté cherche un album qu'il
     a écouté et note chacun des morceaux en rédigeant ou non un commentaire.
   \end{paragraphe}
 
@@ -222,6 +232,6 @@
   \begin{paragraphe}
     \textbf{Scénario 6 :}
     Une personne veut rédiger un avis sur un album, trouve la page
-    correspondant mais ne possède pas de compte. Il décide donc de se créer un
+    correspondante mais ne possède pas de compte. Il décide donc de se créer un
     compte afin de pouvoir rédiger son évaluation.
   \end{paragraphe}
