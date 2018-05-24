@@ -221,6 +221,7 @@
     \clearpage
 
     \subsection{Pages publiques}
+
 		\subsubsection{Page accueil}
 
             \begin{paragraphe}
@@ -253,15 +254,10 @@
 		\subsubsection{Page résultat recherche}
 
 			\begin{paragraphe}
-				Cette page, fera des requêtes sur la base de données, sur les tables << Artiste >>, << Musique >>, << Groupe>> et << Album >>. en passant en paramètre la chaine de caractère entrée dans la barre de recherche.
-			\end{paragraphe}
-
-            \begin{paragraphe}
-                En cliquant sur le résultat souhaité, l'utilisateur sera redirigé vers la page de l'artiste, du groupe, de l'album ou de la musique recherché où l'on trouvera des informations détaillées. On y trouvera aussi les phos de nouveaux artistes, où l'on pourra accéder à leurs informations en cliquant sur leur photo.
-            \end{paragraphe}
-
-            \begin{paragraphe}
-                Enfin, on y trouvera les sorties de la semaine où l'on trouvera des albums récents avec photo de la pochette et le nom de l'album ainsi qu'une brève description. Pour accéder à des informations plus détaillées sur l'album, il faudra cliquer sur le cadre correspondant à celui-ci.
+				Cette page fait des requêtes sur la base de données, sur les entités << Artiste >>, << Musique >>, << Groupe>> et << Album >>.
+				 en passant en paramètre la chaine de caractère entrée dans la barre de recherche.\\
+                En cliquant sur le résultat souhaité, l'utilisateur est redirigé vers la page de l'artiste, du groupe, de l'album ou de la musique
+                 recherché où il y trouve des informations détaillées caractérisant l'entité sélectionnée.
             \end{paragraphe}
 
             \begin{paragraphe}
@@ -269,14 +265,23 @@
             \end{paragraphe}
 
             \begin{paragraphe}
-                Les services sont ici utilisés pour la recherche (qu'elle soit pour un album, un artiste, un groupe, un genre ou une musique). Lorsqu'un résultat est sélectionné, pour l'afficher il va falloir utiliser les fonctions :
+                Les services utilisés pour la recherche (Album, artiste, groupe ou musique):
+                 \begin{itemize}
+                     \item recupererAlbum(nomAlbum) affiche tous les albums correspondant à la chaîne recherchée.
+                     \item recupererArtiste(nomArtiste) affiche tous les artistes correspondant à la chaîne recherchée.
+                     \item recupererGroupe(nomGroupe) affiche tous les groupes correspondant à la chaîne recherchée.
+                     \item recupererMusique(nomMusique) affiche toutes les musiques correspondantes à la chaîne recherchée.
+                 \end{itemize}
+             \end{paragraphe}
+
+            \begin{paragraphe}
+                 Lorsqu'un résultat est sélectionné, pour l'afficher il va falloir utiliser les fonctions :
                 \begin{itemize}
                     \item getAlbum(nomAlbum) si un album a été sélectionné.
                     \item getArtiste(nomArtiste) si un artiste a été sélectionné.
                     \item getGroupe(nomGroupe) si un groupe a été sélectionné.
-                    \item getMusique(nomMusique) si un musique a été sélectionné.
+                    \item getMusique(nomMusique) si une musique a été sélectionnée.
                 \end{itemize}
-                Les mêmes fonctions seront utilisées lors d'un clic sur la photo d'un nouvel artiste : getArtiste(nomArtiste) et lors d'un clic d'un album sorti cette semaine : getAlbum(nomAlbum).
             \end{paragraphe}
 
 			\begin{paragraphe}
@@ -284,22 +289,16 @@
 			\end{paragraphe}
 
 			\begin{paragraphe}
-				Les résultats sous forme d'un tableau. Ce tableau contient 3 colonnes :
+			    Nous avions, lors de la conception initiale, prévu d'afficher les résultats sous forme d'un tableau générique contenant 3 colonnes :
 				\begin{itemize}
-					\item Nom
-					\item Type
-					\item Date
+					\item Nom : le nom des albums, morceaux de musique, groupes ou artistes correspondants à la recherche entrée
+					\item Type : type de la recherche : album, morceau, groupe ou artiste
+					\item Date : affiche, selon le cas, la date de sortie de la musique ou de l'album, la date de naissance de l'artiste ou la date de formation du groupe
 				\end{itemize}
-				La colonne << Nom >> contiendra le nom des albums, morceaux de musique, groupes ou artistes correspondants à la recherche entrée.\par
-				La colonne << Type >> indiquera de quel type est la recherche : album, morceau, groupe ou artiste.\par
-				La colonne << Date >> affichera, seon le cas, la date de sortie de la musique ou de l'album, la date de naissance de l'artiste ou la date de formation du groupe.
+				Chaque résultat de la colonne << Nom >> devait être cliquable, et sur clic, diriger vers la page dédiée au résultat (i.e : la page de l'album, du morceau, du groupe ou de l'artiste correspondant).
 			\end{paragraphe}
 
-			\image{0.26}{images/conception/page_resultat_recherche}{Mockup - Page résultat}
-
-			\begin{paragraphe}
-				Chaque résultat de la colonne << Nom >> sera cliquable, et sur clic, dirigera vers la page dédiée au résultat (i.e : la page de l'album, du morceau, du groupe ou de l'artiste correspondant).
-			\end{paragraphe}
+			\image{0.35}{images/conception/page_resultat_recherche}{Mockup - Page résultat}
 
             \begin{paragraphe}
                 Si une recherche est entrée \\
@@ -315,6 +314,8 @@
                 Si clic sur une photo d'un nouvel artiste \\
                 Alors redirection vers pageArtiste.php en passant en paramètre le nom de l'artiste.
             \end{paragraphe}
+
+        \clearpage
 
 		\subsubsection{Page description artiste / groupe}
 
