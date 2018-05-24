@@ -2,9 +2,12 @@
 \section{Introduction}
 
 	\begin{paragraphe}
-		Ce document a pour but de décrire les aspects visuels et techniques de notre site.
+		Ce document a pour but de décrire les aspects visuels et techniques de notre site.\\
 		Ainsi, il présente les différentes interactions entre les différentes pages que nous avons conceptualisées.
-		Il montre également sous quelles dispositions peuvent être retrouvé les différents éléments de notre site web et les moyens d'y accéder.
+		Il montre également sous quelles dispositions peuvent être retrouvé les différents éléments de notre site web et les moyens d'y accéder.\\
+		Lors de la phase de développement du site, nous sommes revenu sur certains choix que nous avions fait lors de la conception.
+		Nous nous attacherons donc ici à faire apparaître les différentes évolutions en prenant soin d'expliquer les raisons de
+		ces changements et la réflexion que nous avons eu.
 	\end{paragraphe}
 
 \section{Charte graphique}
@@ -30,9 +33,10 @@
         \image{0.50}{images/conception/bandeau_haut}{Charte graphique - Bandeau du haut}
 
         Le bandeau du bas rapelle le nom du site << Critique Musicale>> ainsi que la date de dernière maintenance du site.
-        \image{0.50}{images/conception/bandeau_bas}{Charte graphique - Bandeau du bas}
-
+        \image{0.60}{images/conception/bandeau_bas}{Charte graphique - Bandeau du bas}
 	\end{paragraphe}
+
+\newpage
 
 	\begin{paragraphe}
 		Une barre de recherche est également présente en dessous du bandeau du haut sur toutes les pages du site, hormis celles de connexion, de gestion de compte et d'à propos.
@@ -43,8 +47,14 @@
 	\begin{paragraphe}
 		Le style et la taille de la police des caractères normaux pour toutes les pages sont par défaut respectivement \og hurme\_no2-webfont >> et << sans-serif >>.\\
 		Les titres sont en gras de couleur orangée. Ils ont pour style le << hurme\_no2-webfont >> en << sans-serif >> avec une taille de police de 15px.
-        \image{0.50}{images/conception/exemple_ecriture}{Charte graphique - Exemple du style d'écriture sur une page}
+        \image{0.43}{images/conception/exemple_ecriture}{Charte graphique - Exemple du style d'écriture sur une page}
 	\end{paragraphe}
+
+    \begin{paragraphe}
+       Pour des affichages sous forme de tableau, nous avons choisi un design sobre, favorisant la lisibilité et la recherche rapide en alternant les couleurs des lignes
+       et séparant distinctement les différentes lignes et colonnes du tableau.
+       \image{0.60}{images/conception/tableau}{Charte graphique - Exemple d'un tableau}
+    \end{paragraphe}
 
 \newpage
 
@@ -52,7 +62,7 @@
 	\subsection{Disposition 1 (layout)}
 	
 		\begin{paragraphe}
-			Ceci est la première disposition où toutes les pages vont hériter. Ici c'est la disposition où l'utilisateur n'est pas connecté.
+			Ceci est la première disposition dont toutes les pages vont hériter. Ici c'est la disposition où l'utilisateur n'est pas connecté.
 		\end{paragraphe}
 
 		\begin{paragraphe}
@@ -75,7 +85,7 @@
 	\subsection{Disposition 2 (layout)}
 	
 		\begin{paragraphe}
-			Ceci est la seconde disposition où toutes les pages vont hériter. Ici c'est la disposition où l'utilisateur normal est connecté.
+			Ceci est la seconde disposition dont toutes les pages vont hériter. Ici c'est la disposition où l'utilisateur normal est connecté.
 		\end{paragraphe}
 
 		\begin{paragraphe}
@@ -98,7 +108,7 @@
 	\subsection{Disposition 3 (layout)}
 	
 		\begin{paragraphe}
-			Ceci est la troisième disposition où toutes les pages vont hériter. Ici c'est la disposition où l'utilisateur administrateur est connecté.
+			Ceci est la troisième disposition dont toutes les pages vont hériter. Ici c'est la disposition où l'utilisateur administrateur est connecté.
 		\end{paragraphe}
 
 		\begin{paragraphe}
@@ -165,7 +175,9 @@
 		\subsubsection{Page accueil}
 
 			\begin{paragraphe}
-				La barre de recherche se trouve également sur toutes les pages de notre site (sauf les pages pageConnexion.php et pageInscription.php et les pages d'administration) permet de rechercher un artiste, un album, une musique ou un groupe. En entrant la recherche, les résultats seront affichés directement et différents liens seront disponibles, il foudra alors cloquer sur celui qui correspond à notre recherche.
+                La barre de recherche a une place centrale sur la page d'acceuil. Elle permet de saisir des recherches d’artiste, d’album, de groupe ou de morceau de musique.
+				En entrant une recherche, les résultats seront affichés directement et différents liens seront disponibles.
+                \image{0.50}{images/conception/accueil_barre_recherche}{Page acceuil - Barre recherche}
 			\end{paragraphe}
 
 			\begin{paragraphe}
