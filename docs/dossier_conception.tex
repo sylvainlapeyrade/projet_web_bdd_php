@@ -22,9 +22,9 @@
             \item une couleur orangée pour les boutons, les mots-clés et le bas de page.
             \item une couleur gris sombre pour le fond et l'en tête de page.
             \end{itemize}
+    \end{paragraphe}
+    \image{0.50}{images/conception/charte_graphique_couleurs}{Charte graphique - Couleurs}
 
-        \image{0.50}{images/conception/charte_graphique_couleurs}{Charte graphique - Couleurs}
-	\end{paragraphe}
 
     \begin{paragraphe}
 		Le site comprend également deux bandeaux, un en haut et un en bas de notre chaque page.\\
@@ -33,28 +33,30 @@
         \image{0.50}{images/conception/bandeau_haut}{Charte graphique - Bandeau du haut}
 
         Le bandeau du bas rapelle le nom du site << Critique Musicale>> ainsi que la date de dernière maintenance du site.
-        \image{0.60}{images/conception/bandeau_bas}{Charte graphique - Bandeau du bas}
-	\end{paragraphe}
+    \end{paragraphe}
+    \image{0.60}{images/conception/bandeau_bas}{Charte graphique - Bandeau du bas}
+
 
 \newpage
 
 	\begin{paragraphe}
 		Une barre de recherche est également présente en dessous du bandeau du haut sur toutes les pages du site, hormis celles de connexion, de gestion de compte et d'à propos.
 		Elle permet de saisir des recherches d'artiste, d'album, de groupe ou de morceau de musique.
-        \image{0.50}{images/conception/barre_recherche}{Charte graphique - Barre de recherche}
 	\end{paragraphe}
+    \image{0.50}{images/conception/barre_recherche}{Charte graphique - Barre de recherche}
 
 	\begin{paragraphe}
 		Le style et la taille de la police des caractères normaux pour toutes les pages sont par défaut respectivement \og hurme\_no2-webfont >> et << sans-serif >>.\\
 		Les titres sont en gras de couleur orangée. Ils ont pour style le << hurme\_no2-webfont >> en << sans-serif >> avec une taille de police de 15px.
-        \image{0.43}{images/conception/exemple_ecriture}{Charte graphique - Exemple du style d'écriture sur une page}
-	\end{paragraphe}
+    \end{paragraphe}
+    \image{0.43}{images/conception/exemple_ecriture}{Charte graphique - Exemple du style d'écriture sur une page}
+
 
     \begin{paragraphe}
        Pour des affichages sous forme de tableau, nous avons choisi un design sobre, favorisant la lisibilité et la recherche rapide en alternant les couleurs des lignes
        et séparant distinctement les différentes lignes et colonnes du tableau.
-       \image{0.60}{images/conception/tableau}{Charte graphique - Exemple d'un tableau}
     \end{paragraphe}
+   \image{0.60}{images/conception/tableau}{Charte graphique - Exemple d'un tableau}
 
 \newpage
 
@@ -171,69 +173,64 @@
 
 \section{Définition des pages}
 
-	\subsection{Pages publics}
+	\subsection{Pages publiques}
 		\subsubsection{Page accueil}
 
+            \begin{paragraphe}
+                Nous avions originellement imaginé une page d'accueil contenant une barre de recherche, une liste des nouveaux artistes et des sorties récentes de musiques (Voir Mockup de la page d'accueil).\\
+                Nous avons cependant opté pour une conception plus sobre et simple en affichant simplement une grande barre de recherche (Voir page d'accueil finale).
+            \end{paragraphe}
+
 			\begin{paragraphe}
-                La barre de recherche a une place centrale sur la page d'acceuil. Elle permet de saisir des recherches d’artiste, d’album, de groupe ou de morceau de musique.
+                La barre de recherche a une place centrale sur la page d'accueil. Elle permet de saisir des recherches d’artiste, d’album, de groupe ou de morceau de musique.
 				En entrant une recherche, les résultats seront affichés directement et différents liens seront disponibles.
-                \image{0.50}{images/conception/accueil_barre_recherche}{Page acceuil - Barre recherche}
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				En cliquant sur le résultat souhaité, l'utilisateur sera redirigé vers la page de l'artiste, du groupe, de l'album ou de la musique recherché où l'on trouvera des informations détaillées. On y trouvera aussi les phos de nouveaux artistes, où l'on pourra accéder à leurs informations en cliquant sur leur photo.
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Enfin, on y trouvera les sorties de la semaine où l'on trouvera des albums récents avec photo de la pochette et le nom de l'album ainsi qu'une brève description. Pour accéder à des informations plus détaillées sur l'album, il faudra cliquer sur le cadre correspondant à celui-ci.
+                \image{0.50}{images/conception/accueil_barre_recherche}{Page accueil - Barre recherche}
 			\end{paragraphe}
 
 			\begin{paragraphe}
 				\textbf{Service PHP :}
-			\end{paragraphe}
+            \end{paragraphe}
 
-			\begin{paragraphe}
-				Les services sont ici utilisés pour la recherche (qu'elle soit pour un album, un artiste, un groupe, un genre ou une musique). Lorsqu'un résultat est sélectionné, pour l'afficher il va falloir utiliser les fonctions :
-				\begin{itemize}
-					\item getAlbum(nomAlbum) si un album a été sélectionné.
-					\item getArtiste(nomArtiste) si un artiste a été sélectionné.
-					\item getGroupe(nomGroupe) si un groupe a été sélectionné.
-					\item getMusique(nomMusique) si un musique a été sélectionné.
-				\end{itemize}
-				Les mêmes fonctions seront utilisées lors d'un clic sur la photo d'un nouvel artiste : getArtiste(nomArtiste) et lors d'un clic d'un album sorti cette semaine : getAlbum(nomAlbum).
+            \begin{paragraphe}
+                Redirection vers la page recherche.php qui traitera la requête soumise dans le formulaire de la barre de recherche.
 			\end{paragraphe}
 
 			\begin{paragraphe}
 				\textbf{Conception IHM :}
-			\end{paragraphe}
+            \end{paragraphe}
+                    \image{0.30}{images/conception/page_accueil}{Mockup - Page d'accueil imaginé}
 
-			\image{0.35}{images/conception/page_accueil}{Mockup - Page accueil}
-
-			\begin{paragraphe}
-				Si une recherche est entrée \\
-				Alors affichage des résultat correspondants sous forme de liens prévisionnels cliquables.
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur un résultat \\
-				Alors redirection vers la page de la recherche souhaitée (exemple pageAlbum.php si un album a été sélectionné) en passant en paramètre le nom de l'album.
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur une photo d'un nouvel artiste \\
-				Alors redirection vers pageArtiste.php en passant en paramètre le nom de l'artiste.
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur une photo d'un album sorti cette semaine \\
-				Alors redirection vers pageAlbum.php en passant en paramètre le nom de l'album.
-			\end{paragraphe}
+                    \image{0.30}{images/conception/page_accueil_finale}{Mockup - Page d'accueil finale}
+        \clearpage
 
 		\subsubsection{Page résultat recherche}
 
 			\begin{paragraphe}
 				Cette page, fera des requêtes sur la base de données, sur les tables << Artiste >>, << Musique >>, << Groupe>> et << Album >>. en passant en paramètre la chaine de caractère entrée dans la barre de recherche.
 			\end{paragraphe}
+
+            \begin{paragraphe}
+                En cliquant sur le résultat souhaité, l'utilisateur sera redirigé vers la page de l'artiste, du groupe, de l'album ou de la musique recherché où l'on trouvera des informations détaillées. On y trouvera aussi les phos de nouveaux artistes, où l'on pourra accéder à leurs informations en cliquant sur leur photo.
+            \end{paragraphe}
+
+            \begin{paragraphe}
+                Enfin, on y trouvera les sorties de la semaine où l'on trouvera des albums récents avec photo de la pochette et le nom de l'album ainsi qu'une brève description. Pour accéder à des informations plus détaillées sur l'album, il faudra cliquer sur le cadre correspondant à celui-ci.
+            \end{paragraphe}
+
+            \begin{paragraphe}
+                \textbf{Service PHP :}
+            \end{paragraphe}
+
+            \begin{paragraphe}
+                Les services sont ici utilisés pour la recherche (qu'elle soit pour un album, un artiste, un groupe, un genre ou une musique). Lorsqu'un résultat est sélectionné, pour l'afficher il va falloir utiliser les fonctions :
+                \begin{itemize}
+                    \item getAlbum(nomAlbum) si un album a été sélectionné.
+                    \item getArtiste(nomArtiste) si un artiste a été sélectionné.
+                    \item getGroupe(nomGroupe) si un groupe a été sélectionné.
+                    \item getMusique(nomMusique) si un musique a été sélectionné.
+                \end{itemize}
+                Les mêmes fonctions seront utilisées lors d'un clic sur la photo d'un nouvel artiste : getArtiste(nomArtiste) et lors d'un clic d'un album sorti cette semaine : getAlbum(nomAlbum).
+            \end{paragraphe}
 
 			\begin{paragraphe}
 				\textbf{Conception IHM :}
@@ -256,6 +253,21 @@
 			\begin{paragraphe}
 				Chaque résultat de la colonne << Nom >> sera cliquable, et sur clic, dirigera vers la page dédiée au résultat (i.e : la page de l'album, du morceau, du groupe ou de l'artiste correspondant).
 			\end{paragraphe}
+
+            \begin{paragraphe}
+                Si une recherche est entrée \\
+                Alors affichage des résultat correspondants sous forme de liens prévisionnels cliquables.
+            \end{paragraphe}
+
+            \begin{paragraphe}
+                Si clic sur un résultat \\
+                Alors redirection vers la page de la recherche souhaitée (exemple pageAlbum.php si un album a été sélectionné) en passant en paramètre le nom de l'album.
+            \end{paragraphe}
+
+            \begin{paragraphe}
+                Si clic sur une photo d'un nouvel artiste \\
+                Alors redirection vers pageArtiste.php en passant en paramètre le nom de l'artiste.
+            \end{paragraphe}
 
 		\subsubsection{Page description artiste / groupe}
 
