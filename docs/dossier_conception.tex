@@ -82,7 +82,7 @@
 			Alors redirection vers \underline{pageInscription.php}.
 		\end{paragraphe}
 
-		\image{0.35}{images/conception/page_type_1}{Mockup - Layout imaginé 1}
+		\image{0.35}{images/conception/page_type_1}{Mockup - Layout 1}
 
         \begin{paragraphe}
             Le layout final obtenu est très proche de ce que nous avions conceptualisé. Nous avons ajouté un bouton << À propos >>,
@@ -90,7 +90,7 @@
             Nous avons également introduit la barre de recherche sur chaque page.
         \end{paragraphe}
 
-        \image{0.30}{images/conception/page_type_1_final}{Mockup - Layout final 1}
+        \image{0.30}{images/conception/page_type_1_final}{Disposition 1 - Layout final 1}
 
     \newpage
 
@@ -115,7 +115,7 @@
 			Alors on déconnecte l'utilisateur de sa session courante.
 		\end{paragraphe}
 
-		\image{0.35}{images/conception/page_type_2}{Mockup - Layout imaginé 2}
+		\image{0.35}{images/conception/page_type_2}{Mockup - Layout 2}
 
         \begin{paragraphe}
             Le layout final obtenu est également très proche de ce que nous avions conceptualisé. Nous avons de nouveau ajouté un bouton << À propos >>,
@@ -123,7 +123,7 @@
             Nous avons également introduit la barre de recherche sur chaque page. On remarque que le bouton << deconnexion >> est bien présent.
         \end{paragraphe}
 
-        \image{0.30}{images/conception/page_type_2_final}{Mockup - Layout final 2}
+        \image{0.30}{images/conception/page_type_2_final}{Disposition 2 - Layout final 2}
 
 	\newpage
 
@@ -153,7 +153,7 @@
 			Alors on déconnecte l'utilisateur de sa session courante.
 		\end{paragraphe}
 
-		\image{0.35}{images/conception/page_type_3}{Mockup - Layout imaginé 3}
+		\image{0.35}{images/conception/page_type_3}{Mockup - Layout 3}
 
         \begin{paragraphe}
             Le layout final obtenu est également très proche de ce que nous avions conceptualisé. Nous avons de nouveau ajouté un bouton << À propos >>,
@@ -161,47 +161,66 @@
             Nous avons également introduit la barre de recherche sur chaque page. On remarque que le bouton << administration >> est bien présent.
         \end{paragraphe}
 
-        \image{0.30}{images/conception/page_type_3_final}{Mockup - Layout final 3}
+        \image{0.30}{images/conception/page_type_3_final}{Disposition 3 - final 3}
 
     \newpage
 
 \section{Présentation cahier des charges}
 
-	\begin{paragraphe}
-		\begin{itemize}
-			\item pageAccueil.php : Page d'accueil de notre site web.
-			\item pageRésultatRecherche.php : Page des résultats des recherches entrée dans la barre de recherche par l'utilisateur.
-			\item pageArtisteGroupe.php : Page des informations d'un artiste ou d'un groupe ainsi que les albums et/ou singles du groupe ou de l'artiste.
-			\item pageAlbum.php : Page d'affichage des donénes d'un morceau de musique.
-		\end{itemize}
-	\end{paragraphe}
-
-	\begin{paragraphe}
-		\begin{itemize}
-			\item pageConnexion.php : Permet de se connecter au compte de l'utilisateur.
-			\item pageInscription.php : Permet de créer un compte utilisateur.
-			\item pageCompte.php : Permet d'afficher les informations de l'utilisateur et offre à l'utilisateur la possibilité de modifier son mot de passe.
-		\end{itemize}
-	\end{paragraphe}
-
-	\begin{paragraphe}
-		\begin{itemize}
-			\item adminAccueil.php : Permet de rediriger l'administrateur sur les différents panneaux de gestion de la base de données.
-			\item adminGestionArtiste.php : Permet de gérer les différents artistes, en ajoutant ou en modifiant leurs données. Ainsi que leur attribuer des récompenses.
-			\item adminGestionGroupe.php : Permet de gérer les différents groupes, en ajoutant ou en modifiant leurs données. Ainsi que de relier un ou plusieurs artistes à un groupe.
-			\item adminGestionAlbum.php : Permet de gérer les différents albums, en ajoutant ou en modifiant leurs données. Ainsi que de relier un ou plusieurs artistes à un album.
-			\item adminGestionMusique.php : Permet de gérer les différents morceaux de musique, en ajoutant ou en modifiant leurs données. Ainsi que de relier un ou plusieurs artistes à une musique, relier un ou plusieurs albums à un musique et de relier un ou plusieurs genres à une musique.
-			\item adminFormGenre.php : Permet d'ajouter ou de modifier un genre à un morceau de musique ou un single.
-			\item adminFormRecompense.php : Permet d'ajuter une récompense à un artiste.
-			\item adminGestionUtilisateur.php : Permet à un administrateur préalablement identifié d'ajouter un utilisateur et/ou de changer le statut d'un utilisateur (administrateur ou non).
-		\end{itemize}
-	\end{paragraphe}
-
 \newpage
 
 \section{Définition des pages}
 
-	\subsection{Pages publiques}
+	    	\begin{paragraphe}
+	    	    Nous avions initialement prévu les pages suivantes pour composé notre site:\\
+        		\begin{itemize}
+        			\item pageAccueil.php : Page d'accueil de notre site web.
+        			\item pageRésultatRecherche.php : Page des résultats des recherches entrée dans la barre de recherche par l'utilisateur.
+        			\item pageArtisteGroupe.php : Page des informations d'un artiste ou d'un groupe ainsi que les albums et/ou singles du groupe ou de l'artiste.
+        			\item pageAlbum.php : Page d'affichage des donénes d'un morceau de musique.
+        		\end{itemize}
+        	\end{paragraphe}
+
+        	\begin{paragraphe}
+        		\begin{itemize}
+        			\item pageConnexion.php : Permet de se connecter au compte de l'utilisateur.
+        			\item pageInscription.php : Permet de créer un compte utilisateur.
+        			\item pageCompte.php : Permet d'afficher les informations de l'utilisateur et offre à l'utilisateur la possibilité de modifier son mot de passe.
+        		\end{itemize}
+        	\end{paragraphe}
+
+        	\begin{paragraphe}
+        		\begin{itemize}
+        			\item adminAccueil.php : Permet de rediriger l'administrateur sur les différents panneaux de gestion de la base de données.
+        			\item adminGestionArtiste.php : Permet de gérer les différents artistes, en ajoutant ou en modifiant leurs données. Ainsi que leur attribuer des récompenses.
+        			\item adminGestionGroupe.php : Permet de gérer les différents groupes, en ajoutant ou en modifiant leurs données. Ainsi que de relier un ou plusieurs artistes à un groupe.
+        			\item adminGestionAlbum.php : Permet de gérer les différents albums, en ajoutant ou en modifiant leurs données. Ainsi que de relier un ou plusieurs artistes à un album.
+        			\item adminGestionMusique.php : Permet de gérer les différents morceaux de musique, en ajoutant ou en modifiant leurs données. Ainsi que de relier un ou plusieurs artistes à une musique, relier un ou plusieurs albums à un musique et de relier un ou plusieurs genres à une musique.
+        			\item adminFormGenre.php : Permet d'ajouter ou de modifier un genre à un morceau de musique ou un single.
+        			\item adminFormRecompense.php : Permet d'ajuter une récompense à un artiste.
+        			\item adminGestionUtilisateur.php : Permet à un administrateur préalablement identifié d'ajouter un utilisateur et/ou de changer le statut d'un utilisateur (administrateur ou non).
+        		\end{itemize}
+        	\end{paragraphe}
+
+        	\begin{paragraphe}
+                Cependant au fur et à mesure du développement nous nous sommes aperçu que par souci de modularité, de lisibilité, de factorisation et de simplicité,
+                certains fichiers devaient être divisés en plusieurs quand d'autres pouvaient être fusionnés.
+                De même certains on était ajoutés pour répondre aux fonctionnalités que nous n'avions pas conceptualisé.
+            \end{paragraphe}
+
+            \begin{paragraphe}
+                Voici donc, page suivante, une liste exhaustive, tirée de notre documentation phpDoc générée à l'aide de Doxygen, présentant l'ensemble des fichiers .php avec un court descriptif de leur
+                fonction rangé dans une arborescence.
+            \end{paragraphe}
+
+    \newpage
+
+                \image{0.43}{images/conception/liste_fichier}{Définition des pages - Liste finale des fichiers}
+
+
+    \clearpage
+
+    \subsection{Pages publiques}
 		\subsubsection{Page accueil}
 
             \begin{paragraphe}
