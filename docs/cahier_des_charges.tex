@@ -65,31 +65,33 @@
             fonctionnel. De plus, il faut effectuer une phase de conception approfondie et la 
             plus complète possible afin de ne pas avoir de soucis lors de l'implémentation.
         \end{paragraphe}
+        
+\newpage
 
 \section{Fonctionnalités}
 
-\subsection{Terminologie}
+    \subsection{Terminologie}
 
-    \begin{paragraphe}
-        Nous allons tout d'abord spécifier quelques termes utilisés dans ce cahier des charges.
-        \begin{itemize}
-            \item \textbf{Artiste :} Définit le compositeur de morceaux de musiques, en solo ou au sein d'un groupe.
-            \item \textbf{Album :} Est un recueil de morceaux de musique d'un ou plusieurs artistes.
-            \item \textbf{Morceau de musique :} (Ou titre) Est une musique faisant partie d'un album ou d'un single.
-            \item \textbf{Single :} Est une musique ne faisant pas partie d'un album mais directement relié à un artiste.
-            \item \textbf{Groupe :} Regroupement d'au moins deux artistes ayant composé ensemble des morceaux de musique.
-            \item \textbf{Genre :} Caractéristique pouvant être associée à un morceau de musique.
-            \item \textbf{Récompense :} Récompense décernée à un artiste ou groupe.
-            \item \textbf{Métadonnées :} Ensemble d'éléments caractérisant un artiste, un groupe, un album, une récompense ou un morceau de musique.
+        \begin{paragraphe}
+            Nous allons tout d'abord spécifier quelques termes utilisés dans ce cahier des charges.
             \begin{itemize}
-                \item \textbf{Artiste :} Nom, Prénom, Nom de scène, Date de naissance, description et url d'une photo.
-                \item \textbf{Groupe :} Nom du groupe, Date de formation, description et url d'une photo.
-                \item \textbf{Album :} Nom de l'album, Date de sortie, description et url de la pochette.
-                \item \textbf{Titre :} Titre, durée, date de sortie et description.
-                \item \textbf{Recompense :} Intitulé, date de remise et description.
+                \item \textbf{Artiste :} Définit le compositeur de morceaux de musiques, en solo ou au sein d'un groupe.
+                \item \textbf{Album :} Est un recueil de morceaux de musique d'un ou plusieurs artistes.
+                \item \textbf{Morceau de musique :} (Ou titre) Est une musique faisant partie d'un album ou d'un single.
+                \item \textbf{Single :} Est une musique ne faisant pas partie d'un album mais directement relié à un artiste.
+                \item \textbf{Groupe :} Regroupement d'au moins deux artistes ayant composé ensemble des morceaux de musique.
+                \item \textbf{Genre :} Caractéristique pouvant être associée à un morceau de musique.
+                \item \textbf{Récompense :} Récompense décernée à un artiste ou groupe.
+                \item \textbf{Métadonnées :} Ensemble d'éléments caractérisant un artiste, un groupe, un album, une récompense ou un morceau de musique.
+                \begin{itemize}
+                    \item \textbf{Artiste :} Nom, Prénom, Nom de scène, Date de naissance, description et url d'une photo.
+                    \item \textbf{Groupe :} Nom du groupe, Date de formation, description et url d'une photo.
+                    \item \textbf{Album :} Nom de l'album, Date de sortie, description et url de la pochette.
+                    \item \textbf{Titre :} Titre, durée, date de sortie et description.
+                    \item \textbf{Recompense :} Intitulé, date de remise et description.
+                \end{itemize}
             \end{itemize}
-        \end{itemize}
-    \end{paragraphe}
+        \end{paragraphe}
 
     \subsection{Parties de l'application}
 
@@ -105,7 +107,9 @@
             Dans cette partie, on retrouvera deux sous parties qui seront selon le profil de 
             l'utilisateur.
             Si ce dernier est identifié et connecté il aura également accès au système d'évaluation.
+        \end{paragraphe}
 
+        \begin{paragraphe}
             \textbf{La partie privée} est réservée au modérateur de l'application web, c'est-à-dire 
             aux profils administrateurs.
             Elle permet entre autre de gérer toute la base de données des artistes,
@@ -126,10 +130,8 @@
         \end{paragraphe}
 
         \begin{paragraphe}
-            Les fonctionnalités suivantes sont disponibles pour n'importe quel utilisateur du site.
-        \end{paragraphe}
-
-        \begin{paragraphe}
+            \textbf{Les fonctionnalités suivantes sont disponibles pour n'importe quel utilisateur du site.}
+            \vspace{1em}
             \begin{itemize}
                 \item Effectuer une recherche d'un artiste, d'un groupe, d'un album ou d'un single
                 par son nom.
@@ -150,13 +152,13 @@
                 \item Supprimer son compte utilisateur.
             \end{itemize}
         \end{paragraphe}
+        
+\newpage
 
         \begin{paragraphe}
-            Pour les utilisateurs identifiés et connectés, les fonctionnalités suivantes sont également 
-            disponibles.
-        \end{paragraphe}
-
-        \begin{paragraphe}
+            \textbf{Pour les utilisateurs identifiés et connectés, les fonctionnalités suivantes sont également 
+            disponibles.}
+            \vspace{1em}
             \begin{itemize}
                 \item Déposer une critique sur la page d'un album ou
                 d'une musique sous la forme d'une note entière sur 5 pouvant être accompagnée d'un commentaire.
@@ -165,22 +167,26 @@
         \end{paragraphe}
 
         \begin{paragraphe}
-            Pour la partie privée voici les fonctionnalités de gestion de la base de
-            données.
-        \end{paragraphe}
-
-        \begin{paragraphe}
+            \textbf{Pour la partie privée voici les fonctionnalités de gestion de la base de
+            données.}
+            \vspace{1em}
             \begin{itemize}
                 \item Créer un artiste avec toutes ses métadonnées.
                 \item Créer un album avec ses titres et ses métadonnées.
                 \item Créer un morceau de musique avec toutes ses métadonnées.
                 \item Créer un groupe avec ses artistes et toutes ses métadonnées.
                 \item Créer une récompense à un artiste avec toutes ses métadonnées.
+            \end{itemize}
+            \vspace{1em}
+            \begin{itemize}
                 \item Modifier les métadonnées d'un artiste.
                 \item Modifier les métadonnées d'un album.
                 \item Modifier les métadonnées d'un morceau de musique.
                 \item Modifier les métadonnées d'une récompense.
                 \item Modifier les métadonnées d'un groupe.
+            \end{itemize}
+            \vspace{1em}
+            \begin{itemize}
                 \item Supprimer un artiste (supprime aussi ses albums et les titres de
                 musique qu'il a composé).
                 \item Supprimer un album d'un artiste (supprime aussi les titres qui le composent).
@@ -188,6 +194,9 @@
                 \item Supprimer une récompense d'un artiste.
                 \item Supprimer un groupe (ne supprime pas les artistes qui le composent).
                 \item Supprimer un compte utilisateur.
+            \end{itemize}
+            \vspace{1em}
+            \begin{itemize}
                 \item Créer un compte utilisateur.
                 \item Modifier les mots de passe d'autres comptes utilisateurs.
                 \item Accorder ou retirer les droits d'administration à un compte utilisateur classique.
