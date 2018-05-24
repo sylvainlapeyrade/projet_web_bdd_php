@@ -456,7 +456,7 @@
 			\end{paragraphe}
 
 			\begin{paragraphe}
-			    Cette page utilise intéragie avec la base de données avec la fonction:
+			    Cette page intéragie avec la base de données avec la fonction:
 				\begin{itemize}
 					\item connexionUtilisateur(Utilisateur) : vérifie si un utilisateur correspondant existe dans la base de données.
 				\end{itemize}
@@ -468,8 +468,8 @@
 
 			\begin{paragraphe}
 				Si l'utilisateur n'est pas connecté \\
-				Alors initialement la page est constituée d'un simple formulaire non rempli avec trois champs, nom utilisateur, mot de passe et vérification mot de passe.\\
-				 Il y également un bouton pour se connecter. Ainsi qu'un lien redirigeant vers la page d'inscription intitulé << s'inscrire >>.
+				Alors initialement la page est constituée d'un simple formulaire non rempli avec deux champs: nom utilisateur et mot de passe.\\
+				 Il y également un bouton << connexion >> ainsi qu'un lien redirigeant vers la page d'inscription intitulé << s'inscrire >>.
 			\end{paragraphe}
 
 			\image{0.25}{images/conception/page_connexion}{Mockup - Page connexion}
@@ -492,8 +492,8 @@
 
         \newpage
             \begin{paragraphe}
-                La page finale correspond une nouvelle fois à la page imaginée lors de la conception, nous avons toutefois introduit le champ
-                de vérification du mot de passse ainsi que le lien << s'inscrire >> auxquels nous n'avions pas pensé.
+                La page finale correspond une nouvelle fois à la page imaginée lors de la conception, nous avons toutefois introduit
+                 le lien << s'inscrire >>, au cas où l'utilisateur n'avait pas de compte, auquel nous n'avions pas pensé.
             \end{paragraphe}
 
             \image{0.60}{images/conception/page_connexion_finale}{Pages Utilisateurs - Page connexion finale}
@@ -511,7 +511,7 @@
 			\end{paragraphe}
 
 			\begin{paragraphe}
-				Voici la liste des fonctions utilisées pour cette page php interagissant avec la base de données :
+			    Cette page intéragie avec la base de données avec la fonction:
 				\begin{itemize}
 					\item ajouterUtilisateur(Utilisateur) : ajoute un utilisateur dans la base de données.
 				\end{itemize}
@@ -522,13 +522,9 @@
 			\end{paragraphe}
 
 			\begin{paragraphe}
-				Si l'utilisateur est déjà connecté \\
-				Alors il est redirigé vers la page d'accueil.
-			\end{paragraphe}
-
-			\begin{paragraphe}
 				Si l'utilisateur n'est pas connecté \\
-				Alors initialement la page est constituée d'u simple formulaire non rempli avec trois champs de saisi (nom utilisateur, mot de passe et vérification mot de passe), ainsi q'un bouton pour s'inscrire.
+				Alors initialement la page est constituée d'un simple formulaire non rempli avec trois champs de saisi: nom utilisateur, mot de passe et vérification mot de passe.
+				Il y également un bouton << Inscription >> ainsi qu'un lien redirigeant vers la page connexion intitulé << se connecter >>.
 			\end{paragraphe}
 
 			\image{0.3}{images/conception/page_inscription}{Mockup - Page inscription}
@@ -538,11 +534,26 @@
 				Alors effectue l'action ajouterUtilisateur(Utilisateur).
 			\end{paragraphe}
 
+           \begin{paragraphe}
+                Si clic sur lien << se connecter >> \\
+                Alors redirection vers page de connexion.
+            \end{paragraphe}
+
 			\begin{paragraphe}
 				Si l'action précédente a réussi \\
 				Alors l'utilisateur est ensuite redirigé vers la page de connexion avec le message : (votre compte à bien été enregistré).
 				Sinon l'utilisateur reste sur la page avec un message d'erreur.
 			\end{paragraphe}
+
+        \newpage
+            \begin{paragraphe}
+                La page finale corrsespond, comme pour la page de connexion, tr bien à la page imaginée lors de la conception, nous avons toutefois également introduit
+                 le lien << se connecter >>, au cas où l'utilisateur aurait déjà un compte, auquel nous n'avions pas pensé.
+            \end{paragraphe}
+
+            \image{0.60}{images/conception/page_inscription_finale}{Pages Utilisateurs - Page inscription finale}
+
+    \clearpage
 
 		\subsubsection{Page de gestion compte utilisateur}
 
@@ -563,12 +574,14 @@
 			\end{paragraphe}
 
 			\begin{paragraphe}
-				Les services sont ici utilisés pour la vérification des deux mots de passes saisi.\par
-				Une fois cette vérification établie, la base de données est modifié par la nouvelle valeur correspondant au nom de compte connecté.
+				Les services sont ici utilisés pour la vérification des deux mots de passes saisis.\par
+				Une fois cette vérification établie, la base de données est modifiée par la nouvelle valeur correspondant au nom de compte connecté.
 			\end{paragraphe}
 
 			\begin{paragraphe}
-				On effectue ces vérifications dans la fonction :
+                Il faut vérifier ici les deux mots de passes saisie.\\
+                Une fois cette vérification établie, la base de données est modifiée par la nouvelle valeur correspondant au nom de compte connecté.
+				On effectue les vérifications de mot de passe avec la fonction :
 				\begin{itemize}
 					\item modofierMotDePasse(MotDePasse) : Change le mot de passe d'un utilisateur (celui connecté).
 				\end{itemize}
@@ -579,7 +592,7 @@
 			\end{paragraphe}
 
 			\begin{paragraphe}
-				Initalement, le formulaire est vide.
+				Initalement, le formulaire est vide, il sera soumis à la page formUtilisateur.php pour la vérification.
 			\end{paragraphe}
 
 			\image{0.3}{images/conception/page_compte}{Page compte}
@@ -588,6 +601,23 @@
 				Si clic sur le bouton << Changer de mot de passe >> \\
 				Alors effectue l'action modifierMotDePasse(MotDePasse).
 			\end{paragraphe}
+
+        \newpage
+            \begin{paragraphe}
+               Au cours du développment, l'aspect et la logique de cette page a été conservé. Nous avons cependant ajouté une autre fonctionnalité
+               à la gestion de compte aui est de supprimer son compte, nous avons donc ajouté une page intermédiaire accessible en cliquant sur le bouton
+               << Connexion >> présent sur la bandeau d'en tête.\\
+                Cette page nous rapelle notre nom d'utilsateur et présente deux boutons, l'un supprime le compte auquel nous somme connecté en transmettant une requête de suppression dans la
+                base de données. L'autre renvoie à cette page de modification de mot passe.
+            \end{paragraphe}
+
+            \begin{paragraphe}
+                Voici une illustration de ces deux pages finales:
+            \end{paragraphe}
+
+            \image{0.60}{images/conception/page_compte_finale}{Pages Utilisateurs - Page gestion utilisateur finale}
+
+            \image{0.60}{images/conception/page_modif_mdp}{Pages Utilisateurs - Page modification mot de passe finale}
 
 	\clearpage
 
