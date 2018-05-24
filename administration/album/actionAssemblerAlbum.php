@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page actionAssemblerAlbum.php
- * Fait le lien entre les fonctions assembler album,
+ * @file actionAssemblerAlbum.php
+ * @brief Fait le lien entre les fonctions assembler album,
  * et la BDD
  */
 

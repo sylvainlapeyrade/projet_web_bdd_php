@@ -1,0 +1,106 @@
+\hypertarget{fonctionRecherche_8php}{}\section{Référence du fichier fonctions/fonction\+Recherche.php}
+\label{fonctionRecherche_8php}\index{fonctions/fonction\+Recherche.\+php@{fonctions/fonction\+Recherche.\+php}}
+
+
+Fichier des fonctions de recherche dans la B\+DD.  
+
+
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{fonctionRecherche_8php_a498b02bfe9256ba9d482522c56f9d7e7}{rechercher\+\_\+artiste} (\$db, \$recherche)
+\begin{DoxyCompactList}\small\item\em Renvoie les artistes à partir de leur nom, prénom ou nom de scène On utilise les joker \% avant d\textquotesingle{}utiliser bind\+Param. \end{DoxyCompactList}\item 
+\hyperlink{fonctionRecherche_8php_ad698711d776696b07caa7e2fb02ff453}{rechercher\+\_\+groupe} (\$db, \$recherche)
+\begin{DoxyCompactList}\small\item\em Renvoie les groupes à partir de leur nom On utilise les joker \% avant d\textquotesingle{}utiliser bind\+Param. \end{DoxyCompactList}\item 
+\hyperlink{fonctionRecherche_8php_a83ea610ab61d5e40930cc7ce08d7f3cd}{rechercher\+\_\+album} (\$db, \$recherche)
+\begin{DoxyCompactList}\small\item\em Renvoie les albums à partir de leur nom On utilise les joker \% avant d\textquotesingle{}utiliser bind\+Param. \end{DoxyCompactList}\item 
+\hyperlink{fonctionRecherche_8php_a217c5282b202927aea5a37d860a5fdbc}{rechercher\+\_\+musique} (\$db, \$recherche)
+\begin{DoxyCompactList}\small\item\em Renvoie les musiques à partir de leur nom On utilise les joker \% avant d\textquotesingle{}utiliser bind\+Param. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Fichier des fonctions de recherche dans la B\+DD. 
+
+
+
+\subsection{Documentation des fonctions}
+\mbox{\Hypertarget{fonctionRecherche_8php_a83ea610ab61d5e40930cc7ce08d7f3cd}\label{fonctionRecherche_8php_a83ea610ab61d5e40930cc7ce08d7f3cd}} 
+\index{fonction\+Recherche.\+php@{fonction\+Recherche.\+php}!rechercher\+\_\+album@{rechercher\+\_\+album}}
+\index{rechercher\+\_\+album@{rechercher\+\_\+album}!fonction\+Recherche.\+php@{fonction\+Recherche.\+php}}
+\subsubsection{\texorpdfstring{rechercher\+\_\+album()}{rechercher\_album()}}
+{\footnotesize\ttfamily rechercher\+\_\+album (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$recherche }\end{DoxyParamCaption})}
+
+
+
+Renvoie les albums à partir de leur nom On utilise les joker \% avant d\textquotesingle{}utiliser bind\+Param. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$recherche} & String Chaîne à rechercher \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Albums correspondant à la recherche 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionRecherche_8php_a498b02bfe9256ba9d482522c56f9d7e7}\label{fonctionRecherche_8php_a498b02bfe9256ba9d482522c56f9d7e7}} 
+\index{fonction\+Recherche.\+php@{fonction\+Recherche.\+php}!rechercher\+\_\+artiste@{rechercher\+\_\+artiste}}
+\index{rechercher\+\_\+artiste@{rechercher\+\_\+artiste}!fonction\+Recherche.\+php@{fonction\+Recherche.\+php}}
+\subsubsection{\texorpdfstring{rechercher\+\_\+artiste()}{rechercher\_artiste()}}
+{\footnotesize\ttfamily rechercher\+\_\+artiste (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$recherche }\end{DoxyParamCaption})}
+
+
+
+Renvoie les artistes à partir de leur nom, prénom ou nom de scène On utilise les joker \% avant d\textquotesingle{}utiliser bind\+Param. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$recherche} & String Chaîne à rechercher \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Artistes correspondant à la recherche 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionRecherche_8php_ad698711d776696b07caa7e2fb02ff453}\label{fonctionRecherche_8php_ad698711d776696b07caa7e2fb02ff453}} 
+\index{fonction\+Recherche.\+php@{fonction\+Recherche.\+php}!rechercher\+\_\+groupe@{rechercher\+\_\+groupe}}
+\index{rechercher\+\_\+groupe@{rechercher\+\_\+groupe}!fonction\+Recherche.\+php@{fonction\+Recherche.\+php}}
+\subsubsection{\texorpdfstring{rechercher\+\_\+groupe()}{rechercher\_groupe()}}
+{\footnotesize\ttfamily rechercher\+\_\+groupe (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$recherche }\end{DoxyParamCaption})}
+
+
+
+Renvoie les groupes à partir de leur nom On utilise les joker \% avant d\textquotesingle{}utiliser bind\+Param. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$recherche} & String Chaîne à rechercher \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Groupes correspondant à la recherche 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionRecherche_8php_a217c5282b202927aea5a37d860a5fdbc}\label{fonctionRecherche_8php_a217c5282b202927aea5a37d860a5fdbc}} 
+\index{fonction\+Recherche.\+php@{fonction\+Recherche.\+php}!rechercher\+\_\+musique@{rechercher\+\_\+musique}}
+\index{rechercher\+\_\+musique@{rechercher\+\_\+musique}!fonction\+Recherche.\+php@{fonction\+Recherche.\+php}}
+\subsubsection{\texorpdfstring{rechercher\+\_\+musique()}{rechercher\_musique()}}
+{\footnotesize\ttfamily rechercher\+\_\+musique (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$recherche }\end{DoxyParamCaption})}
+
+
+
+Renvoie les musiques à partir de leur nom On utilise les joker \% avant d\textquotesingle{}utiliser bind\+Param. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$recherche} & String Chaîne à rechercher \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Musiques correspondant à la recherche 
+\end{DoxyReturn}

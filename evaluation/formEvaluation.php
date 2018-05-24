@@ -1,8 +1,10 @@
 <?php
+
 /**
-* Page formEvaluation.php
-* Permet d'ajouter une evaluation à la BBD
+* @file evaluation/formEvaluation.php
+* @brief Permet d'ajouter une evaluation à la BBD
 */
+
 ?>
 
 <div id="form-evaluation">

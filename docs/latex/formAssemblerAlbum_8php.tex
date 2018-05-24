@@ -1,0 +1,30 @@
+\hypertarget{formAssemblerAlbum_8php}{}\section{Référence du fichier administration/album/form\+Assembler\+Album.php}
+\label{formAssemblerAlbum_8php}\index{administration/album/form\+Assembler\+Album.\+php@{administration/album/form\+Assembler\+Album.\+php}}
+
+
+Permet d\textquotesingle{}ajouter une association entre album et musique à la B\+BD.  
+
+
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{formAssemblerAlbum_8php_a024f87f9bf4f3b33710e2e7ff8f60823}\label{formAssemblerAlbum_8php_a024f87f9bf4f3b33710e2e7ff8f60823}} 
+{\bfseries \$info} \mbox{[}\textquotesingle{}head\textquotesingle{}\mbox{]}\mbox{[}\textquotesingle{}sub\+Title\textquotesingle{}\mbox{]} = \char`\"{}Gestion album\char`\"{}
+\item 
+\mbox{\Hypertarget{formAssemblerAlbum_8php_af6044c8bf78ebc8c58057e14d7738bbd}\label{formAssemblerAlbum_8php_af6044c8bf78ebc8c58057e14d7738bbd}} 
+{\bfseries \$info} \mbox{[}\textquotesingle{}head\textquotesingle{}\mbox{]}\mbox{[}\textquotesingle{}stylesheets\textquotesingle{}\mbox{]} = \mbox{[}\textquotesingle{}admin\+Gestion.\+css\textquotesingle{}\mbox{]}
+\item 
+\mbox{\Hypertarget{formAssemblerAlbum_8php_a030bb3e44494fd5720143056bb7a90d8}\label{formAssemblerAlbum_8php_a030bb3e44494fd5720143056bb7a90d8}} 
+if(!\hyperlink{fonctionCompte_8php_a2fe594e0482307b8729ea37780d6f74b}{is\+\_\+connect}()$\vert$$\vert$!\hyperlink{fonctionCompte_8php_a0b327581800dba50ad70720e23ae2ed2}{is\+\_\+admin}()) {\bfseries \$id\+Album} = \$\+\_\+\+G\+ET\mbox{[}\textquotesingle{}id\+Album\textquotesingle{}\mbox{]}
+\item 
+\mbox{\Hypertarget{formAssemblerAlbum_8php_a29391e8023617865b8749e5e096da8ff}\label{formAssemblerAlbum_8php_a29391e8023617865b8749e5e096da8ff}} 
+{\bfseries \$id\+Musique} = \$\+\_\+\+G\+ET\mbox{[}\textquotesingle{}id\+Musique\textquotesingle{}\mbox{]}
+\item 
+\mbox{\Hypertarget{formAssemblerAlbum_8php_a775b2028635d3e69cf885c3787e44dab}\label{formAssemblerAlbum_8php_a775b2028635d3e69cf885c3787e44dab}} 
+{\bfseries if} (!isset( \$id\+Album)$\vert$$\vert$empty( \$id\+Album))
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Permet d\textquotesingle{}ajouter une association entre album et musique à la B\+BD. 
+

@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page musique.php
- * Présente ue musique avec ses caractéristiques
+ * @file musique.php
+ * @brief Présente ue musique avec ses caractéristiques
  */
 
 session_start();

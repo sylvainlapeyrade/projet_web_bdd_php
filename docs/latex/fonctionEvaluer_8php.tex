@@ -1,0 +1,166 @@
+\hypertarget{fonctionEvaluer_8php}{}\section{Référence du fichier fonctions/fonction\+Evaluer.php}
+\label{fonctionEvaluer_8php}\index{fonctions/fonction\+Evaluer.\+php@{fonctions/fonction\+Evaluer.\+php}}
+
+
+Fichier des fonctions de gestion des évalutations.  
+
+
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{fonctionEvaluer_8php_afd7e91f214250ef49d12204b0796df3d}{recuperer\+\_\+evaluation\+\_\+album\+\_\+tous} (\$db, \$id\+Album\+Ev\+Al)
+\begin{DoxyCompactList}\small\item\em Recupère toutes les évalutaions d\textquotesingle{}un album de la table Evaluer\+\_\+\+Album spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Album\+Ev\+Al\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{fonctionEvaluer_8php_ad547c7fb3b9ad3a279ad461867d827b6}{recuperer\+\_\+evaluation\+\_\+musique\+\_\+tous} (\$db, \$id\+Musique\+Ev\+Mu)
+\begin{DoxyCompactList}\small\item\em Recupère toutes les évalutaions d\textquotesingle{}une musique de la table Evaluer\+\_\+\+Musique spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Musique\+Ev\+Mu\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{fonctionEvaluer_8php_ac12baf472e96e6ae3b5147e6014bf830}{ajouter\+\_\+evaluation\+\_\+album} (\$db, \$id\+Utilisateur\+Ev\+Al, \$id\+Album\+Ev\+Al, \$note\+Ev\+Al, \$commentaire\+Ev\+Al)
+\begin{DoxyCompactList}\small\item\em Ajoute une nouvelle évaluation d\textquotesingle{}album dans la B\+DD avec un id utilisateur , un id album, une note et un commentaire. \end{DoxyCompactList}\item 
+\hyperlink{fonctionEvaluer_8php_a921a20a89ee517170203db03940ce10b}{ajouter\+\_\+evaluation\+\_\+musique} (\$db, \$id\+Utilisateur\+Ev\+Mu, \$id\+Musique\+Ev\+Mu, \$note\+Ev\+Mu, \$commentaire\+Ev\+Mu)
+\begin{DoxyCompactList}\small\item\em Ajoute une nouvelle évaluation de musique dans la B\+DD avec un id utilisateur , un id musique, une note et un commentaire. \end{DoxyCompactList}\item 
+\hyperlink{fonctionEvaluer_8php_a1a585eccb331d289a8fce1c86e8ca9ea}{supprimer\+\_\+evaluation\+\_\+album} (\$db, \$id\+Utilisateur\+Ev\+Al, \$id\+Album\+Ev\+Al)
+\begin{DoxyCompactList}\small\item\em Supprime une évaluation d\textquotesingle{}un album de la B\+DD spécifié par les identifiants \textquotesingle{}id\+Utilisateur\+Ev\+Al\textquotesingle{} et \textquotesingle{}id\+Album\+Ev\+Al\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{fonctionEvaluer_8php_a2583fcafc6e435d36a55dd8bfa5f0136}{supprimer\+\_\+evaluation\+\_\+musique} (\$db, \$id\+Utilisateur\+Ev\+Mu, \$id\+Musique\+Ev\+Mu)
+\begin{DoxyCompactList}\small\item\em Supprime une évaluation d\textquotesingle{}une musique de la B\+DD spécifié par les identifiants \textquotesingle{}id\+Utilisateur\+Ev\+Mu\textquotesingle{} et \textquotesingle{}id\+Musique\+Ev\+Mu\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Fichier des fonctions de gestion des évalutations. 
+
+
+
+\subsection{Documentation des fonctions}
+\mbox{\Hypertarget{fonctionEvaluer_8php_ac12baf472e96e6ae3b5147e6014bf830}\label{fonctionEvaluer_8php_ac12baf472e96e6ae3b5147e6014bf830}} 
+\index{fonction\+Evaluer.\+php@{fonction\+Evaluer.\+php}!ajouter\+\_\+evaluation\+\_\+album@{ajouter\+\_\+evaluation\+\_\+album}}
+\index{ajouter\+\_\+evaluation\+\_\+album@{ajouter\+\_\+evaluation\+\_\+album}!fonction\+Evaluer.\+php@{fonction\+Evaluer.\+php}}
+\subsubsection{\texorpdfstring{ajouter\+\_\+evaluation\+\_\+album()}{ajouter\_evaluation\_album()}}
+{\footnotesize\ttfamily ajouter\+\_\+evaluation\+\_\+album (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Utilisateur\+Ev\+Al,  }\item[{}]{\$id\+Album\+Ev\+Al,  }\item[{}]{\$note\+Ev\+Al,  }\item[{}]{\$commentaire\+Ev\+Al }\end{DoxyParamCaption})}
+
+
+
+Ajoute une nouvelle évaluation d\textquotesingle{}album dans la B\+DD avec un id utilisateur , un id album, une note et un commentaire. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Utilisateur\+Ev\+Al} & Int Id de l\textquotesingle{}utilisateur faisant l\textquotesingle{}évaluation \\
+\hline
+{\em \$id\+Album\+Ev\+Al} & Int Id de l\textquotesingle{}album sur lequel est fait l\textquotesingle{}évaluation \\
+\hline
+{\em \$note\+Ev\+Al} & Int Note attribuée à l\textquotesingle{}album \\
+\hline
+{\em \$commentaire\+Ev\+Al} & String Commentaire fait à l\textquotesingle{}album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionEvaluer_8php_a921a20a89ee517170203db03940ce10b}\label{fonctionEvaluer_8php_a921a20a89ee517170203db03940ce10b}} 
+\index{fonction\+Evaluer.\+php@{fonction\+Evaluer.\+php}!ajouter\+\_\+evaluation\+\_\+musique@{ajouter\+\_\+evaluation\+\_\+musique}}
+\index{ajouter\+\_\+evaluation\+\_\+musique@{ajouter\+\_\+evaluation\+\_\+musique}!fonction\+Evaluer.\+php@{fonction\+Evaluer.\+php}}
+\subsubsection{\texorpdfstring{ajouter\+\_\+evaluation\+\_\+musique()}{ajouter\_evaluation\_musique()}}
+{\footnotesize\ttfamily ajouter\+\_\+evaluation\+\_\+musique (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Utilisateur\+Ev\+Mu,  }\item[{}]{\$id\+Musique\+Ev\+Mu,  }\item[{}]{\$note\+Ev\+Mu,  }\item[{}]{\$commentaire\+Ev\+Mu }\end{DoxyParamCaption})}
+
+
+
+Ajoute une nouvelle évaluation de musique dans la B\+DD avec un id utilisateur , un id musique, une note et un commentaire. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Musique\+Ev\+Mu} & Int Id de l\textquotesingle{}utilisateur faisant l\textquotesingle{}évaluation \\
+\hline
+{\em \$id\+Utilisateur\+Ev\+Mu} & Int Id de la musique sur lequel est fait l\textquotesingle{}évaluation \\
+\hline
+{\em \$note\+Ev\+Mu} & Int Note attribuée à la musique \\
+\hline
+{\em \$commentaire\+Ev\+Mu} & String Commentaire fait à la musique \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionEvaluer_8php_afd7e91f214250ef49d12204b0796df3d}\label{fonctionEvaluer_8php_afd7e91f214250ef49d12204b0796df3d}} 
+\index{fonction\+Evaluer.\+php@{fonction\+Evaluer.\+php}!recuperer\+\_\+evaluation\+\_\+album\+\_\+tous@{recuperer\+\_\+evaluation\+\_\+album\+\_\+tous}}
+\index{recuperer\+\_\+evaluation\+\_\+album\+\_\+tous@{recuperer\+\_\+evaluation\+\_\+album\+\_\+tous}!fonction\+Evaluer.\+php@{fonction\+Evaluer.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+evaluation\+\_\+album\+\_\+tous()}{recuperer\_evaluation\_album\_tous()}}
+{\footnotesize\ttfamily recuperer\+\_\+evaluation\+\_\+album\+\_\+tous (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Album\+Ev\+Al }\end{DoxyParamCaption})}
+
+
+
+Recupère toutes les évalutaions d\textquotesingle{}un album de la table Evaluer\+\_\+\+Album spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Album\+Ev\+Al\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Album\+Ev\+Al} & Int Identifiant album dans Evaluer\+\_\+\+Album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Evaluations de l\textquotesingle{}album 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionEvaluer_8php_ad547c7fb3b9ad3a279ad461867d827b6}\label{fonctionEvaluer_8php_ad547c7fb3b9ad3a279ad461867d827b6}} 
+\index{fonction\+Evaluer.\+php@{fonction\+Evaluer.\+php}!recuperer\+\_\+evaluation\+\_\+musique\+\_\+tous@{recuperer\+\_\+evaluation\+\_\+musique\+\_\+tous}}
+\index{recuperer\+\_\+evaluation\+\_\+musique\+\_\+tous@{recuperer\+\_\+evaluation\+\_\+musique\+\_\+tous}!fonction\+Evaluer.\+php@{fonction\+Evaluer.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+evaluation\+\_\+musique\+\_\+tous()}{recuperer\_evaluation\_musique\_tous()}}
+{\footnotesize\ttfamily recuperer\+\_\+evaluation\+\_\+musique\+\_\+tous (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Musique\+Ev\+Mu }\end{DoxyParamCaption})}
+
+
+
+Recupère toutes les évalutaions d\textquotesingle{}une musique de la table Evaluer\+\_\+\+Musique spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Musique\+Ev\+Mu\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Musique\+Ev\+Mu} & Int Identifiant musique dans Evaluer\+\_\+\+Musique \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Evaluations de la musique 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionEvaluer_8php_a1a585eccb331d289a8fce1c86e8ca9ea}\label{fonctionEvaluer_8php_a1a585eccb331d289a8fce1c86e8ca9ea}} 
+\index{fonction\+Evaluer.\+php@{fonction\+Evaluer.\+php}!supprimer\+\_\+evaluation\+\_\+album@{supprimer\+\_\+evaluation\+\_\+album}}
+\index{supprimer\+\_\+evaluation\+\_\+album@{supprimer\+\_\+evaluation\+\_\+album}!fonction\+Evaluer.\+php@{fonction\+Evaluer.\+php}}
+\subsubsection{\texorpdfstring{supprimer\+\_\+evaluation\+\_\+album()}{supprimer\_evaluation\_album()}}
+{\footnotesize\ttfamily supprimer\+\_\+evaluation\+\_\+album (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Utilisateur\+Ev\+Al,  }\item[{}]{\$id\+Album\+Ev\+Al }\end{DoxyParamCaption})}
+
+
+
+Supprime une évaluation d\textquotesingle{}un album de la B\+DD spécifié par les identifiants \textquotesingle{}id\+Utilisateur\+Ev\+Al\textquotesingle{} et \textquotesingle{}id\+Album\+Ev\+Al\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Utilisateur\+Ev\+Al} & Int Identifiant de l\textquotesingle{}utilisateur \\
+\hline
+{\em \$id\+Album\+Ev\+Al} & Int Identifiant de l\textquotesingle{}album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si l\textquotesingle{}opération de suppression s\textquotesingle{}est bien exécutée $\vert$ False Sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionEvaluer_8php_a2583fcafc6e435d36a55dd8bfa5f0136}\label{fonctionEvaluer_8php_a2583fcafc6e435d36a55dd8bfa5f0136}} 
+\index{fonction\+Evaluer.\+php@{fonction\+Evaluer.\+php}!supprimer\+\_\+evaluation\+\_\+musique@{supprimer\+\_\+evaluation\+\_\+musique}}
+\index{supprimer\+\_\+evaluation\+\_\+musique@{supprimer\+\_\+evaluation\+\_\+musique}!fonction\+Evaluer.\+php@{fonction\+Evaluer.\+php}}
+\subsubsection{\texorpdfstring{supprimer\+\_\+evaluation\+\_\+musique()}{supprimer\_evaluation\_musique()}}
+{\footnotesize\ttfamily supprimer\+\_\+evaluation\+\_\+musique (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Utilisateur\+Ev\+Mu,  }\item[{}]{\$id\+Musique\+Ev\+Mu }\end{DoxyParamCaption})}
+
+
+
+Supprime une évaluation d\textquotesingle{}une musique de la B\+DD spécifié par les identifiants \textquotesingle{}id\+Utilisateur\+Ev\+Mu\textquotesingle{} et \textquotesingle{}id\+Musique\+Ev\+Mu\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Utilisateur\+Ev\+Mu} & Int Identifiant de l\textquotesingle{}utilisateur \\
+\hline
+{\em \$id\+Musique\+Ev\+Mu} & Int Identifiant de l\textquotesingle{}album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si l\textquotesingle{}opération de suppression s\textquotesingle{}est bien exécutée $\vert$ False Sinon. 
+\end{DoxyReturn}

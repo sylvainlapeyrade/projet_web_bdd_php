@@ -1,0 +1,86 @@
+\hypertarget{fonctionGenre_8php}{}\section{Référence du fichier fonctions/fonction\+Genre.php}
+\label{fonctionGenre_8php}\index{fonctions/fonction\+Genre.\+php@{fonctions/fonction\+Genre.\+php}}
+
+
+Fichier des fonctions de gestion des genres.  
+
+
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{fonctionGenre_8php_ae3ebadf36a99328177028d1824d9a1fb}{recuperer\+\_\+genre\+\_\+musique} (\$db, \$id\+Musique)
+\begin{DoxyCompactList}\small\item\em Récupère les genre d\textquotesingle{}une musique spécifier par l\textquotesingle{}identifiant \textquotesingle{}id\+Musique\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{fonctionGenre_8php_ab658dc12789ce97c80b529b97f425905}{ajouter\+\_\+genre} (\$db, \$id\+Musique, \$nom\+Genre)
+\begin{DoxyCompactList}\small\item\em Ajoute une nouveau genre à la B\+DD avec un id musique et un nom de genre. \end{DoxyCompactList}\item 
+\hyperlink{fonctionGenre_8php_aac30608e1fb36a083cc805b80a8f1fa0}{supprimer\+\_\+genre\+\_\+tous} (\$db, \$id\+Musique\+De)
+\begin{DoxyCompactList}\small\item\em Supprime toutes les genres d\textquotesingle{}une musique spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Musique\+De\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Fichier des fonctions de gestion des genres. 
+
+
+
+\subsection{Documentation des fonctions}
+\mbox{\Hypertarget{fonctionGenre_8php_ab658dc12789ce97c80b529b97f425905}\label{fonctionGenre_8php_ab658dc12789ce97c80b529b97f425905}} 
+\index{fonction\+Genre.\+php@{fonction\+Genre.\+php}!ajouter\+\_\+genre@{ajouter\+\_\+genre}}
+\index{ajouter\+\_\+genre@{ajouter\+\_\+genre}!fonction\+Genre.\+php@{fonction\+Genre.\+php}}
+\subsubsection{\texorpdfstring{ajouter\+\_\+genre()}{ajouter\_genre()}}
+{\footnotesize\ttfamily ajouter\+\_\+genre (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Musique,  }\item[{}]{\$nom\+Genre }\end{DoxyParamCaption})}
+
+
+
+Ajoute une nouveau genre à la B\+DD avec un id musique et un nom de genre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Musique} & Int Identifiant de la musique \\
+\hline
+{\em \$nom\+Genre} & String Nom du genre \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Int id\+Musique si la requête s\textquotesingle{}est bien exécutée $\vert$ Null Sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionGenre_8php_ae3ebadf36a99328177028d1824d9a1fb}\label{fonctionGenre_8php_ae3ebadf36a99328177028d1824d9a1fb}} 
+\index{fonction\+Genre.\+php@{fonction\+Genre.\+php}!recuperer\+\_\+genre\+\_\+musique@{recuperer\+\_\+genre\+\_\+musique}}
+\index{recuperer\+\_\+genre\+\_\+musique@{recuperer\+\_\+genre\+\_\+musique}!fonction\+Genre.\+php@{fonction\+Genre.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+genre\+\_\+musique()}{recuperer\_genre\_musique()}}
+{\footnotesize\ttfamily recuperer\+\_\+genre\+\_\+musique (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Musique }\end{DoxyParamCaption})}
+
+
+
+Récupère les genre d\textquotesingle{}une musique spécifier par l\textquotesingle{}identifiant \textquotesingle{}id\+Musique\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Musique} & Int Identifiant de la musique \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Genre de la musique 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionGenre_8php_aac30608e1fb36a083cc805b80a8f1fa0}\label{fonctionGenre_8php_aac30608e1fb36a083cc805b80a8f1fa0}} 
+\index{fonction\+Genre.\+php@{fonction\+Genre.\+php}!supprimer\+\_\+genre\+\_\+tous@{supprimer\+\_\+genre\+\_\+tous}}
+\index{supprimer\+\_\+genre\+\_\+tous@{supprimer\+\_\+genre\+\_\+tous}!fonction\+Genre.\+php@{fonction\+Genre.\+php}}
+\subsubsection{\texorpdfstring{supprimer\+\_\+genre\+\_\+tous()}{supprimer\_genre\_tous()}}
+{\footnotesize\ttfamily supprimer\+\_\+genre\+\_\+tous (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Musique\+De }\end{DoxyParamCaption})}
+
+
+
+Supprime toutes les genres d\textquotesingle{}une musique spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Musique\+De\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Musique\+De} & Int Identifiant musique dans Definir \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False sinon 
+\end{DoxyReturn}

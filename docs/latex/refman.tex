@@ -1,0 +1,220 @@
+\documentclass[twoside]{book}
+
+% Packages required by doxygen
+\usepackage{fixltx2e}
+\usepackage{calc}
+\usepackage{doxygen}
+\usepackage[export]{adjustbox} % also loads graphicx
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{makeidx}
+\usepackage{multicol}
+\usepackage{multirow}
+\PassOptionsToPackage{warn}{textcomp}
+\usepackage{textcomp}
+\usepackage[nointegrals]{wasysym}
+\usepackage[table]{xcolor}
+
+% NLS support packages
+\usepackage[french]{babel}
+
+% Font selection
+\usepackage[T1]{fontenc}
+\usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\usepackage{amssymb}
+\usepackage{sectsty}
+\renewcommand{\familydefault}{\sfdefault}
+\allsectionsfont{%
+  \fontseries{bc}\selectfont%
+  \color{darkgray}%
+}
+\renewcommand{\DoxyLabelFont}{%
+  \fontseries{bc}\selectfont%
+  \color{darkgray}%
+}
+\newcommand{\+}{\discretionary{\mbox{\scriptsize$\hookleftarrow$}}{}{}}
+
+% Page & text layout
+\usepackage{geometry}
+\geometry{%
+  a4paper,%
+  top=2.5cm,%
+  bottom=2.5cm,%
+  left=2.5cm,%
+  right=2.5cm%
+}
+\tolerance=750
+\hfuzz=15pt
+\hbadness=750
+\setlength{\emergencystretch}{15pt}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{3ex plus 2ex minus 2ex}
+\makeatletter
+\renewcommand{\paragraph}{%
+  \@startsection{paragraph}{4}{0ex}{-1.0ex}{1.0ex}{%
+    \normalfont\normalsize\bfseries\SS@parafont%
+  }%
+}
+\renewcommand{\subparagraph}{%
+  \@startsection{subparagraph}{5}{0ex}{-1.0ex}{1.0ex}{%
+    \normalfont\normalsize\bfseries\SS@subparafont%
+  }%
+}
+\makeatother
+
+% Headers & footers
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead[LE]{\fancyplain{}{\bfseries\thepage}}
+\fancyhead[CE]{\fancyplain{}{}}
+\fancyhead[RE]{\fancyplain{}{\bfseries\leftmark}}
+\fancyhead[LO]{\fancyplain{}{\bfseries\rightmark}}
+\fancyhead[CO]{\fancyplain{}{}}
+\fancyhead[RO]{\fancyplain{}{\bfseries\thepage}}
+\fancyfoot[LE]{\fancyplain{}{}}
+\fancyfoot[CE]{\fancyplain{}{}}
+\fancyfoot[RE]{\fancyplain{}{\bfseries\scriptsize Généré par Doxygen }}
+\fancyfoot[LO]{\fancyplain{}{\bfseries\scriptsize Généré par Doxygen }}
+\fancyfoot[CO]{\fancyplain{}{}}
+\fancyfoot[RO]{\fancyplain{}{}}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\chaptermark}[1]{%
+  \markboth{#1}{}%
+}
+\renewcommand{\sectionmark}[1]{%
+  \markright{\thesection\ #1}%
+}
+
+% Indices & bibliography
+\usepackage{natbib}
+\usepackage[titles]{tocloft}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{5}
+\makeindex
+
+% Hyperlinks (required, but should be loaded last)
+\usepackage{ifpdf}
+\ifpdf
+  \usepackage[pdftex,pagebackref=true]{hyperref}
+\else
+  \usepackage[ps2pdf,pagebackref=true]{hyperref}
+\fi
+\hypersetup{%
+  colorlinks=true,%
+  linkcolor=blue,%
+  citecolor=blue,%
+  unicode%
+}
+
+% Custom commands
+\newcommand{\clearemptydoublepage}{%
+  \newpage{\pagestyle{empty}\cleardoublepage}%
+}
+
+\usepackage{caption}
+\captionsetup{labelsep=space,justification=centering,font={bf},singlelinecheck=off,skip=4pt,position=top}
+
+%===== C O N T E N T S =====
+
+\begin{document}
+
+% Titlepage & ToC
+\hypersetup{pageanchor=false,
+             bookmarksnumbered=true,
+             pdfencoding=unicode
+            }
+\pagenumbering{alph}
+\begin{titlepage}
+\vspace*{7cm}
+\begin{center}%
+{\Large Critique musical }\\
+\vspace*{1cm}
+{\large Généré par Doxygen 1.8.13}\\
+\end{center}
+\end{titlepage}
+\clearemptydoublepage
+\pagenumbering{roman}
+\tableofcontents
+\clearemptydoublepage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true}
+
+%--- Begin generated contents ---
+\chapter{Projet \+: Web -\/ BD -\/ P\+HP}
+\label{md_README}
+\Hypertarget{md_README}
+\input{md_README}
+\chapter{Index des fichiers}
+\input{files}
+\chapter{Documentation des fichiers}
+\input{404_8php}
+\input{actionAlbum_8php}
+\input{actionAssemblerAlbum_8php}
+\input{formAlbum_8php}
+\input{formAssemblerAlbum_8php}
+\input{gestionAlbum_8php}
+\input{gestionAssemblerAlbum_8php}
+\input{headerAlbum_8php}
+\input{headerAssemblerAlbum_8php}
+\input{actionArtiste_8php}
+\input{formArtiste_8php}
+\input{gestionArtiste_8php}
+\input{headerArtiste_8php}
+\input{actionGroupe_8php}
+\input{formGroupe_8php}
+\input{gestionGroupe_8php}
+\input{headerGroupe_8php}
+\input{compte_2index_8php}
+\input{actionMusique_8php}
+\input{gestionMusique_8php}
+\input{headerMusique_8php}
+\input{actionRecompense_8php}
+\input{gestionRecompense_8php}
+\input{headerRecompense_8php}
+\input{actionUtilisateur_8php}
+\input{formUtilisateur_8php}
+\input{gestionUtilisateur_8php}
+\input{headerUtilisateur_8php}
+\input{album_8php}
+\input{aPropos_8php}
+\input{artiste_8php}
+\input{barreRecherche_8php}
+\input{bdd_2connexion_8php}
+\input{compte_2connexion_8php}
+\input{init__bdd_8php}
+\input{actionCompte_8php}
+\input{deconnexion_8php}
+\input{formMotDePasse_8php}
+\input{headerCompte_8php}
+\input{inscription_8php}
+\input{actionEvaluation_8php}
+\input{evaluation_8php}
+\input{formEvaluation_8php}
+\input{headerEvaluation_8php}
+\input{fonctionAlbum_8php}
+\input{fonctionArtiste_8php}
+\input{fonctionCompte_8php}
+\input{fonctionEvaluer_8php}
+\input{fonctionGenre_8php}
+\input{fonctionGroupe_8php}
+\input{fonctionMusique_8php}
+\input{fonctionRecherche_8php}
+\input{fonctionRecompense_8php}
+\input{variables_8php}
+\input{footer_8php}
+\input{head_8php}
+\input{header_8php}
+\input{musique_8php}
+\input{recherche_8php}
+%--- End generated contents ---
+
+% Index
+\backmatter
+\newpage
+\phantomsection
+\clearemptydoublepage
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+
+\end{document}

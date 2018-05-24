@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page actionUtilisateur.php
- * Fait le lien entre le formulaire utilisateur,
+ * @file actionUtilisateur.php
+ * @brief Fait le lien entre le formulaire utilisateur,
  * la gestion des utilisateur et la BDD
  */
 

@@ -1,0 +1,237 @@
+\hypertarget{fonctionCompte_8php}{}\section{Référence du fichier fonctions/fonction\+Compte.php}
+\label{fonctionCompte_8php}\index{fonctions/fonction\+Compte.\+php@{fonctions/fonction\+Compte.\+php}}
+
+
+Fichier des fonctions de gestion du compte.  
+
+
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{fonctionCompte_8php_a8aee9a4b3e196b8ce9608eadd74bcb2d}\label{fonctionCompte_8php_a8aee9a4b3e196b8ce9608eadd74bcb2d}} 
+\hyperlink{fonctionCompte_8php_a8aee9a4b3e196b8ce9608eadd74bcb2d}{leave} ()
+\begin{DoxyCompactList}\small\item\em l\textquotesingle{}utilisateur vers la page d\textquotesingle{}accueil. Est utilisé pour la sécurité de l\textquotesingle{}application. \end{DoxyCompactList}\item 
+\hyperlink{fonctionCompte_8php_a2fe594e0482307b8729ea37780d6f74b}{is\+\_\+connect} ()
+\begin{DoxyCompactList}\small\item\em Vérifie si l\textquotesingle{}utilisateur est bien connecté \end{DoxyCompactList}\item 
+\hyperlink{fonctionCompte_8php_a0b327581800dba50ad70720e23ae2ed2}{is\+\_\+admin} ()
+\begin{DoxyCompactList}\small\item\em Vérifie si l\textquotesingle{}utilisateur est connecté et s\textquotesingle{}il est administrateur. \end{DoxyCompactList}\item 
+\hyperlink{fonctionCompte_8php_a926d0fa5076c218d81218748c600432a}{connexion\+\_\+compte} (\$db, \$identifiant, \$mot\+De\+Passe)
+\begin{DoxyCompactList}\small\item\em Connexion d\textquotesingle{}un utilisateur avec id et mdp Vérifie dans la B\+DD si une entrée correspond à l\textquotesingle{}id et au mdp Ouvre une session avec l\textquotesingle{}id de l\textquotesingle{}utilisateur et son statut. \end{DoxyCompactList}\item 
+\hyperlink{fonctionCompte_8php_a14a1d917e57b5e0bbbded23ed82df0a3}{inscription} (\$db, \$identifiant, \$mot\+De\+Passe)
+\begin{DoxyCompactList}\small\item\em Inscrit un nouveau utilisateur dans la B\+DD. Vérifie dans la B\+DD s\textquotesingle{}il n\textquotesingle{}y a pas déjà une entrée correspondant au couple id/mdp et le cas echeant enregistre le nouvel utilisateur. Le nouveau compte crée est par défaut non administrateur. \end{DoxyCompactList}\item 
+\hyperlink{fonctionCompte_8php_aadbf0b64bdc685cdf00ccc9a7ee666ad}{recuperer\+\_\+utilisateur\+\_\+tous} (\$db)
+\begin{DoxyCompactList}\small\item\em Récupère tout les utilisateurs de la B\+DD en les triant par ordre alphabétique de leur identifiant. \end{DoxyCompactList}\item 
+\hyperlink{fonctionCompte_8php_a965b084282293c3d3a9816a413fd5f4c}{recuperer\+\_\+utilisateur} (\$db, \$identifiant)
+\begin{DoxyCompactList}\small\item\em Récupère un utilisateur de la base de données spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Utilisateur\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{fonctionCompte_8php_aa50c1cf48630472e499d09a15230e8f1}{ajouter\+\_\+utilisateur} (\$db, \$identifiant, \$mot\+De\+Passe, \$statut)
+\begin{DoxyCompactList}\small\item\em Ajoute un nouvel utilisateur dans la B\+DD avec un id, un mdp et un statut. \end{DoxyCompactList}\item 
+\hyperlink{fonctionCompte_8php_a0d73aace23ae62538ab0ac26ade08960}{modifier\+\_\+motdepasse\+\_\+utilisateur} (\$db, \$identifiant, \$mot\+De\+Passe)
+\begin{DoxyCompactList}\small\item\em Modifie le mot de passe d\textquotesingle{}un utilisateur dans la B\+DD. \end{DoxyCompactList}\item 
+\hyperlink{fonctionCompte_8php_a355bff11e2418b867d8f9ad50e51af90}{modifier\+\_\+statut\+\_\+utilisateur} (\$db, \$identifiant, \$statut)
+\begin{DoxyCompactList}\small\item\em Modifie le statut de l\textquotesingle{}utilisateur dans la B\+DD. \end{DoxyCompactList}\item 
+\hyperlink{fonctionCompte_8php_a71d9b591a6c09487582f9f51a162f8f8}{supprimer\+\_\+utilisateur} (\$db, \$identifiant)
+\begin{DoxyCompactList}\small\item\em Supprime un utilisateur de la B\+DD spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Utilisateur\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Fichier des fonctions de gestion du compte. 
+
+
+
+\subsection{Documentation des fonctions}
+\mbox{\Hypertarget{fonctionCompte_8php_aa50c1cf48630472e499d09a15230e8f1}\label{fonctionCompte_8php_aa50c1cf48630472e499d09a15230e8f1}} 
+\index{fonction\+Compte.\+php@{fonction\+Compte.\+php}!ajouter\+\_\+utilisateur@{ajouter\+\_\+utilisateur}}
+\index{ajouter\+\_\+utilisateur@{ajouter\+\_\+utilisateur}!fonction\+Compte.\+php@{fonction\+Compte.\+php}}
+\subsubsection{\texorpdfstring{ajouter\+\_\+utilisateur()}{ajouter\_utilisateur()}}
+{\footnotesize\ttfamily ajouter\+\_\+utilisateur (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$identifiant,  }\item[{}]{\$mot\+De\+Passe,  }\item[{}]{\$statut }\end{DoxyParamCaption})}
+
+
+
+Ajoute un nouvel utilisateur dans la B\+DD avec un id, un mdp et un statut. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$identifiant} & String Identifiant utilisateur \\
+\hline
+{\em \$mot\+De\+Passe} & String M\+DP utilisateur \\
+\hline
+{\em \$statut} & String Statut utilisateur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si l\textquotesingle{}opération d\textquotesingle{}ajout s\textquotesingle{}est bien exécutée $\vert$ False sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionCompte_8php_a926d0fa5076c218d81218748c600432a}\label{fonctionCompte_8php_a926d0fa5076c218d81218748c600432a}} 
+\index{fonction\+Compte.\+php@{fonction\+Compte.\+php}!connexion\+\_\+compte@{connexion\+\_\+compte}}
+\index{connexion\+\_\+compte@{connexion\+\_\+compte}!fonction\+Compte.\+php@{fonction\+Compte.\+php}}
+\subsubsection{\texorpdfstring{connexion\+\_\+compte()}{connexion\_compte()}}
+{\footnotesize\ttfamily connexion\+\_\+compte (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$identifiant,  }\item[{}]{\$mot\+De\+Passe }\end{DoxyParamCaption})}
+
+
+
+Connexion d\textquotesingle{}un utilisateur avec id et mdp Vérifie dans la B\+DD si une entrée correspond à l\textquotesingle{}id et au mdp Ouvre une session avec l\textquotesingle{}id de l\textquotesingle{}utilisateur et son statut. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$identifiant} & String à vérifier \\
+\hline
+{\em \$mot\+De\+Passe} & String à vérifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la connexion a été effectuée $\vert$ False sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionCompte_8php_a14a1d917e57b5e0bbbded23ed82df0a3}\label{fonctionCompte_8php_a14a1d917e57b5e0bbbded23ed82df0a3}} 
+\index{fonction\+Compte.\+php@{fonction\+Compte.\+php}!inscription@{inscription}}
+\index{inscription@{inscription}!fonction\+Compte.\+php@{fonction\+Compte.\+php}}
+\subsubsection{\texorpdfstring{inscription()}{inscription()}}
+{\footnotesize\ttfamily inscription (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$identifiant,  }\item[{}]{\$mot\+De\+Passe }\end{DoxyParamCaption})}
+
+
+
+Inscrit un nouveau utilisateur dans la B\+DD. Vérifie dans la B\+DD s\textquotesingle{}il n\textquotesingle{}y a pas déjà une entrée correspondant au couple id/mdp et le cas echeant enregistre le nouvel utilisateur. Le nouveau compte crée est par défaut non administrateur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$identifiant} & String à vérifier \\
+\hline
+{\em \$mot\+De\+Passe} & String à vérifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si l\textquotesingle{}enregistrement dans la B\+DD a été effectué $\vert$ False sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionCompte_8php_a0b327581800dba50ad70720e23ae2ed2}\label{fonctionCompte_8php_a0b327581800dba50ad70720e23ae2ed2}} 
+\index{fonction\+Compte.\+php@{fonction\+Compte.\+php}!is\+\_\+admin@{is\+\_\+admin}}
+\index{is\+\_\+admin@{is\+\_\+admin}!fonction\+Compte.\+php@{fonction\+Compte.\+php}}
+\subsubsection{\texorpdfstring{is\+\_\+admin()}{is\_admin()}}
+{\footnotesize\ttfamily is\+\_\+admin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Vérifie si l\textquotesingle{}utilisateur est connecté et s\textquotesingle{}il est administrateur. 
+
+\begin{DoxyReturn}{Renvoie}
+True si l\textquotesingle{}utilisateur est connecté et administrateur $\vert$ False sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionCompte_8php_a2fe594e0482307b8729ea37780d6f74b}\label{fonctionCompte_8php_a2fe594e0482307b8729ea37780d6f74b}} 
+\index{fonction\+Compte.\+php@{fonction\+Compte.\+php}!is\+\_\+connect@{is\+\_\+connect}}
+\index{is\+\_\+connect@{is\+\_\+connect}!fonction\+Compte.\+php@{fonction\+Compte.\+php}}
+\subsubsection{\texorpdfstring{is\+\_\+connect()}{is\_connect()}}
+{\footnotesize\ttfamily is\+\_\+connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Vérifie si l\textquotesingle{}utilisateur est bien connecté 
+
+\begin{DoxyReturn}{Renvoie}
+True si l\textquotesingle{}utilisateur est connecté $\vert$ False sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionCompte_8php_a0d73aace23ae62538ab0ac26ade08960}\label{fonctionCompte_8php_a0d73aace23ae62538ab0ac26ade08960}} 
+\index{fonction\+Compte.\+php@{fonction\+Compte.\+php}!modifier\+\_\+motdepasse\+\_\+utilisateur@{modifier\+\_\+motdepasse\+\_\+utilisateur}}
+\index{modifier\+\_\+motdepasse\+\_\+utilisateur@{modifier\+\_\+motdepasse\+\_\+utilisateur}!fonction\+Compte.\+php@{fonction\+Compte.\+php}}
+\subsubsection{\texorpdfstring{modifier\+\_\+motdepasse\+\_\+utilisateur()}{modifier\_motdepasse\_utilisateur()}}
+{\footnotesize\ttfamily modifier\+\_\+motdepasse\+\_\+utilisateur (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$identifiant,  }\item[{}]{\$mot\+De\+Passe }\end{DoxyParamCaption})}
+
+
+
+Modifie le mot de passe d\textquotesingle{}un utilisateur dans la B\+DD. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$identifiant} & String Identifiant utilisateur \\
+\hline
+{\em \$mot\+De\+Passe} & String M\+DP utilisateur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si l\textquotesingle{}opération de modification s\textquotesingle{}est bien exécutée $\vert$ False Sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionCompte_8php_a355bff11e2418b867d8f9ad50e51af90}\label{fonctionCompte_8php_a355bff11e2418b867d8f9ad50e51af90}} 
+\index{fonction\+Compte.\+php@{fonction\+Compte.\+php}!modifier\+\_\+statut\+\_\+utilisateur@{modifier\+\_\+statut\+\_\+utilisateur}}
+\index{modifier\+\_\+statut\+\_\+utilisateur@{modifier\+\_\+statut\+\_\+utilisateur}!fonction\+Compte.\+php@{fonction\+Compte.\+php}}
+\subsubsection{\texorpdfstring{modifier\+\_\+statut\+\_\+utilisateur()}{modifier\_statut\_utilisateur()}}
+{\footnotesize\ttfamily modifier\+\_\+statut\+\_\+utilisateur (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$identifiant,  }\item[{}]{\$statut }\end{DoxyParamCaption})}
+
+
+
+Modifie le statut de l\textquotesingle{}utilisateur dans la B\+DD. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$identifiant} & String Identifiant utilisateur \\
+\hline
+{\em \$statut} & String Statut utilisateur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si l\textquotesingle{}opération de modification s\textquotesingle{}est bien exécutée $\vert$ False Sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionCompte_8php_a965b084282293c3d3a9816a413fd5f4c}\label{fonctionCompte_8php_a965b084282293c3d3a9816a413fd5f4c}} 
+\index{fonction\+Compte.\+php@{fonction\+Compte.\+php}!recuperer\+\_\+utilisateur@{recuperer\+\_\+utilisateur}}
+\index{recuperer\+\_\+utilisateur@{recuperer\+\_\+utilisateur}!fonction\+Compte.\+php@{fonction\+Compte.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+utilisateur()}{recuperer\_utilisateur()}}
+{\footnotesize\ttfamily recuperer\+\_\+utilisateur (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$identifiant }\end{DoxyParamCaption})}
+
+
+
+Récupère un utilisateur de la base de données spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Utilisateur\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$identifiant} & String Identifiant utilisateur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array L\textquotesingle{}utilisateur correspondant a l\textquotesingle{}id $\vert$ Null sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionCompte_8php_aadbf0b64bdc685cdf00ccc9a7ee666ad}\label{fonctionCompte_8php_aadbf0b64bdc685cdf00ccc9a7ee666ad}} 
+\index{fonction\+Compte.\+php@{fonction\+Compte.\+php}!recuperer\+\_\+utilisateur\+\_\+tous@{recuperer\+\_\+utilisateur\+\_\+tous}}
+\index{recuperer\+\_\+utilisateur\+\_\+tous@{recuperer\+\_\+utilisateur\+\_\+tous}!fonction\+Compte.\+php@{fonction\+Compte.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+utilisateur\+\_\+tous()}{recuperer\_utilisateur\_tous()}}
+{\footnotesize\ttfamily recuperer\+\_\+utilisateur\+\_\+tous (\begin{DoxyParamCaption}\item[{}]{\$db }\end{DoxyParamCaption})}
+
+
+
+Récupère tout les utilisateurs de la B\+DD en les triant par ordre alphabétique de leur identifiant. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Les utilisateurs de la base de données 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionCompte_8php_a71d9b591a6c09487582f9f51a162f8f8}\label{fonctionCompte_8php_a71d9b591a6c09487582f9f51a162f8f8}} 
+\index{fonction\+Compte.\+php@{fonction\+Compte.\+php}!supprimer\+\_\+utilisateur@{supprimer\+\_\+utilisateur}}
+\index{supprimer\+\_\+utilisateur@{supprimer\+\_\+utilisateur}!fonction\+Compte.\+php@{fonction\+Compte.\+php}}
+\subsubsection{\texorpdfstring{supprimer\+\_\+utilisateur()}{supprimer\_utilisateur()}}
+{\footnotesize\ttfamily supprimer\+\_\+utilisateur (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$identifiant }\end{DoxyParamCaption})}
+
+
+
+Supprime un utilisateur de la B\+DD spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Utilisateur\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$identifiant} & String Identifiant utilisateur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si l\textquotesingle{}opération de suppression s\textquotesingle{}est bien exécutée $\vert$ False Sinon. 
+\end{DoxyReturn}

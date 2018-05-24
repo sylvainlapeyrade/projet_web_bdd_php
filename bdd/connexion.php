@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page connexion.php
- * Connexion à la BDD via PDO
+ * @file bdd/connexion.php
+ * @brief Connexion à la BDD via PDO
  */
 
 /* Instruction d'utilisation:

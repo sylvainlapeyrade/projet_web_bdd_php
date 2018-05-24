@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page evaluation.php
- * Affiche les évaluations en permettant leur suppression
+ * @file evaluation/evaluation.php
+ * @brief Affiche les évaluations en permettant leur suppression
  */
 
 if ( isset($db) ) {

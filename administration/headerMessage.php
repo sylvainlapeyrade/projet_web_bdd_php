@@ -1,8 +1,10 @@
 <?php
+
 /**
- * Page headerMessage.php
- * Inclut des messages pour la partie administration
+ * @file admin/headerMessage.php
+ * @brief Inclut des messages pour la partie administration
  */
+
 ?>
 
 <?php if ( isset($erreur) ) { ?>

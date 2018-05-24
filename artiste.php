@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page artiste.php
- * Présente un artiste avec ses caractéristiques
+ * @file artiste.php
+ * @brief Présente un artiste avec ses caractéristiques
  */
 
 session_start();

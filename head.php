@@ -1,8 +1,10 @@
 <?php
+
 /**
- * Page head.php
- * Inclut les caractéristiques de la tete de page
+ * @file head.php
+ * @brief Inclut les caractéristiques de l'entête de page
  */
+
 ?>
 
 <!DOCTYPE html>

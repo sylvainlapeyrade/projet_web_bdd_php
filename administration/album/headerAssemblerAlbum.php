@@ -1,8 +1,10 @@
 <?php
+
 /**
- * Page headerAssemblerAlbum.php
- * Inclut les caractéristiques du bouton Gestion des albums
+ * @file headerAssemblerAlbum.php
+ * @brief Inclut les caractéristiques du bouton Gestion des albums
  */
+
 ?>
 
 <div id="headerGestion" class="flex flex-row">

@@ -1,12 +1,12 @@
 <?php
 
 /**
- * FICHIER : FUNCTIONS -> fonctionRecherche.php
- * Fichier des fonctions de recherche dans la BDD.
+ * @file fonctions/fonctionRecherche.php
+ * @brief Fichier des fonctions de recherche dans la BDD.
  */
 
 /**
- * Renvoie les artistes à partir de leur nom, prénom ou nom de scène
+ * @brief Renvoie les artistes à partir de leur nom, prénom ou nom de scène
  * On utilise les joker % avant d'utiliser bindParam
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $recherche String Chaîne à rechercher
@@ -23,7 +23,7 @@ function rechercher_artiste($db, $recherche) {
 }
 
 /**
- * Renvoie les groupes à partir de leur nom
+ * @brief Renvoie les groupes à partir de leur nom
  * On utilise les joker % avant d'utiliser bindParam
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $recherche String Chaîne à rechercher
@@ -39,7 +39,7 @@ function rechercher_groupe($db, $recherche) {
 }
 
 /**
- * Renvoie les albums à partir de leur nom
+ * @brief Renvoie les albums à partir de leur nom
  * On utilise les joker % avant d'utiliser bindParam
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $recherche String Chaîne à rechercher
@@ -59,7 +59,7 @@ function rechercher_album($db, $recherche) {
 }
 
 /**
- * Renvoie les musiques à partir de leur nom
+ * @brief Renvoie les musiques à partir de leur nom
  * On utilise les joker % avant d'utiliser bindParam
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $recherche String Chaîne à rechercher

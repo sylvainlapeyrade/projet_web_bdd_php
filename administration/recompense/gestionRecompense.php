@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page gestionRecompense.php
- * Affiche et propose de modifier et supprimer une recompense
+ * @file gestionRecompense.php
+ * @brief Affiche et propose de modifier et supprimer une recompense
  */
 
 session_start();

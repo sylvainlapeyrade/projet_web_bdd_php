@@ -1,12 +1,13 @@
 <?php
+
 /**
- * Fichier variables.php
- * Contient des fonctions générales de formatage et d'affichage
+ * @file fonctions/variables.php
+ * @brief Contient des fonctions générales de formatage et d'affichage
  * ainsi que des variables globales au site
  */
 
 /**
- * Renvoie une date dans le format "Y-m-d" à partir
+ * @brief Renvoie une date dans le format "Y-m-d" à partir
  * d'une chaine en paramètre.
  * @param $date String Date à transformer
  * @return String La date transformée | Null sinon
@@ -19,7 +20,7 @@ function format_date($date) {
 }
 
 /**
- * Renvoie une date dans le format "d-m-Y" à partir
+ * @brief Renvoie une date dans le format "d-m-Y" à partir
  * d'une date en format "Y-m-d".
  * @param $date String Date à transformer
  * @return String La date transformée
@@ -30,7 +31,7 @@ function affichage_date($date){
 }
 
 /**
- * Expression régulière vérifiant si une date est bien
+ * @brief Expression régulière vérifiant si une date est bien
  * conforme à son format attendu
  * @param $date String Date à vérifier
  * @return false si la date est invalide | true sinon
@@ -72,7 +73,7 @@ function date_valide($date) {
 }
 
 /**
- * Transforme une durée en secondes
+ * @brief Transforme une durée en secondes
  * en durée en minutes secondes
  * @param $secondes String Durée à convertir
  * @return String durée convertie

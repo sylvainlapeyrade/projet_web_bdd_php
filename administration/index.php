@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page index.php
- * Page d'acceuil de la partie administration du site,
+ * @file admin/index.php
+ * @brief Page d'acceuil de la partie administration du site,
  * présentant les différentes options de navigation dans la partie administration
  */
 

@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Page gestionAlbum.php
- * Affiche et propose de modifier et supprimer un album
+ * @file gestionAlbum.php
+ * @brief Affiche et propose de modifier et supprimer un album
  */
 
 session_start();

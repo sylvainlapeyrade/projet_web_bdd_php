@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page actionCompte.php
- * Répond dynamiquement selon l'action entreprise
+ * @file compte/actionCompte.php
+ * @brief Répond dynamiquement selon l'action entreprise
  * (Connexion, inscription, modification mdp)
  */
 

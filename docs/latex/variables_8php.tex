@@ -1,0 +1,149 @@
+\hypertarget{variables_8php}{}\section{Référence du fichier fonctions/variables.php}
+\label{variables_8php}\index{fonctions/variables.\+php@{fonctions/variables.\+php}}
+
+
+Contient des fonctions générales de formatage et d\textquotesingle{}affichage ainsi que des variables globales au site.  
+
+
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{variables_8php_aac671b7526e88db82a81d2dbc528aff7}{format\+\_\+date} (\$date)
+\begin{DoxyCompactList}\small\item\em Renvoie une date dans le format \char`\"{}\+Y-\/m-\/d\char`\"{} à partir d\textquotesingle{}une chaine en paramètre. \end{DoxyCompactList}\item 
+\hyperlink{variables_8php_a34f898a3defe62bd4091aa4a4866eb05}{affichage\+\_\+date} (\$date)
+\begin{DoxyCompactList}\small\item\em Renvoie une date dans le format \char`\"{}d-\/m-\/\+Y\char`\"{} à partir d\textquotesingle{}une date en format \char`\"{}\+Y-\/m-\/d\char`\"{}. \end{DoxyCompactList}\item 
+\hyperlink{variables_8php_a2daec8f26b14f5950d5ab0cff23445f8}{date\+\_\+valide} (\$date)
+\begin{DoxyCompactList}\small\item\em Expression régulière vérifiant si une date est bien conforme à son format attendu. \end{DoxyCompactList}\item 
+\hyperlink{variables_8php_a3ef8ef70095240ef2a669927187e8816}{format\+\_\+duree} (\$secondes)
+\begin{DoxyCompactList}\small\item\em Transforme une durée en secondes en durée en minutes secondes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries \$info}
+\item 
+{\bfseries \$messages}
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Contient des fonctions générales de formatage et d\textquotesingle{}affichage ainsi que des variables globales au site. 
+
+
+
+\subsection{Documentation des fonctions}
+\mbox{\Hypertarget{variables_8php_a34f898a3defe62bd4091aa4a4866eb05}\label{variables_8php_a34f898a3defe62bd4091aa4a4866eb05}} 
+\index{variables.\+php@{variables.\+php}!affichage\+\_\+date@{affichage\+\_\+date}}
+\index{affichage\+\_\+date@{affichage\+\_\+date}!variables.\+php@{variables.\+php}}
+\subsubsection{\texorpdfstring{affichage\+\_\+date()}{affichage\_date()}}
+{\footnotesize\ttfamily affichage\+\_\+date (\begin{DoxyParamCaption}\item[{}]{\$date }\end{DoxyParamCaption})}
+
+
+
+Renvoie une date dans le format \char`\"{}d-\/m-\/\+Y\char`\"{} à partir d\textquotesingle{}une date en format \char`\"{}\+Y-\/m-\/d\char`\"{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$date} & String Date à transformer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+String La date transformée 
+\end{DoxyReturn}
+\mbox{\Hypertarget{variables_8php_a2daec8f26b14f5950d5ab0cff23445f8}\label{variables_8php_a2daec8f26b14f5950d5ab0cff23445f8}} 
+\index{variables.\+php@{variables.\+php}!date\+\_\+valide@{date\+\_\+valide}}
+\index{date\+\_\+valide@{date\+\_\+valide}!variables.\+php@{variables.\+php}}
+\subsubsection{\texorpdfstring{date\+\_\+valide()}{date\_valide()}}
+{\footnotesize\ttfamily date\+\_\+valide (\begin{DoxyParamCaption}\item[{}]{\$date }\end{DoxyParamCaption})}
+
+
+
+Expression régulière vérifiant si une date est bien conforme à son format attendu. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$date} & String Date à vérifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+false si la date est invalide $\vert$ true sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{variables_8php_aac671b7526e88db82a81d2dbc528aff7}\label{variables_8php_aac671b7526e88db82a81d2dbc528aff7}} 
+\index{variables.\+php@{variables.\+php}!format\+\_\+date@{format\+\_\+date}}
+\index{format\+\_\+date@{format\+\_\+date}!variables.\+php@{variables.\+php}}
+\subsubsection{\texorpdfstring{format\+\_\+date()}{format\_date()}}
+{\footnotesize\ttfamily format\+\_\+date (\begin{DoxyParamCaption}\item[{}]{\$date }\end{DoxyParamCaption})}
+
+
+
+Renvoie une date dans le format \char`\"{}\+Y-\/m-\/d\char`\"{} à partir d\textquotesingle{}une chaine en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$date} & String Date à transformer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+String La date transformée $\vert$ Null sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{variables_8php_a3ef8ef70095240ef2a669927187e8816}\label{variables_8php_a3ef8ef70095240ef2a669927187e8816}} 
+\index{variables.\+php@{variables.\+php}!format\+\_\+duree@{format\+\_\+duree}}
+\index{format\+\_\+duree@{format\+\_\+duree}!variables.\+php@{variables.\+php}}
+\subsubsection{\texorpdfstring{format\+\_\+duree()}{format\_duree()}}
+{\footnotesize\ttfamily format\+\_\+duree (\begin{DoxyParamCaption}\item[{}]{\$secondes }\end{DoxyParamCaption})}
+
+
+
+Transforme une durée en secondes en durée en minutes secondes. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$secondes} & String Durée à convertir \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+String durée convertie 
+\end{DoxyReturn}
+
+
+\subsection{Documentation des variables}
+\mbox{\Hypertarget{variables_8php_ae19722790c6683980bbf0af8572f26ab}\label{variables_8php_ae19722790c6683980bbf0af8572f26ab}} 
+\index{variables.\+php@{variables.\+php}!\$info@{\$info}}
+\index{\$info@{\$info}!variables.\+php@{variables.\+php}}
+\subsubsection{\texorpdfstring{\$info}{$info}}
+{\footnotesize\ttfamily \$info}
+
+{\bfseries Valeur initiale \+:}
+\begin{DoxyCode}
+= [
+    \textcolor{stringliteral}{'head'} => [
+        \textcolor{stringliteral}{'title'} => \textcolor{stringliteral}{"Mon projet"}
+    ],
+    \textcolor{stringliteral}{'bdd'} => [
+        \textcolor{stringliteral}{'postgres'} => [
+            \textcolor{stringliteral}{'db\_name'} => \textcolor{stringliteral}{'bd\_web'},
+            \textcolor{stringliteral}{'db\_host'} => \textcolor{stringliteral}{'localhost'},
+            \textcolor{stringliteral}{'db\_user'} => \textcolor{stringliteral}{'postgres'},
+            \textcolor{stringliteral}{'db\_pwd'} => \textcolor{stringliteral}{'1234567890'}
+
+        ],
+        \textcolor{stringliteral}{'mysql'} => [
+            \textcolor{stringliteral}{'db\_name'} => \textcolor{stringliteral}{'bd\_web'},
+            \textcolor{stringliteral}{'db\_host'} => \textcolor{stringliteral}{'localhost'},
+            \textcolor{stringliteral}{'db\_user'} => \textcolor{stringliteral}{'user'},
+            \textcolor{stringliteral}{'db\_pwd'} => \textcolor{stringliteral}{'1234567890'}   
+        ]
+    ]
+]
+\end{DoxyCode}
+\mbox{\Hypertarget{variables_8php_a21a183f927a6d243fe6b4ba3a6c4d4c8}\label{variables_8php_a21a183f927a6d243fe6b4ba3a6c4d4c8}} 
+\index{variables.\+php@{variables.\+php}!\$messages@{\$messages}}
+\index{\$messages@{\$messages}!variables.\+php@{variables.\+php}}
+\subsubsection{\texorpdfstring{\$messages}{$messages}}
+{\footnotesize\ttfamily \$messages}
+
+{\bfseries Valeur initiale \+:}
+\begin{DoxyCode}
+= [
+    \textcolor{stringliteral}{'formulaire'} => [
+        \textcolor{stringliteral}{'champs\_obligatoire'} => \textcolor{stringliteral}{"Certains champs du formulaire sont obligatoires."}
+\end{DoxyCode}

@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page actionMusique.php
- * Fait le lien entre le formulaire musique,
+ * @file actionMusique.php
+ * @brief Fait le lien entre le formulaire musique,
  * la gestion des musiques et la BDD
  */
 

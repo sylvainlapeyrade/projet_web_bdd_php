@@ -1,11 +1,12 @@
 <?php
+
 /**
- * FICHIER : FUNCTIONS -> fonctionRecompense.php
- * Fichier des fonctions de gestion des récompenses.
+ * @file fonctions/fonctionRecompense.php
+ * @brief Fichier des fonctions de gestion des récompenses.
  */
 
 /**
- * Récupère toutes les récompenses de la BDD en les triant
+ * @brief Récupère toutes les récompenses de la BDD en les triant
  * par ordre alphabétique par leur nom
  * @param $db PDO Instance PDO de connexion à la BDD
  * @return array Toutes les récompenses dans la BDD.
@@ -18,7 +19,7 @@ function recuperer_recompense_tous($db) {
 }
 
 /**
- * Récupère une récompense de la BDD
+ * @brief Récupère une récompense de la BDD
  * spécifier par l'identifiant 'idRecompense'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idRecompense Int Identifiant de la récompense
@@ -33,7 +34,7 @@ function recupere_recompense($db, $idRecompense) {
 }
 
 /**
- * Ajoute une nouvelle récompense à la BDD avec un nom, une
+ * @brief Ajoute une nouvelle récompense à la BDD avec un nom, une
  * date d'attribution, et une description de la récompense
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $nomRecompense String Nom de la récompense
@@ -56,7 +57,7 @@ function ajouter_recompense($db, $nomRecompense, $dateRecompense, $descriptionRe
 }
 
 /**
- * Modifie une récompense existante dans la BDD avec un nom, une
+ * @brief Modifie une récompense existante dans la BDD avec un nom, une
  * date d'attribution, et une description de la récompense
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idRecompense Int Identifiant de la récompense
@@ -77,7 +78,7 @@ function modifier_recompense($db, $idRecompense, $nomRecompense, $dateRecompense
 }
 
 /**
- * Supprime une récompense de la BDD
+ * @brief Supprime une récompense de la BDD
  * spécifier par l'identifiant 'idRecompense'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idRecompense Int Identifiant de la récompense
@@ -91,7 +92,7 @@ function supprimer_recompense($db, $idRecompense) {
 }
 
 /**
- * Récupère les associations d'artistes et d'une récompense
+ * @brief Récupère les associations d'artistes et d'une récompense
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idRecompenseOa Int Identifiant de la récompense dans Obtenir_Artiste
  * @return array Association d'artistes et d'une récompense
@@ -105,7 +106,7 @@ function recuperer_obtenir_recompense($db, $idRecompenseOa) {
 }
 
 /**
- * Ajoute une association entre un artiste et une récompense
+ * @brief Ajoute une association entre un artiste et une récompense
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idRecompenseOa Int Identifiant de la récompense dans Obtenir_Artiste
  * @param $idArtisteOa Int Identifiant artiste dans Obtenir_Artiste
@@ -121,7 +122,7 @@ function ajouter_obtenir_recompense($db, $idRecompenseOa, $idArtisteOa) {
 }
 
 /**
- * Supprime tous les artistes associées à une récompense
+ * @brief Supprime tous les artistes associées à une récompense
  * spécifié par l'identifiant "idRecompense"
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idRecompenseOa Int Identifiant de la récompense dans Obtenir_Artiste

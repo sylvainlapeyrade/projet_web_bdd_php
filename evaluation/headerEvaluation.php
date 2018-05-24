@@ -1,8 +1,10 @@
 <?php
+
 /**
- * Page headerEvaluation.php
- * Inclut des messages pour la partie evaluation
+ * @file evaluation/headerEvaluation.php
+ * @brief Inclut des messages pour la partie evaluation
  */
+
 ?>
 
 <div>
