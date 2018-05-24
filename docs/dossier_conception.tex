@@ -325,16 +325,22 @@
 
 		\subsubsection{Page description artiste/groupe}
             \begin{paragraphe}
-                Cette page fait des requêtes sur la base de données, sur les entités << Artiste >>, << Musique >>, << Groupe>> et << Album >>.
-                 en passant en paramètre la chaine de caractère entrée dans la barre de recherche.\\
-                En cliquant sur le résultat souhaité, l'utilisateur est redirigé vers la page de l'artiste, du groupe, de l'album ou de la musique
-                 recherché où il y trouve des informations détaillées caractérisant l'entité sélectionnée.
+                Cette page fait des requêtes sur la base de données, sur les entités << Artiste >> ou << Groupe >>.
+                 en passant en paramètre le nom transmis par la page resultat de recherche. Elle affiche ensuite ces dernières.
             \end{paragraphe}
 
             \begin{paragraphe}
                 \textbf{Service PHP :}
             \end{paragraphe}
-            
+
+            \begin{paragraphe}
+                Pour afficher les différentes métadonnées de l'artiste ou du groupe nous avons besoin des services suivant:
+                \begin{itemize}
+                        \item getArtiste(nomArtiste) si un artiste a été sélectionné, pour obtenir les informations de l'artiste.
+                        \item getGroupe(nomGroupe) si un groupe a été sélectionné, pour obtenir les informations du groupe.
+                \end{itemize}
+            \end{paragraphe}
+
 			\begin{paragraphe}
 				\textbf{Conception IHM :}
 			\end{paragraphe}
@@ -353,26 +359,51 @@
 			\image{0.40}{images/conception/page_artiste}{Mockup - Page artiste/groupe}
 
             \begin{paragraphe}
-                La page finale est assez fidèle au modèle que nous avions conceptualisé, en voici un exemple:
+                La page finale est assez fidèle au modèle que nous avions conceptualisé.
             \end{paragraphe}
 
-            \image{0.35}{images/conception/page_artiste_finale}{Pages publiques - Page artiste/groupe finale}
+         \newpage
+
+            \begin{paragraphe}
+                Voici un exemple pour un artiste:
+            \end{paragraphe}
+            \image{0.35}{images/conception/page_artiste_finale}{Pages publiques - Page artiste finale}
+
+           \begin{paragraphe}
+                Voici un autre exemple pour un groupe:
+            \end{paragraphe}
+            \image{0.35}{images/conception/page_groupe_finale}{Pages publiques - Page groupe finale}
 
         \clearpage
 
-		\subsubsection{Page description album}
+		\subsubsection{Page description album/musique}
 
 			\begin{paragraphe}
-				La page affichera le nom de l'album avec son descriptif, l'image de l'album, la liste des morceaux de musique
-				 représentée dans un tableau, les commentaires des utilisateurs et leurs notes associées à l'album. \\
-				Si l'utilisateur non connecté souhaite entrer un commentaire et donner une note à un album ou à un morceau de musique,
-				 il faut qu'il se connecte d'abord. Il y a donc un lien << connectez-vous >> le redirigeant vers la page de connexion.
+                Cette page fait des requêtes sur la base de données, sur les entités << album >> ou << Musique >>.
+                 en passant en paramètre le nom transmis par la page resultat de recherche. Elle affiche ensuite ces dernières.
+				Si un utilisateur non connecté souhaite rédiger un commenter et donner une note à un album ou à une musique,
+				 il faut d'abord qu'il se connecte. Il y a donc dans l'espace commentaire un lien << connectez-vous >> le redirigeant vers la page de connexion.
 			\end{paragraphe}
 
-			\image{0.25}{images/conception/page_album_non_connecter}{Mockup - Page album non connecté}
+           \begin{paragraphe}
+                \textbf{Service PHP :}
+            \end{paragraphe}
+
+            \begin{paragraphe}
+                Pour afficher les différentes métadonnées de l'artiste ou du groupe nous avons besoin des services suivant:
+                \begin{itemize}
+                        \item getAlbum(nomAlbum) si un album a été sélectionné, pour obtenir les informations de l'album.
+                        \item getMusique(nomMusique) si une musique a été sélectionnée, pour obtenir les informations de la musique.
+                \end{itemize}
+            \end{paragraphe}
+
+            \begin{paragraphe}
+                \textbf{Conception IHM :}
+            \end{paragraphe}
 
 			\begin{paragraphe}
-				Sur cette page, l'utilisateur pourra mettre un commentaire sur cet album dans le cadre consacré au commentaire. Dans ce cadre, il pourra aussi donner une note et cliquer sur le bouton << Evaluer >> afin que soit pris en compte son commentaire.
+				Sur cette page, l'utilisateur pourra mettre un commentaire sur l'album ou la musique dans le cadre consacré au commentaire.
+				Dans cet espace, il pourra aussi donner une note et cliquer sur le bouton << Evaluer >> afin que soit pris en compte son commentaire.
 			\end{paragraphe}
 
 			\begin{paragraphe}
@@ -385,27 +416,35 @@
 				Alors envoi commentaire et la note à la base de données et affichage à l'écran du commentaire et de la note visible par tout utilisateur du site.
 			\end{paragraphe}
 
+            \image{0.25}{images/conception/page_album_non_connecter}{Mockup - Page album non connecté}
+
+           \newpage
+
 			\image{0.25}{images/conception/page_album_connecter}{Mockup - Page album connecté}
 
-	\clearpage
+            \begin{paragraphe}
+			    Les pages finales d'album sont ici aussi très ressemblantes avec notre conception.
+            \end{paragraphe}
 
-		\subsubsection{Page description morceau de musique}
+            \begin{paragraphe}
+                Voici un exemple pour album avec un utilisateur connecté:
+            \end{paragraphe}
+            \image{0.35}{images/conception/page_album_deconnecte}{Pages publiques - Page album non connecté finale}
 
-			\begin{paragraphe}
-				\textbf{Conception IHM :}
-			\end{paragraphe}
+          \newpage
 
-			\begin{paragraphe}
-				Les mêmes services et actions sont appliqués à cette page.
-			\end{paragraphe}
-
-			\image{0.23}{images/conception/page_musique_connecter}{Mockup - Page musique connecté}
-
-			\image{0.23}{images/conception/page_musique_non_connecter}{Mockup - Page musique non connecté}
+           \begin{paragraphe}
+                Voici le même exemple avec cette fois un utilisateur déconnecté:
+            \end{paragraphe}
+            \image{0.35}{images/conception/page_album_connecte}{Pages publiques - Page album connecté finale}
 
 	\clearpage
 
 	\subsection{Pages utilisateurs}
+      \begin{paragraphe}
+            Les pages utilisateurs sont relatives à la gestion de compte utilisateur.
+        \end{paragraphe}
+
 		\subsubsection{Page de connexion}
 
 			\begin{paragraphe}
@@ -417,7 +456,7 @@
 			\end{paragraphe}
 
 			\begin{paragraphe}
-				Voici la liste des fonctions utilisée pour cette page php intéragissant avec la base de données :
+			    Cette page utilise intéragie avec la base de données avec la fonction:
 				\begin{itemize}
 					\item connexionUtilisateur(Utilisateur) : vérifie si un utilisateur correspondant existe dans la base de données.
 				\end{itemize}
@@ -428,13 +467,9 @@
 			\end{paragraphe}
 
 			\begin{paragraphe}
-				Si l'utilisateur est déjà connecté \\
-				Alors il est redirigé vers la page d'accueil.
-			\end{paragraphe}
-
-			\begin{paragraphe}
 				Si l'utilisateur n'est pas connecté \\
-				Alors initialement la page est constituée d'un simple formulaire non rempli avec deux champs, nom utilisateur et mot de passe, ainsi qu'un bouton pour se connecter.
+				Alors initialement la page est constituée d'un simple formulaire non rempli avec trois champs, nom utilisateur, mot de passe et vérification mot de passe.\\
+				 Il y également un bouton pour se connecter. Ainsi qu'un lien redirigeant vers la page d'inscription intitulé << s'inscrire >>.
 			\end{paragraphe}
 
 			\image{0.25}{images/conception/page_connexion}{Mockup - Page connexion}
@@ -444,16 +479,31 @@
 				Alors effectue l'action connexionutilisateur(Utilisateur).
 			\end{paragraphe}
 
+            \begin{paragraphe}
+                Si clic sur lien  << s'inscrire >> \\
+                Alors redirection vers page inscription.
+            \end{paragraphe}
+
 			\begin{paragraphe}
 				Si l'action précédente a réussi \\
 				Alors l'utilisateur est ensuite redirigé vers la page principale de l'application web.
 				Sinon l'utilisateur reste sur la page avec un message d'erreur.
 			\end{paragraphe}
 
+        \newpage
+            \begin{paragraphe}
+                La page finale correspond une nouvelle fois à la page imaginée lors de la conception, nous avons toutefois introduit le champ
+                de vérification du mot de passse ainsi que le lien << s'inscrire >> auxquels nous n'avions pas pensé.
+            \end{paragraphe}
+
+            \image{0.60}{images/conception/page_connexion_finale}{Pages Utilisateurs - Page connexion finale}
+
+    \clearpage
+
 		\subsubsection{Page d'inscription}
 
 			\begin{paragraphe}
-				Cette page est accessible à toutes personne non connectées à l'application web.
+				Cette page est accessible à toutes personnes non connectées à l'application web.
 			\end{paragraphe}
 
 			\begin{paragraphe}
