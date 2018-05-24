@@ -7,4 +7,4 @@ mrproper: clean
 	rm -f *.pdf
 
 clean:
-	rm -f *.log *.aux *.out
+	rm -f *.log *.aux *.out *.toc
