@@ -1,0 +1,402 @@
+\begin{theindex}
+
+  \item {\$info}
+    \subitem {variables.\+php}, \hyperpage{63}
+  \item {\$messages}
+    \subitem {variables.\+php}, \hyperpage{63}
+  \item {404.\+php}, \hyperpage{7}
+
+  \indexspace
+
+  \item {a\+Propos.\+php}, \hyperpage{16}
+  \item {administration/album/action\+Album.\+php}, \hyperpage{7}
+  \item {administration/album/action\+Assembler\+Album.\+php}, 
+		\hyperpage{7}
+  \item {administration/album/form\+Album.\+php}, \hyperpage{8}
+  \item {administration/album/form\+Assembler\+Album.\+php}, 
+		\hyperpage{8}
+  \item {administration/album/gestion\+Album.\+php}, \hyperpage{8}
+  \item {administration/album/gestion\+Assembler\+Album.\+php}, 
+		\hyperpage{9}
+  \item {administration/album/header\+Album.\+php}, \hyperpage{9}
+  \item {administration/album/header\+Assembler\+Album.\+php}, 
+		\hyperpage{9}
+  \item {administration/artiste/action\+Artiste.\+php}, \hyperpage{10}
+  \item {administration/artiste/form\+Artiste.\+php}, \hyperpage{10}
+  \item {administration/artiste/gestion\+Artiste.\+php}, \hyperpage{10}
+  \item {administration/artiste/header\+Artiste.\+php}, \hyperpage{11}
+  \item {administration/groupe/action\+Groupe.\+php}, \hyperpage{11}
+  \item {administration/groupe/form\+Groupe.\+php}, \hyperpage{11}
+  \item {administration/groupe/gestion\+Groupe.\+php}, \hyperpage{11}
+  \item {administration/groupe/header\+Groupe.\+php}, \hyperpage{12}
+  \item {administration/musique/action\+Musique.\+php}, \hyperpage{12}
+  \item {administration/musique/gestion\+Musique.\+php}, \hyperpage{13}
+  \item {administration/musique/header\+Musique.\+php}, \hyperpage{13}
+  \item {administration/recompense/action\+Recompense.\+php}, 
+		\hyperpage{13}
+  \item {administration/recompense/gestion\+Recompense.\+php}, 
+		\hyperpage{14}
+  \item {administration/recompense/header\+Recompense.\+php}, 
+		\hyperpage{14}
+  \item {administration/utilisateur/action\+Utilisateur.\+php}, 
+		\hyperpage{14}
+  \item {administration/utilisateur/form\+Utilisateur.\+php}, 
+		\hyperpage{14}
+  \item {administration/utilisateur/gestion\+Utilisateur.\+php}, 
+		\hyperpage{15}
+  \item {administration/utilisateur/header\+Utilisateur.\+php}, 
+		\hyperpage{15}
+  \item {affichage\+\_\+date}
+    \subitem {variables.\+php}, \hyperpage{61}
+  \item {ajouter\+\_\+album}
+    \subitem {fonction\+Album.\+php}, \hyperpage{21}
+  \item {ajouter\+\_\+artiste}
+    \subitem {fonction\+Artiste.\+php}, \hyperpage{30}
+  \item {ajouter\+\_\+assembler\+\_\+album}
+    \subitem {fonction\+Album.\+php}, \hyperpage{23}
+  \item {ajouter\+\_\+composer\+\_\+album}
+    \subitem {fonction\+Album.\+php}, \hyperpage{23}
+  \item {ajouter\+\_\+composer\+\_\+album\+Gr}
+    \subitem {fonction\+Album.\+php}, \hyperpage{24}
+  \item {ajouter\+\_\+composer\+\_\+musique}
+    \subitem {fonction\+Musique.\+php}, \hyperpage{49}
+  \item {ajouter\+\_\+composer\+\_\+musique\+Gr}
+    \subitem {fonction\+Musique.\+php}, \hyperpage{50}
+  \item {ajouter\+\_\+constituer\+\_\+groupe}
+    \subitem {fonction\+Groupe.\+php}, \hyperpage{44}
+  \item {ajouter\+\_\+evaluation\+\_\+album}
+    \subitem {fonction\+Evaluer.\+php}, \hyperpage{39}
+  \item {ajouter\+\_\+evaluation\+\_\+musique}
+    \subitem {fonction\+Evaluer.\+php}, \hyperpage{39}
+  \item {ajouter\+\_\+genre}
+    \subitem {fonction\+Genre.\+php}, \hyperpage{42}
+  \item {ajouter\+\_\+groupe}
+    \subitem {fonction\+Groupe.\+php}, \hyperpage{44}
+  \item {ajouter\+\_\+musique}
+    \subitem {fonction\+Musique.\+php}, \hyperpage{50}
+  \item {ajouter\+\_\+obtenir\+\_\+recompense}
+    \subitem {fonction\+Recompense.\+php}, \hyperpage{57}
+  \item {ajouter\+\_\+recompense}
+    \subitem {fonction\+Recompense.\+php}, \hyperpage{58}
+  \item {ajouter\+\_\+utilisateur}
+    \subitem {fonction\+Compte.\+php}, \hyperpage{35}
+  \item {album.\+php}, \hyperpage{15}
+    \subitem {else}, \hyperpage{16}
+  \item {artiste.\+php}, \hyperpage{16}
+    \subitem {else}, \hyperpage{17}
+
+  \indexspace
+
+  \item {barre\+Recherche.\+php}, \hyperpage{17}
+  \item {bdd/connexion.\+php}, \hyperpage{17}
+  \item {bdd/init\+\_\+bdd.\+php}, \hyperpage{18}
+
+  \indexspace
+
+  \item {compte/action\+Compte.\+php}, \hyperpage{18}
+  \item {compte/connexion.\+php}, \hyperpage{17}
+  \item {compte/deconnexion.\+php}, \hyperpage{18}
+  \item {compte/form\+Mot\+De\+Passe.\+php}, \hyperpage{19}
+  \item {compte/header\+Compte.\+php}, \hyperpage{19}
+  \item {compte/index.\+php}, \hyperpage{12}
+  \item {compte/inscription.\+php}, \hyperpage{19}
+  \item {connexion\+\_\+compte}
+    \subitem {fonction\+Compte.\+php}, \hyperpage{35}
+
+  \indexspace
+
+  \item {date\+\_\+valide}
+    \subitem {variables.\+php}, \hyperpage{62}
+
+  \indexspace
+
+  \item {else}
+    \subitem {album.\+php}, \hyperpage{16}
+    \subitem {artiste.\+php}, \hyperpage{17}
+    \subitem {musique.\+php}, \hyperpage{64}
+    \subitem {recherche.\+php}, \hyperpage{65}
+  \item {evaluation/action\+Evaluation.\+php}, \hyperpage{19}
+  \item {evaluation/evaluation.\+php}, \hyperpage{20}
+  \item {evaluation/form\+Evaluation.\+php}, \hyperpage{20}
+  \item {evaluation/header\+Evaluation.\+php}, \hyperpage{20}
+
+  \indexspace
+
+  \item {fonction\+Album.\+php}
+    \subitem {ajouter\+\_\+album}, \hyperpage{21}
+    \subitem {ajouter\+\_\+assembler\+\_\+album}, \hyperpage{23}
+    \subitem {ajouter\+\_\+composer\+\_\+album}, \hyperpage{23}
+    \subitem {ajouter\+\_\+composer\+\_\+album\+Gr}, \hyperpage{24}
+    \subitem {modifier\+\_\+album}, \hyperpage{24}
+    \subitem {modifier\+\_\+assembler\+\_\+album}, \hyperpage{25}
+    \subitem {recuperer\+\_\+album}, \hyperpage{25}
+    \subitem {recuperer\+\_\+album\+\_\+tous}, \hyperpage{25}
+    \subitem {recuperer\+\_\+artiste\+\_\+album}, \hyperpage{26}
+    \subitem {recuperer\+\_\+assembler\+\_\+album}, \hyperpage{26}
+    \subitem {recuperer\+\_\+composer\+\_\+album}, \hyperpage{26}
+    \subitem {recuperer\+\_\+composer\+\_\+album\+Gr}, \hyperpage{27}
+    \subitem {recuperer\+\_\+groupe\+\_\+album}, \hyperpage{27}
+    \subitem {recuperer\+\_\+musique\+\_\+album}, \hyperpage{28}
+    \subitem {supprimer\+\_\+album}, \hyperpage{28}
+    \subitem {supprimer\+\_\+assembler\+\_\+album}, \hyperpage{28}
+    \subitem {supprimer\+\_\+assembler\+\_\+album\+\_\+tous}, 
+		\hyperpage{29}
+    \subitem {supprimer\+\_\+composer\+\_\+album\+\_\+tous}, 
+		\hyperpage{29}
+    \subitem {supprimer\+\_\+composer\+\_\+album\+Gr\+\_\+tous}, 
+		\hyperpage{29}
+  \item {fonction\+Artiste.\+php}
+    \subitem {ajouter\+\_\+artiste}, \hyperpage{30}
+    \subitem {modifier\+\_\+artiste}, \hyperpage{31}
+    \subitem {recuperer\+\_\+artiste\+\_\+tous}, \hyperpage{32}
+    \subitem {recuperer\+\_\+groupe\+\_\+artiste}, \hyperpage{32}
+    \subitem {recuperer\+\_\+musique\+\_\+album\+\_\+artiste}, 
+		\hyperpage{32}
+    \subitem {recuperer\+\_\+musique\+\_\+artiste}, \hyperpage{33}
+    \subitem {recuperer\+\_\+recompense\+\_\+artiste}, \hyperpage{33}
+    \subitem {supprimer\+\_\+artiste}, \hyperpage{33}
+  \item {fonction\+Compte.\+php}
+    \subitem {ajouter\+\_\+utilisateur}, \hyperpage{35}
+    \subitem {connexion\+\_\+compte}, \hyperpage{35}
+    \subitem {inscription}, \hyperpage{35}
+    \subitem {is\+\_\+admin}, \hyperpage{36}
+    \subitem {is\+\_\+connect}, \hyperpage{36}
+    \subitem {modifier\+\_\+motdepasse\+\_\+utilisateur}, 
+		\hyperpage{36}
+    \subitem {modifier\+\_\+statut\+\_\+utilisateur}, \hyperpage{37}
+    \subitem {recuperer\+\_\+utilisateur}, \hyperpage{37}
+    \subitem {recuperer\+\_\+utilisateur\+\_\+tous}, \hyperpage{38}
+    \subitem {supprimer\+\_\+utilisateur}, \hyperpage{38}
+  \item {fonction\+Evaluer.\+php}
+    \subitem {ajouter\+\_\+evaluation\+\_\+album}, \hyperpage{39}
+    \subitem {ajouter\+\_\+evaluation\+\_\+musique}, \hyperpage{39}
+    \subitem {recuperer\+\_\+evaluation\+\_\+album\+\_\+tous}, 
+		\hyperpage{40}
+    \subitem {recuperer\+\_\+evaluation\+\_\+musique\+\_\+tous}, 
+		\hyperpage{40}
+    \subitem {supprimer\+\_\+evaluation\+\_\+album}, \hyperpage{41}
+    \subitem {supprimer\+\_\+evaluation\+\_\+musique}, \hyperpage{41}
+  \item {fonction\+Genre.\+php}
+    \subitem {ajouter\+\_\+genre}, \hyperpage{42}
+    \subitem {recuperer\+\_\+genre\+\_\+musique}, \hyperpage{42}
+    \subitem {supprimer\+\_\+genre\+\_\+tous}, \hyperpage{43}
+  \item {fonction\+Groupe.\+php}
+    \subitem {ajouter\+\_\+constituer\+\_\+groupe}, \hyperpage{44}
+    \subitem {ajouter\+\_\+groupe}, \hyperpage{44}
+    \subitem {modifier\+\_\+groupe}, \hyperpage{45}
+    \subitem {recuperer\+\_\+artiste\+\_\+groupe}, \hyperpage{45}
+    \subitem {recuperer\+\_\+constituer\+\_\+groupe}, \hyperpage{46}
+    \subitem {recuperer\+\_\+groupe}, \hyperpage{46}
+    \subitem {recuperer\+\_\+groupe\+\_\+tous}, \hyperpage{47}
+    \subitem {recuperer\+\_\+musique\+\_\+album\+\_\+groupe}, 
+		\hyperpage{47}
+    \subitem {recuperer\+\_\+musique\+\_\+groupe}, \hyperpage{47}
+    \subitem {supprimer\+\_\+constituer\+\_\+groupe\+\_\+tous}, 
+		\hyperpage{48}
+    \subitem {supprimer\+\_\+groupe}, \hyperpage{48}
+  \item {fonction\+Musique.\+php}
+    \subitem {ajouter\+\_\+composer\+\_\+musique}, \hyperpage{49}
+    \subitem {ajouter\+\_\+composer\+\_\+musique\+Gr}, \hyperpage{50}
+    \subitem {ajouter\+\_\+musique}, \hyperpage{50}
+    \subitem {modifier\+\_\+musique}, \hyperpage{50}
+    \subitem {recuperer\+\_\+artiste\+\_\+musique}, \hyperpage{51}
+    \subitem {recuperer\+\_\+composer\+\_\+musique}, \hyperpage{51}
+    \subitem {recuperer\+\_\+composer\+\_\+musique\+Gr}, \hyperpage{53}
+    \subitem {recuperer\+\_\+musique}, \hyperpage{53}
+    \subitem {recuperer\+\_\+musique\+\_\+tous}, \hyperpage{53}
+    \subitem {supprimer\+\_\+composer\+\_\+musique\+\_\+tous}, 
+		\hyperpage{54}
+    \subitem {supprimer\+\_\+composer\+\_\+musique\+Gr\+\_\+tous}, 
+		\hyperpage{54}
+    \subitem {supprimer\+\_\+musique}, \hyperpage{55}
+  \item {fonction\+Recherche.\+php}
+    \subitem {rechercher\+\_\+album}, \hyperpage{55}
+    \subitem {rechercher\+\_\+artiste}, \hyperpage{56}
+    \subitem {rechercher\+\_\+groupe}, \hyperpage{56}
+    \subitem {rechercher\+\_\+musique}, \hyperpage{56}
+  \item {fonction\+Recompense.\+php}
+    \subitem {ajouter\+\_\+obtenir\+\_\+recompense}, \hyperpage{57}
+    \subitem {ajouter\+\_\+recompense}, \hyperpage{58}
+    \subitem {modifier\+\_\+recompense}, \hyperpage{58}
+    \subitem {recupere\+\_\+recompense}, \hyperpage{59}
+    \subitem {recuperer\+\_\+obtenir\+\_\+recompense}, \hyperpage{59}
+    \subitem {recuperer\+\_\+recompense\+\_\+tous}, \hyperpage{60}
+    \subitem {supprimer\+\_\+obtenir\+\_\+recompense\+\_\+tous}, 
+		\hyperpage{60}
+    \subitem {supprimer\+\_\+recompense}, \hyperpage{60}
+  \item {fonctions/fonction\+Album.\+php}, \hyperpage{21}
+  \item {fonctions/fonction\+Artiste.\+php}, \hyperpage{30}
+  \item {fonctions/fonction\+Compte.\+php}, \hyperpage{34}
+  \item {fonctions/fonction\+Evaluer.\+php}, \hyperpage{38}
+  \item {fonctions/fonction\+Genre.\+php}, \hyperpage{42}
+  \item {fonctions/fonction\+Groupe.\+php}, \hyperpage{43}
+  \item {fonctions/fonction\+Musique.\+php}, \hyperpage{49}
+  \item {fonctions/fonction\+Recherche.\+php}, \hyperpage{55}
+  \item {fonctions/fonction\+Recompense.\+php}, \hyperpage{57}
+  \item {fonctions/variables.\+php}, \hyperpage{61}
+  \item {footer.\+php}, \hyperpage{63}
+  \item {format\+\_\+date}
+    \subitem {variables.\+php}, \hyperpage{62}
+  \item {format\+\_\+duree}
+    \subitem {variables.\+php}, \hyperpage{62}
+
+  \indexspace
+
+  \item {head.\+php}, \hyperpage{64}
+  \item {header.\+php}, \hyperpage{64}
+
+  \indexspace
+
+  \item {inscription}
+    \subitem {fonction\+Compte.\+php}, \hyperpage{35}
+  \item {is\+\_\+admin}
+    \subitem {fonction\+Compte.\+php}, \hyperpage{36}
+  \item {is\+\_\+connect}
+    \subitem {fonction\+Compte.\+php}, \hyperpage{36}
+
+  \indexspace
+
+  \item {modifier\+\_\+album}
+    \subitem {fonction\+Album.\+php}, \hyperpage{24}
+  \item {modifier\+\_\+artiste}
+    \subitem {fonction\+Artiste.\+php}, \hyperpage{31}
+  \item {modifier\+\_\+assembler\+\_\+album}
+    \subitem {fonction\+Album.\+php}, \hyperpage{25}
+  \item {modifier\+\_\+groupe}
+    \subitem {fonction\+Groupe.\+php}, \hyperpage{45}
+  \item {modifier\+\_\+motdepasse\+\_\+utilisateur}
+    \subitem {fonction\+Compte.\+php}, \hyperpage{36}
+  \item {modifier\+\_\+musique}
+    \subitem {fonction\+Musique.\+php}, \hyperpage{50}
+  \item {modifier\+\_\+recompense}
+    \subitem {fonction\+Recompense.\+php}, \hyperpage{58}
+  \item {modifier\+\_\+statut\+\_\+utilisateur}
+    \subitem {fonction\+Compte.\+php}, \hyperpage{37}
+  \item {musique.\+php}, \hyperpage{64}
+    \subitem {else}, \hyperpage{64}
+
+  \indexspace
+
+  \item {recherche.\+php}, \hyperpage{65}
+    \subitem {else}, \hyperpage{65}
+  \item {rechercher\+\_\+album}
+    \subitem {fonction\+Recherche.\+php}, \hyperpage{55}
+  \item {rechercher\+\_\+artiste}
+    \subitem {fonction\+Recherche.\+php}, \hyperpage{56}
+  \item {rechercher\+\_\+groupe}
+    \subitem {fonction\+Recherche.\+php}, \hyperpage{56}
+  \item {rechercher\+\_\+musique}
+    \subitem {fonction\+Recherche.\+php}, \hyperpage{56}
+  \item {recupere\+\_\+recompense}
+    \subitem {fonction\+Recompense.\+php}, \hyperpage{59}
+  \item {recuperer\+\_\+album}
+    \subitem {fonction\+Album.\+php}, \hyperpage{25}
+  \item {recuperer\+\_\+album\+\_\+tous}
+    \subitem {fonction\+Album.\+php}, \hyperpage{25}
+  \item {recuperer\+\_\+artiste\+\_\+album}
+    \subitem {fonction\+Album.\+php}, \hyperpage{26}
+  \item {recuperer\+\_\+artiste\+\_\+groupe}
+    \subitem {fonction\+Groupe.\+php}, \hyperpage{45}
+  \item {recuperer\+\_\+artiste\+\_\+musique}
+    \subitem {fonction\+Musique.\+php}, \hyperpage{51}
+  \item {recuperer\+\_\+artiste\+\_\+tous}
+    \subitem {fonction\+Artiste.\+php}, \hyperpage{32}
+  \item {recuperer\+\_\+assembler\+\_\+album}
+    \subitem {fonction\+Album.\+php}, \hyperpage{26}
+  \item {recuperer\+\_\+composer\+\_\+album}
+    \subitem {fonction\+Album.\+php}, \hyperpage{26}
+  \item {recuperer\+\_\+composer\+\_\+album\+Gr}
+    \subitem {fonction\+Album.\+php}, \hyperpage{27}
+  \item {recuperer\+\_\+composer\+\_\+musique}
+    \subitem {fonction\+Musique.\+php}, \hyperpage{51}
+  \item {recuperer\+\_\+composer\+\_\+musique\+Gr}
+    \subitem {fonction\+Musique.\+php}, \hyperpage{53}
+  \item {recuperer\+\_\+constituer\+\_\+groupe}
+    \subitem {fonction\+Groupe.\+php}, \hyperpage{46}
+  \item {recuperer\+\_\+evaluation\+\_\+album\+\_\+tous}
+    \subitem {fonction\+Evaluer.\+php}, \hyperpage{40}
+  \item {recuperer\+\_\+evaluation\+\_\+musique\+\_\+tous}
+    \subitem {fonction\+Evaluer.\+php}, \hyperpage{40}
+  \item {recuperer\+\_\+genre\+\_\+musique}
+    \subitem {fonction\+Genre.\+php}, \hyperpage{42}
+  \item {recuperer\+\_\+groupe}
+    \subitem {fonction\+Groupe.\+php}, \hyperpage{46}
+  \item {recuperer\+\_\+groupe\+\_\+album}
+    \subitem {fonction\+Album.\+php}, \hyperpage{27}
+  \item {recuperer\+\_\+groupe\+\_\+artiste}
+    \subitem {fonction\+Artiste.\+php}, \hyperpage{32}
+  \item {recuperer\+\_\+groupe\+\_\+tous}
+    \subitem {fonction\+Groupe.\+php}, \hyperpage{47}
+  \item {recuperer\+\_\+musique}
+    \subitem {fonction\+Musique.\+php}, \hyperpage{53}
+  \item {recuperer\+\_\+musique\+\_\+album}
+    \subitem {fonction\+Album.\+php}, \hyperpage{28}
+  \item {recuperer\+\_\+musique\+\_\+album\+\_\+artiste}
+    \subitem {fonction\+Artiste.\+php}, \hyperpage{32}
+  \item {recuperer\+\_\+musique\+\_\+album\+\_\+groupe}
+    \subitem {fonction\+Groupe.\+php}, \hyperpage{47}
+  \item {recuperer\+\_\+musique\+\_\+artiste}
+    \subitem {fonction\+Artiste.\+php}, \hyperpage{33}
+  \item {recuperer\+\_\+musique\+\_\+groupe}
+    \subitem {fonction\+Groupe.\+php}, \hyperpage{47}
+  \item {recuperer\+\_\+musique\+\_\+tous}
+    \subitem {fonction\+Musique.\+php}, \hyperpage{53}
+  \item {recuperer\+\_\+obtenir\+\_\+recompense}
+    \subitem {fonction\+Recompense.\+php}, \hyperpage{59}
+  \item {recuperer\+\_\+recompense\+\_\+artiste}
+    \subitem {fonction\+Artiste.\+php}, \hyperpage{33}
+  \item {recuperer\+\_\+recompense\+\_\+tous}
+    \subitem {fonction\+Recompense.\+php}, \hyperpage{60}
+  \item {recuperer\+\_\+utilisateur}
+    \subitem {fonction\+Compte.\+php}, \hyperpage{37}
+  \item {recuperer\+\_\+utilisateur\+\_\+tous}
+    \subitem {fonction\+Compte.\+php}, \hyperpage{38}
+
+  \indexspace
+
+  \item {supprimer\+\_\+album}
+    \subitem {fonction\+Album.\+php}, \hyperpage{28}
+  \item {supprimer\+\_\+artiste}
+    \subitem {fonction\+Artiste.\+php}, \hyperpage{33}
+  \item {supprimer\+\_\+assembler\+\_\+album}
+    \subitem {fonction\+Album.\+php}, \hyperpage{28}
+  \item {supprimer\+\_\+assembler\+\_\+album\+\_\+tous}
+    \subitem {fonction\+Album.\+php}, \hyperpage{29}
+  \item {supprimer\+\_\+composer\+\_\+album\+\_\+tous}
+    \subitem {fonction\+Album.\+php}, \hyperpage{29}
+  \item {supprimer\+\_\+composer\+\_\+album\+Gr\+\_\+tous}
+    \subitem {fonction\+Album.\+php}, \hyperpage{29}
+  \item {supprimer\+\_\+composer\+\_\+musique\+\_\+tous}
+    \subitem {fonction\+Musique.\+php}, \hyperpage{54}
+  \item {supprimer\+\_\+composer\+\_\+musique\+Gr\+\_\+tous}
+    \subitem {fonction\+Musique.\+php}, \hyperpage{54}
+  \item {supprimer\+\_\+constituer\+\_\+groupe\+\_\+tous}
+    \subitem {fonction\+Groupe.\+php}, \hyperpage{48}
+  \item {supprimer\+\_\+evaluation\+\_\+album}
+    \subitem {fonction\+Evaluer.\+php}, \hyperpage{41}
+  \item {supprimer\+\_\+evaluation\+\_\+musique}
+    \subitem {fonction\+Evaluer.\+php}, \hyperpage{41}
+  \item {supprimer\+\_\+genre\+\_\+tous}
+    \subitem {fonction\+Genre.\+php}, \hyperpage{43}
+  \item {supprimer\+\_\+groupe}
+    \subitem {fonction\+Groupe.\+php}, \hyperpage{48}
+  \item {supprimer\+\_\+musique}
+    \subitem {fonction\+Musique.\+php}, \hyperpage{55}
+  \item {supprimer\+\_\+obtenir\+\_\+recompense\+\_\+tous}
+    \subitem {fonction\+Recompense.\+php}, \hyperpage{60}
+  \item {supprimer\+\_\+recompense}
+    \subitem {fonction\+Recompense.\+php}, \hyperpage{60}
+  \item {supprimer\+\_\+utilisateur}
+    \subitem {fonction\+Compte.\+php}, \hyperpage{38}
+
+  \indexspace
+
+  \item {variables.\+php}
+    \subitem {\$info}, \hyperpage{63}
+    \subitem {\$messages}, \hyperpage{63}
+    \subitem {affichage\+\_\+date}, \hyperpage{61}
+    \subitem {date\+\_\+valide}, \hyperpage{62}
+    \subitem {format\+\_\+date}, \hyperpage{62}
+    \subitem {format\+\_\+duree}, \hyperpage{62}
+
+\end{theindex}

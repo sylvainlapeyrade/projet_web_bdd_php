@@ -1,11 +1,12 @@
 <?php
+
 /**
- * FICHIER : FUNCTIONS -> fonctionArtiste.php
- * Fichier des fonction de gestion des artistes.
+ * @file fonctions/fonctionArtiste.php
+ * @brief Fichier des fonction de gestion des artistes.
  */
 
 /**
- * Recupere les musiques d'un artiste avec leur numero de piste
+ * @brief Recupere les musiques d'un artiste avec leur numero de piste
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idArtiste Int Identifiant artiste dans Assembler_Album
  * @return array Association des musique et de leur compositeur
@@ -19,7 +20,7 @@ function recuperer_musique_artiste($db, $idArtiste) {
 }
 
 /**
- * Recupere les groupes d'un artiste
+ * @brief Recupere les groupes d'un artiste
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idArtiste Int Identifiant artiste dans Assembler_Album
  * @return array Association des albums et de leur compositeur
@@ -33,7 +34,7 @@ function recuperer_groupe_artiste($db, $idArtiste) {
 }
 
 /**
- * Recupere les recompense d'un artiste
+ * @brief Recupere les recompense d'un artiste
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idArtiste Int Identifiant artiste dans Assembler_Album
  * @return array Association des récompense et de leur artistes
@@ -47,7 +48,7 @@ function recuperer_recompense_artiste($db, $idArtiste) {
 }
 
 /**
- * Recupere les musique d'un artiste ainsi que les albums associés
+ * @brief Recupere les musique d'un artiste ainsi que les albums associés
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idArtiste Int Identifiant artiste dans Assembler_Album
  * @return array Association des musique et de leur artistes et des albums
@@ -61,7 +62,7 @@ function recuperer_musique_album_artiste($db, $idArtiste) {
 }
 
 /**
- * Récupère tout les artistes de la BDD en les triant
+ * @brief Récupère tout les artistes de la BDD en les triant
  * par ordre alphabétique par le nom puis le prenom.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @return array Tous les artistes dans la BDD.
@@ -74,7 +75,7 @@ function recuperer_artiste_tous($db) {
 }
 
 /***
- * Récupère un artiste de la BDD
+ * @brief Récupère un artiste de la BDD
  * spécifier par l'identifiant 'idArtiste'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idArtiste Int Identifiant de l'artiste
@@ -89,7 +90,7 @@ function recuperer_artiste($db, $idArtiste) {
 }
 
 /**
- * Ajoute un nouvel artiste à la BDD avec un nom, prénom,
+ * @brief Ajoute un nouvel artiste à la BDD avec un nom, prénom,
  * nom de scéne, date de naissance, url d'une image
  * et une description de l'artiste.
  * @param $db PDO Instance PDO de connexion à la BDD
@@ -114,7 +115,7 @@ function ajouter_artiste($db, $nomArtiste, $prenomArtiste, $nomScene, $dateNaiss
 }
 
 /**
- * Modifie un artiste existant dans la BDD avec un
+ * @brief Modifie un artiste existant dans la BDD avec un
  * nom, prénom, nom de scéne, date de naissance, url d'une image
  * et une description de l'artiste.
  * @param $db PDO Instance PDO de connexion à la BDD
@@ -141,7 +142,7 @@ function modifier_artiste($db, $idArtiste, $nomArtiste, $prenomArtiste, $nomScen
 }
 
 /**
- * Supprime un artiste de la BDD
+ * @brief Supprime un artiste de la BDD
  * spécifié par l'identifiant 'idArtiste'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idArtiste Int Identifiant de l'artiste

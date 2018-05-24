@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Page groupe.php
  * Présente un groupe avec ses caractéristiques

@@ -1,0 +1,217 @@
+\hypertarget{fonctionArtiste_8php}{}\section{Référence du fichier fonctions/fonction\+Artiste.php}
+\label{fonctionArtiste_8php}\index{fonctions/fonction\+Artiste.\+php@{fonctions/fonction\+Artiste.\+php}}
+
+
+Fichier des fonction de gestion des artistes.  
+
+
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{fonctionArtiste_8php_a2b95a99d7c2dc74bec32f693024e103f}{recuperer\+\_\+musique\+\_\+artiste} (\$db, \$id\+Artiste)
+\begin{DoxyCompactList}\small\item\em Recupere les musiques d\textquotesingle{}un artiste avec leur numero de piste. \end{DoxyCompactList}\item 
+\hyperlink{fonctionArtiste_8php_a3316e178c4a16e77137d06da4f3678a6}{recuperer\+\_\+groupe\+\_\+artiste} (\$db, \$id\+Artiste)
+\begin{DoxyCompactList}\small\item\em Recupere les groupes d\textquotesingle{}un artiste. \end{DoxyCompactList}\item 
+\hyperlink{fonctionArtiste_8php_a9d9d26b5ff7bfe4275fb4a9f0d1e9c65}{recuperer\+\_\+recompense\+\_\+artiste} (\$db, \$id\+Artiste)
+\begin{DoxyCompactList}\small\item\em Recupere les recompense d\textquotesingle{}un artiste. \end{DoxyCompactList}\item 
+\hyperlink{fonctionArtiste_8php_a832fa57d647e7f45e0b04178dc0fd91c}{recuperer\+\_\+musique\+\_\+album\+\_\+artiste} (\$db, \$id\+Artiste)
+\begin{DoxyCompactList}\small\item\em Recupere les musique d\textquotesingle{}un artiste ainsi que les albums associés. \end{DoxyCompactList}\item 
+\hyperlink{fonctionArtiste_8php_a47f7a10f228b07d60d2282929007bd5d}{recuperer\+\_\+artiste\+\_\+tous} (\$db)
+\begin{DoxyCompactList}\small\item\em Récupère tout les artistes de la B\+DD en les triant par ordre alphabétique par le nom puis le prenom. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{fonctionArtiste_8php_a7f39d756570b5bfa910f3bd18640fba1}\label{fonctionArtiste_8php_a7f39d756570b5bfa910f3bd18640fba1}} 
+{\bfseries recuperer\+\_\+artiste} (\$db, \$id\+Artiste)
+\item 
+\hyperlink{fonctionArtiste_8php_acb048e0328e3e7025c55f386c1ec007e}{ajouter\+\_\+artiste} (\$db, \$nom\+Artiste, \$prenom\+Artiste, \$nom\+Scene, \$date\+Naissance\+Artiste, \$url\+Image\+Artiste, \$description\+Artiste)
+\begin{DoxyCompactList}\small\item\em Ajoute un nouvel artiste à la B\+DD avec un nom, prénom, nom de scéne, date de naissance, url d\textquotesingle{}une image et une description de l\textquotesingle{}artiste. \end{DoxyCompactList}\item 
+\hyperlink{fonctionArtiste_8php_a9f58e3dc0958d3b8e7392796649c01ed}{modifier\+\_\+artiste} (\$db, \$id\+Artiste, \$nom\+Artiste, \$prenom\+Artiste, \$nom\+Scene, \$date\+Naissance\+Artiste, \$url\+Image\+Artiste, \$description\+Artiste)
+\begin{DoxyCompactList}\small\item\em Modifie un artiste existant dans la B\+DD avec un nom, prénom, nom de scéne, date de naissance, url d\textquotesingle{}une image et une description de l\textquotesingle{}artiste. \end{DoxyCompactList}\item 
+\hyperlink{fonctionArtiste_8php_a8586d94e19d8dd5c149ae508f2e4d26a}{supprimer\+\_\+artiste} (\$db, \$id\+Artiste)
+\begin{DoxyCompactList}\small\item\em Supprime un artiste de la B\+DD spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Artiste\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Fichier des fonction de gestion des artistes. 
+
+
+
+\subsection{Documentation des fonctions}
+\mbox{\Hypertarget{fonctionArtiste_8php_acb048e0328e3e7025c55f386c1ec007e}\label{fonctionArtiste_8php_acb048e0328e3e7025c55f386c1ec007e}} 
+\index{fonction\+Artiste.\+php@{fonction\+Artiste.\+php}!ajouter\+\_\+artiste@{ajouter\+\_\+artiste}}
+\index{ajouter\+\_\+artiste@{ajouter\+\_\+artiste}!fonction\+Artiste.\+php@{fonction\+Artiste.\+php}}
+\subsubsection{\texorpdfstring{ajouter\+\_\+artiste()}{ajouter\_artiste()}}
+{\footnotesize\ttfamily ajouter\+\_\+artiste (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$nom\+Artiste,  }\item[{}]{\$prenom\+Artiste,  }\item[{}]{\$nom\+Scene,  }\item[{}]{\$date\+Naissance\+Artiste,  }\item[{}]{\$url\+Image\+Artiste,  }\item[{}]{\$description\+Artiste }\end{DoxyParamCaption})}
+
+
+
+Ajoute un nouvel artiste à la B\+DD avec un nom, prénom, nom de scéne, date de naissance, url d\textquotesingle{}une image et une description de l\textquotesingle{}artiste. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$nom\+Artiste} & String nom de l\textquotesingle{}artiste \\
+\hline
+{\em \$prenom\+Artiste} & String prenom de l\textquotesingle{}artiste \\
+\hline
+{\em \$nom\+Scene} & String Nom de scene de l\textquotesingle{}artiste \\
+\hline
+{\em \$date\+Naissance\+Artiste} & String Date de naissance de l\textquotesingle{}artiste \\
+\hline
+{\em \$url\+Image\+Artiste} & String U\+RL dune image de l\textquotesingle{}artiste \\
+\hline
+{\em \$description\+Artiste} & String Description de l\textquotesingle{}artiste \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False Sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionArtiste_8php_a9f58e3dc0958d3b8e7392796649c01ed}\label{fonctionArtiste_8php_a9f58e3dc0958d3b8e7392796649c01ed}} 
+\index{fonction\+Artiste.\+php@{fonction\+Artiste.\+php}!modifier\+\_\+artiste@{modifier\+\_\+artiste}}
+\index{modifier\+\_\+artiste@{modifier\+\_\+artiste}!fonction\+Artiste.\+php@{fonction\+Artiste.\+php}}
+\subsubsection{\texorpdfstring{modifier\+\_\+artiste()}{modifier\_artiste()}}
+{\footnotesize\ttfamily modifier\+\_\+artiste (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Artiste,  }\item[{}]{\$nom\+Artiste,  }\item[{}]{\$prenom\+Artiste,  }\item[{}]{\$nom\+Scene,  }\item[{}]{\$date\+Naissance\+Artiste,  }\item[{}]{\$url\+Image\+Artiste,  }\item[{}]{\$description\+Artiste }\end{DoxyParamCaption})}
+
+
+
+Modifie un artiste existant dans la B\+DD avec un nom, prénom, nom de scéne, date de naissance, url d\textquotesingle{}une image et une description de l\textquotesingle{}artiste. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Artiste} & Int Identifiant de l\textquotesingle{}artiste \\
+\hline
+{\em \$nom\+Artiste} & String nom de l\textquotesingle{}artiste \\
+\hline
+{\em \$prenom\+Artiste} & String prenom de l\textquotesingle{}artiste \\
+\hline
+{\em \$nom\+Scene} & String Nom de scene de l\textquotesingle{}artiste \\
+\hline
+{\em \$date\+Naissance\+Artiste} & String Date de naissance de l\textquotesingle{}artiste \\
+\hline
+{\em \$url\+Image\+Artiste} & String U\+RL dune image de l\textquotesingle{}artiste \\
+\hline
+{\em \$description\+Artiste} & String Description de l\textquotesingle{}artiste \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False Sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionArtiste_8php_a47f7a10f228b07d60d2282929007bd5d}\label{fonctionArtiste_8php_a47f7a10f228b07d60d2282929007bd5d}} 
+\index{fonction\+Artiste.\+php@{fonction\+Artiste.\+php}!recuperer\+\_\+artiste\+\_\+tous@{recuperer\+\_\+artiste\+\_\+tous}}
+\index{recuperer\+\_\+artiste\+\_\+tous@{recuperer\+\_\+artiste\+\_\+tous}!fonction\+Artiste.\+php@{fonction\+Artiste.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+artiste\+\_\+tous()}{recuperer\_artiste\_tous()}}
+{\footnotesize\ttfamily recuperer\+\_\+artiste\+\_\+tous (\begin{DoxyParamCaption}\item[{}]{\$db }\end{DoxyParamCaption})}
+
+
+
+Récupère tout les artistes de la B\+DD en les triant par ordre alphabétique par le nom puis le prenom. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Tous les artistes dans la B\+DD. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionArtiste_8php_a3316e178c4a16e77137d06da4f3678a6}\label{fonctionArtiste_8php_a3316e178c4a16e77137d06da4f3678a6}} 
+\index{fonction\+Artiste.\+php@{fonction\+Artiste.\+php}!recuperer\+\_\+groupe\+\_\+artiste@{recuperer\+\_\+groupe\+\_\+artiste}}
+\index{recuperer\+\_\+groupe\+\_\+artiste@{recuperer\+\_\+groupe\+\_\+artiste}!fonction\+Artiste.\+php@{fonction\+Artiste.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+groupe\+\_\+artiste()}{recuperer\_groupe\_artiste()}}
+{\footnotesize\ttfamily recuperer\+\_\+groupe\+\_\+artiste (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Artiste }\end{DoxyParamCaption})}
+
+
+
+Recupere les groupes d\textquotesingle{}un artiste. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Artiste} & Int Identifiant artiste dans Assembler\+\_\+\+Album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Association des albums et de leur compositeur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionArtiste_8php_a832fa57d647e7f45e0b04178dc0fd91c}\label{fonctionArtiste_8php_a832fa57d647e7f45e0b04178dc0fd91c}} 
+\index{fonction\+Artiste.\+php@{fonction\+Artiste.\+php}!recuperer\+\_\+musique\+\_\+album\+\_\+artiste@{recuperer\+\_\+musique\+\_\+album\+\_\+artiste}}
+\index{recuperer\+\_\+musique\+\_\+album\+\_\+artiste@{recuperer\+\_\+musique\+\_\+album\+\_\+artiste}!fonction\+Artiste.\+php@{fonction\+Artiste.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+musique\+\_\+album\+\_\+artiste()}{recuperer\_musique\_album\_artiste()}}
+{\footnotesize\ttfamily recuperer\+\_\+musique\+\_\+album\+\_\+artiste (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Artiste }\end{DoxyParamCaption})}
+
+
+
+Recupere les musique d\textquotesingle{}un artiste ainsi que les albums associés. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Artiste} & Int Identifiant artiste dans Assembler\+\_\+\+Album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Association des musique et de leur artistes et des albums 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionArtiste_8php_a2b95a99d7c2dc74bec32f693024e103f}\label{fonctionArtiste_8php_a2b95a99d7c2dc74bec32f693024e103f}} 
+\index{fonction\+Artiste.\+php@{fonction\+Artiste.\+php}!recuperer\+\_\+musique\+\_\+artiste@{recuperer\+\_\+musique\+\_\+artiste}}
+\index{recuperer\+\_\+musique\+\_\+artiste@{recuperer\+\_\+musique\+\_\+artiste}!fonction\+Artiste.\+php@{fonction\+Artiste.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+musique\+\_\+artiste()}{recuperer\_musique\_artiste()}}
+{\footnotesize\ttfamily recuperer\+\_\+musique\+\_\+artiste (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Artiste }\end{DoxyParamCaption})}
+
+
+
+Recupere les musiques d\textquotesingle{}un artiste avec leur numero de piste. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Artiste} & Int Identifiant artiste dans Assembler\+\_\+\+Album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Association des musique et de leur compositeur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionArtiste_8php_a9d9d26b5ff7bfe4275fb4a9f0d1e9c65}\label{fonctionArtiste_8php_a9d9d26b5ff7bfe4275fb4a9f0d1e9c65}} 
+\index{fonction\+Artiste.\+php@{fonction\+Artiste.\+php}!recuperer\+\_\+recompense\+\_\+artiste@{recuperer\+\_\+recompense\+\_\+artiste}}
+\index{recuperer\+\_\+recompense\+\_\+artiste@{recuperer\+\_\+recompense\+\_\+artiste}!fonction\+Artiste.\+php@{fonction\+Artiste.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+recompense\+\_\+artiste()}{recuperer\_recompense\_artiste()}}
+{\footnotesize\ttfamily recuperer\+\_\+recompense\+\_\+artiste (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Artiste }\end{DoxyParamCaption})}
+
+
+
+Recupere les recompense d\textquotesingle{}un artiste. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Artiste} & Int Identifiant artiste dans Assembler\+\_\+\+Album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Association des récompense et de leur artistes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionArtiste_8php_a8586d94e19d8dd5c149ae508f2e4d26a}\label{fonctionArtiste_8php_a8586d94e19d8dd5c149ae508f2e4d26a}} 
+\index{fonction\+Artiste.\+php@{fonction\+Artiste.\+php}!supprimer\+\_\+artiste@{supprimer\+\_\+artiste}}
+\index{supprimer\+\_\+artiste@{supprimer\+\_\+artiste}!fonction\+Artiste.\+php@{fonction\+Artiste.\+php}}
+\subsubsection{\texorpdfstring{supprimer\+\_\+artiste()}{supprimer\_artiste()}}
+{\footnotesize\ttfamily supprimer\+\_\+artiste (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Artiste }\end{DoxyParamCaption})}
+
+
+
+Supprime un artiste de la B\+DD spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Artiste\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Artiste} & Int Identifiant de l\textquotesingle{}artiste \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si toutes les suppression se sont bien exécutées $\vert$ False Sinon 
+\end{DoxyReturn}

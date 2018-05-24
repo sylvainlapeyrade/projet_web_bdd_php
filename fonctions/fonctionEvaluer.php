@@ -1,11 +1,12 @@
 <?php
+
 /**
- * FICHIER : FUNCTIONS -> fonctionEvaluer.php
- * Fichier des fonctions de gestion des évalutations.
+ * @file fonctions/fonctionEvaluer.php
+ * @brief Fichier des fonctions de gestion des évalutations.
  */
 
 /**
- * Recupère toutes les évalutaions d'un album de la table Evaluer_Album
+ * @brief Recupère toutes les évalutaions d'un album de la table Evaluer_Album
  * spécifié par l'identifiant 'idAlbumEvAl'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idAlbumEvAl Int Identifiant album dans Evaluer_Album
@@ -20,7 +21,7 @@ function recuperer_evaluation_album_tous($db, $idAlbumEvAl) {
 }
 
 /**
- * Recupère toutes les évalutaions d'une musique de la table Evaluer_Musique
+ * @brief Recupère toutes les évalutaions d'une musique de la table Evaluer_Musique
  * spécifié par l'identifiant 'idMusiqueEvMu'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusiqueEvMu Int Identifiant musique dans Evaluer_Musique
@@ -35,7 +36,7 @@ function recuperer_evaluation_musique_tous($db, $idMusiqueEvMu) {
 }
 
 /**
- * Ajoute une nouvelle évaluation d'album dans la BDD
+ * @brief Ajoute une nouvelle évaluation d'album dans la BDD
  * avec un id utilisateur , un id album, une note et un commentaire
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idUtilisateurEvAl Int Id de l'utilisateur faisant l'évaluation
@@ -55,7 +56,7 @@ function ajouter_evaluation_album($db, $idUtilisateurEvAl, $idAlbumEvAl, $noteEv
 }
 
 /**
- * Ajoute une nouvelle évaluation de musique dans la BDD
+ * @brief Ajoute une nouvelle évaluation de musique dans la BDD
  * avec un id utilisateur , un id musique, une note et un commentaire
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusiqueEvMu Int Id de l'utilisateur faisant l'évaluation
@@ -75,7 +76,7 @@ function ajouter_evaluation_musique($db, $idUtilisateurEvMu, $idMusiqueEvMu, $no
 }
 
 /**
- * Supprime une évaluation d'un album de la BDD
+ * @brief Supprime une évaluation d'un album de la BDD
  * spécifié par les identifiants 'idUtilisateurEvAl' et 'idAlbumEvAl'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idUtilisateurEvAl Int Identifiant de l'utilisateur
@@ -91,7 +92,7 @@ function supprimer_evaluation_album($db, $idUtilisateurEvAl, $idAlbumEvAl) {
 }
 
 /**
- * Supprime une évaluation d'une musique de la BDD
+ * @brief Supprime une évaluation d'une musique de la BDD
  * spécifié par les identifiants 'idUtilisateurEvMu' et 'idMusiqueEvMu'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idUtilisateurEvMu Int Identifiant de l'utilisateur

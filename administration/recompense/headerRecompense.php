@@ -1,8 +1,10 @@
 <?php
+
 /**
- * Page headerRecompense.php
- * Inclut les caractéristiques du bouton Gestion des récompenses et Ajouter une récompense
+ * @file headerRecompense.php
+ * @brief Inclut les caractéristiques du bouton Gestion des récompenses et Ajouter une récompense
  */
+
 ?>
 
 <div id="headerGestion" class="flex flex-row">

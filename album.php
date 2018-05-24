@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page album.php
- * Présente un album avec ses caractéristiques
+ * @file album.php
+ * @brief Présente un album avec ses caractéristiques
  */
 
 session_start();

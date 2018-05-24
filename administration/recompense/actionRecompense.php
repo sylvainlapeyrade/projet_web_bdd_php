@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page actionRecompense.php
- * Fait le lien entre le formulaire recompense,
+ * @file actionRecompense.php
+ * @brief Fait le lien entre le formulaire recompense,
  * la gestion des recompenses et la BDD
  */
 

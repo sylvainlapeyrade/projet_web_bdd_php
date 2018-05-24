@@ -1,0 +1,464 @@
+\hypertarget{fonctionAlbum_8php}{}\section{Référence du fichier fonctions/fonction\+Album.php}
+\label{fonctionAlbum_8php}\index{fonctions/fonction\+Album.\+php@{fonctions/fonction\+Album.\+php}}
+
+
+Fichier des fonctions de gestion d\textquotesingle{}album.  
+
+
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{fonctionAlbum_8php_a00cf2b1cbba7f0a49fd987ce8698e5b8}{recuperer\+\_\+artiste\+\_\+album} (\$db, \$id\+Album)
+\begin{DoxyCompactList}\small\item\em Recupere les artistes d\textquotesingle{}un album. \end{DoxyCompactList}\item 
+\hyperlink{fonctionAlbum_8php_a5d2684de0038530d8d534467326fbac1}{recuperer\+\_\+groupe\+\_\+album} (\$db, \$id\+Album)
+\begin{DoxyCompactList}\small\item\em Recupere les groupes d\textquotesingle{}un album. \end{DoxyCompactList}\item 
+\hyperlink{fonctionAlbum_8php_a5162fc7335e65ca622c67dc921a308ac}{recuperer\+\_\+musique\+\_\+album} (\$db, \$id\+Album)
+\begin{DoxyCompactList}\small\item\em Recupere les artiste d\textquotesingle{}un album. \end{DoxyCompactList}\item 
+\hyperlink{fonctionAlbum_8php_a46ef28eb6a8b8055a8a3429701618e8d}{recuperer\+\_\+album\+\_\+tous} (\$db)
+\begin{DoxyCompactList}\small\item\em Récupère tout les albums de la B\+DD en les triant par ordre alphabétique de leur noms. \end{DoxyCompactList}\item 
+\hyperlink{fonctionAlbum_8php_a623b54a1c40fb3802a5049a029d253cb}{recuperer\+\_\+album} (\$db, \$id\+Album)
+\begin{DoxyCompactList}\small\item\em Récupère un album de la base de données spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Album\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{fonctionAlbum_8php_ac2453faf6d0805d8cb4afe186969393c}{ajouter\+\_\+album} (\$db, \$nom\+Album, \$date\+Album, \$description\+Album, \$url\+Pochette\+Album)
+\begin{DoxyCompactList}\small\item\em Ajoute un nouvel utilisateur dans la BD avec un id, un mdp et un statut. \end{DoxyCompactList}\item 
+\hyperlink{fonctionAlbum_8php_a056b76796cfed706c16ff9ed42dc5086}{modifier\+\_\+album} (\$db, \$id\+Album, \$nom\+Album, \$date\+Album, \$description\+Album, \$url\+Pochette\+Album)
+\begin{DoxyCompactList}\small\item\em Modifie un album dans la B\+DD. \end{DoxyCompactList}\item 
+\hyperlink{fonctionAlbum_8php_af82f3b33c72efc21b92271e6ab963c2f}{supprimer\+\_\+album} (\$db, \$id\+Album)
+\begin{DoxyCompactList}\small\item\em Supprime un album de la B\+DD spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Album\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{fonctionAlbum_8php_a866279ca688d1934eeb3e3d722c88881}{recuperer\+\_\+composer\+\_\+album} (\$db, \$id\+Album\+Co\+Al)
+\begin{DoxyCompactList}\small\item\em Récupère les associations d\textquotesingle{}album et leur compositeur. \end{DoxyCompactList}\item 
+\hyperlink{fonctionAlbum_8php_ad698da0173b76c53734478a97eca1d08}{ajouter\+\_\+composer\+\_\+album} (\$db, \$id\+Album\+Co\+Al, \$id\+Artiste\+Co\+Al)
+\begin{DoxyCompactList}\small\item\em Ajoute une association entre un album et son compositeur. \end{DoxyCompactList}\item 
+\hyperlink{fonctionAlbum_8php_a66de9b2d7b8761ef7476d05bec575b83}{supprimer\+\_\+composer\+\_\+album\+\_\+tous} (\$db, \$id\+Album\+Co\+Al)
+\begin{DoxyCompactList}\small\item\em Supprime toutes les associations de la table Composer\+\_\+\+Album spécifiées par l\textquotesingle{}identifiant \textquotesingle{}id\+Album\+Co\+Al\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{fonctionAlbum_8php_aadff6d61fc94c40b1db762393db06bb7}{recuperer\+\_\+composer\+\_\+album\+Gr} (\$db, \$id\+Album\+Co\+Ar)
+\begin{DoxyCompactList}\small\item\em Récupère les associations d\textquotesingle{}album et leur groupe. \end{DoxyCompactList}\item 
+\hyperlink{fonctionAlbum_8php_a41addf019effc704735ac3687dcf31bd}{ajouter\+\_\+composer\+\_\+album\+Gr} (\$db, \$id\+Album\+Co\+Ar, \$id\+Groupe\+Co\+Ar)
+\begin{DoxyCompactList}\small\item\em Ajoute une association entre un album et son groupe. \end{DoxyCompactList}\item 
+\hyperlink{fonctionAlbum_8php_a35ca4d8ff2936c885cded035c4f48b66}{supprimer\+\_\+composer\+\_\+album\+Gr\+\_\+tous} (\$db, \$id\+Album\+Co\+Ar)
+\begin{DoxyCompactList}\small\item\em Supprime toutes les associations de la table Composer\+\_\+\+Album\+Gr spécifiées par l\textquotesingle{}identifiant \textquotesingle{}id\+Album\+Co\+Ar\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{fonctionAlbum_8php_a440a43eada75aa71f51ce4512d654a87}{recuperer\+\_\+assembler\+\_\+album} (\$db, \$id\+Album\+Aa, \$id\+Musique\+Aa)
+\begin{DoxyCompactList}\small\item\em Récupère une associations de musiques et album. \end{DoxyCompactList}\item 
+\hyperlink{fonctionAlbum_8php_addf4cb62b30ad5efff23a08f9f15599a}{ajouter\+\_\+assembler\+\_\+album} (\$db, \$id\+Album\+Aa, \$id\+Musique\+Aa, \$numero\+Piste)
+\begin{DoxyCompactList}\small\item\em Ajoute une association entre une musique et un album. \end{DoxyCompactList}\item 
+\hyperlink{fonctionAlbum_8php_a15a56f70094024d68b9dd0696b1496e7}{modifier\+\_\+assembler\+\_\+album} (\$db, \$id\+Album\+Aa, \$id\+Musique\+Aa, \$numero\+Piste)
+\begin{DoxyCompactList}\small\item\em Modifie une association entre une musique et un album. \end{DoxyCompactList}\item 
+\hyperlink{fonctionAlbum_8php_ae7db5b38c839b3fb5d22547e3bf7b085}{supprimer\+\_\+assembler\+\_\+album} (\$db, \$id\+Album\+Aa, \$id\+Musique\+Aa)
+\begin{DoxyCompactList}\small\item\em Supprime toutes les associations de la table Assembler\+\_\+\+Album. \end{DoxyCompactList}\item 
+\hyperlink{fonctionAlbum_8php_a81aa2a00c711c88b69cfce51a9779bcb}{supprimer\+\_\+assembler\+\_\+album\+\_\+tous} (\$db, \$id\+Album\+Aa)
+\begin{DoxyCompactList}\small\item\em Supprime toutes les associations de la table Assembler\+\_\+\+Album spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Album\+Aa\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Fichier des fonctions de gestion d\textquotesingle{}album. 
+
+
+
+\subsection{Documentation des fonctions}
+\mbox{\Hypertarget{fonctionAlbum_8php_ac2453faf6d0805d8cb4afe186969393c}\label{fonctionAlbum_8php_ac2453faf6d0805d8cb4afe186969393c}} 
+\index{fonction\+Album.\+php@{fonction\+Album.\+php}!ajouter\+\_\+album@{ajouter\+\_\+album}}
+\index{ajouter\+\_\+album@{ajouter\+\_\+album}!fonction\+Album.\+php@{fonction\+Album.\+php}}
+\subsubsection{\texorpdfstring{ajouter\+\_\+album()}{ajouter\_album()}}
+{\footnotesize\ttfamily ajouter\+\_\+album (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$nom\+Album,  }\item[{}]{\$date\+Album,  }\item[{}]{\$description\+Album,  }\item[{}]{\$url\+Pochette\+Album }\end{DoxyParamCaption})}
+
+
+
+Ajoute un nouvel utilisateur dans la BD avec un id, un mdp et un statut. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$nom\+Album} & String Nom de l\textquotesingle{}album \\
+\hline
+{\em \$date\+Album} & String Date de sortie de l\textquotesingle{}album \\
+\hline
+{\em \$description\+Album} & String Desciption de l\textquotesingle{}album \\
+\hline
+{\em \$url\+Pochette\+Album} & String U\+RL de la jaquette de l\textquotesingle{}album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int L\textquotesingle{}id de la recompense si la requête s\textquotesingle{}est bien exécutée $\vert$ Null sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionAlbum_8php_addf4cb62b30ad5efff23a08f9f15599a}\label{fonctionAlbum_8php_addf4cb62b30ad5efff23a08f9f15599a}} 
+\index{fonction\+Album.\+php@{fonction\+Album.\+php}!ajouter\+\_\+assembler\+\_\+album@{ajouter\+\_\+assembler\+\_\+album}}
+\index{ajouter\+\_\+assembler\+\_\+album@{ajouter\+\_\+assembler\+\_\+album}!fonction\+Album.\+php@{fonction\+Album.\+php}}
+\subsubsection{\texorpdfstring{ajouter\+\_\+assembler\+\_\+album()}{ajouter\_assembler\_album()}}
+{\footnotesize\ttfamily ajouter\+\_\+assembler\+\_\+album (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Album\+Aa,  }\item[{}]{\$id\+Musique\+Aa,  }\item[{}]{\$numero\+Piste }\end{DoxyParamCaption})}
+
+
+
+Ajoute une association entre une musique et un album. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Musique\+Aa} & Int Identifiant musique dans Assembler\+\_\+\+Album \\
+\hline
+{\em \$id\+Album\+Aa} & Int Identifiant album dans Assembler\+\_\+\+Album \\
+\hline
+{\em \$numero\+Piste} & Int Numero de la musique dans l\textquotesingle{}album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionAlbum_8php_ad698da0173b76c53734478a97eca1d08}\label{fonctionAlbum_8php_ad698da0173b76c53734478a97eca1d08}} 
+\index{fonction\+Album.\+php@{fonction\+Album.\+php}!ajouter\+\_\+composer\+\_\+album@{ajouter\+\_\+composer\+\_\+album}}
+\index{ajouter\+\_\+composer\+\_\+album@{ajouter\+\_\+composer\+\_\+album}!fonction\+Album.\+php@{fonction\+Album.\+php}}
+\subsubsection{\texorpdfstring{ajouter\+\_\+composer\+\_\+album()}{ajouter\_composer\_album()}}
+{\footnotesize\ttfamily ajouter\+\_\+composer\+\_\+album (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Album\+Co\+Al,  }\item[{}]{\$id\+Artiste\+Co\+Al }\end{DoxyParamCaption})}
+
+
+
+Ajoute une association entre un album et son compositeur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Album\+Co\+Al} & Int Identifiant album dans Composer\+\_\+album \\
+\hline
+{\em \$id\+Artiste\+Co\+Al} & Int Identifiant artiste dans Composer\+\_\+album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionAlbum_8php_a41addf019effc704735ac3687dcf31bd}\label{fonctionAlbum_8php_a41addf019effc704735ac3687dcf31bd}} 
+\index{fonction\+Album.\+php@{fonction\+Album.\+php}!ajouter\+\_\+composer\+\_\+album\+Gr@{ajouter\+\_\+composer\+\_\+album\+Gr}}
+\index{ajouter\+\_\+composer\+\_\+album\+Gr@{ajouter\+\_\+composer\+\_\+album\+Gr}!fonction\+Album.\+php@{fonction\+Album.\+php}}
+\subsubsection{\texorpdfstring{ajouter\+\_\+composer\+\_\+album\+Gr()}{ajouter\_composer\_albumGr()}}
+{\footnotesize\ttfamily ajouter\+\_\+composer\+\_\+album\+Gr (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Album\+Co\+Ar,  }\item[{}]{\$id\+Groupe\+Co\+Ar }\end{DoxyParamCaption})}
+
+
+
+Ajoute une association entre un album et son groupe. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Album\+Co\+Ar} & Int Identifiant album dans Composer\+\_\+\+Album\+Gr \\
+\hline
+{\em \$id\+Groupe\+Co\+Ar} & Int Identifiant groupe dans Composer\+\_\+\+Album\+Gr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionAlbum_8php_a056b76796cfed706c16ff9ed42dc5086}\label{fonctionAlbum_8php_a056b76796cfed706c16ff9ed42dc5086}} 
+\index{fonction\+Album.\+php@{fonction\+Album.\+php}!modifier\+\_\+album@{modifier\+\_\+album}}
+\index{modifier\+\_\+album@{modifier\+\_\+album}!fonction\+Album.\+php@{fonction\+Album.\+php}}
+\subsubsection{\texorpdfstring{modifier\+\_\+album()}{modifier\_album()}}
+{\footnotesize\ttfamily modifier\+\_\+album (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Album,  }\item[{}]{\$nom\+Album,  }\item[{}]{\$date\+Album,  }\item[{}]{\$description\+Album,  }\item[{}]{\$url\+Pochette\+Album }\end{DoxyParamCaption})}
+
+
+
+Modifie un album dans la B\+DD. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Album} & Int Identifiant de l\textquotesingle{}album \\
+\hline
+{\em \$nom\+Album} & String Nom de l\textquotesingle{}album \\
+\hline
+{\em \$date\+Album} & String Date de sortie de l\textquotesingle{}album \\
+\hline
+{\em \$description\+Album} & String Desciption de l\textquotesingle{}album \\
+\hline
+{\em \$url\+Pochette\+Album} & String U\+RL de la jaquette de l\textquotesingle{}album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionAlbum_8php_a15a56f70094024d68b9dd0696b1496e7}\label{fonctionAlbum_8php_a15a56f70094024d68b9dd0696b1496e7}} 
+\index{fonction\+Album.\+php@{fonction\+Album.\+php}!modifier\+\_\+assembler\+\_\+album@{modifier\+\_\+assembler\+\_\+album}}
+\index{modifier\+\_\+assembler\+\_\+album@{modifier\+\_\+assembler\+\_\+album}!fonction\+Album.\+php@{fonction\+Album.\+php}}
+\subsubsection{\texorpdfstring{modifier\+\_\+assembler\+\_\+album()}{modifier\_assembler\_album()}}
+{\footnotesize\ttfamily modifier\+\_\+assembler\+\_\+album (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Album\+Aa,  }\item[{}]{\$id\+Musique\+Aa,  }\item[{}]{\$numero\+Piste }\end{DoxyParamCaption})}
+
+
+
+Modifie une association entre une musique et un album. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Musique\+Aa} & Int Identifiant musique dans Assembler\+\_\+\+Album \\
+\hline
+{\em \$id\+Album\+Aa} & Int Identifiant album dans Assembler\+\_\+\+Album \\
+\hline
+{\em \$numero\+Piste} & Int Numero de la musique dans l\textquotesingle{}album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionAlbum_8php_a623b54a1c40fb3802a5049a029d253cb}\label{fonctionAlbum_8php_a623b54a1c40fb3802a5049a029d253cb}} 
+\index{fonction\+Album.\+php@{fonction\+Album.\+php}!recuperer\+\_\+album@{recuperer\+\_\+album}}
+\index{recuperer\+\_\+album@{recuperer\+\_\+album}!fonction\+Album.\+php@{fonction\+Album.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+album()}{recuperer\_album()}}
+{\footnotesize\ttfamily recuperer\+\_\+album (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Album }\end{DoxyParamCaption})}
+
+
+
+Récupère un album de la base de données spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Album\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Album} & int Identifiant utilisateur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array L\textquotesingle{}utilisateur correspondant a l\textquotesingle{}id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionAlbum_8php_a46ef28eb6a8b8055a8a3429701618e8d}\label{fonctionAlbum_8php_a46ef28eb6a8b8055a8a3429701618e8d}} 
+\index{fonction\+Album.\+php@{fonction\+Album.\+php}!recuperer\+\_\+album\+\_\+tous@{recuperer\+\_\+album\+\_\+tous}}
+\index{recuperer\+\_\+album\+\_\+tous@{recuperer\+\_\+album\+\_\+tous}!fonction\+Album.\+php@{fonction\+Album.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+album\+\_\+tous()}{recuperer\_album\_tous()}}
+{\footnotesize\ttfamily recuperer\+\_\+album\+\_\+tous (\begin{DoxyParamCaption}\item[{}]{\$db }\end{DoxyParamCaption})}
+
+
+
+Récupère tout les albums de la B\+DD en les triant par ordre alphabétique de leur noms. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Les albums de la base de données 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionAlbum_8php_a00cf2b1cbba7f0a49fd987ce8698e5b8}\label{fonctionAlbum_8php_a00cf2b1cbba7f0a49fd987ce8698e5b8}} 
+\index{fonction\+Album.\+php@{fonction\+Album.\+php}!recuperer\+\_\+artiste\+\_\+album@{recuperer\+\_\+artiste\+\_\+album}}
+\index{recuperer\+\_\+artiste\+\_\+album@{recuperer\+\_\+artiste\+\_\+album}!fonction\+Album.\+php@{fonction\+Album.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+artiste\+\_\+album()}{recuperer\_artiste\_album()}}
+{\footnotesize\ttfamily recuperer\+\_\+artiste\+\_\+album (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Album }\end{DoxyParamCaption})}
+
+
+
+Recupere les artistes d\textquotesingle{}un album. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Album} & Int Identifiant album dans Assembler\+\_\+\+Album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Association des albums et de leur compositeur artistes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionAlbum_8php_a440a43eada75aa71f51ce4512d654a87}\label{fonctionAlbum_8php_a440a43eada75aa71f51ce4512d654a87}} 
+\index{fonction\+Album.\+php@{fonction\+Album.\+php}!recuperer\+\_\+assembler\+\_\+album@{recuperer\+\_\+assembler\+\_\+album}}
+\index{recuperer\+\_\+assembler\+\_\+album@{recuperer\+\_\+assembler\+\_\+album}!fonction\+Album.\+php@{fonction\+Album.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+assembler\+\_\+album()}{recuperer\_assembler\_album()}}
+{\footnotesize\ttfamily recuperer\+\_\+assembler\+\_\+album (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Album\+Aa,  }\item[{}]{\$id\+Musique\+Aa }\end{DoxyParamCaption})}
+
+
+
+Récupère une associations de musiques et album. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Album\+Aa} & Int Identifiant album dans Assembler\+\_\+\+Album \\
+\hline
+{\em \$id\+Musique\+Aa} & Int Identifiant musique dans Assembler\+\_\+\+Album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Association des musiques et album 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionAlbum_8php_a866279ca688d1934eeb3e3d722c88881}\label{fonctionAlbum_8php_a866279ca688d1934eeb3e3d722c88881}} 
+\index{fonction\+Album.\+php@{fonction\+Album.\+php}!recuperer\+\_\+composer\+\_\+album@{recuperer\+\_\+composer\+\_\+album}}
+\index{recuperer\+\_\+composer\+\_\+album@{recuperer\+\_\+composer\+\_\+album}!fonction\+Album.\+php@{fonction\+Album.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+composer\+\_\+album()}{recuperer\_composer\_album()}}
+{\footnotesize\ttfamily recuperer\+\_\+composer\+\_\+album (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Album\+Co\+Al }\end{DoxyParamCaption})}
+
+
+
+Récupère les associations d\textquotesingle{}album et leur compositeur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Album\+Co\+Al} & Int Identifiant album dans Composer\+\_\+album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Association des albums et de leur compositeur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionAlbum_8php_aadff6d61fc94c40b1db762393db06bb7}\label{fonctionAlbum_8php_aadff6d61fc94c40b1db762393db06bb7}} 
+\index{fonction\+Album.\+php@{fonction\+Album.\+php}!recuperer\+\_\+composer\+\_\+album\+Gr@{recuperer\+\_\+composer\+\_\+album\+Gr}}
+\index{recuperer\+\_\+composer\+\_\+album\+Gr@{recuperer\+\_\+composer\+\_\+album\+Gr}!fonction\+Album.\+php@{fonction\+Album.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+composer\+\_\+album\+Gr()}{recuperer\_composer\_albumGr()}}
+{\footnotesize\ttfamily recuperer\+\_\+composer\+\_\+album\+Gr (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Album\+Co\+Ar }\end{DoxyParamCaption})}
+
+
+
+Récupère les associations d\textquotesingle{}album et leur groupe. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Album\+Co\+Ar} & Int Identifiant album dans Composer\+\_\+\+Album\+Gr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Association des albums et de leur groupe 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionAlbum_8php_a5d2684de0038530d8d534467326fbac1}\label{fonctionAlbum_8php_a5d2684de0038530d8d534467326fbac1}} 
+\index{fonction\+Album.\+php@{fonction\+Album.\+php}!recuperer\+\_\+groupe\+\_\+album@{recuperer\+\_\+groupe\+\_\+album}}
+\index{recuperer\+\_\+groupe\+\_\+album@{recuperer\+\_\+groupe\+\_\+album}!fonction\+Album.\+php@{fonction\+Album.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+groupe\+\_\+album()}{recuperer\_groupe\_album()}}
+{\footnotesize\ttfamily recuperer\+\_\+groupe\+\_\+album (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Album }\end{DoxyParamCaption})}
+
+
+
+Recupere les groupes d\textquotesingle{}un album. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Album} & Int Identifiant album dans Assembler\+\_\+\+Album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Association des albums et de leur compositeur groupe 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionAlbum_8php_a5162fc7335e65ca622c67dc921a308ac}\label{fonctionAlbum_8php_a5162fc7335e65ca622c67dc921a308ac}} 
+\index{fonction\+Album.\+php@{fonction\+Album.\+php}!recuperer\+\_\+musique\+\_\+album@{recuperer\+\_\+musique\+\_\+album}}
+\index{recuperer\+\_\+musique\+\_\+album@{recuperer\+\_\+musique\+\_\+album}!fonction\+Album.\+php@{fonction\+Album.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+musique\+\_\+album()}{recuperer\_musique\_album()}}
+{\footnotesize\ttfamily recuperer\+\_\+musique\+\_\+album (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Album }\end{DoxyParamCaption})}
+
+
+
+Recupere les artiste d\textquotesingle{}un album. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Album} & Int Identifiant album dans Assembler\+\_\+\+Album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Association des albums et de leur compositeur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionAlbum_8php_af82f3b33c72efc21b92271e6ab963c2f}\label{fonctionAlbum_8php_af82f3b33c72efc21b92271e6ab963c2f}} 
+\index{fonction\+Album.\+php@{fonction\+Album.\+php}!supprimer\+\_\+album@{supprimer\+\_\+album}}
+\index{supprimer\+\_\+album@{supprimer\+\_\+album}!fonction\+Album.\+php@{fonction\+Album.\+php}}
+\subsubsection{\texorpdfstring{supprimer\+\_\+album()}{supprimer\_album()}}
+{\footnotesize\ttfamily supprimer\+\_\+album (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Album }\end{DoxyParamCaption})}
+
+
+
+Supprime un album de la B\+DD spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Album\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Album} & Int Identifiant de l\textquotesingle{}album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si l\textquotesingle{}opération de suppression s\textquotesingle{}est bien exécutée $\vert$ False Sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionAlbum_8php_ae7db5b38c839b3fb5d22547e3bf7b085}\label{fonctionAlbum_8php_ae7db5b38c839b3fb5d22547e3bf7b085}} 
+\index{fonction\+Album.\+php@{fonction\+Album.\+php}!supprimer\+\_\+assembler\+\_\+album@{supprimer\+\_\+assembler\+\_\+album}}
+\index{supprimer\+\_\+assembler\+\_\+album@{supprimer\+\_\+assembler\+\_\+album}!fonction\+Album.\+php@{fonction\+Album.\+php}}
+\subsubsection{\texorpdfstring{supprimer\+\_\+assembler\+\_\+album()}{supprimer\_assembler\_album()}}
+{\footnotesize\ttfamily supprimer\+\_\+assembler\+\_\+album (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Album\+Aa,  }\item[{}]{\$id\+Musique\+Aa }\end{DoxyParamCaption})}
+
+
+
+Supprime toutes les associations de la table Assembler\+\_\+\+Album. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Musique\+Aa} & Int Identifiant musique dans Assembler\+\_\+\+Album \\
+\hline
+{\em \$id\+Album\+Aa} & Int Identifiant album dans Assembler\+\_\+\+Album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionAlbum_8php_a81aa2a00c711c88b69cfce51a9779bcb}\label{fonctionAlbum_8php_a81aa2a00c711c88b69cfce51a9779bcb}} 
+\index{fonction\+Album.\+php@{fonction\+Album.\+php}!supprimer\+\_\+assembler\+\_\+album\+\_\+tous@{supprimer\+\_\+assembler\+\_\+album\+\_\+tous}}
+\index{supprimer\+\_\+assembler\+\_\+album\+\_\+tous@{supprimer\+\_\+assembler\+\_\+album\+\_\+tous}!fonction\+Album.\+php@{fonction\+Album.\+php}}
+\subsubsection{\texorpdfstring{supprimer\+\_\+assembler\+\_\+album\+\_\+tous()}{supprimer\_assembler\_album\_tous()}}
+{\footnotesize\ttfamily supprimer\+\_\+assembler\+\_\+album\+\_\+tous (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Album\+Aa }\end{DoxyParamCaption})}
+
+
+
+Supprime toutes les associations de la table Assembler\+\_\+\+Album spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Album\+Aa\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Album\+Aa} & Int Identifiant album dans Assembler\+\_\+\+Album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionAlbum_8php_a66de9b2d7b8761ef7476d05bec575b83}\label{fonctionAlbum_8php_a66de9b2d7b8761ef7476d05bec575b83}} 
+\index{fonction\+Album.\+php@{fonction\+Album.\+php}!supprimer\+\_\+composer\+\_\+album\+\_\+tous@{supprimer\+\_\+composer\+\_\+album\+\_\+tous}}
+\index{supprimer\+\_\+composer\+\_\+album\+\_\+tous@{supprimer\+\_\+composer\+\_\+album\+\_\+tous}!fonction\+Album.\+php@{fonction\+Album.\+php}}
+\subsubsection{\texorpdfstring{supprimer\+\_\+composer\+\_\+album\+\_\+tous()}{supprimer\_composer\_album\_tous()}}
+{\footnotesize\ttfamily supprimer\+\_\+composer\+\_\+album\+\_\+tous (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Album\+Co\+Al }\end{DoxyParamCaption})}
+
+
+
+Supprime toutes les associations de la table Composer\+\_\+\+Album spécifiées par l\textquotesingle{}identifiant \textquotesingle{}id\+Album\+Co\+Al\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Album\+Co\+Al} & Int Identifiant album dans Composer\+\_\+\+Album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionAlbum_8php_a35ca4d8ff2936c885cded035c4f48b66}\label{fonctionAlbum_8php_a35ca4d8ff2936c885cded035c4f48b66}} 
+\index{fonction\+Album.\+php@{fonction\+Album.\+php}!supprimer\+\_\+composer\+\_\+album\+Gr\+\_\+tous@{supprimer\+\_\+composer\+\_\+album\+Gr\+\_\+tous}}
+\index{supprimer\+\_\+composer\+\_\+album\+Gr\+\_\+tous@{supprimer\+\_\+composer\+\_\+album\+Gr\+\_\+tous}!fonction\+Album.\+php@{fonction\+Album.\+php}}
+\subsubsection{\texorpdfstring{supprimer\+\_\+composer\+\_\+album\+Gr\+\_\+tous()}{supprimer\_composer\_albumGr\_tous()}}
+{\footnotesize\ttfamily supprimer\+\_\+composer\+\_\+album\+Gr\+\_\+tous (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Album\+Co\+Ar }\end{DoxyParamCaption})}
+
+
+
+Supprime toutes les associations de la table Composer\+\_\+\+Album\+Gr spécifiées par l\textquotesingle{}identifiant \textquotesingle{}id\+Album\+Co\+Ar\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Album\+Co\+Ar} & Int Identifiant album dans Composer\+\_\+\+Album\+Gr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False sinon 
+\end{DoxyReturn}

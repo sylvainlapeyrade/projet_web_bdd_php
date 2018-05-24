@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page actionAlbum.php
- * Fait le lien entre le formulaire album,
+ * @file actionAlbum.php
+ * @brief Fait le lien entre le formulaire album,
  * la gestion des albums et la BDD
  */
 

@@ -62,9 +62,9 @@
 
 \section{Présentation}
 	\subsection{Disposition 1 (layout)}
-	
+
 		\begin{paragraphe}
-			Ceci est la première disposition dont toutes les pages vont hériter. Ici c'est la disposition où l'utilisateur n'est pas connecté.
+			Ceci est la première disposition dont toutes les pages vont hériter. Dans ce cas, l'utilisateur n'est pas connecté.
 		\end{paragraphe}
 
 		\begin{paragraphe}
@@ -76,7 +76,7 @@
 			Si clic sur le bouton << connexion >> \\
 			Alors redirection vers pageConnexion.php
 		\end{paragraphe}
-		
+
 		\begin{paragraphe}
 			Si clic sur bouton << inscription >> \\
 			Alors redirection vers pageInscription.php
@@ -85,9 +85,9 @@
 		\image{0.35}{images/conception/page_type_1}{Mockup - Page disposition 1}
 
 	\subsection{Disposition 2 (layout)}
-	
+
 		\begin{paragraphe}
-			Ceci est la seconde disposition dont toutes les pages vont hériter. Ici c'est la disposition où l'utilisateur normal est connecté.
+			Ceci est la seconde disposition dont toutes les pages vont hériter. Dans ce cas l'utilisateur normal est connecté.
 		\end{paragraphe}
 
 		\begin{paragraphe}
@@ -99,7 +99,7 @@
 			Si clic sur le bouton << compte >> \\
 			Alors redirection vers pageCompte.php
 		\end{paragraphe}
-		
+
 		\begin{paragraphe}
 			Si clic sur bouton << déconnexion >> \\
 			Alors on déconnecte l'utilisateur de sa session courante.
@@ -108,9 +108,9 @@
 		\image{0.35}{images/conception/page_type_2}{Mockup - Page disposition 2}
 
 	\subsection{Disposition 3 (layout)}
-	
+
 		\begin{paragraphe}
-			Ceci est la troisième disposition dont toutes les pages vont hériter. Ici c'est la disposition où l'utilisateur administrateur est connecté.
+			Ceci est la troisième disposition dont toutes les pages vont hériter. Dans ce cas l'utilisateur administrateur est connecté.
 		\end{paragraphe}
 
 		\begin{paragraphe}
@@ -127,7 +127,7 @@
 			Si clic sur le bouton << compte >> \\
 			Alors redirection vers pageCompte.php
 		\end{paragraphe}
-		
+
 		\begin{paragraphe}
 			Si clic sur bouton << déconnexion >> \\
 			Alors on déconnecte l'utilisateur de sa session courante.
@@ -440,7 +440,7 @@
 
 			\begin{paragraphe}
 				Les services sont ici utilisés pour la vérification des deux mots de passes saisi.\par
-				Une fois cette vérification établie, la base de données est modifié par la nouvelle valeur correspondant au nom de compte connecté. 
+				Une fois cette vérification établie, la base de données est modifié par la nouvelle valeur correspondant au nom de compte connecté.
 			\end{paragraphe}
 
 			\begin{paragraphe}
@@ -559,7 +559,7 @@
 					\item ajouterNouveauArtiste(artiste) : permet d'enregistrer un nouvel << artiste >> dans la base de donnée.
 					\item modifierArtiste(artiste) : permet de mettre à jour une entrée << artiste >> déjà existante dans la base de données.
 					\item suppressionArtiste(artiste) : permet de supprimer un artiste de la base de données.
-					\item ajoutRecmpense(artiste, recompense) : permets d'ajouter une récompense à un artiste. 
+					\item ajoutRecmpense(artiste, recompense) : permets d'ajouter une récompense à un artiste.
 				\end{itemize}
 			\end{paragraphe}
 
@@ -590,7 +590,7 @@
 
 			\begin{paragraphe}
 				Si clic sur le tableau d'artiste, le bouton << supprimer >> \\
-				Alors effectue l'action supprimerArtiste(artiste). 
+				Alors effectue l'action supprimerArtiste(artiste).
 			\end{paragraphe}
 
 			\begin{paragraphe}
@@ -679,7 +679,7 @@
 
 			\begin{paragraphe}
 				Si clic sur le tableau de groupe, le bouton << supprimer >> \\
-				Alors effectuer l'action suppressionGroupe(groupe). 
+				Alors effectuer l'action suppressionGroupe(groupe).
 			\end{paragraphe}
 
 			\begin{paragraphe}
@@ -689,7 +689,7 @@
 
 			\begin{paragraphe}
 				Si clic le bouton << Modifier >> du formulaire \\
-				Alors effectuer l'action modifierGroupe(groupe). 
+				Alors effectuer l'action modifierGroupe(groupe).
 			\end{paragraphe}
 
 			\begin{paragraphe}
@@ -842,7 +842,7 @@
 			\image{0.35}{images/conception/page_admin_musique}{Mockup - Page gestion musique}
 
 			\begin{paragraphe}
-				Il y a quatre formulaires. Un premier qui permet de modifier les données d'un morceau de musique, le second pour ajouter des artistes à une msuique sélectionnée, un troisième pour ajouter la musique à un ou plusieurs albums. Le quatrième formulaire permet d'associé un ou plusieurs genres au morceau de musique. 
+				Il y a quatre formulaires. Un premier qui permet de modifier les données d'un morceau de musique, le second pour ajouter des artistes à une msuique sélectionnée, un troisième pour ajouter la musique à un ou plusieurs albums. Le quatrième formulaire permet d'associé un ou plusieurs genres au morceau de musique.
 			\end{paragraphe}
 
 			\begin{paragraphe}
@@ -1105,4 +1105,3 @@
 				Si clic sur le bouton << Changer Statut >> \\
 				Alors effectuer l'action changerStatutUtilisateur() si les paramètres entrés dans le formulaire sont valide, recherge ensuite la page après avoir indiqué que le statut a bien été changé.
 			\end{paragraphe}
-

@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page deconnexion.php
- * Ferme la session quand on active le bouton "Deconnexion"
+ * @file compte/deconnexion.php
+ * @brief Ferme la session quand on active le bouton "Deconnexion"
  */
 
     session_start();

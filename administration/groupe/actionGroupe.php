@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page actionGroupe.php
- * Fait le lien entre le formulaire groupe,
+ * @file actionGroupe.php
+ * @brief Fait le lien entre le formulaire groupe,
  * la gestion des groupes et la BDD
  */
 

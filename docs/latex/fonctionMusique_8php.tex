@@ -1,0 +1,298 @@
+\hypertarget{fonctionMusique_8php}{}\section{Référence du fichier fonctions/fonction\+Musique.php}
+\label{fonctionMusique_8php}\index{fonctions/fonction\+Musique.\+php@{fonctions/fonction\+Musique.\+php}}
+
+
+Fichier des fonctions de gestion des musiques.  
+
+
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{fonctionMusique_8php_a74ec8e1eb7cda5a5b26e0384019d0c7f}{recuperer\+\_\+artiste\+\_\+musique} (\$db, \$id\+Musique)
+\begin{DoxyCompactList}\small\item\em Récupère les artiste d\textquotesingle{}une musique spécifier par l\textquotesingle{}identifiant \textquotesingle{}id\+Musique\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{fonctionMusique_8php_af330ba4aeb1ac679ae0b8227be73e927}{recuperer\+\_\+musique\+\_\+tous} (\$db)
+\begin{DoxyCompactList}\small\item\em Récupère tout les musiques de la B\+DD en les triant par ordre alphabétique par leur titre. \end{DoxyCompactList}\item 
+\hyperlink{fonctionMusique_8php_abde3ba80f1b39503056076dd0db4cca5}{recuperer\+\_\+musique} (\$db, \$id\+Musique)
+\begin{DoxyCompactList}\small\item\em Récupère une musique de la B\+DD spécifier par l\textquotesingle{}identifiant \textquotesingle{}id\+Musique\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{fonctionMusique_8php_a7ca7a2721c0ce1460fbfce47541cc830}{ajouter\+\_\+musique} (\$db, \$titre\+Musique, \$duree\+Musique, \$date\+Musique, \$description\+Musique)
+\begin{DoxyCompactList}\small\item\em Ajoute une nouvelle musique à la B\+DD avec un titre, duree, date de sortie et une description de la musique. \end{DoxyCompactList}\item 
+\hyperlink{fonctionMusique_8php_aa289ddcb8c194a91ed1a09d3ad573920}{modifier\+\_\+musique} (\$db, \$id\+Musique, \$titre\+Musique, \$duree\+Musique, \$date\+Musique, \$description\+Musique)
+\begin{DoxyCompactList}\small\item\em Modifie une musique existante dans la B\+DD avec un titre, duree, date de sortie et une description de la musique. \end{DoxyCompactList}\item 
+\hyperlink{fonctionMusique_8php_a51691c70f94810c4b072c4b7efe74b41}{supprimer\+\_\+musique} (\$db, \$id\+Musique)
+\begin{DoxyCompactList}\small\item\em Supprime une musique de la B\+DD spécifiée par l\textquotesingle{}identifiant \textquotesingle{}id\+Musique\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{fonctionMusique_8php_aab97122de21bdcebff3e545430db9288}{recuperer\+\_\+composer\+\_\+musique} (\$db, \$id\+Musique\+Co\+Mu)
+\begin{DoxyCompactList}\small\item\em Recupere les associations de musiques et leur artiste. \end{DoxyCompactList}\item 
+\hyperlink{fonctionMusique_8php_a8caa427d79a466dc7a5515e4d7fd6e89}{ajouter\+\_\+composer\+\_\+musique} (\$db, \$id\+Musique\+Co\+Mu, \$id\+Artiste\+Co\+Mu)
+\begin{DoxyCompactList}\small\item\em Ajoute une association entre une musique et son artiste. \end{DoxyCompactList}\item 
+\hyperlink{fonctionMusique_8php_a4522ce17fdee83b5a8a69cbd8793d8e8}{supprimer\+\_\+composer\+\_\+musique\+\_\+tous} (\$db, \$id\+Musique\+Co\+Mu)
+\begin{DoxyCompactList}\small\item\em Supprime toutes les association de la table Composer\+\_\+\+Musique spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Musique\+Co\+Mu\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{fonctionMusique_8php_a4ca358b5f3211b09e03236b8cc99c8a9}{recuperer\+\_\+composer\+\_\+musique\+Gr} (\$db, \$id\+Musique\+Co\+Mr)
+\begin{DoxyCompactList}\small\item\em Recupere les associations de musiques et leur groupe. \end{DoxyCompactList}\item 
+\hyperlink{fonctionMusique_8php_aaec18ddf2a315f013b17fe9b72ef850b}{ajouter\+\_\+composer\+\_\+musique\+Gr} (\$db, \$id\+Musique\+Co\+Mr, \$id\+Groupe\+Co\+Mr)
+\begin{DoxyCompactList}\small\item\em Ajoute une association entre une musique et son groupe. \end{DoxyCompactList}\item 
+\hyperlink{fonctionMusique_8php_a3e655cbddf1539e8d07f245911fe7d5f}{supprimer\+\_\+composer\+\_\+musique\+Gr\+\_\+tous} (\$db, \$id\+Musique\+Co\+Mr)
+\begin{DoxyCompactList}\small\item\em Supprime toutes les association de la table Composer\+\_\+\+Musique\+Gr spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Musique\+Co\+Mr\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Fichier des fonctions de gestion des musiques. 
+
+
+
+\subsection{Documentation des fonctions}
+\mbox{\Hypertarget{fonctionMusique_8php_a8caa427d79a466dc7a5515e4d7fd6e89}\label{fonctionMusique_8php_a8caa427d79a466dc7a5515e4d7fd6e89}} 
+\index{fonction\+Musique.\+php@{fonction\+Musique.\+php}!ajouter\+\_\+composer\+\_\+musique@{ajouter\+\_\+composer\+\_\+musique}}
+\index{ajouter\+\_\+composer\+\_\+musique@{ajouter\+\_\+composer\+\_\+musique}!fonction\+Musique.\+php@{fonction\+Musique.\+php}}
+\subsubsection{\texorpdfstring{ajouter\+\_\+composer\+\_\+musique()}{ajouter\_composer\_musique()}}
+{\footnotesize\ttfamily ajouter\+\_\+composer\+\_\+musique (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Musique\+Co\+Mu,  }\item[{}]{\$id\+Artiste\+Co\+Mu }\end{DoxyParamCaption})}
+
+
+
+Ajoute une association entre une musique et son artiste. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Musique\+Co\+Mu} & Int Identifiant musique dans Composer\+\_\+\+Musique \\
+\hline
+{\em \$id\+Artiste\+Co\+Mu} & Int Identifiant artiste dans Composer\+\_\+\+Musique \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionMusique_8php_aaec18ddf2a315f013b17fe9b72ef850b}\label{fonctionMusique_8php_aaec18ddf2a315f013b17fe9b72ef850b}} 
+\index{fonction\+Musique.\+php@{fonction\+Musique.\+php}!ajouter\+\_\+composer\+\_\+musique\+Gr@{ajouter\+\_\+composer\+\_\+musique\+Gr}}
+\index{ajouter\+\_\+composer\+\_\+musique\+Gr@{ajouter\+\_\+composer\+\_\+musique\+Gr}!fonction\+Musique.\+php@{fonction\+Musique.\+php}}
+\subsubsection{\texorpdfstring{ajouter\+\_\+composer\+\_\+musique\+Gr()}{ajouter\_composer\_musiqueGr()}}
+{\footnotesize\ttfamily ajouter\+\_\+composer\+\_\+musique\+Gr (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Musique\+Co\+Mr,  }\item[{}]{\$id\+Groupe\+Co\+Mr }\end{DoxyParamCaption})}
+
+
+
+Ajoute une association entre une musique et son groupe. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Musique\+Co\+Mr} & Int Identifiant musique dans Composer\+\_\+\+Musique\+Gr \\
+\hline
+{\em \$id\+Groupe\+Co\+Mr} & Int Identifiant groupe dans Composer\+\_\+\+Musique\+Gr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionMusique_8php_a7ca7a2721c0ce1460fbfce47541cc830}\label{fonctionMusique_8php_a7ca7a2721c0ce1460fbfce47541cc830}} 
+\index{fonction\+Musique.\+php@{fonction\+Musique.\+php}!ajouter\+\_\+musique@{ajouter\+\_\+musique}}
+\index{ajouter\+\_\+musique@{ajouter\+\_\+musique}!fonction\+Musique.\+php@{fonction\+Musique.\+php}}
+\subsubsection{\texorpdfstring{ajouter\+\_\+musique()}{ajouter\_musique()}}
+{\footnotesize\ttfamily ajouter\+\_\+musique (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$titre\+Musique,  }\item[{}]{\$duree\+Musique,  }\item[{}]{\$date\+Musique,  }\item[{}]{\$description\+Musique }\end{DoxyParamCaption})}
+
+
+
+Ajoute une nouvelle musique à la B\+DD avec un titre, duree, date de sortie et une description de la musique. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$titre\+Musique} & String titre de la musique \\
+\hline
+{\em \$duree\+Musique} & Int duree de la musique \\
+\hline
+{\em \$date\+Musique} & String Date de sorite de la musique \\
+\hline
+{\em \$description\+Musique} & String Description de la musique \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Int id\+Musique si la requête s\textquotesingle{}est bien exécutée $\vert$ Null Sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionMusique_8php_aa289ddcb8c194a91ed1a09d3ad573920}\label{fonctionMusique_8php_aa289ddcb8c194a91ed1a09d3ad573920}} 
+\index{fonction\+Musique.\+php@{fonction\+Musique.\+php}!modifier\+\_\+musique@{modifier\+\_\+musique}}
+\index{modifier\+\_\+musique@{modifier\+\_\+musique}!fonction\+Musique.\+php@{fonction\+Musique.\+php}}
+\subsubsection{\texorpdfstring{modifier\+\_\+musique()}{modifier\_musique()}}
+{\footnotesize\ttfamily modifier\+\_\+musique (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Musique,  }\item[{}]{\$titre\+Musique,  }\item[{}]{\$duree\+Musique,  }\item[{}]{\$date\+Musique,  }\item[{}]{\$description\+Musique }\end{DoxyParamCaption})}
+
+
+
+Modifie une musique existante dans la B\+DD avec un titre, duree, date de sortie et une description de la musique. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Musique} & Int Identifiant de la musique \\
+\hline
+{\em \$titre\+Musique} & String titre de la musique \\
+\hline
+{\em \$duree\+Musique} & Int duree de la musique \\
+\hline
+{\em \$date\+Musique} & String Date de sorite de la musique \\
+\hline
+{\em \$description\+Musique} & String Description de la musique \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False Sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionMusique_8php_a74ec8e1eb7cda5a5b26e0384019d0c7f}\label{fonctionMusique_8php_a74ec8e1eb7cda5a5b26e0384019d0c7f}} 
+\index{fonction\+Musique.\+php@{fonction\+Musique.\+php}!recuperer\+\_\+artiste\+\_\+musique@{recuperer\+\_\+artiste\+\_\+musique}}
+\index{recuperer\+\_\+artiste\+\_\+musique@{recuperer\+\_\+artiste\+\_\+musique}!fonction\+Musique.\+php@{fonction\+Musique.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+artiste\+\_\+musique()}{recuperer\_artiste\_musique()}}
+{\footnotesize\ttfamily recuperer\+\_\+artiste\+\_\+musique (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Musique }\end{DoxyParamCaption})}
+
+
+
+Récupère les artiste d\textquotesingle{}une musique spécifier par l\textquotesingle{}identifiant \textquotesingle{}id\+Musique\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Musique} & Int Identifiant de la musique \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Artistes de la musique 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionMusique_8php_aab97122de21bdcebff3e545430db9288}\label{fonctionMusique_8php_aab97122de21bdcebff3e545430db9288}} 
+\index{fonction\+Musique.\+php@{fonction\+Musique.\+php}!recuperer\+\_\+composer\+\_\+musique@{recuperer\+\_\+composer\+\_\+musique}}
+\index{recuperer\+\_\+composer\+\_\+musique@{recuperer\+\_\+composer\+\_\+musique}!fonction\+Musique.\+php@{fonction\+Musique.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+composer\+\_\+musique()}{recuperer\_composer\_musique()}}
+{\footnotesize\ttfamily recuperer\+\_\+composer\+\_\+musique (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Musique\+Co\+Mu }\end{DoxyParamCaption})}
+
+
+
+Recupere les associations de musiques et leur artiste. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Musique\+Co\+Mu} & Int Identifiant musique dans Composer\+\_\+\+Musique \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Association des musiques et de leur compositeur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionMusique_8php_a4ca358b5f3211b09e03236b8cc99c8a9}\label{fonctionMusique_8php_a4ca358b5f3211b09e03236b8cc99c8a9}} 
+\index{fonction\+Musique.\+php@{fonction\+Musique.\+php}!recuperer\+\_\+composer\+\_\+musique\+Gr@{recuperer\+\_\+composer\+\_\+musique\+Gr}}
+\index{recuperer\+\_\+composer\+\_\+musique\+Gr@{recuperer\+\_\+composer\+\_\+musique\+Gr}!fonction\+Musique.\+php@{fonction\+Musique.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+composer\+\_\+musique\+Gr()}{recuperer\_composer\_musiqueGr()}}
+{\footnotesize\ttfamily recuperer\+\_\+composer\+\_\+musique\+Gr (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Musique\+Co\+Mr }\end{DoxyParamCaption})}
+
+
+
+Recupere les associations de musiques et leur groupe. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Musique\+Co\+Mr} & Int Identifiant groupe dans Composer\+\_\+\+Musique\+Gr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Association des musiques et de leur compositeur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionMusique_8php_abde3ba80f1b39503056076dd0db4cca5}\label{fonctionMusique_8php_abde3ba80f1b39503056076dd0db4cca5}} 
+\index{fonction\+Musique.\+php@{fonction\+Musique.\+php}!recuperer\+\_\+musique@{recuperer\+\_\+musique}}
+\index{recuperer\+\_\+musique@{recuperer\+\_\+musique}!fonction\+Musique.\+php@{fonction\+Musique.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+musique()}{recuperer\_musique()}}
+{\footnotesize\ttfamily recuperer\+\_\+musique (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Musique }\end{DoxyParamCaption})}
+
+
+
+Récupère une musique de la B\+DD spécifier par l\textquotesingle{}identifiant \textquotesingle{}id\+Musique\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Musique} & Int Identifiant de la musique \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array La musique correspondant à l\textquotesingle{}id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionMusique_8php_af330ba4aeb1ac679ae0b8227be73e927}\label{fonctionMusique_8php_af330ba4aeb1ac679ae0b8227be73e927}} 
+\index{fonction\+Musique.\+php@{fonction\+Musique.\+php}!recuperer\+\_\+musique\+\_\+tous@{recuperer\+\_\+musique\+\_\+tous}}
+\index{recuperer\+\_\+musique\+\_\+tous@{recuperer\+\_\+musique\+\_\+tous}!fonction\+Musique.\+php@{fonction\+Musique.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+musique\+\_\+tous()}{recuperer\_musique\_tous()}}
+{\footnotesize\ttfamily recuperer\+\_\+musique\+\_\+tous (\begin{DoxyParamCaption}\item[{}]{\$db }\end{DoxyParamCaption})}
+
+
+
+Récupère tout les musiques de la B\+DD en les triant par ordre alphabétique par leur titre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Toutes les musiques dans la B\+DD. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionMusique_8php_a4522ce17fdee83b5a8a69cbd8793d8e8}\label{fonctionMusique_8php_a4522ce17fdee83b5a8a69cbd8793d8e8}} 
+\index{fonction\+Musique.\+php@{fonction\+Musique.\+php}!supprimer\+\_\+composer\+\_\+musique\+\_\+tous@{supprimer\+\_\+composer\+\_\+musique\+\_\+tous}}
+\index{supprimer\+\_\+composer\+\_\+musique\+\_\+tous@{supprimer\+\_\+composer\+\_\+musique\+\_\+tous}!fonction\+Musique.\+php@{fonction\+Musique.\+php}}
+\subsubsection{\texorpdfstring{supprimer\+\_\+composer\+\_\+musique\+\_\+tous()}{supprimer\_composer\_musique\_tous()}}
+{\footnotesize\ttfamily supprimer\+\_\+composer\+\_\+musique\+\_\+tous (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Musique\+Co\+Mu }\end{DoxyParamCaption})}
+
+
+
+Supprime toutes les association de la table Composer\+\_\+\+Musique spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Musique\+Co\+Mu\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Musique\+Co\+Mu} & Int Identifiant album dans Composer\+\_\+\+Musique \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionMusique_8php_a3e655cbddf1539e8d07f245911fe7d5f}\label{fonctionMusique_8php_a3e655cbddf1539e8d07f245911fe7d5f}} 
+\index{fonction\+Musique.\+php@{fonction\+Musique.\+php}!supprimer\+\_\+composer\+\_\+musique\+Gr\+\_\+tous@{supprimer\+\_\+composer\+\_\+musique\+Gr\+\_\+tous}}
+\index{supprimer\+\_\+composer\+\_\+musique\+Gr\+\_\+tous@{supprimer\+\_\+composer\+\_\+musique\+Gr\+\_\+tous}!fonction\+Musique.\+php@{fonction\+Musique.\+php}}
+\subsubsection{\texorpdfstring{supprimer\+\_\+composer\+\_\+musique\+Gr\+\_\+tous()}{supprimer\_composer\_musiqueGr\_tous()}}
+{\footnotesize\ttfamily supprimer\+\_\+composer\+\_\+musique\+Gr\+\_\+tous (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Musique\+Co\+Mr }\end{DoxyParamCaption})}
+
+
+
+Supprime toutes les association de la table Composer\+\_\+\+Musique\+Gr spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Musique\+Co\+Mr\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Musique\+Co\+Mr} & Int Identifiant album dans Composer\+\_\+\+Musique\+Gr \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionMusique_8php_a51691c70f94810c4b072c4b7efe74b41}\label{fonctionMusique_8php_a51691c70f94810c4b072c4b7efe74b41}} 
+\index{fonction\+Musique.\+php@{fonction\+Musique.\+php}!supprimer\+\_\+musique@{supprimer\+\_\+musique}}
+\index{supprimer\+\_\+musique@{supprimer\+\_\+musique}!fonction\+Musique.\+php@{fonction\+Musique.\+php}}
+\subsubsection{\texorpdfstring{supprimer\+\_\+musique()}{supprimer\_musique()}}
+{\footnotesize\ttfamily supprimer\+\_\+musique (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Musique }\end{DoxyParamCaption})}
+
+
+
+Supprime une musique de la B\+DD spécifiée par l\textquotesingle{}identifiant \textquotesingle{}id\+Musique\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Musique} & Int Identifiant de la musique \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la suppression s\textquotesingle{}est bien exécutée $\vert$ False Sinon 
+\end{DoxyReturn}

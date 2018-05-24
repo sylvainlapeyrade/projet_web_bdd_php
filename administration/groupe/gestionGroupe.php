@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page gestionGroupe.php
- * Affiche et propose de modifier et supprimer un groupe
+ * @file gestionGroupe.php
+ * @brief Affiche et propose de modifier et supprimer un groupe
  */
 
 session_start();

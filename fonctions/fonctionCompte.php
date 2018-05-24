@@ -1,11 +1,12 @@
 <?php
+
 /**
- * FICHIER : FUNCTIONS -> fonctionCompte.php
- * Fichier des fonctions de gestion du compte.
+ * @file fonctions/fonctionCompte.php
+ * @brief Fichier des fonctions de gestion du compte.
  */
 
 /**
- * Redirige l'utilisateur vers la page d'accueil.
+ * @brief  l'utilisateur vers la page d'accueil.
  * Est utilisé pour la sécurité de l'application.
  */
 function leave() {
@@ -14,7 +15,7 @@ function leave() {
 }
 
 /**
- * Vérifie si l'utilisateur est bien connecté
+ * @brief Vérifie si l'utilisateur est bien connecté
  * @return True si l'utilisateur est connecté | False sinon
  */
 function is_connect() {
@@ -29,7 +30,7 @@ function is_connect() {
 
 
 /**
- * Vérifie si l'utilisateur est connecté et s'il est administrateur
+ * @brief Vérifie si l'utilisateur est connecté et s'il est administrateur
  * @return True si l'utilisateur est connecté et administrateur | False sinon
  */
 function is_admin() {
@@ -43,7 +44,7 @@ function is_admin() {
 
 
 /**
- * Connexion d'un utilisateur avec id et mdp
+ * @brief Connexion d'un utilisateur avec id et mdp
  * Vérifie dans la BDD si une entrée correspond à l'id et au mdp
  * Ouvre une session avec l'id de l'utilisateur et son statut.
  * @param $db PDO Instance PDO de connexion à la BDD
@@ -65,7 +66,7 @@ function connexion_compte($db, $identifiant, $motDePasse) {
 }
 
 /**
- * Inscrit un nouveau utilisateur dans la BDD.
+ * @brief Inscrit un nouveau utilisateur dans la BDD.
  * Vérifie dans la BDD s'il n'y a pas déjà une entrée correspondant au
  * couple id/mdp et le cas echeant enregistre le nouvel utilisateur.
  * Le nouveau compte crée est par défaut non administrateur.
@@ -84,7 +85,7 @@ function inscription($db, $identifiant, $motDePasse) {
 }
 
 /**
- * Récupère tout les utilisateurs de la BDD en les
+ * @brief Récupère tout les utilisateurs de la BDD en les
  * triant par ordre alphabétique de leur identifiant
  * @param $db PDO Instance PDO de connexion à la BDD
  * @return array Les utilisateurs de la base de données
@@ -97,7 +98,7 @@ function recuperer_utilisateur_tous($db) {
 }
 
 /**
- * Récupère un utilisateur de la base de données
+ * @brief Récupère un utilisateur de la base de données
  * spécifié par l'identifiant 'idUtilisateur'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param  $identifiant String Identifiant utilisateur
@@ -112,7 +113,7 @@ function recuperer_utilisateur($db, $identifiant) {
 }
 
 /**
- * Ajoute un nouvel utilisateur dans la BDD
+ * @brief Ajoute un nouvel utilisateur dans la BDD
  * avec un id, un mdp et un statut
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param  $identifiant String Identifiant utilisateur
@@ -131,7 +132,7 @@ function ajouter_utilisateur($db, $identifiant, $motDePasse, $statut) {
 }
 
 /**
- * Modifie le mot de passe d'un utilisateur dans la BDD.
+ * @brief Modifie le mot de passe d'un utilisateur dans la BDD.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $identifiant String Identifiant utilisateur
  * @param $motDePasse String MDP utilisateur
@@ -146,7 +147,7 @@ function modifier_motdepasse_utilisateur($db, $identifiant, $motDePasse) {
 }
 
 /**
- * Modifie le statut de l'utilisateur dans la BDD.
+ * @brief Modifie le statut de l'utilisateur dans la BDD.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $identifiant String Identifiant utilisateur
  * @param $statut String Statut utilisateur
@@ -161,7 +162,7 @@ function modifier_statut_utilisateur($db, $identifiant, $statut) {
 }
 
 /**
- * Supprime un utilisateur de la BDD
+ * @brief Supprime un utilisateur de la BDD
  * spécifié par l'identifiant 'idUtilisateur'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $identifiant String Identifiant utilisateur

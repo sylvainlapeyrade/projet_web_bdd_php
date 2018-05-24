@@ -1,11 +1,12 @@
 <?php
+
 /**
- * FICHIER : FUNCTIONS -> fonctionGroupe.php
- * Fichier des fonctions de gestion des groupes.
+ * @file fonctions/fonctionGroupe.php
+ * @brief Fichier des fonctions de gestion des groupes.
  */
 
 /**
- * Récupère les musiques d'un groupe
+ * @brief Récupère les musiques d'un groupe
  * spécifié par l'identifiant 'idGroupe'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idGroupe Int Identifiant du groupe
@@ -20,7 +21,7 @@ function recuperer_musique_groupe($db, $idGroupe) {
 }
 
 /**
- * Récupère les artistes d'un groupe
+ * @brief Récupère les artistes d'un groupe
  * spécifié par l'identifiant 'idGroupe'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idGroupe Int Identifiant du groupe
@@ -35,7 +36,7 @@ function recuperer_artiste_groupe($db, $idGroupe) {
 }
 
 /**
- * Recupere les musique d'un groupe ainsi que les albums associés
+ * @brief Recupere les musique d'un groupe ainsi que les albums associés
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idGroupe Int Identifiant groupe dans Assembler_Album
  * @return array Association des musique et de leur groupe et des albums
@@ -49,7 +50,7 @@ function recuperer_musique_album_groupe($db, $idGroupe) {
 }
 
 /**
- * Récupère tout les groupes de la BDD en les triant
+ * @brief Récupère tout les groupes de la BDD en les triant
  * par ordre alphabétique par leur nom de groupe
  * @param $db PDO Instance PDO de connexion à la BDD
  * @return array Toutes les musiques dans la BDD.
@@ -62,7 +63,7 @@ function recuperer_groupe_tous($db) {
 }
 
 /**
- * Récupère un groupe de la BDD
+ * @brief Récupère un groupe de la BDD
  * spécifié par l'identifiant 'idGroupe'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idGroupe Int Identifiant du groupe
@@ -77,7 +78,7 @@ function recuperer_groupe($db, $idGroupe) {
 }
 
 /**
- * Ajoute un nouveau  groupe à la BDD avec un nom, une date de création,
+ * @brief Ajoute un nouveau  groupe à la BDD avec un nom, une date de création,
  * une description et l'URL de la jaquette du groupe
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $nomGroupe String Nom du groupe
@@ -101,7 +102,7 @@ function ajouter_groupe($db, $nomGroupe, $dateGroupe, $descriptionGroupe, $urlIm
 }
 
 /**
- * Modifie un groupe existant dans la BDD avec un nom, une date de création,
+ * @brief Modifie un groupe existant dans la BDD avec un nom, une date de création,
  * une description et l'URL de la jaquette du groupe
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idGroupe Int Identifiant du groupe
@@ -123,7 +124,7 @@ function modifier_groupe($db, $idGroupe, $nomGroupe, $dateGroupe, $descriptionGr
 }
 
 /**
- * Supprime un groupe de la BDD
+ * @brief Supprime un groupe de la BDD
  * spécifié par l'identifiant 'idGroupe'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idGroupe Int Identifiant du groupe
@@ -137,7 +138,7 @@ function supprimer_groupe($db, $idGroupe) {
 }
 
 /**
- * Récupère les associations d'un groupe et des artistes le composant
+ * @brief Récupère les associations d'un groupe et des artistes le composant
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idGroupeCo Int Identifiant groupe dans Constituer
  * @return array Association d'un groupe et des artistes le composant
@@ -151,7 +152,7 @@ function recuperer_constituer_groupe($db, $idGroupeCo) {
 }
 
 /**
- * Ajoute une association entre un groupe et des artistes le composant
+ * @brief Ajoute une association entre un groupe et des artistes le composant
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idGroupeCo Int Identifiant groupe dans Constituer
  * @param $idArtisteCo Int Identifiant artiste dans Constituer
@@ -167,7 +168,7 @@ function ajouter_constituer_groupe($db, $idGroupeCo, $idArtisteCo) {
 }
 
 /**
- * Supprime tous les membres d'un groupe spécifié par
+ * @brief Supprime tous les membres d'un groupe spécifié par
  * l'identifiant "idGroupeCo"
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idGroupeCo Int Identifiant groupe dans Constituer

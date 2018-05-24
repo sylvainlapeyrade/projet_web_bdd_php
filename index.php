@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page index.php
- * Page d'acceuil par défaut du site,
+ * @file index.php
+ * @brief Page d'acceuil par défaut du site,
  * présentant les différentes options de navigation sur le site
  */
 

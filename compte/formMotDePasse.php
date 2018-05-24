@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page formMotDePasse.php
- * Permet sous la forme d'un formulaire de modifier un mdp
+ * @file compte/formMotDePasse.php
+ * @brief Permet sous la forme d'un formulaire de modifier un mdp
  * en vérifiant que le nouveau est bien conforme
  */
 

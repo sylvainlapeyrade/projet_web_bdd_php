@@ -1,0 +1,274 @@
+\hypertarget{fonctionGroupe_8php}{}\section{Référence du fichier fonctions/fonction\+Groupe.php}
+\label{fonctionGroupe_8php}\index{fonctions/fonction\+Groupe.\+php@{fonctions/fonction\+Groupe.\+php}}
+
+
+Fichier des fonctions de gestion des groupes.  
+
+
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{fonctionGroupe_8php_a51bb71b4c783c8ad6dd4b711e535a9cf}{recuperer\+\_\+musique\+\_\+groupe} (\$db, \$id\+Groupe)
+\begin{DoxyCompactList}\small\item\em Récupère les musiques d\textquotesingle{}un groupe spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Groupe\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{fonctionGroupe_8php_a34135e56ea5b1a693f2011948fda5f9d}{recuperer\+\_\+artiste\+\_\+groupe} (\$db, \$id\+Groupe)
+\begin{DoxyCompactList}\small\item\em Récupère les artistes d\textquotesingle{}un groupe spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Groupe\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{fonctionGroupe_8php_ac8697575153e35f57430871856fb20c0}{recuperer\+\_\+musique\+\_\+album\+\_\+groupe} (\$db, \$id\+Groupe)
+\begin{DoxyCompactList}\small\item\em Recupere les musique d\textquotesingle{}un groupe ainsi que les albums associés. \end{DoxyCompactList}\item 
+\hyperlink{fonctionGroupe_8php_ab838f956b9b2a941a1612ad8a681bf51}{recuperer\+\_\+groupe\+\_\+tous} (\$db)
+\begin{DoxyCompactList}\small\item\em Récupère tout les groupes de la B\+DD en les triant par ordre alphabétique par leur nom de groupe. \end{DoxyCompactList}\item 
+\hyperlink{fonctionGroupe_8php_ac6a7a3bba5f040d9bf7cc2f55d7c2939}{recuperer\+\_\+groupe} (\$db, \$id\+Groupe)
+\begin{DoxyCompactList}\small\item\em Récupère un groupe de la B\+DD spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Groupe\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{fonctionGroupe_8php_a855fe2ca0e13ad41bf47ef11c5320921}{ajouter\+\_\+groupe} (\$db, \$nom\+Groupe, \$date\+Groupe, \$description\+Groupe, \$url\+Image\+Groupe)
+\begin{DoxyCompactList}\small\item\em Ajoute un nouveau groupe à la B\+DD avec un nom, une date de création, une description et l\textquotesingle{}U\+RL de la jaquette du groupe. \end{DoxyCompactList}\item 
+\hyperlink{fonctionGroupe_8php_a5b114a67f8cd0f498201ba8037192242}{modifier\+\_\+groupe} (\$db, \$id\+Groupe, \$nom\+Groupe, \$date\+Groupe, \$description\+Groupe, \$url\+Image\+Groupe)
+\begin{DoxyCompactList}\small\item\em Modifie un groupe existant dans la B\+DD avec un nom, une date de création, une description et l\textquotesingle{}U\+RL de la jaquette du groupe. \end{DoxyCompactList}\item 
+\hyperlink{fonctionGroupe_8php_a2cccf196483476d1bb39f93e718f2463}{supprimer\+\_\+groupe} (\$db, \$id\+Groupe)
+\begin{DoxyCompactList}\small\item\em Supprime un groupe de la B\+DD spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Groupe\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{fonctionGroupe_8php_a34999ffdf7a39cd7077935546386044b}{recuperer\+\_\+constituer\+\_\+groupe} (\$db, \$id\+Groupe\+Co)
+\begin{DoxyCompactList}\small\item\em Récupère les associations d\textquotesingle{}un groupe et des artistes le composant. \end{DoxyCompactList}\item 
+\hyperlink{fonctionGroupe_8php_a7c4047a36849390ebe535ec018c631b0}{ajouter\+\_\+constituer\+\_\+groupe} (\$db, \$id\+Groupe\+Co, \$id\+Artiste\+Co)
+\begin{DoxyCompactList}\small\item\em Ajoute une association entre un groupe et des artistes le composant. \end{DoxyCompactList}\item 
+\hyperlink{fonctionGroupe_8php_aa892ed08a68e4ad21dc2619405477c22}{supprimer\+\_\+constituer\+\_\+groupe\+\_\+tous} (\$db, \$id\+Groupe\+Co)
+\begin{DoxyCompactList}\small\item\em Supprime tous les membres d\textquotesingle{}un groupe spécifié par l\textquotesingle{}identifiant \char`\"{}id\+Groupe\+Co\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Fichier des fonctions de gestion des groupes. 
+
+
+
+\subsection{Documentation des fonctions}
+\mbox{\Hypertarget{fonctionGroupe_8php_a7c4047a36849390ebe535ec018c631b0}\label{fonctionGroupe_8php_a7c4047a36849390ebe535ec018c631b0}} 
+\index{fonction\+Groupe.\+php@{fonction\+Groupe.\+php}!ajouter\+\_\+constituer\+\_\+groupe@{ajouter\+\_\+constituer\+\_\+groupe}}
+\index{ajouter\+\_\+constituer\+\_\+groupe@{ajouter\+\_\+constituer\+\_\+groupe}!fonction\+Groupe.\+php@{fonction\+Groupe.\+php}}
+\subsubsection{\texorpdfstring{ajouter\+\_\+constituer\+\_\+groupe()}{ajouter\_constituer\_groupe()}}
+{\footnotesize\ttfamily ajouter\+\_\+constituer\+\_\+groupe (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Groupe\+Co,  }\item[{}]{\$id\+Artiste\+Co }\end{DoxyParamCaption})}
+
+
+
+Ajoute une association entre un groupe et des artistes le composant. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Groupe\+Co} & Int Identifiant groupe dans Constituer \\
+\hline
+{\em \$id\+Artiste\+Co} & Int Identifiant artiste dans Constituer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionGroupe_8php_a855fe2ca0e13ad41bf47ef11c5320921}\label{fonctionGroupe_8php_a855fe2ca0e13ad41bf47ef11c5320921}} 
+\index{fonction\+Groupe.\+php@{fonction\+Groupe.\+php}!ajouter\+\_\+groupe@{ajouter\+\_\+groupe}}
+\index{ajouter\+\_\+groupe@{ajouter\+\_\+groupe}!fonction\+Groupe.\+php@{fonction\+Groupe.\+php}}
+\subsubsection{\texorpdfstring{ajouter\+\_\+groupe()}{ajouter\_groupe()}}
+{\footnotesize\ttfamily ajouter\+\_\+groupe (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$nom\+Groupe,  }\item[{}]{\$date\+Groupe,  }\item[{}]{\$description\+Groupe,  }\item[{}]{\$url\+Image\+Groupe }\end{DoxyParamCaption})}
+
+
+
+Ajoute un nouveau groupe à la B\+DD avec un nom, une date de création, une description et l\textquotesingle{}U\+RL de la jaquette du groupe. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$nom\+Groupe} & String Nom du groupe \\
+\hline
+{\em \$date\+Groupe} & String Date de création du groupe \\
+\hline
+{\em \$description\+Groupe} & String Description du groupe \\
+\hline
+{\em \$url\+Image\+Groupe} & String U\+RL de la jaquette du groupe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Int id\+Groupe si la requête s\textquotesingle{}est bien exécutée $\vert$ Null Sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionGroupe_8php_a5b114a67f8cd0f498201ba8037192242}\label{fonctionGroupe_8php_a5b114a67f8cd0f498201ba8037192242}} 
+\index{fonction\+Groupe.\+php@{fonction\+Groupe.\+php}!modifier\+\_\+groupe@{modifier\+\_\+groupe}}
+\index{modifier\+\_\+groupe@{modifier\+\_\+groupe}!fonction\+Groupe.\+php@{fonction\+Groupe.\+php}}
+\subsubsection{\texorpdfstring{modifier\+\_\+groupe()}{modifier\_groupe()}}
+{\footnotesize\ttfamily modifier\+\_\+groupe (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Groupe,  }\item[{}]{\$nom\+Groupe,  }\item[{}]{\$date\+Groupe,  }\item[{}]{\$description\+Groupe,  }\item[{}]{\$url\+Image\+Groupe }\end{DoxyParamCaption})}
+
+
+
+Modifie un groupe existant dans la B\+DD avec un nom, une date de création, une description et l\textquotesingle{}U\+RL de la jaquette du groupe. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Groupe} & Int Identifiant du groupe \\
+\hline
+{\em \$nom\+Groupe} & String Nom du groupe \\
+\hline
+{\em \$date\+Groupe} & String Date de création du groupe \\
+\hline
+{\em \$description\+Groupe} & String Description du groupe \\
+\hline
+{\em \$url\+Image\+Groupe} & String U\+RL de la jaquette du groupe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False Sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionGroupe_8php_a34135e56ea5b1a693f2011948fda5f9d}\label{fonctionGroupe_8php_a34135e56ea5b1a693f2011948fda5f9d}} 
+\index{fonction\+Groupe.\+php@{fonction\+Groupe.\+php}!recuperer\+\_\+artiste\+\_\+groupe@{recuperer\+\_\+artiste\+\_\+groupe}}
+\index{recuperer\+\_\+artiste\+\_\+groupe@{recuperer\+\_\+artiste\+\_\+groupe}!fonction\+Groupe.\+php@{fonction\+Groupe.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+artiste\+\_\+groupe()}{recuperer\_artiste\_groupe()}}
+{\footnotesize\ttfamily recuperer\+\_\+artiste\+\_\+groupe (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Groupe }\end{DoxyParamCaption})}
+
+
+
+Récupère les artistes d\textquotesingle{}un groupe spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Groupe\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Groupe} & Int Identifiant du groupe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Les artistes qui compose le groupe 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionGroupe_8php_a34999ffdf7a39cd7077935546386044b}\label{fonctionGroupe_8php_a34999ffdf7a39cd7077935546386044b}} 
+\index{fonction\+Groupe.\+php@{fonction\+Groupe.\+php}!recuperer\+\_\+constituer\+\_\+groupe@{recuperer\+\_\+constituer\+\_\+groupe}}
+\index{recuperer\+\_\+constituer\+\_\+groupe@{recuperer\+\_\+constituer\+\_\+groupe}!fonction\+Groupe.\+php@{fonction\+Groupe.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+constituer\+\_\+groupe()}{recuperer\_constituer\_groupe()}}
+{\footnotesize\ttfamily recuperer\+\_\+constituer\+\_\+groupe (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Groupe\+Co }\end{DoxyParamCaption})}
+
+
+
+Récupère les associations d\textquotesingle{}un groupe et des artistes le composant. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Groupe\+Co} & Int Identifiant groupe dans Constituer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Association d\textquotesingle{}un groupe et des artistes le composant 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionGroupe_8php_ac6a7a3bba5f040d9bf7cc2f55d7c2939}\label{fonctionGroupe_8php_ac6a7a3bba5f040d9bf7cc2f55d7c2939}} 
+\index{fonction\+Groupe.\+php@{fonction\+Groupe.\+php}!recuperer\+\_\+groupe@{recuperer\+\_\+groupe}}
+\index{recuperer\+\_\+groupe@{recuperer\+\_\+groupe}!fonction\+Groupe.\+php@{fonction\+Groupe.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+groupe()}{recuperer\_groupe()}}
+{\footnotesize\ttfamily recuperer\+\_\+groupe (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Groupe }\end{DoxyParamCaption})}
+
+
+
+Récupère un groupe de la B\+DD spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Groupe\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Groupe} & Int Identifiant du groupe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Le groupe correspondant à l\textquotesingle{}id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionGroupe_8php_ab838f956b9b2a941a1612ad8a681bf51}\label{fonctionGroupe_8php_ab838f956b9b2a941a1612ad8a681bf51}} 
+\index{fonction\+Groupe.\+php@{fonction\+Groupe.\+php}!recuperer\+\_\+groupe\+\_\+tous@{recuperer\+\_\+groupe\+\_\+tous}}
+\index{recuperer\+\_\+groupe\+\_\+tous@{recuperer\+\_\+groupe\+\_\+tous}!fonction\+Groupe.\+php@{fonction\+Groupe.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+groupe\+\_\+tous()}{recuperer\_groupe\_tous()}}
+{\footnotesize\ttfamily recuperer\+\_\+groupe\+\_\+tous (\begin{DoxyParamCaption}\item[{}]{\$db }\end{DoxyParamCaption})}
+
+
+
+Récupère tout les groupes de la B\+DD en les triant par ordre alphabétique par leur nom de groupe. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Toutes les musiques dans la B\+DD. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionGroupe_8php_ac8697575153e35f57430871856fb20c0}\label{fonctionGroupe_8php_ac8697575153e35f57430871856fb20c0}} 
+\index{fonction\+Groupe.\+php@{fonction\+Groupe.\+php}!recuperer\+\_\+musique\+\_\+album\+\_\+groupe@{recuperer\+\_\+musique\+\_\+album\+\_\+groupe}}
+\index{recuperer\+\_\+musique\+\_\+album\+\_\+groupe@{recuperer\+\_\+musique\+\_\+album\+\_\+groupe}!fonction\+Groupe.\+php@{fonction\+Groupe.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+musique\+\_\+album\+\_\+groupe()}{recuperer\_musique\_album\_groupe()}}
+{\footnotesize\ttfamily recuperer\+\_\+musique\+\_\+album\+\_\+groupe (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Groupe }\end{DoxyParamCaption})}
+
+
+
+Recupere les musique d\textquotesingle{}un groupe ainsi que les albums associés. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Groupe} & Int Identifiant groupe dans Assembler\+\_\+\+Album \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Association des musique et de leur groupe et des albums 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionGroupe_8php_a51bb71b4c783c8ad6dd4b711e535a9cf}\label{fonctionGroupe_8php_a51bb71b4c783c8ad6dd4b711e535a9cf}} 
+\index{fonction\+Groupe.\+php@{fonction\+Groupe.\+php}!recuperer\+\_\+musique\+\_\+groupe@{recuperer\+\_\+musique\+\_\+groupe}}
+\index{recuperer\+\_\+musique\+\_\+groupe@{recuperer\+\_\+musique\+\_\+groupe}!fonction\+Groupe.\+php@{fonction\+Groupe.\+php}}
+\subsubsection{\texorpdfstring{recuperer\+\_\+musique\+\_\+groupe()}{recuperer\_musique\_groupe()}}
+{\footnotesize\ttfamily recuperer\+\_\+musique\+\_\+groupe (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Groupe }\end{DoxyParamCaption})}
+
+
+
+Récupère les musiques d\textquotesingle{}un groupe spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Groupe\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Groupe} & Int Identifiant du groupe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+array Les artistes qui compose le groupe 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionGroupe_8php_aa892ed08a68e4ad21dc2619405477c22}\label{fonctionGroupe_8php_aa892ed08a68e4ad21dc2619405477c22}} 
+\index{fonction\+Groupe.\+php@{fonction\+Groupe.\+php}!supprimer\+\_\+constituer\+\_\+groupe\+\_\+tous@{supprimer\+\_\+constituer\+\_\+groupe\+\_\+tous}}
+\index{supprimer\+\_\+constituer\+\_\+groupe\+\_\+tous@{supprimer\+\_\+constituer\+\_\+groupe\+\_\+tous}!fonction\+Groupe.\+php@{fonction\+Groupe.\+php}}
+\subsubsection{\texorpdfstring{supprimer\+\_\+constituer\+\_\+groupe\+\_\+tous()}{supprimer\_constituer\_groupe\_tous()}}
+{\footnotesize\ttfamily supprimer\+\_\+constituer\+\_\+groupe\+\_\+tous (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Groupe\+Co }\end{DoxyParamCaption})}
+
+
+
+Supprime tous les membres d\textquotesingle{}un groupe spécifié par l\textquotesingle{}identifiant \char`\"{}id\+Groupe\+Co\char`\"{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Groupe\+Co} & Int Identifiant groupe dans Constituer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la requête s\textquotesingle{}est bien exécutée $\vert$ False sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctionGroupe_8php_a2cccf196483476d1bb39f93e718f2463}\label{fonctionGroupe_8php_a2cccf196483476d1bb39f93e718f2463}} 
+\index{fonction\+Groupe.\+php@{fonction\+Groupe.\+php}!supprimer\+\_\+groupe@{supprimer\+\_\+groupe}}
+\index{supprimer\+\_\+groupe@{supprimer\+\_\+groupe}!fonction\+Groupe.\+php@{fonction\+Groupe.\+php}}
+\subsubsection{\texorpdfstring{supprimer\+\_\+groupe()}{supprimer\_groupe()}}
+{\footnotesize\ttfamily supprimer\+\_\+groupe (\begin{DoxyParamCaption}\item[{}]{\$db,  }\item[{}]{\$id\+Groupe }\end{DoxyParamCaption})}
+
+
+
+Supprime un groupe de la B\+DD spécifié par l\textquotesingle{}identifiant \textquotesingle{}id\+Groupe\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em \$db} & P\+DO Instance P\+DO de connexion à la B\+DD \\
+\hline
+{\em \$id\+Groupe} & Int Identifiant du groupe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+True si la suppression s\textquotesingle{}est bien exécutée $\vert$ False Sinon 
+\end{DoxyReturn}

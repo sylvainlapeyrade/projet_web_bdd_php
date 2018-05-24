@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page formGroupe.php
- * Permet d'ajouter un groupe à la BBD
+ * @file formGroupe.php
+ * @brief Permet d'ajouter un groupe à la BBD
  */
 
 session_start();

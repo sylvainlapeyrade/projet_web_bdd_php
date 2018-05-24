@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page actionArtiste.php
- * Fait le lien entre le formulaire artiste,
+ * @file actionArtiste.php
+ * @brief Fait le lien entre le formulaire artiste,
  * la gestion des artistes et la BDD
  */
 

@@ -1,11 +1,12 @@
 <?php
+
 /**
- * FICHIER : FUNCTIONS -> fonctionMusique.php
- * Fichier des fonctions de gestion des musiques.
+ * @file fonctions/fonctionMusique.php
+ * @brief Fichier des fonctions de gestion des musiques.
  */
 
 /**
- * Récupère les artiste d'une musique
+ * @brief Récupère les artiste d'une musique
  * spécifier par l'identifiant 'idMusique'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusique Int Identifiant de la musique
@@ -20,7 +21,7 @@ function recuperer_artiste_musique($db, $idMusique) {
 }
 
 /**
- * Récupère tout les musiques de la BDD en les triant
+ * @brief Récupère tout les musiques de la BDD en les triant
  * par ordre alphabétique par leur titre
  * @param $db PDO Instance PDO de connexion à la BDD
  * @return array Toutes les musiques dans la BDD.
@@ -33,7 +34,7 @@ function recuperer_musique_tous($db) {
 }
 
 /**
- * Récupère une musique de la BDD
+ * @brief Récupère une musique de la BDD
  * spécifier par l'identifiant 'idMusique'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusique Int Identifiant de la musique
@@ -48,7 +49,7 @@ function recuperer_musique($db, $idMusique) {
 }
 
 /**
- * Ajoute une nouvelle musique à la BDD avec un titre, duree,
+ * @brief Ajoute une nouvelle musique à la BDD avec un titre, duree,
  * date de sortie et une description de la musique.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $titreMusique String titre de la musique
@@ -73,7 +74,7 @@ function ajouter_musique($db, $titreMusique, $dureeMusique, $dateMusique, $descr
 }
 
 /**
- * Modifie une musique existante dans la BDD avec un titre, duree,
+ * @brief Modifie une musique existante dans la BDD avec un titre, duree,
  * date de sortie et une description de la musique.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusique Int Identifiant de la musique
@@ -95,7 +96,7 @@ function modifier_musique($db, $idMusique, $titreMusique, $dureeMusique, $dateMu
 }
 
 /**
- * Supprime une musique de la BDD
+ * @brief Supprime une musique de la BDD
  * spécifiée par l'identifiant 'idMusique'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusique Int Identifiant de la musique
@@ -109,7 +110,7 @@ function supprimer_musique($db, $idMusique) {
 }
 
 /**
- * Recupere les associations de musiques et leur artiste
+ * @brief Recupere les associations de musiques et leur artiste
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusiqueCoMu Int Identifiant musique dans Composer_Musique
  * @return array Association des musiques et de leur compositeur
@@ -123,7 +124,7 @@ function recuperer_composer_musique($db, $idMusiqueCoMu) {
 }
 
 /**
- * Ajoute une association entre une musique et son artiste
+ * @brief Ajoute une association entre une musique et son artiste
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusiqueCoMu Int Identifiant musique dans Composer_Musique
  * @param $idArtisteCoMu Int Identifiant artiste dans Composer_Musique
@@ -139,7 +140,7 @@ function ajouter_composer_musique($db, $idMusiqueCoMu, $idArtisteCoMu) {
 }
 
 /**
- * Supprime toutes les association de la table Composer_Musique
+ * @brief Supprime toutes les association de la table Composer_Musique
  * spécifié par l'identifiant 'idMusiqueCoMu'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusiqueCoMu Int Identifiant album dans Composer_Musique
@@ -153,7 +154,7 @@ function supprimer_composer_musique_tous($db, $idMusiqueCoMu) {
 }
 
 /**
- * Recupere les associations de musiques et leur groupe
+ * @brief Recupere les associations de musiques et leur groupe
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusiqueCoMr Int Identifiant groupe dans Composer_MusiqueGr
  * @return array Association des musiques et de leur compositeur
@@ -167,7 +168,7 @@ function recuperer_composer_musiqueGr($db, $idMusiqueCoMr) {
 }
 
 /**
- * Ajoute une association entre une musique et son groupe
+ * @brief Ajoute une association entre une musique et son groupe
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusiqueCoMr Int Identifiant musique dans Composer_MusiqueGr
  * @param $idGroupeCoMr Int Identifiant groupe dans Composer_MusiqueGr
@@ -182,7 +183,7 @@ function ajouter_composer_musiqueGr($db, $idMusiqueCoMr, $idGroupeCoMr) {
 }
 
 /**
- * Supprime toutes les association de la table Composer_MusiqueGr
+ * @brief Supprime toutes les association de la table Composer_MusiqueGr
  * spécifié par l'identifiant 'idMusiqueCoMr'.
  * @param $db PDO Instance PDO de connexion à la BDD
  * @param $idMusiqueCoMr Int Identifiant album dans Composer_MusiqueGr

@@ -1,8 +1,10 @@
 <?php
+
 /**
- * Page header.php
- * Inclut les caractéristiques du bandeau de haut de page
+ * @file header.php
+ * @brief Inclut les caractéristiques du bandeau de haut de page
  */
+
 ?>
 
 <header class="flex flex-center">

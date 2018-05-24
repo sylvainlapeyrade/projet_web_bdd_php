@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Page 404.php
- * Affiche une page 404 personnalisée en cas de demande non conforme
+ * @file 404.php
+ * @brief Affiche une page 404 personnalisée en cas de demande non conforme
  */
 
 session_start();
