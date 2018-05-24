@@ -25,7 +25,6 @@
     \end{paragraphe}
     \image{0.50}{images/conception/charte_graphique_couleurs}{Charte graphique - Couleurs}
 
-
     \begin{paragraphe}
 		Le site comprend également deux bandeaux, un en haut et un en bas de notre chaque page.\\
 		Le bandeau du haut comprend un bouton <<accueil>>,
@@ -35,7 +34,6 @@
         Le bandeau du bas rapelle le nom du site << Critique Musicale>> ainsi que la date de dernière maintenance du site.
     \end{paragraphe}
     \image{0.60}{images/conception/bandeau_bas}{Charte graphique - Bandeau du bas}
-
 
 \newpage
 
@@ -246,9 +244,16 @@
 			\begin{paragraphe}
 				\textbf{Conception IHM :}
             \end{paragraphe}
-                    \image{0.30}{images/conception/page_accueil}{Mockup - Page d'accueil imaginé}
 
-                    \image{0.30}{images/conception/page_accueil_finale}{Mockup - Page d'accueil finale}
+            \image{0.30}{images/conception/page_accueil}{Mockup - Page d'accueil}
+
+            \begin{paragraphe}
+                Si clic sur bouton << rechercher >> \\
+                Alors redirige vers la page des resultats recherche en passant en paramètre la chaîne présente dans la barre de recherche
+            \end{paragraphe}
+
+             \image{0.30}{images/conception/page_accueil_finale}{Pages publiques - Page d'accueil finale}
+
         \clearpage
 
 		\subsubsection{Page résultat recherche}
@@ -297,50 +302,61 @@
 				\end{itemize}
 				Chaque résultat de la colonne << Nom >> devait être cliquable, et sur clic, diriger vers la page dédiée au résultat (i.e : la page de l'album, du morceau, du groupe ou de l'artiste correspondant).
 			\end{paragraphe}
-
-			\image{0.35}{images/conception/page_resultat_recherche}{Mockup - Page résultat}
+			\image{0.35}{images/conception/page_resultat_recherche}{Mockup - Page résultats finale}
 
             \begin{paragraphe}
-                Si une recherche est entrée \\
-                Alors affichage des résultat correspondants sous forme de liens prévisionnels cliquables.
+                Si une recherche est entrée\\
+                Alors affichage des résultat correspondants sous forme de liens prévisionnels cliquables\\
+                Sinon affiche tout les résultats présent dans la base de donnée.
             \end{paragraphe}
 
             \begin{paragraphe}
-                Si clic sur un résultat \\
-                Alors redirection vers la page de la recherche souhaitée (exemple pageAlbum.php si un album a été sélectionné) en passant en paramètre le nom de l'album.
+                Si clic sur un résultat\\
+                Alors redirection vers la page de la recherche souhaitée en passant en paramètre l'id souhaité.
             \end{paragraphe}
 
             \begin{paragraphe}
-                Si clic sur une photo d'un nouvel artiste \\
-                Alors redirection vers pageArtiste.php en passant en paramètre le nom de l'artiste.
+                Nous avons cependant opté, lors du développement, sur affichage en ligne qui nous semblait plus lisible sur les différentes plateformes.\\
+                En voici un exemple:
             \end{paragraphe}
+            \image{0.33}{images/conception/page_resultat_recherche_finale}{Pages publiques - Page résultat finale}
 
         \clearpage
 
-		\subsubsection{Page description artiste / groupe}
+		\subsubsection{Page description artiste/groupe}
 
 			\begin{paragraphe}
 				\textbf{Conception IHM :}
 			\end{paragraphe}
 
 			\begin{paragraphe}
-				Initialement :\par
-				On affiche tous les albums et tous les singles de l'artiste.\par
+				Initialement :\\
+				On affiche tous les albums et tous les singles de l'artiste.\\
 				Avec la fonction getAlbum(artiste), getSingle(Artiste).
 			\end{paragraphe}
 
 			\begin{paragraphe}
-				Si clic sur la pochette d'un album
+				Si clic sur le nom d'un album\\
 				Alors redirection vers la page pageAlbum.php en passant en paramètre le nom de l'album.
 			\end{paragraphe}
 
-			\image{0.3}{images/conception/page_artiste}{Mockup - Page artiste/groupe}
+			\image{0.40}{images/conception/page_artiste}{Mockup - Page artiste/groupe}
 
-		\subsubsection{Page description album d'un artiste}
+            \begin{paragraphe}
+                La page finale est assez fidèle au modèle que nous avions conceptualisé, en voici un exemple:
+            \end{paragraphe}
+
+            \image{0.35}{images/conception/page_artiste_finale}{Pages publiques - Page artiste/groupe finale}
+
+        \clearpage
+
+		\subsubsection{Page description album}
 
 			\begin{paragraphe}
-				La page affichera le nom de l'album avec son descriptif, l'image de l'album, la liste des morceaux de musique représentée dans un tableau, les commentaires des utilisateurs et leurs notes associées à l'album. \par
-				Si l'utilisateur non connecté souhaite entrer un commentaire et donner une note à un album ou à un morceau de musique, il faudra qu'il se connecte d'abord. Il y a donc le << connectez-vous >>.
+				La page affichera le nom de l'album avec son descriptif, l'image de l'album, la liste des morceaux de musique
+				 représentée dans un tableau, les commentaires des utilisateurs et leurs notes associées à l'album. \\
+				Si l'utilisateur non connecté souhaite entrer un commentaire et donner une note à un album ou à un morceau de musique,
+				 il faut qu'il se connecte d'abord. Il y a donc un lien << connectez-vous >> le redirigeant vers la page de connexion.
 			\end{paragraphe}
 
 			\image{0.25}{images/conception/page_album_non_connecter}{Mockup - Page album non connecté}
