@@ -349,7 +349,6 @@
                 La page finale est assez fidèle au modèle que nous avions conceptualisé.
             \end{paragraphe}
 
-
             \begin{paragraphe}
                 \textbf{Voici un exemple pour un artiste :}
             \end{paragraphe}
@@ -412,13 +411,19 @@
 
         \clearpage
         
-            Les pages finales d'album sont ici aussi très ressemblantes avec notre conception.
+			\begin{paragraphe}
+                Les pages finales d'album sont ici aussi très ressemblantes avec notre conception.
+			\end{paragraphe}
 
-            Voici un exemple pour album avec un utilisateur connecté:
+			\begin{paragraphe}
+                \textbf{Voici un exemple pour album avec un utilisateur connecté :}
+			\end{paragraphe}
             
             \image{0.33}{page_album_deconnecte2}{Pages publiques - Page album non connecté finale}
 
-            Voici le même exemple avec cette fois un utilisateur déconnecté:
+			\begin{paragraphe}
+                \textbf{Voici le même exemple avec cette fois un utilisateur déconnecté :}
+			\end{paragraphe}
             
             \image{0.33}{page_album_connecte2}{Pages publiques - Page album connecté finale}
 
@@ -440,9 +445,9 @@
 			\end{paragraphe}
 
 			\begin{paragraphe}
-			    Cette page intéragie avec la base de données avec la fonction:
+			    Cette page intéragie avec la base de données avec la fonction :
 				\begin{itemize}
-					\item connexionUtilisateur(Utilisateur) : vérifie si un utilisateur correspondant existe dans la base de données.
+					\item \emph{connexionUtilisateur(Utilisateur)} : vérifie si un utilisateur correspondant existe dans la base de données.
 				\end{itemize}
 			\end{paragraphe}
 
@@ -451,33 +456,31 @@
 			\end{paragraphe}
 
 			\begin{paragraphe}
-				Si l'utilisateur n'est pas connecté \\
-				Alors initialement la page est constituée d'un simple formulaire non rempli avec deux champs: nom utilisateur et mot de passe.\\
-				 Il y également un bouton << connexion >> ainsi qu'un lien redirigeant vers la page d'inscription intitulé << s'inscrire >>.
+				\textbf{Si} l'utilisateur n'est pas connecté \\
+				\textbf{Alors} initialement la page est constituée d'un simple formulaire non rempli avec deux champs: nom utilisateur et mot de passe.
 			\end{paragraphe}
+
+            \begin{center}
+                \begin{tabular}{l c | c l}
+                    \textbf{Si} clic sur le bouton << connexion >> & & & \textbf{Si} clic sur lien  << s'inscrire >> \\
+                    \textbf{Alors} effectue l'action \emph{connexionutilisateur(Utilisateur).} & & & \textbf{Alors} redirection vers page inscription.
+                \end{tabular}
+            \end{center}
+
+            \begin{center}
+                \begin{tabular}{l}
+                    \textbf{Si} l'action précédente a réussi \\
+                    \textbf{Alors} l'utilisateur est ensuite redirigé vers la page principale de l'application web. \\
+                    \textbf{Sinon} l'utilisateur reste sur la page avec un message d'erreur.
+                \end{tabular}
+            \end{center}
 
 			\image{0.25}{page_connexion}{Mockup - Page connexion}
 
-			\begin{paragraphe}
-				Si clic sur le bouton << connexion >> \\
-				Alors effectue l'action connexionutilisateur(Utilisateur).
-			\end{paragraphe}
-
-            \begin{paragraphe}
-                Si clic sur lien  << s'inscrire >> \\
-                Alors redirection vers page inscription.
-            \end{paragraphe}
-
-			\begin{paragraphe}
-				Si l'action précédente a réussi \\
-				Alors l'utilisateur est ensuite redirigé vers la page principale de l'application web.
-				Sinon l'utilisateur reste sur la page avec un message d'erreur.
-			\end{paragraphe}
-
         \newpage
+        
             \begin{paragraphe}
-                La page finale correspond une nouvelle fois à la page imaginée lors de la conception, nous avons toutefois introduit
-                 le lien << s'inscrire >>, au cas où l'utilisateur n'avait pas de compte, auquel nous n'avions pas pensé.
+                Un nouveau lien a été introduit permettant à un utilisateur, ne possédant pas de compte, d'être dirigé vers le formulaire d'inscription
             \end{paragraphe}
 
             \image{0.60}{page_connexion_finale}{Pages Utilisateurs - Page connexion finale}
@@ -506,33 +509,33 @@
 			\end{paragraphe}
 
 			\begin{paragraphe}
-				Si l'utilisateur n'est pas connecté \\
-				Alors initialement la page est constituée d'un simple formulaire non rempli avec trois champs de saisi: nom utilisateur, mot de passe et vérification mot de passe.
+				\textbf{Si} l'utilisateur n'est pas connecté \\
+				\textbf{Alors} initialement la page est constituée d'un simple formulaire non rempli avec trois champs de saisi: nom utilisateur, mot de passe et vérification mot de passe.
 				Il y également un bouton << Inscription >> ainsi qu'un lien redirigeant vers la page connexion intitulé << se connecter >>.
 			\end{paragraphe}
 
-			\image{0.3}{page_inscription}{Mockup - Page inscription}
-
 			\begin{paragraphe}
-				Si clic sur le bouton << inscription >> \\
-				Alors effectue l'action ajouterUtilisateur(Utilisateur).
+				\textbf{Si} clic sur le bouton << inscription >> \\
+				\textbf{Alors} effectue l'action \emph{ajouterUtilisateur(Utilisateur)}.
 			\end{paragraphe}
 
            \begin{paragraphe}
-                Si clic sur lien << se connecter >> \\
-                Alors redirection vers page de connexion.
+                \textbf{Si} clic sur lien << se connecter >> \\
+                \textbf{Alors} redirection vers la page \underline{pageConnexion.php}.
             \end{paragraphe}
 
 			\begin{paragraphe}
-				Si l'action précédente a réussi \\
-				Alors l'utilisateur est ensuite redirigé vers la page de connexion avec le message : (votre compte à bien été enregistré).
-				Sinon l'utilisateur reste sur la page avec un message d'erreur.
+				\textbf{Si} l'action précédente a réussi \\
+				\textbf{Alors} l'utilisateur est ensuite redirigé vers la page \underline{pageConnexion.php} avec le message : (votre compte à bien été enregistré). \\
+				\textbf{Sinon} l'utilisateur reste sur la page avec un message d'erreur.
 			\end{paragraphe}
 
+            \image{0.3}{page_inscription}{Mockup - Page inscription}
+
         \newpage
+        
             \begin{paragraphe}
-                La page finale corrsespond, comme pour la page de connexion, tr bien à la page imaginée lors de la conception, nous avons toutefois également introduit
-                 le lien << se connecter >>, au cas où l'utilisateur aurait déjà un compte, auquel nous n'avions pas pensé.
+                Nous avons de nouveau introduit un lien, permettant à un utilisateur possédant un compte d'être redirigé sur la page \underline{pageConnexion.php}.
             \end{paragraphe}
 
             \image{0.60}{page_inscription_finale}{Pages Utilisateurs - Page inscription finale}
