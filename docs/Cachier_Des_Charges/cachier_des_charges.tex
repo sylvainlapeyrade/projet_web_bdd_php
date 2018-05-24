@@ -1,0 +1,67 @@
+\documentclass{article}
+
+% ---- FONT / FRANCAIS ---- %
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+% ---- Caractères additionnels ---- %
+\usepackage{textcomp}
+
+% ---- Police de caractères ---- %
+\usepackage{lmodern}
+
+% ---- MISE EN PAGE ---- %
+\usepackage[a4paper]{geometry}
+\geometry{vmargin={2.2cm,2.2cm}}
+\geometry{hmargin={2cm,2cm}}
+
+% ---- ENTETE / PIED DE PAGE ---- %
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{ Projet Web Bd Php - Dossier de conception }
+\chead{}
+\rhead{ \LaTeX }
+\lfoot{ Version 2.0 }
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.2pt}
+\renewcommand{\footrulewidth}{0.2pt}
+
+% ---- LIEN ---- %
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=red,citecolor=green,filecolor=magenta,urlcolor=cyan}
+
+% ---- MATHS ---- %
+\usepackage{amsmath}
+
+% ---- COULEURS ---- %
+\usepackage{xcolor}
+
+% ---- GRAPHIQUES / IMAGES ---- %
+\usepackage{graphicx}
+
+% ---- TABLEAU ---- %
+\usepackage{multirow}
+
+% ---- PDF ---- %
+\usepackage[final]{pdfpages}
+
+% ---- MISE EN PAGE - TITRES ---- %
+\usepackage{titlesec}
+\titleformat{\section}
+[hang]{\normalfont\Large\bfseries\fontfamily{phv}\selectfont}
+{\thesection .}{0.5em}{}
+
+% ---- MACROS ---- %
+\newenvironment{paragraphe}{ \noindent\color{black} }{ \normalcolor\vspace{1em} }
+\newcommand{\image}[3]{\begin{figure}[ht]\begin{center}\includegraphics[scale=#1]{#2}\caption{#3}\end{center}\end{figure} }
+
+% ---- DESCRIPTION ---- %
+
+% ---- DOCUMENT ---- %
+\begin{document}
+  \include{cover_page}
+  \include{version_page}
+  \include{document}
+\end{document}
