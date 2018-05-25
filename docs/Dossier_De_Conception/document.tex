@@ -618,7 +618,7 @@
         \end{paragraphe}
         
         \begin{paragraphe}
-            Dans la version un, du dossier de conception, toutes les pages d'administrations été chargées de formulaires, d'actions et de boutons.
+            Dans la version une, du dossier de conception, toutes les pages d'administrations été composées de trop de formulaires, d'actions et de boutons.
             Lors de la réalisation de l'application nous avons effectué une simplification de toutes les pages, en répartisant et délimitant les périmétres d'action de chaque page.
         \end{paragraphe}
     
@@ -649,7 +649,7 @@
         \end{paragraphe}
         
         \begin{paragraphe}
-            \textbf{Les pages actions} permettent quand à elles de d'efectuer des vérifications, des validations et d'exécuter les actions souhaité.
+            \textbf{Les pages actions} permettent quand à elles de d'effectuer des vérifications, des validations et d'exécuter les actions souhaitées.
         \end{paragraphe}
 
 		\subsubsection{Page d'administration accueil}
@@ -715,7 +715,7 @@
 		\subsubsection{Page gestion artiste}
         
             \begin{paragraphe}
-                La gestion des artistes se fais donc maintenant avec 3 pages, une page de gestion, une page de formulaire et une page d'action.
+                La gestion des artistes se fais avec trois pages, une page de gestion, une page de formulaire et une page d'action.
             \end{paragraphe}
 
 			\begin{paragraphe}
@@ -756,16 +756,16 @@
 			\end{paragraphe}
             
             \begin{paragraphe}
-                \textbf{Page de gestion :} elle récupère toutes les entrées des artistes à l'aide de la fonction \emph{getListeArtiste()} pour les affichers dans un tableau.
+                \textbf{Page de gestion :} elle récupère toutes les entrées des artistes à l'aide de la fonction \emph{getListeArtiste()} pour les afficher dans un tableau.
             \end{paragraphe}
 
             \begin{center}
                 \begin{tabular}{l | l}
                     \textbf{Si} clic sur le titre << Panneau administration >> & \textbf{Si} clic sur le bouton << Gestion artiste >> \\
-                    \textbf{Alors} redirection vers adminAccueil.php. & \textbf{Alors} redirection vers gestionArtiste.php. \\ \\
+                    \textbf{Alors} redirection vers \underline{adminAccueil.php}. & \textbf{Alors} redirection vers \underline{gestionArtiste.php}. \\ \\
 
                     \textbf{Si} clic sur le bouton << Ajouter artiste >> & \textbf{Si} clic sur le bouton << Modifier >> \\
-                    \textbf{Alors} redirection vers formArtiste.php. & \textbf{Alors} redirection vers formArtiste.php. \\ \\
+                    \textbf{Alors} redirection vers \underline{formArtiste.php}. & \textbf{Alors} redirection vers \underline{formArtiste.php}. \\ \\
                 \end{tabular}
 
                 \begin{tabular}{l}
@@ -779,11 +779,15 @@
             \begin{paragraphe}
                 \textbf{Page du formulaire d'un artiste :}
             \end{paragraphe}
+            
+            \begin{paragraphe}
+                La page est composé de champs pour chaque élément d'un artiste (définit dans le cahier des charges).
+            \end{paragraphe}
 
             \begin{paragraphe}
                 \textbf{Si} un identifiant d'un artiste existant n'est pas renseigné à la page \\
                 \textbf{Alors} on laisse les champs du formulaire vide, il s'agit de crée un nouvel artiste. \\
-                \textbf{Sinon} il s'agit de modifier un artiste. on récupère les données de l'artiste avec la fonction getArtiste(artiste).
+                \textbf{Sinon} il s'agit de modifier un artiste. on récupère les données de l'artiste avec la fonction \emph{getArtiste(artiste)}.
             \end{paragraphe}
             
         \newpage
@@ -791,7 +795,7 @@
             \begin{center}
                 \begin{tabular}{l | l}
                     \textbf{Si} clic sur le bouton << Ajouter >> & \textbf{Si} clic sur le bouton << Modifier >> \\
-                    \textbf{Alors} effectuer l'action ajouterArtiste(artiste). & \textbf{Alors} effectue l'action modifierArtiste(artiste).
+                    \textbf{Alors} effectuer l'action \emph{ajouterArtiste(artiste)}. & \textbf{Alors} effectue l'action \emph{modifierArtiste(artiste)}.
                 \end{tabular}
             \end{center}
             
@@ -799,178 +803,298 @@
 			
             \image{0.35}{page_admin_formulaire_artiste_modifier_final}{Page administration - Formulaire artistes}
 
-    \newpage
+    \clearpage
 
 		\subsubsection{Page gestion groupe}
 
 			\begin{paragraphe}
-				Cette page est accessible seulement à un utilisateur disposant du statu administrateur.
+                La page gestion reprend le même principe que précédement. 
 			\end{paragraphe}
 
 			\begin{paragraphe}
 				\textbf{Service PHP :}
 			\end{paragraphe}
-
-			\begin{paragraphe}
-				Voici la liste des fonctions utilisées pour cette page PHP interagissant avec la base de données :
+            
+            \begin{paragraphe}
+                La page de gestion et la page formulaire permettent d'envoyer des actions à effectué sur la page action. \\
 			\end{paragraphe}
 
 			\begin{paragraphe}
-				\begin{itemize}
-					\item getListGroupes() : récupère dans la base de données, l'ensemble des groupes inscrit.
-					\item getGroupe(groupe) : recupère l'entrée dans la base de données d'un groupe en particulier. Ainsi que les artistes associés.
-				\end{itemize}
-			\end{paragraphe}
+                \textbf{Voici donc la liste des actions possible qu'effectue la page \underline{actionGroupe.php} :}
+            
+                \begin{itemize}
+                    \item \emph{ajouter\_groupe(groupe)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet de vérifier si les informations renseigner sont correcte. Le nom, la date de création du groupe sont obligatoire obligatoire. De plus il est obligatoire de sélectionner deux artistes au minimum. Ajoute ensuite les informations dans la base de données.
+                \end{paragraphe}
+                
+                \begin{itemize}
+                    \item \emph{modifier\_groupe(groupe)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet de vérifier si les informations renseigner sont correcte. Le nom, la date de création du groupe sont obligatoire obligatoire. De plus il est obligatoire de sélectionner deux artistes au minimum. Modifie ensuite les informations dans la base de données.
+                \end{paragraphe}
+                
+                \begin{itemize}
+                    \item \emph{supprime\_groupe(groupe)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet de supprimer un groupe dans la base de données.
+                \end{paragraphe}
+            \end{paragraphe}
 
 			\begin{paragraphe}
 				\textbf{Conception IHM :}
 			\end{paragraphe}
+            
+            \begin{paragraphe}
+                \textbf{Page de gestion :} elle récupère toutes les entrées des groupes à l'aide de la fonction \emph{getListeGroupe()} pour les afficher dans un tableau.
+            \end{paragraphe}
 
-			\begin{paragraphe}
-				Cette page hérite de la disposition n°3.\par
-				Initalement les formulaires de cette page sont vides.
-				Le tableau est rempli à l'aide de l'action getListeGroupes().
-			\end{paragraphe}
+            \begin{center}
+                \begin{tabular}{l | l}
+                    \textbf{Si} clic sur le titre << Panneau administration >> & \textbf{Si} clic sur le bouton << Gestion groupe >> \\
+                    \textbf{Alors} redirection vers \underline{adminAccueil.php}. & \textbf{Alors} redirection vers \underline{gestionGroupe.php}. \\ \\
 
-			\image{0.3}{page_admin_groupe}{Mockup - Page gestion groupe d'artiste}
+                    \textbf{Si} clic sur le bouton << Ajouter groupe >> & \textbf{Si} clic sur le bouton << Modifier >> \\
+                    \textbf{Alors} redirection vers \underline{formGroupe.php}. & \textbf{Alors} redirection vers \underline{formGroupe.php}. \\ \\
+                \end{tabular}
 
-			\begin{paragraphe}
-				Il y a deux formulaires. Un premier qui permet de modifier les données d'un groupe, et le second pour ajouter des artistes au groupe selectionné.
-			\end{paragraphe}
+                \begin{tabular}{l}
+                    \textbf{Si} clic sur le bouton << Supprimer >> \\
+                    \textbf{Alors} effectue l'action \emph{supprimer\_groupe(groupe)}.
+                \end{tabular}
+            \end{center}
+            
+			\image{0.4}{page_admin_gestion_groupe_final}{Page administration - Gestion groupe}
+            
+        \clearpage
+        
+            \begin{paragraphe}
+                \textbf{Page du formulaire d'un groupe :}
+            \end{paragraphe}
+            
+            \begin{paragraphe}
+                La page est composé de champs pour chaque élément d'un artiste (définit dans le cahier des charges). \\
+                Ainsi qu'une liste de case à coché des artistes présent dans la base de données.
+            \end{paragraphe}
 
-			\begin{paragraphe}
-				Premier formulaire :
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le tableau de groupe, le bouton << sélectionner >> \\
-				Alors effectuer l'action getGroupe(groupe).
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le tableau de groupe, le bouton << supprimer >> \\
-				Alors effectuer l'action suppressionGroupe(groupe).
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << Ajouter >> du formulaire \\
-				Alors effectuer l'action ajouterNouveauGroupe(groupe).
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic le bouton << Modifier >> du formulaire \\
-				Alors effectuer l'action modifierGroupe(groupe).
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Le second formulaire :
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si aucun groupe n'est sélectionné \\
-				Alors ce formulaire n'existe pas. \\
-				Sinon
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur la << comboBox >> artites \\
-				Alors une liste déroulante permet de sélectionner les artistes existants.
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << ajouter artiste >> \\
-				Alors effectuer l'action ajoutArtisteGroupe(groupe, artiste).
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << ajouter un nouvel artiste >>
-				Alors on redirige l'administrateur sur la page adminGestionArtiste.php
-			\end{paragraphe}
+            \begin{paragraphe}
+                \textbf{Si} un identifiant d'un groupe existant n'est pas renseigné à la page \\
+                \textbf{Alors} on laisse les champs du formulaire vide, il s'agit de crée un nouveau groupe. \\
+                \textbf{Sinon} il s'agit de modifier un groupe. On récupère les données du groupe avec la fonction \emph{getGroupe(groupe)} ainsi que l'association avec les artistes du groupe.
+            \end{paragraphe}
+            
+            \begin{center}
+                \begin{tabular}{l | l}
+                    \textbf{Si} clic sur le bouton << Ajouter >> & \textbf{Si} clic sur le bouton << Modifier >> \\
+                    \textbf{Alors} effectuer l'action \emph{ajouterGroupe(groupe)}. & \textbf{Alors} effectue l'action \emph{modifierGroupe(groupe)}.
+                \end{tabular}
+            \end{center}
+            
+			\image{0.35}{page_admin_formulaire_groupe_ajouter_final}{Page administration - Formulaire groupe}
+			
+            \image{0.35}{page_admin_formulaire_groupe_modifier_final}{Page administration - Formulaire groupe}
+            
+    \newpage
 
 		\subsubsection{Page gestion album}
 
 			\begin{paragraphe}
-				Cette page est accessible seulement à un utilisateur disposant du statut administrateur.
+                La page gestion reprend le même principe que précédement. On a rajouter aussi des pages pour associer des musiques à un album.
 			\end{paragraphe}
 
 			\begin{paragraphe}
 				\textbf{Service PHP :}
 			\end{paragraphe}
-
-			\begin{paragraphe}
-				Voici la liste des fonctions utilisées pour cette page PHP interagissant avec la base de données :
+            
+            \begin{paragraphe}
+                La page de gestion et la page formulaire permettent d'envoyer des actions à effectué sur la page action. \\
 			\end{paragraphe}
 
 			\begin{paragraphe}
-				\begin{itemize}
-					\item getListeAlbum() : récupère dans la base de données l'ensemble des albums inscrit.
-					\item getAlbum(groupe) : récupère l'entrée dans la base de données d'un album en particulier. Ainsi que les artiste associés.
-					\item ajouterNouvelAlbum(album) : permet d'enregistrer un nouvel << album >> dans la base de données.
-					\item modifierAlbum(album) : permet de mettre à jour une entrée << album >> déjà existante dans la base de données.
-					\item suppressionAlbum(album) : permet de supprimer un album ainsi que l'association des artiste a l'album.
-					\item ajoutArtisteAlbum(album, artiste) : permet d'ajouter un artiste existant à un album.
-				\end{itemize}
-			\end{paragraphe}
+                \textbf{Voici la liste des actions possible qu'effectue la page \underline{actionAlbum.php} :}
+            
+                \begin{itemize}
+                    \item \emph{ajouter\_album(album)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet de vérifier si les informations renseigner sont correcte. Le nom, la date de création de l'album sont obligatoire. De plus il est obligatoire de sélectionner un artiste ou un groupe de musique au minimum. Ajoute ensuite les informations dans la base de données.
+                \end{paragraphe}
+                
+                \begin{itemize}
+                    \item \emph{modifier\_album(album)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet de vérifier si les informations renseigner sont correcte. Le nom, la date de création de l'album sont obligatoire. De plus il est obligatoire de sélectionner un artiste ou un groupe de musique au minimum.Modifie ensuite les informations dans la base de données.
+                \end{paragraphe}
+                
+                \begin{itemize}
+                    \item \emph{supprime\_album(album)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet de supprimer un album dans la base de données.
+                \end{paragraphe}
+            \end{paragraphe}
+            
+            \begin{paragraphe}
+                De plus d'autres pages permettent d'associé une musique avec l'album.
+            \end{paragraphe}
+
+			\begin{paragraphe}
+                \textbf{Voici la liste des actions possible qu'effectue la page \underline{actionAssemblerAlbum.php} :}
+            
+                \begin{itemize}
+                    \item \emph{ajouter\_musique\_album(album, musique)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet de vérifier si les informations renseigner sont correcte. Un numéro de piste pour la musique dans l'album est obligatoire. Ajoute ensuite les informations dans la base de données.
+                \end{paragraphe}
+                
+                \begin{itemize}
+                    \item \emph{modifier\_musique\_album(album, musique)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet de vérifier si les informations renseigner sont correcte. Un numéro de piste pour la musique dans l'album est obligatoire. Modifie ensuite les informations dans la base de données.
+                \end{paragraphe}
+                
+                \begin{itemize}
+                    \item \emph{supprime\_musique\_album(album, musique)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet de supprimer un album dans la base de données.
+                \end{paragraphe}
+            \end{paragraphe}
 
 			\begin{paragraphe}
 				\textbf{Conception IHM :}
 			\end{paragraphe}
+            
+            \begin{paragraphe}
+                \textbf{Page de gestion :} elle récupère toutes les entrées des albums à l'aide de la fonction \emph{getListeAlbum()} pour les afficher dans un tableau.
+            \end{paragraphe}
 
-			\begin{paragraphe}
-				Cette page hérite de la disposition n°3. \\
-				Initialement les formulaires de cette page sont vides. \\
-				Le tableau est rempli à l'aide de l'action getListeAlbum().
-			\end{paragraphe}
+            \begin{center}
+                \begin{tabular}{l | l}
+                    \textbf{Si} clic sur le titre << Panneau administration >> & \textbf{Si} clic sur le bouton << Gestion album >> \\
+                    \textbf{Alors} redirection vers \underline{adminAccueil.php}. & \textbf{Alors} redirection vers \underline{gestionArtiste.php}. \\ \\
 
-			\image{0.3}{page_admin_album}{Mockup - Page gestion album}
+                    \textbf{Si} clic sur le bouton << Ajouter album >> & \textbf{Si} clic sur le bouton << Modifier >> \\
+                    \textbf{Alors} redirection vers \underline{formAlbum.php}. & \textbf{Alors} redirection vers \underline{formAlbum.php}. \\ \\
+                    
+                    \textbf{Si} clic sur le bouton << Gestion musique >> & \textbf{Si} clic sur le bouton << Supprimer >> \\
+                    \textbf{Alors} redirection vers \underline{gestionAssemblerAlbum.php}. & \textbf{Alors} effectue l'action \emph{supprimer\_album(album)}.
+                \end{tabular}
+            \end{center}
 
-			\begin{paragraphe}
-				Il y a deux formulaires. Un premier qui permet de modifier les données d'un album, et le second pour ajouter des artistes a l'album selectionné.
-			\end{paragraphe}
+        \clearpage
+            
+			\image{0.4}{page_admin_gestion_album_final}{Page administration - Gestion album}
+        
+            \begin{paragraphe}
+                \textbf{Page du formulaire d'un album :}
+            \end{paragraphe}
+            
+            \begin{paragraphe}
+                La page est composé de champs pour chaque élément d'un album (définit dans le cahier des charges). \\
+                Ainsi qu'une liste de case à coché des artistes ou des groupes présent dans la base de données.
+            \end{paragraphe}
 
-			\begin{paragraphe}
-				Premier formulaire :
-			\end{paragraphe}
+            \begin{paragraphe}
+                \textbf{Si} un identifiant d'un album existant n'est pas renseigné à la page \\
+                \textbf{Alors} on laisse les champs du formulaire vide, il s'agit de crée un nouveau album. \\
+                \textbf{Sinon} il s'agit de modifier un album. On récupère les données de l'album avec la fonction \emph{getAlbum(album)} ainsi que l'association avec les artistes ou groupes de l'album.
+            \end{paragraphe}
+            
+            \begin{center}
+                \begin{tabular}{l | l}
+                    \textbf{Si} clic sur le bouton << Ajouter >> & \textbf{Si} clic sur le bouton << Modifier >> \\
+                    \textbf{Alors} effectuer l'action \emph{ajouterAlbum(album)}. & \textbf{Alors} effectue l'action \emph{modifierAlbum(album)}.
+                \end{tabular}
+            \end{center}
+            
+			\image{0.35}{page_admin_formulaire_album_modifier_final}{Page administration - Formulaire album}
+            
+        \newpage
+            
+            \begin{paragraphe}
+                \textbf{Page de gestion des musique d'un album :} elle récupère toutes les musiques associés à l'album, passé en paramètre, à l'aide de la fonction \emph{getListeMusiqueAlbum()} pour les afficher dans un tableau.
+            \end{paragraphe}
 
-			\begin{paragraphe}
-				Si clic sur le tableau d'album, le bouton << sélectionner >> \\
-				Alors effectuer l'action getAlbum(album).
-			\end{paragraphe}
+            \begin{center}
+                \begin{tabular}{l | l}
+                    \textbf{Si} clic sur le titre << Panneau administration >> & \textbf{Si} clic sur le bouton << Gestion album >> \\
+                    \textbf{Alors} redirection vers \underline{adminAccueil.php}. & \textbf{Alors} redirection vers \underline{gestionArtiste.php}. \\ \\
 
-			\begin{paragraphe}
-				Si clic sur la tableau d'album, le bouton << supprimer >> \\
-				Alors effectuer l'action suppressionAlbum(album).
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << Ajouter >> du formulaire \\
-				Alors effectuer l'action ajouterNouvelAlbum(album).
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << Modifier >> du formulaire \\
-				Alors effectuer l'action modifierAlbum(album).
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Le second formulaire :
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si aucun album n'est sélectionné \\
-				Alors ce formulaire n'existe pas. \\
-				Sinon
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur la << comboBox >> artistes \\
-				Alors une liste déroulante permet de sélectionner les artistes existants.
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << ajouter artiste >> \\
-				Alors effectuer l'action ajoutArtisteAlbum(album, artiste).
-			\end{paragraphe}
+                    \textbf{Si} clic sur le bouton << Gérer l'album album >> & \textbf{Si} clic sur le bouton << Ajouter musique >> \\
+                    \textbf{Alors} redirection vers \underline{formAssemblerAlbum.php}. & \textbf{Alors} redirection vers \underline{formAssemblerAlbum.php}. \\ \\
+                    
+                    \textbf{Si} clic sur le bouton << Modifier >> & \textbf{Si} clic sur le bouton << Supprimer >> \\
+                    \textbf{Alors} redirection vers \underline{formAssemblerAlbum.php}. & \textbf{Alors} effectue l'action \emph{supprimer\_musique\_album(album, musique)}.
+                \end{tabular}
+            \end{center}
+            
+			\image{0.35}{page_admin_gestion_assembler_album_final}{Page administration - Gestion musique d'un album}
+        
+            \begin{paragraphe}
+                \textbf{Page du formulaire musique d'un album :}
+            \end{paragraphe}
+            
+            \begin{paragraphe}
+                La page est composé du numéro de piste. \\
+                De plus s'il s'agit d'un ajout d'un nouveau morceau de musique à l'album alors une liste de case à coché est disponible correspondant aux des musiques des artistes ou des groupes dont l'album est composé.
+            \end{paragraphe}
+            
+            \begin{center}
+                \begin{tabular}{l}
+                    \textbf{Si} clic sur le bouton << Ajouter >> \\
+                    \textbf{Alors} effectuer l'action \emph{ajouterAssemblerAlbum(album, musique)}.
+                \end{tabular}
+            \end{center}
+            
+			\image{0.35}{page_admin_formulaire_assembler_album_ajouter_final}{Page administration - Formulaire ajouter musique album}
+            
+        \clearpage
+            
+            \begin{center}
+                \begin{tabular}{l}
+                    \textbf{Si} clic sur le bouton << Modifier >> \\
+                    \textbf{Alors} effectue l'action \emph{modifierAssemblerAlbum(album, musique)}.
+                \end{tabular}
+            \end{center}
+            
+			\image{0.35}{page_admin_formulaire_assembler_album_modifier_final}{Page administration - Formulaire modifier musique album}
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    \newpage
 
 		\subsubsection{Page gestion musique}
 
