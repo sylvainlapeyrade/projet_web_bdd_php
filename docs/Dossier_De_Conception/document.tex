@@ -1071,144 +1071,101 @@
 		\subsubsection{Page gestion musique}
 
 			\begin{paragraphe}
-				Cette page est accessible seulement à un utilisateur disposant du statut administrateur.
+                La page gestion reprend le même principe que précédement. \\
+                La page a été allégé des formulaires trop compliqué et trop chargé.
 			\end{paragraphe}
 
 			\begin{paragraphe}
 				\textbf{Service PHP :}
 			\end{paragraphe}
-
-			\begin{paragraphe}
-				Voici la liste des fonctions utilisées pour cette page PHP interagissant avec la base de données :
+            
+            \begin{paragraphe}
+                La page de gestion et la page formulaire permettent d'envoyer des actions à effectué sur la page action.
 			\end{paragraphe}
-
-			\begin{paragraphe}
-				\begin{itemize}
-					\item getListeMusique() : récupère dans la base de données, l'ensemble des musiques inscrit.
-					\item getMusique(musique) : récupère l'entrée dans la base de données d'une musique en particulier. Ainsi qu les artistes associés, les albums associés et les genres associés.
-					\item ajouterNouvelleMusique(musique) : permet d'enregistrer une nouvelle << musique >> dans la base de données.
-					\item modifierMusique(musique) : permet de mettre à jour une entrée << musique >> déjà existante dans la base de données.
-					\item suppressionMusique(musique) : permet de supprimer une musique ainsi que l'association des artistes à la musique, l'album à la musique et l'association entre les genre et les musiques.
-					\item ajoutArtisteMusique(musique, artiste) : permet d'ajouter un artiste existant, à une musique.
-					\item ajoutAlbumMusique(musique, album) : permet d'ajouter un album existant, à une musique.
-					\item ajoutAGenreMusique(musique, genre) : permet d'ajouter un genre existant, à une musique.
-				\end{itemize}
-			\end{paragraphe}
+            
+            \begin{paragraphe}
+                \textbf{Voici la liste des actions possible qu'effectue la page \underline{actionMusique.php} :}
+            
+                \begin{itemize}
+                    \item \emph{ajouter\_musique(musique)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet de vérifier si les informations renseigner sont correcte.
+                    Le titre, la durée ainsi que la date de création du morceau de musique sont obligatoire.
+                    De plus il est obligatoire de sélectionner un artiste ou un groupe de musique au minimum. L'ajout d'un genre est facultatif.
+                    Ajoute ensuite les informations dans la base de données.
+                \end{paragraphe}
+                
+                \begin{itemize}
+                    \item \emph{modifier\_musique(musique)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet de vérifier si les informations renseigner sont correcte.
+                    Le titre, la durée ainsi que la date de création du morceau de musique sont obligatoire.
+                    De plus il est obligatoire de sélectionner un artiste ou un groupe de musique au minimum. L'ajout d'un genre est facultatif.
+                    Modifie ensuite les informations dans la base de données.
+                \end{paragraphe}
+                
+                \begin{itemize}
+                    \item \emph{supprime\_musique(musique)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet de supprimer une musique dans la base de données.
+                \end{paragraphe}
+            \end{paragraphe}
 
 			\begin{paragraphe}
 				\textbf{Conception IHM :}
 			\end{paragraphe}
+            
+            \begin{paragraphe}
+                \textbf{Page de gestion :} elle récupère toutes les entrées des morceau de musique à l'aide de la fonction \emph{getListeMusique()} pour les afficher dans un tableau.
+            \end{paragraphe}
 
-			\begin{paragraphe}
-				Cette page hérite de la disposition n°3. \par
-				Initialement les formulaires de cette page sont vides. \par
-				Le tableau est rempli à l'aide de l'action getListeAlbum().
-			\end{paragraphe}
+            \begin{center}
+                \begin{tabular}{l | l}
+                    \textbf{Si} clic sur le titre << Panneau administration >> & \textbf{Si} clic sur le bouton << Gestion recompense >> \\
+                    \textbf{Alors} redirection vers \underline{adminAccueil.php}. & \textbf{Alors} redirection vers \underline{gestionRecompense.php}. \\ \\
 
-			\image{0.35}{page_admin_musique}{Mockup - Page gestion musique}
+                    \textbf{Si} clic sur le bouton << Ajouter musique >> & \textbf{Si} clic sur le bouton << Modifier >> \\
+                    \textbf{Alors} redirection vers \underline{formMusique.php}. & \textbf{Alors} redirection vers \underline{formMusique.php}. \\ \\
+                \end{tabular}
 
-			\begin{paragraphe}
-				Il y a quatre formulaires. Un premier qui permet de modifier les données d'un morceau de musique, le second pour ajouter des artistes à une msuique sélectionnée, un troisième pour ajouter la musique à un ou plusieurs albums. Le quatrième formulaire permet d'associé un ou plusieurs genres au morceau de musique.
-			\end{paragraphe}
+                \begin{tabular}{l}
+                    \textbf{Si} clic sur le bouton << Supprimer >> \\
+                    \textbf{Alors} effectue l'action \emph{supprimer\_musique(musique)}.
+                \end{tabular}
+            \end{center}
+            
+			\image{0.4}{page_admin_gestion_musique_final}{Page administration - Gestion recompense}
+        
+            \begin{paragraphe}
+                \textbf{Page du formulaire musique d'un album :}
+            \end{paragraphe}
+            
+            \begin{paragraphe}
+                La page est composé de champs pour chaque élément d'une récompense (définit dans le cahier des charges). \\
+                De plus trois section de case à coché permettent de sélectionner les genres du morceau de musique. Ainsi que les artistes ou les groupes à avoir composés le morceau de musique. \\
+                On doit obligatoirement renseigné un artiste ou un groupe de musique. Le genre étant optionnels.
+            \end{paragraphe}
+            
+            \begin{center}
+                \begin{tabular}{l | l}
+                    \textbf{Si} clic sur le bouton << Ajouter >> & \textbf{Si} clic sur le bouton << Modifier >> \\
+                    \textbf{Alors} effectuer l'action \emph{ajouterMusique(musique)}. & \textbf{Alors} effectue l'action \emph{modifierMusique(musique)}.
+                \end{tabular}
+            \end{center}
+            
+			\image{0.35}{page_admin_formulaire_musique_ajouter_final}{Page administration - Formulaire ajouter musique}
+            
+			\image{0.35}{page_admin_formulaire_musique_modifier_final}{Page administration - Formulaire modifier musique}
 
-			\begin{paragraphe}
-				Premier formualire :
-			\end{paragraphe}
 
-			\begin{paragraphe}
-				Si clic sur le tableau de musique, le bouton << sélecitionner >> \\
-				Alors effectuer l'action getMusique(musique).
-			\end{paragraphe}
 
-			\begin{paragraphe}
-				Si clic sur le tableau de musique, le bouton << supprimer >> \\
-				Alors effectuer l'action suppressionMusique(musique).
-			\end{paragraphe}
 
-			\begin{paragraphe}
-				Si clic sur le bouton << Ajouter >> du formulaire \\
-				Alors effectuer l'action ajouterNouvelleMusique(musique).
-			\end{paragraphe}
 
-			\begin{paragraphe}
-				Si clic sur le bouton << Modifier >> du formulaire \\
-				Alors effectuer l'action modifierMusique(musique).
-			\end{paragraphe}
 
-			\begin{paragraphe}
-				Le second formulaire :
-			\end{paragraphe}
 
-			\begin{paragraphe}
-				Si aucune musique n'est sélectionnée \\
-				Alors ce formulaire n'existe pas. \\
-				Sinon
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur la << comboBox >> artiste \\
-				Alors une liste déroulante permet de sélectionner les artistes existants.
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << ajouter artiste >> \\
-				Alors effectuer l'action ajoutArtisteMusique(musique, artiste).
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << ajouter un nouvel artiste >> \\
-				Alors redirige l'utilisateur vers la page adminGestionArtiste.php.
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Le troisième formulaire :
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si aucune musique n'est sélectionnée \\
-				Alors ce formulaire n'existe pas. \\
-				Sinon
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur la << comboBox >> album \\
-				Alors effectuer l'action ajoutAlbumMusique(musique, album).
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << ajouter album >> \\
-				Alors effectuer l'acion ajoutAlbumMusique(musique, album).
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << ajouter un nouvel album >> \\
-				Alors redirige l'utilisateur vers la page adminGestionAlbum.php
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Le quatrième formulaire :
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si aucune musique n'est sélectionnée \\
-				Alors ce formulaire n'existe pas. \\
-				Sinon
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur la << comboBox >> genre \\
-				Alors une liste déroulante permet de sélectionner les genres existants.
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << ajouter genre >> \\
-				Alors effetuer l'action ajoutGenreMusique(musique, genre).
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << créer un nouveau genre >> \\
-				Alors redirige l'utilisateur vers la page adminFormAlbum.php
-			\end{paragraphe}
             
 	\clearpage
 
