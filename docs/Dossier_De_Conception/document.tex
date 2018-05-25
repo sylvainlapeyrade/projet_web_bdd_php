@@ -723,7 +723,7 @@
 			\end{paragraphe}
 
 			\begin{paragraphe}
-                La page de gestion et la page formulaire permettent d'envoyer des actions à effectué sur la page action. \\
+                La page de gestion et la page formulaire permettent d'envoyer des actions à effectué sur la page action.
 			\end{paragraphe}
 
 			\begin{paragraphe}
@@ -816,7 +816,7 @@
 			\end{paragraphe}
             
             \begin{paragraphe}
-                La page de gestion et la page formulaire permettent d'envoyer des actions à effectué sur la page action. \\
+                La page de gestion et la page formulaire permettent d'envoyer des actions à effectué sur la page action.
 			\end{paragraphe}
 
 			\begin{paragraphe}
@@ -910,7 +910,7 @@
 			\end{paragraphe}
             
             \begin{paragraphe}
-                La page de gestion et la page formulaire permettent d'envoyer des actions à effectué sur la page action. \\
+                La page de gestion et la page formulaire permettent d'envoyer des actions à effectué sur la page action.
 			\end{paragraphe}
 
 			\begin{paragraphe}
@@ -927,7 +927,7 @@
                     \item \emph{modifier\_album(album)} :
                 \end{itemize}
                 \begin{paragraphe}
-                    Permet de vérifier si les informations renseigner sont correcte. Le nom, la date de création de l'album sont obligatoire. De plus il est obligatoire de sélectionner un artiste ou un groupe de musique au minimum.Modifie ensuite les informations dans la base de données.
+                    Permet de vérifier si les informations renseigner sont correcte. Le nom, la date de création de l'album sont obligatoire. De plus il est obligatoire de sélectionner un artiste ou un groupe de musique au minimum. Modifie ensuite les informations dans la base de données.
                 \end{paragraphe}
                 
                 \begin{itemize}
@@ -1065,34 +1065,6 @@
             \end{center}
             
 			\image{0.35}{page_admin_formulaire_assembler_album_modifier_final}{Page administration - Formulaire modifier musique album}
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
     \newpage
 
@@ -1237,165 +1209,223 @@
 				Si clic sur le bouton << créer un nouveau genre >> \\
 				Alors redirige l'utilisateur vers la page adminFormAlbum.php
 			\end{paragraphe}
-
+            
 	\clearpage
 
-		\subsubsection{Page formulaire genre}
+		\subsubsection{Page gestion récompense}
 
 			\begin{paragraphe}
-				Cette page est accessible seulement à un utilisateur disposant du statut administrateur.
+                La page gestion reprend le même principe que précédement.
 			\end{paragraphe}
 
 			\begin{paragraphe}
 				\textbf{Service PHP :}
 			\end{paragraphe}
-
-			\begin{paragraphe}
-				Voici la liste des fonctions utilisées pour cette page PHP interagissant avec la base de données :
-				\begin{itemize}
-					\item getGenre(musique, genre) : récupère le genre d'une musique en particulier.
-					\item ajouterGenre(musique, genre) : ajout un genre à un morceau de musique.
-					\item modifierGenre(musique, genre) : modifier un genre d'un morceau de musique.
-				\end{itemize}
+            
+            \begin{paragraphe}
+                La page de gestion et la page formulaire permettent d'envoyer des actions à effectué sur la page action.
 			\end{paragraphe}
 
 			\begin{paragraphe}
-				\textbf{Conception IHM :}
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Soit :
-				\begin{itemize}
-					\item La page reçoit en paramètre un identifiant d'un morceau << morceau de musique >> (seulement) et auquel cas il s'agit de créer un nouveau << genre >> pour une musique.
-					\item La page reçoit en paramètre un identifiant d'un << morceau de musique >> ainsi qu'un identifiant d'un << genre >> auquel cas il s'agit d'une modification de << genre >>.
-					\item la page reçoit aucun paramètre. Il s'agit d'une erreur, on retourne à la page précédente.
-				\end{itemize}
-			\end{paragraphe}
-
-			\image{0.3}{page_admin_genre}{Mockup - Page formulaire genre}
-
-			\begin{paragraphe}
-				Si on est dans le premier cas \\
-				Alors on laisse le formulaire vide.
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Sinon Si on est dans le second cas \\
-				Alors on récupère les données du formulaire à l'aide des identifiants (musique et genre) récupérés par la page et on effectue l'action getGenre(musique, genre).
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << Ajouter >> \\
-				Alors effectuer l'action ajouterGenre(musique, genre), redirige ensuite l'utilisateur vers la page de musique précédente.
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << Modifier >> \\
-				Alors effectuer l'action modifierGenre(musique, genre), redirige ensuite l'utilisateur vers la page de musique précédente.
-			\end{paragraphe}
-
-	\clearpage
-
-		\subsubsection{Page formulaire récompense}
-
-			\begin{paragraphe}
-				Cette page est accessible seulement à un utilisateur disposant du statut administrateur.
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				\textbf{Service PHP :}
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Voici la liste des fonctions utilisées pour cette page PHP interagissant avec la base de données :
-				\begin{itemize}
-					\item getRecompense(artiste, recompense) : récupère toutes les informations d'une récompense paricuilère d'un artiste.
-					\item ajouterRecompense(artiste, recompense) : ajoute une récompense à un artiste en particulier.
-					\item modifierRecompense(artiste, recompense) : modifier une récompense à un artiste en particulier.
-				\end{itemize}
-			\end{paragraphe}
+                \textbf{Voici la liste des actions possible qu'effectue la page \underline{actionRecompense.php} :}
+            
+                \begin{itemize}
+                    \item \emph{ajouter\_recompense(recompense)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet de vérifier si les informations renseigner sont correcte. Le nom et la date de la récompense sont obligatoire. De plus il est obligatoire de sélectionner un artiste au minimum. Ajoute ensuite les informations dans la base de données.
+                \end{paragraphe}
+                
+                \begin{itemize}
+                    \item \emph{modifier\_recompense(recompense)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet de vérifier si les informations renseigner sont correcte. Le nom et la date de la récompense sont obligatoire. De plus il est obligatoire de sélectionner un artiste au minimum. Modifie ensuite les informations dans la base de données.
+                \end{paragraphe}
+                
+                \begin{itemize}
+                    \item \emph{supprime\_recompense(recompense)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet de supprimer un album dans la base de données.
+                \end{paragraphe}
+            \end{paragraphe}
 
 			\begin{paragraphe}
 				\textbf{Conception IHM :}
 			\end{paragraphe}
+            
+            \begin{paragraphe}
+                \textbf{Page de gestion :} elle récupère toutes les entrées des albums à l'aide de la fonction \emph{getListeAlbum()} pour les afficher dans un tableau.
+            \end{paragraphe}
 
-			\begin{paragraphe}
-				Soit :
-				\begin{itemize}
-					\item La page reçoit en paramètre un identifiant d'un << artiste >> (seulement), auquel cas il s'agit de créer une nouvelle << récompense >> pour l'artiste.
-					\item La page reçoit en paramètre un identifiant d'un << artiste >> ainsi qu'un identifiant d'une << récompense >>, auquel cas il s'agit d'une modification d'une << récompense >>.
-					\item La page ne reçoit aucun paramètre. Il s'agit d'une erreur, on retourne à la page précédente.
-				\end{itemize}
-			\end{paragraphe}
+            \begin{center}
+                \begin{tabular}{l | l}
+                    \textbf{Si} clic sur le titre << Panneau administration >> & \textbf{Si} clic sur le bouton << Gestion recompense >> \\
+                    \textbf{Alors} redirection vers \underline{adminAccueil.php}. & \textbf{Alors} redirection vers \underline{gestionRecompense.php}. \\ \\
 
-			\image{0.3}{page_admin_recompense}{Mockup - Page formulaire récompense}
+                    \textbf{Si} clic sur le bouton << Ajouter recompense >> & \textbf{Si} clic sur le bouton << Modifier >> \\
+                    \textbf{Alors} redirection vers \underline{formRecompense.php}. & \textbf{Alors} redirection vers \underline{formRecompense.php}. \\ \\
+                \end{tabular}
 
-			\begin{paragraphe}
-				Si on est dans le premier cas \\
-				Alors formulaire reste vide.
-			\end{paragraphe}
+                \begin{tabular}{l}
+                    \textbf{Si} clic sur le bouton << Supprimer >> \\
+                    \textbf{Alors} effectue l'action \emph{supprimer\_recompense(recompense)}.
+                \end{tabular}
+            \end{center}
+            
+			\image{0.4}{page_admin_gestion_recompense_final}{Page administration - Gestion recompense}
+            
+        \clearpage
+        
+            \begin{paragraphe}
+                \textbf{Page du formulaire d'une récompense :}
+            \end{paragraphe}
+            
+            \begin{paragraphe}
+                La page est composé de champs pour chaque élément d'une récompense (définit dans le cahier des charges). \\
+                Ainsi qu'une liste de case à coché des artistes présent dans la base de données qui reçoivent cette récompense.
+            \end{paragraphe}
 
-			\begin{paragraphe}
-				Si on est dans le second cas \\
-				Alors effectuer l'action getRecompense(artiste, recompense) à l'aide des deux identifiants passé en paramètre.
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic le bouton << Ajouter >> \\
-				Alors effectuer l'action ajouterRecompense(artiste, recompense), redirige ensuite l'utilisateur vers la page de l'artiste précédent.
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << Modifier >> \\
-				Alors effectuer l'action modifierRecompense(artiste, musique), redirige ensuite l'utilisateur vers la page de l'artiste précédent.
-			\end{paragraphe}
+            \begin{paragraphe}
+                \textbf{Si} un identifiant d'une récompense existant n'est pas renseigné à la page \\
+                \textbf{Alors} on laisse les champs du formulaire vide, il s'agit de crée une nouvelles récompense. \\
+                \textbf{Sinon} il s'agit de modifier une récompense. On récupère les données de la récompense avec la fonction \emph{getRecompense(recompense)} ainsi que l'association avec les artistes.
+            \end{paragraphe}
+            
+            \begin{center}
+                \begin{tabular}{l}
+                    \textbf{Si} clic sur le bouton << Ajouter >> \\
+                    \textbf{Alors} effectuer l'action \emph{ajouter\_recompense(recompense)}.
+                \end{tabular}
+            \end{center}
+            
+			\image{0.35}{page_admin_formulaire_recompense_ajouter_final}{Page administration - Formulaire récompense}
+            
+            \begin{center}
+                \begin{tabular}{l}
+                    \textbf{Si} clic sur le bouton << Modifier >> \\
+                    \textbf{Alors} effectue l'action \emph{modifier\_recompense(recompense)}.
+                \end{tabular}
+            \end{center}
+            
+			\image{0.35}{page_admin_formulaire_recompense_modifier_final}{Page administration - Formulaire récompense}
+        
+        \newpage
 
 		\subsubsection{Page gestion compte utilisateur}
 
 			\begin{paragraphe}
-				Cette page est accessible seulement à un utilisateur disposant du statut administrateur.
+                La page gestion reprend le même principe que précédement.
 			\end{paragraphe}
 
 			\begin{paragraphe}
 				\textbf{Service PHP :}
 			\end{paragraphe}
+            
+            \begin{paragraphe}
+                La page de gestion et la page formulaire permettent d'envoyer des actions à effectué sur la page action.
+			\end{paragraphe}
 
 			\begin{paragraphe}
-				Voici la liste des fonctions utilisées pour cette page PHP interagissant avec la base de données :
-				\begin{itemize}
-					\item ajouterUtilisateur() : ajoute un utilisateur à la base de données.
-					\item getListeUtilisateur() : récupère dans la base de données, l'ensemble des utilisateur inscrit.
-					\item getStatutUtilisateur() : récupère le statut d'un utilisateur.
-					\item changerStatutUtilisateur() : Modifie le statut d'un utilisateur.
-					\item afficherListeUtilisateur() : Affiche sous forme d'un tableau la liste des utilisateurs.
-				\end{itemize}
-			\end{paragraphe}
+                \textbf{Voici la liste des actions possible qu'effectue la page \underline{actionUtilisateur.php} :}
+            
+                \begin{itemize}
+                    \item \emph{ajouter\_utilisateur(utilisateur)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet de vérifier si les informations renseigner sont correcte. Le nom, le mot de passe et la vérification du mot de passe sont obligatoire. Ajoute ensuite les informations dans la base de données.
+                \end{paragraphe}
+                
+                \begin{itemize}
+                    \item \emph{modifier\_motDePasse\_utilisateur(utilisateur)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet d'effectuer un changement de mot de passe dans la base de données d'un utilisateur.
+                \end{paragraphe}
+                
+                \begin{itemize}
+                    \item \emph{modifier\_statut\_utilisateur(utilisateur)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet de changer le statut d'un utilisateur normal en statut adminsitrateur, ou en statut d'un utilisateur normal. \\
+                    Un administrateur ne peut changer son propre statut en utilisateur normal.
+                \end{paragraphe}
+                
+                \begin{itemize}
+                    \item \emph{supprimer\_utilisateur(utilisateur)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet de supprimer un album dans la base de données.
+                    Un administrateur ne peut supprimer son propre compte.
+                \end{paragraphe}
+            \end{paragraphe}
 
 			\begin{paragraphe}
 				\textbf{Conception IHM :}
 			\end{paragraphe}
 
-			\begin{paragraphe}
-				La page de gestion des comptes utilisateurs récupère la liste de tous les utilisateurs déjà enregistrés dans la base de données, en affichant le nm de l'utilisateur et son statut (administrateur ou utilisateur normal).
-			\end{paragraphe}
+            \begin{paragraphe}
+                \textbf{Voici le Mockup prévu :}
+            \end{paragraphe}
 
-			\begin{paragraphe}
-				Il y aura un bouton permettant de changer le statut de l'utilisateur << Administrateur >> vers << Utilisateur normal >> et inversement << Utilisateur normal >> vers << Administrateur >>. Le tableau << Liste des utilisateurs >> est rempli par la fonction getListeUtilisateur().
-			\end{paragraphe}
+			\image{0.35}{page_admin_compte}{Mockup - Page d'administration - Page gestion compte utilisateur}
 
-			\image{0.35}{page_admin_compte}{Mockup - Page gestion compte utilisateur}
+        \clearpage
+    
+            \begin{paragraphe}
+                On a rajouter une page formulaire en plus pour ajouter ou pour modifier le mot de passe d'un utilisateur.
+            \end{paragraphe}
+            
+            \begin{paragraphe}
+                \textbf{Voici le nouveau panneau d'administration :}
+            \end{paragraphe}
 
-			\begin{paragraphe}
-				La page a été découpée en deux :
-			\end{paragraphe}
+            \begin{center}
+                \begin{tabular}{l | l}
+                    \textbf{Si} clic sur le titre << Panneau administration >> & \textbf{Si} clic sur le bouton << Gestion recompense >> \\
+                    \textbf{Alors} redirection vers \underline{adminAccueil.php}. & \textbf{Alors} redirection vers \underline{gestionRecompense.php}. \\ \\
 
-			\begin{paragraphe}
-				Si clic sur le bouton << Ajouter >> \\
-				Alors effectuer l'action ajouterUtilisateur() si les paramètres entrée dans le formulaire sont valides, recherge ensuite la page après avoir indiqué que l'utilisateur a bien été ajouté. \\
-				Sinon signal que les paramètres entrés sont invalides.
-			\end{paragraphe}
+                    \textbf{Si} clic sur le bouton << Ajouter utilisateur >> & \textbf{Si} clic sur le bouton << Devenir User/Admin >> \\
+                    \textbf{Alors} redirection vers \underline{formUtilisateur.php}. & \textbf{Alors} effectue l'action \emph{modifier\_statut\_utilisateur(utilisateur)}. \\ \\
 
-			\begin{paragraphe}
-				Si clic sur le bouton << Changer Statut >> \\
-				Alors effectuer l'action changerStatutUtilisateur() si les paramètres entrés dans le formulaire sont valide, recherge ensuite la page après avoir indiqué que le statut a bien été changé.
-			\end{paragraphe}
+                    \textbf{Si} clic sur le bouton << Modifier >> & \textbf{Si} clic sur le bouton << Supprimer >> \\
+                    \textbf{Alors} redirection vers \underline{formRecompense.php}. & \textbf{Alors} effectue l'action \emph{supprimer\_utilisateur(utilisateur)}.
+                \end{tabular}
+            \end{center}
+            
+			\image{0.35}{page_admin_gestion_utilisateur_final}{Page administration - Gestion utilisateur final}
+            
+            \begin{paragraphe}
+                \textbf{Page du formulaire d'un utilisateur :}
+            \end{paragraphe}
+            
+            \begin{paragraphe}
+                La page est composé des champs nom utilisateur, mot de passe et vérification du mot de passe saisi.
+            \end{paragraphe}
+
+            \begin{paragraphe}
+                \textbf{Si} un identifiant d'un utilisateur existant n'est pas renseigné à la page \\
+                \textbf{Alors} on laisse les champs du formulaire vide, il s'agit de crée un nouveau utilisateur. \\
+                \textbf{Sinon} il s'agit de modifier le mot de passe d'un utilisateur. On récupère les données de l'utilsiateur avec la fonction \emph{getUtilisateur(utilisateur)}.
+            \end{paragraphe}
+            
+            \begin{center}
+                \begin{tabular}{l}
+                    \textbf{Si} clic sur le bouton << Ajouter >> \\
+                    \textbf{Alors} effectuer l'action \emph{ajouter\_utilisateur(utilisateur)}.
+                \end{tabular}
+            \end{center}
+            
+			\image{0.35}{page_admin_formulaire_utilisateur_ajouter_final}{Page administration - Formulaire utilisateur}
+            
+        \newpage
+            
+            \begin{center}
+                \begin{tabular}{l}
+                    \textbf{Si} clic sur le bouton << Modifier >> \\
+                    \textbf{Alors} effectue l'action \emph{modifier\_utilisateur(utilisateur)}.
+                \end{tabular}
+            \end{center}
+            
+			\image{0.35}{page_admin_formulaire_utilisateur_modifier_final}{Page administration - Formulaire utilisateur}
