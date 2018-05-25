@@ -545,7 +545,7 @@
 		\subsubsection{Page de gestion compte utilisateur}
 
 			\begin{paragraphe}
-				Ce formulaire sera composé de 2 champs :
+				Ce formulaire est composé de 2 champs :
 				\begin{itemize}
 					\item Un champ pour entrer le nouveau mot de passe du compte.
 					\item Un champ pour confirmer le nouveau mot de passe du compte (et ainsi éviter les maladresses de saisie).
@@ -590,16 +590,20 @@
 			\end{paragraphe}
 
         \newpage
+        
             \begin{paragraphe}
                Au cours du développment, l'aspect et la logique de cette page a été conservé. Nous avons cependant ajouté une autre fonctionnalité
-               à la gestion de compte aui est de supprimer son compte, nous avons donc ajouté une page intermédiaire accessible en cliquant sur le bouton
-               << Connexion >> présent sur la bandeau d'en tête. \\
-                Cette page nous rapelle notre nom d'utilsateur et présente deux boutons, l'un supprime le compte auquel nous somme connecté en transmettant une requête de suppression dans la
-                base de données. L'autre renvoie à cette page de modification de mot passe.
+               à la gestion de compte. L'utilisateur peut supprimer son compte. Nous avons ajouté une page intermédiaire accessible en cliquant sur le bouton
+               << Compte >> présent sur la bandeau d'en tête.
+            \end{paragraphe}
+               
+            \begin{paragraphe}
+                Cette page nous indique notre nom d'utilsateur et ainsi que deux boutons, l'un supprime le compte auquel nous somme connecté en transmettant une requête de suppression dans la
+                base de données. Le second bouton renvoie l'utilisateur à au formulaire de modification de mot de passe.
             \end{paragraphe}
 
             \begin{paragraphe}
-                Voici une illustration de ces deux pages finales:
+                \textbf{Voici une illustration de ces deux pages finales :}
             \end{paragraphe}
 
             \image{0.60}{page_compte_finale}{Pages Utilisateurs - Page gestion utilisateur finale}
