@@ -198,7 +198,6 @@
 
             \image{0.43}{liste_fichier}{Définition des pages - Liste finale des fichiers}
 
-
     \clearpage
 
     \subsection{Pages publiques}
@@ -613,6 +612,41 @@
 	\clearpage
 
 	\subsection{Pages d'administration}
+        
+        \begin{paragraphe}
+            Dans la version un, du dossier de conception, toutes les pages d'administrations été chargées de formulaires, d'actions et de boutons.
+            Lors de la réalisation de l'application nous avons effectué une simplification de toutes les pages, en répartisant et délimitant les périmétres d'action de chaque page.
+        \end{paragraphe}
+    
+        \begin{paragraphe}
+            Nous avons donc délimité six catégories pour gérer les différentes entités de la base de donnée :
+            \vspace{1em}
+            \begin{itemize}
+                \item Gestion des utilisateurs
+                \item Gestion des artistes
+                \item Gestion des groupes
+                \item Gestion des albums
+                \item Gestion des morceaux de musiques
+                \item Gestion des récompenses
+            \end{itemize}
+        \end{paragraphe}
+        
+        \begin{paragraphe}
+            Chaques pages des six catégories est rassemblé dans un dossier portant le nom de l'entité qu'il gère. \\
+            De plus une page gestion, une page formulaire et une page action pour chaque catégorie permettent de séparer le code pour une meilleur lisibilité.
+        \end{paragraphe}
+
+        \begin{paragraphe}
+            \textbf{Les pages gestions} permettent de gérer les valeurs stocké dans la base de donnée, en les modifiant ou en les supprimant.
+        \end{paragraphe}
+        
+        \begin{paragraphe}
+            \textbf{Les pages formulaires} permettent d'ajouter ou de modifier les données stocker des entités.
+        \end{paragraphe}
+        
+        \begin{paragraphe}
+            \textbf{Les pages actions} permettent quand à elles de d'efectuer des vérifications, des validations et d'exécuter les actions souhaité.
+
 		\subsubsection{Page d'administration accueil}
 
 			\begin{paragraphe}
