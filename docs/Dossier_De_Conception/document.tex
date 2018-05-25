@@ -659,6 +659,10 @@
 			\end{paragraphe}
 
 			\begin{paragraphe}
+                On a supprimer les deux boutons d'ajout du genre et de récompense et seulement ajouter un bouton pour la gestion des récompenses.
+			\end{paragraphe}
+            
+			\begin{paragraphe}
 				\textbf{Conception IHM :}
 			\end{paragraphe}
 
@@ -671,47 +675,38 @@
 					\item Gestion albums.
 					\item Gestion musiques.
 					\item Gestion utilisateurs.
-					\item Ajouter un nouveau genre.
-					\item Ajouter une nouvelle récompense.
+                    \item Gestion récompense.
 				\end{itemize}
 			\end{paragraphe}
 
+            \begin{center}
+                \begin{tabular}{l | l}
+                    \textbf{Si} clic sur le bouton << Gestion artistes >> & \textbf{Si} clic sur le bouton << Gestion groupes >> \\
+                    \textbf{Alors} redirection vers adminGestionArtiste.php. & \textbf{Alors} redirection vers adminGestionGroupe.php. \\ \\
+                    
+                    \textbf{Si} clic sur le bouton << Gestion albums >> & \textbf{Si} clic sur le bouton << Gestion musiques >> \\
+                    \textbf{Alors} redirection vers admingGestionAlbum.php. & \textbf{Alors} redirection vers adminGestionMusique.php. \\ \\
+                    
+                    \textbf{Si} clic sur le bouton << Gestion utilisateur >> & \textbf{Si} clic sur le bouton << Gestion récompense >> \\
+                    \textbf{Alors} redirection vers adminGestionutilisateur.php. & \textbf{Alors} redirection vers adminGestionRecompense.php.
+                \end{tabular}
+            \end{center}
+
+        \clearpage
+
+            \begin{paragraphe}
+                \textbf{Voici le Mockup prévu :}
+            \end{paragraphe}
+
 			\image{0.35}{page_admin_index}{Mockup - Page d'administration accueil}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << Gestion artistes >> \\
-				Alors redirection vers la page adminGestionArtiste.php.
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << Gestion groupes >> \\
-				Alors redirection vers la page adminGestionGroupe.php.
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << Gestion albums >> \\
-				Alors redirection vers la page admingGestionAlbum.php.
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << Gestion musiques >> \\
-				Alors redirection vers la page adminGestionMusique.php.
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << Gestion utilisateur >> \\
-				Alors redirection vers la page adminGestionutilisateur.php.
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << Ajouter un nouveau genre >> \\
-				Alors redirection vers la page adminFormGenre.php.
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << Ajouter une nouvelle récompense >> \\
-				Alors redirection vers la page adminFormRecompense.php.
-			\end{paragraphe}
+            
+            \begin{paragraphe}
+                \textbf{Voici le nouveau panneau d'administration :}
+            \end{paragraphe}
+            
+			\image{0.35}{page_admin_index_final}{Page administration - Accueil final}
+            
+    \clearpage
 
 		\subsubsection{Page gestion artiste}
 
