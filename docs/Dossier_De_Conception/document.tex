@@ -713,98 +713,93 @@
     \clearpage
 
 		\subsubsection{Page gestion artiste}
+        
+            \begin{paragraphe}
+                La gestion des artistes se fais donc maintenant avec 3 pages, une page de gestion, une page de formulaire et une page d'action.
+            \end{paragraphe}
 
 			\begin{paragraphe}
 				\textbf{Service PHP :}
 			\end{paragraphe}
 
 			\begin{paragraphe}
-				Voici la liste des fonctios utilisées pour cette page PHP interagissant avec la base de données :
+                La page de gestion et la page formulaire permettent d'envoyer des actions à effectué sur la page action. \\
 			\end{paragraphe}
 
 			\begin{paragraphe}
-				\begin{itemize}
-					\item getListeArtiste() : récupère dans la base de données, l'ensemble des artistes inscrit.
-					\item getArtiste(artiste) : récupère l'entrée dans la base de données d'un artiste en particulier.
-				\end{itemize}
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				\begin{itemize}
-					\item ajouterNouveauArtiste(artiste) : permet d'enregistrer un nouvel << artiste >> dans la base de donnée.
-					\item modifierArtiste(artiste) : permet de mettre à jour une entrée << artiste >> déjà existante dans la base de données.
-					\item suppressionArtiste(artiste) : permet de supprimer un artiste de la base de données.
-					\item ajoutRecmpense(artiste, recompense) : permets d'ajouter une récompense à un artiste.
-				\end{itemize}
-			\end{paragraphe}
+                \textbf{Voici donc la liste des actions possible qu'effectue la page \underline{actionArtiste.php} :}
+            
+                \begin{itemize}
+                    \item \emph{ajouter\_artiste(artiste)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet de vérifier si les informations renseigner sont correcte. Le nom, le prénom et la date de naissance de l'artiste étant obligatoire. Ajoute ensuite les informations dans la base de données.
+                \end{paragraphe}
+                
+                \begin{itemize}
+                    \item \emph{modifier\_artiste(artiste)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet de vérifier si les informations renseigner sont correcte. Le nom, le prénom et la date de naissance de l'artiste étant obligatoire. Modifie ensuite les informations dans la base de données.
+                \end{paragraphe}
+                
+                \begin{itemize}
+                    \item \emph{supprime\_artiste(artiste)} :
+                \end{itemize}
+                \begin{paragraphe}
+                    Permet de supprimer un artiste dans la base de données.
+                \end{paragraphe}
+            \end{paragraphe}
 
 			\begin{paragraphe}
 				\textbf{Conception IHM :}
 			\end{paragraphe}
+            
+            \begin{paragraphe}
+                \textbf{Page de gestion :} elle récupère toutes les entrées des artistes à l'aide de la fonction \emph{getListeArtiste()} pour les affichers dans un tableau.
+            \end{paragraphe}
 
-			\begin{paragraphe}
-				Cette page hérite de la disposition n°3. \par
-				Initialement les formulaires de cette page sont vides.\par
-				Le tableau est rempli à l'aide de l'action getListeArtiste().
-			\end{paragraphe}
+            \begin{center}
+                \begin{tabular}{l | l}
+                    \textbf{Si} clic sur le titre << Panneau administration >> & \textbf{Si} clic sur le bouton << Gestion artiste >> \\
+                    \textbf{Alors} redirection vers adminAccueil.php. & \textbf{Alors} redirection vers gestionArtiste.php. \\ \\
 
-			\image{0.35}{page_admin_artiste}{Mockup - Page gestion artistes}
+                    \textbf{Si} clic sur le bouton << Ajouter artiste >> & \textbf{Si} clic sur le bouton << Modifier >> \\
+                    \textbf{Alors} redirection vers formArtiste.php. & \textbf{Alors} redirection vers formArtiste.php. \\ \\
+                \end{tabular}
 
-			\begin{paragraphe}
-				Il y a deux formulaires. Un premier qui permet de modifier les données d'un artiste, et le second pour ajouter des récompenses à l'utilisateur sélectionné.
-			\end{paragraphe}
+                \begin{tabular}{l}
+                    \textbf{Si} clic sur le bouton << Supprimer >> \\
+                    \textbf{Alors} effectue l'action \emph{supprimer\_artiste(artiste)}.
+                \end{tabular}
+            \end{center}
+            
+			\image{0.4}{page_admin_gestion_artiste_final}{Page administration - Gestion artistes}
+            
+            \begin{paragraphe}
+                \textbf{Page du formulaire d'un artiste :}
+            \end{paragraphe}
 
-			\begin{paragraphe}
-				Premier formulaire :
-			\end{paragraphe}
+            \begin{paragraphe}
+                \textbf{Si} un identifiant d'un artiste existant n'est pas renseigné à la page \\
+                \textbf{Alors} on laisse les champs du formulaire vide, il s'agit de crée un nouvel artiste. \\
+                \textbf{Sinon} il s'agit de modifier un artiste. on récupère les données de l'artiste avec la fonction getArtiste(artiste).
+            \end{paragraphe}
+            
+        \newpage
+            
+            \begin{center}
+                \begin{tabular}{l | l}
+                    \textbf{Si} clic sur le bouton << Ajouter >> & \textbf{Si} clic sur le bouton << Modifier >> \\
+                    \textbf{Alors} effectuer l'action ajouterArtiste(artiste). & \textbf{Alors} effectue l'action modifierArtiste(artiste).
+                \end{tabular}
+            \end{center}
+            
+			\image{0.35}{page_admin_formulaire_artiste_ajouter_final}{Page administration - Formulaire artistes}
+			
+            \image{0.35}{page_admin_formulaire_artiste_modifier_final}{Page administration - Formulaire artistes}
 
-			\begin{paragraphe}
-				Si clic sur le tableau d'artiste, le bouton << selectionner >> \\
-				Alors effectuer l'action getArtiste(artiste).
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le tableau d'artiste, le bouton << supprimer >> \\
-				Alors effectue l'action supprimerArtiste(artiste).
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << Ajouter >> du formualire \\
-				Alors effectue l'action ajouterNouveauArtiste(artiste).
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton modifier du formulaire \\
-				Alors effectuer l'action modifierArtiste(artiste).
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Le second formulaire :
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si aucun artiste n'est sélectionné \\
-				Alors ce formulaire n'existe pas \\
-				Sinon
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur la << comboBox >> récompense \\
-				Alors une liste déroulante permet de sélectionner les récompenses existantes.
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << ajouter récompense >> \\
-				Alors effectuer l'action ajoutRecompense(artiste, recompense).
-			\end{paragraphe}
-
-			\begin{paragraphe}
-				Si clic sur le bouton << ajouter ue nouvelle récompense >> \\
-				Alors on redirige l'administrateur sur la page adminFormRecompense.php
-			\end{paragraphe}
-
-			\begin{paragraphe}
-			\end{paragraphe}
+    \newpage
 
 		\subsubsection{Page gestion groupe}
 
