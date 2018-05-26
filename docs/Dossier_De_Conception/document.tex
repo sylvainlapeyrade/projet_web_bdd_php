@@ -254,20 +254,20 @@
             \begin{paragraphe}
                 Les services utilisés pour la recherche (Album, artiste, groupe ou musique):
                  \begin{itemize}
-                     \item recupererAlbum(nomAlbum) affiche tous les albums correspondant à la chaîne recherchée.
-                     \item recupererArtiste(nomArtiste) affiche tous les artistes correspondant à la chaîne recherchée.
-                     \item recupererGroupe(nomGroupe) affiche tous les groupes correspondant à la chaîne recherchée.
-                     \item recupererMusique(nomMusique) affiche toutes les musiques correspondantes à la chaîne recherchée.
+                     \item \emph{recuperer\_album(recherche)} affiche tous les albums correspondant à la chaîne recherchée.
+                     \item \emph{recuperer\_artiste(recherche)} affiche tous les artistes correspondant à la chaîne recherchée.
+                     \item \emph{recuperer\_groupe(recherche)} affiche tous les groupes correspondant à la chaîne recherchée.
+                     \item \emph{recuperer\_musique(recherche)} affiche toutes les musiques correspondantes à la chaîne recherchée.
                  \end{itemize}
              \end{paragraphe}
 
             \begin{paragraphe}
                  Lorsqu'un résultat est sélectionné, pour l'afficher il va falloir utiliser les fonctions :
                 \begin{itemize}
-                    \item getAlbum(nomAlbum) si un album a été sélectionné.
-                    \item getArtiste(nomArtiste) si un artiste a été sélectionné.
-                    \item getGroupe(nomGroupe) si un groupe a été sélectionné.
-                    \item getMusique(nomMusique) si une musique a été sélectionnée.
+                    \item \emph{get\_album(album)} si un album a été sélectionné.
+                    \item \emph{get\_artiste(artiste)} si un artiste a été sélectionné.
+                    \item \emph{get\_groupe(groupe)} si un groupe a été sélectionné.
+                    \item \mph{get\_musique(musique)} si une musique a été sélectionnée.
                 \end{itemize}
             \end{paragraphe}
 
@@ -320,8 +320,8 @@
             \begin{paragraphe}
                 Pour afficher les différentes métadonnées de l'artiste ou du groupe nous avons besoin des services suivant:
                 \begin{itemize}
-                        \item getArtiste(nomArtiste) si un artiste a été sélectionné, pour obtenir les informations de l'artiste.
-                        \item getGroupe(nomGroupe) si un groupe a été sélectionné, pour obtenir les informations du groupe.
+                        \item \emph{get\_artiste(artiste)} si un artiste a été sélectionné, pour obtenir les informations de l'artiste.
+                        \item \emph{get\_groupe(groupe)} si un groupe a été sélectionné, pour obtenir les informations du groupe.
                 \end{itemize}
             \end{paragraphe}
 
@@ -332,12 +332,12 @@
 			\begin{paragraphe}
 				Initialement : \\
 				On affiche tous les albums et tous les singles de l'artiste. \\
-				Avec la fonction getAlbum(artiste), getSingle(Artiste).
+				Avec la fonction \emph{get\_album(artiste), \emph{get\_single(artiste)}.
 			\end{paragraphe}
 
 			\begin{paragraphe}
 				\textbf{Si} clic sur le nom d'un album \\
-				\textbf{Alors} redirection vers la page pageAlbum.php en passant en paramètre le nom de l'album.
+				\textbf{Alors} redirection vers la page \underline{pageAlbum.php} en passant en paramètre le nom de l'album.
 			\end{paragraphe}
 
 			\image{0.35}{page_artiste}{Mockup - Page artiste/groupe}
@@ -365,10 +365,10 @@
 		\subsubsection{Page description album/musique}
 
 			\begin{paragraphe}
-                Cette page fait des requêtes sur la base de données, sur les entités << album >> ou << Musique >>.
+                Cette page fait des requêtes sur la base de données, sur les entités << album >> ou << musique >>.
                  en passant en paramètre le nom transmis par la page resultat de recherche. Elle affiche ensuite ces dernières.
 				Si un utilisateur non connecté souhaite rédiger un commenter et donner une note à un album ou à une musique,
-				 il faut d'abord qu'il se connecte. Il y a donc dans l'espace commentaire un lien << connectez-vous >> le redirigeant vers la page de connexion.
+				 il faut d'abord qu'il se connecte. Il y a donc dans l'espace commentaire un lien << connectez-vous >> le redirigeant vers la page de \underline{connexion.php}.
 			\end{paragraphe}
 
            \begin{paragraphe}
@@ -378,8 +378,8 @@
             \begin{paragraphe}
                 Pour afficher les différentes métadonnées de l'artiste ou du groupe nous avons besoin des services suivant:
                 \begin{itemize}
-                        \item getAlbum(nomAlbum) si un album a été sélectionné, pour obtenir les informations de l'album.
-                        \item getMusique(nomMusique) si une musique a été sélectionnée, pour obtenir les informations de la musique.
+                        \item \emph{get\_album(album)} si un album a été sélectionné, pour obtenir les informations de l'album.
+                        \item \emph{get\_musique(musique)} si une musique a été sélectionnée, pour obtenir les informations de la musique.
                 \end{itemize}
             \end{paragraphe}
 
@@ -446,7 +446,7 @@
 			\begin{paragraphe}
 			    Cette page intéragie avec la base de données avec la fonction :
 				\begin{itemize}
-					\item \emph{connexionUtilisateur(Utilisateur)} : vérifie si un utilisateur correspondant existe dans la base de données.
+					\item \emph{connexion\_utilisateur(utilisateur)} : vérifie si un utilisateur correspondant existe dans la base de données.
 				\end{itemize}
 			\end{paragraphe}
 
@@ -462,7 +462,7 @@
             \begin{center}
                 \begin{tabular}{l c | c l}
                     \textbf{Si} clic sur le bouton << connexion >> & & & \textbf{Si} clic sur lien  << s'inscrire >> \\
-                    \textbf{Alors} effectue l'action \emph{connexionutilisateur(Utilisateur).} & & & \textbf{Alors} redirection vers page inscription.
+                    \textbf{Alors} effectue l'action \emph{connexion\_utilisateur(utilisateur).} & & & \textbf{Alors} redirection vers page inscription.
                 \end{tabular}
             \end{center}
 
@@ -499,7 +499,7 @@
 			\begin{paragraphe}
 			    Cette page intéragie avec la base de données avec la fonction:
 				\begin{itemize}
-					\item ajouterUtilisateur(Utilisateur) : ajoute un utilisateur dans la base de données.
+					\item \emph{ajouter\_utilisateur(utilisateur)} : ajoute un utilisateur dans la base de données.
 				\end{itemize}
 			\end{paragraphe}
 
@@ -515,7 +515,7 @@
 
 			\begin{paragraphe}
 				\textbf{Si} clic sur le bouton << inscription >> \\
-				\textbf{Alors} effectue l'action \emph{ajouterUtilisateur(Utilisateur)}.
+				\textbf{Alors} effectue l'action \emph{ajouter\_tilisateur(utilisateur)}.
 			\end{paragraphe}
 
            \begin{paragraphe}
