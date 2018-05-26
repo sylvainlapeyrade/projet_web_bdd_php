@@ -1,10 +1,17 @@
 Liste des tâches restantes 
 --------------------------------------------------
-- Réaliser le cahier des charges
-- Réaliser le dossier de conception
+- Cahier des charges
+    - Générer une v2 "Version finale" 26/4
+    - Changer couleur sommaire si possible
+- Dossier de conception
     - Joindre une explication à la documentation
     - Revoir syntaxe latex
+    - Mettre V3 "Version finale" 26/4 dans la table de mise à jour
+    - Changer couleur sommaire si possible
+    - Mettre référence vers cahier des charges
+    - Passer un coup d'antidote
 - Réaliser le dossier de base de donnée
-    - schèma relationnel
+    - schèma relationnelx
     
 - Crée un Readme dans le dossier docs
+

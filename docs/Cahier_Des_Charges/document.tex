@@ -1,21 +1,20 @@
 \section{Présentation}
 
     \begin{paragraphe}
-        Le projet que nous réalisons est un site de critique de musique.
-        Il met à disposition un large catalogue comportant de nombreux artistes
-        pour lesquels on retrouve une brève description ainsi que leur discographie.
-        Pour chaque album on donne les chansons présentes et quelques informations
-        supplémentaires (durée, date de parution, artistes, genre, etc).
+        Le projet que nous réalisons est un site de critique musicale.
+        Il met à disposition un large catalogue d'artistes, de groupes, de musiques et d'albums.
+        On retrouve pour chacun une liste de d'informations les caractérisant, par exemple pour chaque album,
+        on donne la liste des musiques le composant et quelques informations supplémentaires comme la durée, date de parution, les auteurs, le genre, etc.
     \end{paragraphe}
 
     \begin{paragraphe}
-        Il est également possible de s’identifier afin de pouvoir rédiger des
-        commentaires et des évaluations pour chaque album ou titres présent sur le site.
+        Il est également possible de créer et de se connecter à un compte afin de pouvoir rédiger des
+        commentaires et noter chaque albums ou morceaux de musique présent sur le site.
     \end{paragraphe}
 
     \begin{paragraphe}
-        Ainsi, le site final est un recueil d’albums pour lesquels on retrouve
-        quelques informations et de nombreux avis d’utilisateurs.
+        Ainsi, le site final à pour vocation de renseigner l'utilisateur sur une importante liste d'artistes, groupe, musiques et albums.
+        Tout en lui permettant de laisser un avis sur ces deux derniers, et bien sûr de voir l'avis des autres utilisateurs.
     \end{paragraphe}
 
     \subsection{Systèmes comparables}
@@ -24,16 +23,15 @@
             Il existe le site Pitchfork (https://pitchfork.com/), site anglo-saxon
             spécialisé dans le revue d’albums de tout genre musical. Cependant ce site
             offre des revues rédigées par des auteurs spécialisés appartenant à la
-            société Pitchfork et n’offrent pas plus de données sur l’album mis à part
+            société Pitchfork et n’offrent pas plus de données sur les musiaues mis à part
             la revue.
         \end{paragraphe}
 
         \begin{paragraphe}
             Le site Rotten Tomatoes (https://www.rottentomatoes.com/), site de revue de
             films, se rapproche plus de notre projet car il permet aux utilisateurs de
-            donner un avis et fournit donc la note moyenne accordée par les
-            utilisateurs à une œuvre, et donne également des données sur le film
-            (durée, date de parution).
+            donner un avis sur des films en plus de présenter des données sur les films
+            (titre, durée, date de parution, etc).
         \end{paragraphe}
 
     \subsection{Profils et rôles utilisateurs}
@@ -47,23 +45,24 @@
             En tant que créateurs du site, nous sommes les administrateurs de celui-ci
             et avons donc la charge de mettre le site en place, de le rendre
             fonctionnel et de remplir le catalogue d'artistes (saisir les artistes, les
-            albums, les pistes ainsi que les informations pour chaque).
+            albums, les morceaux de musique, les groupes, etc ainsi que les informations pour chacuns).
         \end{paragraphe}
 
         \begin{paragraphe}
-            Une fois le site fonctionnel et rempli, tous les profils sur le site pourront 
+            Une fois le site fonctionnel et fournis de donnés, tous les profils sur le site pourront
             consulter les pages.
             Les profils utilisateurs (à qui on demande une identification et une authentification) 
-            pourront eux rédiger des évaluations et accéder à des paramètres relatifs à leur compte.
+            pourront rédiger des évaluations et accéder à des options relatifs à leur compte, comme le changement de mot
+            de passe ou la suppression du compte.
         \end{paragraphe}
 
     \subsection{Contraintes}
 
         \begin{paragraphe}
-            Les difficultés de ce projet sont le temps disponible ainsi que le volume
-            de la base de données à fournir avant de pouvoir déclarer le site comme
+            Les difficultés de ce projet sont principalement la modélisation de la base de données et de l'architecture du site
+             ainsi que le volume de la base de données à fournir avant de pouvoir déclarer le site comme
             fonctionnel. De plus, il faut effectuer une phase de conception approfondie et la 
-            plus complète possible afin de ne pas avoir de soucis lors de l'implémentation.
+            plus complète possible afin de ne pas avoir de problème majeur relation à l'architecture lors de l'implémentation.
         \end{paragraphe}
         
 \newpage
@@ -73,7 +72,7 @@
     \subsection{Terminologie}
 
         \begin{paragraphe}
-            Nous allons tout d'abord spécifier quelques termes utilisés dans ce cahier des charges.
+            Nous allons tout d'abord expliciter quelques termes utilisés dans ce cahier des charges.
             \begin{itemize}
                 \item \textbf{Artiste :} Définit le compositeur de morceaux de musiques, en solo ou au sein d'un groupe.
                 \item \textbf{Album :} Est un recueil de morceaux de musique d'un ou plusieurs artistes.
@@ -104,7 +103,7 @@
             \textbf{La partie public} est la vitrine de l'application. C'est ici que l'on
             va retrouver les différentes fonctionnalités citées plus bas. On peut
             ainsi rechercher et consulter les pages artistes, albums, groupes ou titres.
-            Dans cette partie, on retrouvera deux sous parties qui seront selon le profil de 
+            Dans cette partie, on retrouvera deux sous-parties qui seront selon le profil de
             l'utilisateur.
             Si ce dernier est identifié et connecté il aura également accès au système d'évaluation.
         \end{paragraphe}
@@ -113,7 +112,7 @@
             \textbf{La partie privée} est réservée au modérateur de l'application web, c'est-à-dire 
             aux profils administrateurs.
             Elle permet entre autre de gérer toute la base de données des artistes,
-            album, groupes, single et métadonnées de ces derniers. On peut ajouter, modifier
+            album, groupes, single et les métadonnées de ces derniers. On peut ajouter, modifier
             ou supprimer une entrée dans la base de données.
             Elle offre également un accès de gestion des comptes.
         \end{paragraphe}
