@@ -997,13 +997,13 @@
             \end{paragraphe}
             
             \begin{paragraphe}
-                La page est composé de champs pour chaque élément d'un album (définit dans le cahier des charges). \\
-                Ainsi qu'une liste de case à coché des artistes ou des groupes présent dans la base de données.
+                La page est composée de champs pour chaque élément d'un album (défini dans le cahier des charges). \\
+                Ainsi qu'une liste de case à cocher des artistes ou des groupes présents dans la base de données.
             \end{paragraphe}
 
             \begin{paragraphe}
                 \textbf{Si} un identifiant d'un album existant n'est pas renseigné à la page \\
-                \textbf{Alors} on laisse les champs du formulaire vide, il s'agit de crée un nouveau album. \\
+                \textbf{Alors} on laisse les champs du formulaire vide, il s'agit de créer un nouvel album. \\
                 \textbf{Sinon} il s'agit de modifier un album. On récupère les données de l'album avec la fonction \emph{getAlbum(album)} ainsi que l'association avec les artistes ou groupes de l'album.
             \end{paragraphe}
             
@@ -1019,7 +1019,7 @@
         \newpage
             
             \begin{paragraphe}
-                \textbf{Page de gestion des musique d'un album :} elle récupère toutes les musiques associés à l'album, passé en paramètre, à l'aide de la fonction \emph{getListeMusiqueAlbum()} pour les afficher dans un tableau.
+                \textbf{Page de gestion des musiques d'un album :} elle récupère toutes les musiques associées à l'album, passé en paramètre, à l'aide de la fonction \emph{getListeMusiqueAlbum()} pour les afficher dans un tableau.
             \end{paragraphe}
 
             \begin{center}
@@ -1042,7 +1042,7 @@
             \end{paragraphe}
             
             \begin{paragraphe}
-                La page est composé du numéro de piste. \\
+                La page est composée du numéro de piste. \\
                 De plus s'il s'agit d'un ajout d'un nouveau morceau de musique à l'album alors une liste de case à coché est disponible correspondant aux des musiques des artistes ou des groupes dont l'album est composé.
             \end{paragraphe}
             
@@ -1072,7 +1072,7 @@
 
 			\begin{paragraphe}
                 La page gestion reprend le même principe que précédement. \\
-                La page a été allégé des formulaires trop compliqué et trop chargé.
+                La page a été allégée des formulaires trop compliqués et trop chargés.
 			\end{paragraphe}
 
 			\begin{paragraphe}
@@ -1080,7 +1080,7 @@
 			\end{paragraphe}
             
             \begin{paragraphe}
-                La page de gestion et la page formulaire permettent d'envoyer des actions à effectué sur la page action.
+                La page de gestion et la page formulaire permettent d'envoyer des actions à effectuer sur la page action.
 			\end{paragraphe}
             
             \begin{paragraphe}
@@ -1090,8 +1090,8 @@
                     \item \emph{ajouter\_musique(musique)} :
                 \end{itemize}
                 \begin{paragraphe}
-                    Permet de vérifier si les informations renseignées sont correcte.
-                    Le titre, la durée ainsi que la date de création du morceau de musique sont obligatoire.
+                    Permet de vérifier si les informations renseignées sont correctes.
+                    Le titre, la durée ainsi que la date de création du morceau de musique sont obligatoires.
                     De plus il est obligatoire de sélectionner un artiste ou un groupe de musique au minimum. L'ajout d'un genre est facultatif.
                     Ajoute ensuite les informations dans la base de données.
                 \end{paragraphe}
@@ -1100,8 +1100,8 @@
                     \item \emph{modifier\_musique(musique)} :
                 \end{itemize}
                 \begin{paragraphe}
-                    Permet de vérifier si les informations renseignées sont correcte.
-                    Le titre, la durée ainsi que la date de création du morceau de musique sont obligatoire.
+                    Permet de vérifier si les informations renseignées sont correctes.
+                    Le titre, la durée ainsi que la date de création du morceau de musique sont obligatoires.
                     De plus il est obligatoire de sélectionner un artiste ou un groupe de musique au minimum. L'ajout d'un genre est facultatif.
                     Modifie ensuite les informations dans la base de données.
                 \end{paragraphe}
@@ -1119,13 +1119,13 @@
 			\end{paragraphe}
             
             \begin{paragraphe}
-                \textbf{Page de gestion :} elle récupère toutes les entrées des morceau de musique à l'aide de la fonction \emph{getListeMusique()} pour les afficher dans un tableau.
+                \textbf{Page de gestion :} elle récupère toutes les entrées des morceaux de musique à l'aide de la fonction \emph{getListeMusique()} pour les afficher dans un tableau.
             \end{paragraphe}
 
             \begin{center}
                 \begin{tabular}{l | l}
-                    \textbf{Si} clic sur le titre << Panneau administration >> & \textbf{Si} clic sur le bouton << Gestion recompense >> \\
-                    \textbf{Alors} redirection vers \underline{adminAccueil.php}. & \textbf{Alors} redirection vers \underline{gestionRecompense.php}. \\ \\
+                    \textbf{Si} clic sur le titre << Panneau administration >> & \textbf{Si} clic sur le bouton << Gestion musique >> \\
+                    \textbf{Alors} redirection vers \underline{adminAccueil.php}. & \textbf{Alors} redirection vers \underline{gestionMusique.php}. \\ \\
 
                     \textbf{Si} clic sur le bouton << Ajouter musique >> & \textbf{Si} clic sur le bouton << Modifier >> \\
                     \textbf{Alors} redirection vers \underline{formMusique.php}. & \textbf{Alors} redirection vers \underline{formMusique.php}. \\ \\
@@ -1144,9 +1144,9 @@
             \end{paragraphe}
             
             \begin{paragraphe}
-                La page est composé de champs pour chaque élément d'une récompense (définit dans le cahier des charges). \\
-                De plus trois section de case à coché permettent de sélectionner les genres du morceau de musique. Ainsi que les artistes ou les groupes à avoir composés le morceau de musique. \\
-                On doit obligatoirement renseigné un artiste ou un groupe de musique. Le genre étant optionnels.
+                La page est composé de champs pour chaque élément d'une récompense (défini dans le cahier des charges). \\
+                De plus trois sections de case à cocher permettent de sélectionner les genres du morceau de musique. Ainsi que les artistes ou les groupes à avoir composé le morceau de musique. \\
+                On doit obligatoirement renseigner un artiste ou un groupe de musique. Le genre étant optionnel.
             \end{paragraphe}
             
             \begin{center}
@@ -1180,7 +1180,7 @@
 			\end{paragraphe}
             
             \begin{paragraphe}
-                La page de gestion et la page formulaire permettent d'envoyer des actions à effectué sur la page action.
+                La page de gestion et la page formulaire permettent d'envoyer des actions à effectuer sur la page action.
 			\end{paragraphe}
 
 			\begin{paragraphe}
@@ -1190,14 +1190,14 @@
                     \item \emph{ajouter\_recompense(recompense)} :
                 \end{itemize}
                 \begin{paragraphe}
-                    Permet de vérifier si les informations renseignées sont correcte. Le nom et la date de la récompense sont obligatoire. De plus il est obligatoire de sélectionner un artiste au minimum. Ajoute ensuite les informations dans la base de données.
+                    Permet de vérifier si les informations renseignées sont correctes. Le nom et la date de la récompense sont obligatoire. De plus il est obligatoires de sélectionner un artiste au minimum. Ajoute ensuite les informations dans la base de données.
                 \end{paragraphe}
                 
                 \begin{itemize}
                     \item \emph{modifier\_recompense(recompense)} :
                 \end{itemize}
                 \begin{paragraphe}
-                    Permet de vérifier si les informations renseignées sont correcte. Le nom et la date de la récompense sont obligatoire. De plus il est obligatoire de sélectionner un artiste au minimum. Modifie ensuite les informations dans la base de données.
+                    Permet de vérifier si les informations renseignées sont correctes. Le nom et la date de la récompense sont obligatoire. De plus il est obligatoires de sélectionner un artiste au minimum. Modifie ensuite les informations dans la base de données.
                 \end{paragraphe}
                 
                 \begin{itemize}
@@ -1240,13 +1240,13 @@
             \end{paragraphe}
             
             \begin{paragraphe}
-                La page est composé de champs pour chaque élément d'une récompense (définit dans le cahier des charges). \\
-                Ainsi qu'une liste de case à coché des artistes présent dans la base de données qui reçoivent cette récompense.
+                La page est composée de champs pour chaque élément d'une récompense (défini dans le cahier des charges). \\
+                Ainsi qu'une liste de case à cocher des artistes présents dans la base de données qui reçoivent cette récompense.
             \end{paragraphe}
 
             \begin{paragraphe}
                 \textbf{Si} un identifiant d'une récompense existant n'est pas renseigné à la page \\
-                \textbf{Alors} on laisse les champs du formulaire vide, il s'agit de crée une nouvelles récompense. \\
+                \textbf{Alors} on laisse les champs du formulaire vide, il s'agit de créer une nouvelle récompense. \\
                 \textbf{Sinon} il s'agit de modifier une récompense. On récupère les données de la récompense avec la fonction \emph{getRecompense(recompense)} ainsi que l'association avec les artistes.
             \end{paragraphe}
             
@@ -1281,7 +1281,7 @@
 			\end{paragraphe}
             
             \begin{paragraphe}
-                La page de gestion et la page formulaire permettent d'envoyer des actions à effectué sur la page action.
+                La page de gestion et la page formulaire permettent d'envoyer des actions à effectuer sur la page action.
 			\end{paragraphe}
 
 			\begin{paragraphe}
@@ -1291,7 +1291,7 @@
                     \item \emph{ajouter\_utilisateur(utilisateur)} :
                 \end{itemize}
                 \begin{paragraphe}
-                    Permet de vérifier si les informations renseignées sont correcte. Le nom, le mot de passe et la vérification du mot de passe sont obligatoire. Ajoute ensuite les informations dans la base de données.
+                    Permet de vérifier si les informations renseignées sont correctes. Le nom, le mot de passe et la vérification du mot de passe sont obligatoires. Ajoute ensuite les informations dans la base de données.
                 \end{paragraphe}
                 
                 \begin{itemize}
@@ -1305,7 +1305,7 @@
                     \item \emph{modifier\_statut\_utilisateur(utilisateur)} :
                 \end{itemize}
                 \begin{paragraphe}
-                    Permet de changer le statut d'un utilisateur normal en statut adminsitrateur, ou en statut d'un utilisateur normal. \\
+                    Permet de changer le statut d'un utilisateur normal en statut administrateur, ou en statut d'un utilisateur normal. \\
                     Un administrateur ne peut changer son propre statut en utilisateur normal.
                 \end{paragraphe}
                 
@@ -1331,7 +1331,7 @@
         \clearpage
     
             \begin{paragraphe}
-                On a rajouter une page formulaire en plus pour ajouter ou pour modifier le mot de passe d'un utilisateur.
+                On a rajouté une page formulaire en plus pour ajouter ou pour modifier le mot de passe d'un utilisateur.
             \end{paragraphe}
             
             \begin{paragraphe}
@@ -1340,8 +1340,8 @@
 
             \begin{center}
                 \begin{tabular}{l | l}
-                    \textbf{Si} clic sur le titre << Panneau administration >> & \textbf{Si} clic sur le bouton << Gestion recompense >> \\
-                    \textbf{Alors} redirection vers \underline{adminAccueil.php}. & \textbf{Alors} redirection vers \underline{gestionRecompense.php}. \\ \\
+                    \textbf{Si} clic sur le titre << Panneau administration >> & \textbf{Si} clic sur le bouton << Gestion utilisateur >> \\
+                    \textbf{Alors} redirection vers \underline{adminAccueil.php}. & \textbf{Alors} redirection vers \underline{gestionUtilisateur.php}. \\ \\
 
                     \textbf{Si} clic sur le bouton << Ajouter utilisateur >> & \textbf{Si} clic sur le bouton << Devenir User/Admin >> \\
                     \textbf{Alors} redirection vers \underline{formUtilisateur.php}. & \textbf{Alors} effectue l'action \emph{modifier\_statut\_utilisateur(utilisateur)}. \\ \\
@@ -1358,13 +1358,13 @@
             \end{paragraphe}
             
             \begin{paragraphe}
-                La page est composé des champs nom utilisateur, mot de passe et vérification du mot de passe saisi.
+                La page est composée des champs nom utilisateur, mot de passe et vérification du mot de passe saisi.
             \end{paragraphe}
 
             \begin{paragraphe}
                 \textbf{Si} un identifiant d'un utilisateur existant n'est pas renseigné à la page \\
-                \textbf{Alors} on laisse les champs du formulaire vide, il s'agit de crée un nouveau utilisateur. \\
-                \textbf{Sinon} il s'agit de modifier le mot de passe d'un utilisateur. On récupère les données de l'utilsiateur avec la fonction \emph{getUtilisateur(utilisateur)}.
+                \textbf{Alors} on laisse les champs du formulaire vide, il s'agit de créer un nouvel utilisateur. \\
+                \textbf{Sinon} il s'agit de modifier le mot de passe d'un utilisateur. On récupère les données de l'utilisateur avec la fonction \emph{getUtilisateur(utilisateur)}.
             \end{paragraphe}
             
             \begin{center}
