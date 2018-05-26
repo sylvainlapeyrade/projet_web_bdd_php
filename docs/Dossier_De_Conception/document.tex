@@ -309,8 +309,8 @@
 
 		\subsubsection{Page description artiste/groupe}
             \begin{paragraphe}
-                Cette page fait des requêtes sur la base de données, sur les entités << Artiste >> ou << Groupe >>.
-                 en passant en paramètre le nom transmis par la page resultat de recherche. Elle affiche ensuite ces dernières.
+                Cette page fait des requêtes sur la base de données, sur les entités << artiste >> ou << groupe >>,
+                 en passant en paramètre le nom transmis par la page résultat de recherche. Elle affiche ensuite ces dernières.
             \end{paragraphe}
 
             \begin{paragraphe}
@@ -318,7 +318,7 @@
             \end{paragraphe}
 
             \begin{paragraphe}
-                Pour afficher les différentes métadonnées de l'artiste ou du groupe nous avons besoin des services suivant:
+                Pour afficher les différentes métadonnées de l'artiste ou du groupe, nous avons besoin des services suivants :
                 \begin{itemize}
                         \item \emph{get\_artiste(artiste)} si un artiste a été sélectionné, pour obtenir les informations de l'artiste.
                         \item \emph{get\_groupe(groupe)} si un groupe a été sélectionné, pour obtenir les informations du groupe.
@@ -365,8 +365,8 @@
 		\subsubsection{Page description album/musique}
 
 			\begin{paragraphe}
-                Cette page fait des requêtes sur la base de données, sur les entités << album >> ou << musique >>.
-                 en passant en paramètre le nom transmis par la page resultat de recherche. Elle affiche ensuite ces dernières.
+                Cette page fait des requêtes sur la base de données, sur les entités << album >> ou << musique >>,
+                 en passant en paramètre le nom transmis par la page résultat de recherche. Elle affiche ensuite ces dernières.
 				Si un utilisateur non connecté souhaite rédiger un commenter et donner une note à un album ou à une musique,
 				 il faut d'abord qu'il se connecte. Il y a donc dans l'espace commentaire un lien << connectez-vous >> le redirigeant vers la page de \underline{connexion.php}.
 			\end{paragraphe}
@@ -376,7 +376,7 @@
             \end{paragraphe}
 
             \begin{paragraphe}
-                Pour afficher les différentes métadonnées de l'artiste ou du groupe nous avons besoin des services suivant:
+                Pour afficher les différentes métadonnées de l'artiste ou du groupe, nous avons besoin des services suivants:
                 \begin{itemize}
                         \item \emph{get\_album(album)} si un album a été sélectionné, pour obtenir les informations de l'album.
                         \item \emph{get\_musique(musique)} si une musique a été sélectionnée, pour obtenir les informations de la musique.
@@ -393,8 +393,8 @@
 			\end{paragraphe}
 
 			\begin{paragraphe}
-				\textbf{Si} clic sur sur une des 5 étoiles \\
-				\textbf{Alors} la note est définit par le numéro de l'étoile.
+				\textbf{Si} clic sur une des 5 étoiles \\
+				\textbf{Alors} la note est définie par le numéro de l'étoile.
 			\end{paragraphe}
 
 			\begin{paragraphe}
@@ -444,7 +444,7 @@
 			\end{paragraphe}
 
 			\begin{paragraphe}
-			    Cette page intéragie avec la base de données avec la fonction :
+			    Cette page intéragit avec la base de données avec la fonction :
 				\begin{itemize}
 					\item \emph{connexion\_utilisateur(utilisateur)} : vérifie si un utilisateur correspondant existe dans la base de données.
 				\end{itemize}
@@ -497,7 +497,7 @@
 			\end{paragraphe}
 
 			\begin{paragraphe}
-			    Cette page intéragie avec la base de données avec la fonction:
+			    Cette page intéragit avec la base de données avec la fonction:
 				\begin{itemize}
 					\item \emph{ajouter\_utilisateur(utilisateur)} : ajoute un utilisateur dans la base de données.
 				\end{itemize}
@@ -552,7 +552,7 @@
 			\end{paragraphe}
 
 			\begin{paragraphe}
-				Après vérification par le biais d'une requête sur la base de données, la page affichera un message indiquant, si toutes les données entrée sont valides, que la modification à bien été effectuée. Ou, si certaines informations sont erronées, la nature de l'erreur et proposera de remplir à nouveau le formulaire avec de bonnes valeurs.
+				Après vérification par le biais d'une requête sur la base de données, la page affichera un message indiquant, si toutes les données entrées sont valides, que la modification a bien été effectuée. Ou, si certaines informations sont erronées, la nature de l'erreur et proposera de remplir à nouveau le formulaire avec de bonnes valeurs.
 			\end{paragraphe}
 
 			\begin{paragraphe}
@@ -560,16 +560,16 @@
 			\end{paragraphe}
 
 			\begin{paragraphe}
-				Les services sont ici utilisés pour la vérification des deux mots de passes saisis. \\
+				Les services sont ici utilisés pour la vérification des deux mots de passe saisis. \\
 				Une fois cette vérification établie, la base de données est modifiée par la nouvelle valeur correspondant au nom de compte connecté.
 			\end{paragraphe}
 
 			\begin{paragraphe}
-                Il faut vérifier ici les deux mots de passes saisie. \\
+                Il faut vérifier ici les deux mots de passe saisis. \\
                 Une fois cette vérification établie, la base de données est modifiée par la nouvelle valeur correspondant au nom de compte connecté.
 				On effectue les vérifications de mot de passe avec la fonction :
 				\begin{itemize}
-					\item \emph{modofierMotDePasse(MotDePasse)} : Change le mot de passe d'un utilisateur (celui connecté).
+					\item \emph{modifierMotDePasse(MotDePasse)} : Change le mot de passe d'un utilisateur (celui connecté).
 				\end{itemize}
 			\end{paragraphe}
 
@@ -578,7 +578,7 @@
 			\end{paragraphe}
 
 			\begin{paragraphe}
-				Initalement, le formulaire est vide, il sera soumis à la page formUtilisateur.php pour la vérification.
+				Initialement, le formulaire est vide, il sera soumis à la page \underline{formUtilisateur.php} pour la vérification.
 			\end{paragraphe}
 
 			\image{0.3}{page_compte}{Mockup - Page compte}
@@ -591,13 +591,13 @@
         \newpage
         
             \begin{paragraphe}
-               Au cours du développment, l'aspect et la logique de cette page a été conservé. Nous avons cependant ajouté une autre fonctionnalité
+               Au cours du développement, l'aspect et la logique de cette page ont été conservés. Nous avons cependant ajouté une autre fonctionnalité
                à la gestion de compte. L'utilisateur peut supprimer son compte. Nous avons ajouté une page intermédiaire accessible en cliquant sur le bouton
                << Compte >> présent sur la bandeau d'en tête.
             \end{paragraphe}
                
             \begin{paragraphe}
-                Cette page nous indique notre nom d'utilsateur et ainsi que deux boutons, l'un supprime le compte auquel nous somme connecté en transmettant une requête de suppression dans la
+                Cette page nous indique notre nom d'utilisateur et ainsi que deux boutons, l'un supprime le compte auquel nous sommes connectés en transmettant une requête de suppression dans la
                 base de données. Le second bouton renvoie l'utilisateur à au formulaire de modification de mot de passe.
             \end{paragraphe}
 
@@ -614,16 +614,16 @@
 	\subsection{Pages d'administration}
 
         \begin{paragraphe}
-            L'accés à toutes les pages d'administration requiert d'être connecter à un compte et de posséder le statut administrateur. Elles héritent toutes de la mise en page 3.
+            L'accès à toutes les pages d'administration requiert d'être connecté à un compte et de posséder le statut administrateur. Elles héritent toutes de la mise en page 3.
         \end{paragraphe}
         
         \begin{paragraphe}
             Dans la version une, du dossier de conception, toutes les pages d'administrations été composées de trop de formulaires, d'actions et de boutons.
-            Lors de la réalisation de l'application nous avons effectué une simplification de toutes les pages, en répartisant et délimitant les périmétres d'action de chaque page.
+            Lors de la réalisation de l'application, nous avons effectué une simplification de toutes les pages, en répartissant et délimitant les périmètres d'action de chaque page.
         \end{paragraphe}
     
         \begin{paragraphe}
-            Nous avons donc délimité six catégories pour gérer les différentes entités de la base de donnée :
+            Nous avons donc délimité six catégories pour gérer les différentes entités de la base de données :
             \vspace{1em}
             \begin{itemize}
                 \item Gestion des utilisateurs
@@ -636,20 +636,20 @@
         \end{paragraphe}
         
         \begin{paragraphe}
-            Chaques pages des six catégories est rassemblé dans un dossier portant le nom de l'entité qu'il gère. \\
-            De plus une page gestion, une page formulaire et une page action pour chaque catégorie permettent de séparer le code pour une meilleur lisibilité.
+            Chaque page des six catégories est rassemblée dans un dossier portant le nom de l'entité qu'il gère. \\
+            De plus une page gestion, une page formulaire et une page action pour chaque catégorie permettent de séparer le code pour une meilleure lisibilité.
         \end{paragraphe}
 
         \begin{paragraphe}
-            \textbf{Les pages gestions} permettent de gérer les valeurs stocké dans la base de donnée, en les modifiant ou en les supprimant.
+            \textbf{Les pages gestions} permettent de gérer les valeurs stockées dans la base de données, en les modifiant ou en les supprimant.
         \end{paragraphe}
         
         \begin{paragraphe}
-            \textbf{Les pages formulaires} permettent d'ajouter ou de modifier les données stocker des entités.
+            \textbf{Les pages formulaires} permettent d'ajouter ou de modifier les données stockées des entités.
         \end{paragraphe}
         
         \begin{paragraphe}
-            \textbf{Les pages actions} permettent quand à elles de d'effectuer des vérifications, des validations et d'exécuter les actions souhaitées.
+            \textbf{Les pages actions} permettent quant à elles d'effectuer des vérifications, des validations et d'exécuter les actions souhaitées.
         \end{paragraphe}
 
 		\subsubsection{Page d'administration accueil}
@@ -663,7 +663,7 @@
 			\end{paragraphe}
 
 			\begin{paragraphe}
-                On a supprimer les deux boutons d'ajout du genre et de récompense et seulement ajouter un bouton pour la gestion des récompenses.
+                On a supprimé les deux boutons d'ajout du genre et de récompense et seulement ajouté un bouton pour la gestion des récompenses.
 			\end{paragraphe}
             
 			\begin{paragraphe}
@@ -674,11 +674,11 @@
 				Cette page hérite de la disposition n°3. \par
 				Initialement cette page contient sept boutons :
 				\begin{itemize}
-					\item Gestion artistes.
-					\item Gestion groupes.
-					\item Gestion albums.
-					\item Gestion musiques.
-					\item Gestion utilisateurs.
+					\item Gestion artiste.
+					\item Gestion groupe.
+					\item Gestion album.
+					\item Gestion musique.
+					\item Gestion utilisateur.
                     \item Gestion récompense.
 				\end{itemize}
 			\end{paragraphe}
@@ -715,7 +715,7 @@
 		\subsubsection{Page gestion artiste}
         
             \begin{paragraphe}
-                La gestion des artistes se fais avec trois pages, une page de gestion, une page de formulaire et une page d'action.
+                La gestion des artistes se fait avec trois pages, une page de gestion, une page de formulaire et une page d'action.
             \end{paragraphe}
 
 			\begin{paragraphe}
@@ -723,7 +723,7 @@
 			\end{paragraphe}
 
 			\begin{paragraphe}
-                La page de gestion et la page formulaire permettent d'envoyer des actions à effectué sur la page action.
+                La page de gestion et la page formulaire permettent d'envoyer des actions à effectuer sur la page action.
 			\end{paragraphe}
 
 			\begin{paragraphe}
@@ -733,14 +733,14 @@
                     \item \emph{ajouter\_artiste(artiste)} :
                 \end{itemize}
                 \begin{paragraphe}
-                    Permet de vérifier si les informations renseigner sont correcte. Le nom, le prénom et la date de naissance de l'artiste étant obligatoire. Ajoute ensuite les informations dans la base de données.
+                    Permet de vérifier si les informations renseignées sont correcte. Le nom, le prénom et la date de naissance de l'artiste étant obligatoire. Ajoute ensuite les informations dans la base de données.
                 \end{paragraphe}
                 
                 \begin{itemize}
                     \item \emph{modifier\_artiste(artiste)} :
                 \end{itemize}
                 \begin{paragraphe}
-                    Permet de vérifier si les informations renseigner sont correcte. Le nom, le prénom et la date de naissance de l'artiste étant obligatoire. Modifie ensuite les informations dans la base de données.
+                    Permet de vérifier si les informations renseignées sont correcte. Le nom, le prénom et la date de naissance de l'artiste étant obligatoire. Modifie ensuite les informations dans la base de données.
                 \end{paragraphe}
                 
                 \begin{itemize}
@@ -826,14 +826,14 @@
                     \item \emph{ajouter\_groupe(groupe)} :
                 \end{itemize}
                 \begin{paragraphe}
-                    Permet de vérifier si les informations renseigner sont correcte. Le nom, la date de création du groupe sont obligatoire obligatoire. De plus il est obligatoire de sélectionner deux artistes au minimum. Ajoute ensuite les informations dans la base de données.
+                    Permet de vérifier si les informations renseignées sont correcte. Le nom, la date de création du groupe sont obligatoire obligatoire. De plus il est obligatoire de sélectionner deux artistes au minimum. Ajoute ensuite les informations dans la base de données.
                 \end{paragraphe}
                 
                 \begin{itemize}
                     \item \emph{modifier\_groupe(groupe)} :
                 \end{itemize}
                 \begin{paragraphe}
-                    Permet de vérifier si les informations renseigner sont correcte. Le nom, la date de création du groupe sont obligatoire obligatoire. De plus il est obligatoire de sélectionner deux artistes au minimum. Modifie ensuite les informations dans la base de données.
+                    Permet de vérifier si les informations renseignées sont correcte. Le nom, la date de création du groupe sont obligatoire obligatoire. De plus il est obligatoire de sélectionner deux artistes au minimum. Modifie ensuite les informations dans la base de données.
                 \end{paragraphe}
                 
                 \begin{itemize}
@@ -920,14 +920,14 @@
                     \item \emph{ajouter\_album(album)} :
                 \end{itemize}
                 \begin{paragraphe}
-                    Permet de vérifier si les informations renseigner sont correcte. Le nom, la date de création de l'album sont obligatoire. De plus il est obligatoire de sélectionner un artiste ou un groupe de musique au minimum. Ajoute ensuite les informations dans la base de données.
+                    Permet de vérifier si les informations renseignées sont correcte. Le nom, la date de création de l'album sont obligatoire. De plus il est obligatoire de sélectionner un artiste ou un groupe de musique au minimum. Ajoute ensuite les informations dans la base de données.
                 \end{paragraphe}
                 
                 \begin{itemize}
                     \item \emph{modifier\_album(album)} :
                 \end{itemize}
                 \begin{paragraphe}
-                    Permet de vérifier si les informations renseigner sont correcte. Le nom, la date de création de l'album sont obligatoire. De plus il est obligatoire de sélectionner un artiste ou un groupe de musique au minimum. Modifie ensuite les informations dans la base de données.
+                    Permet de vérifier si les informations renseignées sont correcte. Le nom, la date de création de l'album sont obligatoire. De plus il est obligatoire de sélectionner un artiste ou un groupe de musique au minimum. Modifie ensuite les informations dans la base de données.
                 \end{paragraphe}
                 
                 \begin{itemize}
@@ -949,14 +949,14 @@
                     \item \emph{ajouter\_musique\_album(album, musique)} :
                 \end{itemize}
                 \begin{paragraphe}
-                    Permet de vérifier si les informations renseigner sont correcte. Un numéro de piste pour la musique dans l'album est obligatoire. Ajoute ensuite les informations dans la base de données.
+                    Permet de vérifier si les informations renseignées sont correcte. Un numéro de piste pour la musique dans l'album est obligatoire. Ajoute ensuite les informations dans la base de données.
                 \end{paragraphe}
                 
                 \begin{itemize}
                     \item \emph{modifier\_musique\_album(album, musique)} :
                 \end{itemize}
                 \begin{paragraphe}
-                    Permet de vérifier si les informations renseigner sont correcte. Un numéro de piste pour la musique dans l'album est obligatoire. Modifie ensuite les informations dans la base de données.
+                    Permet de vérifier si les informations renseignées sont correcte. Un numéro de piste pour la musique dans l'album est obligatoire. Modifie ensuite les informations dans la base de données.
                 \end{paragraphe}
                 
                 \begin{itemize}
@@ -1090,7 +1090,7 @@
                     \item \emph{ajouter\_musique(musique)} :
                 \end{itemize}
                 \begin{paragraphe}
-                    Permet de vérifier si les informations renseigner sont correcte.
+                    Permet de vérifier si les informations renseignées sont correcte.
                     Le titre, la durée ainsi que la date de création du morceau de musique sont obligatoire.
                     De plus il est obligatoire de sélectionner un artiste ou un groupe de musique au minimum. L'ajout d'un genre est facultatif.
                     Ajoute ensuite les informations dans la base de données.
@@ -1100,7 +1100,7 @@
                     \item \emph{modifier\_musique(musique)} :
                 \end{itemize}
                 \begin{paragraphe}
-                    Permet de vérifier si les informations renseigner sont correcte.
+                    Permet de vérifier si les informations renseignées sont correcte.
                     Le titre, la durée ainsi que la date de création du morceau de musique sont obligatoire.
                     De plus il est obligatoire de sélectionner un artiste ou un groupe de musique au minimum. L'ajout d'un genre est facultatif.
                     Modifie ensuite les informations dans la base de données.
@@ -1190,14 +1190,14 @@
                     \item \emph{ajouter\_recompense(recompense)} :
                 \end{itemize}
                 \begin{paragraphe}
-                    Permet de vérifier si les informations renseigner sont correcte. Le nom et la date de la récompense sont obligatoire. De plus il est obligatoire de sélectionner un artiste au minimum. Ajoute ensuite les informations dans la base de données.
+                    Permet de vérifier si les informations renseignées sont correcte. Le nom et la date de la récompense sont obligatoire. De plus il est obligatoire de sélectionner un artiste au minimum. Ajoute ensuite les informations dans la base de données.
                 \end{paragraphe}
                 
                 \begin{itemize}
                     \item \emph{modifier\_recompense(recompense)} :
                 \end{itemize}
                 \begin{paragraphe}
-                    Permet de vérifier si les informations renseigner sont correcte. Le nom et la date de la récompense sont obligatoire. De plus il est obligatoire de sélectionner un artiste au minimum. Modifie ensuite les informations dans la base de données.
+                    Permet de vérifier si les informations renseignées sont correcte. Le nom et la date de la récompense sont obligatoire. De plus il est obligatoire de sélectionner un artiste au minimum. Modifie ensuite les informations dans la base de données.
                 \end{paragraphe}
                 
                 \begin{itemize}
@@ -1291,7 +1291,7 @@
                     \item \emph{ajouter\_utilisateur(utilisateur)} :
                 \end{itemize}
                 \begin{paragraphe}
-                    Permet de vérifier si les informations renseigner sont correcte. Le nom, le mot de passe et la vérification du mot de passe sont obligatoire. Ajoute ensuite les informations dans la base de données.
+                    Permet de vérifier si les informations renseignées sont correcte. Le nom, le mot de passe et la vérification du mot de passe sont obligatoire. Ajoute ensuite les informations dans la base de données.
                 \end{paragraphe}
                 
                 \begin{itemize}
